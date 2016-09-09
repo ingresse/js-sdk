@@ -1,0 +1,61 @@
+{
+  "coverage": "65.71%",
+  "expectCount": 35,
+  "actualCount": 23,
+  "files": {
+    "src/auth/authentication.js": {
+      "expectCount": 4,
+      "actualCount": 2,
+      "undocumentLines": [
+        1,
+        8
+      ]
+    },
+    "src/auth/jwt.js": {
+      "expectCount": 7,
+      "actualCount": 4,
+      "undocumentLines": [
+        4,
+        37,
+        5
+      ]
+    },
+    "src/requestHandler.js": {
+      "expectCount": 11,
+      "actualCount": 8,
+      "undocumentLines": [
+        5,
+        26,
+        12
+      ]
+    },
+    "src/main.js": {
+      "expectCount": 4,
+      "actualCount": 3,
+      "undocumentLines": [
+        4
+      ]
+    },
+    "src/apis/ticket.js": {
+      "expectCount": 7,
+      "actualCount": 6,
+      "undocumentLines": [
+        4
+      ]
+    },
+    "src/apis/index.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        4
+      ]
+    },
+    "src/auth/index.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        4
+      ]
+    }
+  }
+}

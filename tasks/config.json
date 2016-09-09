@@ -1,0 +1,14 @@
+{
+    "browse": {
+        "src"   : "./dist/browser/ingresse-sdk.js",
+        "name"  : "ingresse-sdk",
+        "dest"  : "./build/browser",
+        "output": "ingresse-sdk.js"
+    },
+    "node": {
+        "src"   : "./src/**/*.js",
+        "name"  : "ingresse-sdk",
+        "dest"  : "./dist",
+        "output": "ingresse-sdk.js"
+    }
+}
