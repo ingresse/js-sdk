@@ -12,15 +12,9 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "ingresse-sdk/src/requesthandler.js~requesthandler",
-    "class/src/requestHandler.js~RequestHandler.html",
-    "<span>RequestHandler</span> <span class=\"search-result-import-path\">ingresse-sdk/src/requestHandler.js</span>",
-    "class"
-  ],
-  [
-    "ingresse-sdk/src/main.js~sdk",
-    "class/src/main.js~Sdk.html",
-    "<span>Sdk</span> <span class=\"search-result-import-path\">ingresse-sdk/src/main.js</span>",
+    "ingresse-sdk/src/request/handler.js~requesthandler",
+    "class/src/request/handler.js~RequestHandler.html",
+    "<span>RequestHandler</span> <span class=\"search-result-import-path\">ingresse-sdk/src/request/handler.js</span>",
     "class"
   ],
   [
@@ -39,6 +33,18 @@ window.esdocSearchIndex = [
     "ingresse-sdk/src/auth/index.js~auth",
     "variable/index.html#static-variable-auth",
     "<span>auth</span> <span class=\"search-result-import-path\">ingresse-sdk/src/auth/index.js</span>",
+    "variable"
+  ],
+  [
+    "ingresse-sdk/src/request/plugins.js~baseprefix",
+    "variable/index.html#static-variable-basePrefix",
+    "<span>basePrefix</span> <span class=\"search-result-import-path\">ingresse-sdk/src/request/plugins.js</span>",
+    "variable"
+  ],
+  [
+    "ingresse-sdk/src/request/plugins.js~transformresponse",
+    "variable/index.html#static-variable-transformResponse",
+    "<span>transformResponse</span> <span class=\"search-result-import-path\">ingresse-sdk/src/request/plugins.js</span>",
     "variable"
   ],
   [
@@ -426,20 +432,20 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/auth/authentication.js~authentication#_data",
-    "class/src/auth/authentication.js~Authentication.html#instance-member-_data",
-    "src/auth/authentication.js~Authentication#_data",
-    "member"
-  ],
-  [
-    "src/auth/authentication.js~authentication#authdata",
-    "class/src/auth/authentication.js~Authentication.html#instance-get-authData",
-    "src/auth/authentication.js~Authentication#authData",
+    "src/auth/authentication.js~authentication#_authdata",
+    "class/src/auth/authentication.js~Authentication.html#instance-member-_authData",
+    "src/auth/authentication.js~Authentication#_authData",
     "member"
   ],
   [
     "src/auth/authentication.js~authentication#authdata",
     "class/src/auth/authentication.js~Authentication.html#instance-set-authData",
+    "src/auth/authentication.js~Authentication#authData",
+    "member"
+  ],
+  [
+    "src/auth/authentication.js~authentication#authdata",
+    "class/src/auth/authentication.js~Authentication.html#instance-get-authData",
     "src/auth/authentication.js~Authentication#authData",
     "member"
   ],
@@ -468,22 +474,22 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/auth/jwt.js~jwt#headers",
-    "class/src/auth/jwt.js~Jwt.html#instance-get-headers",
-    "src/auth/jwt.js~Jwt#headers",
-    "member"
+    "src/auth/jwt.js~jwt#getsettings",
+    "class/src/auth/jwt.js~Jwt.html#instance-method-getSettings",
+    "src/auth/jwt.js~Jwt#getSettings",
+    "method"
   ],
   [
-    "src/auth/jwt.js~jwt#token",
-    "class/src/auth/jwt.js~Jwt.html#instance-set-token",
-    "src/auth/jwt.js~Jwt#token",
-    "member"
+    "src/auth/jwt.js~jwt#gettoken",
+    "class/src/auth/jwt.js~Jwt.html#instance-method-getToken",
+    "src/auth/jwt.js~Jwt#getToken",
+    "method"
   ],
   [
-    "src/auth/jwt.js~jwt#token",
-    "class/src/auth/jwt.js~Jwt.html#instance-get-token",
-    "src/auth/jwt.js~Jwt#token",
-    "member"
+    "src/auth/jwt.js~jwt#settoken",
+    "class/src/auth/jwt.js~Jwt.html#instance-method-setToken",
+    "src/auth/jwt.js~Jwt#setToken",
+    "method"
   ],
   [
     "src/auth/jwt.js~jwt.type",
@@ -492,93 +498,69 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/main.js",
-    "file/src/main.js.html",
-    "src/main.js",
+    "src/index.js",
+    "file/src/index.js.html",
+    "src/index.js",
     "file"
   ],
   [
-    "src/main.js~sdk#_init",
-    "class/src/main.js~Sdk.html#instance-method-_init",
-    "src/main.js~Sdk#_init",
-    "method"
-  ],
-  [
-    "src/main.js~sdk#constructor",
-    "class/src/main.js~Sdk.html#instance-constructor-constructor",
-    "src/main.js~Sdk#constructor",
-    "method"
-  ],
-  [
-    "src/main.js~sdk.version",
-    "class/src/main.js~Sdk.html#static-method-version",
-    "src/main.js~Sdk.version",
-    "method"
-  ],
-  [
-    "src/requesthandler.js",
-    "file/src/requestHandler.js.html",
-    "src/requestHandler.js",
+    "src/request/handler.js",
+    "file/src/request/handler.js.html",
+    "src/request/handler.js",
     "file"
   ],
   [
-    "src/requesthandler.js~requesthandler#_auth",
-    "class/src/requestHandler.js~RequestHandler.html#instance-member-_auth",
-    "src/requestHandler.js~RequestHandler#_auth",
+    "src/request/handler.js~requesthandler#auth",
+    "class/src/request/handler.js~RequestHandler.html#instance-member-auth",
+    "src/request/handler.js~RequestHandler#auth",
     "member"
   ],
   [
-    "src/requesthandler.js~requesthandler#_configauth",
-    "class/src/requestHandler.js~RequestHandler.html#instance-method-_configAuth",
-    "src/requestHandler.js~RequestHandler#_configAuth",
+    "src/request/handler.js~requesthandler#constructor",
+    "class/src/request/handler.js~RequestHandler.html#instance-constructor-constructor",
+    "src/request/handler.js~RequestHandler#constructor",
     "method"
   ],
   [
-    "src/requesthandler.js~requesthandler#baseurl",
-    "class/src/requestHandler.js~RequestHandler.html#instance-member-baseURL",
-    "src/requestHandler.js~RequestHandler#baseURL",
+    "src/request/handler.js~requesthandler#delete",
+    "class/src/request/handler.js~RequestHandler.html#instance-method-delete",
+    "src/request/handler.js~RequestHandler#delete",
+    "method"
+  ],
+  [
+    "src/request/handler.js~requesthandler#get",
+    "class/src/request/handler.js~RequestHandler.html#instance-method-get",
+    "src/request/handler.js~RequestHandler#get",
+    "method"
+  ],
+  [
+    "src/request/handler.js~requesthandler#post",
+    "class/src/request/handler.js~RequestHandler.html#instance-method-post",
+    "src/request/handler.js~RequestHandler#post",
+    "method"
+  ],
+  [
+    "src/request/handler.js~requesthandler#put",
+    "class/src/request/handler.js~RequestHandler.html#instance-method-put",
+    "src/request/handler.js~RequestHandler#put",
+    "method"
+  ],
+  [
+    "src/request/handler.js~requesthandler#request",
+    "class/src/request/handler.js~RequestHandler.html#instance-method-request",
+    "src/request/handler.js~RequestHandler#request",
+    "method"
+  ],
+  [
+    "src/request/handler.js~requesthandler#settings",
+    "class/src/request/handler.js~RequestHandler.html#instance-member-settings",
+    "src/request/handler.js~RequestHandler#settings",
     "member"
   ],
   [
-    "src/requesthandler.js~requesthandler#constructor",
-    "class/src/requestHandler.js~RequestHandler.html#instance-constructor-constructor",
-    "src/requestHandler.js~RequestHandler#constructor",
-    "method"
-  ],
-  [
-    "src/requesthandler.js~requesthandler#delete",
-    "class/src/requestHandler.js~RequestHandler.html#instance-method-delete",
-    "src/requestHandler.js~RequestHandler#delete",
-    "method"
-  ],
-  [
-    "src/requesthandler.js~requesthandler#get",
-    "class/src/requestHandler.js~RequestHandler.html#instance-method-get",
-    "src/requestHandler.js~RequestHandler#get",
-    "method"
-  ],
-  [
-    "src/requesthandler.js~requesthandler#headers",
-    "class/src/requestHandler.js~RequestHandler.html#instance-get-headers",
-    "src/requestHandler.js~RequestHandler#headers",
-    "member"
-  ],
-  [
-    "src/requesthandler.js~requesthandler#post",
-    "class/src/requestHandler.js~RequestHandler.html#instance-method-post",
-    "src/requestHandler.js~RequestHandler#post",
-    "method"
-  ],
-  [
-    "src/requesthandler.js~requesthandler#put",
-    "class/src/requestHandler.js~RequestHandler.html#instance-method-put",
-    "src/requestHandler.js~RequestHandler#put",
-    "method"
-  ],
-  [
-    "src/requesthandler.js~requesthandler#request",
-    "class/src/requestHandler.js~RequestHandler.html#instance-method-request",
-    "src/requestHandler.js~RequestHandler#request",
-    "method"
+    "src/request/plugins.js",
+    "file/src/request/plugins.js.html",
+    "src/request/plugins.js",
+    "file"
   ]
 ]

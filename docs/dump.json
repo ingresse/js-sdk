@@ -44,7 +44,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import {RequestHandler} from '../requestHandler';\n\n\nexport class Ticket extends RequestHandler {\n    /**\n     * Ticket api\n     *\n     * @param {object} [settings] - Initialize Ticket api settings.\n     */\n    constructor(settings = {}) {\n        let _default = {\n            url : 'https://api.ingresse.com/ticket',\n            auth: 'jwt'\n        };\n\n        let _settigns = Object.assign({}, _default, settings);\n\n        super(_settigns);\n    }\n\n    /**\n     * Get a list of ticket items\n     *\n     * @param {object} [params]- Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    getItems(params) {\n        return this.get('/items', params);\n    }\n\n    /**\n     * Get item by ID\n     *\n     * @param {string|number} id - The item ID to get.\n     * @param {object} [params] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    getItem(id, params) {\n        return this.get(`/items/${id}`, params);\n    }\n\n    /**\n     * Create new Ticket item\n     *\n     * @param {object} data - Data to create a new ticket item.\n     * @param {object} [params] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    newItem(data, params) {\n        return this.post('/items', data, params);\n    }\n\n    /**\n     * Update a ticket item\n     *\n     * @param {string|number} id - The item ID to update.\n     * @param {object} data - Data to update item.\n     * @param {object} [params] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    updateItem(id, data, params) {\n        return this.put(`/items/${id}`, data, params);\n    }\n\n    /**\n     * Remove a ticket item\n     *\n     * @param {string|number} id - The item ID to remove.\n     * @param {object} [params] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    removeItem(id, params) {\n        return this.delete(id, params);\n    }\n}\n\n"
+    "content": "import {RequestHandler} from '../request/handler';\nimport {auth} from '../auth';\n\n\nexport class Ticket extends RequestHandler {\n    /**\n     * Ticket Api\n     *\n     * @param {object} [custom] - Initialize Ticket Api settings.\n     */\n    constructor(custom = {}) {\n        let settings = {\n            url : 'https://api.ingresse.com/ticket',\n            auth: auth.Jwt.type(),\n        };\n\n        Object.assign(settings, custom);\n\n        super(settings);\n    }\n\n    /**\n     * Get a list of ticket items\n     *\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    getItems(query) {\n        return this.get('/items', query);\n    }\n\n    /**\n     * Get item by ID\n     *\n     * @param {string|number} id - The item ID to get.\n     * @param {object} [query]   - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    getItem(id, query) {\n        return this.get(`/items/${id}`, query);\n    }\n\n    /**\n     * Create new Ticket item\n     *\n     * @param {object} data    - Data to create a new ticket item.\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    newItem(data, query) {\n        return this.post('/items', data, query);\n    }\n\n    /**\n     * Update a ticket item\n     *\n     * @param {string|number} id - The item ID to update.\n     * @param {object} data      - Data to update item.\n     * @param {object} [query]   - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    updateItem(id, data, query) {\n        return this.put(`/items/${id}`, data, query);\n    }\n\n    /**\n     * Remove a ticket item\n     *\n     * @param {string|number} id - The item ID to remove.\n     * @param {object} [query]   - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    removeItem(id, query) {\n        return this.delete(id, query);\n    }\n}\n\n"
   },
   {
     "__docId__": 3,
@@ -59,11 +59,11 @@
     "importPath": "ingresse-sdk/src/apis/ticket.js",
     "importStyle": "{Ticket}",
     "description": null,
-    "lineNumber": 4,
+    "lineNumber": 5,
     "undocument": true,
     "interface": false,
     "extends": [
-      "src/requestHandler.js~RequestHandler"
+      "src/request/handler.js~RequestHandler"
     ]
   },
   {
@@ -75,8 +75,8 @@
     "memberof": "src/apis/ticket.js~Ticket",
     "longname": "src/apis/ticket.js~Ticket#constructor",
     "access": null,
-    "description": "Ticket api",
-    "lineNumber": 10,
+    "description": "Ticket Api",
+    "lineNumber": 11,
     "params": [
       {
         "nullable": null,
@@ -85,8 +85,8 @@
         ],
         "spread": false,
         "optional": true,
-        "name": "settings",
-        "description": "Initialize Ticket api settings."
+        "name": "custom",
+        "description": "Initialize Ticket Api settings."
       }
     ],
     "generator": false
@@ -101,7 +101,7 @@
     "longname": "src/apis/ticket.js~Ticket#getItems",
     "access": null,
     "description": "Get a list of ticket items",
-    "lineNumber": 28,
+    "lineNumber": 29,
     "unknown": [
       {
         "tagName": "@returns",
@@ -116,7 +116,7 @@
         ],
         "spread": false,
         "optional": true,
-        "name": "params]-",
+        "name": "query",
         "description": "Optional request parameters."
       }
     ],
@@ -140,7 +140,7 @@
     "longname": "src/apis/ticket.js~Ticket#getItem",
     "access": null,
     "description": "Get item by ID",
-    "lineNumber": 40,
+    "lineNumber": 41,
     "unknown": [
       {
         "tagName": "@returns",
@@ -166,7 +166,7 @@
         ],
         "spread": false,
         "optional": true,
-        "name": "params",
+        "name": "query",
         "description": "Optional request parameters."
       }
     ],
@@ -190,7 +190,7 @@
     "longname": "src/apis/ticket.js~Ticket#newItem",
     "access": null,
     "description": "Create new Ticket item",
-    "lineNumber": 52,
+    "lineNumber": 53,
     "unknown": [
       {
         "tagName": "@returns",
@@ -215,7 +215,7 @@
         ],
         "spread": false,
         "optional": true,
-        "name": "params",
+        "name": "query",
         "description": "Optional request parameters."
       }
     ],
@@ -239,7 +239,7 @@
     "longname": "src/apis/ticket.js~Ticket#updateItem",
     "access": null,
     "description": "Update a ticket item",
-    "lineNumber": 65,
+    "lineNumber": 66,
     "unknown": [
       {
         "tagName": "@returns",
@@ -275,7 +275,7 @@
         ],
         "spread": false,
         "optional": true,
-        "name": "params",
+        "name": "query",
         "description": "Optional request parameters."
       }
     ],
@@ -299,7 +299,7 @@
     "longname": "src/apis/ticket.js~Ticket#removeItem",
     "access": null,
     "description": "Remove a ticket item",
-    "lineNumber": 77,
+    "lineNumber": 78,
     "unknown": [
       {
         "tagName": "@returns",
@@ -325,7 +325,7 @@
         ],
         "spread": false,
         "optional": true,
-        "name": "params",
+        "name": "query",
         "description": "Optional request parameters."
       }
     ],
@@ -350,7 +350,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "export class Authentication {\n    /**\n     * Set authentication data\n     *\n     * @param {object|string} data - Authentication data.\n     */\n    set authData(data) {\n        this._data = data;\n    }\n\n    /**\n     * Get authentication data\n     *\n     * @returns {object|string}\n     */\n    get authData() {\n        return this._data;\n    }\n}\n\n"
+    "content": "export class Authentication {\n    /**\n     * Set authentication data\n     *\n     * @param {object|string} data - Authentication data.\n     */\n    set authData(data) {\n        this._authData = data;\n    }\n\n    /**\n     * Get authentication data\n     *\n     * @returns {object|string}\n     */\n    get authData() {\n        return this._authData;\n    }\n}\n\n"
   },
   {
     "__docId__": 11,
@@ -405,9 +405,9 @@
     "kind": "member",
     "static": false,
     "variation": null,
-    "name": "_data",
+    "name": "_authData",
     "memberof": "src/auth/authentication.js~Authentication",
-    "longname": "src/auth/authentication.js~Authentication#_data",
+    "longname": "src/auth/authentication.js~Authentication#_authData",
     "access": null,
     "description": null,
     "lineNumber": 8,
@@ -462,7 +462,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import {Jwt} from './jwt';\n\n\nexport var auth = {\n    Jwt: Jwt\n};\n\n"
+    "content": "import {Jwt} from './jwt';\n\n\nexport var auth = {\n    [Jwt.type()]: Jwt\n};\n\n"
   },
   {
     "__docId__": 16,
@@ -496,7 +496,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import {Authentication} from './authentication';\n\n\nexport class Jwt extends Authentication {\n    constructor() {\n        super();\n    }\n\n    /**\n     * Type of the Authentication\n     *\n     * @returns {string}\n     */\n    static type() {\n        return 'jwt';\n    }\n\n    /**\n     * Get formatted authentication headers\n     *\n     * @returns {object}\n     */\n    get headers() {\n        let headers = {\n            'x-access-token': this.token\n        };\n\n        return headers;\n    }\n\n    /**\n     * Set authentication token value\n     *\n     * @param {string} - JWT Token value\n     */\n    set token(token) {\n        this.authData = token;\n    }\n\n    /**\n     * Get authentication token value\n     *\n     * @returns {string}\n     */\n    get token() {\n        return this.authData;\n    }\n}\n\n"
+    "content": "import {Authentication} from './authentication';\n\n\nexport class Jwt extends Authentication {\n    constructor() {\n        super();\n    }\n\n    /**\n     * Type of the Authentication\n     *\n     * @returns {string}\n     */\n    static type() {\n        return 'Jwt';\n    }\n\n    /**\n     * Get formatted authentication settings\n     *\n     * @returns {object}\n     */\n    getSettings() {\n        return {\n            headers: {\n                'Authorization': `Bearer ${this.getToken()}`\n            }\n        };\n    }\n\n    /**\n     * Set authentication token value\n     *\n     * @param {string} token - JWT Token value\n     */\n    setToken(token) {\n        this.authData = token;\n    }\n\n    /**\n     * Get authentication token value\n     *\n     * @returns {string}\n     */\n    getToken() {\n        return this.authData;\n    }\n}\n\n"
   },
   {
     "__docId__": 18,
@@ -563,14 +563,14 @@
   },
   {
     "__docId__": 21,
-    "kind": "get",
+    "kind": "method",
     "static": false,
     "variation": null,
-    "name": "headers",
+    "name": "getSettings",
     "memberof": "src/auth/jwt.js~Jwt",
-    "longname": "src/auth/jwt.js~Jwt#headers",
+    "longname": "src/auth/jwt.js~Jwt#getSettings",
     "access": null,
-    "description": "Get formatted authentication headers",
+    "description": "Get formatted authentication settings",
     "lineNumber": 23,
     "unknown": [
       {
@@ -578,6 +578,7 @@
         "tagValue": "{object}"
       }
     ],
+    "params": [],
     "return": {
       "nullable": null,
       "types": [
@@ -586,21 +587,16 @@
       "spread": false,
       "description": ""
     },
-    "type": {
-      "types": [
-        "*"
-      ]
-    },
     "generator": false
   },
   {
     "__docId__": 22,
-    "kind": "set",
+    "kind": "method",
     "static": false,
     "variation": null,
-    "name": "token",
+    "name": "setToken",
     "memberof": "src/auth/jwt.js~Jwt",
-    "longname": "src/auth/jwt.js~Jwt#token",
+    "longname": "src/auth/jwt.js~Jwt#setToken",
     "access": null,
     "description": "Set authentication token value",
     "lineNumber": 36,
@@ -612,15 +608,10 @@
         ],
         "spread": false,
         "optional": false,
-        "name": "-",
+        "name": "token",
         "description": "JWT Token value"
       }
     ],
-    "type": {
-      "types": [
-        "*"
-      ]
-    },
     "generator": false
   },
   {
@@ -643,12 +634,12 @@
   },
   {
     "__docId__": 24,
-    "kind": "get",
+    "kind": "method",
     "static": false,
     "variation": null,
-    "name": "token",
+    "name": "getToken",
     "memberof": "src/auth/jwt.js~Jwt",
-    "longname": "src/auth/jwt.js~Jwt#token",
+    "longname": "src/auth/jwt.js~Jwt#getToken",
     "access": null,
     "description": "Get authentication token value",
     "lineNumber": 45,
@@ -658,6 +649,7 @@
         "tagValue": "{string}"
       }
     ],
+    "params": [],
     "return": {
       "nullable": null,
       "types": [
@@ -666,11 +658,6 @@
       "spread": false,
       "description": ""
     },
-    "type": {
-      "types": [
-        "*"
-      ]
-    },
     "generator": false
   },
   {
@@ -678,28 +665,28 @@
     "kind": "file",
     "static": true,
     "variation": null,
-    "name": "src/main.js",
+    "name": "src/index.js",
     "memberof": null,
-    "longname": "src/main.js",
+    "longname": "src/index.js",
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import {apis} from './apis';\n\n\nexport class Sdk {\n    /**\n     * Initialize Ingresse API's SDK\n     *\n     * @param {object} [settings] - SDK configuration settings\n     */\n    constructor(settings = {}) {\n        this._init(settings);\n    }\n\n    /**\n     * Sdk Version\n     *\n     * @return {string}\n     */\n    static version() {\n        return '{{version}}';\n    }\n\n    /**\n     * Initialize API's configurations\n     *\n     * @param {object} settings - SDK settings.\n     */\n    _init(settings = {}) {\n        let list = settings.apis || Object.keys(apis);\n\n        list.map((key) => {\n            let Api = apis[key];\n\n            if (Api) {\n                let options = settings[key] || null;\n                this[key]   = new Api(options);\n            }\n        });\n    }\n}\n\n"
+    "content": "import {apis} from './apis';\nimport {version} from '../package.json';\n\n\nclass IngresseSdk {\n    /**\n     * Initialize Ingresse API's SDK\n     *\n     * @param {object} [settings] - SDK configuration settings\n     */\n    constructor(settings = {}) {\n       this._init(settings);\n    }\n\n    /**\n     * Sdk Version\n     *\n     * @returns {string}\n     */\n    static version() {\n        return version;\n    }\n\n    /**\n     * Initialize API's configurations\n     *\n     * @param {object} settings - SDK settings.\n     */\n    _init(settings = {}) {\n        let apiList = settings.apis || Object.keys(apis);\n\n        apiList.map((key) => {\n            let Api = apis[key];\n\n            if (Api) {\n                let options = settings[key] || null;\n                this[key]   = new Api(options);\n            }\n        });\n    }\n}\n\nmodule.exports = IngresseSdk\nmodule.exports.default = IngresseSdk\n\n"
   },
   {
     "__docId__": 26,
     "kind": "class",
     "static": true,
     "variation": null,
-    "name": "Sdk",
-    "memberof": "src/main.js",
-    "longname": "src/main.js~Sdk",
+    "name": "IngresseSdk",
+    "memberof": "src/index.js",
+    "longname": "src/index.js~IngresseSdk",
     "access": null,
-    "export": true,
-    "importPath": "ingresse-sdk/src/main.js",
-    "importStyle": "{Sdk}",
+    "export": false,
+    "importPath": "ingresse-sdk/src/index.js",
+    "importStyle": null,
     "description": null,
-    "lineNumber": 4,
+    "lineNumber": 5,
     "undocument": true,
     "interface": false
   },
@@ -709,11 +696,11 @@
     "static": false,
     "variation": null,
     "name": "constructor",
-    "memberof": "src/main.js~Sdk",
-    "longname": "src/main.js~Sdk#constructor",
+    "memberof": "src/index.js~IngresseSdk",
+    "longname": "src/index.js~IngresseSdk#constructor",
     "access": null,
     "description": "Initialize Ingresse API's SDK",
-    "lineNumber": 10,
+    "lineNumber": 11,
     "params": [
       {
         "nullable": null,
@@ -734,11 +721,17 @@
     "static": true,
     "variation": null,
     "name": "version",
-    "memberof": "src/main.js~Sdk",
-    "longname": "src/main.js~Sdk.version",
+    "memberof": "src/index.js~IngresseSdk",
+    "longname": "src/index.js~IngresseSdk.version",
     "access": null,
     "description": "Sdk Version",
-    "lineNumber": 19,
+    "lineNumber": 20,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{string}"
+      }
+    ],
     "params": [],
     "return": {
       "nullable": null,
@@ -756,11 +749,11 @@
     "static": false,
     "variation": null,
     "name": "_init",
-    "memberof": "src/main.js~Sdk",
-    "longname": "src/main.js~Sdk#_init",
+    "memberof": "src/index.js~IngresseSdk",
+    "longname": "src/index.js~IngresseSdk#_init",
     "access": null,
     "description": "Initialize API's configurations",
-    "lineNumber": 28,
+    "lineNumber": 29,
     "params": [
       {
         "nullable": null,
@@ -780,13 +773,13 @@
     "kind": "file",
     "static": true,
     "variation": null,
-    "name": "src/requestHandler.js",
+    "name": "src/request/handler.js",
     "memberof": null,
-    "longname": "src/requestHandler.js",
+    "longname": "src/request/handler.js",
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import {auth} from './auth';\nimport * as axios from 'axios';\n\n\nexport class RequestHandler {\n    /**\n     * Initialize request handler\n     *\n     * @param {object} settings - Settings\n     */\n    constructor(settings = {}) {\n        this.baseURL = settings.url;\n        this._configAuth(settings.auth);\n    }\n\n    /**\n     * Initialize Authentication\n     * The default authentication method is JWT.\n     *\n     * @private\n     * @param {string} method - Authentication method.\n     */\n    _configAuth(method) {\n        switch(method) {\n            default:\n                this._auth = new auth.Jwt();\n                break;\n        }\n    }\n\n    /**\n     * Get API request headers\n     *\n     * @returns {object}\n     */\n    get headers() {\n        let headers = {\n            'User-Agent': 'Ingresse JS SDK',\n        };\n\n        if (this._auth) {\n            headers.auth = this._auth.headers;\n        }\n\n        return headers;\n    }\n\n    /**\n     * Create new request promise\n     *\n     * @private\n     * @param {object} options - request options.\n     *\n     * @return {Promise}\n     */\n    request(options = {}) {\n        let def = {\n            baseURL: this.baseURL,\n            headers: this.headers,\n            json   : true,\n        };\n\n        let request = Object.assign({}, def, options);\n\n        return axios(request);\n    }\n\n    /**\n     * Get resource\n     *\n     * @param {string} resource - Get endpoint e.g. /api-path/1\n     * @param {object} [params] - Optional request parameters.\n     *\n     * @return {Promise}\n     */\n    get(resource, params) {\n        let request = {\n            method: 'GET',\n            url   : resource,\n            params: params,\n        };\n\n        return this.request(request);\n    }\n\n    /**\n     * Post resource\n     *\n     * @param {string} resource - Resource endpoint e.g. /api-path\n     * @param {object} data     - Data to be posted.\n     * @param {object} [params] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    post(resource, data, params) {\n        let request = {\n            method: 'POST',\n            url   : resource,\n            data  : data,\n            params: params,\n        };\n\n        return this.request(request);\n    }\n\n    /**\n     * Put resource\n     *\n     * @param {string} resource - Resource endpoint\n     * @param {object} data - Data to be updated.\n     * @param {object} [params] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    put(resource, data, params) {\n        let request = {\n            method: 'PUT',\n            url   : resource,\n            data  : data,\n            params: params,\n        };\n\n        return this.request(request);\n    }\n\n    /**\n     * Delete resource\n     *\n     * @param {string} resource - Resource endpoint\n     * @param {object} [params] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    delete(resource, params) {\n        let request = {\n            method: 'DELETE',\n            url   : resource,\n            params: params,\n        };\n\n        return this.request(request);\n    }\n}\n\n"
+    "content": "import popsicle from 'popsicle';\nimport {plugins} from 'popsicle';\nimport {basePrefix, transformResponse} from './plugins';\nimport {auth} from '../auth';\nimport status from 'popsicle-status';\n\n\nexport class RequestHandler {\n    /**\n     * Initialize request handler\n     *\n     * @param {object} settings - Settings\n     */\n    constructor(settings = {}) {\n        this.settings = settings;\n\n        if (auth[settings.auth]) {\n            this.auth = new auth[settings.auth]();\n        }\n    }\n\n    /**\n     * Create new request promise\n     *\n     * @private\n     * @param {object} options - request options.\n     *\n     * @returns {Promise}\n     */\n    request(options = {}) {\n        let request = {\n            headers: {\n                'User-Agent': 'Ingresse JS SDK',\n            },\n        };\n\n        if (this.auth) {\n            Object.assign(request, this.auth.getSettings());\n        }\n\n        Object.assign(request, options);\n\n        return popsicle(request)\n            .use(transformResponse())\n            .use(basePrefix(this.settings.url))\n            .use(plugins.parse(['json']));\n    }\n\n    /**\n     * Get resource\n     *\n     * @param {string} path    - Request get to endpoint e.g. /api-path/1\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    get(path, query) {\n        let request = {\n            method: 'GET',\n            url   : path,\n            query : query,\n        };\n\n        return this.request(request);\n    }\n\n    /**\n     * Post resource\n     *\n     * @param {string} path    - Request post to endpoint e.g. /api-path\n     * @param {object} data    - Data to be posted.\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    post(path, data, query) {\n        let request = {\n            method: 'POST',\n            url   : path,\n            data  : data,\n            query : query,\n        };\n\n        return this.request(request);\n    }\n\n    /**\n     * Put resource\n     *\n     * @param {string} path    - Request put to end endpoint e.g. /api-path/1\n     * @param {object} data    - Data to be updated.\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    put(path, data, query) {\n        let request = {\n            method: 'PUT',\n            url   : path,\n            data  : data,\n            query : query,\n        };\n\n        return this.request(request);\n    }\n\n    /**\n     * Delete resource\n     *\n     * @param {string} path    - Request delete to endpoint e.g. /api-path/1\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    delete(path, query) {\n        let request = {\n            method: 'DELETE',\n            url   : path,\n            query : query,\n        };\n\n        return this.request(request);\n    }\n}\n\n"
   },
   {
     "__docId__": 31,
@@ -794,14 +787,14 @@
     "static": true,
     "variation": null,
     "name": "RequestHandler",
-    "memberof": "src/requestHandler.js",
-    "longname": "src/requestHandler.js~RequestHandler",
+    "memberof": "src/request/handler.js",
+    "longname": "src/request/handler.js~RequestHandler",
     "access": null,
     "export": true,
-    "importPath": "ingresse-sdk/src/requestHandler.js",
+    "importPath": "ingresse-sdk/src/request/handler.js",
     "importStyle": "{RequestHandler}",
     "description": null,
-    "lineNumber": 5,
+    "lineNumber": 8,
     "undocument": true,
     "interface": false
   },
@@ -811,11 +804,11 @@
     "static": false,
     "variation": null,
     "name": "constructor",
-    "memberof": "src/requestHandler.js~RequestHandler",
-    "longname": "src/requestHandler.js~RequestHandler#constructor",
+    "memberof": "src/request/handler.js~RequestHandler",
+    "longname": "src/request/handler.js~RequestHandler#constructor",
     "access": null,
     "description": "Initialize request handler",
-    "lineNumber": 11,
+    "lineNumber": 14,
     "params": [
       {
         "nullable": null,
@@ -835,12 +828,12 @@
     "kind": "member",
     "static": false,
     "variation": null,
-    "name": "baseURL",
-    "memberof": "src/requestHandler.js~RequestHandler",
-    "longname": "src/requestHandler.js~RequestHandler#baseURL",
+    "name": "settings",
+    "memberof": "src/request/handler.js~RequestHandler",
+    "longname": "src/request/handler.js~RequestHandler#settings",
     "access": null,
     "description": null,
-    "lineNumber": 12,
+    "lineNumber": 15,
     "undocument": true,
     "type": {
       "types": [
@@ -850,40 +843,15 @@
   },
   {
     "__docId__": 34,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "_configAuth",
-    "memberof": "src/requestHandler.js~RequestHandler",
-    "longname": "src/requestHandler.js~RequestHandler#_configAuth",
-    "access": "private",
-    "description": "Initialize Authentication\nThe default authentication method is JWT.",
-    "lineNumber": 23,
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "string"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "method",
-        "description": "Authentication method."
-      }
-    ],
-    "generator": false
-  },
-  {
-    "__docId__": 35,
     "kind": "member",
     "static": false,
     "variation": null,
-    "name": "_auth",
-    "memberof": "src/requestHandler.js~RequestHandler",
-    "longname": "src/requestHandler.js~RequestHandler#_auth",
+    "name": "auth",
+    "memberof": "src/request/handler.js~RequestHandler",
+    "longname": "src/request/handler.js~RequestHandler#auth",
     "access": null,
     "description": null,
-    "lineNumber": 26,
+    "lineNumber": 18,
     "undocument": true,
     "type": {
       "types": [
@@ -892,48 +860,22 @@
     }
   },
   {
-    "__docId__": 36,
-    "kind": "get",
-    "static": false,
-    "variation": null,
-    "name": "headers",
-    "memberof": "src/requestHandler.js~RequestHandler",
-    "longname": "src/requestHandler.js~RequestHandler#headers",
-    "access": null,
-    "description": "Get API request headers",
-    "lineNumber": 36,
-    "unknown": [
-      {
-        "tagName": "@returns",
-        "tagValue": "{object}"
-      }
-    ],
-    "return": {
-      "nullable": null,
-      "types": [
-        "object"
-      ],
-      "spread": false,
-      "description": ""
-    },
-    "type": {
-      "types": [
-        "*"
-      ]
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 37,
+    "__docId__": 35,
     "kind": "method",
     "static": false,
     "variation": null,
     "name": "request",
-    "memberof": "src/requestHandler.js~RequestHandler",
-    "longname": "src/requestHandler.js~RequestHandler#request",
+    "memberof": "src/request/handler.js~RequestHandler",
+    "longname": "src/request/handler.js~RequestHandler#request",
     "access": "private",
     "description": "Create new request promise",
-    "lineNumber": 56,
+    "lineNumber": 30,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
     "params": [
       {
         "nullable": null,
@@ -957,59 +899,16 @@
     "generator": false
   },
   {
-    "__docId__": 38,
+    "__docId__": 36,
     "kind": "method",
     "static": false,
     "variation": null,
     "name": "get",
-    "memberof": "src/requestHandler.js~RequestHandler",
-    "longname": "src/requestHandler.js~RequestHandler#get",
+    "memberof": "src/request/handler.js~RequestHandler",
+    "longname": "src/request/handler.js~RequestHandler#get",
     "access": null,
     "description": "Get resource",
-    "lineNumber": 76,
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "string"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "resource",
-        "description": "Get endpoint e.g. /api-path/1"
-      },
-      {
-        "nullable": null,
-        "types": [
-          "object"
-        ],
-        "spread": false,
-        "optional": true,
-        "name": "params",
-        "description": "Optional request parameters."
-      }
-    ],
-    "return": {
-      "nullable": null,
-      "types": [
-        "Promise"
-      ],
-      "spread": false,
-      "description": ""
-    },
-    "generator": false
-  },
-  {
-    "__docId__": 39,
-    "kind": "method",
-    "static": false,
-    "variation": null,
-    "name": "post",
-    "memberof": "src/requestHandler.js~RequestHandler",
-    "longname": "src/requestHandler.js~RequestHandler#post",
-    "access": null,
-    "description": "Post resource",
-    "lineNumber": 95,
+    "lineNumber": 57,
     "unknown": [
       {
         "tagName": "@returns",
@@ -1024,8 +923,57 @@
         ],
         "spread": false,
         "optional": false,
-        "name": "resource",
-        "description": "Resource endpoint e.g. /api-path"
+        "name": "path",
+        "description": "Request get to endpoint e.g. /api-path/1"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "query",
+        "description": "Optional request parameters."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 37,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "post",
+    "memberof": "src/request/handler.js~RequestHandler",
+    "longname": "src/request/handler.js~RequestHandler#post",
+    "access": null,
+    "description": "Post resource",
+    "lineNumber": 76,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "path",
+        "description": "Request post to endpoint e.g. /api-path"
       },
       {
         "nullable": null,
@@ -1044,7 +992,7 @@
         ],
         "spread": false,
         "optional": true,
-        "name": "params",
+        "name": "query",
         "description": "Optional request parameters."
       }
     ],
@@ -1059,16 +1007,16 @@
     "generator": false
   },
   {
-    "__docId__": 40,
+    "__docId__": 38,
     "kind": "method",
     "static": false,
     "variation": null,
     "name": "put",
-    "memberof": "src/requestHandler.js~RequestHandler",
-    "longname": "src/requestHandler.js~RequestHandler#put",
+    "memberof": "src/request/handler.js~RequestHandler",
+    "longname": "src/request/handler.js~RequestHandler#put",
     "access": null,
     "description": "Put resource",
-    "lineNumber": 115,
+    "lineNumber": 96,
     "unknown": [
       {
         "tagName": "@returns",
@@ -1083,8 +1031,8 @@
         ],
         "spread": false,
         "optional": false,
-        "name": "resource",
-        "description": "Resource endpoint"
+        "name": "path",
+        "description": "Request put to end endpoint e.g. /api-path/1"
       },
       {
         "nullable": null,
@@ -1103,7 +1051,7 @@
         ],
         "spread": false,
         "optional": true,
-        "name": "params",
+        "name": "query",
         "description": "Optional request parameters."
       }
     ],
@@ -1118,16 +1066,16 @@
     "generator": false
   },
   {
-    "__docId__": 41,
+    "__docId__": 39,
     "kind": "method",
     "static": false,
     "variation": null,
     "name": "delete",
-    "memberof": "src/requestHandler.js~RequestHandler",
-    "longname": "src/requestHandler.js~RequestHandler#delete",
+    "memberof": "src/request/handler.js~RequestHandler",
+    "longname": "src/request/handler.js~RequestHandler#delete",
     "access": null,
     "description": "Delete resource",
-    "lineNumber": 134,
+    "lineNumber": 115,
     "unknown": [
       {
         "tagName": "@returns",
@@ -1142,8 +1090,8 @@
         ],
         "spread": false,
         "optional": false,
-        "name": "resource",
-        "description": "Resource endpoint"
+        "name": "path",
+        "description": "Request delete to endpoint e.g. /api-path/1"
       },
       {
         "nullable": null,
@@ -1152,7 +1100,7 @@
         ],
         "spread": false,
         "optional": true,
-        "name": "params",
+        "name": "query",
         "description": "Optional request parameters."
       }
     ],
@@ -1167,7 +1115,100 @@
     "generator": false
   },
   {
-    "__docId__": 43,
+    "__docId__": 40,
+    "kind": "file",
+    "static": true,
+    "variation": null,
+    "name": "src/request/plugins.js",
+    "memberof": null,
+    "longname": "src/request/plugins.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 8,
+    "content": "/**\n* Middleware to format all request with a base URL\n*\n* @params {string} base - Base URL for all requests.\n*\n* @returns {function}\n*/\nexport var basePrefix = (base = '') => {\n    return (request, next) => {\n        let path = request.url.replace(/^\\//, '');\n        base = base.replace(/\\/$/, '');\n\n        request.url = `${base}/${path}`;\n\n        return next();\n    };\n};\n\n/**\n * Handle response from api and decide\n * based on the status code if the request\n * was a success or an error\n *\n * @params {number} [lower=200]  - Lower status code number.\n * @params {number} [higher=299] - Higher status code number.\n *\n * @returns {function}\n */\nexport var transformResponse = (lower = 200, higher = 299) => {\n    return (request, next) => {\n        return next().then((response) => {\n            if (response.status >= lower &&\n                response.status <= higher) {\n\n                return response.body;\n            }\n\n            var error = request.error('', 'EINVALIDSTATUS');\n            error.body = response.body;\n\n            return error.body;\n        });\n    };\n};\n\n"
+  },
+  {
+    "__docId__": 41,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "basePrefix",
+    "memberof": "src/request/plugins.js",
+    "longname": "src/request/plugins.js~basePrefix",
+    "access": null,
+    "export": true,
+    "importPath": "ingresse-sdk/src/request/plugins.js",
+    "importStyle": "{basePrefix}",
+    "description": "Middleware to format all request with a base URL",
+    "lineNumber": 8,
+    "unknown": [
+      {
+        "tagName": "@params",
+        "tagValue": "{string} base - Base URL for all requests."
+      },
+      {
+        "tagName": "@returns",
+        "tagValue": "{function}"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "function"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 42,
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "transformResponse",
+    "memberof": "src/request/plugins.js",
+    "longname": "src/request/plugins.js~transformResponse",
+    "access": null,
+    "export": true,
+    "importPath": "ingresse-sdk/src/request/plugins.js",
+    "importStyle": "{transformResponse}",
+    "description": "Handle response from api and decide\nbased on the status code if the request\nwas a success or an error",
+    "lineNumber": 29,
+    "unknown": [
+      {
+        "tagName": "@params",
+        "tagValue": "{number} [lower=200]  - Lower status code number."
+      },
+      {
+        "tagName": "@params",
+        "tagValue": "{number} [higher=299] - Higher status code number."
+      },
+      {
+        "tagName": "@returns",
+        "tagValue": "{function}"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "function"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 44,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1180,7 +1221,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 44,
+    "__docId__": 45,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1193,7 +1234,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 45,
+    "__docId__": 46,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1206,7 +1247,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 46,
+    "__docId__": 47,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1219,7 +1260,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 47,
+    "__docId__": 48,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1232,7 +1273,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 48,
+    "__docId__": 49,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1245,7 +1286,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 49,
+    "__docId__": 50,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1258,7 +1299,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 50,
+    "__docId__": 51,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1271,7 +1312,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 51,
+    "__docId__": 52,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1284,7 +1325,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 52,
+    "__docId__": 53,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1297,7 +1338,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 53,
+    "__docId__": 54,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1310,7 +1351,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 54,
+    "__docId__": 55,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1323,7 +1364,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 55,
+    "__docId__": 56,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1336,7 +1377,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 56,
+    "__docId__": 57,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1349,7 +1390,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 57,
+    "__docId__": 58,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1362,7 +1403,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 58,
+    "__docId__": 59,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1375,7 +1416,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 59,
+    "__docId__": 60,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1388,7 +1429,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 60,
+    "__docId__": 61,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1401,7 +1442,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 61,
+    "__docId__": 62,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1414,7 +1455,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 62,
+    "__docId__": 63,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1427,7 +1468,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 63,
+    "__docId__": 64,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1440,7 +1481,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 64,
+    "__docId__": 65,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1453,7 +1494,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 65,
+    "__docId__": 66,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1466,7 +1507,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 66,
+    "__docId__": 67,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1479,7 +1520,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 67,
+    "__docId__": 68,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1492,7 +1533,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 68,
+    "__docId__": 69,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1505,7 +1546,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 69,
+    "__docId__": 70,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1518,7 +1559,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 70,
+    "__docId__": 71,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1531,7 +1572,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 71,
+    "__docId__": 72,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1544,7 +1585,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 72,
+    "__docId__": 73,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1557,7 +1598,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 73,
+    "__docId__": 74,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1570,7 +1611,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 74,
+    "__docId__": 75,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1583,7 +1624,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 75,
+    "__docId__": 76,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1596,7 +1637,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 76,
+    "__docId__": 77,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1609,7 +1650,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 77,
+    "__docId__": 78,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1622,7 +1663,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 78,
+    "__docId__": 79,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1635,7 +1676,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 79,
+    "__docId__": 80,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1648,7 +1689,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 80,
+    "__docId__": 81,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1661,7 +1702,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 81,
+    "__docId__": 82,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1674,7 +1715,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 82,
+    "__docId__": 83,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1687,7 +1728,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 83,
+    "__docId__": 84,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1700,7 +1741,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 84,
+    "__docId__": 85,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1713,7 +1754,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 85,
+    "__docId__": 86,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1726,7 +1767,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 86,
+    "__docId__": 87,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1739,7 +1780,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 87,
+    "__docId__": 88,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1752,7 +1793,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 88,
+    "__docId__": 89,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1765,7 +1806,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 89,
+    "__docId__": 90,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1778,7 +1819,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 91,
+    "__docId__": 92,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1791,7 +1832,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 92,
+    "__docId__": 93,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1804,7 +1845,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 93,
+    "__docId__": 94,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1817,7 +1858,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 94,
+    "__docId__": 95,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1830,7 +1871,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 95,
+    "__docId__": 96,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1843,7 +1884,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 96,
+    "__docId__": 97,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1856,7 +1897,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 97,
+    "__docId__": 98,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1869,7 +1910,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 98,
+    "__docId__": 99,
     "kind": "external",
     "static": true,
     "variation": null,

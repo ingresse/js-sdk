@@ -7,42 +7,47 @@ export class Jwt extends Authentication {
     }
 
     /**
-     * Type of the Authentication
+     * Authentication type e.g. Jwt, BasicAuth
      *
      * @returns {string}
      */
     static type() {
-        return 'jwt';
+        return 'Jwt';
     }
 
     /**
-     * Get formatted authentication headers
+     * Get formatted authentication settings
      *
      * @returns {object}
      */
-    get headers() {
-        let headers = {
-            'Authorization': `Bearer ${this.token}`
+    getSettings() {
+        return {
+            headers: {
+                'Authorization': `Bearer ${this.getToken()}`
+            }
         };
-
-        return headers;
     }
 
     /**
-     * Set authentication token value
+     * Set Jwt authentication token value
      *
-     * @param {string} - JWT Token value
+     * @example
+     * ```
+     * ingresse.ticket.auth.setToken('12345.67890.1234')
+     * ```
+     *
+     * @param {string} token - JWT Token value
      */
-    set token(token) {
+    setToken(token) {
         this.authData = token;
     }
 
     /**
-     * Get authentication token value
+     * Get Jwt authentication token value
      *
      * @returns {string}
      */
-    get token() {
+    getToken() {
         return this.authData;
     }
 }

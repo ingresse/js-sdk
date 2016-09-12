@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <base data-ice="baseUrl" href="../../../">
-  <title data-ice="title">src/apis/ticket.js | Ingresse JS SDK API Document</title>
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/index.js | Ingresse JS SDK API Document</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -44,88 +44,51 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/apis/ticket.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {RequestHandler} from &apos;../request/handler&apos;;
-import {auth} from &apos;../auth&apos;;
+<div class="content" data-ice="content"><h1 data-ice="title">src/index.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {apis} from &apos;./apis&apos;;
+import {version} from &apos;../package.json&apos;;
 
 
-export class Ticket extends RequestHandler {
+class IngresseSdk {
     /**
-     * Ticket Api
+     * Initialize Ingresse API&apos;s SDK
      *
-     * @param {object} [custom] - Initialize Ticket Api settings.
+     * @param {object} [settings] - SDK configuration settings
      */
-    constructor(custom = {}) {
-        let settings = {
-            url : &apos;https://api.ingresse.com/ticket&apos;,
-            auth: auth.Jwt.type(),
-        };
-
-        Object.assign(settings, custom);
-
-        super(settings);
+    constructor(settings = {}) {
+       this._init(settings);
     }
 
     /**
-     * Get a list of ticket items
+     * Sdk Version
      *
-     * @param {object} [query] - Optional request parameters.
-     *
-     * @returns {Promise}
+     * @returns {string}
      */
-    getItems(query) {
-        return this.get(&apos;/items&apos;, query);
+    static version() {
+        return version;
     }
 
     /**
-     * Get item by ID
+     * Initialize API&apos;s configurations
      *
-     * @param {string|number} id - The item ID to get.
-     * @param {object} [query]   - Optional request parameters.
-     *
-     * @returns {Promise}
+     * @param {object} settings - SDK settings.
      */
-    getItem(id, query) {
-        return this.get(`/items/${id}`, query);
-    }
+    _init(settings = {}) {
+        let apiList = settings.apis || Object.keys(apis);
 
-    /**
-     * Create new Ticket item
-     *
-     * @param {object} data    - Data to create a new ticket item.
-     * @param {object} [query] - Optional request parameters.
-     *
-     * @returns {Promise}
-     */
-    newItem(data, query) {
-        return this.post(&apos;/items&apos;, data, query);
-    }
+        apiList.map((key) =&gt; {
+            let Api = apis[key];
 
-    /**
-     * Update a ticket item
-     *
-     * @param {string|number} id - The item ID to update.
-     * @param {object} data      - Data to update item.
-     * @param {object} [query]   - Optional request parameters.
-     *
-     * @returns {Promise}
-     */
-    updateItem(id, data, query) {
-        return this.put(`/items/${id}`, data, query);
-    }
-
-    /**
-     * Remove a ticket item
-     *
-     * @param {string|number} id - The item ID to remove.
-     * @param {object} [query]   - Optional request parameters.
-     *
-     * @returns {Promise}
-     */
-    removeItem(id, query) {
-        return this.delete(id, query);
+            if (Api) {
+                let options = settings[key] || null;
+                this[key]   = new Api(options);
+            }
+        });
     }
 }
+
+module.exports = IngresseSdk
+module.exports.default = IngresseSdk
 
 </code></pre>
 

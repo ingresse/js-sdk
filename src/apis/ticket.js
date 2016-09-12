@@ -1,81 +1,82 @@
-import {RequestHandler} from '../requestHandler';
+import {RequestHandler} from '../request/handler';
+import {auth} from '../auth';
 
 
 export class Ticket extends RequestHandler {
     /**
-     * Ticket api
+     * Ticket Api
      *
-     * @param {object} [settings] - Initialize Ticket api settings.
+     * @param {object} [custom] - Initialize Ticket Api settings.
      */
-    constructor(settings = {}) {
-        let def = {
+    constructor(custom = {}) {
+        let settings = {
             url : 'https://api.ingresse.com/ticket',
-            auth: 'jwt'
+            auth: auth.Jwt.type(),
         };
 
-        let _settigns = Object.assign({}, def, settings);
+        Object.assign(settings, custom);
 
-        super(_settigns);
+        super(settings);
     }
 
     /**
      * Get a list of ticket items
      *
-     * @param {object} [params]- Optional request parameters.
+     * @param {object} [query] - Optional request parameters.
      *
      * @returns {Promise}
      */
-    getItems(params) {
-        return this.get('/items', params);
+    getItems(query) {
+        return this.get('/items', query);
     }
 
     /**
      * Get item by ID
      *
      * @param {string|number} id - The item ID to get.
-     * @param {object} [params] - Optional request parameters.
+     * @param {object} [query]   - Optional request parameters.
      *
      * @returns {Promise}
      */
-    getItem(id, params) {
-        return this.get(`/items/${id}`, params);
+    getItem(id, query) {
+        return this.get(`/items/${id}`, query);
     }
 
     /**
      * Create new Ticket item
      *
-     * @param {object} data - Data to create a new ticket item.
-     * @param {object} [params] - Optional request parameters.
+     * @param {object} data    - Data to create a new ticket item.
+     * @param {object} [query] - Optional request parameters.
      *
      * @returns {Promise}
      */
-    newItem(data, params) {
-        return this.post('/items', data, params);
+    newItem(data, query) {
+        return this.post('/items', data, query);
     }
 
     /**
      * Update a ticket item
      *
      * @param {string|number} id - The item ID to update.
-     * @param {object} data - Data to update item.
-     * @param {object} [params] - Optional request parameters.
+     * @param {object} data      - Data to update item.
+     * @param {object} [query]   - Optional request parameters.
      *
      * @returns {Promise}
      */
-    updateItem(id, data, params) {
-        return this.put(`/items/${id}`, data, params);
+    updateItem(id, data, query) {
+        return this.put(`/items/${id}`, data, query);
     }
 
     /**
      * Remove a ticket item
      *
      * @param {string|number} id - The item ID to remove.
-     * @param {object} [params] - Optional request parameters.
+     * @param {object} [query]   - Optional request parameters.
      *
      * @returns {Promise}
      */
-    removeItem(id, params) {
-        return this.delete(id, params);
+    removeItem(id, query) {
+        return this.delete(id, query);
     }
 }
 

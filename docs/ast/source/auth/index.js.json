@@ -123,20 +123,74 @@
                 {
                   "type": "Property",
                   "key": {
-                    "type": "Identifier",
-                    "name": "Jwt",
+                    "type": "CallExpression",
+                    "callee": {
+                      "type": "MemberExpression",
+                      "computed": false,
+                      "object": {
+                        "type": "Identifier",
+                        "name": "Jwt",
+                        "range": [
+                          54,
+                          57
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 5,
+                            "column": 5
+                          },
+                          "end": {
+                            "line": 5,
+                            "column": 8
+                          }
+                        }
+                      },
+                      "property": {
+                        "type": "Identifier",
+                        "name": "type",
+                        "range": [
+                          58,
+                          62
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 5,
+                            "column": 9
+                          },
+                          "end": {
+                            "line": 5,
+                            "column": 13
+                          }
+                        }
+                      },
+                      "range": [
+                        54,
+                        62
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 5,
+                          "column": 5
+                        },
+                        "end": {
+                          "line": 5,
+                          "column": 13
+                        }
+                      }
+                    },
+                    "arguments": [],
                     "range": [
-                      53,
-                      56
+                      54,
+                      64
                     ],
                     "loc": {
                       "start": {
                         "line": 5,
-                        "column": 4
+                        "column": 5
                       },
                       "end": {
                         "line": 5,
-                        "column": 7
+                        "column": 15
                       }
                     }
                   },
@@ -144,27 +198,27 @@
                     "type": "Identifier",
                     "name": "Jwt",
                     "range": [
-                      58,
-                      61
+                      67,
+                      70
                     ],
                     "loc": {
                       "start": {
                         "line": 5,
-                        "column": 9
+                        "column": 18
                       },
                       "end": {
                         "line": 5,
-                        "column": 12
+                        "column": 21
                       }
                     }
                   },
                   "kind": "init",
                   "method": false,
                   "shorthand": false,
-                  "computed": false,
+                  "computed": true,
                   "range": [
                     53,
-                    61
+                    70
                   ],
                   "loc": {
                     "start": {
@@ -173,14 +227,14 @@
                     },
                     "end": {
                       "line": 5,
-                      "column": 12
+                      "column": 21
                     }
                   }
                 }
               ],
               "range": [
                 47,
-                63
+                72
               ],
               "loc": {
                 "start": {
@@ -195,7 +249,7 @@
             },
             "range": [
               40,
-              63
+              72
             ],
             "loc": {
               "start": {
@@ -212,7 +266,7 @@
         "kind": "var",
         "range": [
           36,
-          64
+          73
         ],
         "loc": {
           "start": {
@@ -231,7 +285,7 @@
       "source": null,
       "range": [
         29,
-        64
+        73
       ],
       "loc": {
         "start": {
@@ -248,7 +302,7 @@
   "sourceType": "module",
   "range": [
     0,
-    64
+    73
   ],
   "loc": {
     "start": {

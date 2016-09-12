@@ -4,13 +4,29 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _apis = require('./apis');
 
+var _package = require('../package.json');
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+/**
+ * Ingresse JavaScript SDK
+ */
 var IngresseSdk = function () {
     /**
-     * Initialize Ingresse API's SDK
+     * Instantiate the SDK
      *
      * @param {object} [settings] - SDK configuration settings
+     *
+     * @example
+     * ```
+     * var Sdk = require('ingresse-sdk');
+     *
+     * var ingresse = new Sdk({
+     *   ticket: {
+     *     url: 'http://hml.ticket.ingresse.com'
+     *   }
+     * });
+     * ```
      */
     function IngresseSdk() {
         var settings = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
@@ -21,9 +37,9 @@ var IngresseSdk = function () {
     }
 
     /**
-     * Sdk Version
+     * Ingresse Sdk Version
      *
-     * @return {string}
+     * @returns {string}
      */
 
 
@@ -41,9 +57,9 @@ var IngresseSdk = function () {
 
             var settings = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
 
-            var list = settings.apis || Object.keys(_apis.apis);
+            var apiList = settings.apis || Object.keys(_apis.apis);
 
-            list.map(function (key) {
+            apiList.map(function (key) {
                 var Api = _apis.apis[key];
 
                 if (Api) {
@@ -55,7 +71,7 @@ var IngresseSdk = function () {
     }], [{
         key: 'version',
         value: function version() {
-            return '{{version}}';
+            return _package.version;
         }
     }]);
 

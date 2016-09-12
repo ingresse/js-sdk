@@ -7,7 +7,9 @@ exports.Ticket = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _requestHandler = require('../requestHandler');
+var _handler = require('../request/handler');
+
+var _auth = require('../auth');
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -19,29 +21,29 @@ var Ticket = exports.Ticket = function (_RequestHandler) {
     _inherits(Ticket, _RequestHandler);
 
     /**
-     * Ticket api
+     * Ticket Api
      *
-     * @param {object} [settings] - Initialize Ticket api settings.
+     * @param {object} [custom] - Initialize Ticket Api settings.
      */
     function Ticket() {
-        var settings = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+        var custom = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
 
         _classCallCheck(this, Ticket);
 
-        var def = {
+        var settings = {
             url: 'https://api.ingresse.com/ticket',
-            auth: 'jwt'
+            auth: _auth.auth.Jwt.type()
         };
 
-        var _settigns = Object.assign({}, def, settings);
+        Object.assign(settings, custom);
 
-        return _possibleConstructorReturn(this, (Ticket.__proto__ || Object.getPrototypeOf(Ticket)).call(this, _settigns));
+        return _possibleConstructorReturn(this, (Ticket.__proto__ || Object.getPrototypeOf(Ticket)).call(this, settings));
     }
 
     /**
      * Get a list of ticket items
      *
-     * @param {object} [params]- Optional request parameters.
+     * @param {object} [query] - Optional request parameters.
      *
      * @returns {Promise}
      */
@@ -49,71 +51,71 @@ var Ticket = exports.Ticket = function (_RequestHandler) {
 
     _createClass(Ticket, [{
         key: 'getItems',
-        value: function getItems(params) {
-            return this.get('/items', params);
+        value: function getItems(query) {
+            return this.get('/items', query);
         }
 
         /**
          * Get item by ID
          *
          * @param {string|number} id - The item ID to get.
-         * @param {object} [params] - Optional request parameters.
+         * @param {object} [query]   - Optional request parameters.
          *
          * @returns {Promise}
          */
 
     }, {
         key: 'getItem',
-        value: function getItem(id, params) {
-            return this.get('/items/' + id, params);
+        value: function getItem(id, query) {
+            return this.get('/items/' + id, query);
         }
 
         /**
          * Create new Ticket item
          *
-         * @param {object} data - Data to create a new ticket item.
-         * @param {object} [params] - Optional request parameters.
+         * @param {object} data    - Data to create a new ticket item.
+         * @param {object} [query] - Optional request parameters.
          *
          * @returns {Promise}
          */
 
     }, {
         key: 'newItem',
-        value: function newItem(data, params) {
-            return this.post('/items', data, params);
+        value: function newItem(data, query) {
+            return this.post('/items', data, query);
         }
 
         /**
          * Update a ticket item
          *
          * @param {string|number} id - The item ID to update.
-         * @param {object} data - Data to update item.
-         * @param {object} [params] - Optional request parameters.
+         * @param {object} data      - Data to update item.
+         * @param {object} [query]   - Optional request parameters.
          *
          * @returns {Promise}
          */
 
     }, {
         key: 'updateItem',
-        value: function updateItem(id, data, params) {
-            return this.put('/items/' + id, data, params);
+        value: function updateItem(id, data, query) {
+            return this.put('/items/' + id, data, query);
         }
 
         /**
          * Remove a ticket item
          *
          * @param {string|number} id - The item ID to remove.
-         * @param {object} [params] - Optional request parameters.
+         * @param {object} [query]   - Optional request parameters.
          *
          * @returns {Promise}
          */
 
     }, {
         key: 'removeItem',
-        value: function removeItem(id, params) {
-            return this.delete(id, params);
+        value: function removeItem(id, query) {
+            return this.delete(id, query);
         }
     }]);
 
     return Ticket;
-}(_requestHandler.RequestHandler);
+}(_handler.RequestHandler);

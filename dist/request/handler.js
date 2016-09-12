@@ -7,12 +7,26 @@ exports.RequestHandler = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _auth = require('./auth');
+var _popsicle = require('popsicle');
 
-var _axios = require('axios');
+var _popsicle2 = _interopRequireDefault(_popsicle);
+
+var _plugins = require('./plugins');
+
+var _auth = require('../auth');
+
+var _popsicleStatus = require('popsicle-status');
+
+var _popsicleStatus2 = _interopRequireDefault(_popsicleStatus);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+/**
+ * Base request handler for all the API's
+ * with `get`, `post`, `put` and `delete` methods
+ */
 var RequestHandler = exports.RequestHandler = function () {
     /**
      * Initialize request handler
@@ -24,76 +38,59 @@ var RequestHandler = exports.RequestHandler = function () {
 
         _classCallCheck(this, RequestHandler);
 
-        this.baseURL = settings.url;
-        this._configAuth(settings.auth);
+        this.settings = settings;
+
+        if (_auth.auth[settings.auth]) {
+            this.auth = new _auth.auth[settings.auth]();
+        }
     }
 
     /**
-     * Initialize Authentication
-     * The default authentication method is JWT.
+     * Create new request promise
      *
      * @private
-     * @param {string} method - Authentication method.
+     * @param {object} options - request options.
+     *
+     * @returns {Promise}
      */
 
 
     _createClass(RequestHandler, [{
-        key: '_configAuth',
-        value: function _configAuth(method) {
-            switch (method) {
-                default:
-                    this.auth = new _auth.auth.Jwt();
-                    break;
-            }
-        }
-
-        /**
-         * Get API request headers
-         *
-         * @returns {object}
-         */
-
-    }, {
         key: 'request',
-
-
-        /**
-         * Create new request promise
-         *
-         * @private
-         * @param {object} options - request options.
-         *
-         * @return {Promise}
-         */
         value: function request() {
             var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
 
-            var def = {
-                baseURL: this.baseURL,
-                headers: this.headers
+            var request = {
+                headers: {
+                    'User-Agent': 'Ingresse JS SDK'
+                }
             };
 
-            var request = Object.assign({}, def, options);
+            if (this.auth) {
+                Object.assign(request, this.auth.getSettings());
+            }
 
-            return (0, _axios.create)()(request);
+            Object.assign(request, options);
+
+            return (0, _popsicle2.default)(request).use((0, _plugins.transformResponse)()).use((0, _plugins.basePrefix)(this.settings.url)).use(_popsicle.plugins.parse(['json']));
         }
 
         /**
          * Get resource
          *
-         * @param {string} resource - Get endpoint e.g. /api-path/1
-         * @param {object} [params] - Optional request parameters.
+         * @param {string} path    - Request get to endpoint e.g. /api-path/1
+         * @param {object} [query] - Optional request parameters.
          *
-         * @return {Promise}
+         * @returns {Promise}
          */
 
     }, {
         key: 'get',
-        value: function get(resource, params) {
+        value: function get(path, query) {
             var request = {
                 method: 'GET',
-                url: resource,
-                params: params
+                url: path,
+                query: query
             };
 
             return this.request(request);
@@ -102,21 +99,21 @@ var RequestHandler = exports.RequestHandler = function () {
         /**
          * Post resource
          *
-         * @param {string} resource - Resource endpoint e.g. /api-path
-         * @param {object} data     - Data to be posted.
-         * @param {object} [params] - Optional request parameters.
+         * @param {string} path    - Request post to endpoint e.g. /api-path
+         * @param {object} data    - Data to be posted.
+         * @param {object} [query] - Optional request parameters.
          *
          * @returns {Promise}
          */
 
     }, {
         key: 'post',
-        value: function post(resource, data, params) {
+        value: function post(path, data, query) {
             var request = {
                 method: 'POST',
-                url: resource,
+                url: path,
                 data: data,
-                params: params
+                query: query
             };
 
             return this.request(request);
@@ -125,21 +122,21 @@ var RequestHandler = exports.RequestHandler = function () {
         /**
          * Put resource
          *
-         * @param {string} resource - Resource endpoint
-         * @param {object} data - Data to be updated.
-         * @param {object} [params] - Optional request parameters.
+         * @param {string} path    - Request put to end endpoint e.g. /api-path/1
+         * @param {object} data    - Data to be updated.
+         * @param {object} [query] - Optional request parameters.
          *
          * @returns {Promise}
          */
 
     }, {
         key: 'put',
-        value: function put(resource, data, params) {
+        value: function put(path, data, query) {
             var request = {
                 method: 'PUT',
-                url: resource,
+                url: path,
                 data: data,
-                params: params
+                query: query
             };
 
             return this.request(request);
@@ -148,35 +145,22 @@ var RequestHandler = exports.RequestHandler = function () {
         /**
          * Delete resource
          *
-         * @param {string} resource - Resource endpoint
-         * @param {object} [params] - Optional request parameters.
+         * @param {string} path    - Request delete to endpoint e.g. /api-path/1
+         * @param {object} [query] - Optional request parameters.
          *
          * @returns {Promise}
          */
 
     }, {
         key: 'delete',
-        value: function _delete(resource, params) {
+        value: function _delete(path, query) {
             var request = {
                 method: 'DELETE',
-                url: resource,
-                params: params
+                url: path,
+                query: query
             };
 
             return this.request(request);
-        }
-    }, {
-        key: 'headers',
-        get: function get() {
-            var headers = {
-                'User-Agent': 'Ingresse JS SDK'
-            };
-
-            if (this.auth) {
-                headers = Object.assign(headers, this.auth.headers);
-            }
-
-            return headers;
         }
     }]);
 

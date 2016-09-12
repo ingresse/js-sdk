@@ -22,7 +22,7 @@ var Authentication = exports.Authentication = function () {
          * @param {object|string} data - Authentication data.
          */
         set: function set(data) {
-            this._data = data;
+            this._authData = data;
         }
 
         /**
@@ -32,7 +32,7 @@ var Authentication = exports.Authentication = function () {
          */
         ,
         get: function get() {
-            return this._data;
+            return this._authData;
         }
     }]);
 

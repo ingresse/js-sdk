@@ -32,13 +32,14 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/main.js~Sdk.html">Sdk</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/requestHandler.js~RequestHandler.html">RequestHandler</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">apis</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html">Ticket</a></span></span></li>
+  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">apis</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html">Ticket</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-apis">apis</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">auth</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/auth/authentication.js~Authentication.html">Authentication</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/auth/jwt.js~Jwt.html">Jwt</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-auth">auth</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">request</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html">RequestHandler</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-basePrefix">basePrefix</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-transformResponse">transformResponse</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -58,28 +59,28 @@ export class Jwt extends Authentication {
      * @returns {string}
      */
     static type() {
-        return &apos;jwt&apos;;
+        return &apos;Jwt&apos;;
     }
 
     /**
-     * Get formatted authentication headers
+     * Get formatted authentication settings
      *
      * @returns {object}
      */
-    get headers() {
-        let headers = {
-            &apos;x-access-token&apos;: this.token
+    getSettings() {
+        return {
+            headers: {
+                &apos;Authorization&apos;: `Bearer ${this.getToken()}`
+            }
         };
-
-        return headers;
     }
 
     /**
      * Set authentication token value
      *
-     * @param {string} - JWT Token value
+     * @param {string} token - JWT Token value
      */
-    set token(token) {
+    setToken(token) {
         this.authData = token;
     }
 
@@ -88,7 +89,7 @@ export class Jwt extends Authentication {
      *
      * @returns {string}
      */
-    get token() {
+    getToken() {
         return this.authData;
     }
 }

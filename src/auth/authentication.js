@@ -5,7 +5,7 @@ export class Authentication {
      * @param {object|string} data - Authentication data.
      */
     set authData(data) {
-        this._data = data;
+        this._authData = data;
     }
 
     /**
@@ -14,7 +14,7 @@ export class Authentication {
      * @returns {object|string}
      */
     get authData() {
-        return this._data;
+        return this._authData;
     }
 }
 

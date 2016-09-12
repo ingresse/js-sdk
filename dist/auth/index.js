@@ -7,6 +7,6 @@ exports.auth = undefined;
 
 var _jwt = require('./jwt');
 
-var auth = exports.auth = {
-    Jwt: _jwt.Jwt
-};
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var auth = exports.auth = _defineProperty({}, _jwt.Jwt.type(), _jwt.Jwt);

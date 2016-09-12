@@ -1,23 +1,38 @@
 import {apis} from './apis';
+import {version} from '../package.json';
 
 
+/**
+ * Ingresse JavaScript SDK
+ */
 class IngresseSdk {
     /**
-     * Initialize Ingresse API's SDK
+     * Instantiate the SDK
      *
      * @param {object} [settings] - SDK configuration settings
+     *
+     * @example
+     * ```
+     * var Sdk = require('ingresse-sdk');
+     *
+     * var ingresse = new Sdk({
+     *   ticket: {
+     *     url: 'http://hml.ticket.ingresse.com'
+     *   }
+     * });
+     * ```
      */
     constructor(settings = {}) {
         this._init(settings);
     }
 
     /**
-     * Sdk Version
+     * Ingresse Sdk Version
      *
-     * @return {string}
+     * @returns {string}
      */
     static version() {
-        return '{{version}}';
+        return version;
     }
 
     /**
@@ -26,9 +41,9 @@ class IngresseSdk {
      * @param {object} settings - SDK settings.
      */
     _init(settings = {}) {
-        let list = settings.apis || Object.keys(apis);
+        let apiList = settings.apis || Object.keys(apis);
 
-        list.map((key) => {
+        apiList.map((key) => {
             let Api = apis[key];
 
             if (Api) {

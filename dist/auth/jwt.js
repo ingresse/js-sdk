@@ -25,54 +25,61 @@ var Jwt = exports.Jwt = function (_Authentication) {
     }
 
     /**
-     * Type of the Authentication
+     * Authentication type e.g. Jwt, BasicAuth
      *
      * @returns {string}
      */
 
 
     _createClass(Jwt, [{
-        key: 'headers',
+        key: 'getSettings',
 
 
         /**
-         * Get formatted authentication headers
+         * Get formatted authentication settings
          *
          * @returns {object}
          */
-        get: function get() {
-            var headers = {
-                'Authorization': 'Bearer ' + this.token
+        value: function getSettings() {
+            return {
+                headers: {
+                    'Authorization': 'Bearer ' + this.getToken()
+                }
             };
-
-            return headers;
         }
 
         /**
-         * Set authentication token value
+         * Set Jwt authentication token value
          *
-         * @param {string} - JWT Token value
+         * @example
+         * ```
+         * ingresse.ticket.auth.setToken('12345.67890.1234')
+         * ```
+         *
+         * @param {string} token - JWT Token value
          */
 
     }, {
-        key: 'token',
-        set: function set(token) {
+        key: 'setToken',
+        value: function setToken(token) {
             this.authData = token;
         }
 
         /**
-         * Get authentication token value
+         * Get Jwt authentication token value
          *
          * @returns {string}
          */
-        ,
-        get: function get() {
+
+    }, {
+        key: 'getToken',
+        value: function getToken() {
             return this.authData;
         }
     }], [{
         key: 'type',
         value: function type() {
-            return 'jwt';
+            return 'Jwt';
         }
     }]);
 

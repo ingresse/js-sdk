@@ -1,0 +1,29 @@
+<head>
+    <!-- Include Ingresse SDK -->
+    <script src="https://cdn.ingresse.com/sdk/ingresse-sdk.js"></script>
+
+    <script>
+        // Require Ingresse JS SDK
+        var Sdk = require('ingresse-sdk');
+
+        // Create a new SDK instance passing configuration
+        // params for the Ticket API
+        var ingresse = new Sdk({
+            ticket: {
+                url: 'http://hml.ticket.ingresse.com'
+            }
+        });
+
+        // Set the auth token for the ticket api
+        ingresse.ticket.auth.setToken('1f2e3ggef4e5.gedgwevrwg.23f2f');
+
+        // Get ticket item with ID: 570
+        ingresse.ticket.getItem('570')
+            .then(function (response) {
+                console.log(response)
+
+            }).catch(function (error) {
+                console.log(error)
+            });
+    </script>
+</head>
