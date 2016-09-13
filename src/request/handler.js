@@ -80,7 +80,7 @@ export class RequestHandler {
         let request = {
             method: 'POST',
             url   : path,
-            data  : data,
+            body  : data,
             query : query,
         };
 
@@ -100,7 +100,7 @@ export class RequestHandler {
         let request = {
             method: 'PUT',
             url   : path,
-            data  : data,
+            body  : data,
             query : query,
         };
 

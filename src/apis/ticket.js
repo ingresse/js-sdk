@@ -18,7 +18,7 @@ export class Ticket extends RequestHandler {
     /**
      * Ticket Api
      *
-     * @param {object} [custom = {}] - Initialize Ticket Api settings.
+     * @param {object} [custom={}] - Initialize Ticket Api settings.
      */
     constructor(custom = {}) {
         let settings = {
