@@ -498,9 +498,9 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/index.js",
-    "file/src/index.js.html",
-    "src/index.js",
+    "src/ingresse-sdk.js",
+    "file/src/ingresse-sdk.js.html",
+    "src/ingresse-sdk.js",
     "file"
   ],
   [

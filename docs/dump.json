@@ -496,7 +496,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import {Authentication} from './authentication';\n\n\nexport class Jwt extends Authentication {\n    constructor() {\n        super();\n    }\n\n    /**\n     * Type of the Authentication\n     *\n     * @returns {string}\n     */\n    static type() {\n        return 'Jwt';\n    }\n\n    /**\n     * Get formatted authentication settings\n     *\n     * @returns {object}\n     */\n    getSettings() {\n        return {\n            headers: {\n                'Authorization': `Bearer ${this.getToken()}`\n            }\n        };\n    }\n\n    /**\n     * Set authentication token value\n     *\n     * @param {string} token - JWT Token value\n     */\n    setToken(token) {\n        this.authData = token;\n    }\n\n    /**\n     * Get authentication token value\n     *\n     * @returns {string}\n     */\n    getToken() {\n        return this.authData;\n    }\n}\n\n"
+    "content": "import {Authentication} from './authentication';\n\n\nexport class Jwt extends Authentication {\n    constructor() {\n        super();\n    }\n\n    /**\n     * Authentication type e.g. Jwt, BasicAuth\n     *\n     * @returns {string}\n     */\n    static type() {\n        return 'Jwt';\n    }\n\n    /**\n     * Get formatted authentication settings\n     *\n     * @returns {object}\n     */\n    getSettings() {\n        return {\n            headers: {\n                'Authorization': `Bearer ${this.getToken()}`\n            }\n        };\n    }\n\n    /**\n     * Set Jwt authentication token value\n     *\n     * @example\n     * ```\n     * ingresse.ticket.auth.setToken('12345.67890.1234')\n     * ```\n     *\n     * @param {string} token - JWT Token value\n     */\n    setToken(token) {\n        this.authData = token;\n    }\n\n    /**\n     * Get Jwt authentication token value\n     *\n     * @returns {string}\n     */\n    getToken() {\n        return this.authData;\n    }\n}\n\n"
   },
   {
     "__docId__": 18,
@@ -542,7 +542,7 @@
     "memberof": "src/auth/jwt.js~Jwt",
     "longname": "src/auth/jwt.js~Jwt.type",
     "access": null,
-    "description": "Type of the Authentication",
+    "description": "Authentication type e.g. Jwt, BasicAuth",
     "lineNumber": 14,
     "unknown": [
       {
@@ -598,8 +598,11 @@
     "memberof": "src/auth/jwt.js~Jwt",
     "longname": "src/auth/jwt.js~Jwt#setToken",
     "access": null,
-    "description": "Set authentication token value",
-    "lineNumber": 36,
+    "description": "Set Jwt authentication token value",
+    "examples": [
+      "```\ningresse.ticket.auth.setToken('12345.67890.1234')\n```"
+    ],
+    "lineNumber": 41,
     "params": [
       {
         "nullable": null,
@@ -624,7 +627,7 @@
     "longname": "src/auth/jwt.js~Jwt#authData",
     "access": null,
     "description": null,
-    "lineNumber": 37,
+    "lineNumber": 42,
     "undocument": true,
     "type": {
       "types": [
@@ -641,8 +644,8 @@
     "memberof": "src/auth/jwt.js~Jwt",
     "longname": "src/auth/jwt.js~Jwt#getToken",
     "access": null,
-    "description": "Get authentication token value",
-    "lineNumber": 45,
+    "description": "Get Jwt authentication token value",
+    "lineNumber": 50,
     "unknown": [
       {
         "tagName": "@returns",
@@ -665,13 +668,13 @@
     "kind": "file",
     "static": true,
     "variation": null,
-    "name": "src/index.js",
+    "name": "src/ingresse-sdk.js",
     "memberof": null,
-    "longname": "src/index.js",
+    "longname": "src/ingresse-sdk.js",
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import {apis} from './apis';\nimport {version} from '../package.json';\n\n\nclass IngresseSdk {\n    /**\n     * Initialize Ingresse API's SDK\n     *\n     * @param {object} [settings] - SDK configuration settings\n     */\n    constructor(settings = {}) {\n       this._init(settings);\n    }\n\n    /**\n     * Sdk Version\n     *\n     * @returns {string}\n     */\n    static version() {\n        return version;\n    }\n\n    /**\n     * Initialize API's configurations\n     *\n     * @param {object} settings - SDK settings.\n     */\n    _init(settings = {}) {\n        let apiList = settings.apis || Object.keys(apis);\n\n        apiList.map((key) => {\n            let Api = apis[key];\n\n            if (Api) {\n                let options = settings[key] || null;\n                this[key]   = new Api(options);\n            }\n        });\n    }\n}\n\nmodule.exports = IngresseSdk\nmodule.exports.default = IngresseSdk\n\n"
+    "content": "import {apis} from './apis';\nimport {version} from '../package.json';\n\n\n/**\n * Ingresse JavaScript SDK\n */\nclass IngresseSdk {\n    /**\n     * Instantiate the SDK\n     *\n     * @param {object} [settings] - SDK configuration settings\n     *\n     * @example\n     * ```\n     * var Sdk = require('ingresse-sdk');\n     *\n     * var ingresse = new Sdk({\n     *   ticket: {\n     *     url: 'http://hml.ticket.ingresse.com'\n     *   }\n     * });\n     * ```\n     */\n    constructor(settings = {}) {\n        this._init(settings);\n    }\n\n    /**\n     * Ingresse Sdk Version\n     *\n     * @returns {string}\n     */\n    static version() {\n        return version;\n    }\n\n    /**\n     * Initialize API's configurations\n     *\n     * @param {object} settings - SDK settings.\n     */\n    _init(settings = {}) {\n        let apiList = settings.apis || Object.keys(apis);\n\n        apiList.map((key) => {\n            let Api = apis[key];\n\n            if (Api) {\n                let options = settings[key] || null;\n                this[key]   = new Api(options);\n            }\n        });\n    }\n}\n\nmodule.exports = IngresseSdk\nmodule.exports.default = IngresseSdk\n\n"
   },
   {
     "__docId__": 26,
@@ -679,15 +682,14 @@
     "static": true,
     "variation": null,
     "name": "IngresseSdk",
-    "memberof": "src/index.js",
-    "longname": "src/index.js~IngresseSdk",
+    "memberof": "src/ingresse-sdk.js",
+    "longname": "src/ingresse-sdk.js~IngresseSdk",
     "access": null,
     "export": false,
-    "importPath": "ingresse-sdk/src/index.js",
+    "importPath": "ingresse-sdk/src/ingresse-sdk.js",
     "importStyle": null,
-    "description": null,
-    "lineNumber": 5,
-    "undocument": true,
+    "description": "Ingresse JavaScript SDK",
+    "lineNumber": 8,
     "interface": false
   },
   {
@@ -696,11 +698,14 @@
     "static": false,
     "variation": null,
     "name": "constructor",
-    "memberof": "src/index.js~IngresseSdk",
-    "longname": "src/index.js~IngresseSdk#constructor",
+    "memberof": "src/ingresse-sdk.js~IngresseSdk",
+    "longname": "src/ingresse-sdk.js~IngresseSdk#constructor",
     "access": null,
-    "description": "Initialize Ingresse API's SDK",
-    "lineNumber": 11,
+    "description": "Instantiate the SDK",
+    "examples": [
+      "```\nvar Sdk = require('ingresse-sdk');\n\nvar ingresse = new Sdk({\n  ticket: {\n    url: 'http://hml.ticket.ingresse.com'\n  }\n});\n```"
+    ],
+    "lineNumber": 25,
     "params": [
       {
         "nullable": null,
@@ -721,11 +726,11 @@
     "static": true,
     "variation": null,
     "name": "version",
-    "memberof": "src/index.js~IngresseSdk",
-    "longname": "src/index.js~IngresseSdk.version",
+    "memberof": "src/ingresse-sdk.js~IngresseSdk",
+    "longname": "src/ingresse-sdk.js~IngresseSdk.version",
     "access": null,
-    "description": "Sdk Version",
-    "lineNumber": 20,
+    "description": "Ingresse Sdk Version",
+    "lineNumber": 34,
     "unknown": [
       {
         "tagName": "@returns",
@@ -749,11 +754,11 @@
     "static": false,
     "variation": null,
     "name": "_init",
-    "memberof": "src/index.js~IngresseSdk",
-    "longname": "src/index.js~IngresseSdk#_init",
+    "memberof": "src/ingresse-sdk.js~IngresseSdk",
+    "longname": "src/ingresse-sdk.js~IngresseSdk#_init",
     "access": null,
     "description": "Initialize API's configurations",
-    "lineNumber": 29,
+    "lineNumber": 43,
     "params": [
       {
         "nullable": null,
@@ -779,7 +784,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import popsicle from 'popsicle';\nimport {plugins} from 'popsicle';\nimport {basePrefix, transformResponse} from './plugins';\nimport {auth} from '../auth';\nimport status from 'popsicle-status';\n\n\nexport class RequestHandler {\n    /**\n     * Initialize request handler\n     *\n     * @param {object} settings - Settings\n     */\n    constructor(settings = {}) {\n        this.settings = settings;\n\n        if (auth[settings.auth]) {\n            this.auth = new auth[settings.auth]();\n        }\n    }\n\n    /**\n     * Create new request promise\n     *\n     * @private\n     * @param {object} options - request options.\n     *\n     * @returns {Promise}\n     */\n    request(options = {}) {\n        let request = {\n            headers: {\n                'User-Agent': 'Ingresse JS SDK',\n            },\n        };\n\n        if (this.auth) {\n            Object.assign(request, this.auth.getSettings());\n        }\n\n        Object.assign(request, options);\n\n        return popsicle(request)\n            .use(transformResponse())\n            .use(basePrefix(this.settings.url))\n            .use(plugins.parse(['json']));\n    }\n\n    /**\n     * Get resource\n     *\n     * @param {string} path    - Request get to endpoint e.g. /api-path/1\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    get(path, query) {\n        let request = {\n            method: 'GET',\n            url   : path,\n            query : query,\n        };\n\n        return this.request(request);\n    }\n\n    /**\n     * Post resource\n     *\n     * @param {string} path    - Request post to endpoint e.g. /api-path\n     * @param {object} data    - Data to be posted.\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    post(path, data, query) {\n        let request = {\n            method: 'POST',\n            url   : path,\n            data  : data,\n            query : query,\n        };\n\n        return this.request(request);\n    }\n\n    /**\n     * Put resource\n     *\n     * @param {string} path    - Request put to end endpoint e.g. /api-path/1\n     * @param {object} data    - Data to be updated.\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    put(path, data, query) {\n        let request = {\n            method: 'PUT',\n            url   : path,\n            data  : data,\n            query : query,\n        };\n\n        return this.request(request);\n    }\n\n    /**\n     * Delete resource\n     *\n     * @param {string} path    - Request delete to endpoint e.g. /api-path/1\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    delete(path, query) {\n        let request = {\n            method: 'DELETE',\n            url   : path,\n            query : query,\n        };\n\n        return this.request(request);\n    }\n}\n\n"
+    "content": "import popsicle from 'popsicle';\nimport {plugins} from 'popsicle';\nimport {basePrefix, transformResponse} from './plugins';\nimport {auth} from '../auth';\nimport status from 'popsicle-status';\n\n\n/**\n * Base request handler for all the API's\n * with `get`, `post`, `put` and `delete` methods\n */\nexport class RequestHandler {\n    /**\n     * Initialize request handler\n     *\n     * @param {object} settings - Settings\n     */\n    constructor(settings = {}) {\n        this.settings = settings;\n\n        if (auth[settings.auth]) {\n            this.auth = new auth[settings.auth]();\n        }\n    }\n\n    /**\n     * Create new request promise\n     *\n     * @private\n     * @param {object} options - request options.\n     *\n     * @returns {Promise}\n     */\n    request(options = {}) {\n        let request = {\n            headers: {\n                'User-Agent': 'Ingresse JS SDK',\n            },\n        };\n\n        if (this.auth) {\n            Object.assign(request, this.auth.getSettings());\n        }\n\n        Object.assign(request, options);\n\n        return popsicle(request)\n            .use(transformResponse())\n            .use(basePrefix(this.settings.url))\n            .use(plugins.parse(['json']));\n    }\n\n    /**\n     * Get resource\n     *\n     * @param {string} path    - Request get to endpoint e.g. /api-path/1\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    get(path, query) {\n        let request = {\n            method: 'GET',\n            url   : path,\n            query : query,\n        };\n\n        return this.request(request);\n    }\n\n    /**\n     * Post resource\n     *\n     * @param {string} path    - Request post to endpoint e.g. /api-path\n     * @param {object} data    - Data to be posted.\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    post(path, data, query) {\n        let request = {\n            method: 'POST',\n            url   : path,\n            data  : data,\n            query : query,\n        };\n\n        return this.request(request);\n    }\n\n    /**\n     * Put resource\n     *\n     * @param {string} path    - Request put to end endpoint e.g. /api-path/1\n     * @param {object} data    - Data to be updated.\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    put(path, data, query) {\n        let request = {\n            method: 'PUT',\n            url   : path,\n            data  : data,\n            query : query,\n        };\n\n        return this.request(request);\n    }\n\n    /**\n     * Delete resource\n     *\n     * @param {string} path    - Request delete to endpoint e.g. /api-path/1\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    delete(path, query) {\n        let request = {\n            method: 'DELETE',\n            url   : path,\n            query : query,\n        };\n\n        return this.request(request);\n    }\n}\n\n"
   },
   {
     "__docId__": 31,
@@ -793,9 +798,8 @@
     "export": true,
     "importPath": "ingresse-sdk/src/request/handler.js",
     "importStyle": "{RequestHandler}",
-    "description": null,
-    "lineNumber": 8,
-    "undocument": true,
+    "description": "Base request handler for all the API's\nwith `get`, `post`, `put` and `delete` methods",
+    "lineNumber": 12,
     "interface": false
   },
   {
@@ -808,7 +812,7 @@
     "longname": "src/request/handler.js~RequestHandler#constructor",
     "access": null,
     "description": "Initialize request handler",
-    "lineNumber": 14,
+    "lineNumber": 18,
     "params": [
       {
         "nullable": null,
@@ -833,7 +837,7 @@
     "longname": "src/request/handler.js~RequestHandler#settings",
     "access": null,
     "description": null,
-    "lineNumber": 15,
+    "lineNumber": 19,
     "undocument": true,
     "type": {
       "types": [
@@ -851,7 +855,7 @@
     "longname": "src/request/handler.js~RequestHandler#auth",
     "access": null,
     "description": null,
-    "lineNumber": 18,
+    "lineNumber": 22,
     "undocument": true,
     "type": {
       "types": [
@@ -869,7 +873,7 @@
     "longname": "src/request/handler.js~RequestHandler#request",
     "access": "private",
     "description": "Create new request promise",
-    "lineNumber": 30,
+    "lineNumber": 34,
     "unknown": [
       {
         "tagName": "@returns",
@@ -908,7 +912,7 @@
     "longname": "src/request/handler.js~RequestHandler#get",
     "access": null,
     "description": "Get resource",
-    "lineNumber": 57,
+    "lineNumber": 61,
     "unknown": [
       {
         "tagName": "@returns",
@@ -957,7 +961,7 @@
     "longname": "src/request/handler.js~RequestHandler#post",
     "access": null,
     "description": "Post resource",
-    "lineNumber": 76,
+    "lineNumber": 80,
     "unknown": [
       {
         "tagName": "@returns",
@@ -1016,7 +1020,7 @@
     "longname": "src/request/handler.js~RequestHandler#put",
     "access": null,
     "description": "Put resource",
-    "lineNumber": 96,
+    "lineNumber": 100,
     "unknown": [
       {
         "tagName": "@returns",
@@ -1075,7 +1079,7 @@
     "longname": "src/request/handler.js~RequestHandler#delete",
     "access": null,
     "description": "Delete resource",
-    "lineNumber": 115,
+    "lineNumber": 119,
     "unknown": [
       {
         "tagName": "@returns",

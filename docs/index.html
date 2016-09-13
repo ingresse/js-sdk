@@ -46,7 +46,31 @@
 
 <div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="ingresse-js-sdk">Ingresse JS SDK</h1>
 <p>This is the new <a href="https://www.ingresse.com">Ingresse</a> JS SDk for <strong>NodeJs</strong> and <strong>Browser</strong>.</p>
-<h2 id="browser-support">Browser Support</h2>
+<p>Supported API&apos;s:</p>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Authentication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tickets</td>
+<td>JWT</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="install">Install</h2>
+<p>To use in <code>node</code>:</p>
+<pre><code><code class="source-code prettyprint">$ npm install --save ingresse-sdk</code>
+</code></pre><p>To use in the <code>browser</code>:</p>
+<pre><code class="lang-html"><code class="source-code prettyprint">&lt;script src=&quot;https://cdn.ingresse.com/sdk/ingresse-sdk.js&quot;&gt;&lt;/script&gt;</code>
+</code></pre>
+<h2 id="how-to-use">How to use</h2>
+<h3 id="in-the-browser">In the Browser</h3>
+<h4 id="browser-support">Browser Support</h4>
 <table>
 <thead>
 <tr>
@@ -70,9 +94,85 @@
 </tr>
 </tbody>
 </table>
+<p>To use in browser include the script <code>dist/browser/ingresse-sdk.js</code> in your <code>.html</code>
+and create a new instance of the Sdk.</p>
+<pre><code class="lang-html"><code class="source-code prettyprint">&lt;head&gt;
+    &lt;!-- Include Ingresse SDK --&gt;
+    &lt;script src=&quot;ingresse-sdk.js&quot;&gt;&lt;/script&gt;
+
+    &lt;script&gt;
+        // Require Ingresse JS SDK
+        var Sdk = require(&apos;ingresse-sdk&apos;);
+
+        // Create a new SDK instance
+        var ingresse = new Sdk();
+
+        // Set the auth token for the ticket api
+        ingresse.ticket.auth.setToken(&apos;1f2e3ggef4e5.gedgwevrwg.23f2f&apos;);
+
+        // Get ticket item with ID: 570
+        ingresse.ticket.getItem(&apos;570&apos;)
+            .then(function (response) {
+                console.log(response)
+
+            }).catch(function (error) {
+                console.log(error)
+            });
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;&lt;/body&gt;</code>
+</code></pre>
+<p>You can also customize some of the Sdk configuration
+like the url of the API you want to use.</p>
+<pre><code class="lang-html"><code class="source-code prettyprint">&lt;head&gt;
+    &lt;!-- Include Ingresse SDK --&gt;
+    &lt;script src=&quot;ingresse-sdk.js&quot;&gt;&lt;/script&gt;
+
+    &lt;script&gt;
+        // Require Ingresse JS SDK
+        var Sdk = require(&apos;ingresse-sdk&apos;);
+
+        // Create a new SDK instance passing configuration
+        // params for the Ticket API
+        var ingresse = new Sdk({
+            ticket: {
+                url: &apos;http://hml.ticket.ingresse.com&apos;
+            }
+        });
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;&lt;/body&gt;</code>
+</code></pre>
+<h2 id="in-node">In Node</h2>
+<p>To use in <code>node</code> first install with <code>npm</code>:</p>
+<pre><code><code class="source-code prettyprint">$ npm install --save ingresse-sdk</code>
+</code></pre><p>Then you can require the module to use:</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var Sdk = require(&apos;ingresse-sdk&apos;);
+
+var ingresse = new Sdk({
+    ticket: {
+        url: &apos;http://hml.ticket.ingresse.com&apos;
+    }
+});
+
+ingresse.ticket.auth.setToken(&apos;123455&apos;);
+
+// Get tickt item with ID: 570
+ingresse.ticket.getItem(&apos;570&apos;)
+    .then(function (response) {
+        console.log(response);
+    })
+    .catch(function (error) {
+        console.log(error);
+    });</code>
+</code></pre>
 <h1 id="development">Development</h1>
-<p>To build the node|browser module run the command:</p>
+<p>To build the <code>node</code>|<code>browser</code> module run the command:</p>
 <pre><code><code class="source-code prettyprint">$ npm run build</code>
+</code></pre><p>To generete the docs run the command:</p>
+<pre><code><code class="source-code prettyprint">$ npm run docs</code>
 </code></pre></div>
 </div>
 
