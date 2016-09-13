@@ -1,6 +1,6 @@
 # Ingresse JS SDK
 
-This is the new [Ingresse](https://www.ingresse.com) JS SDk for **NodeJs** and **Browser**.
+This is the new [Ingresse](https://www.ingresse.com) JS SDK for **node** and **Browser**.
 
 Supported API's:
 
@@ -40,7 +40,7 @@ and create a new instance of the Sdk.
 ```html
 <head>
     <!-- Include Ingresse SDK -->
-    <script src="ingresse-sdk.js"></script>
+    <script src="https://cdn.ingresse.com/sdk/ingresse-sdk.js"></script>
 
     <script>
         // Require Ingresse JS SDK
@@ -73,7 +73,7 @@ like the url of the API you want to use.
 ```html
 <head>
     <!-- Include Ingresse SDK -->
-    <script src="ingresse-sdk.js"></script>
+    <script src="https://cdn.ingresse.com/sdk/ingresse-sdk.js"></script>
 
     <script>
         // Require Ingresse JS SDK

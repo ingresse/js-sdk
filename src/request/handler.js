@@ -26,7 +26,6 @@ export class RequestHandler {
     /**
      * Create new request promise
      *
-     * @private
      * @param {object} options - request options.
      *
      * @returns {Promise}
