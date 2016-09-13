@@ -8,7 +8,7 @@ var ingresse = new Sdk({
 
 ingresse.ticket.auth.setToken('123455');
 
-// Get tickt item with ID: 570
+// Get ticket item with ID: 570
 ingresse.ticket.getItem('570')
     .then(function (response) {
         console.log(response);
