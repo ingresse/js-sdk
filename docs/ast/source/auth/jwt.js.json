@@ -808,10 +808,10 @@
               "trailingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n     * Set Jwt authentication token value\n     *\n     * @example\n     * ```\n     * ingresse.ticket.auth.setToken('12345.67890.1234')\n     * ```\n     *\n     * @param {string} token - JWT Token value\n     ",
+                  "value": "*\n     * Set Jwt authentication token value\n     *\n     * @param {string} token - JWT Token value\n     *\n     * @example\n     * ingresse.ticket.auth.setToken('12345.67890.1234');\n     ",
                   "range": [
                     531,
-                    740
+                    719
                   ],
                   "loc": {
                     "start": {
@@ -819,7 +819,7 @@
                       "column": 4
                     },
                     "end": {
-                      "line": 40,
+                      "line": 38,
                       "column": 7
                     }
                   }
@@ -833,16 +833,16 @@
                 "type": "Identifier",
                 "name": "setToken",
                 "range": [
-                  745,
-                  753
+                  724,
+                  732
                 ],
                 "loc": {
                   "start": {
-                    "line": 41,
+                    "line": 39,
                     "column": 4
                   },
                   "end": {
-                    "line": 41,
+                    "line": 39,
                     "column": 12
                   }
                 }
@@ -855,16 +855,16 @@
                     "type": "Identifier",
                     "name": "token",
                     "range": [
-                      754,
-                      759
+                      733,
+                      738
                     ],
                     "loc": {
                       "start": {
-                        "line": 41,
+                        "line": 39,
                         "column": 13
                       },
                       "end": {
-                        "line": 41,
+                        "line": 39,
                         "column": 18
                       }
                     }
@@ -884,16 +884,16 @@
                           "object": {
                             "type": "ThisExpression",
                             "range": [
-                              771,
-                              775
+                              750,
+                              754
                             ],
                             "loc": {
                               "start": {
-                                "line": 42,
+                                "line": 40,
                                 "column": 8
                               },
                               "end": {
-                                "line": 42,
+                                "line": 40,
                                 "column": 12
                               }
                             }
@@ -902,31 +902,31 @@
                             "type": "Identifier",
                             "name": "authData",
                             "range": [
-                              776,
-                              784
+                              755,
+                              763
                             ],
                             "loc": {
                               "start": {
-                                "line": 42,
+                                "line": 40,
                                 "column": 13
                               },
                               "end": {
-                                "line": 42,
+                                "line": 40,
                                 "column": 21
                               }
                             }
                           },
                           "range": [
-                            771,
-                            784
+                            750,
+                            763
                           ],
                           "loc": {
                             "start": {
-                              "line": 42,
+                              "line": 40,
                               "column": 8
                             },
                             "end": {
-                              "line": 42,
+                              "line": 40,
                               "column": 21
                             }
                           }
@@ -935,62 +935,62 @@
                           "type": "Identifier",
                           "name": "token",
                           "range": [
-                            787,
-                            792
+                            766,
+                            771
                           ],
                           "loc": {
                             "start": {
-                              "line": 42,
+                              "line": 40,
                               "column": 24
                             },
                             "end": {
-                              "line": 42,
+                              "line": 40,
                               "column": 29
                             }
                           }
                         },
                         "range": [
-                          771,
-                          792
+                          750,
+                          771
                         ],
                         "loc": {
                           "start": {
-                            "line": 42,
+                            "line": 40,
                             "column": 8
                           },
                           "end": {
-                            "line": 42,
+                            "line": 40,
                             "column": 29
                           }
                         }
                       },
                       "range": [
-                        771,
-                        793
+                        750,
+                        772
                       ],
                       "loc": {
                         "start": {
-                          "line": 42,
+                          "line": 40,
                           "column": 8
                         },
                         "end": {
-                          "line": 42,
+                          "line": 40,
                           "column": 30
                         }
                       }
                     }
                   ],
                   "range": [
-                    761,
-                    799
+                    740,
+                    778
                   ],
                   "loc": {
                     "start": {
-                      "line": 41,
+                      "line": 39,
                       "column": 20
                     },
                     "end": {
-                      "line": 43,
+                      "line": 41,
                       "column": 5
                     }
                   }
@@ -998,16 +998,16 @@
                 "generator": false,
                 "expression": false,
                 "range": [
-                  753,
-                  799
+                  732,
+                  778
                 ],
                 "loc": {
                   "start": {
-                    "line": 41,
+                    "line": 39,
                     "column": 12
                   },
                   "end": {
-                    "line": 43,
+                    "line": 41,
                     "column": 5
                   }
                 }
@@ -1015,26 +1015,26 @@
               "kind": "method",
               "computed": false,
               "range": [
-                745,
-                799
+                724,
+                778
               ],
               "loc": {
                 "start": {
-                  "line": 41,
+                  "line": 39,
                   "column": 4
                 },
                 "end": {
-                  "line": 43,
+                  "line": 41,
                   "column": 5
                 }
               },
               "leadingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n     * Set Jwt authentication token value\n     *\n     * @example\n     * ```\n     * ingresse.ticket.auth.setToken('12345.67890.1234')\n     * ```\n     *\n     * @param {string} token - JWT Token value\n     ",
+                  "value": "*\n     * Set Jwt authentication token value\n     *\n     * @param {string} token - JWT Token value\n     *\n     * @example\n     * ingresse.ticket.auth.setToken('12345.67890.1234');\n     ",
                   "range": [
                     531,
-                    740
+                    719
                   ],
                   "loc": {
                     "start": {
@@ -1042,7 +1042,7 @@
                       "column": 4
                     },
                     "end": {
-                      "line": 40,
+                      "line": 38,
                       "column": 7
                     }
                   }
@@ -1051,18 +1051,18 @@
               "trailingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n     * Get Jwt authentication token value\n     *\n     * @returns {string}\n     ",
+                  "value": "*\n     * Get Jwt authentication token value\n     *\n     * @returns {string}\n     *\n     * @example\n     * ingresse.ticket.auth.getToken();\n     ",
                   "range": [
-                    805,
-                    890
+                    784,
+                    932
                   ],
                   "loc": {
                     "start": {
-                      "line": 45,
+                      "line": 43,
                       "column": 4
                     },
                     "end": {
-                      "line": 49,
+                      "line": 50,
                       "column": 7
                     }
                   }
@@ -1076,16 +1076,16 @@
                 "type": "Identifier",
                 "name": "getToken",
                 "range": [
-                  895,
-                  903
+                  937,
+                  945
                 ],
                 "loc": {
                   "start": {
-                    "line": 50,
+                    "line": 51,
                     "column": 4
                   },
                   "end": {
-                    "line": 50,
+                    "line": 51,
                     "column": 12
                   }
                 }
@@ -1105,16 +1105,16 @@
                         "object": {
                           "type": "ThisExpression",
                           "range": [
-                            923,
-                            927
+                            965,
+                            969
                           ],
                           "loc": {
                             "start": {
-                              "line": 51,
+                              "line": 52,
                               "column": 15
                             },
                             "end": {
-                              "line": 51,
+                              "line": 52,
                               "column": 19
                             }
                           }
@@ -1123,62 +1123,62 @@
                           "type": "Identifier",
                           "name": "authData",
                           "range": [
-                            928,
-                            936
+                            970,
+                            978
                           ],
                           "loc": {
                             "start": {
-                              "line": 51,
+                              "line": 52,
                               "column": 20
                             },
                             "end": {
-                              "line": 51,
+                              "line": 52,
                               "column": 28
                             }
                           }
                         },
                         "range": [
-                          923,
-                          936
+                          965,
+                          978
                         ],
                         "loc": {
                           "start": {
-                            "line": 51,
+                            "line": 52,
                             "column": 15
                           },
                           "end": {
-                            "line": 51,
+                            "line": 52,
                             "column": 28
                           }
                         }
                       },
                       "range": [
-                        916,
-                        937
+                        958,
+                        979
                       ],
                       "loc": {
                         "start": {
-                          "line": 51,
+                          "line": 52,
                           "column": 8
                         },
                         "end": {
-                          "line": 51,
+                          "line": 52,
                           "column": 29
                         }
                       }
                     }
                   ],
                   "range": [
-                    906,
-                    943
+                    948,
+                    985
                   ],
                   "loc": {
                     "start": {
-                      "line": 50,
+                      "line": 51,
                       "column": 15
                     },
                     "end": {
-                      "line": 52,
+                      "line": 53,
                       "column": 5
                     }
                   }
@@ -1186,16 +1186,16 @@
                 "generator": false,
                 "expression": false,
                 "range": [
-                  903,
-                  943
+                  945,
+                  985
                 ],
                 "loc": {
                   "start": {
-                    "line": 50,
+                    "line": 51,
                     "column": 12
                   },
                   "end": {
-                    "line": 52,
+                    "line": 53,
                     "column": 5
                   }
                 }
@@ -1203,34 +1203,34 @@
               "kind": "method",
               "computed": false,
               "range": [
-                895,
-                943
+                937,
+                985
               ],
               "loc": {
                 "start": {
-                  "line": 50,
+                  "line": 51,
                   "column": 4
                 },
                 "end": {
-                  "line": 52,
+                  "line": 53,
                   "column": 5
                 }
               },
               "leadingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n     * Get Jwt authentication token value\n     *\n     * @returns {string}\n     ",
+                  "value": "*\n     * Get Jwt authentication token value\n     *\n     * @returns {string}\n     *\n     * @example\n     * ingresse.ticket.auth.getToken();\n     ",
                   "range": [
-                    805,
-                    890
+                    784,
+                    932
                   ],
                   "loc": {
                     "start": {
-                      "line": 45,
+                      "line": 43,
                       "column": 4
                     },
                     "end": {
-                      "line": 49,
+                      "line": 50,
                       "column": 7
                     }
                   }
@@ -1241,7 +1241,7 @@
           ],
           "range": [
             91,
-            945
+            987
           ],
           "loc": {
             "start": {
@@ -1249,14 +1249,14 @@
               "column": 40
             },
             "end": {
-              "line": 53,
+              "line": 54,
               "column": 1
             }
           }
         },
         "range": [
           58,
-          945
+          987
         ],
         "loc": {
           "start": {
@@ -1264,7 +1264,7 @@
             "column": 7
           },
           "end": {
-            "line": 53,
+            "line": 54,
             "column": 1
           }
         },
@@ -1275,7 +1275,7 @@
       "source": null,
       "range": [
         51,
-        945
+        987
       ],
       "loc": {
         "start": {
@@ -1283,7 +1283,7 @@
           "column": 0
         },
         "end": {
-          "line": 53,
+          "line": 54,
           "column": 1
         }
       }
@@ -1292,7 +1292,7 @@
   "sourceType": "module",
   "range": [
     0,
-    945
+    987
   ],
   "loc": {
     "start": {
@@ -1300,7 +1300,7 @@
       "column": 0
     },
     "end": {
-      "line": 53,
+      "line": 54,
       "column": 1
     }
   },
@@ -1343,10 +1343,10 @@
     },
     {
       "type": "Block",
-      "value": "*\n     * Set Jwt authentication token value\n     *\n     * @example\n     * ```\n     * ingresse.ticket.auth.setToken('12345.67890.1234')\n     * ```\n     *\n     * @param {string} token - JWT Token value\n     ",
+      "value": "*\n     * Set Jwt authentication token value\n     *\n     * @param {string} token - JWT Token value\n     *\n     * @example\n     * ingresse.ticket.auth.setToken('12345.67890.1234');\n     ",
       "range": [
         531,
-        740
+        719
       ],
       "loc": {
         "start": {
@@ -1354,25 +1354,25 @@
           "column": 4
         },
         "end": {
-          "line": 40,
+          "line": 38,
           "column": 7
         }
       }
     },
     {
       "type": "Block",
-      "value": "*\n     * Get Jwt authentication token value\n     *\n     * @returns {string}\n     ",
+      "value": "*\n     * Get Jwt authentication token value\n     *\n     * @returns {string}\n     *\n     * @example\n     * ingresse.ticket.auth.getToken();\n     ",
       "range": [
-        805,
-        890
+        784,
+        932
       ],
       "loc": {
         "start": {
-          "line": 45,
+          "line": 43,
           "column": 4
         },
         "end": {
-          "line": 49,
+          "line": 50,
           "column": 7
         }
       }

@@ -45,13 +45,13 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {Ticket} from &apos;<span><a href="file/src/apis/ticket.js.html#lineNumber5">ingresse-sdk/src/apis/ticket.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {Ticket} from &apos;<span><a href="file/src/apis/ticket.js.html#lineNumber17">ingresse-sdk/src/apis/ticket.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/src/apis/ticket.js.html#lineNumber5">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/apis/ticket.js.html#lineNumber17">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
@@ -71,11 +71,25 @@
 
   
   
-  
+  <div class="description" data-ice="description"><p>Ingresse Ticket&apos;s API</p>
+<p>API to get, create, update or remove tickets.</p>
+</div>
 
   
 
-  
+  <div data-ice="exampleDocs">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">var Sdk = require(&apos;ingresse-sdk&apos;);
+var ingresse = new Sdk();
+
+// You will have access to this API
+// after instantiate the Sdk.
+var ticket = ingresse.ticket;</code></pre>
+    </div>
+</div>
 
   
 
@@ -196,7 +210,9 @@
       <div>
         
         
-        <div data-ice="description"><p>Get a list of ticket items</p>
+        <div data-ice="description"><p>Get a list of ticket items
+This method will return a <code>Promise</code> so you can use
+<code>.then</code> and <code>.catach</code> methdos.</p>
 </div>
       </div>
     </td>
@@ -490,7 +506,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber11">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber23">source</a></span></span>
     </span>
   </h3>
 
@@ -514,7 +530,7 @@
       <td data-ice="name" data-depth="0">custom</td>
       <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"><p>Initialize Ticket Api settings.</p>
+      <td data-ice="description"><p>= {}] - Initialize Ticket Api settings.</p>
 </td>
     </tr>
 </tbody>
@@ -551,7 +567,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber20">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber32">source</a></span></span>
     </span>
   </h3>
 
@@ -594,7 +610,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber42">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber76">source</a></span></span>
     </span>
   </h3>
 
@@ -651,7 +667,22 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">...
+
+ingresse.ticket.getItem(200)
+    .then(function (response) {
+        console.log(response);
+    })
+    .catch(function (error) {
+        console.log(error);
+    });</code></pre>
+    </div>
+</div>
 
   
 
@@ -669,14 +700,16 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber30">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber54">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Get a list of ticket items</p>
+  <div data-ice="description"><p>Get a list of ticket items
+This method will return a <code>Promise</code> so you can use
+<code>.then</code> and <code>.catach</code> methdos.</p>
 </div>
 
   
@@ -719,7 +752,22 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">...
+
+ingresse.ticket.getItems()
+    .then(function (response) {
+        console.log(response);
+    })
+    .catch(function (error) {
+        console.log(error);
+    });</code></pre>
+    </div>
+</div>
 
   
 
@@ -737,7 +785,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber54">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber98">source</a></span></span>
     </span>
   </h3>
 
@@ -794,7 +842,22 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">...
+
+ingresse.ticket.newItem({ name: &apos;My Ticket Name&apos; })
+    .then(function (response) {
+        console.log(response);
+    })
+    .catch(function (error) {
+        console.log(error);
+    });</code></pre>
+    </div>
+</div>
 
   
 
@@ -812,7 +875,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber79">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber143">source</a></span></span>
     </span>
   </h3>
 
@@ -869,7 +932,22 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">...
+
+ingresse.ticket.removeItem(200)
+    .then(function (response) {
+        console.log(response);
+    })
+    .catch(function (error) {
+        console.log(error);
+    });</code></pre>
+    </div>
+</div>
 
   
 
@@ -887,7 +965,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber67">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber121">source</a></span></span>
     </span>
   </h3>
 
@@ -951,7 +1029,22 @@
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">...
+
+ingresse.ticket.updateItem(200, { name: &apos;My Updated Ticket Name&apos; })
+    .then(function (response) {
+        console.log(response);
+    })
+    .catch(function (error) {
+        console.log(error);
+    });</code></pre>
+    </div>
+</div>
 
   
 

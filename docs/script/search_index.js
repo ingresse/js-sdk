@@ -438,12 +438,6 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/auth/authentication.js~authentication#_authdata",
-    "class/src/auth/authentication.js~Authentication.html#instance-member-_authData",
-    "src/auth/authentication.js~Authentication#_authData",
-    "member"
-  ],
-  [
     "src/auth/authentication.js~authentication#authdata",
     "class/src/auth/authentication.js~Authentication.html#instance-get-authData",
     "src/auth/authentication.js~Authentication#authData",

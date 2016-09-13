@@ -31,12 +31,10 @@ export class Jwt extends Authentication {
     /**
      * Set Jwt authentication token value
      *
-     * @example
-     * ```
-     * ingresse.ticket.auth.setToken('12345.67890.1234')
-     * ```
-     *
      * @param {string} token - JWT Token value
+     *
+     * @example
+     * ingresse.ticket.auth.setToken('12345.67890.1234');
      */
     setToken(token) {
         this.authData = token;
@@ -46,6 +44,9 @@ export class Jwt extends Authentication {
      * Get Jwt authentication token value
      *
      * @returns {string}
+     *
+     * @example
+     * ingresse.ticket.auth.getToken();
      */
     getToken() {
         return this.authData;

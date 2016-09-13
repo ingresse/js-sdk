@@ -44,7 +44,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import {RequestHandler} from '../request/handler';\nimport {auth} from '../auth';\n\n\nexport class Ticket extends RequestHandler {\n    /**\n     * Ticket Api\n     *\n     * @param {object} [custom] - Initialize Ticket Api settings.\n     */\n    constructor(custom = {}) {\n        let settings = {\n            url : 'https://api.ingresse.com/ticket',\n            auth: auth.Jwt.type(),\n        };\n\n        Object.assign(settings, custom);\n        super(settings);\n\n        this.settings = settings;\n    }\n\n    /**\n     * Get a list of ticket items\n     *\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    getItems(query = {}) {\n        return this.get('/items', query);\n    }\n\n    /**\n     * Get item by ID\n     *\n     * @param {string|number} id - The item ID to get.\n     * @param {object} [query]   - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    getItem(id, query = {}) {\n        return this.get(`/items/${id}`, query);\n    }\n\n    /**\n     * Create new Ticket item\n     *\n     * @param {object} data    - Data to create a new ticket item.\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    newItem(data = {}, query = {}) {\n        return this.post('/items', data, query);\n    }\n\n    /**\n     * Update a ticket item\n     *\n     * @param {string|number} id - The item ID to update.\n     * @param {object} data      - Data to update item.\n     * @param {object} [query]   - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    updateItem(id, data = {}, query = {}) {\n        return this.put(`/items/${id}`, data, query);\n    }\n\n    /**\n     * Remove a ticket item\n     *\n     * @param {string|number} id - The item ID to remove.\n     * @param {object} [query]   - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    removeItem(id, query = {}) {\n        return this.delete(id, query);\n    }\n}\n\n"
+    "content": "import {RequestHandler} from '../request/handler';\nimport {auth} from '../auth';\n\n/**\n * Ingresse Ticket's API\n *\n * API to get, create, update or remove tickets.\n *\n * @example\n * var Sdk = require('ingresse-sdk');\n * var ingresse = new Sdk();\n *\n * // You will have access to this API\n * // after instantiate the Sdk.\n * var ticket = ingresse.ticket;\n */\nexport class Ticket extends RequestHandler {\n    /**\n     * Ticket Api\n     *\n     * @param {object} [custom = {}] - Initialize Ticket Api settings.\n     */\n    constructor(custom = {}) {\n        let settings = {\n            url : 'https://api.ingresse.com/ticket',\n            auth: auth.Jwt.type(),\n        };\n\n        Object.assign(settings, custom);\n        super(settings);\n\n        this.settings = settings;\n    }\n\n    /**\n     * Get a list of ticket items\n     * This method will return a `Promise` so you can use\n     * `.then` and `.catach` methdos.\n     *\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.getItems()\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    getItems(query = {}) {\n        return this.get('/items', query);\n    }\n\n    /**\n     * Get item by ID\n     *\n     * @param {string|number} id - The item ID to get.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.getItem(200)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    getItem(id, query = {}) {\n        return this.get(`/items/${id}`, query);\n    }\n\n    /**\n     * Create new Ticket item\n     *\n     * @param {object} data    - Data to create a new ticket item.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.newItem({ name: 'My Ticket Name' })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    newItem(data = {}, query = {}) {\n        return this.post('/items', data, query);\n    }\n\n    /**\n     * Update a ticket item\n     *\n     * @param {string|number} id - The item ID to update.\n     * @param {object} data      - Data to update item.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updateItem(200, { name: 'My Updated Ticket Name' })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    updateItem(id, data = {}, query = {}) {\n        return this.put(`/items/${id}`, data, query);\n    }\n\n    /**\n     * Remove a ticket item\n     *\n     * @param {string|number} id - The item ID to remove.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.removeItem(200)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    removeItem(id, query = {}) {\n        return this.delete(id, query);\n    }\n}\n\n"
   },
   {
     "__docId__": 3,
@@ -58,9 +58,11 @@
     "export": true,
     "importPath": "ingresse-sdk/src/apis/ticket.js",
     "importStyle": "{Ticket}",
-    "description": null,
-    "lineNumber": 5,
-    "undocument": true,
+    "description": "Ingresse Ticket's API\n\nAPI to get, create, update or remove tickets.",
+    "examples": [
+      "var Sdk = require('ingresse-sdk');\nvar ingresse = new Sdk();\n\n// You will have access to this API\n// after instantiate the Sdk.\nvar ticket = ingresse.ticket;"
+    ],
+    "lineNumber": 17,
     "interface": false,
     "extends": [
       "src/request/handler.js~RequestHandler"
@@ -76,7 +78,7 @@
     "longname": "src/apis/ticket.js~Ticket#constructor",
     "access": null,
     "description": "Ticket Api",
-    "lineNumber": 11,
+    "lineNumber": 23,
     "params": [
       {
         "nullable": null,
@@ -86,7 +88,7 @@
         "spread": false,
         "optional": true,
         "name": "custom",
-        "description": "Initialize Ticket Api settings."
+        "description": "= {}] - Initialize Ticket Api settings."
       }
     ],
     "generator": false
@@ -101,7 +103,7 @@
     "longname": "src/apis/ticket.js~Ticket#settings",
     "access": null,
     "description": null,
-    "lineNumber": 20,
+    "lineNumber": 32,
     "undocument": true,
     "type": {
       "types": [
@@ -118,8 +120,11 @@
     "memberof": "src/apis/ticket.js~Ticket",
     "longname": "src/apis/ticket.js~Ticket#getItems",
     "access": null,
-    "description": "Get a list of ticket items",
-    "lineNumber": 30,
+    "description": "Get a list of ticket items\nThis method will return a `Promise` so you can use\n`.then` and `.catach` methdos.",
+    "examples": [
+      "...\n\ningresse.ticket.getItems()\n    .then(function (response) {\n        console.log(response);\n    })\n    .catch(function (error) {\n        console.log(error);\n    });"
+    ],
+    "lineNumber": 54,
     "unknown": [
       {
         "tagName": "@returns",
@@ -158,7 +163,10 @@
     "longname": "src/apis/ticket.js~Ticket#getItem",
     "access": null,
     "description": "Get item by ID",
-    "lineNumber": 42,
+    "examples": [
+      "...\n\ningresse.ticket.getItem(200)\n    .then(function (response) {\n        console.log(response);\n    })\n    .catch(function (error) {\n        console.log(error);\n    });"
+    ],
+    "lineNumber": 76,
     "unknown": [
       {
         "tagName": "@returns",
@@ -208,7 +216,10 @@
     "longname": "src/apis/ticket.js~Ticket#newItem",
     "access": null,
     "description": "Create new Ticket item",
-    "lineNumber": 54,
+    "examples": [
+      "...\n\ningresse.ticket.newItem({ name: 'My Ticket Name' })\n    .then(function (response) {\n        console.log(response);\n    })\n    .catch(function (error) {\n        console.log(error);\n    });"
+    ],
+    "lineNumber": 98,
     "unknown": [
       {
         "tagName": "@returns",
@@ -257,7 +268,10 @@
     "longname": "src/apis/ticket.js~Ticket#updateItem",
     "access": null,
     "description": "Update a ticket item",
-    "lineNumber": 67,
+    "examples": [
+      "...\n\ningresse.ticket.updateItem(200, { name: 'My Updated Ticket Name' })\n    .then(function (response) {\n        console.log(response);\n    })\n    .catch(function (error) {\n        console.log(error);\n    });"
+    ],
+    "lineNumber": 121,
     "unknown": [
       {
         "tagName": "@returns",
@@ -317,7 +331,10 @@
     "longname": "src/apis/ticket.js~Ticket#removeItem",
     "access": null,
     "description": "Remove a ticket item",
-    "lineNumber": 79,
+    "examples": [
+      "...\n\ningresse.ticket.removeItem(200)\n    .then(function (response) {\n        console.log(response);\n    })\n    .catch(function (error) {\n        console.log(error);\n    });"
+    ],
+    "lineNumber": 143,
     "unknown": [
       {
         "tagName": "@returns",
@@ -367,8 +384,8 @@
     "longname": "src/auth/authentication.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "export class Authentication {\n    /**\n     * Set authentication data\n     *\n     * @param {object|string} data - Authentication data.\n     */\n    set authData(data) {\n        this._authData = data;\n    }\n\n    /**\n     * Get authentication data\n     *\n     * @returns {object|string}\n     */\n    get authData() {\n        return this._authData;\n    }\n}\n\n"
+    "lineNumber": 4,
+    "content": "/**\n * Base class for the authentications\n */\nexport class Authentication {\n    /**\n     * Set authentication data\n     *\n     * @param {object|string} data - Authentication data.\n     */\n    set authData(data) {\n        this._authData = data;\n    }\n\n    /**\n     * Get authentication data\n     *\n     * @returns {object|string}\n     */\n    get authData() {\n        return this._authData;\n    }\n}\n\n"
   },
   {
     "__docId__": 12,
@@ -382,9 +399,8 @@
     "export": true,
     "importPath": "ingresse-sdk/src/auth/authentication.js",
     "importStyle": "{Authentication}",
-    "description": null,
-    "lineNumber": 1,
-    "undocument": true,
+    "description": "Base class for the authentications",
+    "lineNumber": 4,
     "interface": false
   },
   {
@@ -397,7 +413,7 @@
     "longname": "src/auth/authentication.js~Authentication#authData",
     "access": null,
     "description": "Set authentication data",
-    "lineNumber": 7,
+    "lineNumber": 10,
     "params": [
       {
         "nullable": null,
@@ -428,7 +444,7 @@
     "longname": "src/auth/authentication.js~Authentication#_authData",
     "access": null,
     "description": null,
-    "lineNumber": 8,
+    "lineNumber": 11,
     "undocument": true,
     "type": {
       "types": [
@@ -446,7 +462,7 @@
     "longname": "src/auth/authentication.js~Authentication#authData",
     "access": null,
     "description": "Get authentication data",
-    "lineNumber": 16,
+    "lineNumber": 19,
     "unknown": [
       {
         "tagName": "@returns",
@@ -514,7 +530,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import {Authentication} from './authentication';\n\n\nexport class Jwt extends Authentication {\n    constructor() {\n        super();\n    }\n\n    /**\n     * Authentication type e.g. Jwt, BasicAuth\n     *\n     * @returns {string}\n     */\n    static type() {\n        return 'Jwt';\n    }\n\n    /**\n     * Get formatted authentication settings\n     *\n     * @returns {object}\n     */\n    getSettings() {\n        return {\n            headers: {\n                'Authorization': `Bearer ${this.getToken()}`\n            }\n        };\n    }\n\n    /**\n     * Set Jwt authentication token value\n     *\n     * @example\n     * ```\n     * ingresse.ticket.auth.setToken('12345.67890.1234')\n     * ```\n     *\n     * @param {string} token - JWT Token value\n     */\n    setToken(token) {\n        this.authData = token;\n    }\n\n    /**\n     * Get Jwt authentication token value\n     *\n     * @returns {string}\n     */\n    getToken() {\n        return this.authData;\n    }\n}\n\n"
+    "content": "import {Authentication} from './authentication';\n\n\nexport class Jwt extends Authentication {\n    constructor() {\n        super();\n    }\n\n    /**\n     * Authentication type e.g. Jwt, BasicAuth\n     *\n     * @returns {string}\n     */\n    static type() {\n        return 'Jwt';\n    }\n\n    /**\n     * Get formatted authentication settings\n     *\n     * @returns {object}\n     */\n    getSettings() {\n        return {\n            headers: {\n                'Authorization': `Bearer ${this.getToken()}`\n            }\n        };\n    }\n\n    /**\n     * Set Jwt authentication token value\n     *\n     * @param {string} token - JWT Token value\n     *\n     * @example\n     * ingresse.ticket.auth.setToken('12345.67890.1234');\n     */\n    setToken(token) {\n        this.authData = token;\n    }\n\n    /**\n     * Get Jwt authentication token value\n     *\n     * @returns {string}\n     *\n     * @example\n     * ingresse.ticket.auth.getToken();\n     */\n    getToken() {\n        return this.authData;\n    }\n}\n\n"
   },
   {
     "__docId__": 19,
@@ -618,9 +634,9 @@
     "access": null,
     "description": "Set Jwt authentication token value",
     "examples": [
-      "```\ningresse.ticket.auth.setToken('12345.67890.1234')\n```"
+      "ingresse.ticket.auth.setToken('12345.67890.1234');"
     ],
-    "lineNumber": 41,
+    "lineNumber": 39,
     "params": [
       {
         "nullable": null,
@@ -645,7 +661,7 @@
     "longname": "src/auth/jwt.js~Jwt#authData",
     "access": null,
     "description": null,
-    "lineNumber": 42,
+    "lineNumber": 40,
     "undocument": true,
     "type": {
       "types": [
@@ -663,7 +679,10 @@
     "longname": "src/auth/jwt.js~Jwt#getToken",
     "access": null,
     "description": "Get Jwt authentication token value",
-    "lineNumber": 50,
+    "examples": [
+      "ingresse.ticket.auth.getToken();"
+    ],
+    "lineNumber": 51,
     "unknown": [
       {
         "tagName": "@returns",
@@ -1146,8 +1165,8 @@
     "longname": "src/request/plugins.js",
     "access": null,
     "description": null,
-    "lineNumber": 8,
-    "content": "/**\n* Middleware to format all request with a base URL\n*\n* @params {string} base - Base URL for all requests.\n*\n* @returns {function}\n*/\nexport var basePrefix = (base = '') => {\n    return (request, next) => {\n        let path = request.url.replace(/^\\//, '');\n        base = base.replace(/\\/$/, '');\n\n        request.url = `${base}/${path}`;\n\n        return next();\n    };\n};\n\n/**\n * Handle response from api and decide\n * based on the status code if the request\n * was a success or an error\n *\n * @params {number} [lower=200]  - Lower status code number.\n * @params {number} [higher=299] - Higher status code number.\n *\n * @returns {function}\n */\nexport var transformResponse = (lower = 200, higher = 299) => {\n    return (request, next) => {\n        return next().then((response) => {\n            if (response.status >= lower &&\n                response.status <= higher) {\n\n                return response.body;\n            }\n\n            var error = request.error('', 'EINVALIDSTATUS');\n            error.body = response.body;\n\n            return error.body;\n        });\n    };\n};\n\n"
+    "lineNumber": 7,
+    "content": "/**\n* Rquest middleware to format url with a base URL\n*\n* @params {string} base - Base URL for all requests.\n* @returns {function}\n*/\nexport var basePrefix = (base = '') => {\n    return (request, next) => {\n        let path = request.url.replace(/^\\//, '');\n        base = base.replace(/\\/$/, '');\n\n        request.url = `${base}/${path}`;\n\n        return next();\n    };\n};\n\n/**\n * Request middleware to handle response from api\n * and decide based on the status code if the\n * request was a success or an error\n *\n * @params {number} [lower=200]  - Lower status code number.\n * @params {number} [higher=299] - Higher status code number.\n * @returns {function}\n */\nexport var transformResponse = (lower = 200, higher = 299) => {\n    return (request, next) => {\n        return next().then((response) => {\n            if (response.status >= lower &&\n                response.status <= higher) {\n\n                return response.body;\n            }\n\n            var error = request.error('', 'EINVALIDSTATUS');\n            error.body = response.body;\n\n            return error.body;\n        });\n    };\n};\n\n"
   },
   {
     "__docId__": 42,
@@ -1161,8 +1180,8 @@
     "export": true,
     "importPath": "ingresse-sdk/src/request/plugins.js",
     "importStyle": "{basePrefix}",
-    "description": "Middleware to format all request with a base URL",
-    "lineNumber": 8,
+    "description": "Rquest middleware to format url with a base URL",
+    "lineNumber": 7,
     "unknown": [
       {
         "tagName": "@params",
@@ -1199,8 +1218,8 @@
     "export": true,
     "importPath": "ingresse-sdk/src/request/plugins.js",
     "importStyle": "{transformResponse}",
-    "description": "Handle response from api and decide\nbased on the status code if the request\nwas a success or an error",
-    "lineNumber": 29,
+    "description": "Request middleware to handle response from api\nand decide based on the status code if the\nrequest was a success or an error",
+    "lineNumber": 27,
     "unknown": [
       {
         "tagName": "@params",

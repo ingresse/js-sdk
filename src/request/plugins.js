@@ -1,8 +1,7 @@
 /**
-* Middleware to format all request with a base URL
+* Rquest middleware to format url with a base URL
 *
 * @params {string} base - Base URL for all requests.
-*
 * @returns {function}
 */
 export var basePrefix = (base = '') => {
@@ -17,13 +16,12 @@ export var basePrefix = (base = '') => {
 };
 
 /**
- * Handle response from api and decide
- * based on the status code if the request
- * was a success or an error
+ * Request middleware to handle response from api
+ * and decide based on the status code if the
+ * request was a success or an error
  *
  * @params {number} [lower=200]  - Lower status code number.
  * @params {number} [higher=299] - Higher status code number.
- *
  * @returns {function}
  */
 export var transformResponse = (lower = 200, higher = 299) => {

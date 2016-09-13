@@ -1,3 +1,6 @@
+/**
+ * Base class for the authentications
+ */
 export class Authentication {
     /**
      * Set authentication data

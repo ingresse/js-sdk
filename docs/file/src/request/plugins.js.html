@@ -46,10 +46,9 @@
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/request/plugins.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
-* Middleware to format all request with a base URL
+* Rquest middleware to format url with a base URL
 *
 * @params {string} base - Base URL for all requests.
-*
 * @returns {function}
 */
 export var basePrefix = (base = &apos;&apos;) =&gt; {
@@ -64,13 +63,12 @@ export var basePrefix = (base = &apos;&apos;) =&gt; {
 };
 
 /**
- * Handle response from api and decide
- * based on the status code if the request
- * was a success or an error
+ * Request middleware to handle response from api
+ * and decide based on the status code if the
+ * request was a success or an error
  *
  * @params {number} [lower=200]  - Lower status code number.
  * @params {number} [higher=299] - Higher status code number.
- *
  * @returns {function}
  */
 export var transformResponse = (lower = 200, higher = 299) =&gt; {

@@ -1,22 +1,19 @@
 {
-  "coverage": "65.62%",
-  "expectCount": 32,
-  "actualCount": 21,
+  "coverage": "74.19%",
+  "expectCount": 31,
+  "actualCount": 23,
   "files": {
     "src/auth/authentication.js": {
-      "expectCount": 4,
-      "actualCount": 2,
-      "undocumentLines": [
-        1,
-        8
-      ]
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
     },
     "src/auth/jwt.js": {
       "expectCount": 7,
       "actualCount": 4,
       "undocumentLines": [
         4,
-        42,
+        40,
         5
       ]
     },
@@ -30,10 +27,9 @@
     },
     "src/apis/ticket.js": {
       "expectCount": 8,
-      "actualCount": 6,
+      "actualCount": 7,
       "undocumentLines": [
-        5,
-        20
+        32
       ]
     },
     "src/apis/index.js": {
