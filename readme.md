@@ -1,4 +1,7 @@
 # Ingresse JS SDK
+[![CircleCI](https://circleci.com/gh/ingresse/ingresse-js-sdk.svg?style=svg&circle-token=b929d3fd883cf90293e1e83f891d1b278112c331)](https://circleci.com/gh/ingresse/ingresse-js-sdk)
+[![Coverage Status](https://coveralls.io/repos/github/ingresse/ingresse-js-sdk/badge.svg?t=BDk7sD)](https://coveralls.io/github/ingresse/ingresse-js-sdk)
+
 
 This is the new [Ingresse](https://www.ingresse.com) JS SDK for **node** and **Browser**.
 
