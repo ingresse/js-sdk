@@ -15,8 +15,9 @@ export class Ticket extends RequestHandler {
         };
 
         Object.assign(settings, custom);
-
         super(settings);
+
+        this.settings = settings;
     }
 
     /**
@@ -26,7 +27,7 @@ export class Ticket extends RequestHandler {
      *
      * @returns {Promise}
      */
-    getItems(query) {
+    getItems(query = {}) {
         return this.get('/items', query);
     }
 
@@ -38,7 +39,7 @@ export class Ticket extends RequestHandler {
      *
      * @returns {Promise}
      */
-    getItem(id, query) {
+    getItem(id, query = {}) {
         return this.get(`/items/${id}`, query);
     }
 
@@ -50,7 +51,7 @@ export class Ticket extends RequestHandler {
      *
      * @returns {Promise}
      */
-    newItem(data, query) {
+    newItem(data = {}, query = {}) {
         return this.post('/items', data, query);
     }
 
@@ -63,7 +64,7 @@ export class Ticket extends RequestHandler {
      *
      * @returns {Promise}
      */
-    updateItem(id, data, query) {
+    updateItem(id, data = {}, query = {}) {
         return this.put(`/items/${id}`, data, query);
     }
 
@@ -75,7 +76,7 @@ export class Ticket extends RequestHandler {
      *
      * @returns {Promise}
      */
-    removeItem(id, query) {
+    removeItem(id, query = {}) {
         return this.delete(id, query);
     }
 }

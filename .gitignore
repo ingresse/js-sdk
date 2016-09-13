@@ -1,3 +1,6 @@
+/dist
+.nyc_output/
+/coverage
 .DS_Store
 npm-debug.log
 node_modules

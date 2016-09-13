@@ -1,4 +1,4 @@
-var Sdk = require('../../');
+var Sdk = require('ingresse-sdk');
 
 var ingresse = new Sdk({
     ticket: {
