@@ -7,7 +7,7 @@ machine:
 
 general:
     artifacts:
-        - "./coverage/report-lcov"
+        - "./coverage"
 
 dependencies:
     override:
@@ -17,5 +17,5 @@ test:
     pre:
         - npm install coveralls -g
     post:
-        - cat ./coverage/report-lcov/lcov.info | coveralls || { echo 'Coveralls error'; exit 0; }
+        - cat ./coverage/lcov.info | coveralls || { echo 'Coveralls error'; exit 0; }
 
