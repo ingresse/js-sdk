@@ -36,7 +36,7 @@ export var transformResponse = (lower = 200, higher = 299) => {
             var error = request.error('', 'EINVALIDSTATUS');
             error.body = response.body;
 
-            return error.body;
+            throw error.body;
         });
     };
 };
