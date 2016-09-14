@@ -252,8 +252,8 @@
                 "type": "Identifier",
                 "name": "constructor",
                 "range": [
-                  518,
-                  529
+                  516,
+                  527
                 ],
                 "loc": {
                   "start": {
@@ -276,8 +276,8 @@
                       "type": "Identifier",
                       "name": "custom",
                       "range": [
-                        530,
-                        536
+                        528,
+                        534
                       ],
                       "loc": {
                         "start": {
@@ -294,8 +294,8 @@
                       "type": "ObjectExpression",
                       "properties": [],
                       "range": [
-                        539,
-                        541
+                        537,
+                        539
                       ],
                       "loc": {
                         "start": {
@@ -309,8 +309,8 @@
                       }
                     },
                     "range": [
-                      530,
-                      541
+                      528,
+                      539
                     ],
                     "loc": {
                       "start": {
@@ -336,8 +336,8 @@
                             "type": "Identifier",
                             "name": "settings",
                             "range": [
-                              557,
-                              565
+                              555,
+                              563
                             ],
                             "loc": {
                               "start": {
@@ -359,8 +359,8 @@
                                   "type": "Identifier",
                                   "name": "url",
                                   "range": [
-                                    582,
-                                    585
+                                    580,
+                                    583
                                   ],
                                   "loc": {
                                     "start": {
@@ -378,8 +378,8 @@
                                   "value": "https://api.ingresse.com/ticket",
                                   "raw": "'https://api.ingresse.com/ticket'",
                                   "range": [
-                                    588,
-                                    621
+                                    586,
+                                    619
                                   ],
                                   "loc": {
                                     "start": {
@@ -397,8 +397,8 @@
                                 "shorthand": false,
                                 "computed": false,
                                 "range": [
-                                  582,
-                                  621
+                                  580,
+                                  619
                                 ],
                                 "loc": {
                                   "start": {
@@ -417,8 +417,8 @@
                                   "type": "Identifier",
                                   "name": "auth",
                                   "range": [
-                                    635,
-                                    639
+                                    633,
+                                    637
                                   ],
                                   "loc": {
                                     "start": {
@@ -443,8 +443,8 @@
                                         "type": "Identifier",
                                         "name": "auth",
                                         "range": [
-                                          641,
-                                          645
+                                          639,
+                                          643
                                         ],
                                         "loc": {
                                           "start": {
@@ -461,8 +461,8 @@
                                         "type": "Identifier",
                                         "name": "Jwt",
                                         "range": [
-                                          646,
-                                          649
+                                          644,
+                                          647
                                         ],
                                         "loc": {
                                           "start": {
@@ -476,8 +476,8 @@
                                         }
                                       },
                                       "range": [
-                                        641,
-                                        649
+                                        639,
+                                        647
                                       ],
                                       "loc": {
                                         "start": {
@@ -494,8 +494,8 @@
                                       "type": "Identifier",
                                       "name": "type",
                                       "range": [
-                                        650,
-                                        654
+                                        648,
+                                        652
                                       ],
                                       "loc": {
                                         "start": {
@@ -509,8 +509,8 @@
                                       }
                                     },
                                     "range": [
-                                      641,
-                                      654
+                                      639,
+                                      652
                                     ],
                                     "loc": {
                                       "start": {
@@ -525,8 +525,8 @@
                                   },
                                   "arguments": [],
                                   "range": [
-                                    641,
-                                    656
+                                    639,
+                                    654
                                   ],
                                   "loc": {
                                     "start": {
@@ -544,8 +544,8 @@
                                 "shorthand": false,
                                 "computed": false,
                                 "range": [
-                                  635,
-                                  656
+                                  633,
+                                  654
                                 ],
                                 "loc": {
                                   "start": {
@@ -560,8 +560,8 @@
                               }
                             ],
                             "range": [
-                              568,
-                              667
+                              566,
+                              665
                             ],
                             "loc": {
                               "start": {
@@ -575,8 +575,8 @@
                             }
                           },
                           "range": [
-                            557,
-                            667
+                            555,
+                            665
                           ],
                           "loc": {
                             "start": {
@@ -592,8 +592,8 @@
                       ],
                       "kind": "let",
                       "range": [
-                        553,
-                        668
+                        551,
+                        666
                       ],
                       "loc": {
                         "start": {
@@ -617,8 +617,8 @@
                             "type": "Identifier",
                             "name": "Object",
                             "range": [
-                              678,
-                              684
+                              676,
+                              682
                             ],
                             "loc": {
                               "start": {
@@ -635,8 +635,8 @@
                             "type": "Identifier",
                             "name": "assign",
                             "range": [
-                              685,
-                              691
+                              683,
+                              689
                             ],
                             "loc": {
                               "start": {
@@ -650,8 +650,8 @@
                             }
                           },
                           "range": [
-                            678,
-                            691
+                            676,
+                            689
                           ],
                           "loc": {
                             "start": {
@@ -669,8 +669,8 @@
                             "type": "Identifier",
                             "name": "settings",
                             "range": [
-                              692,
-                              700
+                              690,
+                              698
                             ],
                             "loc": {
                               "start": {
@@ -687,8 +687,8 @@
                             "type": "Identifier",
                             "name": "custom",
                             "range": [
-                              702,
-                              708
+                              700,
+                              706
                             ],
                             "loc": {
                               "start": {
@@ -703,8 +703,8 @@
                           }
                         ],
                         "range": [
-                          678,
-                          709
+                          676,
+                          707
                         ],
                         "loc": {
                           "start": {
@@ -718,8 +718,8 @@
                         }
                       },
                       "range": [
-                        678,
-                        710
+                        676,
+                        708
                       ],
                       "loc": {
                         "start": {
@@ -739,8 +739,8 @@
                         "callee": {
                           "type": "Super",
                           "range": [
-                            719,
-                            724
+                            717,
+                            722
                           ],
                           "loc": {
                             "start": {
@@ -758,8 +758,8 @@
                             "type": "Identifier",
                             "name": "settings",
                             "range": [
-                              725,
-                              733
+                              723,
+                              731
                             ],
                             "loc": {
                               "start": {
@@ -774,8 +774,8 @@
                           }
                         ],
                         "range": [
-                          719,
-                          734
+                          717,
+                          732
                         ],
                         "loc": {
                           "start": {
@@ -789,8 +789,8 @@
                         }
                       },
                       "range": [
-                        719,
-                        735
+                        717,
+                        733
                       ],
                       "loc": {
                         "start": {
@@ -814,8 +814,8 @@
                           "object": {
                             "type": "ThisExpression",
                             "range": [
-                              745,
-                              749
+                              743,
+                              747
                             ],
                             "loc": {
                               "start": {
@@ -832,8 +832,8 @@
                             "type": "Identifier",
                             "name": "settings",
                             "range": [
-                              750,
-                              758
+                              748,
+                              756
                             ],
                             "loc": {
                               "start": {
@@ -847,8 +847,8 @@
                             }
                           },
                           "range": [
-                            745,
-                            758
+                            743,
+                            756
                           ],
                           "loc": {
                             "start": {
@@ -865,8 +865,8 @@
                           "type": "Identifier",
                           "name": "settings",
                           "range": [
-                            761,
-                            769
+                            759,
+                            767
                           ],
                           "loc": {
                             "start": {
@@ -880,8 +880,8 @@
                           }
                         },
                         "range": [
-                          745,
-                          769
+                          743,
+                          767
                         ],
                         "loc": {
                           "start": {
@@ -895,8 +895,8 @@
                         }
                       },
                       "range": [
-                        745,
-                        770
+                        743,
+                        768
                       ],
                       "loc": {
                         "start": {
@@ -911,8 +911,8 @@
                     }
                   ],
                   "range": [
-                    543,
-                    776
+                    541,
+                    774
                   ],
                   "loc": {
                     "start": {
@@ -928,8 +928,8 @@
                 "generator": false,
                 "expression": false,
                 "range": [
-                  529,
-                  776
+                  527,
+                  774
                 ],
                 "loc": {
                   "start": {
@@ -945,8 +945,8 @@
               "kind": "constructor",
               "computed": false,
               "range": [
-                518,
-                776
+                516,
+                774
               ],
               "loc": {
                 "start": {
@@ -961,10 +961,10 @@
               "leadingComments": [
                 {
                   "type": "Block",
-                  "value": "*\n     * Ticket Api\n     *\n     * @param {object} [custom = {}] - Initialize Ticket Api settings.\n     ",
+                  "value": "*\n     * Ticket Api\n     *\n     * @param {object} [custom={}] - Initialize Ticket Api settings.\n     ",
                   "range": [
                     406,
-                    513
+                    511
                   ],
                   "loc": {
                     "start": {
@@ -983,8 +983,8 @@
                   "type": "Block",
                   "value": "*\n     * Get a list of ticket items\n     * This method will return a `Promise` so you can use\n     * `.then` and `.catach` methdos.\n     *\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.getItems()\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     ",
                   "range": [
-                    782,
-                    1271
+                    780,
+                    1269
                   ],
                   "loc": {
                     "start": {
@@ -1006,8 +1006,8 @@
                 "type": "Identifier",
                 "name": "getItems",
                 "range": [
-                  1276,
-                  1284
+                  1274,
+                  1282
                 ],
                 "loc": {
                   "start": {
@@ -1030,8 +1030,8 @@
                       "type": "Identifier",
                       "name": "query",
                       "range": [
-                        1285,
-                        1290
+                        1283,
+                        1288
                       ],
                       "loc": {
                         "start": {
@@ -1048,8 +1048,8 @@
                       "type": "ObjectExpression",
                       "properties": [],
                       "range": [
-                        1293,
-                        1295
+                        1291,
+                        1293
                       ],
                       "loc": {
                         "start": {
@@ -1063,8 +1063,8 @@
                       }
                     },
                     "range": [
-                      1285,
-                      1295
+                      1283,
+                      1293
                     ],
                     "loc": {
                       "start": {
@@ -1091,8 +1091,8 @@
                           "object": {
                             "type": "ThisExpression",
                             "range": [
-                              1314,
-                              1318
+                              1312,
+                              1316
                             ],
                             "loc": {
                               "start": {
@@ -1109,8 +1109,8 @@
                             "type": "Identifier",
                             "name": "get",
                             "range": [
-                              1319,
-                              1322
+                              1317,
+                              1320
                             ],
                             "loc": {
                               "start": {
@@ -1124,8 +1124,8 @@
                             }
                           },
                           "range": [
-                            1314,
-                            1322
+                            1312,
+                            1320
                           ],
                           "loc": {
                             "start": {
@@ -1144,8 +1144,8 @@
                             "value": "/items",
                             "raw": "'/items'",
                             "range": [
-                              1323,
-                              1331
+                              1321,
+                              1329
                             ],
                             "loc": {
                               "start": {
@@ -1162,8 +1162,8 @@
                             "type": "Identifier",
                             "name": "query",
                             "range": [
-                              1333,
-                              1338
+                              1331,
+                              1336
                             ],
                             "loc": {
                               "start": {
@@ -1178,8 +1178,8 @@
                           }
                         ],
                         "range": [
-                          1314,
-                          1339
+                          1312,
+                          1337
                         ],
                         "loc": {
                           "start": {
@@ -1193,8 +1193,8 @@
                         }
                       },
                       "range": [
-                        1307,
-                        1340
+                        1305,
+                        1338
                       ],
                       "loc": {
                         "start": {
@@ -1209,8 +1209,8 @@
                     }
                   ],
                   "range": [
-                    1297,
-                    1346
+                    1295,
+                    1344
                   ],
                   "loc": {
                     "start": {
@@ -1226,8 +1226,8 @@
                 "generator": false,
                 "expression": false,
                 "range": [
-                  1284,
-                  1346
+                  1282,
+                  1344
                 ],
                 "loc": {
                   "start": {
@@ -1243,8 +1243,8 @@
               "kind": "method",
               "computed": false,
               "range": [
-                1276,
-                1346
+                1274,
+                1344
               ],
               "loc": {
                 "start": {
@@ -1261,8 +1261,8 @@
                   "type": "Block",
                   "value": "*\n     * Get a list of ticket items\n     * This method will return a `Promise` so you can use\n     * `.then` and `.catach` methdos.\n     *\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.getItems()\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     ",
                   "range": [
-                    782,
-                    1271
+                    780,
+                    1269
                   ],
                   "loc": {
                     "start": {
@@ -1281,8 +1281,8 @@
                   "type": "Block",
                   "value": "*\n     * Get item by ID\n     *\n     * @param {string|number} id - The item ID to get.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.getItem(200)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     ",
                   "range": [
-                    1352,
-                    1792
+                    1350,
+                    1790
                   ],
                   "loc": {
                     "start": {
@@ -1304,8 +1304,8 @@
                 "type": "Identifier",
                 "name": "getItem",
                 "range": [
-                  1797,
-                  1804
+                  1795,
+                  1802
                 ],
                 "loc": {
                   "start": {
@@ -1326,8 +1326,8 @@
                     "type": "Identifier",
                     "name": "id",
                     "range": [
-                      1805,
-                      1807
+                      1803,
+                      1805
                     ],
                     "loc": {
                       "start": {
@@ -1346,8 +1346,8 @@
                       "type": "Identifier",
                       "name": "query",
                       "range": [
-                        1809,
-                        1814
+                        1807,
+                        1812
                       ],
                       "loc": {
                         "start": {
@@ -1364,8 +1364,8 @@
                       "type": "ObjectExpression",
                       "properties": [],
                       "range": [
-                        1817,
-                        1819
+                        1815,
+                        1817
                       ],
                       "loc": {
                         "start": {
@@ -1379,8 +1379,8 @@
                       }
                     },
                     "range": [
-                      1809,
-                      1819
+                      1807,
+                      1817
                     ],
                     "loc": {
                       "start": {
@@ -1407,8 +1407,8 @@
                           "object": {
                             "type": "ThisExpression",
                             "range": [
-                              1838,
-                              1842
+                              1836,
+                              1840
                             ],
                             "loc": {
                               "start": {
@@ -1425,8 +1425,8 @@
                             "type": "Identifier",
                             "name": "get",
                             "range": [
-                              1843,
-                              1846
+                              1841,
+                              1844
                             ],
                             "loc": {
                               "start": {
@@ -1440,8 +1440,8 @@
                             }
                           },
                           "range": [
-                            1838,
-                            1846
+                            1836,
+                            1844
                           ],
                           "loc": {
                             "start": {
@@ -1466,8 +1466,8 @@
                                 },
                                 "tail": false,
                                 "range": [
-                                  1847,
-                                  1857
+                                  1845,
+                                  1855
                                 ],
                                 "loc": {
                                   "start": {
@@ -1488,8 +1488,8 @@
                                 },
                                 "tail": true,
                                 "range": [
-                                  1859,
-                                  1861
+                                  1857,
+                                  1859
                                 ],
                                 "loc": {
                                   "start": {
@@ -1508,8 +1508,8 @@
                                 "type": "Identifier",
                                 "name": "id",
                                 "range": [
-                                  1857,
-                                  1859
+                                  1855,
+                                  1857
                                 ],
                                 "loc": {
                                   "start": {
@@ -1524,8 +1524,8 @@
                               }
                             ],
                             "range": [
-                              1847,
-                              1861
+                              1845,
+                              1859
                             ],
                             "loc": {
                               "start": {
@@ -1542,8 +1542,8 @@
                             "type": "Identifier",
                             "name": "query",
                             "range": [
-                              1863,
-                              1868
+                              1861,
+                              1866
                             ],
                             "loc": {
                               "start": {
@@ -1558,8 +1558,8 @@
                           }
                         ],
                         "range": [
-                          1838,
-                          1869
+                          1836,
+                          1867
                         ],
                         "loc": {
                           "start": {
@@ -1573,8 +1573,8 @@
                         }
                       },
                       "range": [
-                        1831,
-                        1870
+                        1829,
+                        1868
                       ],
                       "loc": {
                         "start": {
@@ -1589,8 +1589,8 @@
                     }
                   ],
                   "range": [
-                    1821,
-                    1876
+                    1819,
+                    1874
                   ],
                   "loc": {
                     "start": {
@@ -1606,8 +1606,8 @@
                 "generator": false,
                 "expression": false,
                 "range": [
-                  1804,
-                  1876
+                  1802,
+                  1874
                 ],
                 "loc": {
                   "start": {
@@ -1623,8 +1623,8 @@
               "kind": "method",
               "computed": false,
               "range": [
-                1797,
-                1876
+                1795,
+                1874
               ],
               "loc": {
                 "start": {
@@ -1641,8 +1641,8 @@
                   "type": "Block",
                   "value": "*\n     * Get item by ID\n     *\n     * @param {string|number} id - The item ID to get.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.getItem(200)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     ",
                   "range": [
-                    1352,
-                    1792
+                    1350,
+                    1790
                   ],
                   "loc": {
                     "start": {
@@ -1661,8 +1661,8 @@
                   "type": "Block",
                   "value": "*\n     * Create new Ticket item\n     *\n     * @param {object} data    - Data to create a new ticket item.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.newItem({ name: 'My Ticket Name' })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     ",
                   "range": [
-                    1882,
-                    2363
+                    1880,
+                    2361
                   ],
                   "loc": {
                     "start": {
@@ -1684,8 +1684,8 @@
                 "type": "Identifier",
                 "name": "newItem",
                 "range": [
-                  2368,
-                  2375
+                  2366,
+                  2373
                 ],
                 "loc": {
                   "start": {
@@ -1708,8 +1708,8 @@
                       "type": "Identifier",
                       "name": "data",
                       "range": [
-                        2376,
-                        2380
+                        2374,
+                        2378
                       ],
                       "loc": {
                         "start": {
@@ -1726,8 +1726,8 @@
                       "type": "ObjectExpression",
                       "properties": [],
                       "range": [
-                        2383,
-                        2385
+                        2381,
+                        2383
                       ],
                       "loc": {
                         "start": {
@@ -1741,8 +1741,8 @@
                       }
                     },
                     "range": [
-                      2376,
-                      2385
+                      2374,
+                      2383
                     ],
                     "loc": {
                       "start": {
@@ -1761,8 +1761,8 @@
                       "type": "Identifier",
                       "name": "query",
                       "range": [
-                        2387,
-                        2392
+                        2385,
+                        2390
                       ],
                       "loc": {
                         "start": {
@@ -1779,8 +1779,8 @@
                       "type": "ObjectExpression",
                       "properties": [],
                       "range": [
-                        2395,
-                        2397
+                        2393,
+                        2395
                       ],
                       "loc": {
                         "start": {
@@ -1794,8 +1794,8 @@
                       }
                     },
                     "range": [
-                      2387,
-                      2397
+                      2385,
+                      2395
                     ],
                     "loc": {
                       "start": {
@@ -1822,8 +1822,8 @@
                           "object": {
                             "type": "ThisExpression",
                             "range": [
-                              2416,
-                              2420
+                              2414,
+                              2418
                             ],
                             "loc": {
                               "start": {
@@ -1840,8 +1840,8 @@
                             "type": "Identifier",
                             "name": "post",
                             "range": [
-                              2421,
-                              2425
+                              2419,
+                              2423
                             ],
                             "loc": {
                               "start": {
@@ -1855,8 +1855,8 @@
                             }
                           },
                           "range": [
-                            2416,
-                            2425
+                            2414,
+                            2423
                           ],
                           "loc": {
                             "start": {
@@ -1875,8 +1875,8 @@
                             "value": "/items",
                             "raw": "'/items'",
                             "range": [
-                              2426,
-                              2434
+                              2424,
+                              2432
                             ],
                             "loc": {
                               "start": {
@@ -1893,8 +1893,8 @@
                             "type": "Identifier",
                             "name": "data",
                             "range": [
-                              2436,
-                              2440
+                              2434,
+                              2438
                             ],
                             "loc": {
                               "start": {
@@ -1911,8 +1911,8 @@
                             "type": "Identifier",
                             "name": "query",
                             "range": [
-                              2442,
-                              2447
+                              2440,
+                              2445
                             ],
                             "loc": {
                               "start": {
@@ -1927,8 +1927,8 @@
                           }
                         ],
                         "range": [
-                          2416,
-                          2448
+                          2414,
+                          2446
                         ],
                         "loc": {
                           "start": {
@@ -1942,8 +1942,8 @@
                         }
                       },
                       "range": [
-                        2409,
-                        2449
+                        2407,
+                        2447
                       ],
                       "loc": {
                         "start": {
@@ -1958,8 +1958,8 @@
                     }
                   ],
                   "range": [
-                    2399,
-                    2455
+                    2397,
+                    2453
                   ],
                   "loc": {
                     "start": {
@@ -1975,8 +1975,8 @@
                 "generator": false,
                 "expression": false,
                 "range": [
-                  2375,
-                  2455
+                  2373,
+                  2453
                 ],
                 "loc": {
                   "start": {
@@ -1992,8 +1992,8 @@
               "kind": "method",
               "computed": false,
               "range": [
-                2368,
-                2455
+                2366,
+                2453
               ],
               "loc": {
                 "start": {
@@ -2010,8 +2010,8 @@
                   "type": "Block",
                   "value": "*\n     * Create new Ticket item\n     *\n     * @param {object} data    - Data to create a new ticket item.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.newItem({ name: 'My Ticket Name' })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     ",
                   "range": [
-                    1882,
-                    2363
+                    1880,
+                    2361
                   ],
                   "loc": {
                     "start": {
@@ -2030,8 +2030,8 @@
                   "type": "Block",
                   "value": "*\n     * Update a ticket item\n     *\n     * @param {string|number} id - The item ID to update.\n     * @param {object} data      - Data to update item.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updateItem(200, { name: 'My Updated Ticket Name' })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     ",
                   "range": [
-                    2461,
-                    3005
+                    2459,
+                    3003
                   ],
                   "loc": {
                     "start": {
@@ -2053,8 +2053,8 @@
                 "type": "Identifier",
                 "name": "updateItem",
                 "range": [
-                  3010,
-                  3020
+                  3008,
+                  3018
                 ],
                 "loc": {
                   "start": {
@@ -2075,8 +2075,8 @@
                     "type": "Identifier",
                     "name": "id",
                     "range": [
-                      3021,
-                      3023
+                      3019,
+                      3021
                     ],
                     "loc": {
                       "start": {
@@ -2095,8 +2095,8 @@
                       "type": "Identifier",
                       "name": "data",
                       "range": [
-                        3025,
-                        3029
+                        3023,
+                        3027
                       ],
                       "loc": {
                         "start": {
@@ -2113,8 +2113,8 @@
                       "type": "ObjectExpression",
                       "properties": [],
                       "range": [
-                        3032,
-                        3034
+                        3030,
+                        3032
                       ],
                       "loc": {
                         "start": {
@@ -2128,8 +2128,8 @@
                       }
                     },
                     "range": [
-                      3025,
-                      3034
+                      3023,
+                      3032
                     ],
                     "loc": {
                       "start": {
@@ -2148,8 +2148,8 @@
                       "type": "Identifier",
                       "name": "query",
                       "range": [
-                        3036,
-                        3041
+                        3034,
+                        3039
                       ],
                       "loc": {
                         "start": {
@@ -2166,8 +2166,8 @@
                       "type": "ObjectExpression",
                       "properties": [],
                       "range": [
-                        3044,
-                        3046
+                        3042,
+                        3044
                       ],
                       "loc": {
                         "start": {
@@ -2181,8 +2181,8 @@
                       }
                     },
                     "range": [
-                      3036,
-                      3046
+                      3034,
+                      3044
                     ],
                     "loc": {
                       "start": {
@@ -2209,8 +2209,8 @@
                           "object": {
                             "type": "ThisExpression",
                             "range": [
-                              3065,
-                              3069
+                              3063,
+                              3067
                             ],
                             "loc": {
                               "start": {
@@ -2227,8 +2227,8 @@
                             "type": "Identifier",
                             "name": "put",
                             "range": [
-                              3070,
-                              3073
+                              3068,
+                              3071
                             ],
                             "loc": {
                               "start": {
@@ -2242,8 +2242,8 @@
                             }
                           },
                           "range": [
-                            3065,
-                            3073
+                            3063,
+                            3071
                           ],
                           "loc": {
                             "start": {
@@ -2268,8 +2268,8 @@
                                 },
                                 "tail": false,
                                 "range": [
-                                  3074,
-                                  3084
+                                  3072,
+                                  3082
                                 ],
                                 "loc": {
                                   "start": {
@@ -2290,8 +2290,8 @@
                                 },
                                 "tail": true,
                                 "range": [
-                                  3086,
-                                  3088
+                                  3084,
+                                  3086
                                 ],
                                 "loc": {
                                   "start": {
@@ -2310,8 +2310,8 @@
                                 "type": "Identifier",
                                 "name": "id",
                                 "range": [
-                                  3084,
-                                  3086
+                                  3082,
+                                  3084
                                 ],
                                 "loc": {
                                   "start": {
@@ -2326,8 +2326,8 @@
                               }
                             ],
                             "range": [
-                              3074,
-                              3088
+                              3072,
+                              3086
                             ],
                             "loc": {
                               "start": {
@@ -2344,8 +2344,8 @@
                             "type": "Identifier",
                             "name": "data",
                             "range": [
-                              3090,
-                              3094
+                              3088,
+                              3092
                             ],
                             "loc": {
                               "start": {
@@ -2362,8 +2362,8 @@
                             "type": "Identifier",
                             "name": "query",
                             "range": [
-                              3096,
-                              3101
+                              3094,
+                              3099
                             ],
                             "loc": {
                               "start": {
@@ -2378,8 +2378,8 @@
                           }
                         ],
                         "range": [
-                          3065,
-                          3102
+                          3063,
+                          3100
                         ],
                         "loc": {
                           "start": {
@@ -2393,8 +2393,8 @@
                         }
                       },
                       "range": [
-                        3058,
-                        3103
+                        3056,
+                        3101
                       ],
                       "loc": {
                         "start": {
@@ -2409,8 +2409,8 @@
                     }
                   ],
                   "range": [
-                    3048,
-                    3109
+                    3046,
+                    3107
                   ],
                   "loc": {
                     "start": {
@@ -2426,8 +2426,8 @@
                 "generator": false,
                 "expression": false,
                 "range": [
-                  3020,
-                  3109
+                  3018,
+                  3107
                 ],
                 "loc": {
                   "start": {
@@ -2443,8 +2443,8 @@
               "kind": "method",
               "computed": false,
               "range": [
-                3010,
-                3109
+                3008,
+                3107
               ],
               "loc": {
                 "start": {
@@ -2461,8 +2461,8 @@
                   "type": "Block",
                   "value": "*\n     * Update a ticket item\n     *\n     * @param {string|number} id - The item ID to update.\n     * @param {object} data      - Data to update item.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updateItem(200, { name: 'My Updated Ticket Name' })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     ",
                   "range": [
-                    2461,
-                    3005
+                    2459,
+                    3003
                   ],
                   "loc": {
                     "start": {
@@ -2481,8 +2481,8 @@
                   "type": "Block",
                   "value": "*\n     * Remove a ticket item\n     *\n     * @param {string|number} id - The item ID to remove.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.removeItem(200)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     ",
                   "range": [
-                    3115,
-                    3567
+                    3113,
+                    3565
                   ],
                   "loc": {
                     "start": {
@@ -2504,8 +2504,8 @@
                 "type": "Identifier",
                 "name": "removeItem",
                 "range": [
-                  3572,
-                  3582
+                  3570,
+                  3580
                 ],
                 "loc": {
                   "start": {
@@ -2526,8 +2526,8 @@
                     "type": "Identifier",
                     "name": "id",
                     "range": [
-                      3583,
-                      3585
+                      3581,
+                      3583
                     ],
                     "loc": {
                       "start": {
@@ -2546,8 +2546,8 @@
                       "type": "Identifier",
                       "name": "query",
                       "range": [
-                        3587,
-                        3592
+                        3585,
+                        3590
                       ],
                       "loc": {
                         "start": {
@@ -2564,8 +2564,8 @@
                       "type": "ObjectExpression",
                       "properties": [],
                       "range": [
-                        3595,
-                        3597
+                        3593,
+                        3595
                       ],
                       "loc": {
                         "start": {
@@ -2579,8 +2579,8 @@
                       }
                     },
                     "range": [
-                      3587,
-                      3597
+                      3585,
+                      3595
                     ],
                     "loc": {
                       "start": {
@@ -2607,8 +2607,8 @@
                           "object": {
                             "type": "ThisExpression",
                             "range": [
-                              3616,
-                              3620
+                              3614,
+                              3618
                             ],
                             "loc": {
                               "start": {
@@ -2625,8 +2625,8 @@
                             "type": "Identifier",
                             "name": "delete",
                             "range": [
-                              3621,
-                              3627
+                              3619,
+                              3625
                             ],
                             "loc": {
                               "start": {
@@ -2640,8 +2640,8 @@
                             }
                           },
                           "range": [
-                            3616,
-                            3627
+                            3614,
+                            3625
                           ],
                           "loc": {
                             "start": {
@@ -2659,8 +2659,8 @@
                             "type": "Identifier",
                             "name": "id",
                             "range": [
-                              3628,
-                              3630
+                              3626,
+                              3628
                             ],
                             "loc": {
                               "start": {
@@ -2677,8 +2677,8 @@
                             "type": "Identifier",
                             "name": "query",
                             "range": [
-                              3632,
-                              3637
+                              3630,
+                              3635
                             ],
                             "loc": {
                               "start": {
@@ -2693,8 +2693,8 @@
                           }
                         ],
                         "range": [
-                          3616,
-                          3638
+                          3614,
+                          3636
                         ],
                         "loc": {
                           "start": {
@@ -2708,8 +2708,8 @@
                         }
                       },
                       "range": [
-                        3609,
-                        3639
+                        3607,
+                        3637
                       ],
                       "loc": {
                         "start": {
@@ -2724,8 +2724,8 @@
                     }
                   ],
                   "range": [
-                    3599,
-                    3645
+                    3597,
+                    3643
                   ],
                   "loc": {
                     "start": {
@@ -2741,8 +2741,8 @@
                 "generator": false,
                 "expression": false,
                 "range": [
-                  3582,
-                  3645
+                  3580,
+                  3643
                 ],
                 "loc": {
                   "start": {
@@ -2758,8 +2758,8 @@
               "kind": "method",
               "computed": false,
               "range": [
-                3572,
-                3645
+                3570,
+                3643
               ],
               "loc": {
                 "start": {
@@ -2776,8 +2776,8 @@
                   "type": "Block",
                   "value": "*\n     * Remove a ticket item\n     *\n     * @param {string|number} id - The item ID to remove.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.removeItem(200)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     ",
                   "range": [
-                    3115,
-                    3567
+                    3113,
+                    3565
                   ],
                   "loc": {
                     "start": {
@@ -2796,7 +2796,7 @@
           ],
           "range": [
             400,
-            3647
+            3645
           ],
           "loc": {
             "start": {
@@ -2811,7 +2811,7 @@
         },
         "range": [
           364,
-          3647
+          3645
         ],
         "loc": {
           "start": {
@@ -2849,7 +2849,7 @@
       "source": null,
       "range": [
         357,
-        3647
+        3645
       ],
       "loc": {
         "start": {
@@ -2886,7 +2886,7 @@
   "sourceType": "module",
   "range": [
     0,
-    3647
+    3645
   ],
   "loc": {
     "start": {
@@ -2919,10 +2919,10 @@
     },
     {
       "type": "Block",
-      "value": "*\n     * Ticket Api\n     *\n     * @param {object} [custom = {}] - Initialize Ticket Api settings.\n     ",
+      "value": "*\n     * Ticket Api\n     *\n     * @param {object} [custom={}] - Initialize Ticket Api settings.\n     ",
       "range": [
         406,
-        513
+        511
       ],
       "loc": {
         "start": {
@@ -2939,8 +2939,8 @@
       "type": "Block",
       "value": "*\n     * Get a list of ticket items\n     * This method will return a `Promise` so you can use\n     * `.then` and `.catach` methdos.\n     *\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.getItems()\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     ",
       "range": [
-        782,
-        1271
+        780,
+        1269
       ],
       "loc": {
         "start": {
@@ -2957,8 +2957,8 @@
       "type": "Block",
       "value": "*\n     * Get item by ID\n     *\n     * @param {string|number} id - The item ID to get.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.getItem(200)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     ",
       "range": [
-        1352,
-        1792
+        1350,
+        1790
       ],
       "loc": {
         "start": {
@@ -2975,8 +2975,8 @@
       "type": "Block",
       "value": "*\n     * Create new Ticket item\n     *\n     * @param {object} data    - Data to create a new ticket item.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.newItem({ name: 'My Ticket Name' })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     ",
       "range": [
-        1882,
-        2363
+        1880,
+        2361
       ],
       "loc": {
         "start": {
@@ -2993,8 +2993,8 @@
       "type": "Block",
       "value": "*\n     * Update a ticket item\n     *\n     * @param {string|number} id - The item ID to update.\n     * @param {object} data      - Data to update item.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updateItem(200, { name: 'My Updated Ticket Name' })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     ",
       "range": [
-        2461,
-        3005
+        2459,
+        3003
       ],
       "loc": {
         "start": {
@@ -3011,8 +3011,8 @@
       "type": "Block",
       "value": "*\n     * Remove a ticket item\n     *\n     * @param {string|number} id - The item ID to remove.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.removeItem(200)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     ",
       "range": [
-        3115,
-        3567
+        3113,
+        3565
       ],
       "loc": {
         "start": {

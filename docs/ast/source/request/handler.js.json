@@ -3159,7 +3159,7 @@
                                 "type": "Property",
                                 "key": {
                                   "type": "Identifier",
-                                  "name": "data",
+                                  "name": "body",
                                   "range": [
                                     1974,
                                     1978
@@ -3742,7 +3742,7 @@
                                 "type": "Property",
                                 "key": {
                                   "type": "Identifier",
-                                  "name": "data",
+                                  "name": "body",
                                   "range": [
                                     2459,
                                     2463
