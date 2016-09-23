@@ -143,5 +143,32 @@ export class Ticket extends RequestHandler {
     removeItem(id, query = {}) {
         return this.delete(id, query);
     }
+
+    /**
+     * Create new ticket attribute
+     *
+     * @param {number} id        - The item ID to create attribute.
+     * @param {object} attribute - The attribute data.
+     * @param {object} [query]   - Optional request parameters.
+     *
+     * @returns Promise
+     */
+    newAttribute(id, attribute, query) {
+        return this.post(`/items/${id}/attributes`, attribute, query);
+    }
+
+    /**
+     * Updated ticket attribute
+     *
+     * @param {number} id          - The item ID to update attribute.
+     * @param {number} attributeId - The attribute id to be updated.
+     * @param {object} attribute   - The attribute data.
+     * @param {object} [query]     - Optional request parameters.
+     *
+     * @returns Promise
+     */
+    updateAttribute(id, attributeId, attribute, query) {
+        return this.put(`/items/${id}/attributes/${attributeId}`, attribute, query);
+    }
 }
 
