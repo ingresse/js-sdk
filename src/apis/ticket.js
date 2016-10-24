@@ -170,5 +170,31 @@ export class Ticket extends RequestHandler {
     updateAttribute(id, attributeId, attribute, query) {
         return this.put(`/items/${id}/attributes/${attributeId}`, attribute, query);
     }
+
+    /**
+     * Create new sale period to ticket
+     *
+     * @param {number} id         - The item ID to create sale period.
+     * @param {object} salePeriod - The sale period data.
+     * @param {object} [query]    - Optional request parameters.
+     *
+     * @returns Promise
+     */
+    newSalePeriod(id, salePeriod, query) {
+        return this.post(`/items/${id}/sales-period`, salePeriod, query);
+    }
+
+    /**
+     * Updated ticket sale period
+     *
+     * @param {number} id         - The item ID to update the sale period.
+     * @param {object} salePeriod - The salePeriod data.
+     * @param {object} [query]    - Optional request parameters.
+     *
+     * @returns Promise
+     */
+    updateSalePeriod(id, salePeriod, query) {
+        return this.put(`/items/${id}/sales-period`, salePeriod, query);
+    }
 }
 
