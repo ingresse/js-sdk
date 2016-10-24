@@ -890,7 +890,7 @@ ingresse.ticket.getItems()
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber156">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber167">source</a></span></span>
     </span>
   </h3>
 
@@ -955,7 +955,22 @@ ingresse.ticket.getItems()
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">...
+
+ingresse.ticket.newAttribute(200, { key: &apos;min&apos;, value: &apos;1&apos;, type: &apos;integer&apos; })
+    .then(function (response) {
+        console.log(response);
+    })
+    .catch(function (error) {
+        console.log(error);
+    });</code></pre>
+    </div>
+</div>
 
   
 
@@ -1063,7 +1078,7 @@ ingresse.ticket.newItem({ name: &apos;My Ticket Name&apos; })
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber183">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber221">source</a></span></span>
     </span>
   </h3>
 
@@ -1128,7 +1143,27 @@ ingresse.ticket.newItem({ name: &apos;My Ticket Name&apos; })
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">...
+
+ingresse.ticket.newSalePeriod({
+         appCategoryId: 1,
+         start: &apos;2016-10-10 20:20:00&apos;,
+         finish: &apos;2016-11-10 20:20:00&apos;,
+         available: 1
+     })
+    .then(function (response) {
+        console.log(response);
+    })
+    .catch(function (error) {
+        console.log(error);
+    });</code></pre>
+    </div>
+</div>
 
   
 
@@ -1236,7 +1271,7 @@ ingresse.ticket.removeItem(200)
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber170">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber192">source</a></span></span>
     </span>
   </h3>
 
@@ -1308,7 +1343,22 @@ ingresse.ticket.removeItem(200)
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">...
+
+ingresse.ticket.updateAttribute(200, 1, { key: &apos;min&apos;, value: &apos;5&apos;, type: &apos;integer&apos; })
+    .then(function (response) {
+        console.log(response);
+    })
+    .catch(function (error) {
+        console.log(error);
+    });</code></pre>
+    </div>
+</div>
 
   
 
@@ -1423,7 +1473,7 @@ ingresse.ticket.updateItem(200, { name: &apos;My Updated Ticket Name&apos; })
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber196">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber250">source</a></span></span>
     </span>
   </h3>
 
@@ -1488,7 +1538,27 @@ ingresse.ticket.updateItem(200, { name: &apos;My Updated Ticket Name&apos; })
 
   
 
-  
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">...
+
+ingresse.ticket.updateSalePeriod(200, {
+         appCategoryId: 1,
+         start: &apos;2016-11-20 10:10:00&apos;,
+         finish: &apos;2016-12-20 10:10:00&apos;,
+         available: 1
+     })
+    .then(function (response) {
+        console.log(response);
+    })
+    .catch(function (error) {
+        console.log(error);
+    });</code></pre>
+    </div>
+</div>
 
   
 
