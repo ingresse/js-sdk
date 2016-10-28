@@ -190,6 +190,113 @@ export class Ticket extends RequestHandler {
     removeItem(id, query = {}) {
         return this.delete(id, query);
     }
+
+    /**
+     * Create new ticket attribute
+     *
+     * @param {number} id        - The item ID to create attribute.
+     * @param {object} attribute - The attribute data.
+     * @param {object} [query]   - Optional request parameters.
+     *
+     * @returns Promise
+     *
+     * @example
+     * ...
+     *
+     * ingresse.ticket.newAttribute(200, { key: &apos;min&apos;, value: &apos;1&apos;, type: &apos;integer&apos; })
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    newAttribute(id, attribute, query) {
+        return this.post(`/items/${id}/attributes`, attribute, query);
+    }
+
+    /**
+     * Updated ticket attribute
+     *
+     * @param {number} id          - The item ID to update attribute.
+     * @param {number} attributeId - The attribute id to be updated.
+     * @param {object} attribute   - The attribute data.
+     * @param {object} [query]     - Optional request parameters.
+     *
+     * @returns Promise
+     *
+     * @example
+     * ...
+     *
+     * ingresse.ticket.updateAttribute(200, 1, { key: &apos;min&apos;, value: &apos;5&apos;, type: &apos;integer&apos; })
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    updateAttribute(id, attributeId, attribute, query) {
+        return this.put(`/items/${id}/attributes/${attributeId}`, attribute, query);
+    }
+
+    /**
+     * Create new sale period to ticket
+     *
+     * @param {number} id         - The item ID to create sale period.
+     * @param {object} salePeriod - The sale period data.
+     * @param {object} [query]    - Optional request parameters.
+     *
+     * @returns Promise
+     *
+     * @example
+     * ...
+     *
+     * ingresse.ticket.newSalePeriod({
+     *          appCategoryId: 1,
+     *          start: &apos;2016-10-10 20:20:00&apos;,
+     *          finish: &apos;2016-11-10 20:20:00&apos;,
+     *          available: 1
+     *      })
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    newSalePeriod(id, salePeriod, query) {
+        return this.post(`/items/${id}/sales-period`, salePeriod, query);
+    }
+
+    /**
+     * Updated ticket sale period
+     *
+     * @param {number} id         - The item ID to update the sale period.
+     * @param {object} salePeriod - The salePeriod data.
+     * @param {object} [query]    - Optional request parameters.
+     *
+     * @returns Promise
+     *
+     * @example
+     * ...
+     *
+     * ingresse.ticket.updateSalePeriod(200, {
+     *          appCategoryId: 1,
+     *          start: &apos;2016-11-20 10:10:00&apos;,
+     *          finish: &apos;2016-12-20 10:10:00&apos;,
+     *          available: 1
+     *      })
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    updateSalePeriod(id, salePeriod, query) {
+        return this.put(`/items/${id}/sales-period`, salePeriod, query);
+    }
 }
 
 </code></pre>

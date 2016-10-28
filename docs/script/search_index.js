@@ -408,9 +408,21 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/apis/ticket.js~ticket#newattribute",
+    "class/src/apis/ticket.js~Ticket.html#instance-method-newAttribute",
+    "src/apis/ticket.js~Ticket#newAttribute",
+    "method"
+  ],
+  [
     "src/apis/ticket.js~ticket#newitem",
     "class/src/apis/ticket.js~Ticket.html#instance-method-newItem",
     "src/apis/ticket.js~Ticket#newItem",
+    "method"
+  ],
+  [
+    "src/apis/ticket.js~ticket#newsaleperiod",
+    "class/src/apis/ticket.js~Ticket.html#instance-method-newSalePeriod",
+    "src/apis/ticket.js~Ticket#newSalePeriod",
     "method"
   ],
   [
@@ -426,9 +438,21 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/apis/ticket.js~ticket#updateattribute",
+    "class/src/apis/ticket.js~Ticket.html#instance-method-updateAttribute",
+    "src/apis/ticket.js~Ticket#updateAttribute",
+    "method"
+  ],
+  [
     "src/apis/ticket.js~ticket#updateitem",
     "class/src/apis/ticket.js~Ticket.html#instance-method-updateItem",
     "src/apis/ticket.js~Ticket#updateItem",
+    "method"
+  ],
+  [
+    "src/apis/ticket.js~ticket#updatesaleperiod",
+    "class/src/apis/ticket.js~Ticket.html#instance-method-updateSalePeriod",
+    "src/apis/ticket.js~Ticket#updateSalePeriod",
     "method"
   ],
   [
@@ -439,13 +463,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/auth/authentication.js~authentication#authdata",
-    "class/src/auth/authentication.js~Authentication.html#instance-get-authData",
+    "class/src/auth/authentication.js~Authentication.html#instance-set-authData",
     "src/auth/authentication.js~Authentication#authData",
     "member"
   ],
   [
     "src/auth/authentication.js~authentication#authdata",
-    "class/src/auth/authentication.js~Authentication.html#instance-set-authData",
+    "class/src/auth/authentication.js~Authentication.html#instance-get-authData",
     "src/auth/authentication.js~Authentication#authData",
     "member"
   ],

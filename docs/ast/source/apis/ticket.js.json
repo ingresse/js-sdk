@@ -2791,12 +2791,1594 @@
                   }
                 }
               ],
+              "trailingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n     * Create new ticket attribute\n     *\n     * @param {number} id        - The item ID to create attribute.\n     * @param {object} attribute - The attribute data.\n     * @param {object} [query]   - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.newAttribute(200, { key: 'min', value: '1', type: 'integer' })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     ",
+                  "range": [
+                    3649,
+                    4225
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 147,
+                      "column": 4
+                    },
+                    "end": {
+                      "line": 166,
+                      "column": 7
+                    }
+                  }
+                }
+              ],
+              "static": false
+            },
+            {
+              "type": "MethodDefinition",
+              "key": {
+                "type": "Identifier",
+                "name": "newAttribute",
+                "range": [
+                  4230,
+                  4242
+                ],
+                "loc": {
+                  "start": {
+                    "line": 167,
+                    "column": 4
+                  },
+                  "end": {
+                    "line": 167,
+                    "column": 16
+                  }
+                }
+              },
+              "value": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [
+                  {
+                    "type": "Identifier",
+                    "name": "id",
+                    "range": [
+                      4243,
+                      4245
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 167,
+                        "column": 17
+                      },
+                      "end": {
+                        "line": 167,
+                        "column": 19
+                      }
+                    }
+                  },
+                  {
+                    "type": "Identifier",
+                    "name": "attribute",
+                    "range": [
+                      4247,
+                      4256
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 167,
+                        "column": 21
+                      },
+                      "end": {
+                        "line": 167,
+                        "column": 30
+                      }
+                    }
+                  },
+                  {
+                    "type": "Identifier",
+                    "name": "query",
+                    "range": [
+                      4258,
+                      4263
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 167,
+                        "column": 32
+                      },
+                      "end": {
+                        "line": 167,
+                        "column": 37
+                      }
+                    }
+                  }
+                ],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "ReturnStatement",
+                      "argument": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "ThisExpression",
+                            "range": [
+                              4282,
+                              4286
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 168,
+                                "column": 15
+                              },
+                              "end": {
+                                "line": 168,
+                                "column": 19
+                              }
+                            }
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "post",
+                            "range": [
+                              4287,
+                              4291
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 168,
+                                "column": 20
+                              },
+                              "end": {
+                                "line": 168,
+                                "column": 24
+                              }
+                            }
+                          },
+                          "range": [
+                            4282,
+                            4291
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 168,
+                              "column": 15
+                            },
+                            "end": {
+                              "line": 168,
+                              "column": 24
+                            }
+                          }
+                        },
+                        "arguments": [
+                          {
+                            "type": "TemplateLiteral",
+                            "quasis": [
+                              {
+                                "type": "TemplateElement",
+                                "value": {
+                                  "raw": "/items/",
+                                  "cooked": "/items/"
+                                },
+                                "tail": false,
+                                "range": [
+                                  4292,
+                                  4302
+                                ],
+                                "loc": {
+                                  "start": {
+                                    "line": 168,
+                                    "column": 25
+                                  },
+                                  "end": {
+                                    "line": 168,
+                                    "column": 35
+                                  }
+                                }
+                              },
+                              {
+                                "type": "TemplateElement",
+                                "value": {
+                                  "raw": "/attributes",
+                                  "cooked": "/attributes"
+                                },
+                                "tail": true,
+                                "range": [
+                                  4304,
+                                  4317
+                                ],
+                                "loc": {
+                                  "start": {
+                                    "line": 168,
+                                    "column": 37
+                                  },
+                                  "end": {
+                                    "line": 168,
+                                    "column": 50
+                                  }
+                                }
+                              }
+                            ],
+                            "expressions": [
+                              {
+                                "type": "Identifier",
+                                "name": "id",
+                                "range": [
+                                  4302,
+                                  4304
+                                ],
+                                "loc": {
+                                  "start": {
+                                    "line": 168,
+                                    "column": 35
+                                  },
+                                  "end": {
+                                    "line": 168,
+                                    "column": 37
+                                  }
+                                }
+                              }
+                            ],
+                            "range": [
+                              4292,
+                              4317
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 168,
+                                "column": 25
+                              },
+                              "end": {
+                                "line": 168,
+                                "column": 50
+                              }
+                            }
+                          },
+                          {
+                            "type": "Identifier",
+                            "name": "attribute",
+                            "range": [
+                              4319,
+                              4328
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 168,
+                                "column": 52
+                              },
+                              "end": {
+                                "line": 168,
+                                "column": 61
+                              }
+                            }
+                          },
+                          {
+                            "type": "Identifier",
+                            "name": "query",
+                            "range": [
+                              4330,
+                              4335
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 168,
+                                "column": 63
+                              },
+                              "end": {
+                                "line": 168,
+                                "column": 68
+                              }
+                            }
+                          }
+                        ],
+                        "range": [
+                          4282,
+                          4336
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 168,
+                            "column": 15
+                          },
+                          "end": {
+                            "line": 168,
+                            "column": 69
+                          }
+                        }
+                      },
+                      "range": [
+                        4275,
+                        4337
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 168,
+                          "column": 8
+                        },
+                        "end": {
+                          "line": 168,
+                          "column": 70
+                        }
+                      }
+                    }
+                  ],
+                  "range": [
+                    4265,
+                    4343
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 167,
+                      "column": 39
+                    },
+                    "end": {
+                      "line": 169,
+                      "column": 5
+                    }
+                  }
+                },
+                "generator": false,
+                "expression": false,
+                "range": [
+                  4242,
+                  4343
+                ],
+                "loc": {
+                  "start": {
+                    "line": 167,
+                    "column": 16
+                  },
+                  "end": {
+                    "line": 169,
+                    "column": 5
+                  }
+                }
+              },
+              "kind": "method",
+              "computed": false,
+              "range": [
+                4230,
+                4343
+              ],
+              "loc": {
+                "start": {
+                  "line": 167,
+                  "column": 4
+                },
+                "end": {
+                  "line": 169,
+                  "column": 5
+                }
+              },
+              "leadingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n     * Create new ticket attribute\n     *\n     * @param {number} id        - The item ID to create attribute.\n     * @param {object} attribute - The attribute data.\n     * @param {object} [query]   - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.newAttribute(200, { key: 'min', value: '1', type: 'integer' })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     ",
+                  "range": [
+                    3649,
+                    4225
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 147,
+                      "column": 4
+                    },
+                    "end": {
+                      "line": 166,
+                      "column": 7
+                    }
+                  }
+                }
+              ],
+              "trailingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n     * Updated ticket attribute\n     *\n     * @param {number} id          - The item ID to update attribute.\n     * @param {number} attributeId - The attribute id to be updated.\n     * @param {object} attribute   - The attribute data.\n     * @param {object} [query]     - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updateAttribute(200, 1, { key: 'min', value: '5', type: 'integer' })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     ",
+                  "range": [
+                    4349,
+                    5003
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 171,
+                      "column": 4
+                    },
+                    "end": {
+                      "line": 191,
+                      "column": 7
+                    }
+                  }
+                }
+              ],
+              "static": false
+            },
+            {
+              "type": "MethodDefinition",
+              "key": {
+                "type": "Identifier",
+                "name": "updateAttribute",
+                "range": [
+                  5008,
+                  5023
+                ],
+                "loc": {
+                  "start": {
+                    "line": 192,
+                    "column": 4
+                  },
+                  "end": {
+                    "line": 192,
+                    "column": 19
+                  }
+                }
+              },
+              "value": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [
+                  {
+                    "type": "Identifier",
+                    "name": "id",
+                    "range": [
+                      5024,
+                      5026
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 192,
+                        "column": 20
+                      },
+                      "end": {
+                        "line": 192,
+                        "column": 22
+                      }
+                    }
+                  },
+                  {
+                    "type": "Identifier",
+                    "name": "attributeId",
+                    "range": [
+                      5028,
+                      5039
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 192,
+                        "column": 24
+                      },
+                      "end": {
+                        "line": 192,
+                        "column": 35
+                      }
+                    }
+                  },
+                  {
+                    "type": "Identifier",
+                    "name": "attribute",
+                    "range": [
+                      5041,
+                      5050
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 192,
+                        "column": 37
+                      },
+                      "end": {
+                        "line": 192,
+                        "column": 46
+                      }
+                    }
+                  },
+                  {
+                    "type": "Identifier",
+                    "name": "query",
+                    "range": [
+                      5052,
+                      5057
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 192,
+                        "column": 48
+                      },
+                      "end": {
+                        "line": 192,
+                        "column": 53
+                      }
+                    }
+                  }
+                ],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "ReturnStatement",
+                      "argument": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "ThisExpression",
+                            "range": [
+                              5076,
+                              5080
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 193,
+                                "column": 15
+                              },
+                              "end": {
+                                "line": 193,
+                                "column": 19
+                              }
+                            }
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "put",
+                            "range": [
+                              5081,
+                              5084
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 193,
+                                "column": 20
+                              },
+                              "end": {
+                                "line": 193,
+                                "column": 23
+                              }
+                            }
+                          },
+                          "range": [
+                            5076,
+                            5084
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 193,
+                              "column": 15
+                            },
+                            "end": {
+                              "line": 193,
+                              "column": 23
+                            }
+                          }
+                        },
+                        "arguments": [
+                          {
+                            "type": "TemplateLiteral",
+                            "quasis": [
+                              {
+                                "type": "TemplateElement",
+                                "value": {
+                                  "raw": "/items/",
+                                  "cooked": "/items/"
+                                },
+                                "tail": false,
+                                "range": [
+                                  5085,
+                                  5095
+                                ],
+                                "loc": {
+                                  "start": {
+                                    "line": 193,
+                                    "column": 24
+                                  },
+                                  "end": {
+                                    "line": 193,
+                                    "column": 34
+                                  }
+                                }
+                              },
+                              {
+                                "type": "TemplateElement",
+                                "value": {
+                                  "raw": "/attributes/",
+                                  "cooked": "/attributes/"
+                                },
+                                "tail": false,
+                                "range": [
+                                  5097,
+                                  5112
+                                ],
+                                "loc": {
+                                  "start": {
+                                    "line": 193,
+                                    "column": 36
+                                  },
+                                  "end": {
+                                    "line": 193,
+                                    "column": 51
+                                  }
+                                }
+                              },
+                              {
+                                "type": "TemplateElement",
+                                "value": {
+                                  "raw": "",
+                                  "cooked": ""
+                                },
+                                "tail": true,
+                                "range": [
+                                  5123,
+                                  5125
+                                ],
+                                "loc": {
+                                  "start": {
+                                    "line": 193,
+                                    "column": 62
+                                  },
+                                  "end": {
+                                    "line": 193,
+                                    "column": 64
+                                  }
+                                }
+                              }
+                            ],
+                            "expressions": [
+                              {
+                                "type": "Identifier",
+                                "name": "id",
+                                "range": [
+                                  5095,
+                                  5097
+                                ],
+                                "loc": {
+                                  "start": {
+                                    "line": 193,
+                                    "column": 34
+                                  },
+                                  "end": {
+                                    "line": 193,
+                                    "column": 36
+                                  }
+                                }
+                              },
+                              {
+                                "type": "Identifier",
+                                "name": "attributeId",
+                                "range": [
+                                  5112,
+                                  5123
+                                ],
+                                "loc": {
+                                  "start": {
+                                    "line": 193,
+                                    "column": 51
+                                  },
+                                  "end": {
+                                    "line": 193,
+                                    "column": 62
+                                  }
+                                }
+                              }
+                            ],
+                            "range": [
+                              5085,
+                              5125
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 193,
+                                "column": 24
+                              },
+                              "end": {
+                                "line": 193,
+                                "column": 64
+                              }
+                            }
+                          },
+                          {
+                            "type": "Identifier",
+                            "name": "attribute",
+                            "range": [
+                              5127,
+                              5136
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 193,
+                                "column": 66
+                              },
+                              "end": {
+                                "line": 193,
+                                "column": 75
+                              }
+                            }
+                          },
+                          {
+                            "type": "Identifier",
+                            "name": "query",
+                            "range": [
+                              5138,
+                              5143
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 193,
+                                "column": 77
+                              },
+                              "end": {
+                                "line": 193,
+                                "column": 82
+                              }
+                            }
+                          }
+                        ],
+                        "range": [
+                          5076,
+                          5144
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 193,
+                            "column": 15
+                          },
+                          "end": {
+                            "line": 193,
+                            "column": 83
+                          }
+                        }
+                      },
+                      "range": [
+                        5069,
+                        5145
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 193,
+                          "column": 8
+                        },
+                        "end": {
+                          "line": 193,
+                          "column": 84
+                        }
+                      }
+                    }
+                  ],
+                  "range": [
+                    5059,
+                    5151
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 192,
+                      "column": 55
+                    },
+                    "end": {
+                      "line": 194,
+                      "column": 5
+                    }
+                  }
+                },
+                "generator": false,
+                "expression": false,
+                "range": [
+                  5023,
+                  5151
+                ],
+                "loc": {
+                  "start": {
+                    "line": 192,
+                    "column": 19
+                  },
+                  "end": {
+                    "line": 194,
+                    "column": 5
+                  }
+                }
+              },
+              "kind": "method",
+              "computed": false,
+              "range": [
+                5008,
+                5151
+              ],
+              "loc": {
+                "start": {
+                  "line": 192,
+                  "column": 4
+                },
+                "end": {
+                  "line": 194,
+                  "column": 5
+                }
+              },
+              "leadingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n     * Updated ticket attribute\n     *\n     * @param {number} id          - The item ID to update attribute.\n     * @param {number} attributeId - The attribute id to be updated.\n     * @param {object} attribute   - The attribute data.\n     * @param {object} [query]     - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updateAttribute(200, 1, { key: 'min', value: '5', type: 'integer' })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     ",
+                  "range": [
+                    4349,
+                    5003
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 171,
+                      "column": 4
+                    },
+                    "end": {
+                      "line": 191,
+                      "column": 7
+                    }
+                  }
+                }
+              ],
+              "trailingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n     * Create new sale period to ticket\n     *\n     * @param {number} id         - The item ID to create sale period.\n     * @param {object} salePeriod - The sale period data.\n     * @param {object} [query]    - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.newSalePeriod({\n     *          appCategoryId: 1,\n     *          start: '2016-10-10 20:20:00',\n     *          finish: '2016-11-10 20:20:00',\n     *          available: 1\n     *      })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     ",
+                  "range": [
+                    5157,
+                    5869
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 196,
+                      "column": 4
+                    },
+                    "end": {
+                      "line": 220,
+                      "column": 7
+                    }
+                  }
+                }
+              ],
+              "static": false
+            },
+            {
+              "type": "MethodDefinition",
+              "key": {
+                "type": "Identifier",
+                "name": "newSalePeriod",
+                "range": [
+                  5874,
+                  5887
+                ],
+                "loc": {
+                  "start": {
+                    "line": 221,
+                    "column": 4
+                  },
+                  "end": {
+                    "line": 221,
+                    "column": 17
+                  }
+                }
+              },
+              "value": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [
+                  {
+                    "type": "Identifier",
+                    "name": "id",
+                    "range": [
+                      5888,
+                      5890
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 221,
+                        "column": 18
+                      },
+                      "end": {
+                        "line": 221,
+                        "column": 20
+                      }
+                    }
+                  },
+                  {
+                    "type": "Identifier",
+                    "name": "salePeriod",
+                    "range": [
+                      5892,
+                      5902
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 221,
+                        "column": 22
+                      },
+                      "end": {
+                        "line": 221,
+                        "column": 32
+                      }
+                    }
+                  },
+                  {
+                    "type": "Identifier",
+                    "name": "query",
+                    "range": [
+                      5904,
+                      5909
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 221,
+                        "column": 34
+                      },
+                      "end": {
+                        "line": 221,
+                        "column": 39
+                      }
+                    }
+                  }
+                ],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "ReturnStatement",
+                      "argument": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "ThisExpression",
+                            "range": [
+                              5928,
+                              5932
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 222,
+                                "column": 15
+                              },
+                              "end": {
+                                "line": 222,
+                                "column": 19
+                              }
+                            }
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "post",
+                            "range": [
+                              5933,
+                              5937
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 222,
+                                "column": 20
+                              },
+                              "end": {
+                                "line": 222,
+                                "column": 24
+                              }
+                            }
+                          },
+                          "range": [
+                            5928,
+                            5937
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 222,
+                              "column": 15
+                            },
+                            "end": {
+                              "line": 222,
+                              "column": 24
+                            }
+                          }
+                        },
+                        "arguments": [
+                          {
+                            "type": "TemplateLiteral",
+                            "quasis": [
+                              {
+                                "type": "TemplateElement",
+                                "value": {
+                                  "raw": "/items/",
+                                  "cooked": "/items/"
+                                },
+                                "tail": false,
+                                "range": [
+                                  5938,
+                                  5948
+                                ],
+                                "loc": {
+                                  "start": {
+                                    "line": 222,
+                                    "column": 25
+                                  },
+                                  "end": {
+                                    "line": 222,
+                                    "column": 35
+                                  }
+                                }
+                              },
+                              {
+                                "type": "TemplateElement",
+                                "value": {
+                                  "raw": "/sales-period",
+                                  "cooked": "/sales-period"
+                                },
+                                "tail": true,
+                                "range": [
+                                  5950,
+                                  5965
+                                ],
+                                "loc": {
+                                  "start": {
+                                    "line": 222,
+                                    "column": 37
+                                  },
+                                  "end": {
+                                    "line": 222,
+                                    "column": 52
+                                  }
+                                }
+                              }
+                            ],
+                            "expressions": [
+                              {
+                                "type": "Identifier",
+                                "name": "id",
+                                "range": [
+                                  5948,
+                                  5950
+                                ],
+                                "loc": {
+                                  "start": {
+                                    "line": 222,
+                                    "column": 35
+                                  },
+                                  "end": {
+                                    "line": 222,
+                                    "column": 37
+                                  }
+                                }
+                              }
+                            ],
+                            "range": [
+                              5938,
+                              5965
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 222,
+                                "column": 25
+                              },
+                              "end": {
+                                "line": 222,
+                                "column": 52
+                              }
+                            }
+                          },
+                          {
+                            "type": "Identifier",
+                            "name": "salePeriod",
+                            "range": [
+                              5967,
+                              5977
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 222,
+                                "column": 54
+                              },
+                              "end": {
+                                "line": 222,
+                                "column": 64
+                              }
+                            }
+                          },
+                          {
+                            "type": "Identifier",
+                            "name": "query",
+                            "range": [
+                              5979,
+                              5984
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 222,
+                                "column": 66
+                              },
+                              "end": {
+                                "line": 222,
+                                "column": 71
+                              }
+                            }
+                          }
+                        ],
+                        "range": [
+                          5928,
+                          5985
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 222,
+                            "column": 15
+                          },
+                          "end": {
+                            "line": 222,
+                            "column": 72
+                          }
+                        }
+                      },
+                      "range": [
+                        5921,
+                        5986
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 222,
+                          "column": 8
+                        },
+                        "end": {
+                          "line": 222,
+                          "column": 73
+                        }
+                      }
+                    }
+                  ],
+                  "range": [
+                    5911,
+                    5992
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 221,
+                      "column": 41
+                    },
+                    "end": {
+                      "line": 223,
+                      "column": 5
+                    }
+                  }
+                },
+                "generator": false,
+                "expression": false,
+                "range": [
+                  5887,
+                  5992
+                ],
+                "loc": {
+                  "start": {
+                    "line": 221,
+                    "column": 17
+                  },
+                  "end": {
+                    "line": 223,
+                    "column": 5
+                  }
+                }
+              },
+              "kind": "method",
+              "computed": false,
+              "range": [
+                5874,
+                5992
+              ],
+              "loc": {
+                "start": {
+                  "line": 221,
+                  "column": 4
+                },
+                "end": {
+                  "line": 223,
+                  "column": 5
+                }
+              },
+              "leadingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n     * Create new sale period to ticket\n     *\n     * @param {number} id         - The item ID to create sale period.\n     * @param {object} salePeriod - The sale period data.\n     * @param {object} [query]    - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.newSalePeriod({\n     *          appCategoryId: 1,\n     *          start: '2016-10-10 20:20:00',\n     *          finish: '2016-11-10 20:20:00',\n     *          available: 1\n     *      })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     ",
+                  "range": [
+                    5157,
+                    5869
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 196,
+                      "column": 4
+                    },
+                    "end": {
+                      "line": 220,
+                      "column": 7
+                    }
+                  }
+                }
+              ],
+              "trailingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n     * Updated ticket sale period\n     *\n     * @param {number} id         - The item ID to update the sale period.\n     * @param {object} salePeriod - The salePeriod data.\n     * @param {object} [query]    - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updateSalePeriod(200, {\n     *          appCategoryId: 1,\n     *          start: '2016-11-20 10:10:00',\n     *          finish: '2016-12-20 10:10:00',\n     *          available: 1\n     *      })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     ",
+                  "range": [
+                    5998,
+                    6715
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 225,
+                      "column": 4
+                    },
+                    "end": {
+                      "line": 249,
+                      "column": 7
+                    }
+                  }
+                }
+              ],
+              "static": false
+            },
+            {
+              "type": "MethodDefinition",
+              "key": {
+                "type": "Identifier",
+                "name": "updateSalePeriod",
+                "range": [
+                  6720,
+                  6736
+                ],
+                "loc": {
+                  "start": {
+                    "line": 250,
+                    "column": 4
+                  },
+                  "end": {
+                    "line": 250,
+                    "column": 20
+                  }
+                }
+              },
+              "value": {
+                "type": "FunctionExpression",
+                "id": null,
+                "params": [
+                  {
+                    "type": "Identifier",
+                    "name": "id",
+                    "range": [
+                      6737,
+                      6739
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 250,
+                        "column": 21
+                      },
+                      "end": {
+                        "line": 250,
+                        "column": 23
+                      }
+                    }
+                  },
+                  {
+                    "type": "Identifier",
+                    "name": "salePeriod",
+                    "range": [
+                      6741,
+                      6751
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 250,
+                        "column": 25
+                      },
+                      "end": {
+                        "line": 250,
+                        "column": 35
+                      }
+                    }
+                  },
+                  {
+                    "type": "Identifier",
+                    "name": "query",
+                    "range": [
+                      6753,
+                      6758
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 250,
+                        "column": 37
+                      },
+                      "end": {
+                        "line": 250,
+                        "column": 42
+                      }
+                    }
+                  }
+                ],
+                "body": {
+                  "type": "BlockStatement",
+                  "body": [
+                    {
+                      "type": "ReturnStatement",
+                      "argument": {
+                        "type": "CallExpression",
+                        "callee": {
+                          "type": "MemberExpression",
+                          "computed": false,
+                          "object": {
+                            "type": "ThisExpression",
+                            "range": [
+                              6777,
+                              6781
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 251,
+                                "column": 15
+                              },
+                              "end": {
+                                "line": 251,
+                                "column": 19
+                              }
+                            }
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "name": "put",
+                            "range": [
+                              6782,
+                              6785
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 251,
+                                "column": 20
+                              },
+                              "end": {
+                                "line": 251,
+                                "column": 23
+                              }
+                            }
+                          },
+                          "range": [
+                            6777,
+                            6785
+                          ],
+                          "loc": {
+                            "start": {
+                              "line": 251,
+                              "column": 15
+                            },
+                            "end": {
+                              "line": 251,
+                              "column": 23
+                            }
+                          }
+                        },
+                        "arguments": [
+                          {
+                            "type": "TemplateLiteral",
+                            "quasis": [
+                              {
+                                "type": "TemplateElement",
+                                "value": {
+                                  "raw": "/items/",
+                                  "cooked": "/items/"
+                                },
+                                "tail": false,
+                                "range": [
+                                  6786,
+                                  6796
+                                ],
+                                "loc": {
+                                  "start": {
+                                    "line": 251,
+                                    "column": 24
+                                  },
+                                  "end": {
+                                    "line": 251,
+                                    "column": 34
+                                  }
+                                }
+                              },
+                              {
+                                "type": "TemplateElement",
+                                "value": {
+                                  "raw": "/sales-period",
+                                  "cooked": "/sales-period"
+                                },
+                                "tail": true,
+                                "range": [
+                                  6798,
+                                  6813
+                                ],
+                                "loc": {
+                                  "start": {
+                                    "line": 251,
+                                    "column": 36
+                                  },
+                                  "end": {
+                                    "line": 251,
+                                    "column": 51
+                                  }
+                                }
+                              }
+                            ],
+                            "expressions": [
+                              {
+                                "type": "Identifier",
+                                "name": "id",
+                                "range": [
+                                  6796,
+                                  6798
+                                ],
+                                "loc": {
+                                  "start": {
+                                    "line": 251,
+                                    "column": 34
+                                  },
+                                  "end": {
+                                    "line": 251,
+                                    "column": 36
+                                  }
+                                }
+                              }
+                            ],
+                            "range": [
+                              6786,
+                              6813
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 251,
+                                "column": 24
+                              },
+                              "end": {
+                                "line": 251,
+                                "column": 51
+                              }
+                            }
+                          },
+                          {
+                            "type": "Identifier",
+                            "name": "salePeriod",
+                            "range": [
+                              6815,
+                              6825
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 251,
+                                "column": 53
+                              },
+                              "end": {
+                                "line": 251,
+                                "column": 63
+                              }
+                            }
+                          },
+                          {
+                            "type": "Identifier",
+                            "name": "query",
+                            "range": [
+                              6827,
+                              6832
+                            ],
+                            "loc": {
+                              "start": {
+                                "line": 251,
+                                "column": 65
+                              },
+                              "end": {
+                                "line": 251,
+                                "column": 70
+                              }
+                            }
+                          }
+                        ],
+                        "range": [
+                          6777,
+                          6833
+                        ],
+                        "loc": {
+                          "start": {
+                            "line": 251,
+                            "column": 15
+                          },
+                          "end": {
+                            "line": 251,
+                            "column": 71
+                          }
+                        }
+                      },
+                      "range": [
+                        6770,
+                        6834
+                      ],
+                      "loc": {
+                        "start": {
+                          "line": 251,
+                          "column": 8
+                        },
+                        "end": {
+                          "line": 251,
+                          "column": 72
+                        }
+                      }
+                    }
+                  ],
+                  "range": [
+                    6760,
+                    6840
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 250,
+                      "column": 44
+                    },
+                    "end": {
+                      "line": 252,
+                      "column": 5
+                    }
+                  }
+                },
+                "generator": false,
+                "expression": false,
+                "range": [
+                  6736,
+                  6840
+                ],
+                "loc": {
+                  "start": {
+                    "line": 250,
+                    "column": 20
+                  },
+                  "end": {
+                    "line": 252,
+                    "column": 5
+                  }
+                }
+              },
+              "kind": "method",
+              "computed": false,
+              "range": [
+                6720,
+                6840
+              ],
+              "loc": {
+                "start": {
+                  "line": 250,
+                  "column": 4
+                },
+                "end": {
+                  "line": 252,
+                  "column": 5
+                }
+              },
+              "leadingComments": [
+                {
+                  "type": "Block",
+                  "value": "*\n     * Updated ticket sale period\n     *\n     * @param {number} id         - The item ID to update the sale period.\n     * @param {object} salePeriod - The salePeriod data.\n     * @param {object} [query]    - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updateSalePeriod(200, {\n     *          appCategoryId: 1,\n     *          start: '2016-11-20 10:10:00',\n     *          finish: '2016-12-20 10:10:00',\n     *          available: 1\n     *      })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     ",
+                  "range": [
+                    5998,
+                    6715
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 225,
+                      "column": 4
+                    },
+                    "end": {
+                      "line": 249,
+                      "column": 7
+                    }
+                  }
+                }
+              ],
               "static": false
             }
           ],
           "range": [
             400,
-            3645
+            6842
           ],
           "loc": {
             "start": {
@@ -2804,14 +4386,14 @@
               "column": 43
             },
             "end": {
-              "line": 146,
+              "line": 253,
               "column": 1
             }
           }
         },
         "range": [
           364,
-          3645
+          6842
         ],
         "loc": {
           "start": {
@@ -2819,7 +4401,7 @@
             "column": 7
           },
           "end": {
-            "line": 146,
+            "line": 253,
             "column": 1
           }
         },
@@ -2849,7 +4431,7 @@
       "source": null,
       "range": [
         357,
-        3645
+        6842
       ],
       "loc": {
         "start": {
@@ -2857,7 +4439,7 @@
           "column": 0
         },
         "end": {
-          "line": 146,
+          "line": 253,
           "column": 1
         }
       },
@@ -2886,7 +4468,7 @@
   "sourceType": "module",
   "range": [
     0,
-    3645
+    6842
   ],
   "loc": {
     "start": {
@@ -2894,7 +4476,7 @@
       "column": 0
     },
     "end": {
-      "line": 146,
+      "line": 253,
       "column": 1
     }
   },
@@ -3021,6 +4603,78 @@
         },
         "end": {
           "line": 142,
+          "column": 7
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n     * Create new ticket attribute\n     *\n     * @param {number} id        - The item ID to create attribute.\n     * @param {object} attribute - The attribute data.\n     * @param {object} [query]   - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.newAttribute(200, { key: 'min', value: '1', type: 'integer' })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     ",
+      "range": [
+        3649,
+        4225
+      ],
+      "loc": {
+        "start": {
+          "line": 147,
+          "column": 4
+        },
+        "end": {
+          "line": 166,
+          "column": 7
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n     * Updated ticket attribute\n     *\n     * @param {number} id          - The item ID to update attribute.\n     * @param {number} attributeId - The attribute id to be updated.\n     * @param {object} attribute   - The attribute data.\n     * @param {object} [query]     - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updateAttribute(200, 1, { key: 'min', value: '5', type: 'integer' })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     ",
+      "range": [
+        4349,
+        5003
+      ],
+      "loc": {
+        "start": {
+          "line": 171,
+          "column": 4
+        },
+        "end": {
+          "line": 191,
+          "column": 7
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n     * Create new sale period to ticket\n     *\n     * @param {number} id         - The item ID to create sale period.\n     * @param {object} salePeriod - The sale period data.\n     * @param {object} [query]    - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.newSalePeriod({\n     *          appCategoryId: 1,\n     *          start: '2016-10-10 20:20:00',\n     *          finish: '2016-11-10 20:20:00',\n     *          available: 1\n     *      })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     ",
+      "range": [
+        5157,
+        5869
+      ],
+      "loc": {
+        "start": {
+          "line": 196,
+          "column": 4
+        },
+        "end": {
+          "line": 220,
+          "column": 7
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n     * Updated ticket sale period\n     *\n     * @param {number} id         - The item ID to update the sale period.\n     * @param {object} salePeriod - The salePeriod data.\n     * @param {object} [query]    - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updateSalePeriod(200, {\n     *          appCategoryId: 1,\n     *          start: '2016-11-20 10:10:00',\n     *          finish: '2016-12-20 10:10:00',\n     *          available: 1\n     *      })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     ",
+      "range": [
+        5998,
+        6715
+      ],
+      "loc": {
+        "start": {
+          "line": 225,
+          "column": 4
+        },
+        "end": {
+          "line": 249,
           "column": 7
         }
       }
