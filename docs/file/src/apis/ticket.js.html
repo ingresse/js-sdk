@@ -222,7 +222,6 @@ export class Ticket extends RequestHandler {
      * @param {object} [query]   - Optional request parameters.
      *
      * @returns Promise
-<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
      *
      * @example
      * ...
@@ -234,8 +233,6 @@ export class Ticket extends RequestHandler {
      *     .catch(function (error) {
      *         console.log(error);
      *     });
-=======
->>>>>>> CREATE the getTypes endpoint in ticket api
      */
     newAttribute(id, attribute, query) {
         return this.post(`/items/${id}/attributes`, attribute, query);
@@ -250,7 +247,6 @@ export class Ticket extends RequestHandler {
      * @param {object} [query]     - Optional request parameters.
      *
      * @returns Promise
-<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
      *
      * @example
      * ...
@@ -262,13 +258,10 @@ export class Ticket extends RequestHandler {
      *     .catch(function (error) {
      *         console.log(error);
      *     });
-=======
->>>>>>> CREATE the getTypes endpoint in ticket api
      */
     updateAttribute(id, attributeId, attribute, query) {
         return this.put(`/items/${id}/attributes/${attributeId}`, attribute, query);
     }
-<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
 
     /**
      * Create new sale period to ticket
@@ -327,8 +320,6 @@ export class Ticket extends RequestHandler {
     updateSalePeriod(id, salePeriod, query) {
         return this.put(`/items/${id}/sales-period`, salePeriod, query);
     }
-=======
->>>>>>> CREATE the getTypes endpoint in ticket api
 }
 
 </code></pre>

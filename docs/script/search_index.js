@@ -408,15 +408,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
-=======
     "src/apis/ticket.js~ticket#gettypes",
     "class/src/apis/ticket.js~Ticket.html#instance-method-getTypes",
     "src/apis/ticket.js~Ticket#getTypes",
     "method"
   ],
   [
->>>>>>> CREATE the getTypes endpoint in ticket api
     "src/apis/ticket.js~ticket#newattribute",
     "class/src/apis/ticket.js~Ticket.html#instance-method-newAttribute",
     "src/apis/ticket.js~Ticket#newAttribute",
