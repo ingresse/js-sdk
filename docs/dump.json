@@ -44,7 +44,11 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "content": "import {RequestHandler} from '../request/handler';\nimport {auth} from '../auth';\n\n/**\n * Ingresse Ticket's API\n *\n * API to get, create, update or remove tickets.\n *\n * @example\n * var Sdk = require('ingresse-sdk');\n * var ingresse = new Sdk();\n *\n * // You will have access to this API\n * // after instantiate the Sdk.\n * var ticket = ingresse.ticket;\n */\nexport class Ticket extends RequestHandler {\n    /**\n     * Ticket Api\n     *\n     * @param {object} [custom={}] - Initialize Ticket Api settings.\n     */\n    constructor(custom = {}) {\n        let settings = {\n            url : 'https://api.ingresse.com/ticket',\n            auth: auth.Jwt.type(),\n        };\n\n        Object.assign(settings, custom);\n        super(settings);\n\n        this.settings = settings;\n    }\n\n    /**\n     * Get a list of ticket items\n     * This method will return a `Promise` so you can use\n     * `.then` and `.catach` methdos.\n     *\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.getItems()\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    getItems(query = {}) {\n        return this.get('/items', query);\n    }\n\n    /**\n     * Get item by ID\n     *\n     * @param {string|number} id - The item ID to get.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.getItem(200)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    getItem(id, query = {}) {\n        return this.get(`/items/${id}`, query);\n    }\n\n    /**\n     * Create new Ticket item\n     *\n     * @param {object} data    - Data to create a new ticket item.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.newItem({ name: 'My Ticket Name' })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    newItem(data = {}, query = {}) {\n        return this.post('/items', data, query);\n    }\n\n    /**\n     * Update a ticket item\n     *\n     * @param {string|number} id - The item ID to update.\n     * @param {object} data      - Data to update item.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updateItem(200, { name: 'My Updated Ticket Name' })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    updateItem(id, data = {}, query = {}) {\n        return this.put(`/items/${id}`, data, query);\n    }\n\n    /**\n     * Remove a ticket item\n     *\n     * @param {string|number} id - The item ID to remove.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.removeItem(200)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    removeItem(id, query = {}) {\n        return this.delete(id, query);\n    }\n\n    /**\n     * Create new ticket attribute\n     *\n     * @param {number} id        - The item ID to create attribute.\n     * @param {object} attribute - The attribute data.\n     * @param {object} [query]   - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.newAttribute(200, { key: 'min', value: '1', type: 'integer' })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    newAttribute(id, attribute, query) {\n        return this.post(`/items/${id}/attributes`, attribute, query);\n    }\n\n    /**\n     * Updated ticket attribute\n     *\n     * @param {number} id          - The item ID to update attribute.\n     * @param {number} attributeId - The attribute id to be updated.\n     * @param {object} attribute   - The attribute data.\n     * @param {object} [query]     - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updateAttribute(200, 1, { key: 'min', value: '5', type: 'integer' })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    updateAttribute(id, attributeId, attribute, query) {\n        return this.put(`/items/${id}/attributes/${attributeId}`, attribute, query);\n    }\n\n    /**\n     * Create new sale period to ticket\n     *\n     * @param {number} id         - The item ID to create sale period.\n     * @param {object} salePeriod - The sale period data.\n     * @param {object} [query]    - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.newSalePeriod({\n     *          appCategoryId: 1,\n     *          start: '2016-10-10 20:20:00',\n     *          finish: '2016-11-10 20:20:00',\n     *          available: 1\n     *      })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    newSalePeriod(id, salePeriod, query) {\n        return this.post(`/items/${id}/sales-period`, salePeriod, query);\n    }\n\n    /**\n     * Updated ticket sale period\n     *\n     * @param {number} id         - The item ID to update the sale period.\n     * @param {object} salePeriod - The salePeriod data.\n     * @param {object} [query]    - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updateSalePeriod(200, {\n     *          appCategoryId: 1,\n     *          start: '2016-11-20 10:10:00',\n     *          finish: '2016-12-20 10:10:00',\n     *          available: 1\n     *      })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    updateSalePeriod(id, salePeriod, query) {\n        return this.put(`/items/${id}/sales-period`, salePeriod, query);\n    }\n}\n\n"
+=======
+    "content": "import {RequestHandler} from '../request/handler';\nimport {auth} from '../auth';\n\n/**\n * Ingresse Ticket's API\n *\n * API to get, create, update or remove tickets.\n *\n * @example\n * var Sdk = require('ingresse-sdk');\n * var ingresse = new Sdk();\n *\n * // You will have access to this API\n * // after instantiate the Sdk.\n * var ticket = ingresse.ticket;\n */\nexport class Ticket extends RequestHandler {\n    /**\n     * Ticket Api\n     *\n     * @param {object} [custom={}] - Initialize Ticket Api settings.\n     */\n    constructor(custom = {}) {\n        let settings = {\n            url : 'https://api.ingresse.com/ticket',\n            auth: auth.Jwt.type(),\n        };\n\n        Object.assign(settings, custom);\n        super(settings);\n\n        this.settings = settings;\n    }\n\n    /**\n     * Get a list of ticket types\n     * This method will return a `Promise` so you can use\n     * `.then` and `.catach` methods.\n     *\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.getTypes()\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    getTypes(query = {}) {\n        return this.get('/types', query);\n    }\n\n    /**\n     * Get a list of ticket items\n     * This method will return a `Promise` so you can use\n     * `.then` and `.catach` methdos.\n     *\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.getItems()\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    getItems(query = {}) {\n        return this.get('/items', query);\n    }\n\n    /**\n     * Get item by ID\n     *\n     * @param {string|number} id - The item ID to get.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.getItem(200)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    getItem(id, query = {}) {\n        return this.get(`/items/${id}`, query);\n    }\n\n    /**\n     * Create new Ticket item\n     *\n     * @param {object} data    - Data to create a new ticket item.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.newItem({ name: 'My Ticket Name' })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    newItem(data = {}, query = {}) {\n        return this.post('/items', data, query);\n    }\n\n    /**\n     * Update a ticket item\n     *\n     * @param {string|number} id - The item ID to update.\n     * @param {object} data      - Data to update item.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updateItem(200, { name: 'My Updated Ticket Name' })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    updateItem(id, data = {}, query = {}) {\n        return this.put(`/items/${id}`, data, query);\n    }\n\n    /**\n     * Remove a ticket item\n     *\n     * @param {string|number} id - The item ID to remove.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.removeItem(200)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    removeItem(id, query = {}) {\n        return this.delete(id, query);\n    }\n\n    /**\n     * Create new ticket attribute\n     *\n     * @param {number} id        - The item ID to create attribute.\n     * @param {object} attribute - The attribute data.\n     * @param {object} [query]   - Optional request parameters.\n     *\n     * @returns Promise\n     */\n    newAttribute(id, attribute, query) {\n        return this.post(`/items/${id}/attributes`, attribute, query);\n    }\n\n    /**\n     * Updated ticket attribute\n     *\n     * @param {number} id          - The item ID to update attribute.\n     * @param {number} attributeId - The attribute id to be updated.\n     * @param {object} attribute   - The attribute data.\n     * @param {object} [query]     - Optional request parameters.\n     *\n     * @returns Promise\n     */\n    updateAttribute(id, attributeId, attribute, query) {\n        return this.put(`/items/${id}/attributes/${attributeId}`, attribute, query);\n    }\n}\n\n"
+>>>>>>> CREATE the getTypes endpoint in ticket api
   },
   {
     "__docId__": 3,
@@ -118,13 +122,13 @@
     "kind": "method",
     "static": false,
     "variation": null,
-    "name": "getItems",
+    "name": "getTypes",
     "memberof": "src/apis/ticket.js~Ticket",
-    "longname": "src/apis/ticket.js~Ticket#getItems",
+    "longname": "src/apis/ticket.js~Ticket#getTypes",
     "access": null,
-    "description": "Get a list of ticket items\nThis method will return a `Promise` so you can use\n`.then` and `.catach` methdos.",
+    "description": "Get a list of ticket types\nThis method will return a `Promise` so you can use\n`.then` and `.catach` methods.",
     "examples": [
-      "...\n\ningresse.ticket.getItems()\n    .then(function (response) {\n        console.log(response);\n    })\n    .catch(function (error) {\n        console.log(error);\n    });"
+      "...\n\ningresse.ticket.getTypes()\n    .then(function (response) {\n        console.log(response);\n    })\n    .catch(function (error) {\n        console.log(error);\n    });"
     ],
     "lineNumber": 54,
     "unknown": [
@@ -160,6 +164,48 @@
     "kind": "method",
     "static": false,
     "variation": null,
+    "name": "getItems",
+    "memberof": "src/apis/ticket.js~Ticket",
+    "longname": "src/apis/ticket.js~Ticket#getItems",
+    "access": null,
+    "description": "Get a list of ticket items\nThis method will return a `Promise` so you can use\n`.then` and `.catach` methdos.",
+    "examples": [
+      "...\n\ningresse.ticket.getItems()\n    .then(function (response) {\n        console.log(response);\n    })\n    .catch(function (error) {\n        console.log(error);\n    });"
+    ],
+    "lineNumber": 77,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "query",
+        "description": "Optional request parameters."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 8,
+    "kind": "method",
+    "static": false,
+    "variation": null,
     "name": "getItem",
     "memberof": "src/apis/ticket.js~Ticket",
     "longname": "src/apis/ticket.js~Ticket#getItem",
@@ -168,7 +214,7 @@
     "examples": [
       "...\n\ningresse.ticket.getItem(200)\n    .then(function (response) {\n        console.log(response);\n    })\n    .catch(function (error) {\n        console.log(error);\n    });"
     ],
-    "lineNumber": 76,
+    "lineNumber": 99,
     "unknown": [
       {
         "tagName": "@returns",
@@ -209,7 +255,7 @@
     "generator": false
   },
   {
-    "__docId__": 8,
+    "__docId__": 9,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -221,7 +267,7 @@
     "examples": [
       "...\n\ningresse.ticket.newItem({ name: 'My Ticket Name' })\n    .then(function (response) {\n        console.log(response);\n    })\n    .catch(function (error) {\n        console.log(error);\n    });"
     ],
-    "lineNumber": 98,
+    "lineNumber": 121,
     "unknown": [
       {
         "tagName": "@returns",
@@ -261,7 +307,7 @@
     "generator": false
   },
   {
-    "__docId__": 9,
+    "__docId__": 10,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -273,7 +319,7 @@
     "examples": [
       "...\n\ningresse.ticket.updateItem(200, { name: 'My Updated Ticket Name' })\n    .then(function (response) {\n        console.log(response);\n    })\n    .catch(function (error) {\n        console.log(error);\n    });"
     ],
-    "lineNumber": 121,
+    "lineNumber": 144,
     "unknown": [
       {
         "tagName": "@returns",
@@ -324,7 +370,7 @@
     "generator": false
   },
   {
-    "__docId__": 10,
+    "__docId__": 11,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -336,7 +382,7 @@
     "examples": [
       "...\n\ningresse.ticket.removeItem(200)\n    .then(function (response) {\n        console.log(response);\n    })\n    .catch(function (error) {\n        console.log(error);\n    });"
     ],
-    "lineNumber": 143,
+    "lineNumber": 166,
     "unknown": [
       {
         "tagName": "@returns",
@@ -377,7 +423,11 @@
     "generator": false
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 11,
+=======
+    "__docId__": 12,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "method",
     "static": false,
     "variation": null,
@@ -386,10 +436,14 @@
     "longname": "src/apis/ticket.js~Ticket#newAttribute",
     "access": null,
     "description": "Create new ticket attribute",
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "examples": [
       "...\n\ningresse.ticket.newAttribute(200, { key: 'min', value: '1', type: 'integer' })\n    .then(function (response) {\n        console.log(response);\n    })\n    .catch(function (error) {\n        console.log(error);\n    });"
     ],
     "lineNumber": 167,
+=======
+    "lineNumber": 179,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "unknown": [
       {
         "tagName": "@returns",
@@ -439,7 +493,11 @@
     "generator": false
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 12,
+=======
+    "__docId__": 13,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "method",
     "static": false,
     "variation": null,
@@ -448,10 +506,14 @@
     "longname": "src/apis/ticket.js~Ticket#updateAttribute",
     "access": null,
     "description": "Updated ticket attribute",
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "examples": [
       "...\n\ningresse.ticket.updateAttribute(200, 1, { key: 'min', value: '5', type: 'integer' })\n    .then(function (response) {\n        console.log(response);\n    })\n    .catch(function (error) {\n        console.log(error);\n    });"
     ],
     "lineNumber": 192,
+=======
+    "lineNumber": 193,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "unknown": [
       {
         "tagName": "@returns",
@@ -511,6 +573,7 @@
     "generator": false
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 13,
     "kind": "method",
     "static": false,
@@ -636,6 +699,9 @@
   },
   {
     "__docId__": 15,
+=======
+    "__docId__": 14,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "file",
     "static": true,
     "variation": null,
@@ -648,7 +714,11 @@
     "content": "/**\n * Base class for the authentications\n */\nexport class Authentication {\n    /**\n     * Set authentication data\n     *\n     * @param {object|string} data - Authentication data.\n     */\n    set authData(data) {\n        this._authData = data;\n    }\n\n    /**\n     * Get authentication data\n     *\n     * @returns {object|string}\n     */\n    get authData() {\n        return this._authData;\n    }\n}\n\n"
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 16,
+=======
+    "__docId__": 15,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "class",
     "static": true,
     "variation": null,
@@ -664,7 +734,11 @@
     "interface": false
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 17,
+=======
+    "__docId__": 16,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "set",
     "static": false,
     "variation": null,
@@ -695,7 +769,11 @@
     "generator": false
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 18,
+=======
+    "__docId__": 17,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "member",
     "static": false,
     "variation": null,
@@ -713,7 +791,11 @@
     }
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 19,
+=======
+    "__docId__": 18,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "get",
     "static": false,
     "variation": null,
@@ -746,7 +828,11 @@
     "generator": false
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 20,
+=======
+    "__docId__": 19,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "file",
     "static": true,
     "variation": null,
@@ -759,7 +845,11 @@
     "content": "import {Jwt} from './jwt';\n\n\nexport var auth = {\n    [Jwt.type()]: Jwt\n};\n\n"
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 21,
+=======
+    "__docId__": 20,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -780,7 +870,11 @@
     }
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 22,
+=======
+    "__docId__": 21,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "file",
     "static": true,
     "variation": null,
@@ -793,7 +887,11 @@
     "content": "import {Authentication} from './authentication';\n\n\nexport class Jwt extends Authentication {\n    constructor() {\n        super();\n    }\n\n    /**\n     * Authentication type e.g. Jwt, BasicAuth\n     *\n     * @returns {string}\n     */\n    static type() {\n        return 'Jwt';\n    }\n\n    /**\n     * Get formatted authentication settings\n     *\n     * @returns {object}\n     */\n    getSettings() {\n        return {\n            headers: {\n                'Authorization': `Bearer ${this.getToken()}`\n            }\n        };\n    }\n\n    /**\n     * Set Jwt authentication token value\n     *\n     * @param {string} token - JWT Token value\n     *\n     * @example\n     * ingresse.ticket.auth.setToken('12345.67890.1234');\n     */\n    setToken(token) {\n        this.authData = token;\n    }\n\n    /**\n     * Get Jwt authentication token value\n     *\n     * @returns {string}\n     *\n     * @example\n     * ingresse.ticket.auth.getToken();\n     */\n    getToken() {\n        return this.authData;\n    }\n}\n\n"
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 23,
+=======
+    "__docId__": 22,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "class",
     "static": true,
     "variation": null,
@@ -813,7 +911,11 @@
     ]
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 24,
+=======
+    "__docId__": 23,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -828,7 +930,11 @@
     "generator": false
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 25,
+=======
+    "__docId__": 24,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "method",
     "static": true,
     "variation": null,
@@ -856,7 +962,11 @@
     "generator": false
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 26,
+=======
+    "__docId__": 25,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "method",
     "static": false,
     "variation": null,
@@ -884,7 +994,11 @@
     "generator": false
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 27,
+=======
+    "__docId__": 26,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "method",
     "static": false,
     "variation": null,
@@ -912,7 +1026,11 @@
     "generator": false
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 28,
+=======
+    "__docId__": 27,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "member",
     "static": false,
     "variation": null,
@@ -930,7 +1048,11 @@
     }
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 29,
+=======
+    "__docId__": 28,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "method",
     "static": false,
     "variation": null,
@@ -961,7 +1083,11 @@
     "generator": false
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 30,
+=======
+    "__docId__": 29,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "file",
     "static": true,
     "variation": null,
@@ -974,7 +1100,11 @@
     "content": "import {apis} from './apis';\nimport {version} from '../package.json';\n\n\n/**\n * Ingresse JavaScript SDK\n */\nclass IngresseSdk {\n    /**\n     * Instantiate the SDK\n     *\n     * @param {object} [settings] - SDK configuration settings\n     *\n     * @example\n     * ```\n     * var Sdk = require('ingresse-sdk');\n     *\n     * var ingresse = new Sdk({\n     *   ticket: {\n     *     url: 'http://hml.ticket.ingresse.com'\n     *   }\n     * });\n     * ```\n     */\n    constructor(settings = {}) {\n        this._init(settings);\n    }\n\n    /**\n     * Ingresse Sdk Version\n     *\n     * @returns {string}\n     */\n    static version() {\n        return version;\n    }\n\n    /**\n     * Initialize API's configurations\n     *\n     * @param {object} settings - SDK settings.\n     */\n    _init(settings = {}) {\n        let apiList = settings.apis || Object.keys(apis);\n\n        apiList.map((key) => {\n            let Api = apis[key];\n\n            if (Api) {\n                let options = settings[key] || null;\n                this[key]   = new Api(options);\n            }\n        });\n    }\n}\n\nmodule.exports = IngresseSdk\nmodule.exports.default = IngresseSdk\n\n"
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 31,
+=======
+    "__docId__": 30,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "class",
     "static": true,
     "variation": null,
@@ -990,7 +1120,11 @@
     "interface": false
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 32,
+=======
+    "__docId__": 31,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -1018,7 +1152,11 @@
     "generator": false
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 33,
+=======
+    "__docId__": 32,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "method",
     "static": true,
     "variation": null,
@@ -1046,7 +1184,11 @@
     "generator": false
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 34,
+=======
+    "__docId__": 33,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "method",
     "static": false,
     "variation": null,
@@ -1071,7 +1213,11 @@
     "generator": false
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 35,
+=======
+    "__docId__": 34,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1084,7 +1230,11 @@
     "content": "import popsicle from 'popsicle';\nimport {plugins} from 'popsicle';\nimport {basePrefix, transformResponse} from './plugins';\nimport {auth} from '../auth';\nimport status from 'popsicle-status';\n\n\n/**\n * Base request handler for all the API's\n * with `get`, `post`, `put` and `delete` methods\n */\nexport class RequestHandler {\n    /**\n     * Initialize request handler\n     *\n     * @param {object} settings - Settings\n     */\n    constructor(settings = {}) {\n        this.settings = settings;\n\n        if (auth[settings.auth]) {\n            this.auth = new auth[settings.auth]();\n        }\n    }\n\n    /**\n     * Create new request promise\n     *\n     * @param {object} options - request options.\n     *\n     * @returns {Promise}\n     */\n    request(options = {}) {\n        let request = {\n            headers: {\n                'User-Agent': 'Ingresse JS SDK',\n            },\n        };\n\n        if (this.auth) {\n            Object.assign(request, this.auth.getSettings());\n        }\n\n        Object.assign(request, options);\n\n        return popsicle(request)\n            .use(transformResponse())\n            .use(basePrefix(this.settings.url))\n            .use(plugins.parse(['json']));\n    }\n\n    /**\n     * Get resource\n     *\n     * @param {string} path    - Request get to endpoint e.g. /api-path/1\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    get(path, query) {\n        let request = {\n            method: 'GET',\n            url   : path,\n            query : query,\n        };\n\n        return this.request(request);\n    }\n\n    /**\n     * Post resource\n     *\n     * @param {string} path    - Request post to endpoint e.g. /api-path\n     * @param {object} data    - Data to be posted.\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    post(path, data, query) {\n        let request = {\n            method: 'POST',\n            url   : path,\n            body  : data,\n            query : query,\n        };\n\n        return this.request(request);\n    }\n\n    /**\n     * Put resource\n     *\n     * @param {string} path    - Request put to end endpoint e.g. /api-path/1\n     * @param {object} data    - Data to be updated.\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    put(path, data, query) {\n        let request = {\n            method: 'PUT',\n            url   : path,\n            body  : data,\n            query : query,\n        };\n\n        return this.request(request);\n    }\n\n    /**\n     * Delete resource\n     *\n     * @param {string} path    - Request delete to endpoint e.g. /api-path/1\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    delete(path, query) {\n        let request = {\n            method: 'DELETE',\n            url   : path,\n            query : query,\n        };\n\n        return this.request(request);\n    }\n}\n\n"
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 36,
+=======
+    "__docId__": 35,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "class",
     "static": true,
     "variation": null,
@@ -1100,7 +1250,11 @@
     "interface": false
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 37,
+=======
+    "__docId__": 36,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -1125,7 +1279,11 @@
     "generator": false
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 38,
+=======
+    "__docId__": 37,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "member",
     "static": false,
     "variation": null,
@@ -1143,7 +1301,11 @@
     }
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 39,
+=======
+    "__docId__": 38,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "member",
     "static": false,
     "variation": null,
@@ -1161,7 +1323,11 @@
     }
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 40,
+=======
+    "__docId__": 39,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "method",
     "static": false,
     "variation": null,
@@ -1200,7 +1366,11 @@
     "generator": false
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 41,
+=======
+    "__docId__": 40,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "method",
     "static": false,
     "variation": null,
@@ -1249,7 +1419,11 @@
     "generator": false
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 42,
+=======
+    "__docId__": 41,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "method",
     "static": false,
     "variation": null,
@@ -1308,7 +1482,11 @@
     "generator": false
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 43,
+=======
+    "__docId__": 42,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "method",
     "static": false,
     "variation": null,
@@ -1367,7 +1545,11 @@
     "generator": false
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 44,
+=======
+    "__docId__": 43,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "method",
     "static": false,
     "variation": null,
@@ -1416,7 +1598,11 @@
     "generator": false
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 45,
+=======
+    "__docId__": 44,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1429,7 +1615,11 @@
     "content": "/**\n* Rquest middleware to format url with a base URL\n*\n* @params {string} base - Base URL for all requests.\n* @returns {function}\n*/\nexport var basePrefix = (base = '') => {\n    return (request, next) => {\n        let path = request.url.replace(/^\\//, '');\n        base = base.replace(/\\/$/, '');\n\n        request.url = `${base}/${path}`;\n\n        return next();\n    };\n};\n\n/**\n * Request middleware to handle response from api\n * and decide based on the status code if the\n * request was a success or an error\n *\n * @params {number} [lower=200]  - Lower status code number.\n * @params {number} [higher=299] - Higher status code number.\n * @returns {function}\n */\nexport var transformResponse = (lower = 200, higher = 299) => {\n    return (request, next) => {\n        return next().then((response) => {\n            if (response.status >= lower &&\n                response.status <= higher) {\n\n                return response.body;\n            }\n\n            var error = request.error('', 'EINVALIDSTATUS');\n            error.body = response.body;\n\n            throw error.body;\n        });\n    };\n};\n\n"
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 46,
+=======
+    "__docId__": 45,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -1467,7 +1657,11 @@
     }
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 47,
+=======
+    "__docId__": 46,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -1509,7 +1703,11 @@
     }
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 49,
+=======
+    "__docId__": 48,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1522,7 +1720,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 50,
+=======
+    "__docId__": 49,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1535,7 +1737,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 51,
+=======
+    "__docId__": 50,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1548,7 +1754,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 52,
+=======
+    "__docId__": 51,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1561,7 +1771,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 53,
+=======
+    "__docId__": 52,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1574,7 +1788,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 54,
+=======
+    "__docId__": 53,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1587,7 +1805,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 55,
+=======
+    "__docId__": 54,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1600,7 +1822,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 56,
+=======
+    "__docId__": 55,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1613,7 +1839,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 57,
+=======
+    "__docId__": 56,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1626,7 +1856,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 58,
+=======
+    "__docId__": 57,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1639,7 +1873,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 59,
+=======
+    "__docId__": 58,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1652,7 +1890,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 60,
+=======
+    "__docId__": 59,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1665,7 +1907,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 61,
+=======
+    "__docId__": 60,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1678,7 +1924,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 62,
+=======
+    "__docId__": 61,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1691,7 +1941,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 63,
+=======
+    "__docId__": 62,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1704,7 +1958,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 64,
+=======
+    "__docId__": 63,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1717,7 +1975,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 65,
+=======
+    "__docId__": 64,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1730,7 +1992,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 66,
+=======
+    "__docId__": 65,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1743,7 +2009,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 67,
+=======
+    "__docId__": 66,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1756,7 +2026,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 68,
+=======
+    "__docId__": 67,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1769,7 +2043,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 69,
+=======
+    "__docId__": 68,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1782,7 +2060,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 70,
+=======
+    "__docId__": 69,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1795,7 +2077,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 71,
+=======
+    "__docId__": 70,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1808,7 +2094,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 72,
+=======
+    "__docId__": 71,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1821,7 +2111,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 73,
+=======
+    "__docId__": 72,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1834,7 +2128,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 74,
+=======
+    "__docId__": 73,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1847,7 +2145,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 75,
+=======
+    "__docId__": 74,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1860,7 +2162,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 76,
+=======
+    "__docId__": 75,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1873,7 +2179,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 77,
+=======
+    "__docId__": 76,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1886,7 +2196,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 78,
+=======
+    "__docId__": 77,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1899,7 +2213,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 79,
+=======
+    "__docId__": 78,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1912,7 +2230,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 80,
+=======
+    "__docId__": 79,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1925,7 +2247,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 81,
+=======
+    "__docId__": 80,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1938,7 +2264,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 82,
+=======
+    "__docId__": 81,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1951,7 +2281,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 83,
+=======
+    "__docId__": 82,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1964,7 +2298,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 84,
+=======
+    "__docId__": 83,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1977,7 +2315,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 85,
+=======
+    "__docId__": 84,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1990,7 +2332,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 86,
+=======
+    "__docId__": 85,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2003,7 +2349,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 87,
+=======
+    "__docId__": 86,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2016,7 +2366,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 88,
+=======
+    "__docId__": 87,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2029,7 +2383,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 89,
+=======
+    "__docId__": 88,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2042,7 +2400,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 90,
+=======
+    "__docId__": 89,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2055,7 +2417,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 91,
+=======
+    "__docId__": 90,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2068,7 +2434,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 92,
+=======
+    "__docId__": 91,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2081,7 +2451,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 93,
+=======
+    "__docId__": 92,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2094,7 +2468,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 94,
+=======
+    "__docId__": 93,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2107,7 +2485,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 95,
+=======
+    "__docId__": 94,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2120,7 +2502,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 97,
+=======
+    "__docId__": 96,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2133,7 +2519,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 98,
+=======
+    "__docId__": 97,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2146,7 +2536,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 99,
+=======
+    "__docId__": 98,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2159,7 +2553,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 100,
+=======
+    "__docId__": 99,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2172,7 +2570,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 101,
+=======
+    "__docId__": 100,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2185,7 +2587,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 102,
+=======
+    "__docId__": 101,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2198,7 +2604,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 103,
+=======
+    "__docId__": 102,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2211,7 +2621,11 @@
     "builtinExternal": true
   },
   {
+<<<<<<< 41cd6f1863629d1dd151a599b0c64a23081dcc88
     "__docId__": 104,
+=======
+    "__docId__": 103,
+>>>>>>> CREATE the getTypes endpoint in ticket api
     "kind": "external",
     "static": true,
     "variation": null,

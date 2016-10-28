@@ -50,6 +50,27 @@ describe('Ticket API', () => {
         chai.expect(ticket.removeItem).to.be.a('function');
     });
 
+    describe('getTypes', () => {
+        let ticket;
+
+        beforeEach(() => {
+            ticket = new Ticket();
+            chai.spy.on(ticket, 'get');
+        });
+
+        it('should getItems call this.get', () => {
+            ticket.getTypes();
+
+            chai.expect(ticket.get).to.have.been.called.with.exactly('/types', {});
+        });
+
+        it('should getItems call this.get and accept query argument', () => {
+            ticket.getTypes({ limit: 10 });
+
+            chai.expect(ticket.get).to.have.been.called.with.exactly('/types', { limit: 10 });
+        });
+    });
+
     describe('getItems', () => {
         let ticket;
 

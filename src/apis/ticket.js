@@ -33,6 +33,29 @@ export class Ticket extends RequestHandler {
     }
 
     /**
+     * Get a list of ticket types
+     * This method will return a `Promise` so you can use
+     * `.then` and `.catach` methods.
+     *
+     * @param {object} [query] - Optional request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.ticket.getTypes()
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    getTypes(query = {}) {
+        return this.get('/types', query);
+    }
+
+    /**
      * Get a list of ticket items
      * This method will return a `Promise` so you can use
      * `.then` and `.catach` methdos.
