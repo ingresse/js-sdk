@@ -320,6 +320,62 @@ export class Ticket extends RequestHandler {
     updateSalePeriod(id, salePeriod, query) {
         return this.put(`/items/${id}/sales-period`, salePeriod, query);
     }
+
+    /**
+     * Create new values to ticket
+     *
+     * @param {number} id      - The item ID to create values.
+     * @param {object} values  - The values data.
+     * @param {object} [query] - Optional request parameters.
+     *
+     * @returns Promise
+     *
+     * @example
+     * ...
+     *
+     * ingresse.ticket.newValues({
+     *          price: 10000,
+     *          feeSale: 500,
+     *          feeProducer: 500
+     *      })
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    newValues(id, values, query) {
+        return this.post(`/items/${id}/values`, values, query);
+    }
+
+    /**
+     * Updated ticket values
+     *
+     * @param {number} id      - The item ID to update values.
+     * @param {object} values  - The values data.
+     * @param {object} [query] - Optional request parameters.
+     *
+     * @returns Promise
+     *
+     * @example
+     * ...
+     *
+     * ingresse.ticket.updateValues(200, {
+     *          price: 20000,
+     *          feeSale: 1000,
+     *          feeProducer: 1000
+     *      })
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    updateValues(id, values, query) {
+        return this.put(`/items/${id}/values`, values, query);
+    }
 }
 
 </code></pre>

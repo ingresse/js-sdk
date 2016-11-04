@@ -432,6 +432,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/apis/ticket.js~ticket#newvalues",
+    "class/src/apis/ticket.js~Ticket.html#instance-method-newValues",
+    "src/apis/ticket.js~Ticket#newValues",
+    "method"
+  ],
+  [
     "src/apis/ticket.js~ticket#removeitem",
     "class/src/apis/ticket.js~Ticket.html#instance-method-removeItem",
     "src/apis/ticket.js~Ticket#removeItem",
@@ -459,6 +465,12 @@ window.esdocSearchIndex = [
     "src/apis/ticket.js~ticket#updatesaleperiod",
     "class/src/apis/ticket.js~Ticket.html#instance-method-updateSalePeriod",
     "src/apis/ticket.js~Ticket#updateSalePeriod",
+    "method"
+  ],
+  [
+    "src/apis/ticket.js~ticket#updatevalues",
+    "class/src/apis/ticket.js~Ticket.html#instance-method-updateValues",
+    "src/apis/ticket.js~Ticket#updateValues",
     "method"
   ],
   [
