@@ -408,6 +408,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/apis/ticket.js~ticket#gettypes",
+    "class/src/apis/ticket.js~Ticket.html#instance-method-getTypes",
+    "src/apis/ticket.js~Ticket#getTypes",
+    "method"
+  ],
+  [
     "src/apis/ticket.js~ticket#newattribute",
     "class/src/apis/ticket.js~Ticket.html#instance-method-newAttribute",
     "src/apis/ticket.js~Ticket#newAttribute",

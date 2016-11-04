@@ -232,6 +232,34 @@ This method will return a <code>Promise</code> so you can use
     <td>
       <div>
         <p>
+           <span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html#instance-method-getTypes">getTypes</a></span></span><span data-ice="signature">(query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Get a list of ticket types
+This method will return a <code>Promise</code> so you can use
+<code>.then</code> and <code>.catach</code> methods.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
            <span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html#instance-method-newAttribute">newAttribute</a></span></span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, attribute: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span>*</span></span>
         </p>
       </div>
@@ -715,7 +743,7 @@ This method will return a <code>Promise</code> so you can use
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber76">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber99">source</a></span></span>
     </span>
   </h3>
 
@@ -805,7 +833,7 @@ ingresse.ticket.getItem(200)
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber54">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber77">source</a></span></span>
     </span>
   </h3>
 
@@ -880,6 +908,91 @@ ingresse.ticket.getItems()
   
 </div>
 <div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-getTypes">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    <span data-ice="name">getTypes</span><span data-ice="signature">(query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber54">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Get a list of ticket types
+This method will return a <code>Promise</code> so you can use
+<code>.then</code> and <code>.catach</code> methods.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">query</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
+      <td data-ice="appendix"><ul><li>optional</li></ul></td>
+      <td data-ice="description"><p>Optional request parameters.</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tr>
+        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></td>
+        
+      </tr>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">...
+
+ingresse.ticket.getTypes()
+    .then(function (response) {
+        console.log(response);
+    })
+    .catch(function (error) {
+        console.log(error);
+    });</code></pre>
+    </div>
+</div>
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-newAttribute">
     <span class="access" data-ice="access">public</span>
     
@@ -890,7 +1003,7 @@ ingresse.ticket.getItems()
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber167">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber190">source</a></span></span>
     </span>
   </h3>
 
@@ -988,7 +1101,7 @@ ingresse.ticket.newAttribute(200, { key: &apos;min&apos;, value: &apos;1&apos;, 
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber98">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber121">source</a></span></span>
     </span>
   </h3>
 
@@ -1078,7 +1191,7 @@ ingresse.ticket.newItem({ name: &apos;My Ticket Name&apos; })
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber221">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber244">source</a></span></span>
     </span>
   </h3>
 
@@ -1181,7 +1294,7 @@ ingresse.ticket.newSalePeriod({
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber143">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber166">source</a></span></span>
     </span>
   </h3>
 
@@ -1271,7 +1384,7 @@ ingresse.ticket.removeItem(200)
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber192">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber215">source</a></span></span>
     </span>
   </h3>
 
@@ -1376,7 +1489,7 @@ ingresse.ticket.updateAttribute(200, 1, { key: &apos;min&apos;, value: &apos;5&a
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber121">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber144">source</a></span></span>
     </span>
   </h3>
 
@@ -1473,7 +1586,7 @@ ingresse.ticket.updateItem(200, { name: &apos;My Updated Ticket Name&apos; })
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber250">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber273">source</a></span></span>
     </span>
   </h3>
 
