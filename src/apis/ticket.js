@@ -217,6 +217,29 @@ export class Ticket extends RequestHandler {
     }
 
     /**
+     * Remove ticket attribute
+     *
+     * @param {number} id          - The item ID to update attribute.
+     * @param {number} attributeId - The attribute id to be updated.
+     *
+     * @returns Promise
+     *
+     * @example
+     * ...
+     *
+     * ingresse.ticket.removeAttribute(200, 1)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    removeAttribute(id, attributeId) {
+        return this.delete(`/items/${id}/attributes/${attributeId}`);
+    }
+
+    /**
      * Create new sale period to ticket
      *
      * @param {number} id         - The item ID to create sale period.
