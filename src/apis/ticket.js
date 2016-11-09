@@ -35,7 +35,7 @@ export class Ticket extends RequestHandler {
     /**
      * Get a list of ticket types
      * This method will return a `Promise` so you can use
-     * `.then` and `.catach` methods.
+     * `.then` and `.catch` methods.
      *
      * @param {object} [query] - Optional request parameters.
      * @returns {Promise}
@@ -58,7 +58,7 @@ export class Ticket extends RequestHandler {
     /**
      * Get a list of ticket items
      * This method will return a `Promise` so you can use
-     * `.then` and `.catach` methdos.
+     * `.then` and `.catch` methdos.
      *
      * @param {object} [query] - Optional request parameters.
      * @returns {Promise}
@@ -328,6 +328,30 @@ export class Ticket extends RequestHandler {
      */
     updateValues(id, values, query) {
         return this.put(`/items/${id}/values`, values, query);
+    }
+
+    /**
+     * Get a list of triggers
+     * This method will return a `Promise` so you can use
+     * `.then` and `.catch` methods.
+     *
+     * @param {number} id      - The item ID to get the triggers.
+     * @param {object} [query] - Optional request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.ticket.getTriggers(10000040)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    getTriggers(id, query = {}) {
+        return this.get(`/items/${id}/triggers`, query);
     }
 }
 
