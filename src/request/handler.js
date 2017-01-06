@@ -37,11 +37,15 @@ export class RequestHandler {
             },
         };
 
+        console.log(options);
+
+        Object.assign(request, options);
+
         if (this.auth) {
             Object.assign(request, this.auth.getSettings());
         }
 
-        Object.assign(request, options);
+        console.log(request);
 
         return popsicle(request)
             .use(transformResponse())
