@@ -44,7 +44,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import {RequestHandler} from '../request/handler';\nimport {auth} from '../auth';\n\n/**\n * Ingresse Ticket's API\n *\n * API to get, create, update or remove tickets.\n *\n * @example\n * var Sdk = require('ingresse-sdk');\n * var ingresse = new Sdk();\n *\n * // You will have access to this API\n * // after instantiate the Sdk.\n * var ticket = ingresse.ticket;\n */\nexport class Ticket extends RequestHandler {\n    /**\n     * Ticket Api\n     *\n     * @param {object} [custom={}] - Initialize Ticket Api settings.\n     */\n    constructor(custom = {}) {\n        let settings = {\n            url : 'https://api.ingresse.com/ticket',\n            auth: auth.Jwt.type(),\n        };\n\n        Object.assign(settings, custom);\n        super(settings);\n\n        this.settings = settings;\n    }\n\n    /**\n     * Get a list of ticket types\n     * This method will return a `Promise` so you can use\n     * `.then` and `.catach` methods.\n     *\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.getTypes()\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    getTypes(query = {}) {\n        return this.get('/types', query);\n    }\n\n    /**\n     * Get a list of ticket items\n     * This method will return a `Promise` so you can use\n     * `.then` and `.catach` methdos.\n     *\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.getItems()\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    getItems(query = {}) {\n        return this.get('/items', query);\n    }\n\n    /**\n     * Get item by ID\n     *\n     * @param {string|number} id - The item ID to get.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.getItem(200)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    getItem(id, query = {}) {\n        return this.get(`/items/${id}`, query);\n    }\n\n    /**\n     * Create new Ticket item\n     *\n     * @param {object} data    - Data to create a new ticket item.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.newItem({ name: 'My Ticket Name' })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    newItem(data = {}, query = {}) {\n        return this.post('/items', data, query);\n    }\n\n    /**\n     * Update a ticket item\n     *\n     * @param {string|number} id - The item ID to update.\n     * @param {object} data      - Data to update item.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updateItem(200, { name: 'My Updated Ticket Name' })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    updateItem(id, data = {}, query = {}) {\n        return this.put(`/items/${id}`, data, query);\n    }\n\n    /**\n     * Remove a ticket item\n     *\n     * @param {string|number} id - The item ID to remove.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.removeItem(200)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    removeItem(id, query = {}) {\n        return this.delete(id, query);\n    }\n\n    /**\n     * Create new ticket attribute\n     *\n     * @param {number} id        - The item ID to create attribute.\n     * @param {object} attribute - The attribute data.\n     * @param {object} [query]   - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.newAttribute(200, { key: 'min', value: '1', type: 'integer' })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    newAttribute(id, attribute, query) {\n        return this.post(`/items/${id}/attributes`, attribute, query);\n    }\n\n    /**\n     * Updated ticket attribute\n     *\n     * @param {number} id          - The item ID to update attribute.\n     * @param {number} attributeId - The attribute id to be updated.\n     * @param {object} attribute   - The attribute data.\n     * @param {object} [query]     - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updateAttribute(200, 1, { key: 'min', value: '5', type: 'integer' })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    updateAttribute(id, attributeId, attribute, query) {\n        return this.put(`/items/${id}/attributes/${attributeId}`, attribute, query);\n    }\n\n    /**\n     * Create new sale period to ticket\n     *\n     * @param {number} id         - The item ID to create sale period.\n     * @param {object} salePeriod - The sale period data.\n     * @param {object} [query]    - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.newSalePeriod({\n     *          appCategoryId: 1,\n     *          start: '2016-10-10 20:20:00',\n     *          finish: '2016-11-10 20:20:00',\n     *          available: 1\n     *      })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    newSalePeriod(id, salePeriod, query) {\n        return this.post(`/items/${id}/sales-period`, salePeriod, query);\n    }\n\n    /**\n     * Updated ticket sale period\n     *\n     * @param {number} id         - The item ID to update the sale period.\n     * @param {object} salePeriod - The salePeriod data.\n     * @param {object} [query]    - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updateSalePeriod(200, {\n     *          appCategoryId: 1,\n     *          start: '2016-11-20 10:10:00',\n     *          finish: '2016-12-20 10:10:00',\n     *          available: 1\n     *      })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    updateSalePeriod(id, salePeriod, query) {\n        return this.put(`/items/${id}/sales-period`, salePeriod, query);\n    }\n\n    /**\n     * Create new values to ticket\n     *\n     * @param {number} id      - The item ID to create values.\n     * @param {object} values  - The values data.\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.newValues({\n     *          price: 10000,\n     *          feeSale: 500,\n     *          feeProducer: 500\n     *      })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    newValues(id, values, query) {\n        return this.post(`/items/${id}/values`, values, query);\n    }\n\n    /**\n     * Updated ticket values\n     *\n     * @param {number} id      - The item ID to update values.\n     * @param {object} values  - The values data.\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updateValues(200, {\n     *          price: 20000,\n     *          feeSale: 1000,\n     *          feeProducer: 1000\n     *      })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    updateValues(id, values, query) {\n        return this.put(`/items/${id}/values`, values, query);\n    }\n}\n\n"
+    "content": "import {RequestHandler} from '../request/handler';\nimport {auth} from '../auth';\n\n/**\n * Ingresse Ticket's API\n *\n * API to get, create, update or remove tickets.\n *\n * @example\n * var Sdk = require('ingresse-sdk');\n * var ingresse = new Sdk();\n *\n * // You will have access to this API\n * // after instantiate the Sdk.\n * var ticket = ingresse.ticket;\n */\nexport class Ticket extends RequestHandler {\n    /**\n     * Ticket Api\n     *\n     * @param {object} [custom={}] - Initialize Ticket Api settings.\n     */\n    constructor(custom = {}) {\n        let settings = {\n            url : 'https://api.ingresse.com/ticket',\n            auth: auth.Jwt.type(),\n        };\n\n        Object.assign(settings, custom);\n        super(settings);\n\n        this.settings = settings;\n    }\n\n    /**\n     * Get a list of ticket types\n     * This method will return a `Promise` so you can use\n     * `.then` and `.catch` methods.\n     *\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.getTypes()\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    getTypes(query = {}) {\n        return this.get('/types', query);\n    }\n\n    /**\n     * Get a list of ticket items\n     * This method will return a `Promise` so you can use\n     * `.then` and `.catch` methdos.\n     *\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.getItems()\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    getItems(query = {}) {\n        return this.get('/items', query);\n    }\n\n    /**\n     * Get item by ID\n     *\n     * @param {string|number} id - The item ID to get.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.getItem(200)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    getItem(id, query = {}) {\n        return this.get(`/items/${id}`, query);\n    }\n\n    /**\n     * Create new Ticket item\n     *\n     * @param {object} data    - Data to create a new ticket item.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.newItem({ name: 'My Ticket Name' })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    newItem(data = {}, query = {}) {\n        return this.post('/items', data, query);\n    }\n\n    /**\n     * Update a ticket item\n     *\n     * @param {string|number} id - The item ID to update.\n     * @param {object} data      - Data to update item.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updateItem(200, { name: 'My Updated Ticket Name' })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    updateItem(id, data = {}, query = {}) {\n        return this.put(`/items/${id}`, data, query);\n    }\n\n    /**\n     * Remove a ticket item\n     *\n     * @param {string|number} id - The item ID to remove.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.removeItem(200)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    removeItem(id, query = {}) {\n        return this.delete(id, query);\n    }\n\n    /**\n     * Create new ticket attribute\n     *\n     * @param {number} id        - The item ID to create attribute.\n     * @param {object} attribute - The attribute data.\n     * @param {object} [query]   - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.newAttribute(200, { key: 'min', value: '1', type: 'integer' })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    newAttribute(id, attribute, query) {\n        return this.post(`/items/${id}/attributes`, attribute, query);\n    }\n\n    /**\n     * Updated ticket attribute\n     *\n     * @param {number} id          - The item ID to update attribute.\n     * @param {object} attribute   - The attribute data.\n     * @param {object} [query]     - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updateAttribute(200, { key: 'minimum', value: 5, type: 'integer' })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    updateAttribute(id, attribute, query) {\n        return this.put(`/items/${id}/attributes`, attribute, query);\n    }\n\n    /**\n     * Create new sale period to ticket\n     *\n     * @param {number} id         - The item ID to create sale period.\n     * @param {object} salePeriod - The sale period data.\n     * @param {object} [query]    - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.newSalePeriod({\n     *          appCategoryId: 1,\n     *          start: '2016-10-10 20:20:00',\n     *          finish: '2016-11-10 20:20:00',\n     *          available: 1\n     *      })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    newSalePeriod(id, salePeriod, query) {\n        return this.post(`/items/${id}/sales-period`, salePeriod, query);\n    }\n\n    /**\n     * Updated ticket sale period\n     *\n     * @param {number} id         - The item ID to update the sale period.\n     * @param {object} salePeriod - The salePeriod data.\n     * @param {object} [query]    - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updateSalePeriod(200, {\n     *          appCategoryId: 1,\n     *          start: '2016-11-20 10:10:00',\n     *          finish: '2016-12-20 10:10:00',\n     *          available: 1\n     *      })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    updateSalePeriod(id, salePeriod, query) {\n        return this.put(`/items/${id}/sales-period`, salePeriod, query);\n    }\n\n    /**\n     * Create new values to ticket\n     *\n     * @param {number} id      - The item ID to create values.\n     * @param {object} values  - The values data.\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.newValues({\n     *          price: 10000,\n     *          feeSale: 500,\n     *          feeProducer: 500\n     *      })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    newValues(id, values, query) {\n        return this.post(`/items/${id}/values`, values, query);\n    }\n\n    /**\n     * Updated ticket values\n     *\n     * @param {number} id      - The item ID to update values.\n     * @param {object} values  - The values data.\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updateValues(200, {\n     *          price: 20000,\n     *          feeSale: 1000,\n     *          feeProducer: 1000\n     *      })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    updateValues(id, values, query) {\n        return this.put(`/items/${id}/values`, values, query);\n    }\n\n    /**\n     * Get a list of triggers\n     * This method will return a `Promise` so you can use\n     * `.then` and `.catch` methods.\n     *\n     * @param {number} id      - The item ID to get the triggers.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.getTriggers(10000040)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    getTriggers(id, query = {}) {\n        return this.get(`/items/${id}/triggers`, query);\n    }\n}\n\n"
   },
   {
     "__docId__": 3,
@@ -122,7 +122,7 @@
     "memberof": "src/apis/ticket.js~Ticket",
     "longname": "src/apis/ticket.js~Ticket#getTypes",
     "access": null,
-    "description": "Get a list of ticket types\nThis method will return a `Promise` so you can use\n`.then` and `.catach` methods.",
+    "description": "Get a list of ticket types\nThis method will return a `Promise` so you can use\n`.then` and `.catch` methods.",
     "examples": [
       "...\n\ningresse.ticket.getTypes()\n    .then(function (response) {\n        console.log(response);\n    })\n    .catch(function (error) {\n        console.log(error);\n    });"
     ],
@@ -164,7 +164,7 @@
     "memberof": "src/apis/ticket.js~Ticket",
     "longname": "src/apis/ticket.js~Ticket#getItems",
     "access": null,
-    "description": "Get a list of ticket items\nThis method will return a `Promise` so you can use\n`.then` and `.catach` methdos.",
+    "description": "Get a list of ticket items\nThis method will return a `Promise` so you can use\n`.then` and `.catch` methdos.",
     "examples": [
       "...\n\ningresse.ticket.getItems()\n    .then(function (response) {\n        console.log(response);\n    })\n    .catch(function (error) {\n        console.log(error);\n    });"
     ],
@@ -491,9 +491,9 @@
     "access": null,
     "description": "Updated ticket attribute",
     "examples": [
-      "...\n\ningresse.ticket.updateAttribute(200, 1, { key: 'min', value: '5', type: 'integer' })\n    .then(function (response) {\n        console.log(response);\n    })\n    .catch(function (error) {\n        console.log(error);\n    });"
+      "...\n\ningresse.ticket.updateAttribute(200, { key: 'minimum', value: 5, type: 'integer' })\n    .then(function (response) {\n        console.log(response);\n    })\n    .catch(function (error) {\n        console.log(error);\n    });"
     ],
-    "lineNumber": 215,
+    "lineNumber": 214,
     "unknown": [
       {
         "tagName": "@returns",
@@ -510,16 +510,6 @@
         "optional": false,
         "name": "id",
         "description": "The item ID to update attribute."
-      },
-      {
-        "nullable": null,
-        "types": [
-          "number"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "attributeId",
-        "description": "The attribute id to be updated."
       },
       {
         "nullable": null,
@@ -565,7 +555,7 @@
     "examples": [
       "...\n\ningresse.ticket.newSalePeriod({\n         appCategoryId: 1,\n         start: '2016-10-10 20:20:00',\n         finish: '2016-11-10 20:20:00',\n         available: 1\n     })\n    .then(function (response) {\n        console.log(response);\n    })\n    .catch(function (error) {\n        console.log(error);\n    });"
     ],
-    "lineNumber": 244,
+    "lineNumber": 243,
     "unknown": [
       {
         "tagName": "@returns",
@@ -627,7 +617,7 @@
     "examples": [
       "...\n\ningresse.ticket.updateSalePeriod(200, {\n         appCategoryId: 1,\n         start: '2016-11-20 10:10:00',\n         finish: '2016-12-20 10:10:00',\n         available: 1\n     })\n    .then(function (response) {\n        console.log(response);\n    })\n    .catch(function (error) {\n        console.log(error);\n    });"
     ],
-    "lineNumber": 273,
+    "lineNumber": 272,
     "unknown": [
       {
         "tagName": "@returns",
@@ -689,7 +679,7 @@
     "examples": [
       "...\n\ningresse.ticket.newValues({\n         price: 10000,\n         feeSale: 500,\n         feeProducer: 500\n     })\n    .then(function (response) {\n        console.log(response);\n    })\n    .catch(function (error) {\n        console.log(error);\n    });"
     ],
-    "lineNumber": 301,
+    "lineNumber": 300,
     "unknown": [
       {
         "tagName": "@returns",
@@ -751,7 +741,7 @@
     "examples": [
       "...\n\ningresse.ticket.updateValues(200, {\n         price: 20000,\n         feeSale: 1000,\n         feeProducer: 1000\n     })\n    .then(function (response) {\n        console.log(response);\n    })\n    .catch(function (error) {\n        console.log(error);\n    });"
     ],
-    "lineNumber": 329,
+    "lineNumber": 328,
     "unknown": [
       {
         "tagName": "@returns",
@@ -802,6 +792,58 @@
   },
   {
     "__docId__": 18,
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "getTriggers",
+    "memberof": "src/apis/ticket.js~Ticket",
+    "longname": "src/apis/ticket.js~Ticket#getTriggers",
+    "access": null,
+    "description": "Get a list of triggers\nThis method will return a `Promise` so you can use\n`.then` and `.catch` methods.",
+    "examples": [
+      "...\n\ningresse.ticket.getTriggers(10000040)\n    .then(function (response) {\n        console.log(response);\n    })\n    .catch(function (error) {\n        console.log(error);\n    });"
+    ],
+    "lineNumber": 352,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "The item ID to get the triggers."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "query",
+        "description": "Optional request parameters."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "generator": false
+  },
+  {
+    "__docId__": 19,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -814,7 +856,7 @@
     "content": "/**\n * Base class for the authentications\n */\nexport class Authentication {\n    /**\n     * Set authentication data\n     *\n     * @param {object|string} data - Authentication data.\n     */\n    set authData(data) {\n        this._authData = data;\n    }\n\n    /**\n     * Get authentication data\n     *\n     * @returns {object|string}\n     */\n    get authData() {\n        return this._authData;\n    }\n}\n\n"
   },
   {
-    "__docId__": 19,
+    "__docId__": 20,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -830,7 +872,7 @@
     "interface": false
   },
   {
-    "__docId__": 20,
+    "__docId__": 21,
     "kind": "set",
     "static": false,
     "variation": null,
@@ -861,7 +903,7 @@
     "generator": false
   },
   {
-    "__docId__": 21,
+    "__docId__": 22,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -879,7 +921,7 @@
     }
   },
   {
-    "__docId__": 22,
+    "__docId__": 23,
     "kind": "get",
     "static": false,
     "variation": null,
@@ -912,7 +954,7 @@
     "generator": false
   },
   {
-    "__docId__": 23,
+    "__docId__": 24,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -925,7 +967,7 @@
     "content": "import {Jwt} from './jwt';\n\n\nexport var auth = {\n    [Jwt.type()]: Jwt\n};\n\n"
   },
   {
-    "__docId__": 24,
+    "__docId__": 25,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -946,7 +988,7 @@
     }
   },
   {
-    "__docId__": 25,
+    "__docId__": 26,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -959,7 +1001,7 @@
     "content": "import {Authentication} from './authentication';\n\n\nexport class Jwt extends Authentication {\n    constructor() {\n        super();\n    }\n\n    /**\n     * Authentication type e.g. Jwt, BasicAuth\n     *\n     * @returns {string}\n     */\n    static type() {\n        return 'Jwt';\n    }\n\n    /**\n     * Get formatted authentication settings\n     *\n     * @returns {object}\n     */\n    getSettings() {\n        return {\n            headers: {\n                'Authorization': `Bearer ${this.getToken()}`\n            }\n        };\n    }\n\n    /**\n     * Set Jwt authentication token value\n     *\n     * @param {string} token - JWT Token value\n     *\n     * @example\n     * ingresse.ticket.auth.setToken('12345.67890.1234');\n     */\n    setToken(token) {\n        this.authData = token;\n    }\n\n    /**\n     * Get Jwt authentication token value\n     *\n     * @returns {string}\n     *\n     * @example\n     * ingresse.ticket.auth.getToken();\n     */\n    getToken() {\n        return this.authData;\n    }\n}\n\n"
   },
   {
-    "__docId__": 26,
+    "__docId__": 27,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -979,7 +1021,7 @@
     ]
   },
   {
-    "__docId__": 27,
+    "__docId__": 28,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -994,7 +1036,7 @@
     "generator": false
   },
   {
-    "__docId__": 28,
+    "__docId__": 29,
     "kind": "method",
     "static": true,
     "variation": null,
@@ -1022,7 +1064,7 @@
     "generator": false
   },
   {
-    "__docId__": 29,
+    "__docId__": 30,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -1050,7 +1092,7 @@
     "generator": false
   },
   {
-    "__docId__": 30,
+    "__docId__": 31,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -1078,7 +1120,7 @@
     "generator": false
   },
   {
-    "__docId__": 31,
+    "__docId__": 32,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -1096,7 +1138,7 @@
     }
   },
   {
-    "__docId__": 32,
+    "__docId__": 33,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -1127,7 +1169,7 @@
     "generator": false
   },
   {
-    "__docId__": 33,
+    "__docId__": 34,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1140,7 +1182,7 @@
     "content": "import {apis} from './apis';\nimport {version} from '../package.json';\n\n\n/**\n * Ingresse JavaScript SDK\n */\nclass IngresseSdk {\n    /**\n     * Instantiate the SDK\n     *\n     * @param {object} [settings] - SDK configuration settings\n     *\n     * @example\n     * ```\n     * var Sdk = require('ingresse-sdk');\n     *\n     * var ingresse = new Sdk({\n     *   ticket: {\n     *     url: 'http://hml.ticket.ingresse.com'\n     *   }\n     * });\n     * ```\n     */\n    constructor(settings = {}) {\n        this._init(settings);\n    }\n\n    /**\n     * Ingresse Sdk Version\n     *\n     * @returns {string}\n     */\n    static version() {\n        return version;\n    }\n\n    /**\n     * Initialize API's configurations\n     *\n     * @param {object} settings - SDK settings.\n     */\n    _init(settings = {}) {\n        let apiList = settings.apis || Object.keys(apis);\n\n        apiList.map((key) => {\n            let Api = apis[key];\n\n            if (Api) {\n                let options = settings[key] || null;\n                this[key]   = new Api(options);\n            }\n        });\n    }\n}\n\nmodule.exports = IngresseSdk\nmodule.exports.default = IngresseSdk\n\n"
   },
   {
-    "__docId__": 34,
+    "__docId__": 35,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -1156,7 +1198,7 @@
     "interface": false
   },
   {
-    "__docId__": 35,
+    "__docId__": 36,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -1184,7 +1226,7 @@
     "generator": false
   },
   {
-    "__docId__": 36,
+    "__docId__": 37,
     "kind": "method",
     "static": true,
     "variation": null,
@@ -1212,7 +1254,7 @@
     "generator": false
   },
   {
-    "__docId__": 37,
+    "__docId__": 38,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -1237,7 +1279,7 @@
     "generator": false
   },
   {
-    "__docId__": 38,
+    "__docId__": 39,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1250,7 +1292,7 @@
     "content": "import popsicle from 'popsicle';\nimport {plugins} from 'popsicle';\nimport {basePrefix, transformResponse} from './plugins';\nimport {auth} from '../auth';\nimport status from 'popsicle-status';\n\n\n/**\n * Base request handler for all the API's\n * with `get`, `post`, `put` and `delete` methods\n */\nexport class RequestHandler {\n    /**\n     * Initialize request handler\n     *\n     * @param {object} settings - Settings\n     */\n    constructor(settings = {}) {\n        this.settings = settings;\n\n        if (auth[settings.auth]) {\n            this.auth = new auth[settings.auth]();\n        }\n    }\n\n    /**\n     * Create new request promise\n     *\n     * @param {object} options - request options.\n     *\n     * @returns {Promise}\n     */\n    request(options = {}) {\n        let request = {\n            headers: {\n                'User-Agent': 'Ingresse JS SDK',\n            },\n        };\n\n        if (this.auth) {\n            Object.assign(request, this.auth.getSettings());\n        }\n\n        Object.assign(request, options);\n\n        return popsicle(request)\n            .use(transformResponse())\n            .use(basePrefix(this.settings.url))\n            .use(plugins.parse(['json']));\n    }\n\n    /**\n     * Get resource\n     *\n     * @param {string} path    - Request get to endpoint e.g. /api-path/1\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    get(path, query) {\n        let request = {\n            method: 'GET',\n            url   : path,\n            query : query,\n        };\n\n        return this.request(request);\n    }\n\n    /**\n     * Post resource\n     *\n     * @param {string} path    - Request post to endpoint e.g. /api-path\n     * @param {object} data    - Data to be posted.\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    post(path, data, query) {\n        let request = {\n            method: 'POST',\n            url   : path,\n            body  : data,\n            query : query,\n        };\n\n        return this.request(request);\n    }\n\n    /**\n     * Put resource\n     *\n     * @param {string} path    - Request put to end endpoint e.g. /api-path/1\n     * @param {object} data    - Data to be updated.\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    put(path, data, query) {\n        let request = {\n            method: 'PUT',\n            url   : path,\n            body  : data,\n            query : query,\n        };\n\n        return this.request(request);\n    }\n\n    /**\n     * Delete resource\n     *\n     * @param {string} path    - Request delete to endpoint e.g. /api-path/1\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    delete(path, query) {\n        let request = {\n            method: 'DELETE',\n            url   : path,\n            query : query,\n        };\n\n        return this.request(request);\n    }\n}\n\n"
   },
   {
-    "__docId__": 39,
+    "__docId__": 40,
     "kind": "class",
     "static": true,
     "variation": null,
@@ -1266,7 +1308,7 @@
     "interface": false
   },
   {
-    "__docId__": 40,
+    "__docId__": 41,
     "kind": "constructor",
     "static": false,
     "variation": null,
@@ -1291,7 +1333,7 @@
     "generator": false
   },
   {
-    "__docId__": 41,
+    "__docId__": 42,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -1309,7 +1351,7 @@
     }
   },
   {
-    "__docId__": 42,
+    "__docId__": 43,
     "kind": "member",
     "static": false,
     "variation": null,
@@ -1327,7 +1369,7 @@
     }
   },
   {
-    "__docId__": 43,
+    "__docId__": 44,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -1366,7 +1408,7 @@
     "generator": false
   },
   {
-    "__docId__": 44,
+    "__docId__": 45,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -1415,7 +1457,7 @@
     "generator": false
   },
   {
-    "__docId__": 45,
+    "__docId__": 46,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -1474,7 +1516,7 @@
     "generator": false
   },
   {
-    "__docId__": 46,
+    "__docId__": 47,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -1533,7 +1575,7 @@
     "generator": false
   },
   {
-    "__docId__": 47,
+    "__docId__": 48,
     "kind": "method",
     "static": false,
     "variation": null,
@@ -1582,7 +1624,7 @@
     "generator": false
   },
   {
-    "__docId__": 48,
+    "__docId__": 49,
     "kind": "file",
     "static": true,
     "variation": null,
@@ -1595,7 +1637,7 @@
     "content": "/**\n* Rquest middleware to format url with a base URL\n*\n* @params {string} base - Base URL for all requests.\n* @returns {function}\n*/\nexport var basePrefix = (base = '') => {\n    return (request, next) => {\n        let path = request.url.replace(/^\\//, '');\n        base = base.replace(/\\/$/, '');\n\n        request.url = `${base}/${path}`;\n\n        return next();\n    };\n};\n\n/**\n * Request middleware to handle response from api\n * and decide based on the status code if the\n * request was a success or an error\n *\n * @params {number} [lower=200]  - Lower status code number.\n * @params {number} [higher=299] - Higher status code number.\n * @returns {function}\n */\nexport var transformResponse = (lower = 200, higher = 299) => {\n    return (request, next) => {\n        return next().then((response) => {\n            if (response.status >= lower &&\n                response.status <= higher) {\n\n                return response.body;\n            }\n\n            var error = request.error('', 'EINVALIDSTATUS');\n            error.body = response.body;\n\n            throw error.body;\n        });\n    };\n};\n\n"
   },
   {
-    "__docId__": 49,
+    "__docId__": 50,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -1633,7 +1675,7 @@
     }
   },
   {
-    "__docId__": 50,
+    "__docId__": 51,
     "kind": "variable",
     "static": true,
     "variation": null,
@@ -1675,7 +1717,7 @@
     }
   },
   {
-    "__docId__": 52,
+    "__docId__": 53,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1688,7 +1730,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 53,
+    "__docId__": 54,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1701,7 +1743,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 54,
+    "__docId__": 55,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1714,7 +1756,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 55,
+    "__docId__": 56,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1727,7 +1769,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 56,
+    "__docId__": 57,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1740,7 +1782,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 57,
+    "__docId__": 58,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1753,7 +1795,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 58,
+    "__docId__": 59,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1766,7 +1808,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 59,
+    "__docId__": 60,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1779,7 +1821,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 60,
+    "__docId__": 61,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1792,7 +1834,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 61,
+    "__docId__": 62,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1805,7 +1847,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 62,
+    "__docId__": 63,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1818,7 +1860,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 63,
+    "__docId__": 64,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1831,7 +1873,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 64,
+    "__docId__": 65,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1844,7 +1886,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 65,
+    "__docId__": 66,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1857,7 +1899,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 66,
+    "__docId__": 67,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1870,7 +1912,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 67,
+    "__docId__": 68,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1883,7 +1925,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 68,
+    "__docId__": 69,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1896,7 +1938,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 69,
+    "__docId__": 70,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1909,7 +1951,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 70,
+    "__docId__": 71,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1922,7 +1964,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 71,
+    "__docId__": 72,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1935,7 +1977,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 72,
+    "__docId__": 73,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1948,7 +1990,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 73,
+    "__docId__": 74,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1961,7 +2003,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 74,
+    "__docId__": 75,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1974,7 +2016,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 75,
+    "__docId__": 76,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -1987,7 +2029,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 76,
+    "__docId__": 77,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2000,7 +2042,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 77,
+    "__docId__": 78,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2013,7 +2055,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 78,
+    "__docId__": 79,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2026,7 +2068,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 79,
+    "__docId__": 80,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2039,7 +2081,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 80,
+    "__docId__": 81,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2052,7 +2094,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 81,
+    "__docId__": 82,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2065,7 +2107,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 82,
+    "__docId__": 83,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2078,7 +2120,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 83,
+    "__docId__": 84,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2091,7 +2133,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 84,
+    "__docId__": 85,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2104,7 +2146,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 85,
+    "__docId__": 86,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2117,7 +2159,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 86,
+    "__docId__": 87,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2130,7 +2172,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 87,
+    "__docId__": 88,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2143,7 +2185,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 88,
+    "__docId__": 89,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2156,7 +2198,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 89,
+    "__docId__": 90,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2169,7 +2211,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 90,
+    "__docId__": 91,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2182,7 +2224,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 91,
+    "__docId__": 92,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2195,7 +2237,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 92,
+    "__docId__": 93,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2208,7 +2250,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 93,
+    "__docId__": 94,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2221,7 +2263,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 94,
+    "__docId__": 95,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2234,7 +2276,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 95,
+    "__docId__": 96,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2247,7 +2289,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 96,
+    "__docId__": 97,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2260,7 +2302,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 97,
+    "__docId__": 98,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2273,7 +2315,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 98,
+    "__docId__": 99,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2286,7 +2328,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 100,
+    "__docId__": 101,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2299,7 +2341,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 101,
+    "__docId__": 102,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2312,7 +2354,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 102,
+    "__docId__": 103,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2325,7 +2367,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 103,
+    "__docId__": 104,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2338,7 +2380,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 104,
+    "__docId__": 105,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2351,7 +2393,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 105,
+    "__docId__": 106,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2364,7 +2406,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 106,
+    "__docId__": 107,
     "kind": "external",
     "static": true,
     "variation": null,
@@ -2377,7 +2419,7 @@
     "builtinExternal": true
   },
   {
-    "__docId__": 107,
+    "__docId__": 108,
     "kind": "external",
     "static": true,
     "variation": null,

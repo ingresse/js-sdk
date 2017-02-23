@@ -1,7 +1,7 @@
 {
-  "coverage": "78.94%",
-  "expectCount": 38,
-  "actualCount": 30,
+  "coverage": "79.48%",
+  "expectCount": 39,
+  "actualCount": 31,
   "files": {
     "src/auth/authentication.js": {
       "expectCount": 3,
@@ -26,8 +26,8 @@
       ]
     },
     "src/apis/ticket.js": {
-      "expectCount": 15,
-      "actualCount": 14,
+      "expectCount": 16,
+      "actualCount": 15,
       "undocumentLines": [
         32
       ]

@@ -195,7 +195,6 @@ export class Ticket extends RequestHandler {
      * Updated ticket attribute
      *
      * @param {number} id          - The item ID to update attribute.
-     * @param {number} attributeId - The attribute id to be updated.
      * @param {object} attribute   - The attribute data.
      * @param {object} [query]     - Optional request parameters.
      *
@@ -204,7 +203,7 @@ export class Ticket extends RequestHandler {
      * @example
      * ...
      *
-     * ingresse.ticket.updateAttribute(200, 1, { key: 'min', value: '5', type: 'integer' })
+     * ingresse.ticket.updateAttribute(200, { key: 'minimum', value: 5, type: 'integer' })
      *     .then(function (response) {
      *         console.log(response);
      *     })
@@ -212,31 +211,8 @@ export class Ticket extends RequestHandler {
      *         console.log(error);
      *     });
      */
-    updateAttribute(id, attributeId, attribute, query) {
-        return this.put(`/items/${id}/attributes/${attributeId}`, attribute, query);
-    }
-
-    /**
-     * Remove ticket attribute
-     *
-     * @param {number} id          - The item ID to update attribute.
-     * @param {number} attributeId - The attribute id to be updated.
-     *
-     * @returns Promise
-     *
-     * @example
-     * ...
-     *
-     * ingresse.ticket.removeAttribute(200, 1)
-     *     .then(function (response) {
-     *         console.log(response);
-     *     })
-     *     .catch(function (error) {
-     *         console.log(error);
-     *     });
-     */
-    removeAttribute(id, attributeId) {
-        return this.delete(`/items/${id}/attributes/${attributeId}`);
+    updateAttribute(id, attribute, query) {
+        return this.put(`/items/${id}/attributes`, attribute, query);
     }
 
     /**
