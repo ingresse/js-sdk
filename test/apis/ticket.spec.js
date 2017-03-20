@@ -167,26 +167,5 @@ describe('Ticket API', () => {
             chai.expect(ticket.put).to.have.been.called.with.exactly('/items/10', { name: 'Test' }, { query: 'Test' });
         });
     });
-
-    describe.skip('removeItem', () => {
-        let ticket;
-
-        beforeEach(() => {
-            ticket = new Ticket();
-            chai.spy.on(ticket, 'delete');
-        });
-
-        it('should removeItem call this.delete with id', () => {
-            ticket.removeItem(10);
-
-            chai.expect(ticket.delete).to.have.been.called.with.exactly('/items/10', {});
-        });
-
-        it('should removeItem call this.delete with id and query arguments', () => {
-            ticket.removeItem(10, { test: 'Test' });
-
-            chai.expect(ticket.delete).to.have.been.called.with.exactly('/items/10', { test: 'Test' });
-        });
-    });
 });
 

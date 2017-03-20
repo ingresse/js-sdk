@@ -35,7 +35,7 @@ export class Ticket extends RequestHandler {
     /**
      * Get a list of ticket types
      * This method will return a `Promise` so you can use
-     * `.then` and `.catach` methods.
+     * `.then` and `.catch` methods.
      *
      * @param {object} [query] - Optional request parameters.
      * @returns {Promise}
@@ -58,7 +58,7 @@ export class Ticket extends RequestHandler {
     /**
      * Get a list of ticket items
      * This method will return a `Promise` so you can use
-     * `.then` and `.catach` methdos.
+     * `.then` and `.catch` methdos.
      *
      * @param {object} [query] - Optional request parameters.
      * @returns {Promise}
@@ -195,7 +195,6 @@ export class Ticket extends RequestHandler {
      * Updated ticket attribute
      *
      * @param {number} id          - The item ID to update attribute.
-     * @param {number} attributeId - The attribute id to be updated.
      * @param {object} attribute   - The attribute data.
      * @param {object} [query]     - Optional request parameters.
      *
@@ -204,7 +203,7 @@ export class Ticket extends RequestHandler {
      * @example
      * ...
      *
-     * ingresse.ticket.updateAttribute(200, 1, { key: 'min', value: '5', type: 'integer' })
+     * ingresse.ticket.updateAttribute(200, { key: 'minimum', value: 5, type: 'integer' })
      *     .then(function (response) {
      *         console.log(response);
      *     })
@@ -212,8 +211,8 @@ export class Ticket extends RequestHandler {
      *         console.log(error);
      *     });
      */
-    updateAttribute(id, attributeId, attribute, query) {
-        return this.put(`/items/${id}/attributes/${attributeId}`, attribute, query);
+    updateAttribute(id, attribute, query) {
+        return this.put(`/items/${id}/attributes`, attribute, query);
     }
 
     /**
@@ -272,6 +271,86 @@ export class Ticket extends RequestHandler {
      */
     updateSalePeriod(id, salePeriod, query) {
         return this.put(`/items/${id}/sales-period`, salePeriod, query);
+    }
+
+    /**
+     * Create new values to ticket
+     *
+     * @param {number} id      - The item ID to create values.
+     * @param {object} values  - The values data.
+     * @param {object} [query] - Optional request parameters.
+     *
+     * @returns Promise
+     *
+     * @example
+     * ...
+     *
+     * ingresse.ticket.newValues({
+     *          price: 10000,
+     *          feeSale: 500,
+     *          feeProducer: 500
+     *      })
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    newValues(id, values, query) {
+        return this.post(`/items/${id}/values`, values, query);
+    }
+
+    /**
+     * Updated ticket values
+     *
+     * @param {number} id      - The item ID to update values.
+     * @param {object} values  - The values data.
+     * @param {object} [query] - Optional request parameters.
+     *
+     * @returns Promise
+     *
+     * @example
+     * ...
+     *
+     * ingresse.ticket.updateValues(200, {
+     *          price: 20000,
+     *          feeSale: 1000,
+     *          feeProducer: 1000
+     *      })
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    updateValues(id, values, query) {
+        return this.put(`/items/${id}/values`, values, query);
+    }
+
+    /**
+     * Get a list of triggers
+     * This method will return a `Promise` so you can use
+     * `.then` and `.catch` methods.
+     *
+     * @param {number} id      - The item ID to get the triggers.
+     * @param {object} [query] - Optional request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.ticket.getTriggers(10000040)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    getTriggers(id, query = {}) {
+        return this.get(`/items/${id}/triggers`, query);
     }
 }
 
