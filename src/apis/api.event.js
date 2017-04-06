@@ -1,5 +1,4 @@
 import {RequestHandler} from '../request/handler';
-import {auth} from '../auth';
 
 /**
  * Ingresse Event API
@@ -24,6 +23,29 @@ export class ApiEvents extends RequestHandler {
      * @returns {Promise}
      */
     getEventCrew(id, query = {}) {
-        return this.get(`/event/${id}`, query);
+        return this.get(`/event/${id}/crew`, query);
+    }
+
+    /**
+     * Get event attributes
+     *
+     * @param {string|number} id - The event ID to get.
+     * @param {object} [query]   - Optional request parameters.
+     * @returns {Promise}
+     */
+    getEventAttributes(id, query = {}) {
+        return this.get(`/event/${id}/attributes`, query);
+    }
+
+    /**
+     * Featured events
+     *
+     * @param {string|number} id - The event ID to get.
+     * @param {object} [query]   - Optional request parameters.
+     * @returns {Promise}
+     */
+    getFeatured(id, query = {}) {
+        return this.get(`/featured/${id}`, query);
     }
 }
+

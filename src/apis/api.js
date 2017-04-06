@@ -1,5 +1,7 @@
 import {RequestHandler} from '../request/handler';
 import {ApiEvents} from './api.event.js';
+import {ApiUser} from './api.user.js';
+import {ApiAuth} from './api.auth.js';
 import {auth} from '../auth';
 
 /**
@@ -13,7 +15,10 @@ import {auth} from '../auth';
  * // after instantiate the Sdk.
  * var api = ingresse.api;
  */
-export class Api extends (RequestHandler, ApiEvents) {
+export class Api extends (
+    RequestHandler,
+    ApiEvents
+) {
     /**
      * Ingresse Api
      *
@@ -30,15 +35,5 @@ export class Api extends (RequestHandler, ApiEvents) {
 
         this.settings = settings;
     }
-
-    /**
-     * Get user transfers in the elasticsearch microservice
-     *
-     * @param {string|number} id - The item ID to get.
-     * @param {object} [query]   - Optional request parameters.
-     * @returns {Promise}
-     */
-    getUserTransfer(id, query = {}) {
-        return this.get(`/transfer/user/${id}`, query);
-    }
 }
+
