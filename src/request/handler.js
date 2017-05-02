@@ -2,6 +2,7 @@ import popsicle from 'popsicle';
 import {plugins} from 'popsicle';
 import {basePrefix, transformResponse} from './plugins';
 import {auth} from '../auth';
+import {deepMerge} from '../helper';
 import status from 'popsicle-status';
 
 
@@ -37,11 +38,11 @@ export class RequestHandler {
             },
         };
 
-        if (this.auth) {
-            Object.assign(request, this.auth.getSettings());
-        }
+        request = deepMerge(request, options);
 
-        Object.assign(request, options);
+        if (this.auth) {
+            request = deepMerge(request, this.auth.getSettings());
+        }
 
         return popsicle(request)
             .use(transformResponse())
