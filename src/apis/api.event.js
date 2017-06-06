@@ -16,6 +16,17 @@ export class ApiEvents extends RequestHandler {
     }
 
     /**
+     * Gets event tickets
+     *
+     * @param {string|number} id - The event ID to get.
+     * @param {object} [query]   - Optional request parameters.
+     * @returns {Promise}
+     */
+    getEventTickets(id, query = {}) {
+        return this.get(`/event/${id}/tickets`, query);
+    }
+
+    /**
      * Get event crew
      *
      * @param {string|number} id - The event ID to get.
@@ -46,6 +57,26 @@ export class ApiEvents extends RequestHandler {
      */
     getFeatured(id, query = {}) {
         return this.get(`/featured/${id}`, query);
+    }
+
+    /**
+     * Gets the events type
+     *
+     * @returns {Promise}
+     */
+    getEventTypes() {
+        return this.get(`/home/sections`);
+    }
+
+    /**
+     * Gets the search event categorie.
+     *
+     * @param {string} category - The search category to get.
+     * @param {object} [query]   - Optional request parameters.
+     * @returns {Promise}
+     */
+    getEventCategorie(category, query = {}) {
+        return this.get(`/${category}`, query);
     }
 }
 
