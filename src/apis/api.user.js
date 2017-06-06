@@ -9,6 +9,7 @@ export class ApiUser extends (RequestHandler, Cookie) {
      * Initialize the Api User
      */
     constructor() {
+        super();
         this.credentials = {};
     }
 
