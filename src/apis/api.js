@@ -1,7 +1,7 @@
 import {RequestHandler} from '../request/handler';
 import {ApiEvents} from './api.event.js';
 import {ApiUser} from './api.user.js';
-import {ApiTicketTransfer} from './api.tickets.js';
+import {ApiTicketTransfer} from './api.ticket.js';
 import {ApiAuth} from './api.auth.js';
 import {auth} from '../auth';
 
