@@ -18,6 +18,7 @@ import {auth} from '../auth';
  */
 export class Api extends (
     RequestHandler,
+    ApiAuth,
     ApiEvents,
     ApiTicketTransfer,
     ApiUser

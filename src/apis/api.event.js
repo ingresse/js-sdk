@@ -75,7 +75,7 @@ export class ApiEvents extends RequestHandler {
      * @param {object} [query]   - Optional request parameters.
      * @returns {Promise}
      */
-    getEventCategorie(category, query = {}) {
+    getEventCategories(category, query = {}) {
         return this.get(`/${category}`, query);
     }
 }

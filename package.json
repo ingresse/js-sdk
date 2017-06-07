@@ -14,7 +14,8 @@
     "docs": "esdoc -c ./esdoc.json",
     "test": "nyc --reporter=lcov --reporter=html npm run unit-test",
     "posttest": "nyc report",
-    "unit-test": "mocha --recursive --compilers js:babel-register"
+    "unit-test": "mocha --recursive --compilers js:babel-register",
+    "tdd-test": "mocha -w --recursive --compilers js:babel-register"
   },
   "devDependencies": {
     "babel-cli": "^6.23.0",
