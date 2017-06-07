@@ -89,7 +89,7 @@ export class ApiUser extends (RequestHandler, Cookie) {
     }
 
     /**
-     * Gets the user events sessions.
+     * Get the user events sessions.
      *
      * @param {string|number} id - The user ID to get.
      * @param {object} [query] - Optional request parameters.
