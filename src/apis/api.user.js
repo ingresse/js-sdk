@@ -153,7 +153,7 @@ export class ApiUser extends (RequestHandler, Cookie) {
      *    order: 'DESC'
      * };
      *
-     * ingresse.apiUser.getRecentsTransfers(id, query)
+     * ingresse.apiUser.getRecentTransfers(id, query)
      *     .then(function (response) {
      *         console.log(response);
      *     })
