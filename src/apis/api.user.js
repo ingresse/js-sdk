@@ -37,7 +37,7 @@ export class ApiUser extends (RequestHandler, Cookie) {
 
 
     /**
-     * Gets the user tickets.
+     * Get the user tickets.
      *
      * @param {string|number} id - The user ID to get.
      * @param {object} [query]   - Optional request parameters.
@@ -66,7 +66,7 @@ export class ApiUser extends (RequestHandler, Cookie) {
     }
 
     /**
-     * Creates a new user.
+     * Create a new user.
      *
      * @param {object} [data]  - The form with user data for post.
      * @param {object} [query] - Optional request parameters.
@@ -78,7 +78,7 @@ export class ApiUser extends (RequestHandler, Cookie) {
     }
 
     /**
-     * Gets the new user tickets.
+     * Get the new user tickets.
      *
      * @param {string|number} id - The user ID to get.
      * @param {object} [query] - Optional request parameters.
@@ -100,7 +100,7 @@ export class ApiUser extends (RequestHandler, Cookie) {
     }
 
     /*
-     * Gets the ticket session
+     * Get the ticket session
      *
      * @param {number} id - The user ID to get.
      * @param {number} sessionId - The session id.
@@ -112,9 +112,9 @@ export class ApiUser extends (RequestHandler, Cookie) {
     }
 
     /**
-     * Searchs the users for transfer ticket.
+     * Search the users for transfer ticket.
      *
-     * @param {string} term - The string that will searchs.
+     * @param {string} term - The text to search.
      * @returns {Promise}
      *
      * @example
@@ -138,7 +138,7 @@ export class ApiUser extends (RequestHandler, Cookie) {
     }
 
     /**
-     * Gets the recent user that was received a transfer ticket.
+     * Get the recent transfers of a user.
      *
      * @param {number} id - The user ID to get.
      * @param {object} [query] - Optional request parameters.
@@ -161,7 +161,7 @@ export class ApiUser extends (RequestHandler, Cookie) {
      *         console.log(error);
      *     });
      */
-    getRecentsTransfers(id, query = {}) {
+    getRecentTransfers(id, query = {}) {
         return this.get(`/user/${id}/last-transfers`, query);
     }
 
@@ -194,15 +194,15 @@ export class ApiUser extends (RequestHandler, Cookie) {
             return this.credentials;
         }
 
-        this.credentials.userId = this.checkCookie('userId');
-        this.credentials.token  = this.checkCookie('token');
-        this.credentials.jwt    = this.checkCookie('jwt');
+        this.credentials.userId = this.getCookie('userId');
+        this.credentials.token  = this.getCookie('token');
+        this.credentials.jwt    = this.getCookie('jwt');
 
         if (this.credentials.userId ||
             this.credentials.token ||
             this.credentials.jwt)
         {
-                return this.credentials;
+            return this.credentials;
         }
 
         return false;

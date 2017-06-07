@@ -16,7 +16,7 @@ export class ApiEvents extends RequestHandler {
     }
 
     /**
-     * Gets event tickets
+     * Get event tickets
      *
      * @param {string|number} id - The event ID to get.
      * @param {object} [query]   - Optional request parameters.
@@ -60,7 +60,7 @@ export class ApiEvents extends RequestHandler {
     }
 
     /**
-     * Gets the events type
+     * Get the events type
      *
      * @returns {Promise}
      */
@@ -69,7 +69,7 @@ export class ApiEvents extends RequestHandler {
     }
 
     /**
-     * Gets the search event categorie.
+     * Get the search event categorie.
      *
      * @param {string} category - The search category to get.
      * @param {object} [query]   - Optional request parameters.

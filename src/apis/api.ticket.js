@@ -17,7 +17,7 @@ export class ApiTicketTransfer extends RequestHandler {
      *
      * var ticketId = 123;
      * var data = {
-     *      user: 456 //The user that will go the ticket
+     *      user: 456 //The user that will get the ticket
      * };
      *
      * ingresse.apiTickets.createTicketTransfer(ticketId, data)
@@ -29,11 +29,11 @@ export class ApiTicketTransfer extends RequestHandler {
      *     });
      *
      * ...
-     *  // For return the ticket for the last owner
+     *  // To return the ticket for the last owner
      *
      * var ticketId = 123;
      * var data = {
-     *      isReturn: true //With this option, the ticket will return for last owner.
+     *      isReturn: true //With this option, the ticket will return to last owner.
      * };
      *
      * ingresse.apiTickets.createTicketTransfer(ticketId, data)
@@ -49,11 +49,11 @@ export class ApiTicketTransfer extends RequestHandler {
     }
 
     /**
-     * Updates a ticket transfer.
+     * Update a ticket transfer.
      *
      * @param {number} id - The ticket ID to get.
      * @param {number} ticketId - The transfer ID to get.
-     * @param {object} [data]  - The form with transfer data for post.
+     * @param {object} [data]  - The form with transfer data to post.
      * @param {object} [query] - Optional request parameters.
      * @returns {Promise}
      *
@@ -79,7 +79,7 @@ export class ApiTicketTransfer extends RequestHandler {
     }
 
     /**
-     * Gets the ticket transfer history.
+     * Get the ticket transfer history.
      *
      * @param {string|number} id - The ticket ID to get.
      * @param {object} [query]   - Optional request parameters.

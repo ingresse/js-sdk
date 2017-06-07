@@ -3,7 +3,7 @@
  */
 export class Cookie {
     /**
-     * Creates the cookie.
+     * Create the cookie.
      *
      * @param {string} cname - The cookie name.
      * @param {string|number} cvalue - The cookie value.
@@ -12,7 +12,7 @@ export class Cookie {
      * @returns {String}
      */
     createCookie(cname, cvalue, days) {
-        let name = this.checkCookie(cname);
+        let name = this.getCookie(cname);
 
         if (name !== '') {
             return name;
@@ -21,18 +21,18 @@ export class Cookie {
         if (cname && cvalue && days) {
             this._setCookie(cname, cvalue, days);
 
-            return this.checkCookie(cname);
+            return this.getCookie(cname);
         }
 
         return '';
     }
 
     /**
-     * Deletes the cookie.
+     * Delete the cookie.
      * @param {string} cname - The cookie name.
      */
     deleteCookie(cname) {
-        let data = this.checkCookie(cname);
+        let data = this.getCookie(cname);
 
         if (data !== '') {
             this._setCookie(cname, data, -1);
@@ -40,13 +40,13 @@ export class Cookie {
     }
 
     /**
-     * Checks/Retunrs the cookie if it's exists.
+     * Check/Return the cookie if it's exists.
      *
      * @param {string} cname - The cookie name.
      *
      * @returns {String}
      */
-    checkCookie(cname) {
+    getCookie(cname) {
         let data = this._getCookie(cname);
 
         if (data) {
@@ -57,7 +57,7 @@ export class Cookie {
     }
 
     /**
-     * Sets the cookie.
+     * Set the cookie.
      *
      * @param {string} cname - The cookie name.
      * @param {string|number} cvalue - The cookie value.
@@ -72,7 +72,7 @@ export class Cookie {
     }
 
     /**
-     * Gets the cookie.
+     * Get the cookie.
      *
      * @param {string} cname - The cookie name.
      *
