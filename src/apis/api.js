@@ -4,6 +4,7 @@ import {ApiUser} from './api.user.js';
 import {ApiTicketTransfer} from './api.ticket.js';
 import {ApiAuth} from './api.auth.js';
 import {auth} from '../auth';
+import {mix} from '../helper/mix';
 
 /**
  * Ingresse API
@@ -16,7 +17,7 @@ import {auth} from '../auth';
  * // after instantiate the Sdk.
  * var api = ingresse.api;
  */
-export class Api extends (
+export class Api extends mix(
     RequestHandler,
     ApiAuth,
     ApiEvents,

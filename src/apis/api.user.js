@@ -4,13 +4,14 @@ import {Cookie} from '../helper/cookie';
 /**
  * Ingresse User API
  */
-export class ApiUser extends (RequestHandler, Cookie) {
+export class ApiUser extends RequestHandler {
     /**
      * Initialize the Api User
      */
     constructor() {
         super();
         this.credentials = {};
+        this.cookie = new Cookie();
     }
 
     /**
@@ -74,7 +75,7 @@ export class ApiUser extends (RequestHandler, Cookie) {
      */
     createUser(data = {}, query = {}) {
         query.method = 'create';
-        return this.post(`/user/`, data, query);
+        return this.post('/user/', data, query);
     }
 
     /**
@@ -134,7 +135,7 @@ export class ApiUser extends (RequestHandler, Cookie) {
      */
     getUserForTransfer(term, query = {}) {
         query.term = term;
-        return this.get(`/search/transfer/user`, query);
+        return this.get('/search/transfer/user', query);
     }
 
     /**
@@ -179,9 +180,9 @@ export class ApiUser extends (RequestHandler, Cookie) {
         this.credentials.token  = token;
         this.credentials.jwt    = jwt;
 
-        this.createCookie('userId', userId, 5);
-        this.createCookie('token', token, 5);
-        this.createCookie('jwt', jwt, 5);
+        this.cookie.createCookie('userId', userId, 5);
+        this.cookie.createCookie('token', token, 5);
+        this.cookie.createCookie('jwt', jwt, 5);
 
         return this.credentials;
     }
@@ -190,13 +191,15 @@ export class ApiUser extends (RequestHandler, Cookie) {
      * Gets the user credentials
      */
     getCredentials() {
-        if (this.credentials.length > 0) {
-            return this.credentials;
+        for(var prop in this.credentials) {
+            if (this.credentials.hasOwnProperty(prop)) {
+                return this.credentials;
+            }
         }
 
-        this.credentials.userId = this.getCookie('userId');
-        this.credentials.token  = this.getCookie('token');
-        this.credentials.jwt    = this.getCookie('jwt');
+        this.credentials.userId = this.cookie.getCookie('userId');
+        this.credentials.token  = this.cookie.getCookie('token');
+        this.credentials.jwt    = this.cookie.getCookie('jwt');
 
         if (this.credentials.userId ||
             this.credentials.token ||
@@ -212,8 +215,8 @@ export class ApiUser extends (RequestHandler, Cookie) {
      * Delete the user credentials
      */
     clearCredentials() {
-        this.deleteCookie('userId');
-        this.deleteCookie('token');
-        this.deleteCookie('jwt');
+        this.cookie.deleteCookie('userId');
+        this.cookie.deleteCookie('token');
+        this.cookie.deleteCookie('jwt');
     }
 }

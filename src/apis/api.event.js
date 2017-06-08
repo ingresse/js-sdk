@@ -65,7 +65,7 @@ export class ApiEvents extends RequestHandler {
      * @returns {Promise}
      */
     getEventTypes() {
-        return this.get(`/home/sections`);
+        return this.get('/home/sections');
     }
 
     /**

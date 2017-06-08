@@ -16,7 +16,11 @@ describe('API', () => {
         let api = new Api();
 
         chai.expect(api).to.be.an.instanceof(Api);
-        chai.expect(api).to.be.an.instanceof(ApiUser);
+        chai.expect(api.login).to.be.a.isFunction;
+        chai.expect(api.getEvent).to.be.a.isFunction;
+        chai.expect(api.createTicketTransfer).to.be.a.isFunction;
+        chai.expect(api.request).to.be.a.isFunction;
+        chai.expect(api.getUser).to.be.a.isFunction;
     });
 
     it('should have default settings', () => {
@@ -29,10 +33,10 @@ describe('API', () => {
 
     it('should accept custom settings', () => {
         let api = new Api({
-            url: 'https://my.custom.ticket.url.com'
+            url: 'https://my.custom.api.url.com'
         });
 
-        chai.expect(api.settings.url).to.equal('https://my.custom.ticket.url.com');
+        chai.expect(api.settings.url).to.equal('https://my.custom.api.url.com');
     });
 });
 
