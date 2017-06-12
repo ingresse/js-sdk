@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/auth/ingresse.js | Ingresse JS SDK API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <a data-ice="repoURL" href="https://www.github.com/ingresse/js-sdk">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">apis</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.auth.js~ApiAuth.html">ApiAuth</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.event.js~ApiEvents.html">ApiEvents</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.js~Api.html">Api</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.ticket.js~ApiTicketTransfer.html">ApiTicketTransfer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.user.js~ApiUser.html">ApiUser</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html">Ticket</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-apis">apis</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">auth</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/auth/authentication.js~Authentication.html">Authentication</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/auth/ingresse.js~Ingresse.html">Ingresse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/auth/jwt.js~Jwt.html">Jwt</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-auth">auth</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">helper</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/helper/cookie.js~Cookie.html">Cookie</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-deepMerge">deepMerge</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-copyProperties">copyProperties</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mix">mix</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">request</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html">RequestHandler</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-basePrefix">basePrefix</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-transformResponse">transformResponse</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/auth/ingresse.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {Authentication} from &apos;./authentication&apos;;
+import * as CryptoJS from &apos;crypto-js&apos;;
+
+
+export class Ingresse extends Authentication {
+    constructor() {
+        super();
+        this.authData = {};
+    }
+
+    /**
+     * Authentication type e.g. Jwt, BasicAuth, Ingresse
+     *
+     * @returns {string}
+     */
+    static type() {
+        return &apos;Ingresse&apos;;
+    }
+
+    /**
+     * Get formatted authentication settings
+     *
+     * @returns {object}
+     */
+    getSettings() {
+        const timestamp = this._getTimestamp();
+
+        return {
+            query: {
+                &apos;publickey&apos;: encodeURI(this.getPublicKey()),
+                &apos;signature&apos;: encodeURI(this._getSignature(timestamp)),
+                &apos;timestamp&apos;: timestamp,
+            }
+        };
+    }
+
+    /**
+     * Set Ingresse PublicKey
+     *
+     * @param {string} publicKey - Ingresse PublicKey
+     *
+     * @example
+     * ingresse.api.auth.setPublicKey(&apos;12345678901234&apos;);
+     */
+    setPublicKey(publicKey) {
+        this.authData.publicKey = publicKey;
+    }
+
+    /**
+     * Get Ingresse PublicKey
+     *
+     * @returns {string}
+     *
+     * @example
+     * ingresse.api.auth.getPublicKey();
+     */
+    getPublicKey() {
+        return this.authData.publicKey;
+    }
+
+    /**
+     * Set Ingresse PrivateKey
+     *
+     * @param {string} privateKey - Ingresse PrivateKey
+     *
+     * @example
+     * ingresse.api.auth.setPrivateKey(&apos;12345678901234&apos;);
+     */
+    setPrivateKey(privateKey) {
+        this.authData.privateKey = privateKey;
+    }
+
+    /**
+     * Get Ingresse PrivateKey
+     *
+     * @returns {string}
+     *
+     * @example
+     * ingresse.api.auth.getPrivateKey();
+     */
+    getPrivateKey() {
+        return this.authData.privateKey;
+    }
+
+    /**
+     * Get timestamp
+     *
+     * @private
+     * @returns {string}
+     */
+    _getTimestamp() {
+        return new Date().toJSON().replace(/\.\d+/, &apos;&apos;);
+    }
+
+    /**
+     * Get Ingresse Signature
+     *
+     * @private
+     * @returns {string}
+     */
+    _getSignature(timestamp) {
+        const sha1 = CryptoJS.HmacSHA1(this.getPublicKey() + timestamp, this.getPrivateKey());
+        return sha1.toString(CryptoJS.enc.Base64);
+    }
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.5.2)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

@@ -32,14 +32,24 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">apis</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html">Ticket</a></span></span></li>
+  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">apis</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.auth.js~ApiAuth.html">ApiAuth</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.event.js~ApiEvents.html">ApiEvents</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.js~Api.html">Api</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.ticket.js~ApiTicketTransfer.html">ApiTicketTransfer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.user.js~ApiUser.html">ApiUser</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html">Ticket</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-apis">apis</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">auth</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/auth/authentication.js~Authentication.html">Authentication</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/auth/ingresse.js~Ingresse.html">Ingresse</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/auth/jwt.js~Jwt.html">Jwt</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-auth">auth</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">helper</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/helper/cookie.js~Cookie.html">Cookie</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-deepMerge">deepMerge</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-copyProperties">copyProperties</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mix">mix</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">request</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html">RequestHandler</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-basePrefix">basePrefix</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-transformResponse">transformResponse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-basePrefix">basePrefix</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-transformResponse">transformResponse</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -74,6 +84,7 @@
   <div class="description" data-ice="description"><p>Ingresse Ticket&apos;s API</p>
 <p>API to get, create, update or remove tickets.</p>
 </div>
+  
 
   
 
@@ -113,7 +124,9 @@ var ticket = ingresse.ticket;</code></pre>
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html#instance-constructor-constructor">constructor</a></span></span><span data-ice="signature">(custom: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>)</span>
+          
+          
+          <span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html#instance-constructor-constructor">constructor</a></span></span><span data-ice="signature">(custom: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>)</span>
         </p>
       </div>
       <div>
@@ -146,7 +159,9 @@ var ticket = ingresse.ticket;</code></pre>
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html#instance-member-settings">settings</a></span></span><span data-ice="signature">: <span>*</span></span>
+          
+          
+          <span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html#instance-member-settings">settings</a></span></span><span data-ice="signature">: <span>*</span></span>
         </p>
       </div>
       <div>
@@ -178,7 +193,9 @@ var ticket = ingresse.ticket;</code></pre>
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html#instance-method-getItem">getItem</a></span></span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+          
+          
+          <span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html#instance-method-getItem">getItem</a></span></span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
@@ -204,7 +221,9 @@ var ticket = ingresse.ticket;</code></pre>
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html#instance-method-getItems">getItems</a></span></span><span data-ice="signature">(query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+          
+          
+          <span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html#instance-method-getItems">getItems</a></span></span><span data-ice="signature">(query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
@@ -232,7 +251,9 @@ This method will return a <code>Promise</code> so you can use
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html#instance-method-getTriggers">getTriggers</a></span></span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+          
+          
+          <span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html#instance-method-getTriggers">getTriggers</a></span></span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
@@ -260,7 +281,9 @@ This method will return a <code>Promise</code> so you can use
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html#instance-method-getTypes">getTypes</a></span></span><span data-ice="signature">(query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+          
+          
+          <span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html#instance-method-getTypes">getTypes</a></span></span><span data-ice="signature">(query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
@@ -288,7 +311,9 @@ This method will return a <code>Promise</code> so you can use
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html#instance-method-newAttribute">newAttribute</a></span></span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, attribute: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span>*</span></span>
+          
+          
+          <span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html#instance-method-newAttribute">newAttribute</a></span></span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, attribute: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span>*</span></span>
         </p>
       </div>
       <div>
@@ -314,7 +339,9 @@ This method will return a <code>Promise</code> so you can use
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html#instance-method-newItem">newItem</a></span></span><span data-ice="signature">(data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+          
+          
+          <span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html#instance-method-newItem">newItem</a></span></span><span data-ice="signature">(data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
@@ -340,7 +367,9 @@ This method will return a <code>Promise</code> so you can use
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html#instance-method-newSalePeriod">newSalePeriod</a></span></span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, salePeriod: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span>*</span></span>
+          
+          
+          <span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html#instance-method-newSalePeriod">newSalePeriod</a></span></span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, salePeriod: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span>*</span></span>
         </p>
       </div>
       <div>
@@ -366,7 +395,9 @@ This method will return a <code>Promise</code> so you can use
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html#instance-method-newValues">newValues</a></span></span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, values: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span>*</span></span>
+          
+          
+          <span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html#instance-method-newValues">newValues</a></span></span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, values: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span>*</span></span>
         </p>
       </div>
       <div>
@@ -392,7 +423,9 @@ This method will return a <code>Promise</code> so you can use
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html#instance-method-removeItem">removeItem</a></span></span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+          
+          
+          <span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html#instance-method-removeItem">removeItem</a></span></span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
@@ -418,7 +451,9 @@ This method will return a <code>Promise</code> so you can use
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html#instance-method-updateAttribute">updateAttribute</a></span></span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, attribute: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span>*</span></span>
+          
+          
+          <span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html#instance-method-updateAttribute">updateAttribute</a></span></span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, attribute: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span>*</span></span>
         </p>
       </div>
       <div>
@@ -444,7 +479,9 @@ This method will return a <code>Promise</code> so you can use
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html#instance-method-updateItem">updateItem</a></span></span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+          
+          
+          <span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html#instance-method-updateItem">updateItem</a></span></span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
@@ -470,7 +507,9 @@ This method will return a <code>Promise</code> so you can use
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html#instance-method-updateSalePeriod">updateSalePeriod</a></span></span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, salePeriod: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span>*</span></span>
+          
+          
+          <span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html#instance-method-updateSalePeriod">updateSalePeriod</a></span></span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, salePeriod: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span>*</span></span>
         </p>
       </div>
       <div>
@@ -496,7 +535,9 @@ This method will return a <code>Promise</code> so you can use
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html#instance-method-updateValues">updateValues</a></span></span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, values: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span>*</span></span>
+          
+          
+          <span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html#instance-method-updateValues">updateValues</a></span></span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, values: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span>*</span></span>
         </p>
       </div>
       <div>
@@ -530,7 +571,9 @@ This method will return a <code>Promise</code> so you can use
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-member-auth">auth</a></span></span><span data-ice="signature">: <span>*</span></span>
+          
+          
+          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-member-auth">auth</a></span></span><span data-ice="signature">: <span>*</span></span>
         </p>
       </div>
       <div>
@@ -555,7 +598,9 @@ This method will return a <code>Promise</code> so you can use
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-member-settings">settings</a></span></span><span data-ice="signature">: <span>*</span></span>
+          
+          
+          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-member-settings">settings</a></span></span><span data-ice="signature">: <span>*</span></span>
         </p>
       </div>
       <div>
@@ -580,7 +625,9 @@ This method will return a <code>Promise</code> so you can use
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-delete">delete</a></span></span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+          
+          
+          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-delete">delete</a></span></span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
@@ -606,7 +653,9 @@ This method will return a <code>Promise</code> so you can use
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-get">get</a></span></span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+          
+          
+          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-get">get</a></span></span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
@@ -632,7 +681,9 @@ This method will return a <code>Promise</code> so you can use
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-post">post</a></span></span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+          
+          
+          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-post">post</a></span></span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
@@ -658,7 +709,9 @@ This method will return a <code>Promise</code> so you can use
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-put">put</a></span></span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+          
+          
+          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-put">put</a></span></span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
@@ -684,7 +737,9 @@ This method will return a <code>Promise</code> so you can use
     <td>
       <div>
         <p>
-           <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-request">request</a></span></span><span data-ice="signature">(options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+          
+          
+          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-request">request</a></span></span><span data-ice="signature">(options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
@@ -710,6 +765,7 @@ This method will return a <code>Promise</code> so you can use
 <div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-constructor-constructor">
     <span class="access" data-ice="access">public</span>
+    
     
     
     
@@ -764,6 +820,8 @@ This method will return a <code>Promise</code> so you can use
   
 
   
+
+  
   
 </div>
 </div>
@@ -772,6 +830,7 @@ This method will return a <code>Promise</code> so you can use
 <div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-member-settings">
     <span class="access" data-ice="access">public</span>
+    
     
     
     
@@ -807,6 +866,8 @@ This method will return a <code>Promise</code> so you can use
   
 
   
+
+  
   
 </div>
 </div>
@@ -815,6 +876,7 @@ This method will return a <code>Promise</code> so you can use
 <div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-getItem">
     <span class="access" data-ice="access">public</span>
+    
     
     
     
@@ -865,14 +927,18 @@ This method will return a <code>Promise</code> so you can use
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></td>
-        
-      </tr>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></td>
+          
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -905,6 +971,7 @@ ingresse.ticket.getItem(200)
 <div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-getItems">
     <span class="access" data-ice="access">public</span>
+    
     
     
     
@@ -950,14 +1017,18 @@ This method will return a <code>Promise</code> so you can use
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></td>
-        
-      </tr>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></td>
+          
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -990,6 +1061,7 @@ ingresse.ticket.getItems()
 <div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-getTriggers">
     <span class="access" data-ice="access">public</span>
+    
     
     
     
@@ -1042,14 +1114,18 @@ This method will return a <code>Promise</code> so you can use
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></td>
-        
-      </tr>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></td>
+          
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -1082,6 +1158,7 @@ ingresse.ticket.getTriggers(10000040)
 <div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-getTypes">
     <span class="access" data-ice="access">public</span>
+    
     
     
     
@@ -1127,14 +1204,18 @@ This method will return a <code>Promise</code> so you can use
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></td>
-        
-      </tr>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></td>
+          
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -1167,6 +1248,7 @@ ingresse.ticket.getTypes()
 <div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-newAttribute">
     <span class="access" data-ice="access">public</span>
+    
     
     
     
@@ -1224,15 +1306,19 @@ ingresse.ticket.getTypes()
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span>*</span></td>
-        <td class="return-desc" data-ice="returnDescription"><p>Promise</p>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span>*</span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>Promise</p>
 </td>
-      </tr>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -1265,6 +1351,7 @@ ingresse.ticket.newAttribute(200, { key: &apos;min&apos;, value: &apos;1&apos;, 
 <div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-newItem">
     <span class="access" data-ice="access">public</span>
+    
     
     
     
@@ -1315,14 +1402,18 @@ ingresse.ticket.newAttribute(200, { key: &apos;min&apos;, value: &apos;1&apos;, 
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></td>
-        
-      </tr>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></td>
+          
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -1355,6 +1446,7 @@ ingresse.ticket.newItem({ name: &apos;My Ticket Name&apos; })
 <div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-newSalePeriod">
     <span class="access" data-ice="access">public</span>
+    
     
     
     
@@ -1412,15 +1504,19 @@ ingresse.ticket.newItem({ name: &apos;My Ticket Name&apos; })
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span>*</span></td>
-        <td class="return-desc" data-ice="returnDescription"><p>Promise</p>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span>*</span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>Promise</p>
 </td>
-      </tr>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -1458,6 +1554,7 @@ ingresse.ticket.newSalePeriod({
 <div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-newValues">
     <span class="access" data-ice="access">public</span>
+    
     
     
     
@@ -1515,15 +1612,19 @@ ingresse.ticket.newSalePeriod({
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span>*</span></td>
-        <td class="return-desc" data-ice="returnDescription"><p>Promise</p>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span>*</span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>Promise</p>
 </td>
-      </tr>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -1560,6 +1661,7 @@ ingresse.ticket.newValues({
 <div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-removeItem">
     <span class="access" data-ice="access">public</span>
+    
     
     
     
@@ -1610,14 +1712,18 @@ ingresse.ticket.newValues({
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></td>
-        
-      </tr>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></td>
+          
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -1650,6 +1756,7 @@ ingresse.ticket.removeItem(200)
 <div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-updateAttribute">
     <span class="access" data-ice="access">public</span>
+    
     
     
     
@@ -1707,15 +1814,19 @@ ingresse.ticket.removeItem(200)
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span>*</span></td>
-        <td class="return-desc" data-ice="returnDescription"><p>Promise</p>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span>*</span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>Promise</p>
 </td>
-      </tr>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -1748,6 +1859,7 @@ ingresse.ticket.updateAttribute(200, { key: &apos;minimum&apos;, value: 5, type:
 <div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-updateItem">
     <span class="access" data-ice="access">public</span>
+    
     
     
     
@@ -1805,14 +1917,18 @@ ingresse.ticket.updateAttribute(200, { key: &apos;minimum&apos;, value: 5, type:
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></td>
-        
-      </tr>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></td>
+          
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -1845,6 +1961,7 @@ ingresse.ticket.updateItem(200, { name: &apos;My Updated Ticket Name&apos; })
 <div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-updateSalePeriod">
     <span class="access" data-ice="access">public</span>
+    
     
     
     
@@ -1902,15 +2019,19 @@ ingresse.ticket.updateItem(200, { name: &apos;My Updated Ticket Name&apos; })
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span>*</span></td>
-        <td class="return-desc" data-ice="returnDescription"><p>Promise</p>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span>*</span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>Promise</p>
 </td>
-      </tr>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -1948,6 +2069,7 @@ ingresse.ticket.updateSalePeriod(200, {
 <div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-updateValues">
     <span class="access" data-ice="access">public</span>
+    
     
     
     
@@ -2005,15 +2127,19 @@ ingresse.ticket.updateSalePeriod(200, {
   <div class="return-params" data-ice="returnParams">
     <h4>Return:</h4>
     <table>
-      <tr>
-        <td class="return-type" data-ice="returnType"><span>*</span></td>
-        <td class="return-desc" data-ice="returnDescription"><p>Promise</p>
+      <tbody>
+        <tr>
+          <td class="return-type" data-ice="returnType"><span>*</span></td>
+          <td class="return-desc" data-ice="returnDescription"><p>Promise</p>
 </td>
-      </tr>
+        </tr>
+      </tbody>
     </table>
     <div data-ice="returnProperties">
 </div>
   </div>
+
+  
 
   
 
@@ -2051,7 +2177,7 @@ ingresse.ticket.updateValues(200, {
 </div>
 
 <footer class="footer">
-  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.8)</span></a>
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.5.2)</span><img src="./image/esdoc-logo-mini-black.png"></a>
 </footer>
 
 <script src="script/search_index.js"></script>

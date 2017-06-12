@@ -1,8 +1,50 @@
 window.esdocSearchIndex = [
   [
+    "ingresse-sdk/src/apis/api.js~api",
+    "class/src/apis/api.js~Api.html",
+    "<span>Api</span> <span class=\"search-result-import-path\">ingresse-sdk/src/apis/api.js</span>",
+    "class"
+  ],
+  [
+    "ingresse-sdk/src/apis/api.auth.js~apiauth",
+    "class/src/apis/api.auth.js~ApiAuth.html",
+    "<span>ApiAuth</span> <span class=\"search-result-import-path\">ingresse-sdk/src/apis/api.auth.js</span>",
+    "class"
+  ],
+  [
+    "ingresse-sdk/src/apis/api.event.js~apievents",
+    "class/src/apis/api.event.js~ApiEvents.html",
+    "<span>ApiEvents</span> <span class=\"search-result-import-path\">ingresse-sdk/src/apis/api.event.js</span>",
+    "class"
+  ],
+  [
+    "ingresse-sdk/src/apis/api.ticket.js~apitickettransfer",
+    "class/src/apis/api.ticket.js~ApiTicketTransfer.html",
+    "<span>ApiTicketTransfer</span> <span class=\"search-result-import-path\">ingresse-sdk/src/apis/api.ticket.js</span>",
+    "class"
+  ],
+  [
+    "ingresse-sdk/src/apis/api.user.js~apiuser",
+    "class/src/apis/api.user.js~ApiUser.html",
+    "<span>ApiUser</span> <span class=\"search-result-import-path\">ingresse-sdk/src/apis/api.user.js</span>",
+    "class"
+  ],
+  [
     "ingresse-sdk/src/auth/authentication.js~authentication",
     "class/src/auth/authentication.js~Authentication.html",
     "<span>Authentication</span> <span class=\"search-result-import-path\">ingresse-sdk/src/auth/authentication.js</span>",
+    "class"
+  ],
+  [
+    "ingresse-sdk/src/helper/cookie.js~cookie",
+    "class/src/helper/cookie.js~Cookie.html",
+    "<span>Cookie</span> <span class=\"search-result-import-path\">ingresse-sdk/src/helper/cookie.js</span>",
+    "class"
+  ],
+  [
+    "ingresse-sdk/src/auth/ingresse.js~ingresse",
+    "class/src/auth/ingresse.js~Ingresse.html",
+    "<span>Ingresse</span> <span class=\"search-result-import-path\">ingresse-sdk/src/auth/ingresse.js</span>",
     "class"
   ],
   [
@@ -37,345 +79,567 @@ window.esdocSearchIndex = [
   ],
   [
     "ingresse-sdk/src/request/plugins.js~baseprefix",
-    "variable/index.html#static-variable-basePrefix",
+    "function/index.html#static-function-basePrefix",
     "<span>basePrefix</span> <span class=\"search-result-import-path\">ingresse-sdk/src/request/plugins.js</span>",
-    "variable"
+    "function"
+  ],
+  [
+    "ingresse-sdk/src/helper/mix.js~copyproperties",
+    "function/index.html#static-function-copyProperties",
+    "<span>copyProperties</span> <span class=\"search-result-import-path\">ingresse-sdk/src/helper/mix.js</span>",
+    "function"
+  ],
+  [
+    "ingresse-sdk/src/helper/index.js~deepmerge",
+    "function/index.html#static-function-deepMerge",
+    "<span>deepMerge</span> <span class=\"search-result-import-path\">ingresse-sdk/src/helper/index.js</span>",
+    "function"
+  ],
+  [
+    "ingresse-sdk/src/helper/mix.js~mix",
+    "function/index.html#static-function-mix",
+    "<span>mix</span> <span class=\"search-result-import-path\">ingresse-sdk/src/helper/mix.js</span>",
+    "function"
   ],
   [
     "ingresse-sdk/src/request/plugins.js~transformresponse",
-    "variable/index.html#static-variable-transformResponse",
+    "function/index.html#static-function-transformResponse",
     "<span>transformResponse</span> <span class=\"search-result-import-path\">ingresse-sdk/src/request/plugins.js</span>",
-    "variable"
+    "function"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~array",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
     "BuiltinExternal/ECMAScriptExternal.js~Array",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~arraybuffer",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
     "BuiltinExternal/ECMAScriptExternal.js~ArrayBuffer",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~boolean",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
     "BuiltinExternal/ECMAScriptExternal.js~Boolean",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~dataview",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
     "BuiltinExternal/ECMAScriptExternal.js~DataView",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~date",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
     "BuiltinExternal/ECMAScriptExternal.js~Date",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~error",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
     "BuiltinExternal/ECMAScriptExternal.js~Error",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~evalerror",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
     "BuiltinExternal/ECMAScriptExternal.js~EvalError",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~float32array",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
     "BuiltinExternal/ECMAScriptExternal.js~Float32Array",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~float64array",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
     "BuiltinExternal/ECMAScriptExternal.js~Float64Array",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~function",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
     "BuiltinExternal/ECMAScriptExternal.js~Function",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~generator",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
     "BuiltinExternal/ECMAScriptExternal.js~Generator",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~generatorfunction",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
     "BuiltinExternal/ECMAScriptExternal.js~GeneratorFunction",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~infinity",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
     "BuiltinExternal/ECMAScriptExternal.js~Infinity",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~int16array",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
     "BuiltinExternal/ECMAScriptExternal.js~Int16Array",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~int32array",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
     "BuiltinExternal/ECMAScriptExternal.js~Int32Array",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~int8array",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
     "BuiltinExternal/ECMAScriptExternal.js~Int8Array",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~internalerror",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
     "BuiltinExternal/ECMAScriptExternal.js~InternalError",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~json",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
     "BuiltinExternal/ECMAScriptExternal.js~JSON",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~map",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
     "BuiltinExternal/ECMAScriptExternal.js~Map",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~nan",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
     "BuiltinExternal/ECMAScriptExternal.js~NaN",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~number",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
     "BuiltinExternal/ECMAScriptExternal.js~Number",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~object",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
     "BuiltinExternal/ECMAScriptExternal.js~Object",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~promise",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
     "BuiltinExternal/ECMAScriptExternal.js~Promise",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~proxy",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
     "BuiltinExternal/ECMAScriptExternal.js~Proxy",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~rangeerror",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
     "BuiltinExternal/ECMAScriptExternal.js~RangeError",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~referenceerror",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
     "BuiltinExternal/ECMAScriptExternal.js~ReferenceError",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~reflect",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
     "BuiltinExternal/ECMAScriptExternal.js~Reflect",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~regexp",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
     "BuiltinExternal/ECMAScriptExternal.js~RegExp",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~set",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
     "BuiltinExternal/ECMAScriptExternal.js~Set",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~string",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
     "BuiltinExternal/ECMAScriptExternal.js~String",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~symbol",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
     "BuiltinExternal/ECMAScriptExternal.js~Symbol",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~syntaxerror",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
     "BuiltinExternal/ECMAScriptExternal.js~SyntaxError",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~typeerror",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
     "BuiltinExternal/ECMAScriptExternal.js~TypeError",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~urierror",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
     "BuiltinExternal/ECMAScriptExternal.js~URIError",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~uint16array",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
     "BuiltinExternal/ECMAScriptExternal.js~Uint16Array",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~uint32array",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
     "BuiltinExternal/ECMAScriptExternal.js~Uint32Array",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~uint8array",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
     "BuiltinExternal/ECMAScriptExternal.js~Uint8Array",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~uint8clampedarray",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
     "BuiltinExternal/ECMAScriptExternal.js~Uint8ClampedArray",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~weakmap",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
     "BuiltinExternal/ECMAScriptExternal.js~WeakMap",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~weakset",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
     "BuiltinExternal/ECMAScriptExternal.js~WeakSet",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~boolean",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
     "BuiltinExternal/ECMAScriptExternal.js~boolean",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~function",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
     "BuiltinExternal/ECMAScriptExternal.js~function",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~null",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
     "BuiltinExternal/ECMAScriptExternal.js~null",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~number",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
     "BuiltinExternal/ECMAScriptExternal.js~number",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~object",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
     "BuiltinExternal/ECMAScriptExternal.js~object",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~string",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
     "BuiltinExternal/ECMAScriptExternal.js~string",
     "external"
   ],
   [
     "builtinexternal/ecmascriptexternal.js~undefined",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
     "BuiltinExternal/ECMAScriptExternal.js~undefined",
     "external"
   ],
   [
     "builtinexternal/webapiexternal.js~audiocontext",
-    "external/index.html",
+    "https://developer.mozilla.org/en/docs/Web/API/AudioContext",
     "BuiltinExternal/WebAPIExternal.js~AudioContext",
     "external"
   ],
   [
     "builtinexternal/webapiexternal.js~canvasrenderingcontext2d",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D",
     "BuiltinExternal/WebAPIExternal.js~CanvasRenderingContext2D",
     "external"
   ],
   [
     "builtinexternal/webapiexternal.js~documentfragment",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment",
     "BuiltinExternal/WebAPIExternal.js~DocumentFragment",
     "external"
   ],
   [
     "builtinexternal/webapiexternal.js~element",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/API/Element",
     "BuiltinExternal/WebAPIExternal.js~Element",
     "external"
   ],
   [
     "builtinexternal/webapiexternal.js~event",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/API/Event",
     "BuiltinExternal/WebAPIExternal.js~Event",
     "external"
   ],
   [
     "builtinexternal/webapiexternal.js~node",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/API/Node",
     "BuiltinExternal/WebAPIExternal.js~Node",
     "external"
   ],
   [
     "builtinexternal/webapiexternal.js~nodelist",
-    "external/index.html",
+    "https://developer.mozilla.org/en-US/docs/Web/API/NodeList",
     "BuiltinExternal/WebAPIExternal.js~NodeList",
     "external"
   ],
   [
     "builtinexternal/webapiexternal.js~xmlhttprequest",
-    "external/index.html",
+    "https://developer.mozilla.org/en/docs/Web/API/XMLHttpRequest",
     "BuiltinExternal/WebAPIExternal.js~XMLHttpRequest",
     "external"
+  ],
+  [
+    "src/apis/api.auth.js",
+    "file/src/apis/api.auth.js.html",
+    "src/apis/api.auth.js",
+    "file"
+  ],
+  [
+    "src/apis/api.auth.js~apiauth#fblogin",
+    "class/src/apis/api.auth.js~ApiAuth.html#instance-method-fbLogin",
+    "src/apis/api.auth.js~ApiAuth#fbLogin",
+    "method"
+  ],
+  [
+    "src/apis/api.auth.js~apiauth#login",
+    "class/src/apis/api.auth.js~ApiAuth.html#instance-method-login",
+    "src/apis/api.auth.js~ApiAuth#login",
+    "method"
+  ],
+  [
+    "src/apis/api.event.js",
+    "file/src/apis/api.event.js.html",
+    "src/apis/api.event.js",
+    "file"
+  ],
+  [
+    "src/apis/api.event.js~apievents#getevent",
+    "class/src/apis/api.event.js~ApiEvents.html#instance-method-getEvent",
+    "src/apis/api.event.js~ApiEvents#getEvent",
+    "method"
+  ],
+  [
+    "src/apis/api.event.js~apievents#geteventattributes",
+    "class/src/apis/api.event.js~ApiEvents.html#instance-method-getEventAttributes",
+    "src/apis/api.event.js~ApiEvents#getEventAttributes",
+    "method"
+  ],
+  [
+    "src/apis/api.event.js~apievents#geteventcategories",
+    "class/src/apis/api.event.js~ApiEvents.html#instance-method-getEventCategories",
+    "src/apis/api.event.js~ApiEvents#getEventCategories",
+    "method"
+  ],
+  [
+    "src/apis/api.event.js~apievents#geteventcrew",
+    "class/src/apis/api.event.js~ApiEvents.html#instance-method-getEventCrew",
+    "src/apis/api.event.js~ApiEvents#getEventCrew",
+    "method"
+  ],
+  [
+    "src/apis/api.event.js~apievents#geteventtickets",
+    "class/src/apis/api.event.js~ApiEvents.html#instance-method-getEventTickets",
+    "src/apis/api.event.js~ApiEvents#getEventTickets",
+    "method"
+  ],
+  [
+    "src/apis/api.event.js~apievents#geteventtypes",
+    "class/src/apis/api.event.js~ApiEvents.html#instance-method-getEventTypes",
+    "src/apis/api.event.js~ApiEvents#getEventTypes",
+    "method"
+  ],
+  [
+    "src/apis/api.event.js~apievents#getfeatured",
+    "class/src/apis/api.event.js~ApiEvents.html#instance-method-getFeatured",
+    "src/apis/api.event.js~ApiEvents#getFeatured",
+    "method"
+  ],
+  [
+    "src/apis/api.js",
+    "file/src/apis/api.js.html",
+    "src/apis/api.js",
+    "file"
+  ],
+  [
+    "src/apis/api.js~api#constructor",
+    "class/src/apis/api.js~Api.html#instance-constructor-constructor",
+    "src/apis/api.js~Api#constructor",
+    "method"
+  ],
+  [
+    "src/apis/api.js~api#settings",
+    "class/src/apis/api.js~Api.html#instance-member-settings",
+    "src/apis/api.js~Api#settings",
+    "member"
+  ],
+  [
+    "src/apis/api.ticket.js",
+    "file/src/apis/api.ticket.js.html",
+    "src/apis/api.ticket.js",
+    "file"
+  ],
+  [
+    "src/apis/api.ticket.js~apitickettransfer#createtickettransfer",
+    "class/src/apis/api.ticket.js~ApiTicketTransfer.html#instance-method-createTicketTransfer",
+    "src/apis/api.ticket.js~ApiTicketTransfer#createTicketTransfer",
+    "method"
+  ],
+  [
+    "src/apis/api.ticket.js~apitickettransfer#gettickettransferhistory",
+    "class/src/apis/api.ticket.js~ApiTicketTransfer.html#instance-method-getTicketTransferHistory",
+    "src/apis/api.ticket.js~ApiTicketTransfer#getTicketTransferHistory",
+    "method"
+  ],
+  [
+    "src/apis/api.ticket.js~apitickettransfer#updatetickettransfer",
+    "class/src/apis/api.ticket.js~ApiTicketTransfer.html#instance-method-updateTicketTransfer",
+    "src/apis/api.ticket.js~ApiTicketTransfer#updateTicketTransfer",
+    "method"
+  ],
+  [
+    "src/apis/api.user.js",
+    "file/src/apis/api.user.js.html",
+    "src/apis/api.user.js",
+    "file"
+  ],
+  [
+    "src/apis/api.user.js~apiuser#clearcredentials",
+    "class/src/apis/api.user.js~ApiUser.html#instance-method-clearCredentials",
+    "src/apis/api.user.js~ApiUser#clearCredentials",
+    "method"
+  ],
+  [
+    "src/apis/api.user.js~apiuser#constructor",
+    "class/src/apis/api.user.js~ApiUser.html#instance-constructor-constructor",
+    "src/apis/api.user.js~ApiUser#constructor",
+    "method"
+  ],
+  [
+    "src/apis/api.user.js~apiuser#cookie",
+    "class/src/apis/api.user.js~ApiUser.html#instance-member-cookie",
+    "src/apis/api.user.js~ApiUser#cookie",
+    "member"
+  ],
+  [
+    "src/apis/api.user.js~apiuser#createuser",
+    "class/src/apis/api.user.js~ApiUser.html#instance-method-createUser",
+    "src/apis/api.user.js~ApiUser#createUser",
+    "method"
+  ],
+  [
+    "src/apis/api.user.js~apiuser#credentials",
+    "class/src/apis/api.user.js~ApiUser.html#instance-member-credentials",
+    "src/apis/api.user.js~ApiUser#credentials",
+    "member"
+  ],
+  [
+    "src/apis/api.user.js~apiuser#getallusersessions",
+    "class/src/apis/api.user.js~ApiUser.html#instance-method-getAllUserSessions",
+    "src/apis/api.user.js~ApiUser#getAllUserSessions",
+    "method"
+  ],
+  [
+    "src/apis/api.user.js~apiuser#getcredentials",
+    "class/src/apis/api.user.js~ApiUser.html#instance-method-getCredentials",
+    "src/apis/api.user.js~ApiUser#getCredentials",
+    "method"
+  ],
+  [
+    "src/apis/api.user.js~apiuser#getrecenttransfers",
+    "class/src/apis/api.user.js~ApiUser.html#instance-method-getRecentTransfers",
+    "src/apis/api.user.js~ApiUser#getRecentTransfers",
+    "method"
+  ],
+  [
+    "src/apis/api.user.js~apiuser#getuser",
+    "class/src/apis/api.user.js~ApiUser.html#instance-method-getUser",
+    "src/apis/api.user.js~ApiUser#getUser",
+    "method"
+  ],
+  [
+    "src/apis/api.user.js~apiuser#getuserfortransfer",
+    "class/src/apis/api.user.js~ApiUser.html#instance-method-getUserForTransfer",
+    "src/apis/api.user.js~ApiUser#getUserForTransfer",
+    "method"
+  ],
+  [
+    "src/apis/api.user.js~apiuser#getusernewtickets",
+    "class/src/apis/api.user.js~ApiUser.html#instance-method-getUserNewTickets",
+    "src/apis/api.user.js~ApiUser#getUserNewTickets",
+    "method"
+  ],
+  [
+    "src/apis/api.user.js~apiuser#getuserpicture",
+    "class/src/apis/api.user.js~ApiUser.html#instance-method-getUserPicture",
+    "src/apis/api.user.js~ApiUser#getUserPicture",
+    "method"
+  ],
+  [
+    "src/apis/api.user.js~apiuser#getusersessiontickets",
+    "class/src/apis/api.user.js~ApiUser.html#instance-method-getUserSessionTickets",
+    "src/apis/api.user.js~ApiUser#getUserSessionTickets",
+    "method"
+  ],
+  [
+    "src/apis/api.user.js~apiuser#getusertickets",
+    "class/src/apis/api.user.js~ApiUser.html#instance-method-getUserTickets",
+    "src/apis/api.user.js~ApiUser#getUserTickets",
+    "method"
+  ],
+  [
+    "src/apis/api.user.js~apiuser#savecredentials",
+    "class/src/apis/api.user.js~ApiUser.html#instance-method-saveCredentials",
+    "src/apis/api.user.js~ApiUser#saveCredentials",
+    "method"
   ],
   [
     "src/apis/index.js",
@@ -504,6 +768,60 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/auth/ingresse.js",
+    "file/src/auth/ingresse.js.html",
+    "src/auth/ingresse.js",
+    "file"
+  ],
+  [
+    "src/auth/ingresse.js~ingresse#authdata",
+    "class/src/auth/ingresse.js~Ingresse.html#instance-member-authData",
+    "src/auth/ingresse.js~Ingresse#authData",
+    "member"
+  ],
+  [
+    "src/auth/ingresse.js~ingresse#constructor",
+    "class/src/auth/ingresse.js~Ingresse.html#instance-constructor-constructor",
+    "src/auth/ingresse.js~Ingresse#constructor",
+    "method"
+  ],
+  [
+    "src/auth/ingresse.js~ingresse#getprivatekey",
+    "class/src/auth/ingresse.js~Ingresse.html#instance-method-getPrivateKey",
+    "src/auth/ingresse.js~Ingresse#getPrivateKey",
+    "method"
+  ],
+  [
+    "src/auth/ingresse.js~ingresse#getpublickey",
+    "class/src/auth/ingresse.js~Ingresse.html#instance-method-getPublicKey",
+    "src/auth/ingresse.js~Ingresse#getPublicKey",
+    "method"
+  ],
+  [
+    "src/auth/ingresse.js~ingresse#getsettings",
+    "class/src/auth/ingresse.js~Ingresse.html#instance-method-getSettings",
+    "src/auth/ingresse.js~Ingresse#getSettings",
+    "method"
+  ],
+  [
+    "src/auth/ingresse.js~ingresse#setprivatekey",
+    "class/src/auth/ingresse.js~Ingresse.html#instance-method-setPrivateKey",
+    "src/auth/ingresse.js~Ingresse#setPrivateKey",
+    "method"
+  ],
+  [
+    "src/auth/ingresse.js~ingresse#setpublickey",
+    "class/src/auth/ingresse.js~Ingresse.html#instance-method-setPublicKey",
+    "src/auth/ingresse.js~Ingresse#setPublicKey",
+    "method"
+  ],
+  [
+    "src/auth/ingresse.js~ingresse.type",
+    "class/src/auth/ingresse.js~Ingresse.html#static-method-type",
+    "src/auth/ingresse.js~Ingresse.type",
+    "method"
+  ],
+  [
     "src/auth/jwt.js",
     "file/src/auth/jwt.js.html",
     "src/auth/jwt.js",
@@ -544,6 +862,42 @@ window.esdocSearchIndex = [
     "class/src/auth/jwt.js~Jwt.html#static-method-type",
     "src/auth/jwt.js~Jwt.type",
     "method"
+  ],
+  [
+    "src/helper/cookie.js",
+    "file/src/helper/cookie.js.html",
+    "src/helper/cookie.js",
+    "file"
+  ],
+  [
+    "src/helper/cookie.js~cookie#createcookie",
+    "class/src/helper/cookie.js~Cookie.html#instance-method-createCookie",
+    "src/helper/cookie.js~Cookie#createCookie",
+    "method"
+  ],
+  [
+    "src/helper/cookie.js~cookie#deletecookie",
+    "class/src/helper/cookie.js~Cookie.html#instance-method-deleteCookie",
+    "src/helper/cookie.js~Cookie#deleteCookie",
+    "method"
+  ],
+  [
+    "src/helper/cookie.js~cookie#getcookie",
+    "class/src/helper/cookie.js~Cookie.html#instance-method-getCookie",
+    "src/helper/cookie.js~Cookie#getCookie",
+    "method"
+  ],
+  [
+    "src/helper/index.js",
+    "file/src/helper/index.js.html",
+    "src/helper/index.js",
+    "file"
+  ],
+  [
+    "src/helper/mix.js",
+    "file/src/helper/mix.js.html",
+    "src/helper/mix.js",
+    "file"
   ],
   [
     "src/ingresse-sdk.js",

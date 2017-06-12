@@ -1,12 +1,57 @@
 {
-  "coverage": "79.48%",
-  "expectCount": 39,
-  "actualCount": 31,
+  "coverage": "80.89%",
+  "expectCount": 89,
+  "actualCount": 72,
   "files": {
+    "src/apis/api.js": {
+      "expectCount": 3,
+      "actualCount": 2,
+      "undocumentLines": [
+        41
+      ]
+    },
+    "src/apis/api.auth.js": {
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
+    },
+    "src/apis/api.event.js": {
+      "expectCount": 8,
+      "actualCount": 8,
+      "undocumentLines": []
+    },
+    "src/apis/api.ticket.js": {
+      "expectCount": 4,
+      "actualCount": 4,
+      "undocumentLines": []
+    },
+    "src/apis/api.user.js": {
+      "expectCount": 16,
+      "actualCount": 13,
+      "undocumentLines": [
+        14,
+        13,
+        111
+      ]
+    },
     "src/auth/authentication.js": {
       "expectCount": 3,
       "actualCount": 3,
       "undocumentLines": []
+    },
+    "src/helper/cookie.js": {
+      "expectCount": 4,
+      "actualCount": 4,
+      "undocumentLines": []
+    },
+    "src/auth/ingresse.js": {
+      "expectCount": 9,
+      "actualCount": 6,
+      "undocumentLines": [
+        5,
+        8,
+        6
+      ]
     },
     "src/auth/jwt.js": {
       "expectCount": 7,
@@ -21,8 +66,8 @@
       "expectCount": 9,
       "actualCount": 7,
       "undocumentLines": [
-        22,
-        19
+        23,
+        20
       ]
     },
     "src/apis/ticket.js": {
@@ -36,19 +81,32 @@
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [
-        4
+        5
       ]
     },
     "src/auth/index.js": {
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [
-        4
+        5
       ]
     },
     "src/request/plugins.js": {
       "expectCount": 2,
       "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/helper/mix.js": {
+      "expectCount": 2,
+      "actualCount": 0,
+      "undocumentLines": [
+        13,
+        2
+      ]
+    },
+    "src/helper/index.js": {
+      "expectCount": 1,
+      "actualCount": 1,
       "undocumentLines": []
     }
   }
