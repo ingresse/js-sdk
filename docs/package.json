@@ -14,20 +14,21 @@
     "docs": "esdoc -c ./esdoc.json",
     "test": "nyc --reporter=lcov --reporter=html npm run unit-test",
     "posttest": "nyc report",
-    "unit-test": "mocha --recursive --compilers js:babel-register"
+    "unit-test": "mocha --recursive --compilers js:babel-register",
+    "tdd-test": "mocha -w --recursive --compilers js:babel-register"
   },
   "devDependencies": {
-    "babel-cli": "^6.14.0",
+    "babel-cli": "^6.23.0",
     "babel-eslint": "^6.1.2",
-    "babel-preset-es2015": "^6.14.0",
-    "babel-register": "^6.14.0",
-    "browserify": "^13.1.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-register": "^6.23.0",
+    "browserify": "^14.1.0",
     "chai": "^3.5.0",
     "chai-spies": "^0.7.1",
-    "esdoc": "^0.4.8",
+    "esdoc": "^0.5.2",
     "eslint": "^3.4.0",
-    "mocha": "^3.0.2",
-    "nyc": "^8.1.0",
+    "mocha": "^3.2.0",
+    "nyc": "^10.1.2",
     "uglify": "^0.1.5"
   },
   "repository": {
@@ -41,7 +42,10 @@
   "author": "Vitor Leal <vitor.leal@ingresse.com>",
   "license": "MIT",
   "dependencies": {
-    "popsicle": "^8.1.1",
+    "babel-cli": "^6.18.0",
+    "babel-polyfill": "^6.23.0",
+    "crypto-js": "^3.1.9-1",
+    "popsicle": "^9.1.0",
     "popsicle-status": "^2.0.0"
   }
 }

@@ -2,31 +2,560 @@
   {
     "__docId__": 0,
     "kind": "file",
+    "name": "src/apis/api.auth.js",
+    "content": "import {RequestHandler} from '../request/handler';\n\n/**\n * Ingresse Auth API\n */\nexport class ApiAuth extends RequestHandler {\n    /**\n     * Login User\n     *\n     * @param {object} data    - The user data to login.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     */\n    login(data, query = {}) {\n        return this.post('/login', data, query);\n    }\n\n    /**\n     * Login User with Facebook\n     *\n     * @param {object} data    - The user data to login.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     */\n    fbLogin(data, query = {}) {\n        return this.post('/login/facebook', data, query);\n    }\n}\n",
     "static": true,
-    "variation": null,
-    "name": "src/apis/index.js",
-    "memberof": null,
-    "longname": "src/apis/index.js",
+    "longname": "src/apis/api.auth.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "import {Ticket} from './ticket';\n\n\nexport var apis = {\n    ticket: Ticket\n};\n\n"
+    "lineNumber": 1
   },
   {
     "__docId__": 1,
-    "kind": "variable",
+    "kind": "class",
+    "name": "ApiAuth",
+    "memberof": "src/apis/api.auth.js",
     "static": true,
-    "variation": null,
-    "name": "apis",
-    "memberof": "src/apis/index.js",
-    "longname": "src/apis/index.js~apis",
+    "longname": "src/apis/api.auth.js~ApiAuth",
     "access": null,
     "export": true,
-    "importPath": "ingresse-sdk/src/apis/index.js",
-    "importStyle": "{apis}",
+    "importPath": "ingresse-sdk/src/apis/api.auth.js",
+    "importStyle": "{ApiAuth}",
+    "description": "Ingresse Auth API",
+    "lineNumber": 6,
+    "interface": false,
+    "extends": [
+      "src/request/handler.js~RequestHandler"
+    ]
+  },
+  {
+    "__docId__": 2,
+    "kind": "method",
+    "name": "login",
+    "memberof": "src/apis/api.auth.js~ApiAuth",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/apis/api.auth.js~ApiAuth#login",
+    "access": null,
+    "description": "Login User",
+    "lineNumber": 14,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "data",
+        "description": "The user data to login."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "query",
+        "description": "Optional request parameters."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 3,
+    "kind": "method",
+    "name": "fbLogin",
+    "memberof": "src/apis/api.auth.js~ApiAuth",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/apis/api.auth.js~ApiAuth#fbLogin",
+    "access": null,
+    "description": "Login User with Facebook",
+    "lineNumber": 25,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "data",
+        "description": "The user data to login."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "query",
+        "description": "Optional request parameters."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 4,
+    "kind": "file",
+    "name": "src/apis/api.event.js",
+    "content": "import {RequestHandler} from '../request/handler';\n\n/**\n * Ingresse Event API\n */\nexport class ApiEvents extends RequestHandler {\n    /**\n     * Get event\n     *\n     * @param {string|number} id - The event ID to get.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     */\n    getEvent(id, query = {}) {\n        return this.get(`/event/${id}`, query);\n    }\n\n    /**\n     * Get event tickets\n     *\n     * @param {string|number} id - The event ID to get.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     */\n    getEventTickets(id, query = {}) {\n        return this.get(`/event/${id}/tickets`, query);\n    }\n\n    /**\n     * Get event crew\n     *\n     * @param {string|number} id - The event ID to get.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     */\n    getEventCrew(id, query = {}) {\n        return this.get(`/event/${id}/crew`, query);\n    }\n\n    /**\n     * Get event attributes\n     *\n     * @param {string|number} id - The event ID to get.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     */\n    getEventAttributes(id, query = {}) {\n        return this.get(`/event/${id}/attributes`, query);\n    }\n\n    /**\n     * Featured events\n     *\n     * @param {string|number} id - The event ID to get.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     */\n    getFeatured(id, query = {}) {\n        return this.get(`/featured/${id}`, query);\n    }\n\n    /**\n     * Get the events type\n     *\n     * @returns {Promise}\n     */\n    getEventTypes() {\n        return this.get('/home/sections');\n    }\n\n    /**\n     * Get the search event categorie.\n     *\n     * @param {string} category - The search category to get.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     */\n    getEventCategories(category, query = {}) {\n        return this.get(`/${category}`, query);\n    }\n}\n\n",
+    "static": true,
+    "longname": "src/apis/api.event.js",
+    "access": null,
     "description": null,
-    "lineNumber": 4,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 5,
+    "kind": "class",
+    "name": "ApiEvents",
+    "memberof": "src/apis/api.event.js",
+    "static": true,
+    "longname": "src/apis/api.event.js~ApiEvents",
+    "access": null,
+    "export": true,
+    "importPath": "ingresse-sdk/src/apis/api.event.js",
+    "importStyle": "{ApiEvents}",
+    "description": "Ingresse Event API",
+    "lineNumber": 6,
+    "interface": false,
+    "extends": [
+      "src/request/handler.js~RequestHandler"
+    ]
+  },
+  {
+    "__docId__": 6,
+    "kind": "method",
+    "name": "getEvent",
+    "memberof": "src/apis/api.event.js~ApiEvents",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/apis/api.event.js~ApiEvents#getEvent",
+    "access": null,
+    "description": "Get event",
+    "lineNumber": 14,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string",
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "The event ID to get."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "query",
+        "description": "Optional request parameters."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 7,
+    "kind": "method",
+    "name": "getEventTickets",
+    "memberof": "src/apis/api.event.js~ApiEvents",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/apis/api.event.js~ApiEvents#getEventTickets",
+    "access": null,
+    "description": "Get event tickets",
+    "lineNumber": 25,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string",
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "The event ID to get."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "query",
+        "description": "Optional request parameters."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 8,
+    "kind": "method",
+    "name": "getEventCrew",
+    "memberof": "src/apis/api.event.js~ApiEvents",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/apis/api.event.js~ApiEvents#getEventCrew",
+    "access": null,
+    "description": "Get event crew",
+    "lineNumber": 36,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string",
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "The event ID to get."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "query",
+        "description": "Optional request parameters."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 9,
+    "kind": "method",
+    "name": "getEventAttributes",
+    "memberof": "src/apis/api.event.js~ApiEvents",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/apis/api.event.js~ApiEvents#getEventAttributes",
+    "access": null,
+    "description": "Get event attributes",
+    "lineNumber": 47,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string",
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "The event ID to get."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "query",
+        "description": "Optional request parameters."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 10,
+    "kind": "method",
+    "name": "getFeatured",
+    "memberof": "src/apis/api.event.js~ApiEvents",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/apis/api.event.js~ApiEvents#getFeatured",
+    "access": null,
+    "description": "Featured events",
+    "lineNumber": 58,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string",
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "The event ID to get."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "query",
+        "description": "Optional request parameters."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 11,
+    "kind": "method",
+    "name": "getEventTypes",
+    "memberof": "src/apis/api.event.js~ApiEvents",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/apis/api.event.js~ApiEvents#getEventTypes",
+    "access": null,
+    "description": "Get the events type",
+    "lineNumber": 67,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 12,
+    "kind": "method",
+    "name": "getEventCategories",
+    "memberof": "src/apis/api.event.js~ApiEvents",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/apis/api.event.js~ApiEvents#getEventCategories",
+    "access": null,
+    "description": "Get the search event categorie.",
+    "lineNumber": 78,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "category",
+        "description": "The search category to get."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "query",
+        "description": "Optional request parameters."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 13,
+    "kind": "file",
+    "name": "src/apis/api.js",
+    "content": "import {RequestHandler} from '../request/handler';\nimport {ApiEvents} from './api.event.js';\nimport {ApiUser} from './api.user.js';\nimport {ApiTicketTransfer} from './api.ticket.js';\nimport {ApiAuth} from './api.auth.js';\nimport {auth} from '../auth';\nimport {mix} from '../helper/mix';\n\n/**\n * Ingresse API\n *\n * @example\n * var Sdk = require('ingresse-sdk');\n * var ingresse = new Sdk();\n *\n * // You will have access to this API\n * // after instantiate the Sdk.\n * var api = ingresse.api;\n */\nexport class Api extends mix(\n    RequestHandler,\n    ApiAuth,\n    ApiEvents,\n    ApiTicketTransfer,\n    ApiUser\n) {\n    /**\n     * Ingresse Api\n     *\n     * @param {object} [custom={}] - Initialize Ticket Api settings.\n     */\n    constructor(custom = {}) {\n        let settings = {\n            url : 'https://api.ingresse.com',\n            auth: auth.Ingresse.type(),\n        };\n\n        Object.assign(settings, custom);\n        super(settings);\n\n        this.settings = settings;\n    }\n}\n\n",
+    "static": true,
+    "longname": "src/apis/api.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 14,
+    "kind": "class",
+    "name": "Api",
+    "memberof": "src/apis/api.js",
+    "static": true,
+    "longname": "src/apis/api.js~Api",
+    "access": null,
+    "export": true,
+    "importPath": "ingresse-sdk/src/apis/api.js",
+    "importStyle": "{Api}",
+    "description": "Ingresse API",
+    "examples": [
+      "var Sdk = require('ingresse-sdk');\nvar ingresse = new Sdk();\n\n// You will have access to this API\n// after instantiate the Sdk.\nvar api = ingresse.api;"
+    ],
+    "lineNumber": 20,
+    "interface": false,
+    "expressionExtends": ""
+  },
+  {
+    "__docId__": 15,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/apis/api.js~Api",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/apis/api.js~Api#constructor",
+    "access": null,
+    "description": "Ingresse Api",
+    "lineNumber": 32,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "{}",
+        "defaultRaw": {},
+        "name": "custom",
+        "description": "Initialize Ticket Api settings."
+      }
+    ]
+  },
+  {
+    "__docId__": 16,
+    "kind": "member",
+    "name": "settings",
+    "memberof": "src/apis/api.js~Api",
+    "static": false,
+    "longname": "src/apis/api.js~Api#settings",
+    "access": null,
+    "description": null,
+    "lineNumber": 41,
     "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
     "type": {
       "types": [
         "*"
@@ -34,25 +563,897 @@
     }
   },
   {
-    "__docId__": 2,
+    "__docId__": 17,
     "kind": "file",
+    "name": "src/apis/api.ticket.js",
+    "content": "import {RequestHandler} from '../request/handler';\n\n/**\n * Ingresse Tickets Transfer API\n */\nexport class ApiTicketTransfer extends RequestHandler {\n    /**\n     * Creates a ticket transfer.\n     *\n     * @param {number} id - The ticket ID to get.\n     * @param {object} [data]  - The form with transfer data for post.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * var ticketId = 123;\n     * var data = {\n     *      user: 456 //The user that will get the ticket\n     * };\n     *\n     * ingresse.apiTickets.createTicketTransfer(ticketId, data)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     *\n     * ...\n     *  // To return the ticket for the last owner\n     *\n     * var ticketId = 123;\n     * var data = {\n     *      isReturn: true //With this option, the ticket will return to last owner.\n     * };\n     *\n     * ingresse.apiTickets.createTicketTransfer(ticketId, data)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    createTicketTransfer(id, data = {}, query = {}) {\n        return this.post(`/ticket/${id}/transfer`, data, query);\n    }\n\n    /**\n     * Update a ticket transfer.\n     *\n     * @param {number} id - The ticket ID to get.\n     * @param {number} ticketId - The transfer ID to get.\n     * @param {object} [data]  - The form with transfer data to post.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * var ticketId = 123;\n     * var transferId = 456;\n     * var data = {\n     *      action: 'accept' // can be [accept, cancel, refuse]\n     * };\n     *\n     * ingresse.apiTickets.updateTicketTransfer(ticketId, transferId, data)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    updateTicketTransfer(id, transferId, data = {}, query = {}) {\n        return this.post(`/ticket/${id}/transfer/${transferId}`, data, query);\n    }\n\n    /**\n     * Get the ticket transfer history.\n     *\n     * @param {string|number} id - The ticket ID to get.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     */\n    getTicketTransferHistory(id, query = {}) {\n        return this.get(`/ticket/${id}/transfer`, query);\n    }\n}\n\n",
     "static": true,
-    "variation": null,
+    "longname": "src/apis/api.ticket.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 18,
+    "kind": "class",
+    "name": "ApiTicketTransfer",
+    "memberof": "src/apis/api.ticket.js",
+    "static": true,
+    "longname": "src/apis/api.ticket.js~ApiTicketTransfer",
+    "access": null,
+    "export": true,
+    "importPath": "ingresse-sdk/src/apis/api.ticket.js",
+    "importStyle": "{ApiTicketTransfer}",
+    "description": "Ingresse Tickets Transfer API",
+    "lineNumber": 6,
+    "interface": false,
+    "extends": [
+      "src/request/handler.js~RequestHandler"
+    ]
+  },
+  {
+    "__docId__": 19,
+    "kind": "method",
+    "name": "createTicketTransfer",
+    "memberof": "src/apis/api.ticket.js~ApiTicketTransfer",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/apis/api.ticket.js~ApiTicketTransfer#createTicketTransfer",
+    "access": null,
+    "description": "Creates a ticket transfer.",
+    "examples": [
+      "...\n\nvar ticketId = 123;\nvar data = {\n     user: 456 //The user that will get the ticket\n};\n\ningresse.apiTickets.createTicketTransfer(ticketId, data)\n    .then(function (response) {\n        console.log(response);\n    })\n    .catch(function (error) {\n        console.log(error);\n    });\n\n...\n // To return the ticket for the last owner\n\nvar ticketId = 123;\nvar data = {\n     isReturn: true //With this option, the ticket will return to last owner.\n};\n\ningresse.apiTickets.createTicketTransfer(ticketId, data)\n    .then(function (response) {\n        console.log(response);\n    })\n    .catch(function (error) {\n        console.log(error);\n    });"
+    ],
+    "lineNumber": 47,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "The ticket ID to get."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "data",
+        "description": "The form with transfer data for post."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "query",
+        "description": "Optional request parameters."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 20,
+    "kind": "method",
+    "name": "updateTicketTransfer",
+    "memberof": "src/apis/api.ticket.js~ApiTicketTransfer",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/apis/api.ticket.js~ApiTicketTransfer#updateTicketTransfer",
+    "access": null,
+    "description": "Update a ticket transfer.",
+    "examples": [
+      "...\n\nvar ticketId = 123;\nvar transferId = 456;\nvar data = {\n     action: 'accept' // can be [accept, cancel, refuse]\n};\n\ningresse.apiTickets.updateTicketTransfer(ticketId, transferId, data)\n    .then(function (response) {\n        console.log(response);\n    })\n    .catch(function (error) {\n        console.log(error);\n    });"
+    ],
+    "lineNumber": 77,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "The ticket ID to get."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "ticketId",
+        "description": "The transfer ID to get."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "data",
+        "description": "The form with transfer data to post."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "query",
+        "description": "Optional request parameters."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 21,
+    "kind": "method",
+    "name": "getTicketTransferHistory",
+    "memberof": "src/apis/api.ticket.js~ApiTicketTransfer",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/apis/api.ticket.js~ApiTicketTransfer#getTicketTransferHistory",
+    "access": null,
+    "description": "Get the ticket transfer history.",
+    "lineNumber": 88,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string",
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "The ticket ID to get."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "query",
+        "description": "Optional request parameters."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 22,
+    "kind": "file",
+    "name": "src/apis/api.user.js",
+    "content": "import {RequestHandler} from '../request/handler';\nimport {Cookie} from '../helper/cookie';\n\n/**\n * Ingresse User API\n */\nexport class ApiUser extends RequestHandler {\n    /**\n     * Initialize the Api User\n     */\n    constructor() {\n        super();\n        this.credentials = {};\n        this.cookie = new Cookie();\n    }\n\n    /**\n     * Get user\n     *\n     * @param {string|number} id - The user ID to get.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     */\n    getUser(id, query = {}) {\n        return this.get(`/user/${id}`, query);\n    }\n\n    /**\n     * Get user picture\n     *\n     * @param {string|number} id - The user ID to get.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     */\n    getUserPicture(id, query = {}) {\n        return this.get(`/user/${id}/picture`, query);\n    }\n\n\n    /**\n     * Get the user tickets.\n     *\n     * @param {string|number} id - The user ID to get.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * var userId = 123;\n     * var query = {\n     *    status: 'pending', //Can be [pending, accepted, refused, returned, cancelled].\n     *    pageSize: 10,\n     *    page: currentPage\n     * };\n     *\n     * ingresse.apiUser.getUserTicket(userId, query)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    getUserTickets(id, query = {}) {\n        return this.get(`/user/${id}/tickets`, query);\n    }\n\n    /**\n     * Create a new user.\n     *\n     * @param {object} [data]  - The form with user data for post.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     */\n    createUser(data = {}, query = {}) {\n        query.method = 'create';\n        return this.post('/user/', data, query);\n    }\n\n    /**\n     * Get the new user tickets.\n     *\n     * @param {string|number} id - The user ID to get.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     */\n    getUserNewTickets(id, query = {}) {\n        return this.get(`/user/${id}/transfers`, query);\n    }\n\n    /**\n     * Get the user events sessions.\n     *\n     * @param {string|number} id - The user ID to get.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     */\n    getAllUserSessions(id, query = {}) {\n        return this.get(`/user/${id}/sessions`, query);\n    }\n\n    /*\n     * Get the ticket session\n     *\n     * @param {number} id - The user ID to get.\n     * @param {number} sessionId - The session id.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     */\n    getUserSessionTickets(id, sessionId, query = {}) {\n        return this.get(`/user/${id}/sessions/${sessionId}/tickets`, query);\n    }\n\n    /**\n     * Search the users for transfer ticket.\n     *\n     * @param {string} term - The text to search.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * var term = 'Jefferson Silva';\n     * var query = {\n     *    size: 12\n     * };\n     * ingresse.apiUser.getUserForTransfer(term, query)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    getUserForTransfer(term, query = {}) {\n        query.term = term;\n        return this.get('/search/transfer/user', query);\n    }\n\n    /**\n     * Get the recent transfers of a user.\n     *\n     * @param {number} id - The user ID to get.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * var id = 123;\n     * var query = {\n     *    size: 12,\n     *    order: 'DESC'\n     * };\n     *\n     * ingresse.apiUser.getRecentTransfers(id, query)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    getRecentTransfers(id, query = {}) {\n        return this.get(`/user/${id}/last-transfers`, query);\n    }\n\n    /**\n     * Saves the credentials in cookie.\n     *\n     * @param {number} userId - User Id.\n     * @param {string} token  - The user token.\n     * @param {string} jwt    - The user jwt token.\n     *\n     * @returns {Object}\n     */\n    saveCredentials(userId, token, jwt) {\n        this.credentials.userId = userId;\n        this.credentials.token  = token;\n        this.credentials.jwt    = jwt;\n\n        this.cookie.createCookie('userId', userId, 5);\n        this.cookie.createCookie('token', token, 5);\n        this.cookie.createCookie('jwt', jwt, 5);\n\n        return this.credentials;\n    }\n\n    /**\n     * Gets the user credentials\n     */\n    getCredentials() {\n        for(var prop in this.credentials) {\n            if (this.credentials.hasOwnProperty(prop)) {\n                return this.credentials;\n            }\n        }\n\n        this.credentials.userId = this.cookie.getCookie('userId');\n        this.credentials.token  = this.cookie.getCookie('token');\n        this.credentials.jwt    = this.cookie.getCookie('jwt');\n\n        if (this.credentials.userId ||\n            this.credentials.token ||\n            this.credentials.jwt)\n        {\n            return this.credentials;\n        }\n\n        return false;\n    }\n\n    /**\n     * Delete the user credentials\n     */\n    clearCredentials() {\n        this.cookie.deleteCookie('userId');\n        this.cookie.deleteCookie('token');\n        this.cookie.deleteCookie('jwt');\n    }\n}\n",
+    "static": true,
+    "longname": "src/apis/api.user.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 23,
+    "kind": "class",
+    "name": "ApiUser",
+    "memberof": "src/apis/api.user.js",
+    "static": true,
+    "longname": "src/apis/api.user.js~ApiUser",
+    "access": null,
+    "export": true,
+    "importPath": "ingresse-sdk/src/apis/api.user.js",
+    "importStyle": "{ApiUser}",
+    "description": "Ingresse User API",
+    "lineNumber": 7,
+    "interface": false,
+    "extends": [
+      "src/request/handler.js~RequestHandler"
+    ]
+  },
+  {
+    "__docId__": 24,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/apis/api.user.js~ApiUser",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/apis/api.user.js~ApiUser#constructor",
+    "access": null,
+    "description": "Initialize the Api User",
+    "lineNumber": 11,
+    "params": []
+  },
+  {
+    "__docId__": 25,
+    "kind": "member",
+    "name": "credentials",
+    "memberof": "src/apis/api.user.js~ApiUser",
+    "static": false,
+    "longname": "src/apis/api.user.js~ApiUser#credentials",
+    "access": null,
+    "description": null,
+    "lineNumber": 13,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "{}"
+      ]
+    }
+  },
+  {
+    "__docId__": 26,
+    "kind": "member",
+    "name": "cookie",
+    "memberof": "src/apis/api.user.js~ApiUser",
+    "static": false,
+    "longname": "src/apis/api.user.js~ApiUser#cookie",
+    "access": null,
+    "description": null,
+    "lineNumber": 14,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 27,
+    "kind": "method",
+    "name": "getUser",
+    "memberof": "src/apis/api.user.js~ApiUser",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/apis/api.user.js~ApiUser#getUser",
+    "access": null,
+    "description": "Get user",
+    "lineNumber": 24,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string",
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "The user ID to get."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "query",
+        "description": "Optional request parameters."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 28,
+    "kind": "method",
+    "name": "getUserPicture",
+    "memberof": "src/apis/api.user.js~ApiUser",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/apis/api.user.js~ApiUser#getUserPicture",
+    "access": null,
+    "description": "Get user picture",
+    "lineNumber": 35,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string",
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "The user ID to get."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "query",
+        "description": "Optional request parameters."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 29,
+    "kind": "method",
+    "name": "getUserTickets",
+    "memberof": "src/apis/api.user.js~ApiUser",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/apis/api.user.js~ApiUser#getUserTickets",
+    "access": null,
+    "description": "Get the user tickets.",
+    "examples": [
+      "...\n\nvar userId = 123;\nvar query = {\n   status: 'pending', //Can be [pending, accepted, refused, returned, cancelled].\n   pageSize: 10,\n   page: currentPage\n};\n\ningresse.apiUser.getUserTicket(userId, query)\n    .then(function (response) {\n        console.log(response);\n    })\n    .catch(function (error) {\n        console.log(error);\n    });"
+    ],
+    "lineNumber": 65,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string",
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "The user ID to get."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "query",
+        "description": "Optional request parameters."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 30,
+    "kind": "method",
+    "name": "createUser",
+    "memberof": "src/apis/api.user.js~ApiUser",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/apis/api.user.js~ApiUser#createUser",
+    "access": null,
+    "description": "Create a new user.",
+    "lineNumber": 76,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "data",
+        "description": "The form with user data for post."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "query",
+        "description": "Optional request parameters."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 31,
+    "kind": "method",
+    "name": "getUserNewTickets",
+    "memberof": "src/apis/api.user.js~ApiUser",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/apis/api.user.js~ApiUser#getUserNewTickets",
+    "access": null,
+    "description": "Get the new user tickets.",
+    "lineNumber": 88,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string",
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "The user ID to get."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "query",
+        "description": "Optional request parameters."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 32,
+    "kind": "method",
+    "name": "getAllUserSessions",
+    "memberof": "src/apis/api.user.js~ApiUser",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/apis/api.user.js~ApiUser#getAllUserSessions",
+    "access": null,
+    "description": "Get the user events sessions.",
+    "lineNumber": 99,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string",
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "The user ID to get."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "query",
+        "description": "Optional request parameters."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 33,
+    "kind": "method",
+    "name": "getUserSessionTickets",
+    "memberof": "src/apis/api.user.js~ApiUser",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/apis/api.user.js~ApiUser#getUserSessionTickets",
+    "access": null,
+    "description": null,
+    "lineNumber": 111,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "id",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "sessionId",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "query",
+        "optional": true,
+        "types": [
+          "{}"
+        ],
+        "defaultRaw": {},
+        "defaultValue": "{}"
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 34,
+    "kind": "method",
+    "name": "getUserForTransfer",
+    "memberof": "src/apis/api.user.js~ApiUser",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/apis/api.user.js~ApiUser#getUserForTransfer",
+    "access": null,
+    "description": "Search the users for transfer ticket.",
+    "examples": [
+      "...\n\nvar term = 'Jefferson Silva';\nvar query = {\n   size: 12\n};\ningresse.apiUser.getUserForTransfer(term, query)\n    .then(function (response) {\n        console.log(response);\n    })\n    .catch(function (error) {\n        console.log(error);\n    });"
+    ],
+    "lineNumber": 136,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "term",
+        "description": "The text to search."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 35,
+    "kind": "method",
+    "name": "getRecentTransfers",
+    "memberof": "src/apis/api.user.js~ApiUser",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/apis/api.user.js~ApiUser#getRecentTransfers",
+    "access": null,
+    "description": "Get the recent transfers of a user.",
+    "examples": [
+      "...\n\nvar id = 123;\nvar query = {\n   size: 12,\n   order: 'DESC'\n};\n\ningresse.apiUser.getRecentTransfers(id, query)\n    .then(function (response) {\n        console.log(response);\n    })\n    .catch(function (error) {\n        console.log(error);\n    });"
+    ],
+    "lineNumber": 165,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "id",
+        "description": "The user ID to get."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "object"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "query",
+        "description": "Optional request parameters."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 36,
+    "kind": "method",
+    "name": "saveCredentials",
+    "memberof": "src/apis/api.user.js~ApiUser",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/apis/api.user.js~ApiUser#saveCredentials",
+    "access": null,
+    "description": "Saves the credentials in cookie.",
+    "lineNumber": 178,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Object}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "userId",
+        "description": "User Id."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "token",
+        "description": "The user token."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "jwt",
+        "description": "The user jwt token."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 37,
+    "kind": "method",
+    "name": "getCredentials",
+    "memberof": "src/apis/api.user.js~ApiUser",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/apis/api.user.js~ApiUser#getCredentials",
+    "access": null,
+    "description": "Gets the user credentials",
+    "lineNumber": 193,
+    "params": [],
+    "return": {
+      "types": [
+        "boolean"
+      ]
+    }
+  },
+  {
+    "__docId__": 38,
+    "kind": "method",
+    "name": "clearCredentials",
+    "memberof": "src/apis/api.user.js~ApiUser",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/apis/api.user.js~ApiUser#clearCredentials",
+    "access": null,
+    "description": "Delete the user credentials",
+    "lineNumber": 217,
+    "params": []
+  },
+  {
+    "__docId__": 39,
+    "kind": "file",
+    "name": "src/apis/index.js",
+    "content": "import {Ticket} from './ticket';\nimport {Api} from './api';\n\n\nexport var apis = {\n    ticket: Ticket,\n    api: Api\n};\n\n",
+    "static": true,
+    "longname": "src/apis/index.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 40,
+    "kind": "variable",
+    "name": "apis",
+    "memberof": "src/apis/index.js",
+    "static": true,
+    "longname": "src/apis/index.js~apis",
+    "access": null,
+    "export": true,
+    "importPath": "ingresse-sdk/src/apis/index.js",
+    "importStyle": "{apis}",
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "{\"ticket\": *, \"api\": *}"
+      ]
+    }
+  },
+  {
+    "__docId__": 41,
+    "kind": "file",
     "name": "src/apis/ticket.js",
-    "memberof": null,
+    "content": "import {RequestHandler} from '../request/handler';\nimport {auth} from '../auth';\n\n/**\n * Ingresse Ticket's API\n *\n * API to get, create, update or remove tickets.\n *\n * @example\n * var Sdk = require('ingresse-sdk');\n * var ingresse = new Sdk();\n *\n * // You will have access to this API\n * // after instantiate the Sdk.\n * var ticket = ingresse.ticket;\n */\nexport class Ticket extends RequestHandler {\n    /**\n     * Ticket Api\n     *\n     * @param {object} [custom={}] - Initialize Ticket Api settings.\n     */\n    constructor(custom = {}) {\n        let settings = {\n            url : 'https://api.ingresse.com/ticket',\n            auth: auth.Jwt.type(),\n        };\n\n        Object.assign(settings, custom);\n        super(settings);\n\n        this.settings = settings;\n    }\n\n    /**\n     * Get a list of ticket types\n     * This method will return a `Promise` so you can use\n     * `.then` and `.catch` methods.\n     *\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.getTypes()\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    getTypes(query = {}) {\n        return this.get('/types', query);\n    }\n\n    /**\n     * Get a list of ticket items\n     * This method will return a `Promise` so you can use\n     * `.then` and `.catch` methdos.\n     *\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.getItems()\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    getItems(query = {}) {\n        return this.get('/items', query);\n    }\n\n    /**\n     * Get item by ID\n     *\n     * @param {string|number} id - The item ID to get.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.getItem(200)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    getItem(id, query = {}) {\n        return this.get(`/items/${id}`, query);\n    }\n\n    /**\n     * Create new Ticket item\n     *\n     * @param {object} data    - Data to create a new ticket item.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.newItem({ name: 'My Ticket Name' })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    newItem(data = {}, query = {}) {\n        return this.post('/items', data, query);\n    }\n\n    /**\n     * Update a ticket item\n     *\n     * @param {string|number} id - The item ID to update.\n     * @param {object} data      - Data to update item.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updateItem(200, { name: 'My Updated Ticket Name' })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    updateItem(id, data = {}, query = {}) {\n        return this.put(`/items/${id}`, data, query);\n    }\n\n    /**\n     * Remove a ticket item\n     *\n     * @param {string|number} id - The item ID to remove.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.removeItem(200)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    removeItem(id, query = {}) {\n        return this.delete(id, query);\n    }\n\n    /**\n     * Create new ticket attribute\n     *\n     * @param {number} id        - The item ID to create attribute.\n     * @param {object} attribute - The attribute data.\n     * @param {object} [query]   - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.newAttribute(200, { key: 'min', value: '1', type: 'integer' })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    newAttribute(id, attribute, query) {\n        return this.post(`/items/${id}/attributes`, attribute, query);\n    }\n\n    /**\n     * Updated ticket attribute\n     *\n     * @param {number} id          - The item ID to update attribute.\n     * @param {object} attribute   - The attribute data.\n     * @param {object} [query]     - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updateAttribute(200, { key: 'minimum', value: 5, type: 'integer' })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    updateAttribute(id, attribute, query) {\n        return this.put(`/items/${id}/attributes`, attribute, query);\n    }\n\n    /**\n     * Create new sale period to ticket\n     *\n     * @param {number} id         - The item ID to create sale period.\n     * @param {object} salePeriod - The sale period data.\n     * @param {object} [query]    - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.newSalePeriod({\n     *          appCategoryId: 1,\n     *          start: '2016-10-10 20:20:00',\n     *          finish: '2016-11-10 20:20:00',\n     *          available: 1\n     *      })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    newSalePeriod(id, salePeriod, query) {\n        return this.post(`/items/${id}/sales-period`, salePeriod, query);\n    }\n\n    /**\n     * Updated ticket sale period\n     *\n     * @param {number} id         - The item ID to update the sale period.\n     * @param {object} salePeriod - The salePeriod data.\n     * @param {object} [query]    - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updateSalePeriod(200, {\n     *          appCategoryId: 1,\n     *          start: '2016-11-20 10:10:00',\n     *          finish: '2016-12-20 10:10:00',\n     *          available: 1\n     *      })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    updateSalePeriod(id, salePeriod, query) {\n        return this.put(`/items/${id}/sales-period`, salePeriod, query);\n    }\n\n    /**\n     * Create new values to ticket\n     *\n     * @param {number} id      - The item ID to create values.\n     * @param {object} values  - The values data.\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.newValues({\n     *          price: 10000,\n     *          feeSale: 500,\n     *          feeProducer: 500\n     *      })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    newValues(id, values, query) {\n        return this.post(`/items/${id}/values`, values, query);\n    }\n\n    /**\n     * Updated ticket values\n     *\n     * @param {number} id      - The item ID to update values.\n     * @param {object} values  - The values data.\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updateValues(200, {\n     *          price: 20000,\n     *          feeSale: 1000,\n     *          feeProducer: 1000\n     *      })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    updateValues(id, values, query) {\n        return this.put(`/items/${id}/values`, values, query);\n    }\n\n    /**\n     * Get a list of triggers\n     * This method will return a `Promise` so you can use\n     * `.then` and `.catch` methods.\n     *\n     * @param {number} id      - The item ID to get the triggers.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.getTriggers(10000040)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    getTriggers(id, query = {}) {\n        return this.get(`/items/${id}/triggers`, query);\n    }\n}\n\n",
+    "static": true,
     "longname": "src/apis/ticket.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "import {RequestHandler} from '../request/handler';\nimport {auth} from '../auth';\n\n/**\n * Ingresse Ticket's API\n *\n * API to get, create, update or remove tickets.\n *\n * @example\n * var Sdk = require('ingresse-sdk');\n * var ingresse = new Sdk();\n *\n * // You will have access to this API\n * // after instantiate the Sdk.\n * var ticket = ingresse.ticket;\n */\nexport class Ticket extends RequestHandler {\n    /**\n     * Ticket Api\n     *\n     * @param {object} [custom={}] - Initialize Ticket Api settings.\n     */\n    constructor(custom = {}) {\n        let settings = {\n            url : 'https://api.ingresse.com/ticket',\n            auth: auth.Jwt.type(),\n        };\n\n        Object.assign(settings, custom);\n        super(settings);\n\n        this.settings = settings;\n    }\n\n    /**\n     * Get a list of ticket types\n     * This method will return a `Promise` so you can use\n     * `.then` and `.catch` methods.\n     *\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.getTypes()\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    getTypes(query = {}) {\n        return this.get('/types', query);\n    }\n\n    /**\n     * Get a list of ticket items\n     * This method will return a `Promise` so you can use\n     * `.then` and `.catch` methdos.\n     *\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.getItems()\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    getItems(query = {}) {\n        return this.get('/items', query);\n    }\n\n    /**\n     * Get item by ID\n     *\n     * @param {string|number} id - The item ID to get.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.getItem(200)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    getItem(id, query = {}) {\n        return this.get(`/items/${id}`, query);\n    }\n\n    /**\n     * Create new Ticket item\n     *\n     * @param {object} data    - Data to create a new ticket item.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.newItem({ name: 'My Ticket Name' })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    newItem(data = {}, query = {}) {\n        return this.post('/items', data, query);\n    }\n\n    /**\n     * Update a ticket item\n     *\n     * @param {string|number} id - The item ID to update.\n     * @param {object} data      - Data to update item.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updateItem(200, { name: 'My Updated Ticket Name' })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    updateItem(id, data = {}, query = {}) {\n        return this.put(`/items/${id}`, data, query);\n    }\n\n    /**\n     * Remove a ticket item\n     *\n     * @param {string|number} id - The item ID to remove.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.removeItem(200)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    removeItem(id, query = {}) {\n        return this.delete(id, query);\n    }\n\n    /**\n     * Create new ticket attribute\n     *\n     * @param {number} id        - The item ID to create attribute.\n     * @param {object} attribute - The attribute data.\n     * @param {object} [query]   - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.newAttribute(200, { key: 'min', value: '1', type: 'integer' })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    newAttribute(id, attribute, query) {\n        return this.post(`/items/${id}/attributes`, attribute, query);\n    }\n\n    /**\n     * Updated ticket attribute\n     *\n     * @param {number} id          - The item ID to update attribute.\n     * @param {object} attribute   - The attribute data.\n     * @param {object} [query]     - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updateAttribute(200, { key: 'minimum', value: 5, type: 'integer' })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    updateAttribute(id, attribute, query) {\n        return this.put(`/items/${id}/attributes`, attribute, query);\n    }\n\n    /**\n     * Create new sale period to ticket\n     *\n     * @param {number} id         - The item ID to create sale period.\n     * @param {object} salePeriod - The sale period data.\n     * @param {object} [query]    - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.newSalePeriod({\n     *          appCategoryId: 1,\n     *          start: '2016-10-10 20:20:00',\n     *          finish: '2016-11-10 20:20:00',\n     *          available: 1\n     *      })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    newSalePeriod(id, salePeriod, query) {\n        return this.post(`/items/${id}/sales-period`, salePeriod, query);\n    }\n\n    /**\n     * Updated ticket sale period\n     *\n     * @param {number} id         - The item ID to update the sale period.\n     * @param {object} salePeriod - The salePeriod data.\n     * @param {object} [query]    - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updateSalePeriod(200, {\n     *          appCategoryId: 1,\n     *          start: '2016-11-20 10:10:00',\n     *          finish: '2016-12-20 10:10:00',\n     *          available: 1\n     *      })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    updateSalePeriod(id, salePeriod, query) {\n        return this.put(`/items/${id}/sales-period`, salePeriod, query);\n    }\n\n    /**\n     * Create new values to ticket\n     *\n     * @param {number} id      - The item ID to create values.\n     * @param {object} values  - The values data.\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.newValues({\n     *          price: 10000,\n     *          feeSale: 500,\n     *          feeProducer: 500\n     *      })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    newValues(id, values, query) {\n        return this.post(`/items/${id}/values`, values, query);\n    }\n\n    /**\n     * Updated ticket values\n     *\n     * @param {number} id      - The item ID to update values.\n     * @param {object} values  - The values data.\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns Promise\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updateValues(200, {\n     *          price: 20000,\n     *          feeSale: 1000,\n     *          feeProducer: 1000\n     *      })\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    updateValues(id, values, query) {\n        return this.put(`/items/${id}/values`, values, query);\n    }\n\n    /**\n     * Get a list of triggers\n     * This method will return a `Promise` so you can use\n     * `.then` and `.catch` methods.\n     *\n     * @param {number} id      - The item ID to get the triggers.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.getTriggers(10000040)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    getTriggers(id, query = {}) {\n        return this.get(`/items/${id}/triggers`, query);\n    }\n}\n\n"
+    "lineNumber": 1
   },
   {
-    "__docId__": 3,
+    "__docId__": 42,
     "kind": "class",
-    "static": true,
-    "variation": null,
     "name": "Ticket",
     "memberof": "src/apis/ticket.js",
+    "static": true,
     "longname": "src/apis/ticket.js~Ticket",
     "access": null,
     "export": true,
@@ -69,12 +1470,13 @@
     ]
   },
   {
-    "__docId__": 4,
+    "__docId__": 43,
     "kind": "constructor",
-    "static": false,
-    "variation": null,
     "name": "constructor",
     "memberof": "src/apis/ticket.js~Ticket",
+    "generator": false,
+    "async": false,
+    "static": false,
     "longname": "src/apis/ticket.js~Ticket#constructor",
     "access": null,
     "description": "Ticket Api",
@@ -92,21 +1494,25 @@
         "name": "custom",
         "description": "Initialize Ticket Api settings."
       }
-    ],
-    "generator": false
+    ]
   },
   {
-    "__docId__": 5,
+    "__docId__": 44,
     "kind": "member",
-    "static": false,
-    "variation": null,
     "name": "settings",
     "memberof": "src/apis/ticket.js~Ticket",
+    "static": false,
     "longname": "src/apis/ticket.js~Ticket#settings",
     "access": null,
     "description": null,
     "lineNumber": 32,
     "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
     "type": {
       "types": [
         "*"
@@ -114,12 +1520,13 @@
     }
   },
   {
-    "__docId__": 6,
+    "__docId__": 45,
     "kind": "method",
-    "static": false,
-    "variation": null,
     "name": "getTypes",
     "memberof": "src/apis/ticket.js~Ticket",
+    "generator": false,
+    "async": false,
+    "static": false,
     "longname": "src/apis/ticket.js~Ticket#getTypes",
     "access": null,
     "description": "Get a list of ticket types\nThis method will return a `Promise` so you can use\n`.then` and `.catch` methods.",
@@ -152,16 +1559,16 @@
       ],
       "spread": false,
       "description": ""
-    },
-    "generator": false
+    }
   },
   {
-    "__docId__": 7,
+    "__docId__": 46,
     "kind": "method",
-    "static": false,
-    "variation": null,
     "name": "getItems",
     "memberof": "src/apis/ticket.js~Ticket",
+    "generator": false,
+    "async": false,
+    "static": false,
     "longname": "src/apis/ticket.js~Ticket#getItems",
     "access": null,
     "description": "Get a list of ticket items\nThis method will return a `Promise` so you can use\n`.then` and `.catch` methdos.",
@@ -194,16 +1601,16 @@
       ],
       "spread": false,
       "description": ""
-    },
-    "generator": false
+    }
   },
   {
-    "__docId__": 8,
+    "__docId__": 47,
     "kind": "method",
-    "static": false,
-    "variation": null,
     "name": "getItem",
     "memberof": "src/apis/ticket.js~Ticket",
+    "generator": false,
+    "async": false,
+    "static": false,
     "longname": "src/apis/ticket.js~Ticket#getItem",
     "access": null,
     "description": "Get item by ID",
@@ -247,16 +1654,16 @@
       ],
       "spread": false,
       "description": ""
-    },
-    "generator": false
+    }
   },
   {
-    "__docId__": 9,
+    "__docId__": 48,
     "kind": "method",
-    "static": false,
-    "variation": null,
     "name": "newItem",
     "memberof": "src/apis/ticket.js~Ticket",
+    "generator": false,
+    "async": false,
+    "static": false,
     "longname": "src/apis/ticket.js~Ticket#newItem",
     "access": null,
     "description": "Create new Ticket item",
@@ -299,16 +1706,16 @@
       ],
       "spread": false,
       "description": ""
-    },
-    "generator": false
+    }
   },
   {
-    "__docId__": 10,
+    "__docId__": 49,
     "kind": "method",
-    "static": false,
-    "variation": null,
     "name": "updateItem",
     "memberof": "src/apis/ticket.js~Ticket",
+    "generator": false,
+    "async": false,
+    "static": false,
     "longname": "src/apis/ticket.js~Ticket#updateItem",
     "access": null,
     "description": "Update a ticket item",
@@ -362,16 +1769,16 @@
       ],
       "spread": false,
       "description": ""
-    },
-    "generator": false
+    }
   },
   {
-    "__docId__": 11,
+    "__docId__": 50,
     "kind": "method",
-    "static": false,
-    "variation": null,
     "name": "removeItem",
     "memberof": "src/apis/ticket.js~Ticket",
+    "generator": false,
+    "async": false,
+    "static": false,
     "longname": "src/apis/ticket.js~Ticket#removeItem",
     "access": null,
     "description": "Remove a ticket item",
@@ -415,16 +1822,16 @@
       ],
       "spread": false,
       "description": ""
-    },
-    "generator": false
+    }
   },
   {
-    "__docId__": 12,
+    "__docId__": 51,
     "kind": "method",
-    "static": false,
-    "variation": null,
     "name": "newAttribute",
     "memberof": "src/apis/ticket.js~Ticket",
+    "generator": false,
+    "async": false,
+    "static": false,
     "longname": "src/apis/ticket.js~Ticket#newAttribute",
     "access": null,
     "description": "Create new ticket attribute",
@@ -477,16 +1884,16 @@
       ],
       "spread": false,
       "description": "Promise"
-    },
-    "generator": false
+    }
   },
   {
-    "__docId__": 13,
+    "__docId__": 52,
     "kind": "method",
-    "static": false,
-    "variation": null,
     "name": "updateAttribute",
     "memberof": "src/apis/ticket.js~Ticket",
+    "generator": false,
+    "async": false,
+    "static": false,
     "longname": "src/apis/ticket.js~Ticket#updateAttribute",
     "access": null,
     "description": "Updated ticket attribute",
@@ -539,16 +1946,16 @@
       ],
       "spread": false,
       "description": "Promise"
-    },
-    "generator": false
+    }
   },
   {
-    "__docId__": 14,
+    "__docId__": 53,
     "kind": "method",
-    "static": false,
-    "variation": null,
     "name": "newSalePeriod",
     "memberof": "src/apis/ticket.js~Ticket",
+    "generator": false,
+    "async": false,
+    "static": false,
     "longname": "src/apis/ticket.js~Ticket#newSalePeriod",
     "access": null,
     "description": "Create new sale period to ticket",
@@ -601,16 +2008,16 @@
       ],
       "spread": false,
       "description": "Promise"
-    },
-    "generator": false
+    }
   },
   {
-    "__docId__": 15,
+    "__docId__": 54,
     "kind": "method",
-    "static": false,
-    "variation": null,
     "name": "updateSalePeriod",
     "memberof": "src/apis/ticket.js~Ticket",
+    "generator": false,
+    "async": false,
+    "static": false,
     "longname": "src/apis/ticket.js~Ticket#updateSalePeriod",
     "access": null,
     "description": "Updated ticket sale period",
@@ -663,16 +2070,16 @@
       ],
       "spread": false,
       "description": "Promise"
-    },
-    "generator": false
+    }
   },
   {
-    "__docId__": 16,
+    "__docId__": 55,
     "kind": "method",
-    "static": false,
-    "variation": null,
     "name": "newValues",
     "memberof": "src/apis/ticket.js~Ticket",
+    "generator": false,
+    "async": false,
+    "static": false,
     "longname": "src/apis/ticket.js~Ticket#newValues",
     "access": null,
     "description": "Create new values to ticket",
@@ -725,16 +2132,16 @@
       ],
       "spread": false,
       "description": "Promise"
-    },
-    "generator": false
+    }
   },
   {
-    "__docId__": 17,
+    "__docId__": 56,
     "kind": "method",
-    "static": false,
-    "variation": null,
     "name": "updateValues",
     "memberof": "src/apis/ticket.js~Ticket",
+    "generator": false,
+    "async": false,
+    "static": false,
     "longname": "src/apis/ticket.js~Ticket#updateValues",
     "access": null,
     "description": "Updated ticket values",
@@ -787,16 +2194,16 @@
       ],
       "spread": false,
       "description": "Promise"
-    },
-    "generator": false
+    }
   },
   {
-    "__docId__": 18,
+    "__docId__": 57,
     "kind": "method",
-    "static": false,
-    "variation": null,
     "name": "getTriggers",
     "memberof": "src/apis/ticket.js~Ticket",
+    "generator": false,
+    "async": false,
+    "static": false,
     "longname": "src/apis/ticket.js~Ticket#getTriggers",
     "access": null,
     "description": "Get a list of triggers\nThis method will return a `Promise` so you can use\n`.then` and `.catch` methods.",
@@ -839,29 +2246,25 @@
       ],
       "spread": false,
       "description": ""
-    },
-    "generator": false
+    }
   },
   {
-    "__docId__": 19,
+    "__docId__": 58,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/auth/authentication.js",
-    "memberof": null,
+    "content": "/**\n * Base class for the authentications\n */\nexport class Authentication {\n    /**\n     * Set authentication data\n     *\n     * @param {object|string} data - Authentication data.\n     */\n    set authData(data) {\n        this._authData = data;\n    }\n\n    /**\n     * Get authentication data\n     *\n     * @returns {object|string}\n     */\n    get authData() {\n        return this._authData;\n    }\n}\n\n",
+    "static": true,
     "longname": "src/auth/authentication.js",
     "access": null,
     "description": null,
-    "lineNumber": 4,
-    "content": "/**\n * Base class for the authentications\n */\nexport class Authentication {\n    /**\n     * Set authentication data\n     *\n     * @param {object|string} data - Authentication data.\n     */\n    set authData(data) {\n        this._authData = data;\n    }\n\n    /**\n     * Get authentication data\n     *\n     * @returns {object|string}\n     */\n    get authData() {\n        return this._authData;\n    }\n}\n\n"
+    "lineNumber": 1
   },
   {
-    "__docId__": 20,
+    "__docId__": 59,
     "kind": "class",
-    "static": true,
-    "variation": null,
     "name": "Authentication",
     "memberof": "src/auth/authentication.js",
+    "static": true,
     "longname": "src/auth/authentication.js~Authentication",
     "access": null,
     "export": true,
@@ -872,12 +2275,13 @@
     "interface": false
   },
   {
-    "__docId__": 21,
+    "__docId__": 60,
     "kind": "set",
-    "static": false,
-    "variation": null,
     "name": "authData",
     "memberof": "src/auth/authentication.js~Authentication",
+    "generator": false,
+    "async": false,
+    "static": false,
     "longname": "src/auth/authentication.js~Authentication#authData",
     "access": null,
     "description": "Set authentication data",
@@ -899,21 +2303,25 @@
       "types": [
         "*"
       ]
-    },
-    "generator": false
+    }
   },
   {
-    "__docId__": 22,
+    "__docId__": 61,
     "kind": "member",
-    "static": false,
-    "variation": null,
     "name": "_authData",
     "memberof": "src/auth/authentication.js~Authentication",
+    "static": false,
     "longname": "src/auth/authentication.js~Authentication#_authData",
     "access": null,
     "description": null,
     "lineNumber": 11,
     "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
     "type": {
       "types": [
         "*"
@@ -921,12 +2329,13 @@
     }
   },
   {
-    "__docId__": 23,
+    "__docId__": 62,
     "kind": "get",
-    "static": false,
-    "variation": null,
     "name": "authData",
     "memberof": "src/auth/authentication.js~Authentication",
+    "generator": false,
+    "async": false,
+    "static": false,
     "longname": "src/auth/authentication.js~Authentication#authData",
     "access": null,
     "description": "Get authentication data",
@@ -950,63 +2359,379 @@
       "types": [
         "*"
       ]
-    },
-    "generator": false
+    }
   },
   {
-    "__docId__": 24,
+    "__docId__": 63,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/auth/index.js",
-    "memberof": null,
+    "content": "import {Jwt} from './jwt';\nimport {Ingresse} from './ingresse';\n\n\nexport var auth = {\n    [Jwt.type()]: Jwt,\n    [Ingresse.type()]: Ingresse\n};\n\n",
+    "static": true,
     "longname": "src/auth/index.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "import {Jwt} from './jwt';\n\n\nexport var auth = {\n    [Jwt.type()]: Jwt\n};\n\n"
+    "lineNumber": 1
   },
   {
-    "__docId__": 25,
+    "__docId__": 64,
     "kind": "variable",
-    "static": true,
-    "variation": null,
     "name": "auth",
     "memberof": "src/auth/index.js",
+    "static": true,
     "longname": "src/auth/index.js~auth",
     "access": null,
     "export": true,
     "importPath": "ingresse-sdk/src/auth/index.js",
     "importStyle": "{auth}",
     "description": null,
-    "lineNumber": 4,
+    "lineNumber": 5,
     "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
     "type": {
       "types": [
-        "*"
+        "{\"undefined\": *}"
       ]
     }
   },
   {
-    "__docId__": 26,
+    "__docId__": 65,
     "kind": "file",
+    "name": "src/auth/ingresse.js",
+    "content": "import {Authentication} from './authentication';\nimport * as CryptoJS from 'crypto-js';\n\n\nexport class Ingresse extends Authentication {\n    constructor() {\n        super();\n        this.authData = {};\n    }\n\n    /**\n     * Authentication type e.g. Jwt, BasicAuth, Ingresse\n     *\n     * @returns {string}\n     */\n    static type() {\n        return 'Ingresse';\n    }\n\n    /**\n     * Get formatted authentication settings\n     *\n     * @returns {object}\n     */\n    getSettings() {\n        const timestamp = this._getTimestamp();\n\n        return {\n            query: {\n                'publickey': encodeURI(this.getPublicKey()),\n                'signature': encodeURI(this._getSignature(timestamp)),\n                'timestamp': timestamp,\n            }\n        };\n    }\n\n    /**\n     * Set Ingresse PublicKey\n     *\n     * @param {string} publicKey - Ingresse PublicKey\n     *\n     * @example\n     * ingresse.api.auth.setPublicKey('12345678901234');\n     */\n    setPublicKey(publicKey) {\n        this.authData.publicKey = publicKey;\n    }\n\n    /**\n     * Get Ingresse PublicKey\n     *\n     * @returns {string}\n     *\n     * @example\n     * ingresse.api.auth.getPublicKey();\n     */\n    getPublicKey() {\n        return this.authData.publicKey;\n    }\n\n    /**\n     * Set Ingresse PrivateKey\n     *\n     * @param {string} privateKey - Ingresse PrivateKey\n     *\n     * @example\n     * ingresse.api.auth.setPrivateKey('12345678901234');\n     */\n    setPrivateKey(privateKey) {\n        this.authData.privateKey = privateKey;\n    }\n\n    /**\n     * Get Ingresse PrivateKey\n     *\n     * @returns {string}\n     *\n     * @example\n     * ingresse.api.auth.getPrivateKey();\n     */\n    getPrivateKey() {\n        return this.authData.privateKey;\n    }\n\n    /**\n     * Get timestamp\n     *\n     * @private\n     * @returns {string}\n     */\n    _getTimestamp() {\n        return new Date().toJSON().replace(/\\.\\d+/, '');\n    }\n\n    /**\n     * Get Ingresse Signature\n     *\n     * @private\n     * @returns {string}\n     */\n    _getSignature(timestamp) {\n        const sha1 = CryptoJS.HmacSHA1(this.getPublicKey() + timestamp, this.getPrivateKey());\n        return sha1.toString(CryptoJS.enc.Base64);\n    }\n}\n",
     "static": true,
-    "variation": null,
+    "longname": "src/auth/ingresse.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 66,
+    "kind": "class",
+    "name": "Ingresse",
+    "memberof": "src/auth/ingresse.js",
+    "static": true,
+    "longname": "src/auth/ingresse.js~Ingresse",
+    "access": null,
+    "export": true,
+    "importPath": "ingresse-sdk/src/auth/ingresse.js",
+    "importStyle": "{Ingresse}",
+    "description": null,
+    "lineNumber": 5,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "interface": false,
+    "extends": [
+      "src/auth/authentication.js~Authentication"
+    ]
+  },
+  {
+    "__docId__": 67,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/auth/ingresse.js~Ingresse",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/auth/ingresse.js~Ingresse#constructor",
+    "access": null,
+    "description": null,
+    "lineNumber": 6,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": []
+  },
+  {
+    "__docId__": 68,
+    "kind": "member",
+    "name": "authData",
+    "memberof": "src/auth/ingresse.js~Ingresse",
+    "static": false,
+    "longname": "src/auth/ingresse.js~Ingresse#authData",
+    "access": null,
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "{}"
+      ]
+    }
+  },
+  {
+    "__docId__": 69,
+    "kind": "method",
+    "name": "type",
+    "memberof": "src/auth/ingresse.js~Ingresse",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/auth/ingresse.js~Ingresse.type",
+    "access": null,
+    "description": "Authentication type e.g. Jwt, BasicAuth, Ingresse",
+    "lineNumber": 16,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{string}"
+      }
+    ],
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 70,
+    "kind": "method",
+    "name": "getSettings",
+    "memberof": "src/auth/ingresse.js~Ingresse",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/auth/ingresse.js~Ingresse#getSettings",
+    "access": null,
+    "description": "Get formatted authentication settings",
+    "lineNumber": 25,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{object}"
+      }
+    ],
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "object"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 71,
+    "kind": "method",
+    "name": "setPublicKey",
+    "memberof": "src/auth/ingresse.js~Ingresse",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/auth/ingresse.js~Ingresse#setPublicKey",
+    "access": null,
+    "description": "Set Ingresse PublicKey",
+    "examples": [
+      "ingresse.api.auth.setPublicKey('12345678901234');"
+    ],
+    "lineNumber": 45,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "publicKey",
+        "description": "Ingresse PublicKey"
+      }
+    ]
+  },
+  {
+    "__docId__": 72,
+    "kind": "method",
+    "name": "getPublicKey",
+    "memberof": "src/auth/ingresse.js~Ingresse",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/auth/ingresse.js~Ingresse#getPublicKey",
+    "access": null,
+    "description": "Get Ingresse PublicKey",
+    "examples": [
+      "ingresse.api.auth.getPublicKey();"
+    ],
+    "lineNumber": 57,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{string}"
+      }
+    ],
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 73,
+    "kind": "method",
+    "name": "setPrivateKey",
+    "memberof": "src/auth/ingresse.js~Ingresse",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/auth/ingresse.js~Ingresse#setPrivateKey",
+    "access": null,
+    "description": "Set Ingresse PrivateKey",
+    "examples": [
+      "ingresse.api.auth.setPrivateKey('12345678901234');"
+    ],
+    "lineNumber": 69,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "privateKey",
+        "description": "Ingresse PrivateKey"
+      }
+    ]
+  },
+  {
+    "__docId__": 74,
+    "kind": "method",
+    "name": "getPrivateKey",
+    "memberof": "src/auth/ingresse.js~Ingresse",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/auth/ingresse.js~Ingresse#getPrivateKey",
+    "access": null,
+    "description": "Get Ingresse PrivateKey",
+    "examples": [
+      "ingresse.api.auth.getPrivateKey();"
+    ],
+    "lineNumber": 81,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{string}"
+      }
+    ],
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 75,
+    "kind": "method",
+    "name": "_getTimestamp",
+    "memberof": "src/auth/ingresse.js~Ingresse",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/auth/ingresse.js~Ingresse#_getTimestamp",
+    "access": "private",
+    "description": "Get timestamp",
+    "lineNumber": 91,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{string}"
+      }
+    ],
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 76,
+    "kind": "method",
+    "name": "_getSignature",
+    "memberof": "src/auth/ingresse.js~Ingresse",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/auth/ingresse.js~Ingresse#_getSignature",
+    "access": "private",
+    "description": "Get Ingresse Signature",
+    "lineNumber": 101,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{string}"
+      }
+    ],
+    "params": [
+      {
+        "name": "timestamp",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 77,
+    "kind": "file",
     "name": "src/auth/jwt.js",
-    "memberof": null,
+    "content": "import {Authentication} from './authentication';\n\n\nexport class Jwt extends Authentication {\n    constructor() {\n        super();\n    }\n\n    /**\n     * Authentication type e.g. Jwt, BasicAuth\n     *\n     * @returns {string}\n     */\n    static type() {\n        return 'Jwt';\n    }\n\n    /**\n     * Get formatted authentication settings\n     *\n     * @returns {object}\n     */\n    getSettings() {\n        return {\n            headers: {\n                'Authorization': `Bearer ${this.getToken()}`\n            }\n        };\n    }\n\n    /**\n     * Set Jwt authentication token value\n     *\n     * @param {string} token - JWT Token value\n     *\n     * @example\n     * ingresse.ticket.auth.setToken('12345.67890.1234');\n     */\n    setToken(token) {\n        this.authData = token;\n    }\n\n    /**\n     * Get Jwt authentication token value\n     *\n     * @returns {string}\n     *\n     * @example\n     * ingresse.ticket.auth.getToken();\n     */\n    getToken() {\n        return this.authData;\n    }\n}\n\n",
+    "static": true,
     "longname": "src/auth/jwt.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "import {Authentication} from './authentication';\n\n\nexport class Jwt extends Authentication {\n    constructor() {\n        super();\n    }\n\n    /**\n     * Authentication type e.g. Jwt, BasicAuth\n     *\n     * @returns {string}\n     */\n    static type() {\n        return 'Jwt';\n    }\n\n    /**\n     * Get formatted authentication settings\n     *\n     * @returns {object}\n     */\n    getSettings() {\n        return {\n            headers: {\n                'Authorization': `Bearer ${this.getToken()}`\n            }\n        };\n    }\n\n    /**\n     * Set Jwt authentication token value\n     *\n     * @param {string} token - JWT Token value\n     *\n     * @example\n     * ingresse.ticket.auth.setToken('12345.67890.1234');\n     */\n    setToken(token) {\n        this.authData = token;\n    }\n\n    /**\n     * Get Jwt authentication token value\n     *\n     * @returns {string}\n     *\n     * @example\n     * ingresse.ticket.auth.getToken();\n     */\n    getToken() {\n        return this.authData;\n    }\n}\n\n"
+    "lineNumber": 1
   },
   {
-    "__docId__": 27,
+    "__docId__": 78,
     "kind": "class",
-    "static": true,
-    "variation": null,
     "name": "Jwt",
     "memberof": "src/auth/jwt.js",
+    "static": true,
     "longname": "src/auth/jwt.js~Jwt",
     "access": null,
     "export": true,
@@ -1015,33 +2740,46 @@
     "description": null,
     "lineNumber": 4,
     "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
     "interface": false,
     "extends": [
       "src/auth/authentication.js~Authentication"
     ]
   },
   {
-    "__docId__": 28,
+    "__docId__": 79,
     "kind": "constructor",
-    "static": false,
-    "variation": null,
     "name": "constructor",
     "memberof": "src/auth/jwt.js~Jwt",
+    "generator": false,
+    "async": false,
+    "static": false,
     "longname": "src/auth/jwt.js~Jwt#constructor",
     "access": null,
     "description": null,
     "lineNumber": 5,
     "undocument": true,
-    "params": [],
-    "generator": false
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": []
   },
   {
-    "__docId__": 29,
+    "__docId__": 80,
     "kind": "method",
-    "static": true,
-    "variation": null,
     "name": "type",
     "memberof": "src/auth/jwt.js~Jwt",
+    "generator": false,
+    "async": false,
+    "static": true,
     "longname": "src/auth/jwt.js~Jwt.type",
     "access": null,
     "description": "Authentication type e.g. Jwt, BasicAuth",
@@ -1060,16 +2798,16 @@
       ],
       "spread": false,
       "description": ""
-    },
-    "generator": false
+    }
   },
   {
-    "__docId__": 30,
+    "__docId__": 81,
     "kind": "method",
-    "static": false,
-    "variation": null,
     "name": "getSettings",
     "memberof": "src/auth/jwt.js~Jwt",
+    "generator": false,
+    "async": false,
+    "static": false,
     "longname": "src/auth/jwt.js~Jwt#getSettings",
     "access": null,
     "description": "Get formatted authentication settings",
@@ -1088,16 +2826,16 @@
       ],
       "spread": false,
       "description": ""
-    },
-    "generator": false
+    }
   },
   {
-    "__docId__": 31,
+    "__docId__": 82,
     "kind": "method",
-    "static": false,
-    "variation": null,
     "name": "setToken",
     "memberof": "src/auth/jwt.js~Jwt",
+    "generator": false,
+    "async": false,
+    "static": false,
     "longname": "src/auth/jwt.js~Jwt#setToken",
     "access": null,
     "description": "Set Jwt authentication token value",
@@ -1116,21 +2854,25 @@
         "name": "token",
         "description": "JWT Token value"
       }
-    ],
-    "generator": false
+    ]
   },
   {
-    "__docId__": 32,
+    "__docId__": 83,
     "kind": "member",
-    "static": false,
-    "variation": null,
     "name": "authData",
     "memberof": "src/auth/jwt.js~Jwt",
+    "static": false,
     "longname": "src/auth/jwt.js~Jwt#authData",
     "access": null,
     "description": null,
     "lineNumber": 40,
     "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
     "type": {
       "types": [
         "*"
@@ -1138,12 +2880,13 @@
     }
   },
   {
-    "__docId__": 33,
+    "__docId__": 84,
     "kind": "method",
-    "static": false,
-    "variation": null,
     "name": "getToken",
     "memberof": "src/auth/jwt.js~Jwt",
+    "generator": false,
+    "async": false,
+    "static": false,
     "longname": "src/auth/jwt.js~Jwt#getToken",
     "access": null,
     "description": "Get Jwt authentication token value",
@@ -1165,29 +2908,400 @@
       ],
       "spread": false,
       "description": ""
-    },
-    "generator": false
+    }
   },
   {
-    "__docId__": 34,
+    "__docId__": 85,
     "kind": "file",
+    "name": "src/helper/cookie.js",
+    "content": "/**\n * Cookie\n */\nexport class Cookie {\n    /**\n     * Create the cookie.\n     *\n     * @param {string} cname - The cookie name.\n     * @param {string|number} cvalue - The cookie value.\n     * @param {number} days - The expiration days.\n     *\n     * @returns {String}\n     */\n    createCookie(cname, cvalue, days) {\n        let name = this.getCookie(cname);\n\n        if (name !== '') {\n            return name;\n        }\n\n        if (cname && cvalue && days) {\n            this._setCookie(cname, cvalue, days);\n\n            return this.getCookie(cname);\n        }\n\n        return '';\n    }\n\n    /**\n     * Delete the cookie.\n     * @param {string} cname - The cookie name.\n     */\n    deleteCookie(cname) {\n        let data = this.getCookie(cname);\n\n        if (data !== '') {\n            this._setCookie(cname, data, -1);\n        }\n    }\n\n    /**\n     * Check/Return the cookie if it's exists.\n     *\n     * @param {string} cname - The cookie name.\n     *\n     * @returns {String}\n     */\n    getCookie(cname) {\n        let data = this._getCookie(cname);\n\n        if (data) {\n            return data;\n        }\n\n        return '';\n    }\n\n    /**\n     * Set the cookie.\n     *\n     * @param {string} cname - The cookie name.\n     * @param {string|number} cvalue - The cookie value.\n     * @param {number} exdays - The expiration days.\n     */\n    _setCookie(cname, cvalue, exdays) {\n        let date = new Date();\n        date.setTime(date.getTime() + (exdays*24*60*60*1000));\n        let expires = 'expires=' + date.toUTCString();\n\n        document.cookie = cname + '=' + cvalue + ';' + expires + ';path=/';\n    }\n\n    /**\n     * Get the cookie.\n     *\n     * @param {string} cname - The cookie name.\n     *\n     * @returns {String}\n     */\n    _getCookie(cname) {\n        let name = cname + '=';\n        let decodedCookie = decodeURIComponent(document.cookie);\n        let scookie = decodedCookie.split(';');\n\n        for (let i = 0; i < scookie; i++) {\n            let c = scookie[0];\n\n            while (c.charAt(0) === ' ') {\n                c = c.substring(1);\n            }\n\n            if (c.indexOf(name) === 0) {\n                return c.substring(name.length, c.length);\n            }\n        }\n\n        return '';\n    }\n}\n\n",
     "static": true,
-    "variation": null,
+    "longname": "src/helper/cookie.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 86,
+    "kind": "class",
+    "name": "Cookie",
+    "memberof": "src/helper/cookie.js",
+    "static": true,
+    "longname": "src/helper/cookie.js~Cookie",
+    "access": null,
+    "export": true,
+    "importPath": "ingresse-sdk/src/helper/cookie.js",
+    "importStyle": "{Cookie}",
+    "description": "Cookie",
+    "lineNumber": 4,
+    "interface": false
+  },
+  {
+    "__docId__": 87,
+    "kind": "method",
+    "name": "createCookie",
+    "memberof": "src/helper/cookie.js~Cookie",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/helper/cookie.js~Cookie#createCookie",
+    "access": null,
+    "description": "Create the cookie.",
+    "lineNumber": 14,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{String}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "cname",
+        "description": "The cookie name."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string",
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "cvalue",
+        "description": "The cookie value."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "days",
+        "description": "The expiration days."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 88,
+    "kind": "method",
+    "name": "deleteCookie",
+    "memberof": "src/helper/cookie.js~Cookie",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/helper/cookie.js~Cookie#deleteCookie",
+    "access": null,
+    "description": "Delete the cookie.",
+    "lineNumber": 34,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "cname",
+        "description": "The cookie name."
+      }
+    ]
+  },
+  {
+    "__docId__": 89,
+    "kind": "method",
+    "name": "getCookie",
+    "memberof": "src/helper/cookie.js~Cookie",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/helper/cookie.js~Cookie#getCookie",
+    "access": null,
+    "description": "Check/Return the cookie if it's exists.",
+    "lineNumber": 49,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{String}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "cname",
+        "description": "The cookie name."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 90,
+    "kind": "method",
+    "name": "_setCookie",
+    "memberof": "src/helper/cookie.js~Cookie",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/helper/cookie.js~Cookie#_setCookie",
+    "access": null,
+    "description": "Set the cookie.",
+    "lineNumber": 66,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "cname",
+        "description": "The cookie name."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string",
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "cvalue",
+        "description": "The cookie value."
+      },
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "exdays",
+        "description": "The expiration days."
+      }
+    ]
+  },
+  {
+    "__docId__": 91,
+    "kind": "method",
+    "name": "_getCookie",
+    "memberof": "src/helper/cookie.js~Cookie",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/helper/cookie.js~Cookie#_getCookie",
+    "access": null,
+    "description": "Get the cookie.",
+    "lineNumber": 81,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{String}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "cname",
+        "description": "The cookie name."
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 92,
+    "kind": "file",
+    "name": "src/helper/index.js",
+    "content": "/**\n* Deep merge objeect\n*\n* @returns {object}\n*/\nexport var deepMerge = (target, source) => {\n    for (let key of Object.keys(source)) {\n        if (source[key] instanceof Object) {\n            Object.assign(source[key], deepMerge(target[key], source[key]));\n        }\n    }\n\n    Object.assign(target || {}, source);\n\n    return target;\n};\n",
+    "static": true,
+    "longname": "src/helper/index.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 93,
+    "kind": "function",
+    "name": "deepMerge",
+    "memberof": "src/helper/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/helper/index.js~deepMerge",
+    "access": null,
+    "export": true,
+    "importPath": "ingresse-sdk/src/helper/index.js",
+    "importStyle": "{deepMerge}",
+    "description": "Deep merge objeect",
+    "lineNumber": 6,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{object}"
+      }
+    ],
+    "params": [
+      {
+        "name": "target",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "source",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "object"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 94,
+    "kind": "file",
+    "name": "src/helper/mix.js",
+    "content": "import 'babel-polyfill';\nexport function mix(...mixins) {\n    class Mix {}\n\n    for (let mixin of mixins) {\n        copyProperties(Mix, mixin);\n        copyProperties(Mix.prototype, mixin.prototype);\n    }\n\n    return Mix;\n};\n\nexport function copyProperties(target, source) {\n    for (let key of Reflect.ownKeys(source)) {\n        if (key !== 'constructor' && key !== 'prototype' && key !== 'name') {\n            let desc = Object.getOwnPropertyDescriptor(source, key);\n            Object.defineProperty(target, key, desc);\n        }\n    }\n}\n",
+    "static": true,
+    "longname": "src/helper/mix.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 95,
+    "kind": "function",
+    "name": "mix",
+    "memberof": "src/helper/mix.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/helper/mix.js~mix",
+    "access": null,
+    "export": true,
+    "importPath": "ingresse-sdk/src/helper/mix.js",
+    "importStyle": "{mix}",
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "mixins",
+        "types": [
+          "...*"
+        ],
+        "spread": true
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 96,
+    "kind": "function",
+    "name": "copyProperties",
+    "memberof": "src/helper/mix.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/helper/mix.js~copyProperties",
+    "access": null,
+    "export": true,
+    "importPath": "ingresse-sdk/src/helper/mix.js",
+    "importStyle": "{copyProperties}",
+    "description": null,
+    "lineNumber": 13,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "params": [
+      {
+        "name": "target",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "source",
+        "types": [
+          "*"
+        ]
+      }
+    ]
+  },
+  {
+    "__docId__": 97,
+    "kind": "file",
     "name": "src/ingresse-sdk.js",
-    "memberof": null,
+    "content": "import {apis} from './apis';\nimport {version} from '../package.json';\n\n\n/**\n * Ingresse JavaScript SDK\n */\nclass IngresseSdk {\n    /**\n     * Instantiate the SDK\n     *\n     * @param {object} [settings] - SDK configuration settings\n     *\n     * @example\n     * ```\n     * var Sdk = require('ingresse-sdk');\n     *\n     * var ingresse = new Sdk({\n     *   ticket: {\n     *     url: 'http://hml.ticket.ingresse.com'\n     *   }\n     * });\n     * ```\n     */\n    constructor(settings = {}) {\n        this._init(settings);\n    }\n\n    /**\n     * Ingresse Sdk Version\n     *\n     * @returns {string}\n     */\n    static version() {\n        return version;\n    }\n\n    /**\n     * Initialize API's configurations\n     *\n     * @param {object} settings - SDK settings.\n     */\n    _init(settings = {}) {\n        let apiList = settings.apis || Object.keys(apis);\n\n        apiList.map((key) => {\n            let Api = apis[key];\n\n            if (Api) {\n                let options = settings[key] || null;\n                this[key]   = new Api(options);\n            }\n        });\n    }\n}\n\nmodule.exports = IngresseSdk\nmodule.exports.default = IngresseSdk\n\n",
+    "static": true,
     "longname": "src/ingresse-sdk.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "import {apis} from './apis';\nimport {version} from '../package.json';\n\n\n/**\n * Ingresse JavaScript SDK\n */\nclass IngresseSdk {\n    /**\n     * Instantiate the SDK\n     *\n     * @param {object} [settings] - SDK configuration settings\n     *\n     * @example\n     * ```\n     * var Sdk = require('ingresse-sdk');\n     *\n     * var ingresse = new Sdk({\n     *   ticket: {\n     *     url: 'http://hml.ticket.ingresse.com'\n     *   }\n     * });\n     * ```\n     */\n    constructor(settings = {}) {\n        this._init(settings);\n    }\n\n    /**\n     * Ingresse Sdk Version\n     *\n     * @returns {string}\n     */\n    static version() {\n        return version;\n    }\n\n    /**\n     * Initialize API's configurations\n     *\n     * @param {object} settings - SDK settings.\n     */\n    _init(settings = {}) {\n        let apiList = settings.apis || Object.keys(apis);\n\n        apiList.map((key) => {\n            let Api = apis[key];\n\n            if (Api) {\n                let options = settings[key] || null;\n                this[key]   = new Api(options);\n            }\n        });\n    }\n}\n\nmodule.exports = IngresseSdk\nmodule.exports.default = IngresseSdk\n\n"
+    "lineNumber": 1
   },
   {
-    "__docId__": 35,
+    "__docId__": 98,
     "kind": "class",
-    "static": true,
-    "variation": null,
     "name": "IngresseSdk",
     "memberof": "src/ingresse-sdk.js",
+    "static": true,
     "longname": "src/ingresse-sdk.js~IngresseSdk",
     "access": null,
     "export": false,
@@ -1198,12 +3312,13 @@
     "interface": false
   },
   {
-    "__docId__": 36,
+    "__docId__": 99,
     "kind": "constructor",
-    "static": false,
-    "variation": null,
     "name": "constructor",
     "memberof": "src/ingresse-sdk.js~IngresseSdk",
+    "generator": false,
+    "async": false,
+    "static": false,
     "longname": "src/ingresse-sdk.js~IngresseSdk#constructor",
     "access": null,
     "description": "Instantiate the SDK",
@@ -1222,16 +3337,16 @@
         "name": "settings",
         "description": "SDK configuration settings"
       }
-    ],
-    "generator": false
+    ]
   },
   {
-    "__docId__": 37,
+    "__docId__": 100,
     "kind": "method",
-    "static": true,
-    "variation": null,
     "name": "version",
     "memberof": "src/ingresse-sdk.js~IngresseSdk",
+    "generator": false,
+    "async": false,
+    "static": true,
     "longname": "src/ingresse-sdk.js~IngresseSdk.version",
     "access": null,
     "description": "Ingresse Sdk Version",
@@ -1250,16 +3365,16 @@
       ],
       "spread": false,
       "description": ""
-    },
-    "generator": false
+    }
   },
   {
-    "__docId__": 38,
+    "__docId__": 101,
     "kind": "method",
-    "static": false,
-    "variation": null,
     "name": "_init",
     "memberof": "src/ingresse-sdk.js~IngresseSdk",
+    "generator": false,
+    "async": false,
+    "static": false,
     "longname": "src/ingresse-sdk.js~IngresseSdk#_init",
     "access": null,
     "description": "Initialize API's configurations",
@@ -1275,49 +3390,69 @@
         "name": "settings",
         "description": "SDK settings."
       }
-    ],
-    "generator": false
+    ]
   },
   {
-    "__docId__": 39,
+    "__docId__": 102,
+    "kind": "member",
+    "name": "[key]",
+    "memberof": "src/ingresse-sdk.js~IngresseSdk",
+    "static": false,
+    "longname": "src/ingresse-sdk.js~IngresseSdk#[key]",
+    "access": null,
+    "description": null,
+    "lineNumber": 51,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 103,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/request/handler.js",
-    "memberof": null,
+    "content": "import popsicle from 'popsicle';\nimport {plugins} from 'popsicle';\nimport {basePrefix, transformResponse} from './plugins';\nimport {auth} from '../auth';\nimport {deepMerge} from '../helper';\nimport status from 'popsicle-status';\n\n\n/**\n * Base request handler for all the API's\n * with `get`, `post`, `put` and `delete` methods\n */\nexport class RequestHandler {\n    /**\n     * Initialize request handler\n     *\n     * @param {object} settings - Settings\n     */\n    constructor(settings = {}) {\n        this.settings = settings;\n\n        if (auth[settings.auth]) {\n            this.auth = new auth[settings.auth]();\n        }\n    }\n\n    /**\n     * Create new request promise\n     *\n     * @param {object} options - request options.\n     *\n     * @returns {Promise}\n     */\n    request(options = {}) {\n        let request = {\n            headers: {\n                'User-Agent': 'Ingresse JS SDK',\n            },\n        };\n\n        request = deepMerge(request, options);\n\n        if (this.auth) {\n            request = deepMerge(request, this.auth.getSettings());\n        }\n\n        return popsicle(request)\n            .use(transformResponse())\n            .use(basePrefix(this.settings.url))\n            .use(plugins.parse(['json']));\n    }\n\n    /**\n     * Get resource\n     *\n     * @param {string} path    - Request get to endpoint e.g. /api-path/1\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    get(path, query) {\n        let request = {\n            method: 'GET',\n            url   : path,\n            query : query,\n        };\n\n        return this.request(request);\n    }\n\n    /**\n     * Post resource\n     *\n     * @param {string} path    - Request post to endpoint e.g. /api-path\n     * @param {object} data    - Data to be posted.\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    post(path, data, query) {\n        let request = {\n            method: 'POST',\n            url   : path,\n            body  : data,\n            query : query,\n        };\n\n        return this.request(request);\n    }\n\n    /**\n     * Put resource\n     *\n     * @param {string} path    - Request put to end endpoint e.g. /api-path/1\n     * @param {object} data    - Data to be updated.\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    put(path, data, query) {\n        let request = {\n            method: 'PUT',\n            url   : path,\n            body  : data,\n            query : query,\n        };\n\n        return this.request(request);\n    }\n\n    /**\n     * Delete resource\n     *\n     * @param {string} path    - Request delete to endpoint e.g. /api-path/1\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    delete(path, query) {\n        let request = {\n            method: 'DELETE',\n            url   : path,\n            query : query,\n        };\n\n        return this.request(request);\n    }\n}\n\n",
+    "static": true,
     "longname": "src/request/handler.js",
     "access": null,
     "description": null,
-    "lineNumber": 1,
-    "content": "import popsicle from 'popsicle';\nimport {plugins} from 'popsicle';\nimport {basePrefix, transformResponse} from './plugins';\nimport {auth} from '../auth';\nimport status from 'popsicle-status';\n\n\n/**\n * Base request handler for all the API's\n * with `get`, `post`, `put` and `delete` methods\n */\nexport class RequestHandler {\n    /**\n     * Initialize request handler\n     *\n     * @param {object} settings - Settings\n     */\n    constructor(settings = {}) {\n        this.settings = settings;\n\n        if (auth[settings.auth]) {\n            this.auth = new auth[settings.auth]();\n        }\n    }\n\n    /**\n     * Create new request promise\n     *\n     * @param {object} options - request options.\n     *\n     * @returns {Promise}\n     */\n    request(options = {}) {\n        let request = {\n            headers: {\n                'User-Agent': 'Ingresse JS SDK',\n            },\n        };\n\n        if (this.auth) {\n            Object.assign(request, this.auth.getSettings());\n        }\n\n        Object.assign(request, options);\n\n        return popsicle(request)\n            .use(transformResponse())\n            .use(basePrefix(this.settings.url))\n            .use(plugins.parse(['json']));\n    }\n\n    /**\n     * Get resource\n     *\n     * @param {string} path    - Request get to endpoint e.g. /api-path/1\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    get(path, query) {\n        let request = {\n            method: 'GET',\n            url   : path,\n            query : query,\n        };\n\n        return this.request(request);\n    }\n\n    /**\n     * Post resource\n     *\n     * @param {string} path    - Request post to endpoint e.g. /api-path\n     * @param {object} data    - Data to be posted.\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    post(path, data, query) {\n        let request = {\n            method: 'POST',\n            url   : path,\n            body  : data,\n            query : query,\n        };\n\n        return this.request(request);\n    }\n\n    /**\n     * Put resource\n     *\n     * @param {string} path    - Request put to end endpoint e.g. /api-path/1\n     * @param {object} data    - Data to be updated.\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    put(path, data, query) {\n        let request = {\n            method: 'PUT',\n            url   : path,\n            body  : data,\n            query : query,\n        };\n\n        return this.request(request);\n    }\n\n    /**\n     * Delete resource\n     *\n     * @param {string} path    - Request delete to endpoint e.g. /api-path/1\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    delete(path, query) {\n        let request = {\n            method: 'DELETE',\n            url   : path,\n            query : query,\n        };\n\n        return this.request(request);\n    }\n}\n\n"
+    "lineNumber": 1
   },
   {
-    "__docId__": 40,
+    "__docId__": 104,
     "kind": "class",
-    "static": true,
-    "variation": null,
     "name": "RequestHandler",
     "memberof": "src/request/handler.js",
+    "static": true,
     "longname": "src/request/handler.js~RequestHandler",
     "access": null,
     "export": true,
     "importPath": "ingresse-sdk/src/request/handler.js",
     "importStyle": "{RequestHandler}",
     "description": "Base request handler for all the API's\nwith `get`, `post`, `put` and `delete` methods",
-    "lineNumber": 12,
+    "lineNumber": 13,
     "interface": false
   },
   {
-    "__docId__": 41,
+    "__docId__": 105,
     "kind": "constructor",
-    "static": false,
-    "variation": null,
     "name": "constructor",
     "memberof": "src/request/handler.js~RequestHandler",
+    "generator": false,
+    "async": false,
+    "static": false,
     "longname": "src/request/handler.js~RequestHandler#constructor",
     "access": null,
     "description": "Initialize request handler",
-    "lineNumber": 18,
+    "lineNumber": 19,
     "params": [
       {
         "nullable": null,
@@ -1329,21 +3464,25 @@
         "name": "settings",
         "description": "Settings"
       }
-    ],
-    "generator": false
+    ]
   },
   {
-    "__docId__": 42,
+    "__docId__": 106,
     "kind": "member",
-    "static": false,
-    "variation": null,
     "name": "settings",
     "memberof": "src/request/handler.js~RequestHandler",
+    "static": false,
     "longname": "src/request/handler.js~RequestHandler#settings",
     "access": null,
     "description": null,
-    "lineNumber": 19,
+    "lineNumber": 20,
     "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
     "type": {
       "types": [
         "*"
@@ -1351,17 +3490,22 @@
     }
   },
   {
-    "__docId__": 43,
+    "__docId__": 107,
     "kind": "member",
-    "static": false,
-    "variation": null,
     "name": "auth",
     "memberof": "src/request/handler.js~RequestHandler",
+    "static": false,
     "longname": "src/request/handler.js~RequestHandler#auth",
     "access": null,
     "description": null,
-    "lineNumber": 22,
+    "lineNumber": 23,
     "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
     "type": {
       "types": [
         "*"
@@ -1369,16 +3513,17 @@
     }
   },
   {
-    "__docId__": 44,
+    "__docId__": 108,
     "kind": "method",
-    "static": false,
-    "variation": null,
     "name": "request",
     "memberof": "src/request/handler.js~RequestHandler",
+    "generator": false,
+    "async": false,
+    "static": false,
     "longname": "src/request/handler.js~RequestHandler#request",
     "access": null,
     "description": "Create new request promise",
-    "lineNumber": 33,
+    "lineNumber": 34,
     "unknown": [
       {
         "tagName": "@returns",
@@ -1404,20 +3549,20 @@
       ],
       "spread": false,
       "description": ""
-    },
-    "generator": false
+    }
   },
   {
-    "__docId__": 45,
+    "__docId__": 109,
     "kind": "method",
-    "static": false,
-    "variation": null,
     "name": "get",
     "memberof": "src/request/handler.js~RequestHandler",
+    "generator": false,
+    "async": false,
+    "static": false,
     "longname": "src/request/handler.js~RequestHandler#get",
     "access": null,
     "description": "Get resource",
-    "lineNumber": 60,
+    "lineNumber": 61,
     "unknown": [
       {
         "tagName": "@returns",
@@ -1453,20 +3598,20 @@
       ],
       "spread": false,
       "description": ""
-    },
-    "generator": false
+    }
   },
   {
-    "__docId__": 46,
+    "__docId__": 110,
     "kind": "method",
-    "static": false,
-    "variation": null,
     "name": "post",
     "memberof": "src/request/handler.js~RequestHandler",
+    "generator": false,
+    "async": false,
+    "static": false,
     "longname": "src/request/handler.js~RequestHandler#post",
     "access": null,
     "description": "Post resource",
-    "lineNumber": 79,
+    "lineNumber": 80,
     "unknown": [
       {
         "tagName": "@returns",
@@ -1512,20 +3657,20 @@
       ],
       "spread": false,
       "description": ""
-    },
-    "generator": false
+    }
   },
   {
-    "__docId__": 47,
+    "__docId__": 111,
     "kind": "method",
-    "static": false,
-    "variation": null,
     "name": "put",
     "memberof": "src/request/handler.js~RequestHandler",
+    "generator": false,
+    "async": false,
+    "static": false,
     "longname": "src/request/handler.js~RequestHandler#put",
     "access": null,
     "description": "Put resource",
-    "lineNumber": 99,
+    "lineNumber": 100,
     "unknown": [
       {
         "tagName": "@returns",
@@ -1571,20 +3716,20 @@
       ],
       "spread": false,
       "description": ""
-    },
-    "generator": false
+    }
   },
   {
-    "__docId__": 48,
+    "__docId__": 112,
     "kind": "method",
-    "static": false,
-    "variation": null,
     "name": "delete",
     "memberof": "src/request/handler.js~RequestHandler",
+    "generator": false,
+    "async": false,
+    "static": false,
     "longname": "src/request/handler.js~RequestHandler#delete",
     "access": null,
     "description": "Delete resource",
-    "lineNumber": 118,
+    "lineNumber": 119,
     "unknown": [
       {
         "tagName": "@returns",
@@ -1620,29 +3765,27 @@
       ],
       "spread": false,
       "description": ""
-    },
-    "generator": false
+    }
   },
   {
-    "__docId__": 49,
+    "__docId__": 113,
     "kind": "file",
-    "static": true,
-    "variation": null,
     "name": "src/request/plugins.js",
-    "memberof": null,
+    "content": "/**\n* Rquest middleware to format url with a base URL\n*\n* @params {string} base - Base URL for all requests.\n* @returns {function}\n*/\nexport var basePrefix = (base = '') => {\n    return (request, next) => {\n        let path = request.url.replace(/^\\//, '');\n        base = base.replace(/\\/$/, '');\n\n        request.url = `${base}/${path}`;\n\n        return next();\n    };\n};\n\n/**\n * Request middleware to handle response from api\n * and decide based on the status code if the\n * request was a success or an error\n *\n * @params {number} [lower=200]  - Lower status code number.\n * @params {number} [higher=299] - Higher status code number.\n * @returns {function}\n */\nexport var transformResponse = (lower = 200, higher = 299) => {\n    return (request, next) => {\n        return next().then((response) => {\n            if (response.status >= lower &&\n                response.status <= higher) {\n\n                return response.body;\n            }\n\n            var error = request.error('', 'EINVALIDSTATUS');\n            error.body = response.body;\n\n            throw error.body;\n        });\n    };\n};\n\n",
+    "static": true,
     "longname": "src/request/plugins.js",
     "access": null,
     "description": null,
-    "lineNumber": 7,
-    "content": "/**\n* Rquest middleware to format url with a base URL\n*\n* @params {string} base - Base URL for all requests.\n* @returns {function}\n*/\nexport var basePrefix = (base = '') => {\n    return (request, next) => {\n        let path = request.url.replace(/^\\//, '');\n        base = base.replace(/\\/$/, '');\n\n        request.url = `${base}/${path}`;\n\n        return next();\n    };\n};\n\n/**\n * Request middleware to handle response from api\n * and decide based on the status code if the\n * request was a success or an error\n *\n * @params {number} [lower=200]  - Lower status code number.\n * @params {number} [higher=299] - Higher status code number.\n * @returns {function}\n */\nexport var transformResponse = (lower = 200, higher = 299) => {\n    return (request, next) => {\n        return next().then((response) => {\n            if (response.status >= lower &&\n                response.status <= higher) {\n\n                return response.body;\n            }\n\n            var error = request.error('', 'EINVALIDSTATUS');\n            error.body = response.body;\n\n            throw error.body;\n        });\n    };\n};\n\n"
+    "lineNumber": 1
   },
   {
-    "__docId__": 50,
-    "kind": "variable",
-    "static": true,
-    "variation": null,
+    "__docId__": 114,
+    "kind": "function",
     "name": "basePrefix",
     "memberof": "src/request/plugins.js",
+    "generator": false,
+    "async": false,
+    "static": true,
     "longname": "src/request/plugins.js~basePrefix",
     "access": null,
     "export": true,
@@ -1660,6 +3803,17 @@
         "tagValue": "{function}"
       }
     ],
+    "params": [
+      {
+        "name": "base",
+        "optional": true,
+        "types": [
+          "string"
+        ],
+        "defaultRaw": "",
+        "defaultValue": ""
+      }
+    ],
     "return": {
       "nullable": null,
       "types": [
@@ -1667,20 +3821,16 @@
       ],
       "spread": false,
       "description": ""
-    },
-    "type": {
-      "types": [
-        "*"
-      ]
     }
   },
   {
-    "__docId__": 51,
-    "kind": "variable",
-    "static": true,
-    "variation": null,
+    "__docId__": 115,
+    "kind": "function",
     "name": "transformResponse",
     "memberof": "src/request/plugins.js",
+    "generator": false,
+    "async": false,
+    "static": true,
     "longname": "src/request/plugins.js~transformResponse",
     "access": null,
     "export": true,
@@ -1702,6 +3852,26 @@
         "tagValue": "{function}"
       }
     ],
+    "params": [
+      {
+        "name": "lower",
+        "optional": true,
+        "types": [
+          "number"
+        ],
+        "defaultRaw": 200,
+        "defaultValue": "200"
+      },
+      {
+        "name": "higher",
+        "optional": true,
+        "types": [
+          "number"
+        ],
+        "defaultRaw": 299,
+        "defaultValue": "299"
+      }
+    ],
     "return": {
       "nullable": null,
       "types": [
@@ -1709,726 +3879,668 @@
       ],
       "spread": false,
       "description": ""
-    },
-    "type": {
-      "types": [
-        "*"
-      ]
     }
   },
   {
-    "__docId__": 53,
+    "__docId__": 117,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Infinity",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Infinity",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 54,
+    "__docId__": 118,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "NaN",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~NaN",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 55,
+    "__docId__": 119,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "undefined",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~undefined",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 56,
+    "__docId__": 120,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "null",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~null",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 57,
+    "__docId__": 121,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Object",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Object",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 58,
+    "__docId__": 122,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "object",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~object",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 59,
+    "__docId__": 123,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Function",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Function",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 60,
+    "__docId__": 124,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "function",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~function",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 61,
+    "__docId__": 125,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Boolean",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Boolean",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 62,
+    "__docId__": 126,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "boolean",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~boolean",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 63,
+    "__docId__": 127,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Symbol",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Symbol",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 64,
+    "__docId__": 128,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Error",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Error",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 65,
+    "__docId__": 129,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "EvalError",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~EvalError",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 66,
+    "__docId__": 130,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "InternalError",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~InternalError",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 67,
+    "__docId__": 131,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "RangeError",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~RangeError",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 68,
+    "__docId__": 132,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "ReferenceError",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~ReferenceError",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 69,
+    "__docId__": 133,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "SyntaxError",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~SyntaxError",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 70,
+    "__docId__": 134,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "TypeError",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~TypeError",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 71,
+    "__docId__": 135,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "URIError",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~URIError",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 72,
+    "__docId__": 136,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Number",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Number",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 73,
+    "__docId__": 137,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "number",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~number",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 74,
+    "__docId__": 138,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Date",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Date",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 75,
+    "__docId__": 139,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "String",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~String",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 76,
+    "__docId__": 140,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "string",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~string",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 77,
+    "__docId__": 141,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "RegExp",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~RegExp",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 78,
+    "__docId__": 142,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Array",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Array",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 79,
+    "__docId__": 143,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Int8Array",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Int8Array",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 80,
+    "__docId__": 144,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Uint8Array",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint8Array",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 81,
+    "__docId__": 145,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Uint8ClampedArray",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint8ClampedArray",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 82,
+    "__docId__": 146,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Int16Array",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Int16Array",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 83,
+    "__docId__": 147,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Uint16Array",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint16Array",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 84,
+    "__docId__": 148,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Int32Array",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Int32Array",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 85,
+    "__docId__": 149,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Uint32Array",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint32Array",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 86,
+    "__docId__": 150,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Float32Array",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Float32Array",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 87,
+    "__docId__": 151,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Float64Array",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Float64Array",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 88,
+    "__docId__": 152,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Map",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Map",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 89,
+    "__docId__": 153,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Set",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Set",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 90,
+    "__docId__": 154,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "WeakMap",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~WeakMap",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 91,
+    "__docId__": 155,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "WeakSet",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~WeakSet",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 92,
+    "__docId__": 156,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "ArrayBuffer",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~ArrayBuffer",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 93,
+    "__docId__": 157,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "DataView",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~DataView",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 94,
+    "__docId__": 158,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "JSON",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~JSON",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 95,
+    "__docId__": 159,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Promise",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Promise",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 96,
+    "__docId__": 160,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Generator",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Generator",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 97,
+    "__docId__": 161,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "GeneratorFunction",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~GeneratorFunction",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 98,
+    "__docId__": 162,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Reflect",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Reflect",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 99,
+    "__docId__": 163,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Proxy",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
     "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/ECMAScriptExternal.js~Proxy",
     "access": null,
     "description": "",
+    "lineNumber": 193,
     "builtinExternal": true
   },
   {
-    "__docId__": 101,
+    "__docId__": 165,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "CanvasRenderingContext2D",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D",
     "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/WebAPIExternal.js~CanvasRenderingContext2D",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 102,
+    "__docId__": 166,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "DocumentFragment",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment",
     "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/WebAPIExternal.js~DocumentFragment",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 103,
+    "__docId__": 167,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Element",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Element",
     "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/WebAPIExternal.js~Element",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 104,
+    "__docId__": 168,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Event",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Event",
     "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/WebAPIExternal.js~Event",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 105,
+    "__docId__": 169,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "Node",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Node",
     "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/WebAPIExternal.js~Node",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 106,
+    "__docId__": 170,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "NodeList",
     "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/NodeList",
     "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/WebAPIExternal.js~NodeList",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 107,
+    "__docId__": 171,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "XMLHttpRequest",
     "externalLink": "https://developer.mozilla.org/en/docs/Web/API/XMLHttpRequest",
     "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/WebAPIExternal.js~XMLHttpRequest",
     "access": null,
     "description": "",
     "builtinExternal": true
   },
   {
-    "__docId__": 108,
+    "__docId__": 172,
     "kind": "external",
-    "static": true,
-    "variation": null,
     "name": "AudioContext",
     "externalLink": "https://developer.mozilla.org/en/docs/Web/API/AudioContext",
     "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
     "longname": "BuiltinExternal/WebAPIExternal.js~AudioContext",
     "access": null,
     "description": "",
+    "lineNumber": 34,
     "builtinExternal": true
   }
 ]
