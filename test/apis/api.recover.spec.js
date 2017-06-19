@@ -49,7 +49,7 @@ describe('API Recover Password', () => {
             let data = {
                 email: 'test@test.com'
             };
-            recover.update(data);
+            recover.updatePassword(data);
 
             chai.expect(recover.post).to.have.been.called.with
                 .exactly('/recover/update-password', data, {});

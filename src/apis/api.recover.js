@@ -33,7 +33,7 @@ export class ApiRecover extends RequestHandler {
      * @param {object} [query] - Optional request parameters.
      * @returns {Promise}
      */
-    update(data, query = {}) {
+    updatePassword(data, query = {}) {
         return this.post('/recover/update-password', data, query);
     }
 }
