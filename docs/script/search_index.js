@@ -18,6 +18,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ingresse-sdk/src/apis/api.recover.js~apirecover",
+    "class/src/apis/api.recover.js~ApiRecover.html",
+    "<span>ApiRecover</span> <span class=\"search-result-import-path\">ingresse-sdk/src/apis/api.recover.js</span>",
+    "class"
+  ],
+  [
     "ingresse-sdk/src/apis/api.ticket.js~apitickettransfer",
     "class/src/apis/api.ticket.js~ApiTicketTransfer.html",
     "<span>ApiTicketTransfer</span> <span class=\"search-result-import-path\">ingresse-sdk/src/apis/api.ticket.js</span>",
@@ -520,6 +526,30 @@ window.esdocSearchIndex = [
     "class/src/apis/api.js~Api.html#instance-member-settings",
     "src/apis/api.js~Api#settings",
     "member"
+  ],
+  [
+    "src/apis/api.recover.js",
+    "file/src/apis/api.recover.js.html",
+    "src/apis/api.recover.js",
+    "file"
+  ],
+  [
+    "src/apis/api.recover.js~apirecover#recoverpassword",
+    "class/src/apis/api.recover.js~ApiRecover.html#instance-method-recoverPassword",
+    "src/apis/api.recover.js~ApiRecover#recoverPassword",
+    "method"
+  ],
+  [
+    "src/apis/api.recover.js~apirecover#updatepassword",
+    "class/src/apis/api.recover.js~ApiRecover.html#instance-method-updatePassword",
+    "src/apis/api.recover.js~ApiRecover#updatePassword",
+    "method"
+  ],
+  [
+    "src/apis/api.recover.js~apirecover#validatehash",
+    "class/src/apis/api.recover.js~ApiRecover.html#instance-method-validateHash",
+    "src/apis/api.recover.js~ApiRecover#validateHash",
+    "method"
   ],
   [
     "src/apis/api.ticket.js",

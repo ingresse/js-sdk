@@ -3,6 +3,7 @@ import {ApiEvents} from './api.event.js';
 import {ApiUser} from './api.user.js';
 import {ApiTicketTransfer} from './api.ticket.js';
 import {ApiAuth} from './api.auth.js';
+import {ApiRecover} from './api.recover.js';
 import {auth} from '../auth';
 import {mix} from '../helper/mix';
 
@@ -21,6 +22,7 @@ export class Api extends mix(
     RequestHandler,
     ApiAuth,
     ApiEvents,
+    ApiRecover,
     ApiTicketTransfer,
     ApiUser
 ) {

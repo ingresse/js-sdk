@@ -35,6 +35,7 @@
   <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">apis</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.auth.js~ApiAuth.html">ApiAuth</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.event.js~ApiEvents.html">ApiEvents</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.js~Api.html">Api</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.recover.js~ApiRecover.html">ApiRecover</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.ticket.js~ApiTicketTransfer.html">ApiTicketTransfer</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.user.js~ApiUser.html">ApiUser</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html">Ticket</a></span></span></li>
@@ -60,6 +61,7 @@ import {ApiEvents} from &apos;./api.event.js&apos;;
 import {ApiUser} from &apos;./api.user.js&apos;;
 import {ApiTicketTransfer} from &apos;./api.ticket.js&apos;;
 import {ApiAuth} from &apos;./api.auth.js&apos;;
+import {ApiRecover} from &apos;./api.recover.js&apos;;
 import {auth} from &apos;../auth&apos;;
 import {mix} from &apos;../helper/mix&apos;;
 
@@ -78,6 +80,7 @@ export class Api extends mix(
     RequestHandler,
     ApiAuth,
     ApiEvents,
+    ApiRecover,
     ApiTicketTransfer,
     ApiUser
 ) {

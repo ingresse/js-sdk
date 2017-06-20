@@ -1,10 +1,5 @@
 import chai from 'chai';
 import {Api} from '../../src/apis/api';
-import {ApiEvents} from '../../src/apis/api.event';
-import {ApiUser} from '../../src/apis/api.user';
-import {ApiTicketTransfer} from '../../src/apis/api.ticket';
-import {ApiAuth} from '../../src/apis/api.auth';
-import {RequestHandler} from '../../src/request/handler';
 import {auth} from '../../src/auth';
 import spies from 'chai-spies';
 
@@ -21,6 +16,7 @@ describe('API', () => {
         chai.expect(api.createTicketTransfer).to.be.a.isFunction;
         chai.expect(api.request).to.be.a.isFunction;
         chai.expect(api.getUser).to.be.a.isFunction;
+        chai.expect(api.recoverPassword).to.be.a.isFunction;
     });
 
     it('should have default settings', () => {
