@@ -23,7 +23,7 @@ export class ApiRecover extends RequestHandler {
      * @returns {Promise}
      */
     validateHash(data, query = {}) {
-        return this.post('/recover/validate-hash', data, query);
+        return this.post('/recover/validate', data, query);
     }
 
     /**

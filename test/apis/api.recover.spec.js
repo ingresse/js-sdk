@@ -40,7 +40,7 @@ describe('API Recover Password', () => {
             recover.validateHash(data);
 
             chai.expect(recover.post).to.have.been.called.with
-                .exactly('/recover/validate-hash', data, {});
+                .exactly('/recover/validate', data, {});
         });
     });
 

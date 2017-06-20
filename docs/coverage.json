@@ -1,13 +1,13 @@
 {
-  "coverage": "80.89%",
-  "expectCount": 89,
-  "actualCount": 72,
+  "coverage": "81.72%",
+  "expectCount": 93,
+  "actualCount": 76,
   "files": {
     "src/apis/api.js": {
       "expectCount": 3,
       "actualCount": 2,
       "undocumentLines": [
-        41
+        43
       ]
     },
     "src/apis/api.auth.js": {
@@ -18,6 +18,11 @@
     "src/apis/api.event.js": {
       "expectCount": 8,
       "actualCount": 8,
+      "undocumentLines": []
+    },
+    "src/apis/api.recover.js": {
+      "expectCount": 4,
+      "actualCount": 4,
       "undocumentLines": []
     },
     "src/apis/api.ticket.js": {
