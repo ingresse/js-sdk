@@ -984,6 +984,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/request/handler.js~requesthandler#seturl",
+    "class/src/request/handler.js~RequestHandler.html#instance-method-setUrl",
+    "src/request/handler.js~RequestHandler#setUrl",
+    "method"
+  ],
+  [
     "src/request/handler.js~requesthandler#settings",
     "class/src/request/handler.js~RequestHandler.html#instance-member-settings",
     "src/request/handler.js~RequestHandler#settings",

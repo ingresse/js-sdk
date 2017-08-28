@@ -48,5 +48,13 @@ describe('IngresseSdk', () => {
 
         chai.expect(sdk2.ticket).not.to.be.undefined;
     });
+
+    it('should set custom url', () => {
+        let sdk = new IngresseSdk();
+
+        sdk.api.setUrl('test');
+
+        chai.expect(sdk.api.settings.url).to.be.equal('test');
+    });
 });
 
