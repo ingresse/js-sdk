@@ -25,6 +25,27 @@ export class RequestHandler {
     }
 
     /**
+     * Set API url
+     *
+     * @param {string} url - Base URL, example: 'https://hml-api.ingresse.com'
+     *
+     * @example
+     * var sdk = require('ingresse-sdk');
+     * var ingresse = new Sdk();
+     *
+     * // You will have access to this API
+     * // after instantiate the Sdk.
+     * var api = ingresse.api;
+     *
+     * // Can set an specific URL to this API
+     * api.setUrl('https://hml-api.ingresse.com');
+     *
+     */
+    setUrl(url) {
+        this.settings.url = url;
+    }
+
+    /**
      * Create new request promise
      *
      * @param {object} options - request options.

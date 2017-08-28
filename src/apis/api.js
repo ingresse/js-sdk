@@ -29,7 +29,7 @@ export class Api extends mix(
     /**
      * Ingresse Api
      *
-     * @param {object} [custom={}] - Initialize Ticket Api settings.
+     * @param {object} [custom={}] - Initialize Api settings.
      */
     constructor(custom = {}) {
         let settings = {
