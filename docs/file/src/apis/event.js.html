@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../">
-  <title data-ice="title">src/apis/api.event.js | Ingresse JS SDK API Document</title>
+  <title data-ice="title">src/apis/event.js | Ingresse JS SDK API Document</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -55,119 +55,230 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/apis/api.event.js</h1>
+<div class="content" data-ice="content"><h1 data-ice="title">src/apis/event.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {RequestHandler} from &apos;../request/handler&apos;;
+import {auth} from &apos;../auth&apos;;
 
 /**
- * Ingresse Event API
+ * Ingresse Event&apos;s API
+ *
+ * API to get, create and update events.
+ *
+ * @example
+ * var sdk = require(&apos;ingresse-sdk&apos;);
+ * var ingresse = new Sdk();
+ *
+ * // You will have access to this API
+ * // after instantiate the Sdk.
+ * var event = ingresse.event;
  */
-export class ApiEvents extends RequestHandler {
+export class Event extends RequestHandler {
     /**
-     * Identify event
+     * Event Api
      *
-     * @param {string} link       - Link/Slug or id.
-     * @param {string} fields     - Event fields to get.
-     * @param {object} [queryOpt] - Optional request parameters.
-     * @returns {Promise}
+     * @param {object} [custom={}] - Initialize Event Api settings.
      */
-    identifyEvent(link, fields, queryOpt) {
-        let query = queryOpt || {
-            link  : link,
-            fields: fields,
-            method: &apos;identify&apos;,
+    constructor(custom = {}) {
+        let settings = {
+            url : &apos;https://event.ingresse.com&apos;,
+            auth: auth.Jwt.type(),
         };
 
-        return this.get(&apos;/event&apos;, query);
+        Object.assign(settings, custom);
+        super(settings);
+
+        this.settings = settings;
     }
 
     /**
-     * Get event
+     * Get event by ID
      *
-     * @param {string|number} id - The event ID to get.
+     * @param {number} id      - The event ID to get.
+     * @param {object} [query] - Optional request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.get(200)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    get(id, query = {}) {
+        return this.get(`/${id}`, query);
+    }
+
+    /**
+     * Create new Event
+     *
+     * @param {object} data    - Data to create a new event.
+     * @param {object} [query] - Optional request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.new({ name: &apos;My Event Name&apos; })
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    new(data = {}, query = {}) {
+        return this.post(&apos;/&apos;, data, query);
+    }
+
+    /**
+     * Update an Event
+     *
+     * @param {string|number} id - The Event ID to update.
+     * @param {object} data      - Data to update Event.
      * @param {object} [query]   - Optional request parameters.
      * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.update(200, { name: &apos;My Updated Event Name&apos; })
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
      */
-    getEvent(id, query = {}) {
-        return this.get(`/event/${id}`, query);
+    update(id, data = {}, query = {}) {
+        return this.put(`/${id}`, data, query);
     }
 
     /**
-     * Get event tickets
+     * Update an Event Poster
      *
-     * @param {string|number} id - The event ID to get.
+     * @param {string|number} id - The Event ID to update.
+     * @param {object} data      - Data to update event poster.
      * @param {object} [query]   - Optional request parameters.
      * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.update(12, {
+     *          poster: {
+     *              format: &apos;base64&apos;,
+     *              image : &apos;data:image/jpeg;base64 8aAVdagg87h87t8q...&apos;,
+     *          }
+     *     })
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
      */
-    getEventTickets(id, query = {}) {
-        return this.get(`/event/${id}/tickets`, query);
+    updatePoster(id, data = {}, query = {}) {
+        return this.put(`/${id}/poster`, data, query);
     }
 
     /**
-     * Get event session tickets
+     * Check if slug is available to use in an Event.
      *
-     * @param {string|number} id        - The event ID to get.
-     * @param {string|number} sessionId - The event session ID to get.
-     * @param {object} [query]          - Optional request parameters.
+     * This method will return a `Promise` so you can use
+     * `.then` and `.catch` methods.
+     *
+     * @param {string} id      - The slug ID to check.
+     * @param {object} [query] - Optional request parameters.
      * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.ticket.checkSlug(&apos;my-event-slug&apos;)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
      */
-    getEventSessionTickets(id, sessionId, query = {}) {
-        return this.get(`/event/${id}/session/${sessionId}/tickets`, query);
+    checkSlug(id, query = {}) {
+        return this.get(&apos;/slugs&apos;, id, query);
     }
 
     /**
-     * Get event crew
+     * Get all Events Categories
      *
-     * @param {string|number} id - The event ID to get.
+     * This method will return a `Promise` so you can use
+     * `.then` and `.catch` methods.
+     *
+     * @param {object} [query] - Optional request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.ticket.categories()
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    getCategories(query = {}) {
+        return this.get(&apos;/categories&apos;, query);
+    }
+
+    /**
+     * Create new Event Category
+     *
+     * @param {string} id      - The Category ID to get.
+     * @param {object} [query] - Optional request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.getCategory(12)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    getCategory(id, query = {}) {
+        return this.get(`/categories/${id}`, id, query);
+    }
+
+    /**
+     * Remove an Event Session
+     *
+     * @param {number} eventId   - The Event ID to remove session.
+     * @param {number} sessionId - The Session ID to remove.
      * @param {object} [query]   - Optional request parameters.
      * @returns {Promise}
-     */
-    getEventCrew(id, query = {}) {
-        return this.get(`/event/${id}/crew`, query);
-    }
-
-    /**
-     * Get event attributes
      *
-     * @param {string|number} id - The event ID to get.
-     * @param {object} [query]   - Optional request parameters.
-     * @returns {Promise}
-     */
-    getEventAttributes(id, query = {}) {
-        return this.get(`/event/${id}/attributes`, query);
-    }
-
-    /**
-     * Featured events
+     * @example
+     * ...
      *
-     * @param {string|number} id - The event ID to get.
-     * @param {object} [query]   - Optional request parameters.
-     * @returns {Promise}
+     * ingresse.ticket.removeSession(123)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
      */
-    getFeatured(id, query = {}) {
-        return this.get(`/featured/${id}`, query);
-    }
-
-    /**
-     * Get the events type
-     *
-     * @returns {Promise}
-     */
-    getEventTypes() {
-        return this.get(&apos;/home/sections&apos;);
-    }
-
-    /**
-     * Get the search event categorie.
-     *
-     * @param {string} category - The search category to get.
-     * @param {object} [query]   - Optional request parameters.
-     * @returns {Promise}
-     */
-    getEventCategories(category, query = {}) {
-        return this.get(`/${category}`, query);
+    removeSession(eventId, sessionId, query = {}) {
+        return this.delete(`/${eventId}/sessions/${sessionId}`, query);
     }
 }
-
 </code></pre>
 
 </div>

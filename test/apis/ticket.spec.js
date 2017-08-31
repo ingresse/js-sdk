@@ -19,7 +19,7 @@ describe('Ticket API', () => {
         let ticket = new Ticket();
 
         chai.expect(ticket.settings).to.be.an('object');
-        chai.expect(ticket.settings.url).to.equal('https://api.ingresse.com/ticket');
+        chai.expect(ticket.settings.url).to.equal('https://ticket.ingresse.com');
         chai.expect(ticket.settings.auth).to.equal(auth.Jwt.type());
     });
 

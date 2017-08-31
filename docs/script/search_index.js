@@ -48,6 +48,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ingresse-sdk/src/apis/event.js~event",
+    "class/src/apis/event.js~Event.html",
+    "<span>Event</span> <span class=\"search-result-import-path\">ingresse-sdk/src/apis/event.js</span>",
+    "class"
+  ],
+  [
     "ingresse-sdk/src/auth/ingresse.js~ingresse",
     "class/src/auth/ingresse.js~Ingresse.html",
     "<span>Ingresse</span> <span class=\"search-result-import-path\">ingresse-sdk/src/auth/ingresse.js</span>",
@@ -678,6 +684,72 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/apis/event.js",
+    "file/src/apis/event.js.html",
+    "src/apis/event.js",
+    "file"
+  ],
+  [
+    "src/apis/event.js~event#checkslug",
+    "class/src/apis/event.js~Event.html#instance-method-checkSlug",
+    "src/apis/event.js~Event#checkSlug",
+    "method"
+  ],
+  [
+    "src/apis/event.js~event#constructor",
+    "class/src/apis/event.js~Event.html#instance-constructor-constructor",
+    "src/apis/event.js~Event#constructor",
+    "method"
+  ],
+  [
+    "src/apis/event.js~event#get",
+    "class/src/apis/event.js~Event.html#instance-method-get",
+    "src/apis/event.js~Event#get",
+    "method"
+  ],
+  [
+    "src/apis/event.js~event#getcategories",
+    "class/src/apis/event.js~Event.html#instance-method-getCategories",
+    "src/apis/event.js~Event#getCategories",
+    "method"
+  ],
+  [
+    "src/apis/event.js~event#getcategory",
+    "class/src/apis/event.js~Event.html#instance-method-getCategory",
+    "src/apis/event.js~Event#getCategory",
+    "method"
+  ],
+  [
+    "src/apis/event.js~event#new",
+    "class/src/apis/event.js~Event.html#instance-method-new",
+    "src/apis/event.js~Event#new",
+    "method"
+  ],
+  [
+    "src/apis/event.js~event#removesession",
+    "class/src/apis/event.js~Event.html#instance-method-removeSession",
+    "src/apis/event.js~Event#removeSession",
+    "method"
+  ],
+  [
+    "src/apis/event.js~event#settings",
+    "class/src/apis/event.js~Event.html#instance-member-settings",
+    "src/apis/event.js~Event#settings",
+    "member"
+  ],
+  [
+    "src/apis/event.js~event#update",
+    "class/src/apis/event.js~Event.html#instance-method-update",
+    "src/apis/event.js~Event#update",
+    "method"
+  ],
+  [
+    "src/apis/event.js~event#updateposter",
+    "class/src/apis/event.js~Event.html#instance-method-updatePoster",
+    "src/apis/event.js~Event#updatePoster",
+    "method"
+  ],
+  [
     "src/apis/index.js",
     "file/src/apis/index.js.html",
     "src/apis/index.js",
@@ -793,13 +865,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/auth/authentication.js~authentication#authdata",
-    "class/src/auth/authentication.js~Authentication.html#instance-set-authData",
+    "class/src/auth/authentication.js~Authentication.html#instance-get-authData",
     "src/auth/authentication.js~Authentication#authData",
     "member"
   ],
   [
     "src/auth/authentication.js~authentication#authdata",
-    "class/src/auth/authentication.js~Authentication.html#instance-get-authData",
+    "class/src/auth/authentication.js~Authentication.html#instance-set-authData",
     "src/auth/authentication.js~Authentication#authData",
     "member"
   ],

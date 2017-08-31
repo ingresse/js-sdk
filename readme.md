@@ -12,6 +12,7 @@ API      | Authentication |
 -------- | -------------- |
 Ingresse | Ingresse Auth  |
 Tickets  | JWT            |
+Events   | JWT            |
 
 
 ## Install

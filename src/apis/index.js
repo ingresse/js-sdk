@@ -1,9 +1,11 @@
 import {Ticket} from './ticket';
+import {Event} from './event';
 import {Api} from './api';
 
 
 export var apis = {
     ticket: Ticket,
-    api: Api
+    event : Event,
+    api   : Api,
 };
 

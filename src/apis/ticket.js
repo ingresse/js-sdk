@@ -22,7 +22,7 @@ export class Ticket extends RequestHandler {
      */
     constructor(custom = {}) {
         let settings = {
-            url : 'https://api.ingresse.com/ticket',
+            url : 'https://ticket.ingresse.com',
             auth: auth.Jwt.type(),
         };
 
