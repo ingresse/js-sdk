@@ -42,7 +42,7 @@ export class Event extends RequestHandler {
      * @example
      * ...
      *
-     * ingresse.event.get(200)
+     * ingresse.event.getById(200)
      *     .then(function (response) {
      *         console.log(response);
      *     })
@@ -50,7 +50,7 @@ export class Event extends RequestHandler {
      *         console.log(error);
      *     });
      */
-    get(id, query = {}) {
+    getById(id, query = {}) {
         return this.get(`/${id}`, query);
     }
 
@@ -64,7 +64,7 @@ export class Event extends RequestHandler {
      * @example
      * ...
      *
-     * ingresse.event.new({ name: 'My Event Name' })
+     * ingresse.event.create({ name: 'My Event Name' })
      *     .then(function (response) {
      *         console.log(response);
      *     })
@@ -72,7 +72,7 @@ export class Event extends RequestHandler {
      *         console.log(error);
      *     });
      */
-    new(data = {}, query = {}) {
+    create(data = {}, query = {}) {
         return this.post('/', data, query);
     }
 
@@ -128,7 +128,7 @@ export class Event extends RequestHandler {
     }
 
     /**
-     * Check if slug is available to use in an Event.
+     * Validate if slug is available to use in an Event.
      *
      * This method will return a `Promise` so you can use
      * `.then` and `.catch` methods.
@@ -140,7 +140,7 @@ export class Event extends RequestHandler {
      * @example
      * ...
      *
-     * ingresse.ticket.checkSlug('my-event-slug')
+     * ingresse.ticket.validateSlug('my-event-slug')
      *     .then(function (response) {
      *         console.log(response);
      *     })
@@ -148,7 +148,7 @@ export class Event extends RequestHandler {
      *         console.log(error);
      *     });
      */
-    checkSlug(id, query = {}) {
+    validateSlug(id, query = {}) {
         return this.get('/slugs', id, query);
     }
 
@@ -164,7 +164,7 @@ export class Event extends RequestHandler {
      * @example
      * ...
      *
-     * ingresse.ticket.categories()
+     * ingresse.event.getCategories()
      *     .then(function (response) {
      *         console.log(response);
      *     })
@@ -217,7 +217,7 @@ export class Event extends RequestHandler {
      *         console.log(error);
      *     });
      */
-    removeSession(eventId, sessionId, query = {}) {
+    deleteSession(eventId, sessionId, query = {}) {
         return this.delete(`/${eventId}/sessions/${sessionId}`, query);
     }
 }
