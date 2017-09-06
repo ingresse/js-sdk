@@ -164,7 +164,7 @@ export class Ticket extends RequestHandler {
      *     });
      */
     removeItem(id, query = {}) {
-        return this.delete(id, query);
+        return this.put(`/items/${id}`, query);
     }
 
     /**
