@@ -5,7 +5,7 @@
 */
 export var deepMerge = (target, source) => {
     for (let key of Object.keys(source)) {
-        if (source[key] instanceof Object) {
+        if (source[key] instanceof Object && !source.hasOwnProperty('length')) {
             Object.assign(source[key], deepMerge(target[key], source[key]));
         }
     }
