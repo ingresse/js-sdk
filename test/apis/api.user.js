@@ -99,6 +99,16 @@ describe('API User', () => {
         });
     });
 
+    describe('getUserWallet', () => {
+        it('should call this.get', () => {
+            let id = 123;
+            user.getUserWallet(id);
+
+            chai.expect(user.get).to.have.been.called.with
+                .exactly(`/user/${id}/wallet`, {});
+        });
+    });
+
     describe('getUserSessionTickets', () => {
         it('should call this.get', () => {
             let id = 123;

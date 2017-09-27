@@ -100,6 +100,38 @@ export class ApiUser extends RequestHandler {
         return this.get(`/user/${id}/sessions`, query);
     }
 
+    /**
+     * Get the user tickets wallet.
+     *
+     * @param {string|number} id - The user ID to get.
+     * @param {object} [query] - Optional request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * var userId = 123;
+     * var query = {
+     *      term     : {string}, // Event Name.
+     *      order    : {string}, // The result sort ['ASC', 'DESC'].
+     *      from     : {date},   // From date forward.
+     *      to       : {date},   // The date to backward.
+     *      pageSize : {number}, // Quantity data from page.
+     *      page     : {number}, // The current page.
+     * };
+     *
+     * ingresse.apiUser.getUserWallet(userId, query)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    getUserWallet(id, query = {}) {
+        return this.get(`/user/${id}/wallet`, query);
+    }
+
     /*
      * Get the ticket session
      *
