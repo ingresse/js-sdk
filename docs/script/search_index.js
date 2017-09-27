@@ -666,6 +666,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/apis/api.user.js~apiuser#getuserwallet",
+    "class/src/apis/api.user.js~ApiUser.html#instance-method-getUserWallet",
+    "src/apis/api.user.js~ApiUser#getUserWallet",
+    "method"
+  ],
+  [
     "src/apis/api.user.js~apiuser#savecredentials",
     "class/src/apis/api.user.js~ApiUser.html#instance-method-saveCredentials",
     "src/apis/api.user.js~ApiUser#saveCredentials",
