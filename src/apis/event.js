@@ -149,7 +149,7 @@ export class Event extends RequestHandler {
      *     });
      */
     validateSlug(id, query = {}) {
-        return this.get('/slugs', id, query);
+        return this.get(`/slugs/${id}`, query);
     }
 
     /**
