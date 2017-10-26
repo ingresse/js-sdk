@@ -55,6 +55,28 @@ export class Event extends RequestHandler {
     }
 
     /**
+     * Get event attributes
+     *
+     * @param {number} id      - The event ID to get.
+     * @param {object} [query] - Optional request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.getAttributes(20866)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    getAttributes(id, query = {}) {
+        return this.get(`/${id}/attributes`, query);
+    }
+
+    /**
      * Create new Event
      *
      * @param {object} data    - Data to create a new event.
