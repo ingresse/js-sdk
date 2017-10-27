@@ -132,7 +132,7 @@ export class Event extends RequestHandler {
      * @example
      * ...
      *
-     * ingresse.event.update(12, {
+     * ingresse.event.updatePoster(12, {
      *          poster: {
      *              format: 'base64',
      *              image : 'data:image/jpeg;base64 8aAVdagg87h87t8q...',
@@ -147,6 +147,34 @@ export class Event extends RequestHandler {
      */
     updatePoster(id, data = {}, query = {}) {
         return this.put(`/${id}/poster`, data, query);
+    }
+
+    /**
+     * Update Event Attributes
+     *
+     * @param {string|number} id - The Event ID to update.
+     * @param {object} data      - Data to update event attributes.
+     * @param {object} [query]   - Optional request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.updateAttributes(12, {
+     *          poster: {
+     *              format: 'base64',
+     *              image : 'data:image/jpeg;base64 8aAVdagg87h87t8q...',
+     *          }
+     *     })
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    updateAttributes(id, data = {}, query = {}) {
+        return this.put(`/${id}/attributes`, data, query);
     }
 
     /**
