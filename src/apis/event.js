@@ -150,6 +150,27 @@ export class Event extends RequestHandler {
     }
 
     /**
+     * Delete Event Poster
+     *
+     * @param {string|number} id - The Event ID to delete poster.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.deletePoster(12)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    deletePoster(id, query = {}) {
+        return this.delete(`/${id}/poster`, query);
+    }
+
+    /**
      * Update Event Attributes
      *
      * @param {string|number} id - The Event ID to update.
@@ -161,10 +182,12 @@ export class Event extends RequestHandler {
      * ...
      *
      * ingresse.event.updateAttributes(12, {
-     *          poster: {
-     *              format: 'base64',
-     *              image : 'data:image/jpeg;base64 8aAVdagg87h87t8q...',
-     *          }
+     *          attributes: [
+     *              {
+     *                  name : 'video_url',
+     *                  value: 'https://www.youtube.com/watch?v=hRGnjgBOHIk',
+     *              }
+     *          ]
      *     })
      *     .then(function (response) {
      *         console.log(response);
