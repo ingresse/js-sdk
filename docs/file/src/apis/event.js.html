@@ -100,7 +100,7 @@ export class Event extends RequestHandler {
      * @example
      * ...
      *
-     * ingresse.event.get(200)
+     * ingresse.event.getById(200)
      *     .then(function (response) {
      *         console.log(response);
      *     })
@@ -108,8 +108,30 @@ export class Event extends RequestHandler {
      *         console.log(error);
      *     });
      */
-    get(id, query = {}) {
+    getById(id, query = {}) {
         return this.get(`/${id}`, query);
+    }
+
+    /**
+     * Get event attributes
+     *
+     * @param {number} id      - The event ID to get.
+     * @param {object} [query] - Optional request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.getAttributes(20866)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    getAttributes(id, query = {}) {
+        return this.get(`/${id}/attributes`, query);
     }
 
     /**
@@ -122,7 +144,7 @@ export class Event extends RequestHandler {
      * @example
      * ...
      *
-     * ingresse.event.new({ name: &apos;My Event Name&apos; })
+     * ingresse.event.create({ name: &apos;My Event Name&apos; })
      *     .then(function (response) {
      *         console.log(response);
      *     })
@@ -130,7 +152,7 @@ export class Event extends RequestHandler {
      *         console.log(error);
      *     });
      */
-    new(data = {}, query = {}) {
+    create(data = {}, query = {}) {
         return this.post(&apos;/&apos;, data, query);
     }
 
@@ -168,7 +190,7 @@ export class Event extends RequestHandler {
      * @example
      * ...
      *
-     * ingresse.event.update(12, {
+     * ingresse.event.updatePoster(12, {
      *          poster: {
      *              format: &apos;base64&apos;,
      *              image : &apos;data:image/jpeg;base64 8aAVdagg87h87t8q...&apos;,
@@ -186,19 +208,15 @@ export class Event extends RequestHandler {
     }
 
     /**
-     * Check if slug is available to use in an Event.
+     * Delete Event Poster
      *
-     * This method will return a `Promise` so you can use
-     * `.then` and `.catch` methods.
-     *
-     * @param {string} id      - The slug ID to check.
-     * @param {object} [query] - Optional request parameters.
+     * @param {string|number} id - The Event ID to delete poster.
      * @returns {Promise}
      *
      * @example
      * ...
      *
-     * ingresse.ticket.checkSlug(&apos;my-event-slug&apos;)
+     * ingresse.event.deletePoster(12)
      *     .then(function (response) {
      *         console.log(response);
      *     })
@@ -206,8 +224,63 @@ export class Event extends RequestHandler {
      *         console.log(error);
      *     });
      */
-    checkSlug(id, query = {}) {
-        return this.get(&apos;/slugs&apos;, id, query);
+    deletePoster(id, query = {}) {
+        return this.delete(`/${id}/poster`, query);
+    }
+
+    /**
+     * Update Event Attributes
+     *
+     * @param {string|number} id - The Event ID to update.
+     * @param {object} data      - Data to update event attributes.
+     * @param {object} [query]   - Optional request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.updateAttributes(12, {
+     *          attributes: [
+     *              {
+     *                  name : &apos;video_url&apos;,
+     *                  value: &apos;https://www.youtube.com/watch?v=hRGnjgBOHIk&apos;,
+     *              }
+     *          ]
+     *     })
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    updateAttributes(id, data = {}, query = {}) {
+        return this.put(`/${id}/attributes`, data, query);
+    }
+
+    /**
+     * Validate if slug is available to use in an Event.
+     *
+     * This method will return a `Promise` so you can use
+     * `.then` and `.catch` methods.
+     *
+     * @param {string} term    - The slug term to check.
+     * @param {object} [query] - Optional request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.validateSlug(&apos;my-event-slug&apos;)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    validateSlug(term, query = {}) {
+        return this.get(`/slugs/${term}`, query);
     }
 
     /**
@@ -222,7 +295,7 @@ export class Event extends RequestHandler {
      * @example
      * ...
      *
-     * ingresse.ticket.categories()
+     * ingresse.event.getCategories()
      *     .then(function (response) {
      *         console.log(response);
      *     })
@@ -235,10 +308,10 @@ export class Event extends RequestHandler {
     }
 
     /**
-     * Create new Event Category
+     * Get Event Category by ID
      *
-     * @param {string} id      - The Category ID to get.
-     * @param {object} [query] - Optional request parameters.
+     * @param {string|number} id - The Category ID to get.
+     * @param {object} [query]   - Optional request parameters.
      * @returns {Promise}
      *
      * @example
@@ -253,21 +326,21 @@ export class Event extends RequestHandler {
      *     });
      */
     getCategory(id, query = {}) {
-        return this.get(`/categories/${id}`, id, query);
+        return this.get(`/categories/${id}`, query);
     }
 
     /**
-     * Remove an Event Session
+     * Remove Category from specific Event
      *
-     * @param {number} eventId   - The Event ID to remove session.
-     * @param {number} sessionId - The Session ID to remove.
-     * @param {object} [query]   - Optional request parameters.
+     * @param {string|number} eventId    - The Event ID to remove category.
+     * @param {string|number} categoryId - The Category ID to remove.
+     * @param {object} [query]           - Optional request parameters.
      * @returns {Promise}
      *
      * @example
      * ...
      *
-     * ingresse.ticket.removeSession(123)
+     * ingresse.event.deleteCategory(123, 321)
      *     .then(function (response) {
      *         console.log(response);
      *     })
@@ -275,7 +348,30 @@ export class Event extends RequestHandler {
      *         console.log(error);
      *     });
      */
-    removeSession(eventId, sessionId, query = {}) {
+    deleteCategory(eventId, categoryId, query = {}) {
+        return this.delete(`/${eventId}/category/${categoryId}`, query);
+    }
+
+    /**
+     * Remove an Event Session
+     *
+     * @param {string|number} eventId   - The Event ID to remove session.
+     * @param {string|number} sessionId - The Session ID to remove.
+     * @param {object} [query]          - Optional request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.deleteSession(123, 321)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    deleteSession(eventId, sessionId, query = {}) {
         return this.delete(`/${eventId}/sessions/${sessionId}`, query);
     }
 }

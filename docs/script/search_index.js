@@ -690,21 +690,45 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/apis/event.js~event#checkslug",
-    "class/src/apis/event.js~Event.html#instance-method-checkSlug",
-    "src/apis/event.js~Event#checkSlug",
-    "method"
-  ],
-  [
     "src/apis/event.js~event#constructor",
     "class/src/apis/event.js~Event.html#instance-constructor-constructor",
     "src/apis/event.js~Event#constructor",
     "method"
   ],
   [
-    "src/apis/event.js~event#get",
-    "class/src/apis/event.js~Event.html#instance-method-get",
-    "src/apis/event.js~Event#get",
+    "src/apis/event.js~event#create",
+    "class/src/apis/event.js~Event.html#instance-method-create",
+    "src/apis/event.js~Event#create",
+    "method"
+  ],
+  [
+    "src/apis/event.js~event#deletecategory",
+    "class/src/apis/event.js~Event.html#instance-method-deleteCategory",
+    "src/apis/event.js~Event#deleteCategory",
+    "method"
+  ],
+  [
+    "src/apis/event.js~event#deleteposter",
+    "class/src/apis/event.js~Event.html#instance-method-deletePoster",
+    "src/apis/event.js~Event#deletePoster",
+    "method"
+  ],
+  [
+    "src/apis/event.js~event#deletesession",
+    "class/src/apis/event.js~Event.html#instance-method-deleteSession",
+    "src/apis/event.js~Event#deleteSession",
+    "method"
+  ],
+  [
+    "src/apis/event.js~event#getattributes",
+    "class/src/apis/event.js~Event.html#instance-method-getAttributes",
+    "src/apis/event.js~Event#getAttributes",
+    "method"
+  ],
+  [
+    "src/apis/event.js~event#getbyid",
+    "class/src/apis/event.js~Event.html#instance-method-getById",
+    "src/apis/event.js~Event#getById",
     "method"
   ],
   [
@@ -720,18 +744,6 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/apis/event.js~event#new",
-    "class/src/apis/event.js~Event.html#instance-method-new",
-    "src/apis/event.js~Event#new",
-    "method"
-  ],
-  [
-    "src/apis/event.js~event#removesession",
-    "class/src/apis/event.js~Event.html#instance-method-removeSession",
-    "src/apis/event.js~Event#removeSession",
-    "method"
-  ],
-  [
     "src/apis/event.js~event#settings",
     "class/src/apis/event.js~Event.html#instance-member-settings",
     "src/apis/event.js~Event#settings",
@@ -744,9 +756,21 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/apis/event.js~event#updateattributes",
+    "class/src/apis/event.js~Event.html#instance-method-updateAttributes",
+    "src/apis/event.js~Event#updateAttributes",
+    "method"
+  ],
+  [
     "src/apis/event.js~event#updateposter",
     "class/src/apis/event.js~Event.html#instance-method-updatePoster",
     "src/apis/event.js~Event#updatePoster",
+    "method"
+  ],
+  [
+    "src/apis/event.js~event#validateslug",
+    "class/src/apis/event.js~Event.html#instance-method-validateSlug",
+    "src/apis/event.js~Event#validateSlug",
     "method"
   ],
   [
@@ -865,13 +889,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/auth/authentication.js~authentication#authdata",
-    "class/src/auth/authentication.js~Authentication.html#instance-get-authData",
+    "class/src/auth/authentication.js~Authentication.html#instance-set-authData",
     "src/auth/authentication.js~Authentication#authData",
     "member"
   ],
   [
     "src/auth/authentication.js~authentication#authdata",
-    "class/src/auth/authentication.js~Authentication.html#instance-set-authData",
+    "class/src/auth/authentication.js~Authentication.html#instance-get-authData",
     "src/auth/authentication.js~Authentication#authData",
     "member"
   ],

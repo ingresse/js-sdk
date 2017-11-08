@@ -206,14 +206,14 @@ export class Event extends RequestHandler {
      * This method will return a `Promise` so you can use
      * `.then` and `.catch` methods.
      *
-     * @param {string} id      - The slug ID to check.
+     * @param {string} term    - The slug term to check.
      * @param {object} [query] - Optional request parameters.
      * @returns {Promise}
      *
      * @example
      * ...
      *
-     * ingresse.ticket.validateSlug('my-event-slug')
+     * ingresse.event.validateSlug('my-event-slug')
      *     .then(function (response) {
      *         console.log(response);
      *     })
@@ -221,8 +221,8 @@ export class Event extends RequestHandler {
      *         console.log(error);
      *     });
      */
-    validateSlug(id, query = {}) {
-        return this.get(`/slugs/${id}`, query);
+    validateSlug(term, query = {}) {
+        return this.get(`/slugs/${term}`, query);
     }
 
     /**
@@ -250,10 +250,10 @@ export class Event extends RequestHandler {
     }
 
     /**
-     * Create new Event Category
+     * Get Event Category by ID
      *
-     * @param {string} id      - The Category ID to get.
-     * @param {object} [query] - Optional request parameters.
+     * @param {string|number} id - The Category ID to get.
+     * @param {object} [query]   - Optional request parameters.
      * @returns {Promise}
      *
      * @example
@@ -268,21 +268,44 @@ export class Event extends RequestHandler {
      *     });
      */
     getCategory(id, query = {}) {
-        return this.get(`/categories/${id}`, id, query);
+        return this.get(`/categories/${id}`, query);
     }
 
     /**
-     * Remove an Event Session
+     * Remove Category from specific Event
      *
-     * @param {number} eventId   - The Event ID to remove session.
-     * @param {number} sessionId - The Session ID to remove.
-     * @param {object} [query]   - Optional request parameters.
+     * @param {string|number} eventId    - The Event ID to remove category.
+     * @param {string|number} categoryId - The Category ID to remove.
+     * @param {object} [query]           - Optional request parameters.
      * @returns {Promise}
      *
      * @example
      * ...
      *
-     * ingresse.ticket.removeSession(123)
+     * ingresse.event.deleteCategory(123, 321)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    deleteCategory(eventId, categoryId, query = {}) {
+        return this.delete(`/${eventId}/category/${categoryId}`, query);
+    }
+
+    /**
+     * Remove an Event Session
+     *
+     * @param {string|number} eventId   - The Event ID to remove session.
+     * @param {string|number} sessionId - The Session ID to remove.
+     * @param {object} [query]          - Optional request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.deleteSession(123, 321)
      *     .then(function (response) {
      *         console.log(response);
      *     })
