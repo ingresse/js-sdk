@@ -5,7 +5,7 @@ import {ApiTicketTransfer} from './api.ticket.js';
 import {ApiAuth} from './api.auth.js';
 import {ApiRecover} from './api.recover.js';
 import {auth} from '../auth';
-import {mix} from '../helper/mix';
+import {Mixin} from '../helper/mixin.js';
 
 /**
  * Ingresse API
@@ -18,13 +18,13 @@ import {mix} from '../helper/mix';
  * // after instantiate the Sdk.
  * var api = ingresse.api;
  */
-export class Api extends mix(
-    RequestHandler,
+export class Api extends Mixin.inherit(
     ApiAuth,
     ApiEvents,
     ApiRecover,
     ApiTicketTransfer,
-    ApiUser
+    ApiUser,
+    RequestHandler
 ) {
     /**
      * Ingresse Api

@@ -19,7 +19,7 @@ var _apiRecover = require('./api.recover.js');
 
 var _auth = require('../auth');
 
-var _mix2 = require('../helper/mix');
+var _mixin = require('../helper/mixin.js');
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -38,8 +38,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  * // after instantiate the Sdk.
  * var api = ingresse.api;
  */
-var Api = exports.Api = function (_mix) {
-    _inherits(Api, _mix);
+var Api = exports.Api = function (_Mixin$inherit) {
+    _inherits(Api, _Mixin$inherit);
 
     /**
      * Ingresse Api
@@ -65,4 +65,4 @@ var Api = exports.Api = function (_mix) {
     }
 
     return Api;
-}((0, _mix2.mix)(_handler.RequestHandler, _apiAuth.ApiAuth, _apiEvent.ApiEvents, _apiRecover.ApiRecover, _apiTicket.ApiTicketTransfer, _apiUser.ApiUser));
+}(_mixin.Mixin.inherit(_apiAuth.ApiAuth, _apiEvent.ApiEvents, _apiRecover.ApiRecover, _apiTicket.ApiTicketTransfer, _apiUser.ApiUser, _handler.RequestHandler));
