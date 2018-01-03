@@ -3741,7 +3741,7 @@
     "__docId__": 111,
     "kind": "file",
     "name": "src/request/handler.js",
-    "content": "import popsicle from 'popsicle';\nimport {plugins} from 'popsicle';\nimport {basePrefix, transformResponse} from './plugins';\nimport {auth} from '../auth';\nimport {deepMerge} from '../helper';\nimport status from 'popsicle-status';\n\n\n/**\n * Base request handler for all the API's\n * with `get`, `post`, `put` and `delete` methods\n */\nexport class RequestHandler {\n    /**\n     * Initialize request handler\n     *\n     * @param {object} settings - Settings\n     */\n    constructor(settings = {}) {\n        this.settings = settings;\n\n        if (auth[settings.auth]) {\n            this.auth = new auth[settings.auth]();\n        }\n    }\n\n    /**\n     * Set API url\n     *\n     * @param {string} url - Base URL, example: 'https://hml-api.ingresse.com'\n     *\n     * @example\n     * var sdk = require('ingresse-sdk');\n     * var ingresse = new Sdk();\n     *\n     * // You will have access to this API\n     * // after instantiate the Sdk.\n     * var api = ingresse.api;\n     *\n     * // Can set an specific URL to this API\n     * api.setUrl('https://hml-api.ingresse.com');\n     *\n     */\n    setUrl(url) {\n        this.settings.url = url;\n    }\n\n    /**\n     * Create new request promise\n     *\n     * @param {object} options - request options.\n     *\n     * @returns {Promise}\n     */\n    request(options = {}) {\n        let request = {\n            headers: {\n                'User-Agent': 'Ingresse JS SDK',\n            },\n        };\n\n        request = deepMerge(request, options);\n\n        if (this.auth) {\n            request = deepMerge(request, this.auth.getSettings());\n        }\n\n        return popsicle(request)\n            .use(transformResponse())\n            .use(basePrefix(this.settings.url))\n            .use(plugins.parse(['json']));\n    }\n\n    /**\n     * Get resource\n     *\n     * @param {string} path    - Request get to endpoint e.g. /api-path/1\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    get(path, query) {\n        let request = {\n            method: 'GET',\n            url   : path,\n            query : query,\n        };\n\n        return this.request(request);\n    }\n\n    /**\n     * Post resource\n     *\n     * @param {string} path    - Request post to endpoint e.g. /api-path\n     * @param {object} data    - Data to be posted.\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    post(path, data, query) {\n        let request = {\n            method: 'POST',\n            url   : path,\n            body  : data,\n            query : query,\n        };\n\n        return this.request(request);\n    }\n\n    /**\n     * Put resource\n     *\n     * @param {string} path    - Request put to end endpoint e.g. /api-path/1\n     * @param {object} data    - Data to be updated.\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    put(path, data, query) {\n        let request = {\n            method: 'PUT',\n            url   : path,\n            body  : data,\n            query : query,\n        };\n\n        return this.request(request);\n    }\n\n    /**\n     * Delete resource\n     *\n     * @param {string} path    - Request delete to endpoint e.g. /api-path/1\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    delete(path, query) {\n        let request = {\n            method: 'DELETE',\n            url   : path,\n            query : query,\n        };\n\n        return this.request(request);\n    }\n}\n\n",
+    "content": "import popsicle from 'popsicle';\nimport {plugins} from 'popsicle';\nimport {basePrefix, transformResponse} from './plugins';\nimport {auth} from '../auth';\nimport {deepMerge} from '../helper';\nimport status from 'popsicle-status';\n\n\n/**\n * Base request handler for all the API's\n * with `get`, `post`, `put` and `delete` methods\n */\nexport class RequestHandler {\n    /**\n     * Initialize request handler\n     *\n     * @param {object} settings - Settings\n     */\n    constructor(settings = {}) {\n        this.settings = settings;\n\n        if (auth[settings.auth]) {\n            this.auth = new auth[settings.auth]();\n        }\n    }\n\n    /**\n     * Set API url\n     *\n     * @param {string} url - Base URL, example: 'https://hml-api.ingresse.com'\n     *\n     * @example\n     * var sdk = require('ingresse-sdk');\n     * var ingresse = new Sdk();\n     *\n     * // You will have access to this API\n     * // after instantiate the Sdk.\n     * var api = ingresse.api;\n     *\n     * // Can set an specific URL to this API\n     * api.setUrl('https://hml-api.ingresse.com');\n     *\n     */\n    setUrl(url) {\n        this.settings.url = url;\n    }\n\n    /**\n     * Create new request promise\n     *\n     * @param {object} options - request options.\n     *\n     * @returns {Promise}\n     */\n    request(options = {}) {\n        let request = {};\n\n        request = deepMerge(request, options);\n\n        if (this.auth) {\n            request = deepMerge(request, this.auth.getSettings());\n        }\n\n        return popsicle(request)\n            .use(transformResponse())\n            .use(basePrefix(this.settings.url))\n            .use(plugins.parse(['json']));\n    }\n\n    /**\n     * Get resource\n     *\n     * @param {string} path    - Request get to endpoint e.g. /api-path/1\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    get(path, query) {\n        let request = {\n            method: 'GET',\n            url   : path,\n            query : query,\n        };\n\n        return this.request(request);\n    }\n\n    /**\n     * Post resource\n     *\n     * @param {string} path    - Request post to endpoint e.g. /api-path\n     * @param {object} data    - Data to be posted.\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    post(path, data, query) {\n        let request = {\n            method: 'POST',\n            url   : path,\n            body  : data,\n            query : query,\n        };\n\n        return this.request(request);\n    }\n\n    /**\n     * Put resource\n     *\n     * @param {string} path    - Request put to end endpoint e.g. /api-path/1\n     * @param {object} data    - Data to be updated.\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    put(path, data, query) {\n        let request = {\n            method: 'PUT',\n            url   : path,\n            body  : data,\n            query : query,\n        };\n\n        return this.request(request);\n    }\n\n    /**\n     * Delete resource\n     *\n     * @param {string} path    - Request delete to endpoint e.g. /api-path/1\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     */\n    delete(path, query) {\n        let request = {\n            method: 'DELETE',\n            url   : path,\n            query : query,\n        };\n\n        return this.request(request);\n    }\n}\n\n",
     "static": true,
     "longname": "src/request/handler.js",
     "access": null,
@@ -3912,7 +3912,7 @@
     "longname": "src/request/handler.js~RequestHandler#get",
     "access": null,
     "description": "Get resource",
-    "lineNumber": 82,
+    "lineNumber": 78,
     "unknown": [
       {
         "tagName": "@returns",
@@ -3961,7 +3961,7 @@
     "longname": "src/request/handler.js~RequestHandler#post",
     "access": null,
     "description": "Post resource",
-    "lineNumber": 101,
+    "lineNumber": 97,
     "unknown": [
       {
         "tagName": "@returns",
@@ -4020,7 +4020,7 @@
     "longname": "src/request/handler.js~RequestHandler#put",
     "access": null,
     "description": "Put resource",
-    "lineNumber": 121,
+    "lineNumber": 117,
     "unknown": [
       {
         "tagName": "@returns",
@@ -4079,7 +4079,7 @@
     "longname": "src/request/handler.js~RequestHandler#delete",
     "access": null,
     "description": "Delete resource",
-    "lineNumber": 140,
+    "lineNumber": 136,
     "unknown": [
       {
         "tagName": "@returns",
