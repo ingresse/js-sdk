@@ -1,7 +1,7 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 exports.ApiEvents = undefined;
 
@@ -19,139 +19,160 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  * Ingresse Event API
  */
 var ApiEvents = exports.ApiEvents = function (_RequestHandler) {
-  _inherits(ApiEvents, _RequestHandler);
+    _inherits(ApiEvents, _RequestHandler);
 
-  function ApiEvents() {
-    _classCallCheck(this, ApiEvents);
+    function ApiEvents() {
+        _classCallCheck(this, ApiEvents);
 
-    return _possibleConstructorReturn(this, (ApiEvents.__proto__ || Object.getPrototypeOf(ApiEvents)).apply(this, arguments));
-  }
-
-  _createClass(ApiEvents, [{
-    key: 'getEvent',
-
-    /**
-     * Get event
-     *
-     * @param {string|number} id - The event ID to get.
-     * @param {object} [query]   - Optional request parameters.
-     * @returns {Promise}
-     */
-    value: function getEvent(id) {
-      var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-
-      return this.get('/event/' + id, query);
+        return _possibleConstructorReturn(this, (ApiEvents.__proto__ || Object.getPrototypeOf(ApiEvents)).apply(this, arguments));
     }
 
-    /**
-     * Get event tickets
-     *
-     * @param {string|number} id - The event ID to get.
-     * @param {object} [query]   - Optional request parameters.
-     * @returns {Promise}
-     */
+    _createClass(ApiEvents, [{
+        key: 'identifyEvent',
 
-  }, {
-    key: 'getEventTickets',
-    value: function getEventTickets(id) {
-      var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+        /**
+         * Identify event
+         *
+         * @param {string} link       - Link/Slug or id.
+         * @param {string} fields     - Event fields to get.
+         * @param {object} [queryOpt] - Optional request parameters.
+         * @returns {Promise}
+         */
+        value: function identifyEvent(link, fields, queryOpt) {
+            var query = queryOpt || {
+                link: link,
+                fields: fields,
+                method: 'identify'
+            };
 
-      return this.get('/event/' + id + '/tickets', query);
-    }
+            return this.get('/event', query);
+        }
 
-    /**
-     * Get event session tickets
-     *
-     * @param {string|number} id        - The event ID to get.
-     * @param {string|number} sessionId - The event session ID to get.
-     * @param {object} [query]          - Optional request parameters.
-     * @returns {Promise}
-     */
+        /**
+         * Get event
+         *
+         * @param {string|number} id - The event ID to get.
+         * @param {object} [query]   - Optional request parameters.
+         * @returns {Promise}
+         */
 
-  }, {
-    key: 'getEventSessionTickets',
-    value: function getEventSessionTickets(id, sessionId) {
-      var query = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+    }, {
+        key: 'getEvent',
+        value: function getEvent(id) {
+            var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
-      return this.get('/event/' + id + '/session/' + sessionId + '/tickets', query);
-    }
+            return this.get('/event/' + id, query);
+        }
 
-    /**
-     * Get event crew
-     *
-     * @param {string|number} id - The event ID to get.
-     * @param {object} [query]   - Optional request parameters.
-     * @returns {Promise}
-     */
+        /**
+         * Get event tickets
+         *
+         * @param {string|number} id - The event ID to get.
+         * @param {object} [query]   - Optional request parameters.
+         * @returns {Promise}
+         */
 
-  }, {
-    key: 'getEventCrew',
-    value: function getEventCrew(id) {
-      var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    }, {
+        key: 'getEventTickets',
+        value: function getEventTickets(id) {
+            var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
-      return this.get('/event/' + id + '/crew', query);
-    }
+            return this.get('/event/' + id + '/tickets', query);
+        }
 
-    /**
-     * Get event attributes
-     *
-     * @param {string|number} id - The event ID to get.
-     * @param {object} [query]   - Optional request parameters.
-     * @returns {Promise}
-     */
+        /**
+         * Get event session tickets
+         *
+         * @param {string|number} id        - The event ID to get.
+         * @param {string|number} sessionId - The event session ID to get.
+         * @param {object} [query]          - Optional request parameters.
+         * @returns {Promise}
+         */
 
-  }, {
-    key: 'getEventAttributes',
-    value: function getEventAttributes(id) {
-      var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    }, {
+        key: 'getEventSessionTickets',
+        value: function getEventSessionTickets(id, sessionId) {
+            var query = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
 
-      return this.get('/event/' + id + '/attributes', query);
-    }
+            return this.get('/event/' + id + '/session/' + sessionId + '/tickets', query);
+        }
 
-    /**
-     * Featured events
-     *
-     * @param {string|number} id - The event ID to get.
-     * @param {object} [query]   - Optional request parameters.
-     * @returns {Promise}
-     */
+        /**
+         * Get event crew
+         *
+         * @param {string|number} id - The event ID to get.
+         * @param {object} [query]   - Optional request parameters.
+         * @returns {Promise}
+         */
 
-  }, {
-    key: 'getFeatured',
-    value: function getFeatured(id) {
-      var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    }, {
+        key: 'getEventCrew',
+        value: function getEventCrew(id) {
+            var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
-      return this.get('/featured/' + id, query);
-    }
+            return this.get('/event/' + id + '/crew', query);
+        }
 
-    /**
-     * Get the events type
-     *
-     * @returns {Promise}
-     */
+        /**
+         * Get event attributes
+         *
+         * @param {string|number} id - The event ID to get.
+         * @param {object} [query]   - Optional request parameters.
+         * @returns {Promise}
+         */
 
-  }, {
-    key: 'getEventTypes',
-    value: function getEventTypes() {
-      return this.get('/home/sections');
-    }
+    }, {
+        key: 'getEventAttributes',
+        value: function getEventAttributes(id) {
+            var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
-    /**
-     * Get the search event categorie.
-     *
-     * @param {string} category - The search category to get.
-     * @param {object} [query]   - Optional request parameters.
-     * @returns {Promise}
-     */
+            return this.get('/event/' + id + '/attributes', query);
+        }
 
-  }, {
-    key: 'getEventCategories',
-    value: function getEventCategories(category) {
-      var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+        /**
+         * Featured events
+         *
+         * @param {string|number} id - The event ID to get.
+         * @param {object} [query]   - Optional request parameters.
+         * @returns {Promise}
+         */
 
-      return this.get('/' + category, query);
-    }
-  }]);
+    }, {
+        key: 'getFeatured',
+        value: function getFeatured(id) {
+            var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
-  return ApiEvents;
+            return this.get('/featured/' + id, query);
+        }
+
+        /**
+         * Get the events type
+         *
+         * @returns {Promise}
+         */
+
+    }, {
+        key: 'getEventTypes',
+        value: function getEventTypes() {
+            return this.get('/home/sections');
+        }
+
+        /**
+         * Get the search event categorie.
+         *
+         * @param {string} category - The search category to get.
+         * @param {object} [query]   - Optional request parameters.
+         * @returns {Promise}
+         */
+
+    }, {
+        key: 'getEventCategories',
+        value: function getEventCategories(category) {
+            var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+            return this.get('/' + category, query);
+        }
+    }]);
+
+    return ApiEvents;
 }(_handler.RequestHandler);
