@@ -510,6 +510,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/apis/api.event.js~apievents#identifyevent",
+    "class/src/apis/api.event.js~ApiEvents.html#instance-method-identifyEvent",
+    "src/apis/api.event.js~ApiEvents#identifyEvent",
+    "method"
+  ],
+  [
     "src/apis/api.js",
     "file/src/apis/api.js.html",
     "src/apis/api.js",
@@ -781,13 +787,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/auth/authentication.js~authentication#authdata",
-    "class/src/auth/authentication.js~Authentication.html#instance-get-authData",
+    "class/src/auth/authentication.js~Authentication.html#instance-set-authData",
     "src/auth/authentication.js~Authentication#authData",
     "member"
   ],
   [
     "src/auth/authentication.js~authentication#authdata",
-    "class/src/auth/authentication.js~Authentication.html#instance-set-authData",
+    "class/src/auth/authentication.js~Authentication.html#instance-get-authData",
     "src/auth/authentication.js~Authentication#authData",
     "member"
   ],

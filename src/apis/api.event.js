@@ -5,6 +5,24 @@ import {RequestHandler} from '../request/handler';
  */
 export class ApiEvents extends RequestHandler {
     /**
+     * Identify event
+     *
+     * @param {string} link       - Link/Slug or id.
+     * @param {string} fields     - Event fields to get.
+     * @param {object} [queryOpt] - Optional request parameters.
+     * @returns {Promise}
+     */
+    identifyEvent(link, fields, queryOpt) {
+        let query = queryOpt || {
+            link  : link,
+            fields: fields,
+            method: 'identify',
+        };
+
+        return this.get('/event', query);
+    }
+
+    /**
      * Get event
      *
      * @param {string|number} id - The event ID to get.

@@ -19,6 +19,31 @@ describe('API Events', () => {
         chai.expect(event).to.be.an.instanceof(RequestHandler);
     });
 
+    describe('identifyEvent', () => {
+        it('should call this.get', () => {
+            let link   = 'devteamtest2018';
+            let fields = 'id,title,description';
+
+            event.identifyEvent(link, fields);
+
+            chai.expect(event.get).to.have.been.called.with
+                .exactly(`/event`, { link: link, fields: fields, method: 'identify' });
+        });
+
+        it('should call this.get', () => {
+            let optionalQuery = {
+                link  : 'devteamtest2018udi',
+                fields: 'id,title,description,poster',
+                method: 'identify',
+            };
+
+            event.identifyEvent(null, null, optionalQuery);
+
+            chai.expect(event.get).to.have.been.called.with
+                .exactly(`/event`, optionalQuery);
+        });
+    });
+
     describe('getEvent', () => {
         it('should call this.get', () => {
             let id = 123;
