@@ -10,7 +10,7 @@ describe('IngresseSdk', () => {
 
     it('should have static method version', () => {
         chai.expect(IngresseSdk.version).to.be.an('function');
-        chai.expect(IngresseSdk.version()).to.equal('1.1.2');
+        chai.expect(IngresseSdk.version()).to.equal('1.1.4');
     });
 
     it('should accept custom params for each api', () => {
