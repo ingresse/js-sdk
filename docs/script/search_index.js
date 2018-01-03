@@ -60,6 +60,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ingresse-sdk/src/helper/mixin.js~mixin",
+    "class/src/helper/mixin.js~Mixin.html",
+    "<span>Mixin</span> <span class=\"search-result-import-path\">ingresse-sdk/src/helper/mixin.js</span>",
+    "class"
+  ],
+  [
     "ingresse-sdk/src/request/handler.js~requesthandler",
     "class/src/request/handler.js~RequestHandler.html",
     "<span>RequestHandler</span> <span class=\"search-result-import-path\">ingresse-sdk/src/request/handler.js</span>",
@@ -90,21 +96,9 @@ window.esdocSearchIndex = [
     "function"
   ],
   [
-    "ingresse-sdk/src/helper/mix.js~copyproperties",
-    "function/index.html#static-function-copyProperties",
-    "<span>copyProperties</span> <span class=\"search-result-import-path\">ingresse-sdk/src/helper/mix.js</span>",
-    "function"
-  ],
-  [
     "ingresse-sdk/src/helper/index.js~deepmerge",
     "function/index.html#static-function-deepMerge",
     "<span>deepMerge</span> <span class=\"search-result-import-path\">ingresse-sdk/src/helper/index.js</span>",
-    "function"
-  ],
-  [
-    "ingresse-sdk/src/helper/mix.js~mix",
-    "function/index.html#static-function-mix",
-    "<span>mix</span> <span class=\"search-result-import-path\">ingresse-sdk/src/helper/mix.js</span>",
     "function"
   ],
   [
@@ -492,6 +486,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/apis/api.event.js~apievents#geteventsessiontickets",
+    "class/src/apis/api.event.js~ApiEvents.html#instance-method-getEventSessionTickets",
+    "src/apis/api.event.js~ApiEvents#getEventSessionTickets",
+    "method"
+  ],
+  [
     "src/apis/api.event.js~apievents#geteventtickets",
     "class/src/apis/api.event.js~ApiEvents.html#instance-method-getEventTickets",
     "src/apis/api.event.js~ApiEvents#getEventTickets",
@@ -781,13 +781,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/auth/authentication.js~authentication#authdata",
-    "class/src/auth/authentication.js~Authentication.html#instance-set-authData",
+    "class/src/auth/authentication.js~Authentication.html#instance-get-authData",
     "src/auth/authentication.js~Authentication#authData",
     "member"
   ],
   [
     "src/auth/authentication.js~authentication#authdata",
-    "class/src/auth/authentication.js~Authentication.html#instance-get-authData",
+    "class/src/auth/authentication.js~Authentication.html#instance-set-authData",
     "src/auth/authentication.js~Authentication#authData",
     "member"
   ],
@@ -924,10 +924,22 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/helper/mix.js",
-    "file/src/helper/mix.js.html",
-    "src/helper/mix.js",
+    "src/helper/mixin.js",
+    "file/src/helper/mixin.js.html",
+    "src/helper/mixin.js",
     "file"
+  ],
+  [
+    "src/helper/mixin.js~mixin.copy",
+    "class/src/helper/mixin.js~Mixin.html#static-method-copy",
+    "src/helper/mixin.js~Mixin.copy",
+    "method"
+  ],
+  [
+    "src/helper/mixin.js~mixin.inherit",
+    "class/src/helper/mixin.js~Mixin.html#static-method-inherit",
+    "src/helper/mixin.js~Mixin.inherit",
+    "method"
   ],
   [
     "src/ingresse-sdk.js",

@@ -39,6 +39,17 @@ describe('API Events', () => {
         });
     });
 
+    describe('getEventSessionTickets', () => {
+        it('should call this.get', () => {
+            let id        = 123;
+            let sessionId = 321;
+            event.getEventSessionTickets(id, sessionId);
+
+            chai.expect(event.get).to.have.been.called.with
+                .exactly(`/event/${id}/session/${sessionId}/tickets`, {});
+        });
+    });
+
     describe('getEventCrew', () => {
         it('should call this.get', () => {
             let id = 123;

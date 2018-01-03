@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../">
-  <title data-ice="title">src/apis/api.ticket.js | Ingresse JS SDK API Document</title>
+  <title data-ice="title">src/helper/mixin.js | Ingresse JS SDK API Document</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -54,99 +54,50 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/apis/api.ticket.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {RequestHandler} from &apos;../request/handler&apos;;
+<div class="content" data-ice="content"><h1 data-ice="title">src/helper/mixin.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import &apos;babel-polyfill&apos;;
 
-/**
- * Ingresse Tickets Transfer API
- */
-export class ApiTicketTransfer extends RequestHandler {
-    /**
-     * Creates a ticket transfer.
-     *
-     * @param {number} id - The ticket ID to get.
-     * @param {object} [data]  - The form with transfer data for post.
-     * @param {object} [query] - Optional request parameters.
-     * @returns {Promise}
-     *
-     * @example
-     * ...
-     *
-     * var ticketId = 123;
-     * var data = {
-     *      user: 456 //The user that will get the ticket
-     * };
-     *
-     * ingresse.apiTickets.createTicketTransfer(ticketId, data)
-     *     .then(function (response) {
-     *         console.log(response);
-     *     })
-     *     .catch(function (error) {
-     *         console.log(error);
-     *     });
-     *
-     * ...
-     *  // To return the ticket for the last owner
-     *
-     * var ticketId = 123;
-     * var data = {
-     *      isReturn: true //With this option, the ticket will return to last owner.
-     * };
-     *
-     * ingresse.apiTickets.createTicketTransfer(ticketId, data)
-     *     .then(function (response) {
-     *         console.log(response);
-     *     })
-     *     .catch(function (error) {
-     *         console.log(error);
-     *     });
-     */
-    createTicketTransfer(id, data = {}, query = {}) {
-        return this.post(`/ticket/${id}/transfer`, data, query);
+// Class for creating multi inheritance.
+export class Mixin {
+
+    // Inherit method to create base classes.
+    static inherit(..._bases) {
+        class classes {
+
+            // The base classes
+            get base() { return _bases; }
+
+            constructor(..._args) {
+                var index = 0;
+
+                for (let b of this.base)
+                {
+                    let obj = new b(_args[index++]);
+                    Mixin.copy(this, obj);
+                }
+            }
+
+        }
+
+        // Copy over properties and methods
+        for (let base of _bases) {
+            Mixin.copy(classes, base);
+            Mixin.copy(classes.prototype, base.prototype);
+        }
+
+        return classes;
     }
 
-    /**
-     * Update a ticket transfer.
-     *
-     * @param {number} id - The ticket ID to get.
-     * @param {number} transferId - The transfer ID to get.
-     * @param {object} [data]  - The form with transfer data to post.
-     * @param {object} [query] - Optional request parameters.
-     * @returns {Promise}
-     *
-     * @example
-     * ...
-     *
-     * var ticketId = 123;
-     * var transferId = 456;
-     * var data = {
-     *      action: &apos;accept&apos; // can be [accept, cancel, refuse]
-     * };
-     *
-     * ingresse.apiTickets.updateTicketTransfer(ticketId, transferId, data)
-     *     .then(function (response) {
-     *         console.log(response);
-     *     })
-     *     .catch(function (error) {
-     *         console.log(error);
-     *     });
-     */
-    updateTicketTransfer(id, transferId, data = {}, query = {}) {
-        return this.post(`/ticket/${id}/transfer/${transferId}`, data, query);
-    }
-
-    /**
-     * Get the ticket transfer history.
-     *
-     * @param {string|number} id - The ticket ID to get.
-     * @param {object} [query]   - Optional request parameters.
-     * @returns {Promise}
-     */
-    getTicketTransferHistory(id, query = {}) {
-        return this.get(`/ticket/${id}/transfer`, query);
+    // Copies the properties from one class to another
+    static copy(_target, _source) {
+        for (let key of Reflect.ownKeys(_source)) {
+            if (key !== &apos;constructor&apos; &amp;&amp; key !== &apos;prototype&apos; &amp;&amp; key !== &apos;name&apos;) {
+                let desc = Object.getOwnPropertyDescriptor(_source, key);
+                Object.defineProperty(_target, key, desc);
+            }
+        }
     }
 }
-
 </code></pre>
 
 </div>

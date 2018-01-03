@@ -1,7 +1,7 @@
 {
-  "coverage": "81.91%",
-  "expectCount": 94,
-  "actualCount": 77,
+  "coverage": "81.25%",
+  "expectCount": 96,
+  "actualCount": 78,
   "files": {
     "src/apis/api.js": {
       "expectCount": 3,
@@ -16,8 +16,8 @@
       "undocumentLines": []
     },
     "src/apis/api.event.js": {
-      "expectCount": 8,
-      "actualCount": 8,
+      "expectCount": 9,
+      "actualCount": 9,
       "undocumentLines": []
     },
     "src/apis/api.recover.js": {
@@ -67,6 +67,15 @@
         5
       ]
     },
+    "src/helper/mixin.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        4,
+        35,
+        7
+      ]
+    },
     "src/request/handler.js": {
       "expectCount": 10,
       "actualCount": 8,
@@ -100,14 +109,6 @@
       "expectCount": 2,
       "actualCount": 2,
       "undocumentLines": []
-    },
-    "src/helper/mix.js": {
-      "expectCount": 2,
-      "actualCount": 0,
-      "undocumentLines": [
-        13,
-        2
-      ]
     },
     "src/helper/index.js": {
       "expectCount": 1,

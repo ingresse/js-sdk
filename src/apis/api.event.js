@@ -27,6 +27,18 @@ export class ApiEvents extends RequestHandler {
     }
 
     /**
+     * Get event session tickets
+     *
+     * @param {string|number} id        - The event ID to get.
+     * @param {string|number} sessionId - The event session ID to get.
+     * @param {object} [query]          - Optional request parameters.
+     * @returns {Promise}
+     */
+    getEventSessionTickets(id, sessionId, query = {}) {
+        return this.get(`/event/${id}/session/${sessionId}/tickets`, query);
+    }
+
+    /**
      * Get event crew
      *
      * @param {string|number} id - The event ID to get.
