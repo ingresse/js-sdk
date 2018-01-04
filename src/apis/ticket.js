@@ -381,7 +381,7 @@ export class Ticket extends RequestHandler {
      *     });
      */
     getTax(query = {}) {
-        return this.get(`/tax`, query);
+        return this.get('/tax', query);
     }
 }
 
