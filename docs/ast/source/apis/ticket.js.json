@@ -1,7 +1,7 @@
 {
   "type": "File",
   "start": 0,
-  "end": 10342,
+  "end": 10389,
   "loc": {
     "start": {
       "line": 1,
@@ -15,7 +15,7 @@
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 10342,
+    "end": 10389,
     "loc": {
       "start": {
         "line": 1,
@@ -221,7 +221,7 @@
       {
         "type": "ExportNamedDeclaration",
         "start": 357,
-        "end": 10340,
+        "end": 10387,
         "loc": {
           "start": {
             "line": 17,
@@ -237,7 +237,7 @@
         "declaration": {
           "type": "ClassDeclaration",
           "start": 364,
-          "end": 10340,
+          "end": 10387,
           "loc": {
             "start": {
               "line": 17,
@@ -286,7 +286,7 @@
           "body": {
             "type": "ClassBody",
             "start": 400,
-            "end": 10340,
+            "end": 10387,
             "loc": {
               "start": {
                 "line": 17,
@@ -5243,9 +5243,9 @@
                 "trailingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n     * Get the tax calculated\n     *\n     * @param {Object} query - The request parameters.\n     * @param {Number} [query.producerId] - The producer id.\n     * @param {Number} [query.eventId] - The event id.\n     * @param {Number} [query.price] - The ticket's price in cents.\n     * @param {Number} [query.taxDistribution] - The tax payed by customer (in percent).\n     * @param {Number} [query.tax] - The custom tax in cents.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * var query = {\n     *  eventId: 123,\n     *  taxDistribution: 50\n     * };\n     *\n     * ingresse.ticket.getTax(query)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     ",
+                    "value": "*\n     * Get the tax calculated\n     *\n     * @param {Object} query - The request parameters.\n     * @param {Number} [query.producerId] - The producer id.\n     * @param {Number} [query.eventId] - The event id.\n     * @param {Number} [query.price] - The ticket's price in cents.\n     * @param {Number} [query.taxDistribution] - The tax payed by customer (in percent).\n     * @param {Number} [query.tax] - The custom tax in cents.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * var query = {\n     *  eventId: 123, // must be informed one eventId or producerId.\n     *  taxDistribution: 50\n     * };\n     *\n     * ingresse.ticket.getTax(query)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     ",
                     "start": 9459,
-                    "end": 10267,
+                    "end": 10314,
                     "loc": {
                       "start": {
                         "line": 356,
@@ -5261,8 +5261,8 @@
               },
               {
                 "type": "ClassMethod",
-                "start": 10272,
-                "end": 10338,
+                "start": 10319,
+                "end": 10385,
                 "loc": {
                   "start": {
                     "line": 383,
@@ -5276,8 +5276,8 @@
                 "computed": false,
                 "key": {
                   "type": "Identifier",
-                  "start": 10272,
-                  "end": 10278,
+                  "start": 10319,
+                  "end": 10325,
                   "loc": {
                     "start": {
                       "line": 383,
@@ -5301,8 +5301,8 @@
                 "params": [
                   {
                     "type": "AssignmentPattern",
-                    "start": 10279,
-                    "end": 10289,
+                    "start": 10326,
+                    "end": 10336,
                     "loc": {
                       "start": {
                         "line": 383,
@@ -5315,8 +5315,8 @@
                     },
                     "left": {
                       "type": "Identifier",
-                      "start": 10279,
-                      "end": 10284,
+                      "start": 10326,
+                      "end": 10331,
                       "loc": {
                         "start": {
                           "line": 383,
@@ -5332,8 +5332,8 @@
                     },
                     "right": {
                       "type": "ObjectExpression",
-                      "start": 10287,
-                      "end": 10289,
+                      "start": 10334,
+                      "end": 10336,
                       "loc": {
                         "start": {
                           "line": 383,
@@ -5350,8 +5350,8 @@
                 ],
                 "body": {
                   "type": "BlockStatement",
-                  "start": 10291,
-                  "end": 10338,
+                  "start": 10338,
+                  "end": 10385,
                   "loc": {
                     "start": {
                       "line": 383,
@@ -5365,8 +5365,8 @@
                   "body": [
                     {
                       "type": "ReturnStatement",
-                      "start": 10301,
-                      "end": 10332,
+                      "start": 10348,
+                      "end": 10379,
                       "loc": {
                         "start": {
                           "line": 384,
@@ -5379,8 +5379,8 @@
                       },
                       "argument": {
                         "type": "CallExpression",
-                        "start": 10308,
-                        "end": 10331,
+                        "start": 10355,
+                        "end": 10378,
                         "loc": {
                           "start": {
                             "line": 384,
@@ -5393,8 +5393,8 @@
                         },
                         "callee": {
                           "type": "MemberExpression",
-                          "start": 10308,
-                          "end": 10316,
+                          "start": 10355,
+                          "end": 10363,
                           "loc": {
                             "start": {
                               "line": 384,
@@ -5407,8 +5407,8 @@
                           },
                           "object": {
                             "type": "ThisExpression",
-                            "start": 10308,
-                            "end": 10312,
+                            "start": 10355,
+                            "end": 10359,
                             "loc": {
                               "start": {
                                 "line": 384,
@@ -5422,8 +5422,8 @@
                           },
                           "property": {
                             "type": "Identifier",
-                            "start": 10313,
-                            "end": 10316,
+                            "start": 10360,
+                            "end": 10363,
                             "loc": {
                               "start": {
                                 "line": 384,
@@ -5442,8 +5442,8 @@
                         "arguments": [
                           {
                             "type": "StringLiteral",
-                            "start": 10317,
-                            "end": 10323,
+                            "start": 10364,
+                            "end": 10370,
                             "loc": {
                               "start": {
                                 "line": 384,
@@ -5462,8 +5462,8 @@
                           },
                           {
                             "type": "Identifier",
-                            "start": 10325,
-                            "end": 10330,
+                            "start": 10372,
+                            "end": 10377,
                             "loc": {
                               "start": {
                                 "line": 384,
@@ -5486,9 +5486,9 @@
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n     * Get the tax calculated\n     *\n     * @param {Object} query - The request parameters.\n     * @param {Number} [query.producerId] - The producer id.\n     * @param {Number} [query.eventId] - The event id.\n     * @param {Number} [query.price] - The ticket's price in cents.\n     * @param {Number} [query.taxDistribution] - The tax payed by customer (in percent).\n     * @param {Number} [query.tax] - The custom tax in cents.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * var query = {\n     *  eventId: 123,\n     *  taxDistribution: 50\n     * };\n     *\n     * ingresse.ticket.getTax(query)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     ",
+                    "value": "*\n     * Get the tax calculated\n     *\n     * @param {Object} query - The request parameters.\n     * @param {Number} [query.producerId] - The producer id.\n     * @param {Number} [query.eventId] - The event id.\n     * @param {Number} [query.price] - The ticket's price in cents.\n     * @param {Number} [query.taxDistribution] - The tax payed by customer (in percent).\n     * @param {Number} [query.tax] - The custom tax in cents.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * var query = {\n     *  eventId: 123, // must be informed one eventId or producerId.\n     *  taxDistribution: 50\n     * };\n     *\n     * ingresse.ticket.getTax(query)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     ",
                     "start": 9459,
-                    "end": 10267,
+                    "end": 10314,
                     "loc": {
                       "start": {
                         "line": 356,
@@ -5789,9 +5789,9 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n     * Get the tax calculated\n     *\n     * @param {Object} query - The request parameters.\n     * @param {Number} [query.producerId] - The producer id.\n     * @param {Number} [query.eventId] - The event id.\n     * @param {Number} [query.price] - The ticket's price in cents.\n     * @param {Number} [query.taxDistribution] - The tax payed by customer (in percent).\n     * @param {Number} [query.tax] - The custom tax in cents.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * var query = {\n     *  eventId: 123,\n     *  taxDistribution: 50\n     * };\n     *\n     * ingresse.ticket.getTax(query)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     ",
+      "value": "*\n     * Get the tax calculated\n     *\n     * @param {Object} query - The request parameters.\n     * @param {Number} [query.producerId] - The producer id.\n     * @param {Number} [query.eventId] - The event id.\n     * @param {Number} [query.price] - The ticket's price in cents.\n     * @param {Number} [query.taxDistribution] - The tax payed by customer (in percent).\n     * @param {Number} [query.tax] - The custom tax in cents.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * var query = {\n     *  eventId: 123, // must be informed one eventId or producerId.\n     *  taxDistribution: 50\n     * };\n     *\n     * ingresse.ticket.getTax(query)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     ",
       "start": 9459,
-      "end": 10267,
+      "end": 10314,
       "loc": {
         "start": {
           "line": 356,
@@ -16814,9 +16814,9 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n     * Get the tax calculated\n     *\n     * @param {Object} query - The request parameters.\n     * @param {Number} [query.producerId] - The producer id.\n     * @param {Number} [query.eventId] - The event id.\n     * @param {Number} [query.price] - The ticket's price in cents.\n     * @param {Number} [query.taxDistribution] - The tax payed by customer (in percent).\n     * @param {Number} [query.tax] - The custom tax in cents.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * var query = {\n     *  eventId: 123,\n     *  taxDistribution: 50\n     * };\n     *\n     * ingresse.ticket.getTax(query)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     ",
+      "value": "*\n     * Get the tax calculated\n     *\n     * @param {Object} query - The request parameters.\n     * @param {Number} [query.producerId] - The producer id.\n     * @param {Number} [query.eventId] - The event id.\n     * @param {Number} [query.price] - The ticket's price in cents.\n     * @param {Number} [query.taxDistribution] - The tax payed by customer (in percent).\n     * @param {Number} [query.tax] - The custom tax in cents.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * var query = {\n     *  eventId: 123, // must be informed one eventId or producerId.\n     *  taxDistribution: 50\n     * };\n     *\n     * ingresse.ticket.getTax(query)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     ",
       "start": 9459,
-      "end": 10267,
+      "end": 10314,
       "loc": {
         "start": {
           "line": 356,
@@ -16841,8 +16841,8 @@
         "binop": null
       },
       "value": "getTax",
-      "start": 10272,
-      "end": 10278,
+      "start": 10319,
+      "end": 10325,
       "loc": {
         "start": {
           "line": 383,
@@ -16866,8 +16866,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 10278,
-      "end": 10279,
+      "start": 10325,
+      "end": 10326,
       "loc": {
         "start": {
           "line": 383,
@@ -16892,8 +16892,8 @@
         "binop": null
       },
       "value": "query",
-      "start": 10279,
-      "end": 10284,
+      "start": 10326,
+      "end": 10331,
       "loc": {
         "start": {
           "line": 383,
@@ -16919,8 +16919,8 @@
         "updateContext": null
       },
       "value": "=",
-      "start": 10285,
-      "end": 10286,
+      "start": 10332,
+      "end": 10333,
       "loc": {
         "start": {
           "line": 383,
@@ -16944,8 +16944,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 10287,
-      "end": 10288,
+      "start": 10334,
+      "end": 10335,
       "loc": {
         "start": {
           "line": 383,
@@ -16969,8 +16969,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 10288,
-      "end": 10289,
+      "start": 10335,
+      "end": 10336,
       "loc": {
         "start": {
           "line": 383,
@@ -16994,8 +16994,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 10289,
-      "end": 10290,
+      "start": 10336,
+      "end": 10337,
       "loc": {
         "start": {
           "line": 383,
@@ -17019,8 +17019,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 10291,
-      "end": 10292,
+      "start": 10338,
+      "end": 10339,
       "loc": {
         "start": {
           "line": 383,
@@ -17047,8 +17047,8 @@
         "updateContext": null
       },
       "value": "return",
-      "start": 10301,
-      "end": 10307,
+      "start": 10348,
+      "end": 10354,
       "loc": {
         "start": {
           "line": 384,
@@ -17075,8 +17075,8 @@
         "updateContext": null
       },
       "value": "this",
-      "start": 10308,
-      "end": 10312,
+      "start": 10355,
+      "end": 10359,
       "loc": {
         "start": {
           "line": 384,
@@ -17101,8 +17101,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 10312,
-      "end": 10313,
+      "start": 10359,
+      "end": 10360,
       "loc": {
         "start": {
           "line": 384,
@@ -17127,8 +17127,8 @@
         "binop": null
       },
       "value": "get",
-      "start": 10313,
-      "end": 10316,
+      "start": 10360,
+      "end": 10363,
       "loc": {
         "start": {
           "line": 384,
@@ -17152,8 +17152,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 10316,
-      "end": 10317,
+      "start": 10363,
+      "end": 10364,
       "loc": {
         "start": {
           "line": 384,
@@ -17179,8 +17179,8 @@
         "updateContext": null
       },
       "value": "/tax",
-      "start": 10317,
-      "end": 10323,
+      "start": 10364,
+      "end": 10370,
       "loc": {
         "start": {
           "line": 384,
@@ -17205,8 +17205,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 10323,
-      "end": 10324,
+      "start": 10370,
+      "end": 10371,
       "loc": {
         "start": {
           "line": 384,
@@ -17231,8 +17231,8 @@
         "binop": null
       },
       "value": "query",
-      "start": 10325,
-      "end": 10330,
+      "start": 10372,
+      "end": 10377,
       "loc": {
         "start": {
           "line": 384,
@@ -17256,8 +17256,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 10330,
-      "end": 10331,
+      "start": 10377,
+      "end": 10378,
       "loc": {
         "start": {
           "line": 384,
@@ -17282,8 +17282,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 10331,
-      "end": 10332,
+      "start": 10378,
+      "end": 10379,
       "loc": {
         "start": {
           "line": 384,
@@ -17307,8 +17307,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 10337,
-      "end": 10338,
+      "start": 10384,
+      "end": 10385,
       "loc": {
         "start": {
           "line": 385,
@@ -17332,8 +17332,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 10339,
-      "end": 10340,
+      "start": 10386,
+      "end": 10387,
       "loc": {
         "start": {
           "line": 386,
@@ -17358,8 +17358,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 10342,
-      "end": 10342,
+      "start": 10389,
+      "end": 10389,
       "loc": {
         "start": {
           "line": 388,
