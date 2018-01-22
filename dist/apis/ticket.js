@@ -432,6 +432,42 @@ var Ticket = exports.Ticket = function (_RequestHandler) {
 
             return this.get('/items/' + id + '/triggers', query);
         }
+
+        /**
+         * Get the tax calculated
+         *
+         * @param {Object} query - The request parameters.
+         * @param {Number} [query.producerId] - The producer id.
+         * @param {Number} [query.eventId] - The event id.
+         * @param {Number} [query.price] - The ticket's price in cents.
+         * @param {Number} [query.taxDistribution] - The tax payed by customer (in percent).
+         * @param {Number} [query.tax] - The custom tax in cents.
+         * @returns {Promise}
+         *
+         * @example
+         * ...
+         *
+         * var query = {
+         *  eventId: 123, // must be informed one eventId or producerId.
+         *  taxDistribution: 50
+         * };
+         *
+         * ingresse.ticket.getTax(query)
+         *     .then(function (response) {
+         *         console.log(response);
+         *     })
+         *     .catch(function (error) {
+         *         console.log(error);
+         *     });
+         */
+
+    }, {
+        key: 'getTax',
+        value: function getTax() {
+            var query = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+            return this.get('/tax', query);
+        }
     }]);
 
     return Ticket;

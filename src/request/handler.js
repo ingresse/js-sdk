@@ -53,11 +53,7 @@ export class RequestHandler {
      * @returns {Promise}
      */
     request(options = {}) {
-        let request = {
-            headers: {
-                'User-Agent': 'Ingresse JS SDK',
-            },
-        };
+        let request = {};
 
         request = deepMerge(request, options);
 
