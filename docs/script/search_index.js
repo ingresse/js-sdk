@@ -708,6 +708,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/apis/ticket.js~ticket#gettax",
+    "class/src/apis/ticket.js~Ticket.html#instance-method-getTax",
+    "src/apis/ticket.js~Ticket#getTax",
+    "method"
+  ],
+  [
     "src/apis/ticket.js~ticket#gettriggers",
     "class/src/apis/ticket.js~Ticket.html#instance-method-getTriggers",
     "src/apis/ticket.js~Ticket#getTriggers",
