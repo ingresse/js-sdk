@@ -448,7 +448,7 @@ var Ticket = exports.Ticket = function (_RequestHandler) {
          * ...
          *
          * var query = {
-         *  eventId: 123,
+         *  eventId: 123, // must be informed one eventId or producerId.
          *  taxDistribution: 50
          * };
          *

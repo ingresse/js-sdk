@@ -85,11 +85,7 @@ var RequestHandler = exports.RequestHandler = function () {
         value: function request() {
             var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
-            var request = {
-                headers: {
-                    'User-Agent': 'Ingresse JS SDK'
-                }
-            };
+            var request = {};
 
             request = (0, _helper.deepMerge)(request, options);
 
