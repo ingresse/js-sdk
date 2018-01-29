@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../">
-  <title data-ice="title">src/apis/ticket.js | Ingresse JS SDK API Document</title>
+  <title data-ice="title">src/apis/event.js | Ingresse JS SDK API Document</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -55,32 +55,32 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/apis/ticket.js</h1>
+<div class="content" data-ice="content"><h1 data-ice="title">src/apis/event.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {RequestHandler} from &apos;../request/handler&apos;;
 import {auth} from &apos;../auth&apos;;
 
 /**
- * Ingresse Ticket&apos;s API
+ * Ingresse Event&apos;s API
  *
- * API to get, create, update or remove tickets.
+ * API to get, create and update events.
  *
  * @example
- * var Sdk = require(&apos;ingresse-sdk&apos;);
+ * var sdk = require(&apos;ingresse-sdk&apos;);
  * var ingresse = new Sdk();
  *
  * // You will have access to this API
  * // after instantiate the Sdk.
- * var ticket = ingresse.ticket;
+ * var event = ingresse.event;
  */
-export class Ticket extends RequestHandler {
+export class Event extends RequestHandler {
     /**
-     * Ticket Api
+     * Event Api
      *
-     * @param {object} [custom={}] - Initialize Ticket Api settings.
+     * @param {object} [custom={}] - Initialize Event Api settings.
      */
     constructor(custom = {}) {
         let settings = {
-            url : &apos;https://ticket.ingresse.com&apos;,
+            url : &apos;https://event.ingresse.com&apos;,
             auth: auth.Jwt.type(),
         };
 
@@ -91,7 +91,201 @@ export class Ticket extends RequestHandler {
     }
 
     /**
-     * Get a list of ticket types
+     * Get event by ID
+     *
+     * @param {number} id      - The event ID to get.
+     * @param {object} [query] - Optional request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.getById(200)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    getById(id, query = {}) {
+        return this.get(`/${id}`, query);
+    }
+
+    /**
+     * Get event attributes
+     *
+     * @param {number} id      - The event ID to get.
+     * @param {object} [query] - Optional request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.getAttributes(20866)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    getAttributes(id, query = {}) {
+        return this.get(`/${id}/attributes`, query);
+    }
+
+    /**
+     * Create new Event
+     *
+     * @param {object} data    - Data to create a new event.
+     * @param {object} [query] - Optional request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.create({ name: &apos;My Event Name&apos; })
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    create(data = {}, query = {}) {
+        return this.post(&apos;/&apos;, data, query);
+    }
+
+    /**
+     * Update an Event
+     *
+     * @param {string|number} id - The Event ID to update.
+     * @param {object} data      - Data to update Event.
+     * @param {object} [query]   - Optional request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.update(200, { name: &apos;My Updated Event Name&apos; })
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    update(id, data = {}, query = {}) {
+        return this.put(`/${id}`, data, query);
+    }
+
+    /**
+     * Update an Event Poster
+     *
+     * @param {string|number} id - The Event ID to update.
+     * @param {object} data      - Data to update event poster.
+     * @param {object} [query]   - Optional request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.updatePoster(12, {
+     *          poster: {
+     *              format: &apos;base64&apos;,
+     *              image : &apos;data:image/jpeg;base64 8aAVdagg87h87t8q...&apos;,
+     *          }
+     *     })
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    updatePoster(id, data = {}, query = {}) {
+        return this.put(`/${id}/poster`, data, query);
+    }
+
+    /**
+     * Delete Event Poster
+     *
+     * @param {string|number} id - The Event ID to delete poster.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.deletePoster(12)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    deletePoster(id, query = {}) {
+        return this.delete(`/${id}/poster`, query);
+    }
+
+    /**
+     * Update Event Attributes
+     *
+     * @param {string|number} id - The Event ID to update.
+     * @param {object} data      - Data to update event attributes.
+     * @param {object} [query]   - Optional request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.updateAttributes(12, {
+     *          attributes: [
+     *              {
+     *                  name : &apos;video_url&apos;,
+     *                  value: &apos;https://www.youtube.com/watch?v=hRGnjgBOHIk&apos;,
+     *              }
+     *          ]
+     *     })
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    updateAttributes(id, data = {}, query = {}) {
+        return this.put(`/${id}/attributes`, data, query);
+    }
+
+    /**
+     * Validate if slug is available to use in an Event.
+     *
+     * This method will return a `Promise` so you can use
+     * `.then` and `.catch` methods.
+     *
+     * @param {string} term    - The slug term to check.
+     * @param {object} [query] - Optional request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.validateSlug(&apos;my-event-slug&apos;)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    validateSlug(term, query = {}) {
+        return this.get(`/slugs/${term}`, query);
+    }
+
+    /**
+     * Get all Events Categories
+     *
      * This method will return a `Promise` so you can use
      * `.then` and `.catch` methods.
      *
@@ -101,7 +295,7 @@ export class Ticket extends RequestHandler {
      * @example
      * ...
      *
-     * ingresse.ticket.getTypes()
+     * ingresse.event.getCategories()
      *     .then(function (response) {
      *         console.log(response);
      *     })
@@ -109,44 +303,21 @@ export class Ticket extends RequestHandler {
      *         console.log(error);
      *     });
      */
-    getTypes(query = {}) {
-        return this.get(&apos;/types&apos;, query);
+    getCategories(query = {}) {
+        return this.get(&apos;/categories&apos;, query);
     }
 
     /**
-     * Get a list of ticket items
-     * This method will return a `Promise` so you can use
-     * `.then` and `.catch` methdos.
+     * Get Event Category by ID
      *
-     * @param {object} [query] - Optional request parameters.
-     * @returns {Promise}
-     *
-     * @example
-     * ...
-     *
-     * ingresse.ticket.getItems()
-     *     .then(function (response) {
-     *         console.log(response);
-     *     })
-     *     .catch(function (error) {
-     *         console.log(error);
-     *     });
-     */
-    getItems(query = {}) {
-        return this.get(&apos;/items&apos;, query);
-    }
-
-    /**
-     * Get item by ID
-     *
-     * @param {string|number} id - The item ID to get.
+     * @param {string|number} id - The Category ID to get.
      * @param {object} [query]   - Optional request parameters.
      * @returns {Promise}
      *
      * @example
      * ...
      *
-     * ingresse.ticket.getItem(200)
+     * ingresse.event.getCategory(12)
      *     .then(function (response) {
      *         console.log(response);
      *     })
@@ -154,21 +325,22 @@ export class Ticket extends RequestHandler {
      *         console.log(error);
      *     });
      */
-    getItem(id, query = {}) {
-        return this.get(`/items/${id}`, query);
+    getCategory(id, query = {}) {
+        return this.get(`/categories/${id}`, query);
     }
 
     /**
-     * Create new Ticket item
+     * Remove Category from specific Event
      *
-     * @param {object} data    - Data to create a new ticket item.
-     * @param {object} [query] - Optional request parameters.
+     * @param {string|number} eventId    - The Event ID to remove category.
+     * @param {string|number} categoryId - The Category ID to remove.
+     * @param {object} [query]           - Optional request parameters.
      * @returns {Promise}
      *
      * @example
      * ...
      *
-     * ingresse.ticket.newItem({ name: &apos;My Ticket Name&apos; })
+     * ingresse.event.deleteCategory(123, 321)
      *     .then(function (response) {
      *         console.log(response);
      *     })
@@ -176,22 +348,22 @@ export class Ticket extends RequestHandler {
      *         console.log(error);
      *     });
      */
-    newItem(data = {}, query = {}) {
-        return this.post(&apos;/items&apos;, data, query);
+    deleteCategory(eventId, categoryId, query = {}) {
+        return this.delete(`/${eventId}/category/${categoryId}`, query);
     }
 
     /**
-     * Update a ticket item
+     * Remove an Event Session
      *
-     * @param {string|number} id - The item ID to update.
-     * @param {object} data      - Data to update item.
-     * @param {object} [query]   - Optional request parameters.
+     * @param {string|number} eventId   - The Event ID to remove session.
+     * @param {string|number} sessionId - The Session ID to remove.
+     * @param {object} [query]          - Optional request parameters.
      * @returns {Promise}
      *
      * @example
      * ...
      *
-     * ingresse.ticket.updateItem(200, { name: &apos;My Updated Ticket Name&apos; })
+     * ingresse.event.deleteSession(123, 321)
      *     .then(function (response) {
      *         console.log(response);
      *     })
@@ -199,250 +371,10 @@ export class Ticket extends RequestHandler {
      *         console.log(error);
      *     });
      */
-    updateItem(id, data = {}, query = {}) {
-        return this.put(`/items/${id}`, data, query);
-    }
-
-    /**
-     * Remove a ticket item
-     *
-     * @param {string|number} id - The item ID to remove.
-     * @param {object} [query]   - Optional request parameters.
-     * @returns {Promise}
-     *
-     * @example
-     * ...
-     *
-     * ingresse.ticket.removeItem(200)
-     *     .then(function (response) {
-     *         console.log(response);
-     *     })
-     *     .catch(function (error) {
-     *         console.log(error);
-     *     });
-     */
-    removeItem(id, query = {}) {
-        return this.put(`/items/${id}`, query);
-    }
-
-    /**
-     * Create new ticket attribute
-     *
-     * @param {number} id        - The item ID to create attribute.
-     * @param {object} attribute - The attribute data.
-     * @param {object} [query]   - Optional request parameters.
-     *
-     * @returns Promise
-     *
-     * @example
-     * ...
-     *
-     * ingresse.ticket.newAttribute(200, { key: &apos;min&apos;, value: &apos;1&apos;, type: &apos;integer&apos; })
-     *     .then(function (response) {
-     *         console.log(response);
-     *     })
-     *     .catch(function (error) {
-     *         console.log(error);
-     *     });
-     */
-    newAttribute(id, attribute, query) {
-        return this.post(`/items/${id}/attributes`, attribute, query);
-    }
-
-    /**
-     * Updated ticket attribute
-     *
-     * @param {number} id          - The item ID to update attribute.
-     * @param {object} attribute   - The attribute data.
-     * @param {object} [query]     - Optional request parameters.
-     *
-     * @returns Promise
-     *
-     * @example
-     * ...
-     *
-     * ingresse.ticket.updateAttribute(200, { key: &apos;minimum&apos;, value: 5, type: &apos;integer&apos; })
-     *     .then(function (response) {
-     *         console.log(response);
-     *     })
-     *     .catch(function (error) {
-     *         console.log(error);
-     *     });
-     */
-    updateAttribute(id, attribute, query) {
-        return this.put(`/items/${id}/attributes`, attribute, query);
-    }
-
-    /**
-     * Create new sale period to ticket
-     *
-     * @param {number} id         - The item ID to create sale period.
-     * @param {object} salePeriod - The sale period data.
-     * @param {object} [query]    - Optional request parameters.
-     *
-     * @returns Promise
-     *
-     * @example
-     * ...
-     *
-     * ingresse.ticket.newSalePeriod({
-     *          appCategoryId: 1,
-     *          start: &apos;2016-10-10 20:20:00&apos;,
-     *          finish: &apos;2016-11-10 20:20:00&apos;,
-     *          available: 1
-     *      })
-     *     .then(function (response) {
-     *         console.log(response);
-     *     })
-     *     .catch(function (error) {
-     *         console.log(error);
-     *     });
-     */
-    newSalePeriod(id, salePeriod, query) {
-        return this.post(`/items/${id}/sales-period`, salePeriod, query);
-    }
-
-    /**
-     * Updated ticket sale period
-     *
-     * @param {number} id         - The item ID to update the sale period.
-     * @param {object} salePeriod - The salePeriod data.
-     * @param {object} [query]    - Optional request parameters.
-     *
-     * @returns Promise
-     *
-     * @example
-     * ...
-     *
-     * ingresse.ticket.updateSalePeriod(200, {
-     *          appCategoryId: 1,
-     *          start: &apos;2016-11-20 10:10:00&apos;,
-     *          finish: &apos;2016-12-20 10:10:00&apos;,
-     *          available: 1
-     *      })
-     *     .then(function (response) {
-     *         console.log(response);
-     *     })
-     *     .catch(function (error) {
-     *         console.log(error);
-     *     });
-     */
-    updateSalePeriod(id, salePeriod, query) {
-        return this.put(`/items/${id}/sales-period`, salePeriod, query);
-    }
-
-    /**
-     * Create new values to ticket
-     *
-     * @param {number} id      - The item ID to create values.
-     * @param {object} values  - The values data.
-     * @param {object} [query] - Optional request parameters.
-     *
-     * @returns Promise
-     *
-     * @example
-     * ...
-     *
-     * ingresse.ticket.newValues({
-     *          price: 10000,
-     *          feeSale: 500,
-     *          feeProducer: 500
-     *      })
-     *     .then(function (response) {
-     *         console.log(response);
-     *     })
-     *     .catch(function (error) {
-     *         console.log(error);
-     *     });
-     */
-    newValues(id, values, query) {
-        return this.post(`/items/${id}/values`, values, query);
-    }
-
-    /**
-     * Updated ticket values
-     *
-     * @param {number} id      - The item ID to update values.
-     * @param {object} values  - The values data.
-     * @param {object} [query] - Optional request parameters.
-     *
-     * @returns Promise
-     *
-     * @example
-     * ...
-     *
-     * ingresse.ticket.updateValues(200, {
-     *          price: 20000,
-     *          feeSale: 1000,
-     *          feeProducer: 1000
-     *      })
-     *     .then(function (response) {
-     *         console.log(response);
-     *     })
-     *     .catch(function (error) {
-     *         console.log(error);
-     *     });
-     */
-    updateValues(id, values, query) {
-        return this.put(`/items/${id}/values`, values, query);
-    }
-
-    /**
-     * Get a list of triggers
-     * This method will return a `Promise` so you can use
-     * `.then` and `.catch` methods.
-     *
-     * @param {number} id      - The item ID to get the triggers.
-     * @param {object} [query] - Optional request parameters.
-     * @returns {Promise}
-     *
-     * @example
-     * ...
-     *
-     * ingresse.ticket.getTriggers(10000040)
-     *     .then(function (response) {
-     *         console.log(response);
-     *     })
-     *     .catch(function (error) {
-     *         console.log(error);
-     *     });
-     */
-    getTriggers(id, query = {}) {
-        return this.get(`/items/${id}/triggers`, query);
-    }
-
-    /**
-     * Get the tax calculated
-     *
-     * @param {Object} query - The request parameters.
-     * @param {Number} [query.producerId] - The producer id.
-     * @param {Number} [query.eventId] - The event id.
-     * @param {Number} [query.price] - The ticket&apos;s price in cents.
-     * @param {Number} [query.taxDistribution] - The tax payed by customer (in percent).
-     * @param {Number} [query.tax] - The custom tax in cents.
-     * @returns {Promise}
-     *
-     * @example
-     * ...
-     *
-     * var query = {
-     *  eventId: 123, // must be informed one eventId or producerId.
-     *  taxDistribution: 50
-     * };
-     *
-     * ingresse.ticket.getTax(query)
-     *     .then(function (response) {
-     *         console.log(response);
-     *     })
-     *     .catch(function (error) {
-     *         console.log(error);
-     *     });
-     */
-    getTax(query = {}) {
-        return this.get(&apos;/tax&apos;, query);
+    deleteSession(eventId, sessionId, query = {}) {
+        return this.delete(`/${eventId}/sessions/${sessionId}`, query);
     }
 }
-
 </code></pre>
 
 </div>

@@ -44,7 +44,7 @@ var Ticket = exports.Ticket = function (_RequestHandler) {
         _classCallCheck(this, Ticket);
 
         var settings = {
-            url: 'https://api.ingresse.com/ticket',
+            url: 'https://ticket.ingresse.com',
             auth: _auth.auth.Jwt.type()
         };
 

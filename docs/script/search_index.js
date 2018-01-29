@@ -48,6 +48,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ingresse-sdk/src/apis/event.js~event",
+    "class/src/apis/event.js~Event.html",
+    "<span>Event</span> <span class=\"search-result-import-path\">ingresse-sdk/src/apis/event.js</span>",
+    "class"
+  ],
+  [
     "ingresse-sdk/src/auth/ingresse.js~ingresse",
     "class/src/auth/ingresse.js~Ingresse.html",
     "<span>Ingresse</span> <span class=\"search-result-import-path\">ingresse-sdk/src/auth/ingresse.js</span>",
@@ -675,6 +681,96 @@ window.esdocSearchIndex = [
     "src/apis/api.user.js~apiuser#savecredentials",
     "class/src/apis/api.user.js~ApiUser.html#instance-method-saveCredentials",
     "src/apis/api.user.js~ApiUser#saveCredentials",
+    "method"
+  ],
+  [
+    "src/apis/event.js",
+    "file/src/apis/event.js.html",
+    "src/apis/event.js",
+    "file"
+  ],
+  [
+    "src/apis/event.js~event#constructor",
+    "class/src/apis/event.js~Event.html#instance-constructor-constructor",
+    "src/apis/event.js~Event#constructor",
+    "method"
+  ],
+  [
+    "src/apis/event.js~event#create",
+    "class/src/apis/event.js~Event.html#instance-method-create",
+    "src/apis/event.js~Event#create",
+    "method"
+  ],
+  [
+    "src/apis/event.js~event#deletecategory",
+    "class/src/apis/event.js~Event.html#instance-method-deleteCategory",
+    "src/apis/event.js~Event#deleteCategory",
+    "method"
+  ],
+  [
+    "src/apis/event.js~event#deleteposter",
+    "class/src/apis/event.js~Event.html#instance-method-deletePoster",
+    "src/apis/event.js~Event#deletePoster",
+    "method"
+  ],
+  [
+    "src/apis/event.js~event#deletesession",
+    "class/src/apis/event.js~Event.html#instance-method-deleteSession",
+    "src/apis/event.js~Event#deleteSession",
+    "method"
+  ],
+  [
+    "src/apis/event.js~event#getattributes",
+    "class/src/apis/event.js~Event.html#instance-method-getAttributes",
+    "src/apis/event.js~Event#getAttributes",
+    "method"
+  ],
+  [
+    "src/apis/event.js~event#getbyid",
+    "class/src/apis/event.js~Event.html#instance-method-getById",
+    "src/apis/event.js~Event#getById",
+    "method"
+  ],
+  [
+    "src/apis/event.js~event#getcategories",
+    "class/src/apis/event.js~Event.html#instance-method-getCategories",
+    "src/apis/event.js~Event#getCategories",
+    "method"
+  ],
+  [
+    "src/apis/event.js~event#getcategory",
+    "class/src/apis/event.js~Event.html#instance-method-getCategory",
+    "src/apis/event.js~Event#getCategory",
+    "method"
+  ],
+  [
+    "src/apis/event.js~event#settings",
+    "class/src/apis/event.js~Event.html#instance-member-settings",
+    "src/apis/event.js~Event#settings",
+    "member"
+  ],
+  [
+    "src/apis/event.js~event#update",
+    "class/src/apis/event.js~Event.html#instance-method-update",
+    "src/apis/event.js~Event#update",
+    "method"
+  ],
+  [
+    "src/apis/event.js~event#updateattributes",
+    "class/src/apis/event.js~Event.html#instance-method-updateAttributes",
+    "src/apis/event.js~Event#updateAttributes",
+    "method"
+  ],
+  [
+    "src/apis/event.js~event#updateposter",
+    "class/src/apis/event.js~Event.html#instance-method-updatePoster",
+    "src/apis/event.js~Event#updatePoster",
+    "method"
+  ],
+  [
+    "src/apis/event.js~event#validateslug",
+    "class/src/apis/event.js~Event.html#instance-method-validateSlug",
+    "src/apis/event.js~Event#validateSlug",
     "method"
   ],
   [

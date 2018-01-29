@@ -18,6 +18,7 @@
     "tdd-test": "mocha -w --recursive --compilers js:babel-register"
   },
   "devDependencies": {
+    "babel-cli": "^6.23.0",
     "babel-eslint": "^6.1.2",
     "babel-preset-env": "^1.6.1",
     "babel-register": "^6.23.0",
