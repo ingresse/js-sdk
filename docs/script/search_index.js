@@ -744,6 +744,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/apis/event.js~event#getprivatecategories",
+    "class/src/apis/event.js~Event.html#instance-method-getPrivateCategories",
+    "src/apis/event.js~Event#getPrivateCategories",
+    "method"
+  ],
+  [
     "src/apis/event.js~event#settings",
     "class/src/apis/event.js~Event.html#instance-member-settings",
     "src/apis/event.js~Event#settings",
@@ -889,13 +895,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/auth/authentication.js~authentication#authdata",
-    "class/src/auth/authentication.js~Authentication.html#instance-set-authData",
+    "class/src/auth/authentication.js~Authentication.html#instance-get-authData",
     "src/auth/authentication.js~Authentication#authData",
     "member"
   ],
   [
     "src/auth/authentication.js~authentication#authdata",
-    "class/src/auth/authentication.js~Authentication.html#instance-get-authData",
+    "class/src/auth/authentication.js~Authentication.html#instance-set-authData",
     "src/auth/authentication.js~Authentication#authData",
     "member"
   ],
