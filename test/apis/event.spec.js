@@ -62,6 +62,9 @@ describe('Event API', () => {
         chai.expect(event.getCategories).not.to.be.undefined;
         chai.expect(event.getCategories).to.be.a('function');
 
+        chai.expect(event.getPrivateCategories).not.to.be.undefined;
+        chai.expect(event.getPrivateCategories).to.be.a('function');
+
         chai.expect(event.getCategory).not.to.be.undefined;
         chai.expect(event.getCategory).to.be.a('function');
 
@@ -339,6 +342,28 @@ describe('Event API', () => {
             event.getCategories(query);
 
             chai.expect(event.get).to.have.been.called.with.exactly('/categories', query);
+        });
+    });
+
+    describe('getPrivateCategories', () => {
+        let event;
+        let query = {test: 'test'};
+
+        beforeEach(() => {
+            event = new Event();
+            chai.spy.on(event, 'get');
+        });
+
+        it('should getPrivateCategories call this.get', () => {
+            event.getPrivateCategories();
+
+            chai.expect(event.get).to.have.been.called.with.exactly('/categories/private', {});
+        });
+
+        it('should getPrivateCategories call this.get and accept query argument', () => {
+            event.getPrivateCategories(query);
+
+            chai.expect(event.get).to.have.been.called.with.exactly('/categories/private', query);
         });
     });
 

@@ -324,6 +324,35 @@ var Event = exports.Event = function (_RequestHandler) {
         }
 
         /**
+         * Get all Private Events Categories
+         *
+         * This method will return a `Promise` so you can use
+         * `.then` and `.catch` methods.
+         *
+         * @param {object} [query] - Optional request parameters.
+         * @returns {Promise}
+         *
+         * @example
+         * ...
+         *
+         * ingresse.event.getPrivateCategories()
+         *     .then(function (response) {
+         *         console.log(response);
+         *     })
+         *     .catch(function (error) {
+         *         console.log(error);
+         *     });
+         */
+
+    }, {
+        key: 'getPrivateCategories',
+        value: function getPrivateCategories() {
+            var query = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+            return this.get('/categories/private', query);
+        }
+
+        /**
          * Get Event Category by ID
          *
          * @param {string|number} id - The Category ID to get.
