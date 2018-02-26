@@ -84,7 +84,7 @@ export class Cookie {
         let scookie = decodedCookie.split(';');
 
         for (let i = 0; i < scookie.length; i++) {
-            let c = scookie[0];
+            let c = scookie[i];
 
             while (c.charAt(0) === ' ') {
                 c = c.substring(1);

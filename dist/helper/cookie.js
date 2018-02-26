@@ -113,7 +113,7 @@ var Cookie = exports.Cookie = function () {
             var scookie = decodedCookie.split(';');
 
             for (var i = 0; i < scookie.length; i++) {
-                var c = scookie[0];
+                var c = scookie[i];
 
                 while (c.charAt(0) === ' ') {
                     c = c.substring(1);

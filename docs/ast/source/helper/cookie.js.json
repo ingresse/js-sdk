@@ -3447,7 +3447,7 @@
                                     "name": "scookie"
                                   },
                                   "property": {
-                                    "type": "NumericLiteral",
+                                    "type": "Identifier",
                                     "start": 1992,
                                     "end": 1993,
                                     "loc": {
@@ -3458,13 +3458,10 @@
                                       "end": {
                                         "line": 87,
                                         "column": 29
-                                      }
+                                      },
+                                      "identifierName": "i"
                                     },
-                                    "extra": {
-                                      "rawValue": 0,
-                                      "raw": "0"
-                                    },
-                                    "value": 0
+                                    "name": "i"
                                   },
                                   "computed": true
                                 }
@@ -11017,7 +11014,7 @@
     },
     {
       "type": {
-        "label": "num",
+        "label": "name",
         "beforeExpr": false,
         "startsExpr": true,
         "rightAssociative": false,
@@ -11025,10 +11022,9 @@
         "isAssign": false,
         "prefix": false,
         "postfix": false,
-        "binop": null,
-        "updateContext": null
+        "binop": null
       },
-      "value": 0,
+      "value": "i",
       "start": 1992,
       "end": 1993,
       "loc": {
