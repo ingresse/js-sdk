@@ -83,7 +83,7 @@ export class Cookie {
         let decodedCookie = decodeURIComponent(document.cookie);
         let scookie = decodedCookie.split(';');
 
-        for (let i = 0; i < scookie; i++) {
+        for (let i = 0; i < scookie.length; i++) {
             let c = scookie[0];
 
             while (c.charAt(0) === ' ') {
