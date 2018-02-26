@@ -141,7 +141,7 @@ export class Cookie {
         let decodedCookie = decodeURIComponent(document.cookie);
         let scookie = decodedCookie.split(&apos;;&apos;);
 
-        for (let i = 0; i &lt; scookie; i++) {
+        for (let i = 0; i &lt; scookie.length; i++) {
             let c = scookie[0];
 
             while (c.charAt(0) === &apos; &apos;) {

@@ -1,5 +1,6 @@
 import chai from 'chai';
 import IngresseSdk from '../src/ingresse-sdk';
+import pack from '../package.json';
 
 
 describe('IngresseSdk', () => {
@@ -8,9 +9,9 @@ describe('IngresseSdk', () => {
         chai.expect(sdk).to.be.an.instanceof(IngresseSdk);
     });
 
-    it('should have static method version', () => {
+    it('should have static method version ' + pack.version, () => {
         chai.expect(IngresseSdk.version).to.be.an('function');
-        chai.expect(IngresseSdk.version()).to.equal('1.2.0');
+        chai.expect(IngresseSdk.version()).to.equal(pack.version);
     });
 
     it('should accept custom params for each api', () => {
