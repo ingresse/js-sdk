@@ -17,7 +17,10 @@ describe('API User', () => {
                 userId: 123,
                 token: 'abc',
                 jwt: 'def'
-            }
+            },
+            location: {
+                hostname: 'dev.ingresse.com',
+            },
         };
         chai.spy.on(user, 'get');
         chai.spy.on(user, 'post');
@@ -133,6 +136,27 @@ describe('API User', () => {
 
     describe('saveCredentials', () => {
         it('should call set credentials and call user.cookie.createCookie', () => {
+            let id = 123;
+            let token = 'abc123';
+            let jwt = 'cba321';
+
+            user.saveCredentials(id, token, jwt);
+
+            chai.expect(user.credentials.userId).to.be.equal(id);
+            chai.expect(user.credentials.token).to.be.equal(token);
+            chai.expect(user.credentials.jwt).to.be.equal(jwt);
+
+            chai.expect(user.cookie.createCookie).to.have.been.called.with
+                .exactly('userId', id, 5);
+            chai.expect(user.cookie.createCookie).to.have.been.called.with
+                .exactly('token', token, 5);
+            chai.expect(user.cookie.createCookie).to.have.been.called.with
+                .exactly('jwt', jwt, 5);
+        });
+
+        it('should call set credentials and call user.cookie.createCookie', () => {
+            global.document.location.hostname = 'whitelabel.com';
+
             let id = 123;
             let token = 'abc123';
             let jwt = 'cba321';

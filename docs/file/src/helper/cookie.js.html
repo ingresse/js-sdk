@@ -125,8 +125,16 @@ export class Cookie {
         let date = new Date();
         date.setTime(date.getTime() + (exdays*24*60*60*1000));
         let expires = &apos;expires=&apos; + date.toUTCString();
+        let domain =
+            document.location.hostname.includes(&apos;.ingresse.com&apos;) ?
+                &apos;.ingresse.com&apos; : document.location.hostname;
 
-        document.cookie = cname + &apos;=&apos; + cvalue + &apos;;&apos; + expires + &apos;;path=/&apos;;
+        document.cookie =
+            cname + &apos;=&apos; + cvalue + &apos;;&apos; +
+            expires + &apos;;&apos; +
+            &apos;domain=&apos; + domain + &apos;;&apos; +
+            &apos;path=/&apos;
+        ;
     }
 
     /**
