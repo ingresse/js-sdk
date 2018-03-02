@@ -93,8 +93,9 @@ var Cookie = exports.Cookie = function () {
             var date = new Date();
             date.setTime(date.getTime() + exdays * 24 * 60 * 60 * 1000);
             var expires = 'expires=' + date.toUTCString();
+            var domain = document.location.hostname.includes('.ingresse.com') ? '.ingresse.com' : document.location.hostname;
 
-            document.cookie = cname + '=' + cvalue + ';' + expires + ';path=/';
+            document.cookie = cname + '=' + cvalue + ';' + expires + ';' + 'domain=' + domain + ';' + 'path=/';
         }
 
         /**
