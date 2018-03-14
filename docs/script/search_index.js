@@ -948,6 +948,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/auth/ingresse.js~ingresse#setauth",
+    "class/src/auth/ingresse.js~Ingresse.html#instance-method-setAuth",
+    "src/auth/ingresse.js~Ingresse#setAuth",
+    "method"
+  ],
+  [
     "src/auth/ingresse.js~ingresse#setprivatekey",
     "class/src/auth/ingresse.js~Ingresse.html#instance-method-setPrivateKey",
     "src/auth/ingresse.js~Ingresse#setPrivateKey",

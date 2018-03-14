@@ -122,6 +122,31 @@ var Ingresse = exports.Ingresse = function (_Authentication) {
         }
 
         /**
+         * Set Auth settings to 'Others Companies' validations
+         *
+         * @param {string} timestamp
+         * @param {string} signature
+         * @param {string} publicKey (optional)
+         *
+         * @example
+         * ingresse.api.auth.setAuth('2018-03-14T16:10:13Z', 'signature-generated-before', 'your-app-public-key--optional');
+         */
+
+    }, {
+        key: 'setAuth',
+        value: function setAuth(timestamp, signature, publicKey) {
+            if (!timestamp || !signature) {
+                return false;
+            }
+
+            this.authData.timestamp = timestamp;
+            this.authData.signature = signature;
+            this.setPublicKey(publicKey || this.getPublicKey());
+
+            return true;
+        }
+
+        /**
          * Get timestamp
          *
          * @private
@@ -131,7 +156,7 @@ var Ingresse = exports.Ingresse = function (_Authentication) {
     }, {
         key: '_getTimestamp',
         value: function _getTimestamp() {
-            return new Date().toJSON().replace(/\.\d+/, '');
+            return this.authData.timestamp || new Date().toJSON().replace(/\.\d+/, '');
         }
 
         /**
