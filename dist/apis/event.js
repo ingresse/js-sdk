@@ -206,6 +206,7 @@ var Event = exports.Event = function (_RequestHandler) {
          * Delete Event Poster
          *
          * @param {string|number} id - The Event ID to delete poster.
+         * @param {object} [query]   - Optional request parameters.
          * @returns {Promise}
          *
          * @example

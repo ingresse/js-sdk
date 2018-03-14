@@ -169,6 +169,10 @@ var Ingresse = exports.Ingresse = function (_Authentication) {
     }, {
         key: '_getSignature',
         value: function _getSignature(timestamp) {
+            if (this.authData.signature) {
+                return this.authData.signature;
+            }
+
             var sha1 = CryptoJS.HmacSHA1(this.getPublicKey() + timestamp, this.getPrivateKey());
             return sha1.toString(CryptoJS.enc.Base64);
         }

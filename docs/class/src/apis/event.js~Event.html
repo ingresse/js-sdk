@@ -252,7 +252,7 @@ var event = ingresse.event;</code></pre>
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/apis/event.js~Event.html#instance-method-deletePoster">deletePoster</a></span></span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+          <span data-ice="name"><span><a href="class/src/apis/event.js~Event.html#instance-method-deletePoster">deletePoster</a></span></span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
@@ -1003,7 +1003,7 @@ ingresse.event.create({ name: &apos;My Event Name&apos; })
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber317">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber318">source</a></span></span>
     </span>
   </h3>
 
@@ -1101,11 +1101,11 @@ ingresse.event.deleteCategory(123, 321)
     
     
     
-    <span data-ice="name">deletePoster</span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+    <span data-ice="name">deletePoster</span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber169">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber170">source</a></span></span>
     </span>
   </h3>
 
@@ -1130,6 +1130,13 @@ ingresse.event.deleteCategory(123, 321)
       <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span> | <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
       <td data-ice="appendix"></td>
       <td data-ice="description"><p>The Event ID to delete poster.</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">query</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
+      <td data-ice="appendix"><ul><li>optional</li></ul></td>
+      <td data-ice="description"><p>Optional request parameters.</p>
 </td>
     </tr>
 </tbody>
@@ -1193,7 +1200,7 @@ ingresse.event.deletePoster(12)
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber340">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber341">source</a></span></span>
     </span>
   </h3>
 
@@ -1485,7 +1492,7 @@ ingresse.event.getById(200)
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber248">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber249">source</a></span></span>
     </span>
   </h3>
 
@@ -1575,7 +1582,7 @@ ingresse.event.getCategories()
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber294">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber295">source</a></span></span>
     </span>
   </h3>
 
@@ -1670,7 +1677,7 @@ ingresse.event.getCategory(12)
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber272">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber273">source</a></span></span>
     </span>
   </h3>
 
@@ -1862,7 +1869,7 @@ ingresse.event.update(200, { name: &apos;My Updated Event Name&apos; })
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber199">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber200">source</a></span></span>
     </span>
   </h3>
 
@@ -2078,7 +2085,7 @@ ingresse.event.updatePoster(12, {
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber224">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber225">source</a></span></span>
     </span>
   </h3>
 

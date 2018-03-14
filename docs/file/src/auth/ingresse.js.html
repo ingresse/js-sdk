@@ -179,6 +179,10 @@ export class Ingresse extends Authentication {
      * @returns {string}
      */
     _getSignature(timestamp) {
+        if (this.authData.signature) {
+            return this.authData.signature;
+        }
+
         const sha1 = CryptoJS.HmacSHA1(this.getPublicKey() + timestamp, this.getPrivateKey());
         return sha1.toString(CryptoJS.enc.Base64);
     }
