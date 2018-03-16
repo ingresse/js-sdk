@@ -73,6 +73,9 @@ describe('Event API', () => {
 
         chai.expect(event.deleteSession).not.to.be.undefined;
         chai.expect(event.deleteSession).to.be.a('function');
+
+        chai.expect(event.searchByProducer).not.to.be.undefined;
+        chai.expect(event.searchByProducer).to.be.a('function');
     });
 
     describe('getById', () => {
@@ -435,6 +438,30 @@ describe('Event API', () => {
             event.deleteSession(id, sessionId, query);
 
             chai.expect(event.delete).to.have.been.called.with.exactly(`/${id}/sessions/${sessionId}`, query);
+        });
+    });
+
+    describe('searchByProducer', () => {
+        let event;
+        let filters = {};
+
+        beforeEach(() => {
+            event   = new Event();
+            filters = {};
+            chai.spy.on(event, 'get');
+        });
+
+        it('should searchByProducer call this.searchByProducer', () => {
+            event.searchByProducer({});
+
+            chai.expect(event.get).to.have.been.called.with.exactly('/search/producer', {});
+        });
+
+        it('should searchByProducer call this.get and accept query argument', () => {
+            filters = { from: 'now-1d' };
+            event.searchByProducer(filters);
+
+            chai.expect(event.get).to.have.been.called.with.exactly('/search/producer', filters);
         });
     });
 });

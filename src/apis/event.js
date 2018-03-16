@@ -341,4 +341,25 @@ export class Event extends RequestHandler {
     deleteSession(eventId, sessionId, query = {}) {
         return this.delete(`/${eventId}/sessions/${sessionId}`, query);
     }
+
+    /**
+     * Get events by producer, based on JWT
+     *
+     * @param {object} [query] - Request parameters/filters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.searchByProducer({ from: 'now-1d' })
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    searchByProducer(query = {}) {
+        return this.get('/search/producer', query);
+    }
 }
