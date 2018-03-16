@@ -750,6 +750,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/apis/event.js~event#searchbyproducer",
+    "class/src/apis/event.js~Event.html#instance-method-searchByProducer",
+    "src/apis/event.js~Event#searchByProducer",
+    "method"
+  ],
+  [
     "src/apis/event.js~event#settings",
     "class/src/apis/event.js~Event.html#instance-member-settings",
     "src/apis/event.js~Event#settings",

@@ -435,6 +435,32 @@ var Event = exports.Event = function (_RequestHandler) {
 
             return this.delete('/' + eventId + '/sessions/' + sessionId, query);
         }
+
+        /**
+         * Get events by producer, based on JWT
+         *
+         * @param {object} [query] - Request parameters/filters.
+         * @returns {Promise}
+         *
+         * @example
+         * ...
+         *
+         * ingresse.event.searchByProducer({ from: 'now-1d' })
+         *     .then(function (response) {
+         *         console.log(response);
+         *     })
+         *     .catch(function (error) {
+         *         console.log(error);
+         *     });
+         */
+
+    }, {
+        key: 'searchByProducer',
+        value: function searchByProducer() {
+            var query = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+            return this.get('/search/producer', query);
+        }
     }]);
 
     return Event;
