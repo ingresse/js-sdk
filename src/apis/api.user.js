@@ -74,7 +74,6 @@ export class ApiUser extends RequestHandler {
      * @returns {Promise}
      */
     createUser(data = {}, query = {}) {
-        query.method = 'create';
         return this.post('/user/', data, query);
     }
 
