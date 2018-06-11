@@ -1075,7 +1075,7 @@
     "__docId__": 29,
     "kind": "file",
     "name": "src/apis/api.user.js",
-    "content": "import {RequestHandler} from '../request/handler';\nimport {Cookie} from '../helper/cookie';\n\n/**\n * Ingresse User API\n */\nexport class ApiUser extends RequestHandler {\n    /**\n     * Initialize the Api User\n     */\n    constructor() {\n        super();\n        this.credentials = {};\n        this.cookie = new Cookie();\n    }\n\n    /**\n     * Get user\n     *\n     * @param {string|number} id - The user ID to get.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     */\n    getUser(id, query = {}) {\n        return this.get(`/user/${id}`, query);\n    }\n\n    /**\n     * Get user picture\n     *\n     * @param {string|number} id - The user ID to get.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     */\n    getUserPicture(id, query = {}) {\n        return this.get(`/user/${id}/picture`, query);\n    }\n\n\n    /**\n     * Get the user tickets.\n     *\n     * @param {string|number} id - The user ID to get.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * var userId = 123;\n     * var query = {\n     *    status: 'pending', //Can be [pending, accepted, refused, returned, cancelled].\n     *    pageSize: 10,\n     *    page: currentPage\n     * };\n     *\n     * ingresse.apiUser.getUserTicket(userId, query)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    getUserTickets(id, query = {}) {\n        return this.get(`/user/${id}/tickets`, query);\n    }\n\n    /**\n     * Create a new user.\n     *\n     * @param {object} [data]  - The form with user data for post.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     */\n    createUser(data = {}, query = {}) {\n        query.method = 'create';\n        return this.post('/user/', data, query);\n    }\n\n    /**\n     * Get the new user tickets.\n     *\n     * @param {string|number} id - The user ID to get.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     */\n    getUserNewTickets(id, query = {}) {\n        return this.get(`/user/${id}/transfers`, query);\n    }\n\n    /**\n     * Get the user events sessions.\n     *\n     * @param {string|number} id - The user ID to get.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     */\n    getAllUserSessions(id, query = {}) {\n        return this.get(`/user/${id}/sessions`, query);\n    }\n\n    /*\n     * Get the ticket session\n     *\n     * @param {number} id - The user ID to get.\n     * @param {number} sessionId - The session id.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     */\n    getUserSessionTickets(id, sessionId, query = {}) {\n        return this.get(`/user/${id}/sessions/${sessionId}/tickets`, query);\n    }\n\n    /**\n     * Search the users for transfer ticket.\n     *\n     * @param {string} term - The text to search.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * var term = 'Jefferson Silva';\n     * var query = {\n     *    size: 12\n     * };\n     * ingresse.apiUser.getUserForTransfer(term, query)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    getUserForTransfer(term, query = {}) {\n        query.term = term;\n        return this.get('/search/transfer/user', query);\n    }\n\n    /**\n     * Get the recent transfers of a user.\n     *\n     * @param {number} id - The user ID to get.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * var id = 123;\n     * var query = {\n     *    size: 12,\n     *    order: 'DESC'\n     * };\n     *\n     * ingresse.apiUser.getRecentTransfers(id, query)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    getRecentTransfers(id, query = {}) {\n        return this.get(`/user/${id}/last-transfers`, query);\n    }\n\n    /**\n     * Saves the credentials in cookie.\n     *\n     * @param {number} userId - User Id.\n     * @param {string} token  - The user token.\n     * @param {string} jwt    - The user jwt token.\n     *\n     * @returns {Object}\n     */\n    saveCredentials(userId, token, jwt) {\n        this.credentials.userId = userId;\n        this.credentials.token  = token;\n        this.credentials.jwt    = jwt;\n\n        this.cookie.createCookie('userId', userId, 5);\n        this.cookie.createCookie('token', token, 5);\n        this.cookie.createCookie('jwt', jwt, 5);\n\n        return this.credentials;\n    }\n\n    /**\n     * Gets the user credentials\n     */\n    getCredentials() {\n        for(var prop in this.credentials) {\n            if (this.credentials.hasOwnProperty(prop)) {\n                return this.credentials;\n            }\n        }\n\n        this.credentials.userId = this.cookie.getCookie('userId');\n        this.credentials.token  = this.cookie.getCookie('token');\n        this.credentials.jwt    = this.cookie.getCookie('jwt');\n\n        if (this.credentials.userId ||\n            this.credentials.token ||\n            this.credentials.jwt)\n        {\n            return this.credentials;\n        }\n\n        return false;\n    }\n\n    /**\n     * Delete the user credentials\n     */\n    clearCredentials() {\n        this.cookie.deleteCookie('userId');\n        this.cookie.deleteCookie('token');\n        this.cookie.deleteCookie('jwt');\n    }\n}\n",
+    "content": "import {RequestHandler} from '../request/handler';\nimport {Cookie} from '../helper/cookie';\n\n/**\n * Ingresse User API\n */\nexport class ApiUser extends RequestHandler {\n    /**\n     * Initialize the Api User\n     */\n    constructor() {\n        super();\n        this.credentials = {};\n        this.cookie = new Cookie();\n    }\n\n    /**\n     * Get user\n     *\n     * @param {string|number} id - The user ID to get.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     */\n    getUser(id, query = {}) {\n        return this.get(`/user/${id}`, query);\n    }\n\n    /**\n     * Get user picture\n     *\n     * @param {string|number} id - The user ID to get.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     */\n    getUserPicture(id, query = {}) {\n        return this.get(`/user/${id}/picture`, query);\n    }\n\n\n    /**\n     * Get the user tickets.\n     *\n     * @param {string|number} id - The user ID to get.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * var userId = 123;\n     * var query = {\n     *    status: 'pending', //Can be [pending, accepted, refused, returned, cancelled].\n     *    pageSize: 10,\n     *    page: currentPage\n     * };\n     *\n     * ingresse.apiUser.getUserTicket(userId, query)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    getUserTickets(id, query = {}) {\n        return this.get(`/user/${id}/tickets`, query);\n    }\n\n    /**\n     * Create a new user.\n     *\n     * @param {object} [data]  - The form with user data for post.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     */\n    createUser(data = {}, query = {}) {\n        return this.post('/user/', data, query);\n    }\n\n    /**\n     * Get the new user tickets.\n     *\n     * @param {string|number} id - The user ID to get.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     */\n    getUserNewTickets(id, query = {}) {\n        return this.get(`/user/${id}/transfers`, query);\n    }\n\n    /**\n     * Get the user events sessions.\n     *\n     * @param {string|number} id - The user ID to get.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     */\n    getAllUserSessions(id, query = {}) {\n        return this.get(`/user/${id}/sessions`, query);\n    }\n\n    /*\n     * Get the ticket session\n     *\n     * @param {number} id - The user ID to get.\n     * @param {number} sessionId - The session id.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     */\n    getUserSessionTickets(id, sessionId, query = {}) {\n        return this.get(`/user/${id}/sessions/${sessionId}/tickets`, query);\n    }\n\n    /**\n     * Search the users for transfer ticket.\n     *\n     * @param {string} term - The text to search.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * var term = 'Jefferson Silva';\n     * var query = {\n     *    size: 12\n     * };\n     * ingresse.apiUser.getUserForTransfer(term, query)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    getUserForTransfer(term, query = {}) {\n        query.term = term;\n        return this.get('/search/transfer/user', query);\n    }\n\n    /**\n     * Get the recent transfers of a user.\n     *\n     * @param {number} id - The user ID to get.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * var id = 123;\n     * var query = {\n     *    size: 12,\n     *    order: 'DESC'\n     * };\n     *\n     * ingresse.apiUser.getRecentTransfers(id, query)\n     *     .then(function (response) {\n     *         console.log(response);\n     *     })\n     *     .catch(function (error) {\n     *         console.log(error);\n     *     });\n     */\n    getRecentTransfers(id, query = {}) {\n        return this.get(`/user/${id}/last-transfers`, query);\n    }\n\n    /**\n     * Saves the credentials in cookie.\n     *\n     * @param {number} userId - User Id.\n     * @param {string} token  - The user token.\n     * @param {string} jwt    - The user jwt token.\n     *\n     * @returns {Object}\n     */\n    saveCredentials(userId, token, jwt) {\n        this.credentials.userId = userId;\n        this.credentials.token  = token;\n        this.credentials.jwt    = jwt;\n\n        this.cookie.createCookie('userId', userId, 5);\n        this.cookie.createCookie('token', token, 5);\n        this.cookie.createCookie('jwt', jwt, 5);\n\n        return this.credentials;\n    }\n\n    /**\n     * Gets the user credentials\n     */\n    getCredentials() {\n        for(var prop in this.credentials) {\n            if (this.credentials.hasOwnProperty(prop)) {\n                return this.credentials;\n            }\n        }\n\n        this.credentials.userId = this.cookie.getCookie('userId');\n        this.credentials.token  = this.cookie.getCookie('token');\n        this.credentials.jwt    = this.cookie.getCookie('jwt');\n\n        if (this.credentials.userId ||\n            this.credentials.token ||\n            this.credentials.jwt)\n        {\n            return this.credentials;\n        }\n\n        return false;\n    }\n\n    /**\n     * Delete the user credentials\n     */\n    clearCredentials() {\n        this.cookie.deleteCookie('userId');\n        this.cookie.deleteCookie('token');\n        this.cookie.deleteCookie('jwt');\n    }\n}\n",
     "static": true,
     "longname": "src/apis/api.user.js",
     "access": null,
@@ -1373,7 +1373,7 @@
     "longname": "src/apis/api.user.js~ApiUser#getUserNewTickets",
     "access": null,
     "description": "Get the new user tickets.",
-    "lineNumber": 88,
+    "lineNumber": 87,
     "unknown": [
       {
         "tagName": "@returns",
@@ -1423,7 +1423,7 @@
     "longname": "src/apis/api.user.js~ApiUser#getAllUserSessions",
     "access": null,
     "description": "Get the user events sessions.",
-    "lineNumber": 99,
+    "lineNumber": 98,
     "unknown": [
       {
         "tagName": "@returns",
@@ -1473,7 +1473,7 @@
     "longname": "src/apis/api.user.js~ApiUser#getUserSessionTickets",
     "access": null,
     "description": null,
-    "lineNumber": 111,
+    "lineNumber": 110,
     "undocument": true,
     "unknown": [
       {
@@ -1524,7 +1524,7 @@
     "examples": [
       "...\n\nvar term = 'Jefferson Silva';\nvar query = {\n   size: 12\n};\ningresse.apiUser.getUserForTransfer(term, query)\n    .then(function (response) {\n        console.log(response);\n    })\n    .catch(function (error) {\n        console.log(error);\n    });"
     ],
-    "lineNumber": 137,
+    "lineNumber": 136,
     "unknown": [
       {
         "tagName": "@returns",
@@ -1576,7 +1576,7 @@
     "examples": [
       "...\n\nvar id = 123;\nvar query = {\n   size: 12,\n   order: 'DESC'\n};\n\ningresse.apiUser.getRecentTransfers(id, query)\n    .then(function (response) {\n        console.log(response);\n    })\n    .catch(function (error) {\n        console.log(error);\n    });"
     ],
-    "lineNumber": 166,
+    "lineNumber": 165,
     "unknown": [
       {
         "tagName": "@returns",
@@ -1625,7 +1625,7 @@
     "longname": "src/apis/api.user.js~ApiUser#saveCredentials",
     "access": null,
     "description": "Saves the credentials in cookie.",
-    "lineNumber": 179,
+    "lineNumber": 178,
     "unknown": [
       {
         "tagName": "@returns",
@@ -1684,7 +1684,7 @@
     "longname": "src/apis/api.user.js~ApiUser#getCredentials",
     "access": null,
     "description": "Gets the user credentials",
-    "lineNumber": 194,
+    "lineNumber": 193,
     "params": [],
     "return": {
       "types": [
@@ -1703,7 +1703,7 @@
     "longname": "src/apis/api.user.js~ApiUser#clearCredentials",
     "access": null,
     "description": "Delete the user credentials",
-    "lineNumber": 218,
+    "lineNumber": 217,
     "params": []
   },
   {
