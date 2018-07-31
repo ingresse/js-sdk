@@ -26,13 +26,13 @@ var ApiUser = exports.ApiUser = function (_RequestHandler) {
     /**
      * Initialize the Api User
      */
-    function ApiUser() {
+    function ApiUser(settings) {
         _classCallCheck(this, ApiUser);
 
         var _this = _possibleConstructorReturn(this, (ApiUser.__proto__ || Object.getPrototypeOf(ApiUser)).call(this));
 
         _this.credentials = {};
-        _this.cookie = new _cookie.Cookie();
+        _this.cookie = new _cookie.Cookie(settings ? settings.companyId : null);
         return _this;
     }
 

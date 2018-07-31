@@ -8,10 +8,10 @@ export class ApiUser extends RequestHandler {
     /**
      * Initialize the Api User
      */
-    constructor() {
+    constructor(settings) {
         super();
         this.credentials = {};
-        this.cookie = new Cookie();
+        this.cookie = new Cookie(settings ? settings.companyId : null);
     }
 
     /**

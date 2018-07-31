@@ -60,6 +60,11 @@
  * Cookie
  */
 export class Cookie {
+
+    constructor(companyId) {
+        this.companyId = (companyId || 1);
+    }
+
     /**
      * Create the cookie.
      *
@@ -115,6 +120,25 @@ export class Cookie {
     }
 
     /**
+     * Concat cookie name
+     *
+     * @param {string} cname - Cookie name
+     *
+     * @return {string}
+     */
+    _concatName(cname) {
+        let cookieName = &apos;&apos;;
+
+        return cookieName.concat(
+            &apos;ing&apos;,
+            &apos;_&apos;,
+            this.companyId,
+            &apos;_&apos;,
+            (cname || &apos;&apos;)
+        );
+    }
+
+    /**
      * Set the cookie.
      *
      * @param {string} cname - The cookie name.
@@ -130,7 +154,7 @@ export class Cookie {
                 &apos;.ingresse.com&apos; : document.location.hostname;
 
         document.cookie =
-            cname + &apos;=&apos; + cvalue + &apos;;&apos; +
+            this._concatName(cname) + &apos;=&apos; + cvalue + &apos;;&apos; +
             expires + &apos;;&apos; +
             &apos;domain=&apos; + domain + &apos;;&apos; +
             &apos;path=/&apos;
@@ -145,7 +169,7 @@ export class Cookie {
      * @returns {String}
      */
     _getCookie(cname) {
-        let name = cname + &apos;=&apos;;
+        let name = (this._concatName(cname) + &apos;=&apos;);
         let decodedCookie = decodeURIComponent(document.cookie);
         let scookie = decodedCookie.split(&apos;;&apos;);
 

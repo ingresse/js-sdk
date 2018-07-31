@@ -22,6 +22,7 @@ var IngresseSdk = function () {
      * var Sdk = require('ingresse-sdk');
      *
      * var ingresse = new Sdk({
+     *   companyId: 4,
      *   ticket: {
      *     url: 'http://hml.ticket.ingresse.com'
      *   }
@@ -58,13 +59,14 @@ var IngresseSdk = function () {
             var settings = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
             var apiList = settings.apis || Object.keys(_apis.apis);
+            settings.companyId = settings.companyId || 1;
 
             apiList.map(function (key) {
                 var Api = _apis.apis[key];
 
                 if (Api) {
                     var options = settings[key] || null;
-                    _this[key] = new Api(options);
+                    _this[key] = new Api(Object.assign({ companyId: settings.companyId }, options));
                 }
             });
         }
