@@ -30,6 +30,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ingresse-sdk/src/apis/api.transactions.js~apitransactions",
+    "class/src/apis/api.transactions.js~ApiTransactions.html",
+    "<span>ApiTransactions</span> <span class=\"search-result-import-path\">ingresse-sdk/src/apis/api.transactions.js</span>",
+    "class"
+  ],
+  [
     "ingresse-sdk/src/apis/api.user.js~apiuser",
     "class/src/apis/api.user.js~ApiUser.html",
     "<span>ApiUser</span> <span class=\"search-result-import-path\">ingresse-sdk/src/apis/api.user.js</span>",
@@ -450,6 +456,12 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/apis/api.auth.js~apiauth#companylogin",
+    "class/src/apis/api.auth.js~ApiAuth.html#instance-method-companyLogin",
+    "src/apis/api.auth.js~ApiAuth#companyLogin",
+    "method"
+  ],
+  [
     "src/apis/api.auth.js~apiauth#fblogin",
     "class/src/apis/api.auth.js~ApiAuth.html#instance-method-fbLogin",
     "src/apis/api.auth.js~ApiAuth#fbLogin",
@@ -585,6 +597,24 @@ window.esdocSearchIndex = [
     "src/apis/api.ticket.js~apitickettransfer#updatetickettransfer",
     "class/src/apis/api.ticket.js~ApiTicketTransfer.html#instance-method-updateTicketTransfer",
     "src/apis/api.ticket.js~ApiTicketTransfer#updateTicketTransfer",
+    "method"
+  ],
+  [
+    "src/apis/api.transactions.js",
+    "file/src/apis/api.transactions.js.html",
+    "src/apis/api.transactions.js",
+    "file"
+  ],
+  [
+    "src/apis/api.transactions.js~apitransactions#getbyid",
+    "class/src/apis/api.transactions.js~ApiTransactions.html#instance-method-getById",
+    "src/apis/api.transactions.js~ApiTransactions#getById",
+    "method"
+  ],
+  [
+    "src/apis/api.transactions.js~apitransactions#getlist",
+    "class/src/apis/api.transactions.js~ApiTransactions.html#instance-method-getList",
+    "src/apis/api.transactions.js~ApiTransactions#getList",
     "method"
   ],
   [

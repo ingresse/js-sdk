@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.ApiAuth = undefined;
+exports.ApiTransactions = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -16,64 +16,50 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 /**
- * Ingresse Auth API
+ * Ingresse Transactions API
  */
-var ApiAuth = exports.ApiAuth = function (_RequestHandler) {
-  _inherits(ApiAuth, _RequestHandler);
+var ApiTransactions = exports.ApiTransactions = function (_RequestHandler) {
+  _inherits(ApiTransactions, _RequestHandler);
 
-  function ApiAuth() {
-    _classCallCheck(this, ApiAuth);
+  function ApiTransactions() {
+    _classCallCheck(this, ApiTransactions);
 
-    return _possibleConstructorReturn(this, (ApiAuth.__proto__ || Object.getPrototypeOf(ApiAuth)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (ApiTransactions.__proto__ || Object.getPrototypeOf(ApiTransactions)).apply(this, arguments));
   }
 
-  _createClass(ApiAuth, [{
-    key: 'login',
+  _createClass(ApiTransactions, [{
+    key: 'getList',
 
     /**
-     * Login User
+     * Get a list of transactions
      *
-     * @param {object} data    - The user data to login.
      * @param {object} [query] - Optional request parameters.
+     *
      * @returns {Promise}
      */
-    value: function login(data) {
-      var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    value: function getList() {
+      var query = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
-      return this.post('/login', data, query);
+      return this.get('/transactions', query);
     }
+
     /**
-     * Login User by Company
+     * Get transaction by ID
      *
-     * @param {object} data    - The user data to login.
+     * @param {string} id      - The user data to login.
      * @param {object} [query] - Optional request parameters.
+     *
      * @returns {Promise}
      */
 
   }, {
-    key: 'companyLogin',
-    value: function companyLogin(data) {
+    key: 'getById',
+    value: function getById(id) {
       var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
-      return this.post('/company-login', data, query);
-    }
-
-    /**
-     * Login User with Facebook
-     *
-     * @param {object} data    - The user data to login.
-     * @param {object} [query] - Optional request parameters.
-     * @returns {Promise}
-     */
-
-  }, {
-    key: 'fbLogin',
-    value: function fbLogin(data) {
-      var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-
-      return this.post('/login/facebook', data, query);
+      return this.get('/transaction/' + id, query);
     }
   }]);
 
-  return ApiAuth;
+  return ApiTransactions;
 }(_handler.RequestHandler);
