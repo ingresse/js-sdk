@@ -32,6 +32,19 @@ describe('API Auth', () => {
         });
     });
 
+    describe('login company', () => {
+        it('should call this.post', () => {
+            let data = {
+                name: 'test',
+                pass: '123'
+            };
+            auth.companyLogin(data);
+
+            chai.expect(auth.post).to.have.been.called.with
+                .exactly('/company-login', data, {});
+        });
+    });
+
     describe('fbLogin', () => {
         it('should call this.post', () => {
             let data = {

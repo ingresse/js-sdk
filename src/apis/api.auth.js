@@ -14,6 +14,16 @@ export class ApiAuth extends RequestHandler {
     login(data, query = {}) {
         return this.post('/login', data, query);
     }
+    /**
+     * Login User by Company
+     *
+     * @param {object} data    - The user data to login.
+     * @param {object} [query] - Optional request parameters.
+     * @returns {Promise}
+     */
+    companyLogin(data, query = {}) {
+        return this.post('/company-login', data, query);
+    }
 
     /**
      * Login User with Facebook
