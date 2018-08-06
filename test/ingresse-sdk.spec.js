@@ -16,6 +16,7 @@ describe('IngresseSdk', () => {
 
     it('should accept custom params for each api', () => {
         let sdk = new IngresseSdk({
+            companyId: 4,
             ticket: {
                 url: 'https://my.custom.ticket.url.com'
             }

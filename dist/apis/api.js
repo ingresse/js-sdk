@@ -17,6 +17,8 @@ var _apiAuth = require('./api.auth.js');
 
 var _apiRecover = require('./api.recover.js');
 
+var _apiTransactions = require('./api.transactions.js');
+
 var _auth = require('../auth');
 
 var _mixin = require('../helper/mixin.js');
@@ -65,4 +67,4 @@ var Api = exports.Api = function (_Mixin$inherit) {
     }
 
     return Api;
-}(_mixin.Mixin.inherit(_apiAuth.ApiAuth, _apiEvent.ApiEvents, _apiRecover.ApiRecover, _apiTicket.ApiTicketTransfer, _apiUser.ApiUser, _handler.RequestHandler));
+}(_mixin.Mixin.inherit(_apiAuth.ApiAuth, _apiEvent.ApiEvents, _apiRecover.ApiRecover, _apiTicket.ApiTicketTransfer, _apiUser.ApiUser, _apiTransactions.ApiTransactions, _handler.RequestHandler));

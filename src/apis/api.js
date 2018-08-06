@@ -4,6 +4,7 @@ import {ApiUser} from './api.user.js';
 import {ApiTicketTransfer} from './api.ticket.js';
 import {ApiAuth} from './api.auth.js';
 import {ApiRecover} from './api.recover.js';
+import {ApiTransactions} from './api.transactions.js';
 import {auth} from '../auth';
 import {Mixin} from '../helper/mixin.js';
 
@@ -24,6 +25,7 @@ export class Api extends Mixin.inherit(
     ApiRecover,
     ApiTicketTransfer,
     ApiUser,
+    ApiTransactions,
     RequestHandler
 ) {
     /**
