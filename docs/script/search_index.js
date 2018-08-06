@@ -1026,6 +1026,18 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/helper/cookie.js~cookie#companyid",
+    "class/src/helper/cookie.js~Cookie.html#instance-member-companyId",
+    "src/helper/cookie.js~Cookie#companyId",
+    "member"
+  ],
+  [
+    "src/helper/cookie.js~cookie#constructor",
+    "class/src/helper/cookie.js~Cookie.html#instance-constructor-constructor",
+    "src/helper/cookie.js~Cookie#constructor",
+    "method"
+  ],
+  [
     "src/helper/cookie.js~cookie#createcookie",
     "class/src/helper/cookie.js~Cookie.html#instance-method-createCookie",
     "src/helper/cookie.js~Cookie#createCookie",

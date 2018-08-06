@@ -2,6 +2,11 @@
  * Cookie
  */
 export class Cookie {
+
+    constructor(companyId) {
+        this.companyId = (companyId || 1);
+    }
+
     /**
      * Create the cookie.
      *
@@ -57,6 +62,25 @@ export class Cookie {
     }
 
     /**
+     * Concat cookie name
+     *
+     * @param {string} cname - Cookie name
+     *
+     * @return {string}
+     */
+    _concatName(cname) {
+        let cookieName = '';
+
+        return cookieName.concat(
+            'ing',
+            '_',
+            this.companyId,
+            '_',
+            (cname || '')
+        );
+    }
+
+    /**
      * Set the cookie.
      *
      * @param {string} cname - The cookie name.
@@ -72,7 +96,7 @@ export class Cookie {
                 '.ingresse.com' : document.location.hostname;
 
         document.cookie =
-            cname + '=' + cvalue + ';' +
+            this._concatName(cname) + '=' + cvalue + ';' +
             expires + ';' +
             'domain=' + domain + ';' +
             'path=/'
@@ -87,7 +111,7 @@ export class Cookie {
      * @returns {String}
      */
     _getCookie(cname) {
-        let name = cname + '=';
+        let name = (this._concatName(cname) + '=');
         let decodedCookie = decodeURIComponent(document.cookie);
         let scookie = decodedCookie.split(';');
 

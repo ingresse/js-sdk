@@ -12,22 +12,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  * Cookie
  */
 var Cookie = exports.Cookie = function () {
-    function Cookie() {
+    function Cookie(companyId) {
         _classCallCheck(this, Cookie);
+
+        this.companyId = companyId || 1;
     }
+
+    /**
+     * Create the cookie.
+     *
+     * @param {string} cname - The cookie name.
+     * @param {string|number} cvalue - The cookie value.
+     * @param {number} days - The expiration days.
+     *
+     * @returns {String}
+     */
+
 
     _createClass(Cookie, [{
         key: 'createCookie',
-
-        /**
-         * Create the cookie.
-         *
-         * @param {string} cname - The cookie name.
-         * @param {string|number} cvalue - The cookie value.
-         * @param {number} days - The expiration days.
-         *
-         * @returns {String}
-         */
         value: function createCookie(cname, cvalue, days) {
             var name = this.getCookie(cname);
 
@@ -80,6 +83,22 @@ var Cookie = exports.Cookie = function () {
         }
 
         /**
+         * Concat cookie name
+         *
+         * @param {string} cname - Cookie name
+         *
+         * @return {string}
+         */
+
+    }, {
+        key: '_concatName',
+        value: function _concatName(cname) {
+            var cookieName = '';
+
+            return cookieName.concat('ing', '_', this.companyId, '_', cname || '');
+        }
+
+        /**
          * Set the cookie.
          *
          * @param {string} cname - The cookie name.
@@ -95,7 +114,7 @@ var Cookie = exports.Cookie = function () {
             var expires = 'expires=' + date.toUTCString();
             var domain = document.location.hostname.includes('.ingresse.com') ? '.ingresse.com' : document.location.hostname;
 
-            document.cookie = cname + '=' + cvalue + ';' + expires + ';' + 'domain=' + domain + ';' + 'path=/';
+            document.cookie = this._concatName(cname) + '=' + cvalue + ';' + expires + ';' + 'domain=' + domain + ';' + 'path=/';
         }
 
         /**
@@ -109,7 +128,7 @@ var Cookie = exports.Cookie = function () {
     }, {
         key: '_getCookie',
         value: function _getCookie(cname) {
-            var name = cname + '=';
+            var name = this._concatName(cname) + '=';
             var decodedCookie = decodeURIComponent(document.cookie);
             var scookie = decodedCookie.split(';');
 

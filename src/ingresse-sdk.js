@@ -16,6 +16,7 @@ class IngresseSdk {
      * var Sdk = require('ingresse-sdk');
      *
      * var ingresse = new Sdk({
+     *   companyId: 4,
      *   ticket: {
      *     url: 'http://hml.ticket.ingresse.com'
      *   }
@@ -42,13 +43,14 @@ class IngresseSdk {
      */
     _init(settings = {}) {
         let apiList = settings.apis || Object.keys(apis);
+        settings.companyId = (settings.companyId || 1);
 
         apiList.map((key) => {
             let Api = apis[key];
 
             if (Api) {
                 let options = settings[key] || null;
-                this[key]   = new Api(options);
+                this[key]   = new Api(Object.assign({ companyId: settings.companyId }, options));
             }
         });
     }
