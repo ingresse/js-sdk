@@ -1,6 +1,4 @@
-import {Authentication} from './authentication';
-import * as CryptoJS from 'crypto-js';
-
+import { Authentication } from './authentication';
 
 export class Ingresse extends Authentication {
     constructor() {
@@ -23,42 +21,58 @@ export class Ingresse extends Authentication {
      * @returns {object}
      */
     getSettings() {
-        const timestamp = this._getTimestamp();
-
         return {
             query: {
-                'publickey': encodeURI(this.getPublicKey()),
-                'signature': encodeURI(this._getSignature(timestamp)),
-                'timestamp': timestamp,
+                'apikey': encodeURI(this.getApiKey()),
             }
         };
     }
 
     /**
-     * Set Ingresse PublicKey
+     * Set Ingresse ApiKey
      *
-     * @param {string} publicKey - Ingresse PublicKey
+     * @param {string} apiKey - Ingresse ApiKey
      *
      * @example
-     * ingresse.api.auth.setPublicKey('12345678901234');
+     * ingresse.api.auth.setApiKey('12345678901234');
      */
-    setPublicKey(publicKey) {
-        this.authData.publicKey = publicKey;
+    setApiKey(apiKey) {
+        this.authData.apiKey = apiKey;
     }
 
     /**
-     * Get Ingresse PublicKey
+     * @DEPRECATED
+     *
+     * Only compatibility purposes
+     */
+    setPublicKey(apiKey) {
+        this.setApiKey(apiKey);
+    }
+
+    /**
+     * Get Ingresse ApiKey
      *
      * @returns {string}
      *
      * @example
-     * ingresse.api.auth.getPublicKey();
+     * ingresse.api.auth.getApiKey();
      */
-    getPublicKey() {
-        return this.authData.publicKey;
+    getApiKey() {
+        return this.authData.apiKey;
     }
 
     /**
+     * @DEPRECATED
+     *
+     * Only compatibility purposes
+     */
+    getPublicKey() {
+        return this.getApiKey();
+    }
+
+    /**
+     * @DEPRECATED
+     *
      * Set Ingresse PrivateKey
      *
      * @param {string} privateKey - Ingresse PrivateKey
@@ -71,6 +85,8 @@ export class Ingresse extends Authentication {
     }
 
     /**
+     * @DEPRECATED
+     *
      * Get Ingresse PrivateKey
      *
      * @returns {string}
@@ -87,45 +103,20 @@ export class Ingresse extends Authentication {
      *
      * @param {string} timestamp
      * @param {string} signature
-     * @param {string} publicKey (optional)
+     * @param {string} apiKey (optional)
      *
      * @example
-     * ingresse.api.auth.setAuth('2018-03-14T16:10:13Z', 'signature-generated-before', 'your-app-public-key--optional');
+     * ingresse.api.auth.setAuth('2018-03-14T16:10:13Z', 'signature-generated-before', 'your-app-api-key--optional');
      */
-    setAuth(timestamp, signature, publicKey) {
+    setAuth(timestamp, signature, apiKey) {
         if (!timestamp || !signature) {
             return false;
         }
 
         this.authData.timestamp = timestamp;
         this.authData.signature = signature;
-        this.setPublicKey(publicKey || this.getPublicKey());
+        this.setApiKey(apiKey || this.getApiKey());
 
         return true;
-    }
-
-    /**
-     * Get timestamp
-     *
-     * @private
-     * @returns {string}
-     */
-    _getTimestamp() {
-        return this.authData.timestamp || new Date().toJSON().replace(/\.\d+/, '');
-    }
-
-    /**
-     * Get Ingresse Signature
-     *
-     * @private
-     * @returns {string}
-     */
-    _getSignature(timestamp) {
-        if (this.authData.signature) {
-            return this.authData.signature;
-        }
-
-        const sha1 = CryptoJS.HmacSHA1(this.getPublicKey() + timestamp, this.getPrivateKey());
-        return sha1.toString(CryptoJS.enc.Base64);
     }
 }
