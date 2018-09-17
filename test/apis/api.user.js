@@ -8,10 +8,18 @@ chai.use(spies);
 
 
 describe('API User', () => {
-    let user;
+    let user, query;
 
     beforeEach(() => {
-        user = new ApiUser();
+        user = new ApiUser({
+            settings: {
+                companyId: 1,
+            },
+        });
+        query = {
+            param: 'test',
+        };
+
         global.document = {
             cookie: {
                 userId: 123,
@@ -46,6 +54,14 @@ describe('API User', () => {
             chai.expect(user.get).to.have.been.called.with
                 .exactly(`/user/${id}`, {});
         });
+
+        it('should call this.get with query params', () => {
+            let id = 123;
+            user.getUser(id, query);
+
+            chai.expect(user.get).to.have.been.called.with
+                .exactly(`/user/${id}`, query);
+        });
     });
 
     describe('getUserPicture', () => {
@@ -55,6 +71,14 @@ describe('API User', () => {
 
             chai.expect(user.get).to.have.been.called.with
                 .exactly(`/user/${id}/picture`, {});
+        });
+
+        it('should call this.get', () => {
+            let id = 123;
+            user.getUserPicture(id, query);
+
+            chai.expect(user.get).to.have.been.called.with
+                .exactly(`/user/${id}/picture`, query);
         });
     });
 
@@ -66,9 +90,24 @@ describe('API User', () => {
             chai.expect(user.get).to.have.been.called.with
                 .exactly(`/user/${id}/tickets`, {});
         });
+
+        it('should call this.get', () => {
+            let id = 123;
+            user.getUserTickets(id, query);
+
+            chai.expect(user.get).to.have.been.called.with
+                .exactly(`/user/${id}/tickets`, query);
+        });
     });
 
     describe('createUser', () => {
+        it('should call this.get', () => {
+            user.createUser();
+
+            chai.expect(user.post).to.have.been.called.with
+                .exactly(`/user/`, {}, { method: 'create' });
+        });
+
         it('should call this.get', () => {
             let data = {
                 name: 'test',
@@ -78,27 +117,59 @@ describe('API User', () => {
             user.createUser(data);
 
             chai.expect(user.post).to.have.been.called.with
-                .exactly(`/user/`, data, {method: 'create'});
+                .exactly(`/user/`, data, { method: 'create' });
+        });
+
+        it('should call this.get with query params', () => {
+            let data = {
+                name: 'test',
+                email: 'test@test.com'
+            };
+
+            user.createUser(data, query);
+
+            chai.expect(user.post).to.have.been.called.with
+                .exactly(`/user/`, data, Object.assign(query, { method: 'create' }));
         });
     });
 
     describe('getUserNewTickets', () => {
         it('should call this.get', () => {
             let id = 123;
+
             user.getUserNewTickets(id);
 
             chai.expect(user.get).to.have.been.called.with
                 .exactly(`/user/${id}/transfers`, {});
+        });
+
+        it('should call this.get with query params', () => {
+            let id = 123;
+
+            user.getUserNewTickets(id, query);
+
+            chai.expect(user.get).to.have.been.called.with
+                .exactly(`/user/${id}/transfers`, query);
         });
     });
 
     describe('getAllUserSessions', () => {
         it('should call this.get', () => {
             let id = 123;
+
             user.getAllUserSessions(id);
 
             chai.expect(user.get).to.have.been.called.with
                 .exactly(`/user/${id}/sessions`, {});
+        });
+
+        it('should call this.get with query params', () => {
+            let id = 123;
+
+            user.getAllUserSessions(id, query);
+
+            chai.expect(user.get).to.have.been.called.with
+                .exactly(`/user/${id}/sessions`, query);
         });
     });
 
@@ -112,6 +183,16 @@ describe('API User', () => {
             chai.expect(user.get).to.have.been.called.with
                 .exactly(`/user/${id}/sessions/${session}/tickets`, {});
         });
+
+        it('should call this.get with query params', () => {
+            let id = 123;
+            let session = 456;
+
+            user.getUserSessionTickets(id, session, query);
+
+            chai.expect(user.get).to.have.been.called.with
+                .exactly(`/user/${id}/sessions/${session}/tickets`, query);
+        });
     });
 
     describe('getUserForTransfer', () => {
@@ -122,6 +203,14 @@ describe('API User', () => {
             chai.expect(user.get).to.have.been.called.with
                 .exactly('/search/transfer/user', {term: term});
         });
+
+        it('should call this.get with query params', () => {
+            let term = 'test';
+            user.getUserForTransfer(term, query);
+
+            chai.expect(user.get).to.have.been.called.with
+                .exactly('/search/transfer/user', Object.assign(query, { term: term }));
+        });
     });
 
     describe('getRecentTransfers', () => {
@@ -131,6 +220,14 @@ describe('API User', () => {
 
             chai.expect(user.get).to.have.been.called.with
                 .exactly(`/user/${id}/last-transfers`, {});
+        });
+
+        it('should call this.get', () => {
+            let id = 123;
+            user.getRecentTransfers(id, query);
+
+            chai.expect(user.get).to.have.been.called.with
+                .exactly(`/user/${id}/last-transfers`, query);
         });
     });
 
@@ -178,27 +275,33 @@ describe('API User', () => {
 
     describe('getCredentials', () => {
         beforeEach(() => {
-            chai.spy.on(user.cookie, 'getCookie');
+            user.credentials = {};
+        });
+
+        it('should call user.cookie.getCookie 3 times', () => {
+            chai.spy.on(user.cookie, 'getCookie', () => {
+                return 'test';
+            });
+
+            let credentials = user.getCredentials();
+
+            chai.expect(user.cookie.getCookie).to.have.been.called.exactly(3);
+            chai.expect(credentials).to.be.null;
         });
 
         it('should returns the credentials without call user.cookie.getCookie', () => {
+            chai.spy.on(user.cookie, 'getCookie');
+
             user.credentials = {
+                jwt   : '',
+                token : 'abc123',
                 userId: 123,
-                token: 'abc123',
-                jwt: 'def456'
             };
 
             let credentials = user.getCredentials();
 
             chai.expect(user.credentials).to.be.equal(credentials);
             chai.expect(user.cookie.getCookie).to.not.be.called();
-        });
-
-        it('should call user.cookie.getCookie 3 times', () => {
-            let credentials = user.getCredentials();
-
-            chai.expect(user.cookie.getCookie).to.have.been.called.exactly(3);
-            chai.expect(credentials).to.be.false;
         });
     });
 
