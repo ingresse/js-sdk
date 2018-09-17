@@ -61,6 +61,10 @@ export class RequestHandler {
             request = deepMerge(request, this.auth.getSettings());
         }
 
+        if (!this.settings.url) {
+            this.setUrl('https://api.ingresse.com/');
+        }
+
         return popsicle(request)
             .use(transformResponse())
             .use(basePrefix(this.settings.url))

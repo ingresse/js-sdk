@@ -9,12 +9,6 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _authentication = require('./authentication');
 
-var _cryptoJs = require('crypto-js');
-
-var CryptoJS = _interopRequireWildcard(_cryptoJs);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -50,48 +44,70 @@ var Ingresse = exports.Ingresse = function (_Authentication) {
          * @returns {object}
          */
         value: function getSettings() {
-            var timestamp = this._getTimestamp();
-
             return {
                 query: {
-                    'publickey': encodeURI(this.getPublicKey()),
-                    'signature': encodeURI(this._getSignature(timestamp)),
-                    'timestamp': timestamp
+                    'apikey': encodeURI(this.getApiKey())
                 }
             };
         }
 
         /**
-         * Set Ingresse PublicKey
+         * Set Ingresse ApiKey
          *
-         * @param {string} publicKey - Ingresse PublicKey
+         * @param {string} apiKey - Ingresse ApiKey
          *
          * @example
-         * ingresse.api.auth.setPublicKey('12345678901234');
+         * ingresse.api.auth.setApiKey('12345678901234');
+         */
+
+    }, {
+        key: 'setApiKey',
+        value: function setApiKey(apiKey) {
+            this.authData.apiKey = apiKey;
+        }
+
+        /**
+         * @DEPRECATED
+         *
+         * Only compatibility purposes
          */
 
     }, {
         key: 'setPublicKey',
-        value: function setPublicKey(publicKey) {
-            this.authData.publicKey = publicKey;
+        value: function setPublicKey(apiKey) {
+            this.setApiKey(apiKey);
         }
 
         /**
-         * Get Ingresse PublicKey
+         * Get Ingresse ApiKey
          *
          * @returns {string}
          *
          * @example
-         * ingresse.api.auth.getPublicKey();
+         * ingresse.api.auth.getApiKey();
+         */
+
+    }, {
+        key: 'getApiKey',
+        value: function getApiKey() {
+            return this.authData.apiKey;
+        }
+
+        /**
+         * @DEPRECATED
+         *
+         * Only compatibility purposes
          */
 
     }, {
         key: 'getPublicKey',
         value: function getPublicKey() {
-            return this.authData.publicKey;
+            return this.getApiKey();
         }
 
         /**
+         * @DEPRECATED
+         *
          * Set Ingresse PrivateKey
          *
          * @param {string} privateKey - Ingresse PrivateKey
@@ -107,6 +123,8 @@ var Ingresse = exports.Ingresse = function (_Authentication) {
         }
 
         /**
+         * @DEPRECATED
+         *
          * Get Ingresse PrivateKey
          *
          * @returns {string}
@@ -126,55 +144,24 @@ var Ingresse = exports.Ingresse = function (_Authentication) {
          *
          * @param {string} timestamp
          * @param {string} signature
-         * @param {string} publicKey (optional)
+         * @param {string} apiKey (optional)
          *
          * @example
-         * ingresse.api.auth.setAuth('2018-03-14T16:10:13Z', 'signature-generated-before', 'your-app-public-key--optional');
+         * ingresse.api.auth.setAuth('2018-03-14T16:10:13Z', 'signature-generated-before', 'your-app-api-key--optional');
          */
 
     }, {
         key: 'setAuth',
-        value: function setAuth(timestamp, signature, publicKey) {
+        value: function setAuth(timestamp, signature, apiKey) {
             if (!timestamp || !signature) {
                 return false;
             }
 
             this.authData.timestamp = timestamp;
             this.authData.signature = signature;
-            this.setPublicKey(publicKey || this.getPublicKey());
+            this.setApiKey(apiKey || this.getApiKey());
 
             return true;
-        }
-
-        /**
-         * Get timestamp
-         *
-         * @private
-         * @returns {string}
-         */
-
-    }, {
-        key: '_getTimestamp',
-        value: function _getTimestamp() {
-            return this.authData.timestamp || new Date().toJSON().replace(/\.\d+/, '');
-        }
-
-        /**
-         * Get Ingresse Signature
-         *
-         * @private
-         * @returns {string}
-         */
-
-    }, {
-        key: '_getSignature',
-        value: function _getSignature(timestamp) {
-            if (this.authData.signature) {
-                return this.authData.signature;
-            }
-
-            var sha1 = CryptoJS.HmacSHA1(this.getPublicKey() + timestamp, this.getPrivateKey());
-            return sha1.toString(CryptoJS.enc.Base64);
         }
     }], [{
         key: 'type',

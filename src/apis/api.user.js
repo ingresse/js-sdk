@@ -190,10 +190,12 @@ export class ApiUser extends RequestHandler {
 
     /**
      * Gets the user credentials
+     *
+     * @returns {Object}
      */
     getCredentials() {
-        for(var prop in this.credentials) {
-            if (this.credentials.hasOwnProperty(prop)) {
+        for (let prop in this.credentials) {
+            if (this.credentials[prop]) {
                 return this.credentials;
             }
         }
@@ -204,12 +206,11 @@ export class ApiUser extends RequestHandler {
 
         if (this.credentials.userId ||
             this.credentials.token ||
-            this.credentials.jwt)
-        {
+            this.credentials.jwt) {
             return this.credentials;
         }
 
-        return false;
+        return null;
     }
 
     /**

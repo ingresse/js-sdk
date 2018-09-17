@@ -618,6 +618,24 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/apis/api.transactions.js~apitransactions#getrefundreasons",
+    "class/src/apis/api.transactions.js~ApiTransactions.html#instance-method-getRefundReasons",
+    "src/apis/api.transactions.js~ApiTransactions#getRefundReasons",
+    "method"
+  ],
+  [
+    "src/apis/api.transactions.js~apitransactions#getreport",
+    "class/src/apis/api.transactions.js~ApiTransactions.html#instance-method-getReport",
+    "src/apis/api.transactions.js~ApiTransactions#getReport",
+    "method"
+  ],
+  [
+    "src/apis/api.transactions.js~apitransactions#refund",
+    "class/src/apis/api.transactions.js~ApiTransactions.html#instance-method-refund",
+    "src/apis/api.transactions.js~ApiTransactions#refund",
+    "method"
+  ],
+  [
     "src/apis/api.user.js",
     "file/src/apis/api.user.js.html",
     "src/apis/api.user.js",
@@ -966,6 +984,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/auth/ingresse.js~ingresse#getapikey",
+    "class/src/auth/ingresse.js~Ingresse.html#instance-method-getApiKey",
+    "src/auth/ingresse.js~Ingresse#getApiKey",
+    "method"
+  ],
+  [
     "src/auth/ingresse.js~ingresse#getprivatekey",
     "class/src/auth/ingresse.js~Ingresse.html#instance-method-getPrivateKey",
     "src/auth/ingresse.js~Ingresse#getPrivateKey",
@@ -981,6 +1005,12 @@ window.esdocSearchIndex = [
     "src/auth/ingresse.js~ingresse#getsettings",
     "class/src/auth/ingresse.js~Ingresse.html#instance-method-getSettings",
     "src/auth/ingresse.js~Ingresse#getSettings",
+    "method"
+  ],
+  [
+    "src/auth/ingresse.js~ingresse#setapikey",
+    "class/src/auth/ingresse.js~Ingresse.html#instance-method-setApiKey",
+    "src/auth/ingresse.js~Ingresse#setApiKey",
     "method"
   ],
   [
