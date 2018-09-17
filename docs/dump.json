@@ -3812,7 +3812,7 @@
     "__docId__": 96,
     "kind": "file",
     "name": "src/auth/ingresse.js",
-    "content": "import {Authentication} from './authentication';\nimport * as CryptoJS from 'crypto-js';\n\n\nexport class Ingresse extends Authentication {\n    constructor() {\n        super();\n        this.authData = {};\n    }\n\n    /**\n     * Authentication type e.g. Jwt, BasicAuth, Ingresse\n     *\n     * @returns {string}\n     */\n    static type() {\n        return 'Ingresse';\n    }\n\n    /**\n     * Get formatted authentication settings\n     *\n     * @returns {object}\n     */\n    getSettings() {\n        const timestamp = this._getTimestamp();\n\n        return {\n            query: {\n                'publickey': encodeURI(this.getPublicKey()),\n                'signature': encodeURI(this._getSignature(timestamp)),\n                'timestamp': timestamp,\n            }\n        };\n    }\n\n    /**\n     * Set Ingresse PublicKey\n     *\n     * @param {string} publicKey - Ingresse PublicKey\n     *\n     * @example\n     * ingresse.api.auth.setPublicKey('12345678901234');\n     */\n    setPublicKey(publicKey) {\n        this.authData.publicKey = publicKey;\n    }\n\n    /**\n     * Get Ingresse PublicKey\n     *\n     * @returns {string}\n     *\n     * @example\n     * ingresse.api.auth.getPublicKey();\n     */\n    getPublicKey() {\n        return this.authData.publicKey;\n    }\n\n    /**\n     * Set Ingresse PrivateKey\n     *\n     * @param {string} privateKey - Ingresse PrivateKey\n     *\n     * @example\n     * ingresse.api.auth.setPrivateKey('12345678901234');\n     */\n    setPrivateKey(privateKey) {\n        this.authData.privateKey = privateKey;\n    }\n\n    /**\n     * Get Ingresse PrivateKey\n     *\n     * @returns {string}\n     *\n     * @example\n     * ingresse.api.auth.getPrivateKey();\n     */\n    getPrivateKey() {\n        return this.authData.privateKey;\n    }\n\n    /**\n     * Set Auth settings to 'Others Companies' validations\n     *\n     * @param {string} timestamp\n     * @param {string} signature\n     * @param {string} publicKey (optional)\n     *\n     * @example\n     * ingresse.api.auth.setAuth('2018-03-14T16:10:13Z', 'signature-generated-before', 'your-app-public-key--optional');\n     */\n    setAuth(timestamp, signature, publicKey) {\n        if (!timestamp || !signature) {\n            return false;\n        }\n\n        this.authData.timestamp = timestamp;\n        this.authData.signature = signature;\n        this.setPublicKey(publicKey || this.getPublicKey());\n\n        return true;\n    }\n\n    /**\n     * Get timestamp\n     *\n     * @private\n     * @returns {string}\n     */\n    _getTimestamp() {\n        return this.authData.timestamp || new Date().toJSON().replace(/\\.\\d+/, '');\n    }\n\n    /**\n     * Get Ingresse Signature\n     *\n     * @private\n     * @returns {string}\n     */\n    _getSignature(timestamp) {\n        if (this.authData.signature) {\n            return this.authData.signature;\n        }\n\n        const sha1 = CryptoJS.HmacSHA1(this.getPublicKey() + timestamp, this.getPrivateKey());\n        return sha1.toString(CryptoJS.enc.Base64);\n    }\n}\n",
+    "content": "import { Authentication } from './authentication';\n\nexport class Ingresse extends Authentication {\n    constructor() {\n        super();\n        this.authData = {};\n    }\n\n    /**\n     * Authentication type e.g. Jwt, BasicAuth, Ingresse\n     *\n     * @returns {string}\n     */\n    static type() {\n        return 'Ingresse';\n    }\n\n    /**\n     * Get formatted authentication settings\n     *\n     * @returns {object}\n     */\n    getSettings() {\n        return {\n            query: {\n                'apikey': encodeURI(this.getApiKey()),\n            }\n        };\n    }\n\n    /**\n     * Set Ingresse ApiKey\n     *\n     * @param {string} apiKey - Ingresse ApiKey\n     *\n     * @example\n     * ingresse.api.auth.setApiKey('12345678901234');\n     */\n    setApiKey(apiKey) {\n        this.authData.apiKey = apiKey;\n    }\n\n    /**\n     * @DEPRECATED\n     *\n     * Only compatibility purposes\n     */\n    setPublicKey(apiKey) {\n        this.setApiKey(apiKey);\n    }\n\n    /**\n     * Get Ingresse ApiKey\n     *\n     * @returns {string}\n     *\n     * @example\n     * ingresse.api.auth.getApiKey();\n     */\n    getApiKey() {\n        return this.authData.apiKey;\n    }\n\n    /**\n     * @DEPRECATED\n     *\n     * Only compatibility purposes\n     */\n    getPublicKey() {\n        return this.getApiKey();\n    }\n\n    /**\n     * @DEPRECATED\n     *\n     * Set Ingresse PrivateKey\n     *\n     * @param {string} privateKey - Ingresse PrivateKey\n     *\n     * @example\n     * ingresse.api.auth.setPrivateKey('12345678901234');\n     */\n    setPrivateKey(privateKey) {\n        this.authData.privateKey = privateKey;\n    }\n\n    /**\n     * @DEPRECATED\n     *\n     * Get Ingresse PrivateKey\n     *\n     * @returns {string}\n     *\n     * @example\n     * ingresse.api.auth.getPrivateKey();\n     */\n    getPrivateKey() {\n        return this.authData.privateKey;\n    }\n\n    /**\n     * Set Auth settings to 'Others Companies' validations\n     *\n     * @param {string} timestamp\n     * @param {string} signature\n     * @param {string} apiKey (optional)\n     *\n     * @example\n     * ingresse.api.auth.setAuth('2018-03-14T16:10:13Z', 'signature-generated-before', 'your-app-api-key--optional');\n     */\n    setAuth(timestamp, signature, apiKey) {\n        if (!timestamp || !signature) {\n            return false;\n        }\n\n        this.authData.timestamp = timestamp;\n        this.authData.signature = signature;\n        this.setApiKey(apiKey || this.getApiKey());\n\n        return true;\n    }\n}\n",
     "static": true,
     "longname": "src/auth/ingresse.js",
     "access": null,
@@ -3831,7 +3831,7 @@
     "importPath": "ingresse-sdk/src/auth/ingresse.js",
     "importStyle": "{Ingresse}",
     "description": null,
-    "lineNumber": 5,
+    "lineNumber": 3,
     "undocument": true,
     "unknown": [
       {
@@ -3855,7 +3855,7 @@
     "longname": "src/auth/ingresse.js~Ingresse#constructor",
     "access": null,
     "description": null,
-    "lineNumber": 6,
+    "lineNumber": 4,
     "undocument": true,
     "unknown": [
       {
@@ -3874,7 +3874,7 @@
     "longname": "src/auth/ingresse.js~Ingresse#authData",
     "access": null,
     "description": null,
-    "lineNumber": 8,
+    "lineNumber": 6,
     "undocument": true,
     "unknown": [
       {
@@ -3899,7 +3899,7 @@
     "longname": "src/auth/ingresse.js~Ingresse.type",
     "access": null,
     "description": "Authentication type e.g. Jwt, BasicAuth, Ingresse",
-    "lineNumber": 16,
+    "lineNumber": 14,
     "unknown": [
       {
         "tagName": "@returns",
@@ -3927,7 +3927,7 @@
     "longname": "src/auth/ingresse.js~Ingresse#getSettings",
     "access": null,
     "description": "Get formatted authentication settings",
-    "lineNumber": 25,
+    "lineNumber": 23,
     "unknown": [
       {
         "tagName": "@returns",
@@ -3947,18 +3947,18 @@
   {
     "__docId__": 102,
     "kind": "method",
-    "name": "setPublicKey",
+    "name": "setApiKey",
     "memberof": "src/auth/ingresse.js~Ingresse",
     "generator": false,
     "async": false,
     "static": false,
-    "longname": "src/auth/ingresse.js~Ingresse#setPublicKey",
+    "longname": "src/auth/ingresse.js~Ingresse#setApiKey",
     "access": null,
-    "description": "Set Ingresse PublicKey",
+    "description": "Set Ingresse ApiKey",
     "examples": [
-      "ingresse.api.auth.setPublicKey('12345678901234');"
+      "ingresse.api.auth.setApiKey('12345678901234');"
     ],
-    "lineNumber": 45,
+    "lineNumber": 39,
     "params": [
       {
         "nullable": null,
@@ -3967,26 +3967,53 @@
         ],
         "spread": false,
         "optional": false,
-        "name": "publicKey",
-        "description": "Ingresse PublicKey"
+        "name": "apiKey",
+        "description": "Ingresse ApiKey"
       }
     ]
   },
   {
     "__docId__": 103,
     "kind": "method",
-    "name": "getPublicKey",
+    "name": "setPublicKey",
     "memberof": "src/auth/ingresse.js~Ingresse",
     "generator": false,
     "async": false,
     "static": false,
-    "longname": "src/auth/ingresse.js~Ingresse#getPublicKey",
+    "longname": "src/auth/ingresse.js~Ingresse#setPublicKey",
     "access": null,
-    "description": "Get Ingresse PublicKey",
-    "examples": [
-      "ingresse.api.auth.getPublicKey();"
+    "description": "",
+    "lineNumber": 48,
+    "unknown": [
+      {
+        "tagName": "@DEPRECATED",
+        "tagValue": "\nOnly compatibility purposes"
+      }
     ],
-    "lineNumber": 57,
+    "params": [
+      {
+        "name": "apiKey",
+        "types": [
+          "*"
+        ]
+      }
+    ]
+  },
+  {
+    "__docId__": 104,
+    "kind": "method",
+    "name": "getApiKey",
+    "memberof": "src/auth/ingresse.js~Ingresse",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/auth/ingresse.js~Ingresse#getApiKey",
+    "access": null,
+    "description": "Get Ingresse ApiKey",
+    "examples": [
+      "ingresse.api.auth.getApiKey();"
+    ],
+    "lineNumber": 60,
     "unknown": [
       {
         "tagName": "@returns",
@@ -4004,7 +4031,32 @@
     }
   },
   {
-    "__docId__": 104,
+    "__docId__": 105,
+    "kind": "method",
+    "name": "getPublicKey",
+    "memberof": "src/auth/ingresse.js~Ingresse",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/auth/ingresse.js~Ingresse#getPublicKey",
+    "access": null,
+    "description": "",
+    "lineNumber": 69,
+    "unknown": [
+      {
+        "tagName": "@DEPRECATED",
+        "tagValue": "\nOnly compatibility purposes"
+      }
+    ],
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 106,
     "kind": "method",
     "name": "setPrivateKey",
     "memberof": "src/auth/ingresse.js~Ingresse",
@@ -4013,11 +4065,17 @@
     "static": false,
     "longname": "src/auth/ingresse.js~Ingresse#setPrivateKey",
     "access": null,
-    "description": "Set Ingresse PrivateKey",
+    "description": "",
     "examples": [
       "ingresse.api.auth.setPrivateKey('12345678901234');"
     ],
-    "lineNumber": 69,
+    "lineNumber": 83,
+    "unknown": [
+      {
+        "tagName": "@DEPRECATED",
+        "tagValue": "\nSet Ingresse PrivateKey"
+      }
+    ],
     "params": [
       {
         "nullable": null,
@@ -4032,7 +4090,7 @@
     ]
   },
   {
-    "__docId__": 105,
+    "__docId__": 107,
     "kind": "method",
     "name": "getPrivateKey",
     "memberof": "src/auth/ingresse.js~Ingresse",
@@ -4041,12 +4099,16 @@
     "static": false,
     "longname": "src/auth/ingresse.js~Ingresse#getPrivateKey",
     "access": null,
-    "description": "Get Ingresse PrivateKey",
+    "description": "",
     "examples": [
       "ingresse.api.auth.getPrivateKey();"
     ],
-    "lineNumber": 81,
+    "lineNumber": 97,
     "unknown": [
+      {
+        "tagName": "@DEPRECATED",
+        "tagValue": "\nGet Ingresse PrivateKey"
+      },
       {
         "tagName": "@returns",
         "tagValue": "{string}"
@@ -4063,7 +4125,7 @@
     }
   },
   {
-    "__docId__": 106,
+    "__docId__": 108,
     "kind": "method",
     "name": "setAuth",
     "memberof": "src/auth/ingresse.js~Ingresse",
@@ -4074,9 +4136,9 @@
     "access": null,
     "description": "Set Auth settings to 'Others Companies' validations",
     "examples": [
-      "ingresse.api.auth.setAuth('2018-03-14T16:10:13Z', 'signature-generated-before', 'your-app-public-key--optional');"
+      "ingresse.api.auth.setAuth('2018-03-14T16:10:13Z', 'signature-generated-before', 'your-app-api-key--optional');"
     ],
-    "lineNumber": 95,
+    "lineNumber": 111,
     "params": [
       {
         "nullable": null,
@@ -4105,7 +4167,7 @@
         ],
         "spread": false,
         "optional": false,
-        "name": "publicKey",
+        "name": "apiKey",
         "description": "(optional)"
       }
     ],
@@ -4113,69 +4175,6 @@
       "types": [
         "boolean"
       ]
-    }
-  },
-  {
-    "__docId__": 107,
-    "kind": "method",
-    "name": "_getTimestamp",
-    "memberof": "src/auth/ingresse.js~Ingresse",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/auth/ingresse.js~Ingresse#_getTimestamp",
-    "access": "private",
-    "description": "Get timestamp",
-    "lineNumber": 113,
-    "unknown": [
-      {
-        "tagName": "@returns",
-        "tagValue": "{string}"
-      }
-    ],
-    "params": [],
-    "return": {
-      "nullable": null,
-      "types": [
-        "string"
-      ],
-      "spread": false,
-      "description": ""
-    }
-  },
-  {
-    "__docId__": 108,
-    "kind": "method",
-    "name": "_getSignature",
-    "memberof": "src/auth/ingresse.js~Ingresse",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/auth/ingresse.js~Ingresse#_getSignature",
-    "access": "private",
-    "description": "Get Ingresse Signature",
-    "lineNumber": 123,
-    "unknown": [
-      {
-        "tagName": "@returns",
-        "tagValue": "{string}"
-      }
-    ],
-    "params": [
-      {
-        "name": "timestamp",
-        "types": [
-          "*"
-        ]
-      }
-    ],
-    "return": {
-      "nullable": null,
-      "types": [
-        "string"
-      ],
-      "spread": false,
-      "description": ""
     }
   },
   {

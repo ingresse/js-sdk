@@ -931,13 +931,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/auth/authentication.js~authentication#authdata",
-    "class/src/auth/authentication.js~Authentication.html#instance-get-authData",
+    "class/src/auth/authentication.js~Authentication.html#instance-set-authData",
     "src/auth/authentication.js~Authentication#authData",
     "member"
   ],
   [
     "src/auth/authentication.js~authentication#authdata",
-    "class/src/auth/authentication.js~Authentication.html#instance-set-authData",
+    "class/src/auth/authentication.js~Authentication.html#instance-get-authData",
     "src/auth/authentication.js~Authentication#authData",
     "member"
   ],
@@ -966,6 +966,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/auth/ingresse.js~ingresse#getapikey",
+    "class/src/auth/ingresse.js~Ingresse.html#instance-method-getApiKey",
+    "src/auth/ingresse.js~Ingresse#getApiKey",
+    "method"
+  ],
+  [
     "src/auth/ingresse.js~ingresse#getprivatekey",
     "class/src/auth/ingresse.js~Ingresse.html#instance-method-getPrivateKey",
     "src/auth/ingresse.js~Ingresse#getPrivateKey",
@@ -981,6 +987,12 @@ window.esdocSearchIndex = [
     "src/auth/ingresse.js~ingresse#getsettings",
     "class/src/auth/ingresse.js~Ingresse.html#instance-method-getSettings",
     "src/auth/ingresse.js~Ingresse#getSettings",
+    "method"
+  ],
+  [
+    "src/auth/ingresse.js~ingresse#setapikey",
+    "class/src/auth/ingresse.js~Ingresse.html#instance-method-setApiKey",
+    "src/auth/ingresse.js~Ingresse#setApiKey",
     "method"
   ],
   [
