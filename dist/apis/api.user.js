@@ -261,13 +261,15 @@ var ApiUser = exports.ApiUser = function (_RequestHandler) {
 
         /**
          * Gets the user credentials
+         *
+         * @returns {Object}
          */
 
     }, {
         key: 'getCredentials',
         value: function getCredentials() {
             for (var prop in this.credentials) {
-                if (this.credentials.hasOwnProperty(prop)) {
+                if (this.credentials[prop]) {
                     return this.credentials;
                 }
             }
@@ -280,7 +282,7 @@ var ApiUser = exports.ApiUser = function (_RequestHandler) {
                 return this.credentials;
             }
 
-            return false;
+            return null;
         }
 
         /**

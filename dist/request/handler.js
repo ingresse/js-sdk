@@ -93,6 +93,10 @@ var RequestHandler = exports.RequestHandler = function () {
                 request = (0, _helper.deepMerge)(request, this.auth.getSettings());
             }
 
+            if (!this.settings.url) {
+                this.setUrl('https://api.ingresse.com/');
+            }
+
             return (0, _popsicle2.default)(request).use((0, _plugins.transformResponse)()).use((0, _plugins.basePrefix)(this.settings.url)).use(_popsicle.plugins.parse(['json']));
         }
 

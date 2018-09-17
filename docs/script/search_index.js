@@ -618,6 +618,24 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/apis/api.transactions.js~apitransactions#getrefundreasons",
+    "class/src/apis/api.transactions.js~ApiTransactions.html#instance-method-getRefundReasons",
+    "src/apis/api.transactions.js~ApiTransactions#getRefundReasons",
+    "method"
+  ],
+  [
+    "src/apis/api.transactions.js~apitransactions#getreport",
+    "class/src/apis/api.transactions.js~ApiTransactions.html#instance-method-getReport",
+    "src/apis/api.transactions.js~ApiTransactions#getReport",
+    "method"
+  ],
+  [
+    "src/apis/api.transactions.js~apitransactions#refund",
+    "class/src/apis/api.transactions.js~ApiTransactions.html#instance-method-refund",
+    "src/apis/api.transactions.js~ApiTransactions#refund",
+    "method"
+  ],
+  [
     "src/apis/api.user.js",
     "file/src/apis/api.user.js.html",
     "src/apis/api.user.js",
@@ -931,13 +949,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/auth/authentication.js~authentication#authdata",
-    "class/src/auth/authentication.js~Authentication.html#instance-set-authData",
+    "class/src/auth/authentication.js~Authentication.html#instance-get-authData",
     "src/auth/authentication.js~Authentication#authData",
     "member"
   ],
   [
     "src/auth/authentication.js~authentication#authdata",
-    "class/src/auth/authentication.js~Authentication.html#instance-get-authData",
+    "class/src/auth/authentication.js~Authentication.html#instance-set-authData",
     "src/auth/authentication.js~Authentication#authData",
     "member"
   ],

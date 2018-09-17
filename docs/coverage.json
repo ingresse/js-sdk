@@ -1,7 +1,7 @@
 {
-  "coverage": "83.06%",
-  "expectCount": 124,
-  "actualCount": 103,
+  "coverage": "83.46%",
+  "expectCount": 127,
+  "actualCount": 106,
   "files": {
     "src/apis/api.js": {
       "expectCount": 3,
@@ -31,8 +31,8 @@
       "undocumentLines": []
     },
     "src/apis/api.transactions.js": {
-      "expectCount": 3,
-      "actualCount": 3,
+      "expectCount": 6,
+      "actualCount": 6,
       "undocumentLines": []
     },
     "src/apis/api.user.js": {
