@@ -60,10 +60,7 @@ export class ApiTransactions extends RequestHandler {
      * @returns {Promise}
      */
     refund(id, data = null, query = {}) {
-        let filters = Object.assign(query, {
-            method: 'refund',
-        });
 
-        return this.post(`/sale/${id}`, data, filters);
+        return this.post(`/shop/${id}/refund`, data, query);
     }
 }
