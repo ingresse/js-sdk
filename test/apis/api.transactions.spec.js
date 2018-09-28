@@ -112,7 +112,7 @@ describe('API transactions', () => {
             transactions.refund(id);
 
             chai.expect(transactions.post).to.have.been.called.with
-                .exactly(`/sale/${id}`, null, { method: 'refund' });
+                .exactly(`/shop/${id}/refund`, null, {});
         });
 
         it('should call this.refund with query params', () => {
@@ -124,7 +124,7 @@ describe('API transactions', () => {
             transactions.refund(id, data, query);
 
             chai.expect(transactions.post).to.have.been.called.with
-                .exactly(`/sale/${id}`, data, Object.assign(query, { method: 'refund' }));
+                .exactly(`/shop/${id}/refund`, data, query);
         });
     });
 });
