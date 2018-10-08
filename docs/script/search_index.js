@@ -606,6 +606,12 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/apis/api.transactions.js~apitransactions#capture",
+    "class/src/apis/api.transactions.js~ApiTransactions.html#instance-method-capture",
+    "src/apis/api.transactions.js~ApiTransactions#capture",
+    "method"
+  ],
+  [
     "src/apis/api.transactions.js~apitransactions#getbyid",
     "class/src/apis/api.transactions.js~ApiTransactions.html#instance-method-getById",
     "src/apis/api.transactions.js~ApiTransactions#getById",

@@ -113,6 +113,24 @@ var ApiTransactions = exports.ApiTransactions = function (_RequestHandler) {
 
       return this.post('/shop/' + id + '/refund', data, query);
     }
+
+    /**
+     * Capture an authorized transaction
+     *
+     * @param {string} id      - Transaction ID.
+     * @param {object} [query] - Optional request parameters.
+     *
+     * @returns {Promise}
+     */
+
+  }, {
+    key: 'capture',
+    value: function capture(id) {
+      var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+
+      return this.post('/shop/' + id + '/capture', null, query);
+    }
   }]);
 
   return ApiTransactions;
