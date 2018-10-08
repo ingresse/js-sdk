@@ -127,5 +127,28 @@ describe('API transactions', () => {
                 .exactly(`/shop/${id}/refund`, data, query);
         });
     });
+
+    describe('capture', () => {
+        it('should call this.capture', () => {
+            let id = '1234-55555-6666';
+
+            transactions.capture(id);
+
+            chai.expect(transactions.post).to.have.been.called.with
+                .exactly(`/shop/${id}/capture`, null, {});
+        });
+
+        it('should call this.capture with query params', () => {
+            let id   = '1234-55555-6666';
+            let query = {
+                property: 'test',
+            };
+
+            transactions.capture(id, query);
+
+            chai.expect(transactions.post).to.have.been.called.with
+                .exactly(`/shop/${id}/capture`, null, query);
+        });
+    });
 });
 
