@@ -63,4 +63,17 @@ export class ApiTransactions extends RequestHandler {
 
         return this.post(`/shop/${id}/refund`, data, query);
     }
+
+    /**
+     * Capture an authorized transaction
+     *
+     * @param {string} id      - Transaction ID.
+     * @param {object} [query] - Optional request parameters.
+     *
+     * @returns {Promise}
+     */
+    capture(id, query = {}) {
+
+        return this.post(`/shop/${id}/capture`, null, query);
+    }
 }
