@@ -167,5 +167,68 @@ describe('Ticket API', () => {
             chai.expect(ticket.put).to.have.been.called.with.exactly('/items/10', { name: 'Test' }, { query: 'Test' });
         });
     });
+
+    describe('getTriggers', () => {
+        let ticket;
+
+        beforeEach(() => {
+            ticket = new Ticket();
+            chai.spy.on(ticket, 'get');
+        });
+
+        it('should getTriggers call this.get with id', () => {
+            ticket.getTriggers(10);
+
+            chai.expect(ticket.get).to.have.been.called.with.exactly('/items/10/triggers', {});
+        });
+
+        it('should getTriggers call this.get with eventid param', () => {
+            ticket.getTriggers(10, { eventId: 10 });
+
+            chai.expect(ticket.get).to.have.been.called.with.exactly('/items/10/triggers', { eventId: 10 });
+        });
+    });
+
+    describe('getTax', () => {
+        let ticket;
+
+        beforeEach(() => {
+            ticket = new Ticket();
+            chai.spy.on(ticket, 'get');
+        });
+
+        it('should getTax call this.get', () => {
+            ticket.getTax();
+
+            chai.expect(ticket.get).to.have.been.called.with.exactly('/tax', {});
+        });
+
+        it('should getTax call this.get with eventid param', () => {
+            ticket.getTax({ eventId: 10 });
+
+            chai.expect(ticket.get).to.have.been.called.with.exactly('/tax', { eventId: 10 });
+        });
+    });
+
+    describe('getPasskeys', () => {
+        let ticket;
+
+        beforeEach(() => {
+            ticket = new Ticket();
+            chai.spy.on(ticket, 'get');
+        });
+
+        it('should getPasskeys call this.get', () => {
+            ticket.getPasskeys();
+
+            chai.expect(ticket.get).to.have.been.called.with.exactly('/passkey', {});
+        });
+
+        it('should getPasskeys call this.get with eventid param', () => {
+            ticket.getPasskeys({ eventId: 10 });
+
+            chai.expect(ticket.get).to.have.been.called.with.exactly('/passkey', { eventId: 10 });
+        });
+    });
 });
 

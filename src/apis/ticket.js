@@ -383,5 +383,31 @@ export class Ticket extends RequestHandler {
     getTax(query = {}) {
         return this.get('/tax', query);
     }
+
+    /**
+     * Get the ticket passkeys list.
+     *
+     * @param {Object} query - The request parameters.
+     * @param {Number} query.eventId - The event id.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * var query = {
+     *  eventId: 123, // must be informed one eventId.
+     * };
+     *
+     * ingresse.ticket.getPasskeys(query)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    getPasskeys(query = {}) {
+        return this.get('/passkey', query);
+    }
 }
 
