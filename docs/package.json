@@ -15,7 +15,8 @@
     "test": "nyc --reporter=lcov --reporter=html npm run unit-test",
     "posttest": "nyc report",
     "unit-test": "mocha --recursive --compilers js:babel-register",
-    "tdd-test": "mocha -w --recursive --compilers js:babel-register"
+    "tdd-test": "mocha -w --recursive --compilers js:babel-register",
+    "deploy": "npm run test && npm run build && npm run docs"
   },
   "devDependencies": {
     "babel-eslint": "^6.1.2",

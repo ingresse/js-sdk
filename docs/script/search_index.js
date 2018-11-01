@@ -762,6 +762,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/apis/event.js~event#deletepermission",
+    "class/src/apis/event.js~Event.html#instance-method-deletePermission",
+    "src/apis/event.js~Event#deletePermission",
+    "method"
+  ],
+  [
     "src/apis/event.js~event#deleteposter",
     "class/src/apis/event.js~Event.html#instance-method-deletePoster",
     "src/apis/event.js~Event#deletePoster",
@@ -828,6 +834,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/apis/event.js~event#updatepermission",
+    "class/src/apis/event.js~Event.html#instance-method-updatePermission",
+    "src/apis/event.js~Event#updatePermission",
+    "method"
+  ],
+  [
     "src/apis/event.js~event#updateposter",
     "class/src/apis/event.js~Event.html#instance-method-updatePoster",
     "src/apis/event.js~Event#updatePoster",
@@ -852,9 +864,21 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/apis/ticket.js~ticket#associatepasskey",
+    "class/src/apis/ticket.js~Ticket.html#instance-method-associatePasskey",
+    "src/apis/ticket.js~Ticket#associatePasskey",
+    "method"
+  ],
+  [
     "src/apis/ticket.js~ticket#constructor",
     "class/src/apis/ticket.js~Ticket.html#instance-constructor-constructor",
     "src/apis/ticket.js~Ticket#constructor",
+    "method"
+  ],
+  [
+    "src/apis/ticket.js~ticket#createpasskey",
+    "class/src/apis/ticket.js~Ticket.html#instance-method-createPasskey",
+    "src/apis/ticket.js~Ticket#createPasskey",
     "method"
   ],
   [
@@ -867,6 +891,18 @@ window.esdocSearchIndex = [
     "src/apis/ticket.js~ticket#getitems",
     "class/src/apis/ticket.js~Ticket.html#instance-method-getItems",
     "src/apis/ticket.js~Ticket#getItems",
+    "method"
+  ],
+  [
+    "src/apis/ticket.js~ticket#getpasskeybyid",
+    "class/src/apis/ticket.js~Ticket.html#instance-method-getPasskeyById",
+    "src/apis/ticket.js~Ticket#getPasskeyById",
+    "method"
+  ],
+  [
+    "src/apis/ticket.js~ticket#getpasskeys",
+    "class/src/apis/ticket.js~Ticket.html#instance-method-getPasskeys",
+    "src/apis/ticket.js~Ticket#getPasskeys",
     "method"
   ],
   [
@@ -933,6 +969,12 @@ window.esdocSearchIndex = [
     "src/apis/ticket.js~ticket#updateitem",
     "class/src/apis/ticket.js~Ticket.html#instance-method-updateItem",
     "src/apis/ticket.js~Ticket#updateItem",
+    "method"
+  ],
+  [
+    "src/apis/ticket.js~ticket#updatepasskey",
+    "class/src/apis/ticket.js~Ticket.html#instance-method-updatePasskey",
+    "src/apis/ticket.js~Ticket#updatePasskey",
     "method"
   ],
   [
