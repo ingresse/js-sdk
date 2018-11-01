@@ -6317,7 +6317,7 @@
                         },
                         "arguments": [
                           {
-                            "type": "TemplateLiteral",
+                            "type": "StringLiteral",
                             "start": 12486,
                             "end": 12498,
                             "loc": {
@@ -6330,29 +6330,11 @@
                                 "column": 37
                               }
                             },
-                            "expressions": [],
-                            "quasis": [
-                              {
-                                "type": "TemplateElement",
-                                "start": 12487,
-                                "end": 12497,
-                                "loc": {
-                                  "start": {
-                                    "line": 463,
-                                    "column": 26
-                                  },
-                                  "end": {
-                                    "line": 463,
-                                    "column": 36
-                                  }
-                                },
-                                "value": {
-                                  "raw": "/passkeys/",
-                                  "cooked": "/passkeys/"
-                                },
-                                "tail": true
-                              }
-                            ]
+                            "extra": {
+                              "rawValue": "/passkeys/",
+                              "raw": "'/passkeys/'"
+                            },
+                            "value": "/passkeys/"
                           },
                           {
                             "type": "Identifier",
@@ -20739,34 +20721,9 @@
     },
     {
       "type": {
-        "label": "`",
+        "label": "string",
         "beforeExpr": false,
         "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "start": 12486,
-      "end": 12487,
-      "loc": {
-        "start": {
-          "line": 463,
-          "column": 25
-        },
-        "end": {
-          "line": 463,
-          "column": 26
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "template",
-        "beforeExpr": false,
-        "startsExpr": false,
         "rightAssociative": false,
         "isLoop": false,
         "isAssign": false,
@@ -20776,37 +20733,12 @@
         "updateContext": null
       },
       "value": "/passkeys/",
-      "start": 12487,
-      "end": 12497,
-      "loc": {
-        "start": {
-          "line": 463,
-          "column": 26
-        },
-        "end": {
-          "line": 463,
-          "column": 36
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "`",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "start": 12497,
+      "start": 12486,
       "end": 12498,
       "loc": {
         "start": {
           "line": 463,
-          "column": 36
+          "column": 25
         },
         "end": {
           "line": 463,

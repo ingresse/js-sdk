@@ -1,13 +1,7 @@
 {
-<<<<<<< HEAD
-  "coverage": "84.21%",
-  "expectCount": 133,
-  "actualCount": 112,
-=======
-  "coverage": "83.84%",
-  "expectCount": 130,
-  "actualCount": 109,
->>>>>>> feature/event-permissions
+  "coverage": "84.44%",
+  "expectCount": 135,
+  "actualCount": 114,
   "files": {
     "src/apis/api.js": {
       "expectCount": 3,

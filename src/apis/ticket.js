@@ -460,7 +460,7 @@ export class Ticket extends RequestHandler {
      *});
      */
     createPasskey(data, query = {}) {
-        return this.post(`/passkeys/`, data,  query);
+        return this.post('/passkeys/', data,  query);
     }
 
     /**
