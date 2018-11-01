@@ -383,5 +383,140 @@ export class Ticket extends RequestHandler {
     getTax(query = {}) {
         return this.get('/tax', query);
     }
+
+    /**
+     * Get the ticket passkeys list.
+     *
+     * @param {Object} query - The request parameters.
+     * @param {Number} query.eventId - The event id.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * var query = {
+     *  eventId: 123, // must be informed one eventId.
+     * };
+     *
+     * ingresse.ticket.getPasskeys(query)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    getPasskeys(query = {}) {
+        return this.get('/passkeys', query);
+    }
+
+    /**
+     * Get the ticket passkeys by id.
+     *
+     * @param {number} id      - The passkey id.
+     * @param {Object} [query] - The request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.ticket.getPasskeyById(id, query)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    getPasskeyById(id, query = {}) {
+        return this.get(`/passkeys/${id}`, query);
+    }
+
+    /**
+     * Create the new passkey
+     *
+     * @param {object} data         - Data to create a new passkey.
+     * @param {number} data.eventId - The event id.
+     * @param {string} data.passkey - The passkey.
+     * @param {date}   [data.start] - The date that this passkey will works.
+     * @param {date}   [data.finish]- The data that this passkey will stop works.
+     * @param {Object} [query]      - The request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     *ingresse.ticket.createPasskey({
+     *    "eventId": 26899,
+     *    "passkey": "passkey",
+     *    "start"  : "2018-10-31 12:00:00",
+     *    "finish" : "2019-11-10 20:20:00"
+     *})
+     *.then(function (response) {
+     *    console.log(response);
+     *})
+     *.catch(function (error) {
+     *    console.log(error);
+     *});
+     */
+    createPasskey(data, query = {}) {
+        return this.post(`/passkeys/`, data,  query);
+    }
+
+    /**
+     * Update a passkey
+     *
+     * @param {string|number} id    - The passkey id to update.
+     * @param {object} data         - Data to update a passkey.
+     * @param {number} data.eventId - The event id.
+     * @param {string} data.passkey - The passkey.
+     * @param {date}   [data.start] - The date that this passkey will works.
+     * @param {date}   [data.finish]- The data that this passkey will stop works.
+     * @param {Object} [query]      - The request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.ticket.updatePasskey(200, {
+     *    "eventId": 26899,
+     *    "passkey": "passkey",
+     *    "start"  : "2018-10-31 12:00:00",
+     *    "finish" : "2019-11-10 20:20:00"
+     *})
+     *.then(function (response) {
+     *    console.log(response);
+     *})
+     *.catch(function (error) {
+     *   console.log(error);
+     *});
+     */
+    updatePasskey(id, data = {}, query = {}) {
+        return this.put(`/passkeys/${id}`, data, query);
+    }
+
+    /**
+     * Associate a passkey to items
+     *
+     * @param {string|number} id    - The passkey id to update.
+     * @param {object} data         - Data to  a passkey.
+     * @param {array}  data.itemIds - An array with tickets id.
+     * @param {Object} [query]      - The request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.ticket.updatePasskey(200, {itemIds: [1,2,3]})
+     *.then(function (response) {
+     *    console.log(response);
+     *})
+     *.catch(function (error) {
+     *   console.log(error);
+     *});
+     */
+    associatePasskey(id, data = {}, query = {}) {
+        return this.put(`/passkeys/${id}/items`, data, query);
+    }
 }
 
