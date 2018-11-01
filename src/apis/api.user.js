@@ -36,7 +36,6 @@ export class ApiUser extends RequestHandler {
         return this.get(`/user/${id}/picture`, query);
     }
 
-
     /**
      * Get the user tickets.
      *

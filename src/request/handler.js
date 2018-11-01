@@ -134,17 +134,18 @@ export class RequestHandler {
      *
      * @param {string} path    - Request delete to endpoint e.g. /api-path/1
      * @param {object} [query] - Optional request parameters.
+     * @param {object} [data]  - Data to be deleted.
      *
      * @returns {Promise}
      */
-    delete(path, query) {
+    delete(path, query, data) {
         let request = {
             method: 'DELETE',
             url   : path,
+            body  : data,
             query : query,
         };
 
         return this.request(request);
     }
 }
-

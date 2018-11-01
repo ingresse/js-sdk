@@ -421,6 +421,57 @@ export class Event extends RequestHandler {
     searchByProducer(query = {}) {
         return this.get(&apos;/search/producer&apos;, query);
     }
+
+    /**
+     * Update/Add users permission to the event
+     * (Make this users admins)
+     *
+     * @param {string|number} eventId - The Event ID.
+     * @param {object}        data    - Object with attribute `usersPermission` as Array with Users IDs to attribute Permission.
+     * @param {object}        [query] - Request parameters/filters.
+     *
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     * var data = { usersPermission: [ 321 ] };
+     *
+     * ingresse.event.updatePermission(21232, data)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    updatePermission(eventId, data = {}, query = {}) {
+        return this.put(`/${eventId}/permission`, data, query);
+    }
+
+    /**
+     * Remove permission on the event of only unique user
+     *
+     * @param {string|number} eventId - The Event ID.
+     * @param {object}        data    - Object with attribute `usersPermission` as Array with Users IDs to delete Permission.
+     * @param {object}        [query] - Request parameters/filters.
+     *
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     * var data = { usersPermission: [ 321 ] };
+     *
+     * ingresse.event.deletePermission(21232, data)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    deletePermission(eventId, data = {}, query = {}) {
+        return this.delete(`/${eventId}/permission`, query, data);
+    }
 }
 </code></pre>
 

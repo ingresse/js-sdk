@@ -461,6 +461,69 @@ var Event = exports.Event = function (_RequestHandler) {
 
             return this.get('/search/producer', query);
         }
+
+        /**
+         * Update/Add users permission to the event
+         * (Make this users admins)
+         *
+         * @param {string|number} eventId - The Event ID.
+         * @param {object}        data    - Object with attribute `usersPermission` as Array with Users IDs to attribute Permission.
+         * @param {object}        [query] - Request parameters/filters.
+         *
+         * @returns {Promise}
+         *
+         * @example
+         * ...
+         * var data = { usersPermission: [ 321 ] };
+         *
+         * ingresse.event.updatePermission(21232, data)
+         *     .then(function (response) {
+         *         console.log(response);
+         *     })
+         *     .catch(function (error) {
+         *         console.log(error);
+         *     });
+         */
+
+    }, {
+        key: 'updatePermission',
+        value: function updatePermission(eventId) {
+            var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+            var query = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+
+            return this.put('/' + eventId + '/permission', data, query);
+        }
+
+        /**
+         * Remove permission on the event of only unique user
+         *
+         * @param {string|number} eventId - The Event ID.
+         * @param {object}        data    - Object with attribute `usersPermission` as Array with Users IDs to delete Permission.
+         * @param {object}        [query] - Request parameters/filters.
+         *
+         * @returns {Promise}
+         *
+         * @example
+         * ...
+         * var data = { usersPermission: [ 321 ] };
+         *
+         * ingresse.event.deletePermission(21232, data)
+         *     .then(function (response) {
+         *         console.log(response);
+         *     })
+         *     .catch(function (error) {
+         *         console.log(error);
+         *     });
+         */
+
+    }, {
+        key: 'deletePermission',
+        value: function deletePermission(eventId) {
+            var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+            var query = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+
+            return this.delete('/' + eventId + '/permission', query, data);
+        }
     }]);
 
     return Event;
