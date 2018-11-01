@@ -762,6 +762,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/apis/event.js~event#deletepermission",
+    "class/src/apis/event.js~Event.html#instance-method-deletePermission",
+    "src/apis/event.js~Event#deletePermission",
+    "method"
+  ],
+  [
     "src/apis/event.js~event#deleteposter",
     "class/src/apis/event.js~Event.html#instance-method-deletePoster",
     "src/apis/event.js~Event#deletePoster",
@@ -825,6 +831,12 @@ window.esdocSearchIndex = [
     "src/apis/event.js~event#updateattributes",
     "class/src/apis/event.js~Event.html#instance-method-updateAttributes",
     "src/apis/event.js~Event#updateAttributes",
+    "method"
+  ],
+  [
+    "src/apis/event.js~event#updatepermission",
+    "class/src/apis/event.js~Event.html#instance-method-updatePermission",
+    "src/apis/event.js~Event#updatePermission",
     "method"
   ],
   [

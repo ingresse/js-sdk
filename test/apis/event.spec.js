@@ -464,4 +464,62 @@ describe('Event API', () => {
             chai.expect(event.get).to.have.been.called.with.exactly('/search/producer', filters);
         });
     });
+
+    describe('updatePermission', () => {
+        let event;
+        let id    = 123;
+        let data  = {};
+        let query = { test: 'test' };
+
+        beforeEach(() => {
+            event = new Event();
+            chai.spy.on(event, 'put');
+        });
+
+        it('should updatePermission call this.put without body and params', () => {
+            event.updatePermission(id);
+
+            chai.expect(event.put).to.have.been.called.with.exactly(`/${id}/permission`, data, {});
+        });
+
+        it('should updatePermission call this.put', () => {
+            data = { usersPermission: [ 321, 654 ] };
+
+            event.updatePermission(id, data);
+
+            chai.expect(event.put).to.have.been.called.with.exactly(`/${id}/permission`, data, {});
+        });
+
+        it('should updatePermission call this.put and accepting query argument', () => {
+            data = { usersPermission: [ 321, 654 ] };
+
+            event.updatePermission(id, data, query);
+
+            chai.expect(event.put).to.have.been.called.with.exactly(`/${id}/permission`, data, query);
+        });
+    });
+
+    describe('deletePermission', () => {
+        let event;
+        let id    = 1;
+        let data  = { usersPermission: [ 321 ] };
+        let query = { test: 'test' };
+
+        beforeEach(() => {
+            event = new Event();
+            chai.spy.on(event, 'delete');
+        });
+
+        it('should deletePermission call this.delete', () => {
+            event.deletePermission(id, data);
+
+            chai.expect(event.delete).to.have.been.called.with.exactly(`/${id}/permission`, {}, data);
+        });
+
+        it('should deletePermission call this.delete and accepting query argument', () => {
+            event.deletePermission(id, data, query);
+
+            chai.expect(event.delete).to.have.been.called.with.exactly(`/${id}/permission`, query, data);
+        });
+    });
 });

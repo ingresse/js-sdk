@@ -172,16 +172,18 @@ var RequestHandler = exports.RequestHandler = function () {
          *
          * @param {string} path    - Request delete to endpoint e.g. /api-path/1
          * @param {object} [query] - Optional request parameters.
+         * @param {object} [data]  - Data to be deleted.
          *
          * @returns {Promise}
          */
 
     }, {
         key: 'delete',
-        value: function _delete(path, query) {
+        value: function _delete(path, query, data) {
             var request = {
                 method: 'DELETE',
                 url: path,
+                body: data,
                 query: query
             };
 
