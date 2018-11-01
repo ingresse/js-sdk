@@ -221,13 +221,104 @@ describe('Ticket API', () => {
         it('should getPasskeys call this.get', () => {
             ticket.getPasskeys();
 
-            chai.expect(ticket.get).to.have.been.called.with.exactly('/passkey', {});
+            chai.expect(ticket.get).to.have.been.called.with.exactly('/passkeys', {});
         });
 
         it('should getPasskeys call this.get with eventid param', () => {
             ticket.getPasskeys({ eventId: 10 });
 
-            chai.expect(ticket.get).to.have.been.called.with.exactly('/passkey', { eventId: 10 });
+            chai.expect(ticket.get).to.have.been.called.with.exactly('/passkeys', { eventId: 10 });
+        });
+    });
+
+    describe('getPasskeyById', () => {
+        let ticket;
+        let id;
+
+        beforeEach(() => {
+            ticket = new Ticket();
+            id     = 10;
+            chai.spy.on(ticket, 'get');
+        });
+
+        it('should getPasskeyById call this.get', () => {
+            ticket.getPasskeyById(id);
+
+            chai.expect(ticket.get).to.have.been.called.with.exactly(`/passkeys/${id}`, {});
+        });
+
+        it('should getPasskeys call this.get with query param', () => {
+            let query = { test: 'test' };
+            ticket.getPasskeyById(id, query);
+
+            chai.expect(ticket.get).to.have.been.called.with.exactly(`/passkeys/${id}`, query);
+        });
+    });
+
+    describe('createPasskey', () => {
+        let ticket;
+        let data;
+
+        beforeEach(() => {
+            ticket = new Ticket();
+            data = {
+                eventId: 26899,
+                passkey: 'testeGG',
+                start: '2018-10-31 12:00:00',
+                finish: '2019-11-10 20:20:00'
+            }
+            chai.spy.on(ticket, 'post');
+        });
+
+        it('should createPasskey call this.post', () => {
+            ticket.createPasskey(data);
+
+            chai.expect(ticket.post).to.have.been.called.with.exactly(`/passkeys/`, data, {});
+        });
+    });
+
+    describe('updatePasskey', () => {
+        let ticket;
+        let data;
+        let id;
+
+        beforeEach(() => {
+            ticket = new Ticket();
+            id   = 1;
+            data = {
+                eventId: 26899,
+                passkey: 'testeGG',
+                start: '2018-10-31 12:00:00',
+                finish: '2019-11-10 20:20:00'
+            }
+            chai.spy.on(ticket, 'put');
+        });
+
+        it('should updatePasskey call this.put', () => {
+            ticket.updatePasskey(id, data);
+
+            chai.expect(ticket.put).to.have.been.called.with.exactly(`/passkeys/${id}`, data, {});
+        });
+    });
+
+    describe('associatePasskey', () => {
+        let ticket;
+        let data;
+        let id;
+
+        beforeEach(() => {
+            ticket = new Ticket();
+            id   = 1;
+            data = {
+                itemIds: [1,2,3]
+            }
+            chai.spy.on(ticket, 'put');
+        });
+
+        it('should updatePasskey call this.put', () => {
+            ticket.associatePasskey(id, data);
+
+            chai.expect(ticket.put).to.have.been.called.with.exactly(`/passkeys/${id}/items`, data, {});
         });
     });
 });
