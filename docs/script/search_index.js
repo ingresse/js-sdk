@@ -852,9 +852,21 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/apis/ticket.js~ticket#associatepasskey",
+    "class/src/apis/ticket.js~Ticket.html#instance-method-associatePasskey",
+    "src/apis/ticket.js~Ticket#associatePasskey",
+    "method"
+  ],
+  [
     "src/apis/ticket.js~ticket#constructor",
     "class/src/apis/ticket.js~Ticket.html#instance-constructor-constructor",
     "src/apis/ticket.js~Ticket#constructor",
+    "method"
+  ],
+  [
+    "src/apis/ticket.js~ticket#createpasskey",
+    "class/src/apis/ticket.js~Ticket.html#instance-method-createPasskey",
+    "src/apis/ticket.js~Ticket#createPasskey",
     "method"
   ],
   [
@@ -867,6 +879,12 @@ window.esdocSearchIndex = [
     "src/apis/ticket.js~ticket#getitems",
     "class/src/apis/ticket.js~Ticket.html#instance-method-getItems",
     "src/apis/ticket.js~Ticket#getItems",
+    "method"
+  ],
+  [
+    "src/apis/ticket.js~ticket#getpasskeybyid",
+    "class/src/apis/ticket.js~Ticket.html#instance-method-getPasskeyById",
+    "src/apis/ticket.js~Ticket#getPasskeyById",
     "method"
   ],
   [
@@ -942,6 +960,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/apis/ticket.js~ticket#updatepasskey",
+    "class/src/apis/ticket.js~Ticket.html#instance-method-updatePasskey",
+    "src/apis/ticket.js~Ticket#updatePasskey",
+    "method"
+  ],
+  [
     "src/apis/ticket.js~ticket#updatesaleperiod",
     "class/src/apis/ticket.js~Ticket.html#instance-method-updateSalePeriod",
     "src/apis/ticket.js~Ticket#updateSalePeriod",
@@ -961,13 +985,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/auth/authentication.js~authentication#authdata",
-    "class/src/auth/authentication.js~Authentication.html#instance-get-authData",
+    "class/src/auth/authentication.js~Authentication.html#instance-set-authData",
     "src/auth/authentication.js~Authentication#authData",
     "member"
   ],
   [
     "src/auth/authentication.js~authentication#authdata",
-    "class/src/auth/authentication.js~Authentication.html#instance-set-authData",
+    "class/src/auth/authentication.js~Authentication.html#instance-get-authData",
     "src/auth/authentication.js~Authentication#authData",
     "member"
   ],
