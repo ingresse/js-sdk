@@ -365,7 +365,6 @@ export class Event extends RequestHandler {
 
     /**
      * Update/Add users permission to the event
-     * (Make this users admins)
      *
      * @param {string|number} eventId - The Event ID.
      * @param {object}        data    - Object with attribute `usersPermission` as Array with Users IDs to attribute Permission.
@@ -412,5 +411,55 @@ export class Event extends RequestHandler {
      */
     deletePermission(eventId, data = {}, query = {}) {
         return this.delete(`/${eventId}/permission`, query, data);
+    }
+
+    /**
+     * Add users as admins of the event
+     *
+     * @param {string|number} eventId - The Event ID.
+     * @param {object}        data    - Object with attribute `usersPermission` as Array with Users IDs to attribute Permission.
+     * @param {object}        [query] - Request parameters/filters.
+     *
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     * var data = { admins: [ 321, 123, 654 ] };
+     *
+     * ingresse.event.addAdmins(21232, data)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    addAdmins(eventId, data = {}, query = {}) {
+        return this.post(`/${eventId}/admin`, data, query);
+    }
+
+    /**
+     * Delete user as event's admin
+     * Only unique user
+     *
+     * @param {string|number} eventId - The Event ID.
+     * @param {string|number} userId  - The User ID.
+     * @param {object}        [query] - Request parameters/filters.
+     *
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.deleteAdmin(21232, 654)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    deleteAdmin(eventId, userId, query = {}) {
+        return this.delete(`/${eventId}/admin/${userId}`, query);
     }
 }

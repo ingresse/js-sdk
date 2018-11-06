@@ -146,3 +146,7 @@ To generete the docs run the command:
 $ npm run docs
 ```
 
+To do both:
+```
+$ npm run deploy
+```
