@@ -273,7 +273,7 @@ describe('Ticket API', () => {
         it('should createPasskey call this.post', () => {
             ticket.createPasskey(data);
 
-            chai.expect(ticket.post).to.have.been.called.with.exactly(`/passkeys/`, data, {});
+            chai.expect(ticket.post).to.have.been.called.with.exactly(`/passkeys`, data, {});
         });
     });
 

@@ -560,7 +560,7 @@ var Ticket = exports.Ticket = function (_RequestHandler) {
         value: function createPasskey(data) {
             var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
-            return this.post('/passkeys/', data, query);
+            return this.post('/passkeys', data, query);
         }
 
         /**
