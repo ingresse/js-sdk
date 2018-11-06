@@ -464,7 +464,6 @@ var Event = exports.Event = function (_RequestHandler) {
 
         /**
          * Update/Add users permission to the event
-         * (Make this users admins)
          *
          * @param {string|number} eventId - The Event ID.
          * @param {object}        data    - Object with attribute `usersPermission` as Array with Users IDs to attribute Permission.
@@ -523,6 +522,67 @@ var Event = exports.Event = function (_RequestHandler) {
             var query = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
 
             return this.delete('/' + eventId + '/permission', query, data);
+        }
+
+        /**
+         * Add users as admins of the event
+         *
+         * @param {string|number} eventId - The Event ID.
+         * @param {object}        data    - Object with attribute `usersPermission` as Array with Users IDs to attribute Permission.
+         * @param {object}        [query] - Request parameters/filters.
+         *
+         * @returns {Promise}
+         *
+         * @example
+         * ...
+         * var data = { admins: [ 321, 123, 654 ] };
+         *
+         * ingresse.event.addAdmins(21232, data)
+         *     .then(function (response) {
+         *         console.log(response);
+         *     })
+         *     .catch(function (error) {
+         *         console.log(error);
+         *     });
+         */
+
+    }, {
+        key: 'addAdmins',
+        value: function addAdmins(eventId) {
+            var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+            var query = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+
+            return this.post('/' + eventId + '/admin', data, query);
+        }
+
+        /**
+         * Delete user as event's admin
+         * Only unique user
+         *
+         * @param {string|number} eventId - The Event ID.
+         * @param {string|number} userId  - The User ID.
+         * @param {object}        [query] - Request parameters/filters.
+         *
+         * @returns {Promise}
+         *
+         * @example
+         * ...
+         *
+         * ingresse.event.deleteAdmin(21232, 654)
+         *     .then(function (response) {
+         *         console.log(response);
+         *     })
+         *     .catch(function (error) {
+         *         console.log(error);
+         *     });
+         */
+
+    }, {
+        key: 'deleteAdmin',
+        value: function deleteAdmin(eventId, userId) {
+            var query = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+
+            return this.delete('/' + eventId + '/admin/' + userId, query);
         }
     }]);
 

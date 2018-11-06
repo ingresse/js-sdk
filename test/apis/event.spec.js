@@ -452,7 +452,7 @@ describe('Event API', () => {
         });
 
         it('should searchByProducer call this.searchByProducer', () => {
-            event.searchByProducer({});
+            event.searchByProducer();
 
             chai.expect(event.get).to.have.been.called.with.exactly('/search/producer', {});
         });
@@ -510,6 +510,12 @@ describe('Event API', () => {
             chai.spy.on(event, 'delete');
         });
 
+        it('should deletePermission call this.delete without data', () => {
+            event.deletePermission(id);
+
+            chai.expect(event.delete).to.have.been.called.with.exactly(`/${id}/permission`, {}, {});
+        });
+
         it('should deletePermission call this.delete', () => {
             event.deletePermission(id, data);
 
@@ -520,6 +526,64 @@ describe('Event API', () => {
             event.deletePermission(id, data, query);
 
             chai.expect(event.delete).to.have.been.called.with.exactly(`/${id}/permission`, query, data);
+        });
+    });
+
+    describe('addAdmins', () => {
+        let event;
+        let eventId = 123;
+        let data    = {};
+        let query   = { test: 'test' };
+
+        beforeEach(() => {
+            event = new Event();
+            chai.spy.on(event, 'post');
+        });
+
+        it('should addAdmins call this.post without body and params', () => {
+            event.addAdmins(eventId);
+
+            chai.expect(event.post).to.have.been.called.with.exactly(`/${eventId}/admin`, data, {});
+        });
+
+        it('should addAdmins call this.post', () => {
+            data = { admins: [ 321, 654 ] };
+
+            event.addAdmins(eventId, data);
+
+            chai.expect(event.post).to.have.been.called.with.exactly(`/${eventId}/admin`, data, {});
+        });
+
+        it('should addAdmins call this.post and accepting query argument', () => {
+            data = { usersPermission: [ 321, 654 ] };
+
+            event.addAdmins(eventId, data, query);
+
+            chai.expect(event.post).to.have.been.called.with.exactly(`/${eventId}/admin`, data, query);
+        });
+    });
+
+    describe('deleteAdmin', () => {
+        let event;
+        let eventId = 1;
+        let userId  = 321;
+        let query   = { test: 'test' };
+
+        beforeEach(() => {
+            event = new Event();
+            chai.spy.on(event, 'delete');
+        });
+
+        it('should deleteAdmin call this.delete', () => {
+            event.deleteAdmin(eventId, userId);
+
+            chai.expect(event.delete).to.have.been.called.with.exactly(`/${eventId}/admin/${userId}`, {});
+        });
+
+        it('should deleteAdmin call this.delete and accepting query argument', () => {
+            event.deleteAdmin(eventId, userId, query);
+
+            chai.expect(event.delete).to.have.been.called.with.exactly(`/${eventId}/admin/${userId}`, query);
         });
     });
 });

@@ -744,6 +744,12 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/apis/event.js~event#addadmins",
+    "class/src/apis/event.js~Event.html#instance-method-addAdmins",
+    "src/apis/event.js~Event#addAdmins",
+    "method"
+  ],
+  [
     "src/apis/event.js~event#constructor",
     "class/src/apis/event.js~Event.html#instance-constructor-constructor",
     "src/apis/event.js~Event#constructor",
@@ -753,6 +759,12 @@ window.esdocSearchIndex = [
     "src/apis/event.js~event#create",
     "class/src/apis/event.js~Event.html#instance-method-create",
     "src/apis/event.js~Event#create",
+    "method"
+  ],
+  [
+    "src/apis/event.js~event#deleteadmin",
+    "class/src/apis/event.js~Event.html#instance-method-deleteAdmin",
+    "src/apis/event.js~Event#deleteAdmin",
     "method"
   ],
   [
@@ -997,13 +1009,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/auth/authentication.js~authentication#authdata",
-    "class/src/auth/authentication.js~Authentication.html#instance-get-authData",
+    "class/src/auth/authentication.js~Authentication.html#instance-set-authData",
     "src/auth/authentication.js~Authentication#authData",
     "member"
   ],
   [
     "src/auth/authentication.js~authentication#authdata",
-    "class/src/auth/authentication.js~Authentication.html#instance-set-authData",
+    "class/src/auth/authentication.js~Authentication.html#instance-get-authData",
     "src/auth/authentication.js~Authentication#authData",
     "member"
   ],
