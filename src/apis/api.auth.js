@@ -35,4 +35,16 @@ export class ApiAuth extends RequestHandler {
     fbLogin(data, query = {}) {
         return this.post('/login/facebook', data, query);
     }
+
+    /**
+     * Register a new user.
+     *
+     * @param {object} [data]  - The form with user data for post.
+     * @param {object} [query] - Optional request parameters.
+     *
+     * @returns {Promise}
+     */
+    register(data = {}, query = {}) {
+        return this.post('/user', data, query);
+    }
 }

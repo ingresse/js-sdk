@@ -73,6 +73,24 @@ var ApiAuth = exports.ApiAuth = function (_RequestHandler) {
 
       return this.post('/login/facebook', data, query);
     }
+
+    /**
+     * Register a new user.
+     *
+     * @param {object} [data]  - The form with user data for post.
+     * @param {object} [query] - Optional request parameters.
+     *
+     * @returns {Promise}
+     */
+
+  }, {
+    key: 'register',
+    value: function register() {
+      var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+      return this.post('/user', data, query);
+    }
   }]);
 
   return ApiAuth;

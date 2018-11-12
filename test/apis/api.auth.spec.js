@@ -8,6 +8,9 @@ chai.use(spies);
 
 describe('API Auth', () => {
     let auth;
+    let query = {
+        test: 'devteam',
+    };
 
     beforeEach(() => {
         auth = new ApiAuth();
@@ -57,5 +60,37 @@ describe('API Auth', () => {
                 .exactly('/login/facebook', data, {});
         });
     });
-});
 
+    describe('register', () => {
+        it('should call this.get', () => {
+            auth.register();
+
+            chai.expect(auth.post).to.have.been.called.with
+                .exactly(`/user`, {}, {});
+        });
+
+        it('should call this.get', () => {
+            let data = {
+                name: 'test',
+                email: 'test@test.com'
+            };
+
+            auth.register(data);
+
+            chai.expect(auth.post).to.have.been.called.with
+                .exactly(`/user`, data, {});
+        });
+
+        it('should call this.get with query params', () => {
+            let data = {
+                name: 'test',
+                email: 'test@test.com'
+            };
+
+            auth.register(data, query);
+
+            chai.expect(auth.post).to.have.been.called.with
+                .exactly(`/user`, data, Object.assign(query, {}));
+        });
+    });
+});
