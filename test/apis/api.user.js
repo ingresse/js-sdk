@@ -173,6 +173,26 @@ describe('API User', () => {
         });
     });
 
+    describe('getUserPermissions', () => {
+        it('should call this.get', () => {
+            let id = 123;
+
+            user.getUserPermissions(id);
+
+            chai.expect(user.get).to.have.been.called.with
+                .exactly(`/user/${id}/permissions`, {});
+        });
+
+        it('should call this.get with query params', () => {
+            let id = 123;
+
+            user.getUserPermissions(id, query);
+
+            chai.expect(user.get).to.have.been.called.with
+                .exactly(`/user/${id}/permissions`, query);
+        });
+    });
+
     describe('getUserSessionTickets', () => {
         it('should call this.get', () => {
             let id = 123;
