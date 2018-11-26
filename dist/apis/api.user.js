@@ -153,6 +153,27 @@ var ApiUser = exports.ApiUser = function (_RequestHandler) {
             return this.get('/user/' + id + '/sessions', query);
         }
 
+        /**
+         * Get the user permission.
+         *
+         * @param {number} id - The user id to get.
+         * @param {object} [query] - Optional request parameters.
+         * @param {object} [query.context] - The context that get user permission. Ex: 'event'
+         * @param {object} [query.contextValue] - The contex value. Ex: '123123'
+         * @param {object} [query.resource] - The resource type. Ex: 'tickets'.
+         * @param {object} [query.resourceValue] - For a specific type of permission. Ex: '__ANY__' or 123123.
+         * @param {object} [query.page] - The current page with user permission.
+         * @param {object} [query.pageSize] - Quantity of permission per page. Default: 25
+         */
+
+    }, {
+        key: 'getUserPermissions',
+        value: function getUserPermissions(id) {
+            var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+            return this.get('/user/' + id + '/permissions', query);
+        }
+
         /*
          * Get the ticket session
          *
