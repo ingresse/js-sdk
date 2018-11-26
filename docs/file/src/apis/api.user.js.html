@@ -158,6 +158,22 @@ export class ApiUser extends RequestHandler {
         return this.get(`/user/${id}/sessions`, query);
     }
 
+    /**
+     * Get the user permission.
+     *
+     * @param {number} id - The user id to get.
+     * @param {object} [query] - Optional request parameters.
+     * @param {object} [query.context] - The context that get user permission. Ex: &apos;event&apos;
+     * @param {object} [query.contextValue] - The contex value. Ex: &apos;123123&apos;
+     * @param {object} [query.resource] - The resource type. Ex: &apos;tickets&apos;.
+     * @param {object} [query.resourceValue] - For a specific type of permission. Ex: &apos;__ANY__&apos; or 123123.
+     * @param {object} [query.page] - The current page with user permission.
+     * @param {object} [query.pageSize] - Quantity of permission per page. Default: 25
+     */
+    getUserPermissions(id, query = {}) {
+        return this.get(`/user/${id}/permissions`, query);
+    }
+
     /*
      * Get the ticket session
      *
