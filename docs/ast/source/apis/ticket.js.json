@@ -1,28 +1,28 @@
 {
   "type": "File",
   "start": 0,
-  "end": 14250,
+  "end": 15607,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 523,
+      "line": 557,
       "column": 0
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 14250,
+    "end": 15607,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 523,
+        "line": 557,
         "column": 0
       }
     },
@@ -221,14 +221,14 @@
       {
         "type": "ExportNamedDeclaration",
         "start": 357,
-        "end": 14248,
+        "end": 15605,
         "loc": {
           "start": {
             "line": 17,
             "column": 0
           },
           "end": {
-            "line": 521,
+            "line": 555,
             "column": 1
           }
         },
@@ -237,14 +237,14 @@
         "declaration": {
           "type": "ClassDeclaration",
           "start": 364,
-          "end": 14248,
+          "end": 15605,
           "loc": {
             "start": {
               "line": 17,
               "column": 7
             },
             "end": {
-              "line": 521,
+              "line": 555,
               "column": 1
             }
           },
@@ -286,14 +286,14 @@
           "body": {
             "type": "ClassBody",
             "start": 400,
-            "end": 14248,
+            "end": 15605,
             "loc": {
               "start": {
                 "line": 17,
                 "column": 43
               },
               "end": {
-                "line": 521,
+                "line": 555,
                 "column": 1
               }
             },
@@ -6102,9 +6102,9 @@
                 "trailingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n     * Create the new passkey\n     *\n     * @param {object} data         - Data to create a new passkey.\n     * @param {number} data.eventId - The event id.\n     * @param {string} data.passkey - The passkey.\n     * @param {date}   [data.start] - The date that this passkey will works.\n     * @param {date}   [data.finish]- The data that this passkey will stop works.\n     * @param {Object} [query]      - The request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     *ingresse.ticket.createPasskey({\n     *    \"eventId\": 26899,\n     *    \"passkey\": \"passkey\",\n     *    \"start\"  : \"2018-10-31 12:00:00\",\n     *    \"finish\" : \"2019-11-10 20:20:00\"\n     *})\n     *.then(function (response) {\n     *    console.log(response);\n     *})\n     *.catch(function (error) {\n     *    console.log(error);\n     *});\n     ",
+                    "value": "*\n     * Create a new passkey\n     *\n     * @param {object} data         - Data to create a new passkey.\n     * @param {number} data.eventId - The event id.\n     * @param {string} data.passkey - The passkey.\n     * @param {date}   [data.start] - The date that this passkey will works.\n     * @param {date}   [data.finish]- The data that this passkey will stop works.\n     * @param {Object} [query]      - The request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     *ingresse.ticket.createPasskey({\n     *    \"eventId\": 26899,\n     *    \"passkey\": \"passkey\",\n     *    \"start\"  : \"2018-10-31 12:00:00\",\n     *    \"finish\" : \"2019-11-10 20:20:00\"\n     *})\n     *.then(function (response) {\n     *    console.log(response);\n     *})\n     *.catch(function (error) {\n     *    console.log(error);\n     *});\n     ",
                     "start": 11573,
-                    "end": 12422,
+                    "end": 12420,
                     "loc": {
                       "start": {
                         "line": 435,
@@ -6120,8 +6120,8 @@
               },
               {
                 "type": "ClassMethod",
-                "start": 12427,
-                "end": 12519,
+                "start": 12425,
+                "end": 12517,
                 "loc": {
                   "start": {
                     "line": 462,
@@ -6135,8 +6135,8 @@
                 "computed": false,
                 "key": {
                   "type": "Identifier",
-                  "start": 12427,
-                  "end": 12440,
+                  "start": 12425,
+                  "end": 12438,
                   "loc": {
                     "start": {
                       "line": 462,
@@ -6160,8 +6160,8 @@
                 "params": [
                   {
                     "type": "Identifier",
-                    "start": 12441,
-                    "end": 12445,
+                    "start": 12439,
+                    "end": 12443,
                     "loc": {
                       "start": {
                         "line": 462,
@@ -6177,8 +6177,8 @@
                   },
                   {
                     "type": "AssignmentPattern",
-                    "start": 12447,
-                    "end": 12457,
+                    "start": 12445,
+                    "end": 12455,
                     "loc": {
                       "start": {
                         "line": 462,
@@ -6191,8 +6191,8 @@
                     },
                     "left": {
                       "type": "Identifier",
-                      "start": 12447,
-                      "end": 12452,
+                      "start": 12445,
+                      "end": 12450,
                       "loc": {
                         "start": {
                           "line": 462,
@@ -6208,8 +6208,8 @@
                     },
                     "right": {
                       "type": "ObjectExpression",
-                      "start": 12455,
-                      "end": 12457,
+                      "start": 12453,
+                      "end": 12455,
                       "loc": {
                         "start": {
                           "line": 462,
@@ -6226,8 +6226,8 @@
                 ],
                 "body": {
                   "type": "BlockStatement",
-                  "start": 12459,
-                  "end": 12519,
+                  "start": 12457,
+                  "end": 12517,
                   "loc": {
                     "start": {
                       "line": 462,
@@ -6241,8 +6241,8 @@
                   "body": [
                     {
                       "type": "ReturnStatement",
-                      "start": 12469,
-                      "end": 12513,
+                      "start": 12467,
+                      "end": 12511,
                       "loc": {
                         "start": {
                           "line": 463,
@@ -6255,8 +6255,8 @@
                       },
                       "argument": {
                         "type": "CallExpression",
-                        "start": 12476,
-                        "end": 12512,
+                        "start": 12474,
+                        "end": 12510,
                         "loc": {
                           "start": {
                             "line": 463,
@@ -6269,8 +6269,8 @@
                         },
                         "callee": {
                           "type": "MemberExpression",
-                          "start": 12476,
-                          "end": 12485,
+                          "start": 12474,
+                          "end": 12483,
                           "loc": {
                             "start": {
                               "line": 463,
@@ -6283,8 +6283,8 @@
                           },
                           "object": {
                             "type": "ThisExpression",
-                            "start": 12476,
-                            "end": 12480,
+                            "start": 12474,
+                            "end": 12478,
                             "loc": {
                               "start": {
                                 "line": 463,
@@ -6298,8 +6298,8 @@
                           },
                           "property": {
                             "type": "Identifier",
-                            "start": 12481,
-                            "end": 12485,
+                            "start": 12479,
+                            "end": 12483,
                             "loc": {
                               "start": {
                                 "line": 463,
@@ -6318,8 +6318,8 @@
                         "arguments": [
                           {
                             "type": "StringLiteral",
-                            "start": 12486,
-                            "end": 12497,
+                            "start": 12484,
+                            "end": 12495,
                             "loc": {
                               "start": {
                                 "line": 463,
@@ -6338,8 +6338,8 @@
                           },
                           {
                             "type": "Identifier",
-                            "start": 12499,
-                            "end": 12503,
+                            "start": 12497,
+                            "end": 12501,
                             "loc": {
                               "start": {
                                 "line": 463,
@@ -6355,8 +6355,8 @@
                           },
                           {
                             "type": "Identifier",
-                            "start": 12506,
-                            "end": 12511,
+                            "start": 12504,
+                            "end": 12509,
                             "loc": {
                               "start": {
                                 "line": 463,
@@ -6380,9 +6380,9 @@
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n     * Create the new passkey\n     *\n     * @param {object} data         - Data to create a new passkey.\n     * @param {number} data.eventId - The event id.\n     * @param {string} data.passkey - The passkey.\n     * @param {date}   [data.start] - The date that this passkey will works.\n     * @param {date}   [data.finish]- The data that this passkey will stop works.\n     * @param {Object} [query]      - The request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     *ingresse.ticket.createPasskey({\n     *    \"eventId\": 26899,\n     *    \"passkey\": \"passkey\",\n     *    \"start\"  : \"2018-10-31 12:00:00\",\n     *    \"finish\" : \"2019-11-10 20:20:00\"\n     *})\n     *.then(function (response) {\n     *    console.log(response);\n     *})\n     *.catch(function (error) {\n     *    console.log(error);\n     *});\n     ",
+                    "value": "*\n     * Create a new passkey\n     *\n     * @param {object} data         - Data to create a new passkey.\n     * @param {number} data.eventId - The event id.\n     * @param {string} data.passkey - The passkey.\n     * @param {date}   [data.start] - The date that this passkey will works.\n     * @param {date}   [data.finish]- The data that this passkey will stop works.\n     * @param {Object} [query]      - The request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     *ingresse.ticket.createPasskey({\n     *    \"eventId\": 26899,\n     *    \"passkey\": \"passkey\",\n     *    \"start\"  : \"2018-10-31 12:00:00\",\n     *    \"finish\" : \"2019-11-10 20:20:00\"\n     *})\n     *.then(function (response) {\n     *    console.log(response);\n     *})\n     *.catch(function (error) {\n     *    console.log(error);\n     *});\n     ",
                     "start": 11573,
-                    "end": 12422,
+                    "end": 12420,
                     "loc": {
                       "start": {
                         "line": 435,
@@ -6398,9 +6398,9 @@
                 "trailingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n     * Update a passkey\n     *\n     * @param {string|number} id    - The passkey id to update.\n     * @param {object} data         - Data to update a passkey.\n     * @param {number} data.eventId - The event id.\n     * @param {string} data.passkey - The passkey.\n     * @param {date}   [data.start] - The date that this passkey will works.\n     * @param {date}   [data.finish]- The data that this passkey will stop works.\n     * @param {Object} [query]      - The request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updatePasskey(200, {\n     *    \"eventId\": 26899,\n     *    \"passkey\": \"passkey\",\n     *    \"start\"  : \"2018-10-31 12:00:00\",\n     *    \"finish\" : \"2019-11-10 20:20:00\"\n     *})\n     *.then(function (response) {\n     *    console.log(response);\n     *})\n     *.catch(function (error) {\n     *   console.log(error);\n     *});\n     ",
-                    "start": 12525,
-                    "end": 13433,
+                    "value": "*\n     * Update a passkey\n     *\n     * @param {string|number} id    - The passkey id to update.\n     * @param {object} data         - Data to update a passkey.\n     * @param {number} data.eventId - The event id.\n     * @param {string} data.passkey - The passkey.\n     * @param {date}   [data.start] - The date that this passkey will works (can not be lower than current day).\n     * @param {date}   [data.finish]- The data that this passkey will stop works.\n     * @param {Object} [query]      - The request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updatePasskey(200, {\n     *    \"eventId\": 26899,\n     *    \"passkey\": \"passkey\",\n     *    \"start\"  : \"2018-10-31 12:00:00\",\n     *    \"finish\" : \"2019-11-10 20:20:00\"\n     *})\n     *.then(function (response) {\n     *    console.log(response);\n     *})\n     *.catch(function (error) {\n     *   console.log(error);\n     *});\n     ",
+                    "start": 12523,
+                    "end": 13467,
                     "loc": {
                       "start": {
                         "line": 466,
@@ -6416,8 +6416,8 @@
               },
               {
                 "type": "ClassMethod",
-                "start": 13438,
-                "end": 13543,
+                "start": 13472,
+                "end": 13577,
                 "loc": {
                   "start": {
                     "line": 494,
@@ -6431,8 +6431,8 @@
                 "computed": false,
                 "key": {
                   "type": "Identifier",
-                  "start": 13438,
-                  "end": 13451,
+                  "start": 13472,
+                  "end": 13485,
                   "loc": {
                     "start": {
                       "line": 494,
@@ -6456,8 +6456,8 @@
                 "params": [
                   {
                     "type": "Identifier",
-                    "start": 13452,
-                    "end": 13454,
+                    "start": 13486,
+                    "end": 13488,
                     "loc": {
                       "start": {
                         "line": 494,
@@ -6473,8 +6473,8 @@
                   },
                   {
                     "type": "AssignmentPattern",
-                    "start": 13456,
-                    "end": 13465,
+                    "start": 13490,
+                    "end": 13499,
                     "loc": {
                       "start": {
                         "line": 494,
@@ -6487,8 +6487,8 @@
                     },
                     "left": {
                       "type": "Identifier",
-                      "start": 13456,
-                      "end": 13460,
+                      "start": 13490,
+                      "end": 13494,
                       "loc": {
                         "start": {
                           "line": 494,
@@ -6504,8 +6504,8 @@
                     },
                     "right": {
                       "type": "ObjectExpression",
-                      "start": 13463,
-                      "end": 13465,
+                      "start": 13497,
+                      "end": 13499,
                       "loc": {
                         "start": {
                           "line": 494,
@@ -6521,8 +6521,8 @@
                   },
                   {
                     "type": "AssignmentPattern",
-                    "start": 13467,
-                    "end": 13477,
+                    "start": 13501,
+                    "end": 13511,
                     "loc": {
                       "start": {
                         "line": 494,
@@ -6535,8 +6535,8 @@
                     },
                     "left": {
                       "type": "Identifier",
-                      "start": 13467,
-                      "end": 13472,
+                      "start": 13501,
+                      "end": 13506,
                       "loc": {
                         "start": {
                           "line": 494,
@@ -6552,8 +6552,8 @@
                     },
                     "right": {
                       "type": "ObjectExpression",
-                      "start": 13475,
-                      "end": 13477,
+                      "start": 13509,
+                      "end": 13511,
                       "loc": {
                         "start": {
                           "line": 494,
@@ -6570,8 +6570,8 @@
                 ],
                 "body": {
                   "type": "BlockStatement",
-                  "start": 13479,
-                  "end": 13543,
+                  "start": 13513,
+                  "end": 13577,
                   "loc": {
                     "start": {
                       "line": 494,
@@ -6585,8 +6585,8 @@
                   "body": [
                     {
                       "type": "ReturnStatement",
-                      "start": 13489,
-                      "end": 13537,
+                      "start": 13523,
+                      "end": 13571,
                       "loc": {
                         "start": {
                           "line": 495,
@@ -6599,8 +6599,8 @@
                       },
                       "argument": {
                         "type": "CallExpression",
-                        "start": 13496,
-                        "end": 13536,
+                        "start": 13530,
+                        "end": 13570,
                         "loc": {
                           "start": {
                             "line": 495,
@@ -6613,8 +6613,8 @@
                         },
                         "callee": {
                           "type": "MemberExpression",
-                          "start": 13496,
-                          "end": 13504,
+                          "start": 13530,
+                          "end": 13538,
                           "loc": {
                             "start": {
                               "line": 495,
@@ -6627,8 +6627,8 @@
                           },
                           "object": {
                             "type": "ThisExpression",
-                            "start": 13496,
-                            "end": 13500,
+                            "start": 13530,
+                            "end": 13534,
                             "loc": {
                               "start": {
                                 "line": 495,
@@ -6642,8 +6642,8 @@
                           },
                           "property": {
                             "type": "Identifier",
-                            "start": 13501,
-                            "end": 13504,
+                            "start": 13535,
+                            "end": 13538,
                             "loc": {
                               "start": {
                                 "line": 495,
@@ -6662,8 +6662,8 @@
                         "arguments": [
                           {
                             "type": "TemplateLiteral",
-                            "start": 13505,
-                            "end": 13522,
+                            "start": 13539,
+                            "end": 13556,
                             "loc": {
                               "start": {
                                 "line": 495,
@@ -6677,8 +6677,8 @@
                             "expressions": [
                               {
                                 "type": "Identifier",
-                                "start": 13518,
-                                "end": 13520,
+                                "start": 13552,
+                                "end": 13554,
                                 "loc": {
                                   "start": {
                                     "line": 495,
@@ -6696,8 +6696,8 @@
                             "quasis": [
                               {
                                 "type": "TemplateElement",
-                                "start": 13506,
-                                "end": 13516,
+                                "start": 13540,
+                                "end": 13550,
                                 "loc": {
                                   "start": {
                                     "line": 495,
@@ -6716,8 +6716,8 @@
                               },
                               {
                                 "type": "TemplateElement",
-                                "start": 13521,
-                                "end": 13521,
+                                "start": 13555,
+                                "end": 13555,
                                 "loc": {
                                   "start": {
                                     "line": 495,
@@ -6738,8 +6738,8 @@
                           },
                           {
                             "type": "Identifier",
-                            "start": 13524,
-                            "end": 13528,
+                            "start": 13558,
+                            "end": 13562,
                             "loc": {
                               "start": {
                                 "line": 495,
@@ -6755,8 +6755,8 @@
                           },
                           {
                             "type": "Identifier",
-                            "start": 13530,
-                            "end": 13535,
+                            "start": 13564,
+                            "end": 13569,
                             "loc": {
                               "start": {
                                 "line": 495,
@@ -6780,9 +6780,9 @@
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n     * Update a passkey\n     *\n     * @param {string|number} id    - The passkey id to update.\n     * @param {object} data         - Data to update a passkey.\n     * @param {number} data.eventId - The event id.\n     * @param {string} data.passkey - The passkey.\n     * @param {date}   [data.start] - The date that this passkey will works.\n     * @param {date}   [data.finish]- The data that this passkey will stop works.\n     * @param {Object} [query]      - The request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updatePasskey(200, {\n     *    \"eventId\": 26899,\n     *    \"passkey\": \"passkey\",\n     *    \"start\"  : \"2018-10-31 12:00:00\",\n     *    \"finish\" : \"2019-11-10 20:20:00\"\n     *})\n     *.then(function (response) {\n     *    console.log(response);\n     *})\n     *.catch(function (error) {\n     *   console.log(error);\n     *});\n     ",
-                    "start": 12525,
-                    "end": 13433,
+                    "value": "*\n     * Update a passkey\n     *\n     * @param {string|number} id    - The passkey id to update.\n     * @param {object} data         - Data to update a passkey.\n     * @param {number} data.eventId - The event id.\n     * @param {string} data.passkey - The passkey.\n     * @param {date}   [data.start] - The date that this passkey will works (can not be lower than current day).\n     * @param {date}   [data.finish]- The data that this passkey will stop works.\n     * @param {Object} [query]      - The request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updatePasskey(200, {\n     *    \"eventId\": 26899,\n     *    \"passkey\": \"passkey\",\n     *    \"start\"  : \"2018-10-31 12:00:00\",\n     *    \"finish\" : \"2019-11-10 20:20:00\"\n     *})\n     *.then(function (response) {\n     *    console.log(response);\n     *})\n     *.catch(function (error) {\n     *   console.log(error);\n     *});\n     ",
+                    "start": 12523,
+                    "end": 13467,
                     "loc": {
                       "start": {
                         "line": 466,
@@ -6798,9 +6798,9 @@
                 "trailingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n     * Associate a passkey to items\n     *\n     * @param {string|number} id    - The passkey id to update.\n     * @param {object} data         - Data to  a passkey.\n     * @param {array}  data.itemIds - An array with tickets id.\n     * @param {Object} [query]      - The request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updatePasskey(200, {itemIds: [1,2,3]})\n     *.then(function (response) {\n     *    console.log(response);\n     *})\n     *.catch(function (error) {\n     *   console.log(error);\n     *});\n     ",
-                    "start": 13549,
-                    "end": 14127,
+                    "value": "*\n     * Associate a passkey to items\n     *\n     * @param {string|number} id    - The passkey id to update.\n     * @param {object} data         - Data to  a passkey.\n     * @param {array}  data.itemIds - An array with tickets id.\n     * @param {Object} [query]      - The request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.associatePasskey(200, {itemIds: [1,2,3]})\n     *.then(function (response) {\n     *    console.log(response);\n     *})\n     *.catch(function (error) {\n     *   console.log(error);\n     *});\n     ",
+                    "start": 13583,
+                    "end": 14164,
                     "loc": {
                       "start": {
                         "line": 498,
@@ -6816,8 +6816,8 @@
               },
               {
                 "type": "ClassMethod",
-                "start": 14132,
-                "end": 14246,
+                "start": 14169,
+                "end": 14283,
                 "loc": {
                   "start": {
                     "line": 518,
@@ -6831,8 +6831,8 @@
                 "computed": false,
                 "key": {
                   "type": "Identifier",
-                  "start": 14132,
-                  "end": 14148,
+                  "start": 14169,
+                  "end": 14185,
                   "loc": {
                     "start": {
                       "line": 518,
@@ -6856,8 +6856,8 @@
                 "params": [
                   {
                     "type": "Identifier",
-                    "start": 14149,
-                    "end": 14151,
+                    "start": 14186,
+                    "end": 14188,
                     "loc": {
                       "start": {
                         "line": 518,
@@ -6873,8 +6873,8 @@
                   },
                   {
                     "type": "AssignmentPattern",
-                    "start": 14153,
-                    "end": 14162,
+                    "start": 14190,
+                    "end": 14199,
                     "loc": {
                       "start": {
                         "line": 518,
@@ -6887,8 +6887,8 @@
                     },
                     "left": {
                       "type": "Identifier",
-                      "start": 14153,
-                      "end": 14157,
+                      "start": 14190,
+                      "end": 14194,
                       "loc": {
                         "start": {
                           "line": 518,
@@ -6904,8 +6904,8 @@
                     },
                     "right": {
                       "type": "ObjectExpression",
-                      "start": 14160,
-                      "end": 14162,
+                      "start": 14197,
+                      "end": 14199,
                       "loc": {
                         "start": {
                           "line": 518,
@@ -6921,8 +6921,8 @@
                   },
                   {
                     "type": "AssignmentPattern",
-                    "start": 14164,
-                    "end": 14174,
+                    "start": 14201,
+                    "end": 14211,
                     "loc": {
                       "start": {
                         "line": 518,
@@ -6935,8 +6935,8 @@
                     },
                     "left": {
                       "type": "Identifier",
-                      "start": 14164,
-                      "end": 14169,
+                      "start": 14201,
+                      "end": 14206,
                       "loc": {
                         "start": {
                           "line": 518,
@@ -6952,8 +6952,8 @@
                     },
                     "right": {
                       "type": "ObjectExpression",
-                      "start": 14172,
-                      "end": 14174,
+                      "start": 14209,
+                      "end": 14211,
                       "loc": {
                         "start": {
                           "line": 518,
@@ -6970,8 +6970,8 @@
                 ],
                 "body": {
                   "type": "BlockStatement",
-                  "start": 14176,
-                  "end": 14246,
+                  "start": 14213,
+                  "end": 14283,
                   "loc": {
                     "start": {
                       "line": 518,
@@ -6985,8 +6985,8 @@
                   "body": [
                     {
                       "type": "ReturnStatement",
-                      "start": 14186,
-                      "end": 14240,
+                      "start": 14223,
+                      "end": 14277,
                       "loc": {
                         "start": {
                           "line": 519,
@@ -6999,8 +6999,8 @@
                       },
                       "argument": {
                         "type": "CallExpression",
-                        "start": 14193,
-                        "end": 14239,
+                        "start": 14230,
+                        "end": 14276,
                         "loc": {
                           "start": {
                             "line": 519,
@@ -7013,8 +7013,8 @@
                         },
                         "callee": {
                           "type": "MemberExpression",
-                          "start": 14193,
-                          "end": 14201,
+                          "start": 14230,
+                          "end": 14238,
                           "loc": {
                             "start": {
                               "line": 519,
@@ -7027,8 +7027,8 @@
                           },
                           "object": {
                             "type": "ThisExpression",
-                            "start": 14193,
-                            "end": 14197,
+                            "start": 14230,
+                            "end": 14234,
                             "loc": {
                               "start": {
                                 "line": 519,
@@ -7042,8 +7042,8 @@
                           },
                           "property": {
                             "type": "Identifier",
-                            "start": 14198,
-                            "end": 14201,
+                            "start": 14235,
+                            "end": 14238,
                             "loc": {
                               "start": {
                                 "line": 519,
@@ -7062,8 +7062,8 @@
                         "arguments": [
                           {
                             "type": "TemplateLiteral",
-                            "start": 14202,
-                            "end": 14225,
+                            "start": 14239,
+                            "end": 14262,
                             "loc": {
                               "start": {
                                 "line": 519,
@@ -7077,8 +7077,8 @@
                             "expressions": [
                               {
                                 "type": "Identifier",
-                                "start": 14215,
-                                "end": 14217,
+                                "start": 14252,
+                                "end": 14254,
                                 "loc": {
                                   "start": {
                                     "line": 519,
@@ -7096,8 +7096,8 @@
                             "quasis": [
                               {
                                 "type": "TemplateElement",
-                                "start": 14203,
-                                "end": 14213,
+                                "start": 14240,
+                                "end": 14250,
                                 "loc": {
                                   "start": {
                                     "line": 519,
@@ -7116,8 +7116,8 @@
                               },
                               {
                                 "type": "TemplateElement",
-                                "start": 14218,
-                                "end": 14224,
+                                "start": 14255,
+                                "end": 14261,
                                 "loc": {
                                   "start": {
                                     "line": 519,
@@ -7138,8 +7138,8 @@
                           },
                           {
                             "type": "Identifier",
-                            "start": 14227,
-                            "end": 14231,
+                            "start": 14264,
+                            "end": 14268,
                             "loc": {
                               "start": {
                                 "line": 519,
@@ -7155,8 +7155,8 @@
                           },
                           {
                             "type": "Identifier",
-                            "start": 14233,
-                            "end": 14238,
+                            "start": 14270,
+                            "end": 14275,
                             "loc": {
                               "start": {
                                 "line": 519,
@@ -7174,14 +7174,15 @@
                       }
                     }
                   ],
-                  "directives": []
+                  "directives": [],
+                  "trailingComments": null
                 },
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n     * Associate a passkey to items\n     *\n     * @param {string|number} id    - The passkey id to update.\n     * @param {object} data         - Data to  a passkey.\n     * @param {array}  data.itemIds - An array with tickets id.\n     * @param {Object} [query]      - The request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updatePasskey(200, {itemIds: [1,2,3]})\n     *.then(function (response) {\n     *    console.log(response);\n     *})\n     *.catch(function (error) {\n     *   console.log(error);\n     *});\n     ",
-                    "start": 13549,
-                    "end": 14127,
+                    "value": "*\n     * Associate a passkey to items\n     *\n     * @param {string|number} id    - The passkey id to update.\n     * @param {object} data         - Data to  a passkey.\n     * @param {array}  data.itemIds - An array with tickets id.\n     * @param {Object} [query]      - The request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.associatePasskey(200, {itemIds: [1,2,3]})\n     *.then(function (response) {\n     *    console.log(response);\n     *})\n     *.catch(function (error) {\n     *   console.log(error);\n     *});\n     ",
+                    "start": 13583,
+                    "end": 14164,
                     "loc": {
                       "start": {
                         "line": 498,
@@ -7189,6 +7190,405 @@
                       },
                       "end": {
                         "line": 517,
+                        "column": 7
+                      }
+                    }
+                  }
+                ],
+                "trailingComments": [
+                  {
+                    "type": "CommentBlock",
+                    "value": "*\n     * Create many passkeys and associate it for many tickets.\n     *\n     * @param {number}         eventId        - The event id.\n     * @param {object}         data           - Data with associate rules\n     * @param {array[string]}  data.codes     - Array with passkeys strings.\n     * @param {array[integer]} [data.itemIds] - Array with tickets id.\n     * @param {date}           [data.start]   - The date that this passkey will works (can not be lower than current day).\n     * @param {date}           [data.finish]  - The data that this passkey will stop works.\n     * @param {integer}        [data.limit]   - The usage limit.\n     * @param {Object}         [query]        - The request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.batchPasskeys(200, {\n     *    \"codes\"  : [\"passkey1\", \"passkey2\", \"passkey3\"],\n     *    \"itemIds\": [1,2,3],\n     *    \"limit\"  : 100,\n     *    \"start\"  : \"2018-10-31 12:00:00\",\n     *    \"finish\" : \"2019-11-10 20:20:00\"\n     * })\n     *.then(function (response) {\n     *    console.log(response);\n     *})\n     *.catch(function (error) {\n     *   console.log(error);\n     *});\n     ",
+                    "start": 14289,
+                    "end": 15476,
+                    "loc": {
+                      "start": {
+                        "line": 522,
+                        "column": 4
+                      },
+                      "end": {
+                        "line": 551,
+                        "column": 7
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "ClassMethod",
+                "start": 15481,
+                "end": 15603,
+                "loc": {
+                  "start": {
+                    "line": 552,
+                    "column": 4
+                  },
+                  "end": {
+                    "line": 554,
+                    "column": 5
+                  }
+                },
+                "computed": false,
+                "key": {
+                  "type": "Identifier",
+                  "start": 15481,
+                  "end": 15494,
+                  "loc": {
+                    "start": {
+                      "line": 552,
+                      "column": 4
+                    },
+                    "end": {
+                      "line": 552,
+                      "column": 17
+                    },
+                    "identifierName": "batchPasskeys"
+                  },
+                  "name": "batchPasskeys",
+                  "leadingComments": null
+                },
+                "static": false,
+                "kind": "method",
+                "id": null,
+                "generator": false,
+                "expression": false,
+                "async": false,
+                "params": [
+                  {
+                    "type": "Identifier",
+                    "start": 15495,
+                    "end": 15502,
+                    "loc": {
+                      "start": {
+                        "line": 552,
+                        "column": 18
+                      },
+                      "end": {
+                        "line": 552,
+                        "column": 25
+                      },
+                      "identifierName": "eventId"
+                    },
+                    "name": "eventId"
+                  },
+                  {
+                    "type": "AssignmentPattern",
+                    "start": 15504,
+                    "end": 15513,
+                    "loc": {
+                      "start": {
+                        "line": 552,
+                        "column": 27
+                      },
+                      "end": {
+                        "line": 552,
+                        "column": 36
+                      }
+                    },
+                    "left": {
+                      "type": "Identifier",
+                      "start": 15504,
+                      "end": 15508,
+                      "loc": {
+                        "start": {
+                          "line": 552,
+                          "column": 27
+                        },
+                        "end": {
+                          "line": 552,
+                          "column": 31
+                        },
+                        "identifierName": "data"
+                      },
+                      "name": "data"
+                    },
+                    "right": {
+                      "type": "ObjectExpression",
+                      "start": 15511,
+                      "end": 15513,
+                      "loc": {
+                        "start": {
+                          "line": 552,
+                          "column": 34
+                        },
+                        "end": {
+                          "line": 552,
+                          "column": 36
+                        }
+                      },
+                      "properties": []
+                    }
+                  },
+                  {
+                    "type": "AssignmentPattern",
+                    "start": 15515,
+                    "end": 15525,
+                    "loc": {
+                      "start": {
+                        "line": 552,
+                        "column": 38
+                      },
+                      "end": {
+                        "line": 552,
+                        "column": 48
+                      }
+                    },
+                    "left": {
+                      "type": "Identifier",
+                      "start": 15515,
+                      "end": 15520,
+                      "loc": {
+                        "start": {
+                          "line": 552,
+                          "column": 38
+                        },
+                        "end": {
+                          "line": 552,
+                          "column": 43
+                        },
+                        "identifierName": "query"
+                      },
+                      "name": "query"
+                    },
+                    "right": {
+                      "type": "ObjectExpression",
+                      "start": 15523,
+                      "end": 15525,
+                      "loc": {
+                        "start": {
+                          "line": 552,
+                          "column": 46
+                        },
+                        "end": {
+                          "line": 552,
+                          "column": 48
+                        }
+                      },
+                      "properties": []
+                    }
+                  }
+                ],
+                "body": {
+                  "type": "BlockStatement",
+                  "start": 15527,
+                  "end": 15603,
+                  "loc": {
+                    "start": {
+                      "line": 552,
+                      "column": 50
+                    },
+                    "end": {
+                      "line": 554,
+                      "column": 5
+                    }
+                  },
+                  "body": [
+                    {
+                      "type": "ReturnStatement",
+                      "start": 15537,
+                      "end": 15597,
+                      "loc": {
+                        "start": {
+                          "line": 553,
+                          "column": 8
+                        },
+                        "end": {
+                          "line": 553,
+                          "column": 68
+                        }
+                      },
+                      "argument": {
+                        "type": "CallExpression",
+                        "start": 15544,
+                        "end": 15596,
+                        "loc": {
+                          "start": {
+                            "line": 553,
+                            "column": 15
+                          },
+                          "end": {
+                            "line": 553,
+                            "column": 67
+                          }
+                        },
+                        "callee": {
+                          "type": "MemberExpression",
+                          "start": 15544,
+                          "end": 15553,
+                          "loc": {
+                            "start": {
+                              "line": 553,
+                              "column": 15
+                            },
+                            "end": {
+                              "line": 553,
+                              "column": 24
+                            }
+                          },
+                          "object": {
+                            "type": "ThisExpression",
+                            "start": 15544,
+                            "end": 15548,
+                            "loc": {
+                              "start": {
+                                "line": 553,
+                                "column": 15
+                              },
+                              "end": {
+                                "line": 553,
+                                "column": 19
+                              }
+                            }
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "start": 15549,
+                            "end": 15553,
+                            "loc": {
+                              "start": {
+                                "line": 553,
+                                "column": 20
+                              },
+                              "end": {
+                                "line": 553,
+                                "column": 24
+                              },
+                              "identifierName": "post"
+                            },
+                            "name": "post"
+                          },
+                          "computed": false
+                        },
+                        "arguments": [
+                          {
+                            "type": "TemplateLiteral",
+                            "start": 15554,
+                            "end": 15582,
+                            "loc": {
+                              "start": {
+                                "line": 553,
+                                "column": 25
+                              },
+                              "end": {
+                                "line": 553,
+                                "column": 53
+                              }
+                            },
+                            "expressions": [
+                              {
+                                "type": "Identifier",
+                                "start": 15564,
+                                "end": 15571,
+                                "loc": {
+                                  "start": {
+                                    "line": 553,
+                                    "column": 35
+                                  },
+                                  "end": {
+                                    "line": 553,
+                                    "column": 42
+                                  },
+                                  "identifierName": "eventId"
+                                },
+                                "name": "eventId"
+                              }
+                            ],
+                            "quasis": [
+                              {
+                                "type": "TemplateElement",
+                                "start": 15555,
+                                "end": 15562,
+                                "loc": {
+                                  "start": {
+                                    "line": 553,
+                                    "column": 26
+                                  },
+                                  "end": {
+                                    "line": 553,
+                                    "column": 33
+                                  }
+                                },
+                                "value": {
+                                  "raw": "/event/",
+                                  "cooked": "/event/"
+                                },
+                                "tail": false
+                              },
+                              {
+                                "type": "TemplateElement",
+                                "start": 15572,
+                                "end": 15581,
+                                "loc": {
+                                  "start": {
+                                    "line": 553,
+                                    "column": 43
+                                  },
+                                  "end": {
+                                    "line": 553,
+                                    "column": 52
+                                  }
+                                },
+                                "value": {
+                                  "raw": "/passkeys",
+                                  "cooked": "/passkeys"
+                                },
+                                "tail": true
+                              }
+                            ]
+                          },
+                          {
+                            "type": "Identifier",
+                            "start": 15584,
+                            "end": 15588,
+                            "loc": {
+                              "start": {
+                                "line": 553,
+                                "column": 55
+                              },
+                              "end": {
+                                "line": 553,
+                                "column": 59
+                              },
+                              "identifierName": "data"
+                            },
+                            "name": "data"
+                          },
+                          {
+                            "type": "Identifier",
+                            "start": 15590,
+                            "end": 15595,
+                            "loc": {
+                              "start": {
+                                "line": 553,
+                                "column": 61
+                              },
+                              "end": {
+                                "line": 553,
+                                "column": 66
+                              },
+                              "identifierName": "query"
+                            },
+                            "name": "query"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "directives": []
+                },
+                "leadingComments": [
+                  {
+                    "type": "CommentBlock",
+                    "value": "*\n     * Create many passkeys and associate it for many tickets.\n     *\n     * @param {number}         eventId        - The event id.\n     * @param {object}         data           - Data with associate rules\n     * @param {array[string]}  data.codes     - Array with passkeys strings.\n     * @param {array[integer]} [data.itemIds] - Array with tickets id.\n     * @param {date}           [data.start]   - The date that this passkey will works (can not be lower than current day).\n     * @param {date}           [data.finish]  - The data that this passkey will stop works.\n     * @param {integer}        [data.limit]   - The usage limit.\n     * @param {Object}         [query]        - The request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.batchPasskeys(200, {\n     *    \"codes\"  : [\"passkey1\", \"passkey2\", \"passkey3\"],\n     *    \"itemIds\": [1,2,3],\n     *    \"limit\"  : 100,\n     *    \"start\"  : \"2018-10-31 12:00:00\",\n     *    \"finish\" : \"2019-11-10 20:20:00\"\n     * })\n     *.then(function (response) {\n     *    console.log(response);\n     *})\n     *.catch(function (error) {\n     *   console.log(error);\n     *});\n     ",
+                    "start": 14289,
+                    "end": 15476,
+                    "loc": {
+                      "start": {
+                        "line": 522,
+                        "column": 4
+                      },
+                      "end": {
+                        "line": 551,
                         "column": 7
                       }
                     }
@@ -7530,9 +7930,9 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n     * Create the new passkey\n     *\n     * @param {object} data         - Data to create a new passkey.\n     * @param {number} data.eventId - The event id.\n     * @param {string} data.passkey - The passkey.\n     * @param {date}   [data.start] - The date that this passkey will works.\n     * @param {date}   [data.finish]- The data that this passkey will stop works.\n     * @param {Object} [query]      - The request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     *ingresse.ticket.createPasskey({\n     *    \"eventId\": 26899,\n     *    \"passkey\": \"passkey\",\n     *    \"start\"  : \"2018-10-31 12:00:00\",\n     *    \"finish\" : \"2019-11-10 20:20:00\"\n     *})\n     *.then(function (response) {\n     *    console.log(response);\n     *})\n     *.catch(function (error) {\n     *    console.log(error);\n     *});\n     ",
+      "value": "*\n     * Create a new passkey\n     *\n     * @param {object} data         - Data to create a new passkey.\n     * @param {number} data.eventId - The event id.\n     * @param {string} data.passkey - The passkey.\n     * @param {date}   [data.start] - The date that this passkey will works.\n     * @param {date}   [data.finish]- The data that this passkey will stop works.\n     * @param {Object} [query]      - The request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     *ingresse.ticket.createPasskey({\n     *    \"eventId\": 26899,\n     *    \"passkey\": \"passkey\",\n     *    \"start\"  : \"2018-10-31 12:00:00\",\n     *    \"finish\" : \"2019-11-10 20:20:00\"\n     *})\n     *.then(function (response) {\n     *    console.log(response);\n     *})\n     *.catch(function (error) {\n     *    console.log(error);\n     *});\n     ",
       "start": 11573,
-      "end": 12422,
+      "end": 12420,
       "loc": {
         "start": {
           "line": 435,
@@ -7546,9 +7946,9 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n     * Update a passkey\n     *\n     * @param {string|number} id    - The passkey id to update.\n     * @param {object} data         - Data to update a passkey.\n     * @param {number} data.eventId - The event id.\n     * @param {string} data.passkey - The passkey.\n     * @param {date}   [data.start] - The date that this passkey will works.\n     * @param {date}   [data.finish]- The data that this passkey will stop works.\n     * @param {Object} [query]      - The request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updatePasskey(200, {\n     *    \"eventId\": 26899,\n     *    \"passkey\": \"passkey\",\n     *    \"start\"  : \"2018-10-31 12:00:00\",\n     *    \"finish\" : \"2019-11-10 20:20:00\"\n     *})\n     *.then(function (response) {\n     *    console.log(response);\n     *})\n     *.catch(function (error) {\n     *   console.log(error);\n     *});\n     ",
-      "start": 12525,
-      "end": 13433,
+      "value": "*\n     * Update a passkey\n     *\n     * @param {string|number} id    - The passkey id to update.\n     * @param {object} data         - Data to update a passkey.\n     * @param {number} data.eventId - The event id.\n     * @param {string} data.passkey - The passkey.\n     * @param {date}   [data.start] - The date that this passkey will works (can not be lower than current day).\n     * @param {date}   [data.finish]- The data that this passkey will stop works.\n     * @param {Object} [query]      - The request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updatePasskey(200, {\n     *    \"eventId\": 26899,\n     *    \"passkey\": \"passkey\",\n     *    \"start\"  : \"2018-10-31 12:00:00\",\n     *    \"finish\" : \"2019-11-10 20:20:00\"\n     *})\n     *.then(function (response) {\n     *    console.log(response);\n     *})\n     *.catch(function (error) {\n     *   console.log(error);\n     *});\n     ",
+      "start": 12523,
+      "end": 13467,
       "loc": {
         "start": {
           "line": 466,
@@ -7562,9 +7962,9 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n     * Associate a passkey to items\n     *\n     * @param {string|number} id    - The passkey id to update.\n     * @param {object} data         - Data to  a passkey.\n     * @param {array}  data.itemIds - An array with tickets id.\n     * @param {Object} [query]      - The request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updatePasskey(200, {itemIds: [1,2,3]})\n     *.then(function (response) {\n     *    console.log(response);\n     *})\n     *.catch(function (error) {\n     *   console.log(error);\n     *});\n     ",
-      "start": 13549,
-      "end": 14127,
+      "value": "*\n     * Associate a passkey to items\n     *\n     * @param {string|number} id    - The passkey id to update.\n     * @param {object} data         - Data to  a passkey.\n     * @param {array}  data.itemIds - An array with tickets id.\n     * @param {Object} [query]      - The request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.associatePasskey(200, {itemIds: [1,2,3]})\n     *.then(function (response) {\n     *    console.log(response);\n     *})\n     *.catch(function (error) {\n     *   console.log(error);\n     *});\n     ",
+      "start": 13583,
+      "end": 14164,
       "loc": {
         "start": {
           "line": 498,
@@ -7572,6 +7972,22 @@
         },
         "end": {
           "line": 517,
+          "column": 7
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n     * Create many passkeys and associate it for many tickets.\n     *\n     * @param {number}         eventId        - The event id.\n     * @param {object}         data           - Data with associate rules\n     * @param {array[string]}  data.codes     - Array with passkeys strings.\n     * @param {array[integer]} [data.itemIds] - Array with tickets id.\n     * @param {date}           [data.start]   - The date that this passkey will works (can not be lower than current day).\n     * @param {date}           [data.finish]  - The data that this passkey will stop works.\n     * @param {integer}        [data.limit]   - The usage limit.\n     * @param {Object}         [query]        - The request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.batchPasskeys(200, {\n     *    \"codes\"  : [\"passkey1\", \"passkey2\", \"passkey3\"],\n     *    \"itemIds\": [1,2,3],\n     *    \"limit\"  : 100,\n     *    \"start\"  : \"2018-10-31 12:00:00\",\n     *    \"finish\" : \"2019-11-10 20:20:00\"\n     * })\n     *.then(function (response) {\n     *    console.log(response);\n     *})\n     *.catch(function (error) {\n     *   console.log(error);\n     *});\n     ",
+      "start": 14289,
+      "end": 15476,
+      "loc": {
+        "start": {
+          "line": 522,
+          "column": 4
+        },
+        "end": {
+          "line": 551,
           "column": 7
         }
       }
@@ -20316,9 +20732,9 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n     * Create the new passkey\n     *\n     * @param {object} data         - Data to create a new passkey.\n     * @param {number} data.eventId - The event id.\n     * @param {string} data.passkey - The passkey.\n     * @param {date}   [data.start] - The date that this passkey will works.\n     * @param {date}   [data.finish]- The data that this passkey will stop works.\n     * @param {Object} [query]      - The request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     *ingresse.ticket.createPasskey({\n     *    \"eventId\": 26899,\n     *    \"passkey\": \"passkey\",\n     *    \"start\"  : \"2018-10-31 12:00:00\",\n     *    \"finish\" : \"2019-11-10 20:20:00\"\n     *})\n     *.then(function (response) {\n     *    console.log(response);\n     *})\n     *.catch(function (error) {\n     *    console.log(error);\n     *});\n     ",
+      "value": "*\n     * Create a new passkey\n     *\n     * @param {object} data         - Data to create a new passkey.\n     * @param {number} data.eventId - The event id.\n     * @param {string} data.passkey - The passkey.\n     * @param {date}   [data.start] - The date that this passkey will works.\n     * @param {date}   [data.finish]- The data that this passkey will stop works.\n     * @param {Object} [query]      - The request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     *ingresse.ticket.createPasskey({\n     *    \"eventId\": 26899,\n     *    \"passkey\": \"passkey\",\n     *    \"start\"  : \"2018-10-31 12:00:00\",\n     *    \"finish\" : \"2019-11-10 20:20:00\"\n     *})\n     *.then(function (response) {\n     *    console.log(response);\n     *})\n     *.catch(function (error) {\n     *    console.log(error);\n     *});\n     ",
       "start": 11573,
-      "end": 12422,
+      "end": 12420,
       "loc": {
         "start": {
           "line": 435,
@@ -20343,8 +20759,8 @@
         "binop": null
       },
       "value": "createPasskey",
-      "start": 12427,
-      "end": 12440,
+      "start": 12425,
+      "end": 12438,
       "loc": {
         "start": {
           "line": 462,
@@ -20368,8 +20784,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 12440,
-      "end": 12441,
+      "start": 12438,
+      "end": 12439,
       "loc": {
         "start": {
           "line": 462,
@@ -20394,8 +20810,8 @@
         "binop": null
       },
       "value": "data",
-      "start": 12441,
-      "end": 12445,
+      "start": 12439,
+      "end": 12443,
       "loc": {
         "start": {
           "line": 462,
@@ -20420,8 +20836,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 12445,
-      "end": 12446,
+      "start": 12443,
+      "end": 12444,
       "loc": {
         "start": {
           "line": 462,
@@ -20446,8 +20862,8 @@
         "binop": null
       },
       "value": "query",
-      "start": 12447,
-      "end": 12452,
+      "start": 12445,
+      "end": 12450,
       "loc": {
         "start": {
           "line": 462,
@@ -20473,8 +20889,8 @@
         "updateContext": null
       },
       "value": "=",
-      "start": 12453,
-      "end": 12454,
+      "start": 12451,
+      "end": 12452,
       "loc": {
         "start": {
           "line": 462,
@@ -20498,8 +20914,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 12455,
-      "end": 12456,
+      "start": 12453,
+      "end": 12454,
       "loc": {
         "start": {
           "line": 462,
@@ -20523,8 +20939,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 12456,
-      "end": 12457,
+      "start": 12454,
+      "end": 12455,
       "loc": {
         "start": {
           "line": 462,
@@ -20548,8 +20964,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 12457,
-      "end": 12458,
+      "start": 12455,
+      "end": 12456,
       "loc": {
         "start": {
           "line": 462,
@@ -20573,8 +20989,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 12459,
-      "end": 12460,
+      "start": 12457,
+      "end": 12458,
       "loc": {
         "start": {
           "line": 462,
@@ -20601,8 +21017,8 @@
         "updateContext": null
       },
       "value": "return",
-      "start": 12469,
-      "end": 12475,
+      "start": 12467,
+      "end": 12473,
       "loc": {
         "start": {
           "line": 463,
@@ -20629,8 +21045,8 @@
         "updateContext": null
       },
       "value": "this",
-      "start": 12476,
-      "end": 12480,
+      "start": 12474,
+      "end": 12478,
       "loc": {
         "start": {
           "line": 463,
@@ -20655,8 +21071,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 12480,
-      "end": 12481,
+      "start": 12478,
+      "end": 12479,
       "loc": {
         "start": {
           "line": 463,
@@ -20681,8 +21097,8 @@
         "binop": null
       },
       "value": "post",
-      "start": 12481,
-      "end": 12485,
+      "start": 12479,
+      "end": 12483,
       "loc": {
         "start": {
           "line": 463,
@@ -20706,8 +21122,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 12485,
-      "end": 12486,
+      "start": 12483,
+      "end": 12484,
       "loc": {
         "start": {
           "line": 463,
@@ -20733,8 +21149,8 @@
         "updateContext": null
       },
       "value": "/passkeys",
-      "start": 12486,
-      "end": 12497,
+      "start": 12484,
+      "end": 12495,
       "loc": {
         "start": {
           "line": 463,
@@ -20759,8 +21175,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 12497,
-      "end": 12498,
+      "start": 12495,
+      "end": 12496,
       "loc": {
         "start": {
           "line": 463,
@@ -20785,8 +21201,8 @@
         "binop": null
       },
       "value": "data",
-      "start": 12499,
-      "end": 12503,
+      "start": 12497,
+      "end": 12501,
       "loc": {
         "start": {
           "line": 463,
@@ -20811,8 +21227,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 12503,
-      "end": 12504,
+      "start": 12501,
+      "end": 12502,
       "loc": {
         "start": {
           "line": 463,
@@ -20837,8 +21253,8 @@
         "binop": null
       },
       "value": "query",
-      "start": 12506,
-      "end": 12511,
+      "start": 12504,
+      "end": 12509,
       "loc": {
         "start": {
           "line": 463,
@@ -20862,8 +21278,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 12511,
-      "end": 12512,
+      "start": 12509,
+      "end": 12510,
       "loc": {
         "start": {
           "line": 463,
@@ -20888,8 +21304,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 12512,
-      "end": 12513,
+      "start": 12510,
+      "end": 12511,
       "loc": {
         "start": {
           "line": 463,
@@ -20913,8 +21329,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 12518,
-      "end": 12519,
+      "start": 12516,
+      "end": 12517,
       "loc": {
         "start": {
           "line": 464,
@@ -20928,9 +21344,9 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n     * Update a passkey\n     *\n     * @param {string|number} id    - The passkey id to update.\n     * @param {object} data         - Data to update a passkey.\n     * @param {number} data.eventId - The event id.\n     * @param {string} data.passkey - The passkey.\n     * @param {date}   [data.start] - The date that this passkey will works.\n     * @param {date}   [data.finish]- The data that this passkey will stop works.\n     * @param {Object} [query]      - The request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updatePasskey(200, {\n     *    \"eventId\": 26899,\n     *    \"passkey\": \"passkey\",\n     *    \"start\"  : \"2018-10-31 12:00:00\",\n     *    \"finish\" : \"2019-11-10 20:20:00\"\n     *})\n     *.then(function (response) {\n     *    console.log(response);\n     *})\n     *.catch(function (error) {\n     *   console.log(error);\n     *});\n     ",
-      "start": 12525,
-      "end": 13433,
+      "value": "*\n     * Update a passkey\n     *\n     * @param {string|number} id    - The passkey id to update.\n     * @param {object} data         - Data to update a passkey.\n     * @param {number} data.eventId - The event id.\n     * @param {string} data.passkey - The passkey.\n     * @param {date}   [data.start] - The date that this passkey will works (can not be lower than current day).\n     * @param {date}   [data.finish]- The data that this passkey will stop works.\n     * @param {Object} [query]      - The request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updatePasskey(200, {\n     *    \"eventId\": 26899,\n     *    \"passkey\": \"passkey\",\n     *    \"start\"  : \"2018-10-31 12:00:00\",\n     *    \"finish\" : \"2019-11-10 20:20:00\"\n     *})\n     *.then(function (response) {\n     *    console.log(response);\n     *})\n     *.catch(function (error) {\n     *   console.log(error);\n     *});\n     ",
+      "start": 12523,
+      "end": 13467,
       "loc": {
         "start": {
           "line": 466,
@@ -20955,8 +21371,8 @@
         "binop": null
       },
       "value": "updatePasskey",
-      "start": 13438,
-      "end": 13451,
+      "start": 13472,
+      "end": 13485,
       "loc": {
         "start": {
           "line": 494,
@@ -20980,8 +21396,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 13451,
-      "end": 13452,
+      "start": 13485,
+      "end": 13486,
       "loc": {
         "start": {
           "line": 494,
@@ -21006,8 +21422,8 @@
         "binop": null
       },
       "value": "id",
-      "start": 13452,
-      "end": 13454,
+      "start": 13486,
+      "end": 13488,
       "loc": {
         "start": {
           "line": 494,
@@ -21032,8 +21448,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 13454,
-      "end": 13455,
+      "start": 13488,
+      "end": 13489,
       "loc": {
         "start": {
           "line": 494,
@@ -21058,8 +21474,8 @@
         "binop": null
       },
       "value": "data",
-      "start": 13456,
-      "end": 13460,
+      "start": 13490,
+      "end": 13494,
       "loc": {
         "start": {
           "line": 494,
@@ -21085,8 +21501,8 @@
         "updateContext": null
       },
       "value": "=",
-      "start": 13461,
-      "end": 13462,
+      "start": 13495,
+      "end": 13496,
       "loc": {
         "start": {
           "line": 494,
@@ -21110,8 +21526,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 13463,
-      "end": 13464,
+      "start": 13497,
+      "end": 13498,
       "loc": {
         "start": {
           "line": 494,
@@ -21135,8 +21551,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 13464,
-      "end": 13465,
+      "start": 13498,
+      "end": 13499,
       "loc": {
         "start": {
           "line": 494,
@@ -21161,8 +21577,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 13465,
-      "end": 13466,
+      "start": 13499,
+      "end": 13500,
       "loc": {
         "start": {
           "line": 494,
@@ -21187,8 +21603,8 @@
         "binop": null
       },
       "value": "query",
-      "start": 13467,
-      "end": 13472,
+      "start": 13501,
+      "end": 13506,
       "loc": {
         "start": {
           "line": 494,
@@ -21214,8 +21630,8 @@
         "updateContext": null
       },
       "value": "=",
-      "start": 13473,
-      "end": 13474,
+      "start": 13507,
+      "end": 13508,
       "loc": {
         "start": {
           "line": 494,
@@ -21239,8 +21655,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 13475,
-      "end": 13476,
+      "start": 13509,
+      "end": 13510,
       "loc": {
         "start": {
           "line": 494,
@@ -21264,8 +21680,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 13476,
-      "end": 13477,
+      "start": 13510,
+      "end": 13511,
       "loc": {
         "start": {
           "line": 494,
@@ -21289,8 +21705,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 13477,
-      "end": 13478,
+      "start": 13511,
+      "end": 13512,
       "loc": {
         "start": {
           "line": 494,
@@ -21314,8 +21730,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 13479,
-      "end": 13480,
+      "start": 13513,
+      "end": 13514,
       "loc": {
         "start": {
           "line": 494,
@@ -21342,8 +21758,8 @@
         "updateContext": null
       },
       "value": "return",
-      "start": 13489,
-      "end": 13495,
+      "start": 13523,
+      "end": 13529,
       "loc": {
         "start": {
           "line": 495,
@@ -21370,8 +21786,8 @@
         "updateContext": null
       },
       "value": "this",
-      "start": 13496,
-      "end": 13500,
+      "start": 13530,
+      "end": 13534,
       "loc": {
         "start": {
           "line": 495,
@@ -21396,8 +21812,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 13500,
-      "end": 13501,
+      "start": 13534,
+      "end": 13535,
       "loc": {
         "start": {
           "line": 495,
@@ -21422,8 +21838,8 @@
         "binop": null
       },
       "value": "put",
-      "start": 13501,
-      "end": 13504,
+      "start": 13535,
+      "end": 13538,
       "loc": {
         "start": {
           "line": 495,
@@ -21447,8 +21863,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 13504,
-      "end": 13505,
+      "start": 13538,
+      "end": 13539,
       "loc": {
         "start": {
           "line": 495,
@@ -21472,8 +21888,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 13505,
-      "end": 13506,
+      "start": 13539,
+      "end": 13540,
       "loc": {
         "start": {
           "line": 495,
@@ -21499,8 +21915,8 @@
         "updateContext": null
       },
       "value": "/passkeys/",
-      "start": 13506,
-      "end": 13516,
+      "start": 13540,
+      "end": 13550,
       "loc": {
         "start": {
           "line": 495,
@@ -21524,8 +21940,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 13516,
-      "end": 13518,
+      "start": 13550,
+      "end": 13552,
       "loc": {
         "start": {
           "line": 495,
@@ -21550,8 +21966,8 @@
         "binop": null
       },
       "value": "id",
-      "start": 13518,
-      "end": 13520,
+      "start": 13552,
+      "end": 13554,
       "loc": {
         "start": {
           "line": 495,
@@ -21575,8 +21991,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 13520,
-      "end": 13521,
+      "start": 13554,
+      "end": 13555,
       "loc": {
         "start": {
           "line": 495,
@@ -21602,8 +22018,8 @@
         "updateContext": null
       },
       "value": "",
-      "start": 13521,
-      "end": 13521,
+      "start": 13555,
+      "end": 13555,
       "loc": {
         "start": {
           "line": 495,
@@ -21627,8 +22043,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 13521,
-      "end": 13522,
+      "start": 13555,
+      "end": 13556,
       "loc": {
         "start": {
           "line": 495,
@@ -21653,8 +22069,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 13522,
-      "end": 13523,
+      "start": 13556,
+      "end": 13557,
       "loc": {
         "start": {
           "line": 495,
@@ -21679,8 +22095,8 @@
         "binop": null
       },
       "value": "data",
-      "start": 13524,
-      "end": 13528,
+      "start": 13558,
+      "end": 13562,
       "loc": {
         "start": {
           "line": 495,
@@ -21705,8 +22121,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 13528,
-      "end": 13529,
+      "start": 13562,
+      "end": 13563,
       "loc": {
         "start": {
           "line": 495,
@@ -21731,8 +22147,8 @@
         "binop": null
       },
       "value": "query",
-      "start": 13530,
-      "end": 13535,
+      "start": 13564,
+      "end": 13569,
       "loc": {
         "start": {
           "line": 495,
@@ -21756,8 +22172,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 13535,
-      "end": 13536,
+      "start": 13569,
+      "end": 13570,
       "loc": {
         "start": {
           "line": 495,
@@ -21782,8 +22198,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 13536,
-      "end": 13537,
+      "start": 13570,
+      "end": 13571,
       "loc": {
         "start": {
           "line": 495,
@@ -21807,8 +22223,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 13542,
-      "end": 13543,
+      "start": 13576,
+      "end": 13577,
       "loc": {
         "start": {
           "line": 496,
@@ -21822,9 +22238,9 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n     * Associate a passkey to items\n     *\n     * @param {string|number} id    - The passkey id to update.\n     * @param {object} data         - Data to  a passkey.\n     * @param {array}  data.itemIds - An array with tickets id.\n     * @param {Object} [query]      - The request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.updatePasskey(200, {itemIds: [1,2,3]})\n     *.then(function (response) {\n     *    console.log(response);\n     *})\n     *.catch(function (error) {\n     *   console.log(error);\n     *});\n     ",
-      "start": 13549,
-      "end": 14127,
+      "value": "*\n     * Associate a passkey to items\n     *\n     * @param {string|number} id    - The passkey id to update.\n     * @param {object} data         - Data to  a passkey.\n     * @param {array}  data.itemIds - An array with tickets id.\n     * @param {Object} [query]      - The request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.associatePasskey(200, {itemIds: [1,2,3]})\n     *.then(function (response) {\n     *    console.log(response);\n     *})\n     *.catch(function (error) {\n     *   console.log(error);\n     *});\n     ",
+      "start": 13583,
+      "end": 14164,
       "loc": {
         "start": {
           "line": 498,
@@ -21849,8 +22265,8 @@
         "binop": null
       },
       "value": "associatePasskey",
-      "start": 14132,
-      "end": 14148,
+      "start": 14169,
+      "end": 14185,
       "loc": {
         "start": {
           "line": 518,
@@ -21874,8 +22290,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 14148,
-      "end": 14149,
+      "start": 14185,
+      "end": 14186,
       "loc": {
         "start": {
           "line": 518,
@@ -21900,8 +22316,8 @@
         "binop": null
       },
       "value": "id",
-      "start": 14149,
-      "end": 14151,
+      "start": 14186,
+      "end": 14188,
       "loc": {
         "start": {
           "line": 518,
@@ -21926,8 +22342,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 14151,
-      "end": 14152,
+      "start": 14188,
+      "end": 14189,
       "loc": {
         "start": {
           "line": 518,
@@ -21952,8 +22368,8 @@
         "binop": null
       },
       "value": "data",
-      "start": 14153,
-      "end": 14157,
+      "start": 14190,
+      "end": 14194,
       "loc": {
         "start": {
           "line": 518,
@@ -21979,8 +22395,8 @@
         "updateContext": null
       },
       "value": "=",
-      "start": 14158,
-      "end": 14159,
+      "start": 14195,
+      "end": 14196,
       "loc": {
         "start": {
           "line": 518,
@@ -22004,8 +22420,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 14160,
-      "end": 14161,
+      "start": 14197,
+      "end": 14198,
       "loc": {
         "start": {
           "line": 518,
@@ -22029,8 +22445,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 14161,
-      "end": 14162,
+      "start": 14198,
+      "end": 14199,
       "loc": {
         "start": {
           "line": 518,
@@ -22055,8 +22471,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 14162,
-      "end": 14163,
+      "start": 14199,
+      "end": 14200,
       "loc": {
         "start": {
           "line": 518,
@@ -22081,8 +22497,8 @@
         "binop": null
       },
       "value": "query",
-      "start": 14164,
-      "end": 14169,
+      "start": 14201,
+      "end": 14206,
       "loc": {
         "start": {
           "line": 518,
@@ -22108,8 +22524,8 @@
         "updateContext": null
       },
       "value": "=",
-      "start": 14170,
-      "end": 14171,
+      "start": 14207,
+      "end": 14208,
       "loc": {
         "start": {
           "line": 518,
@@ -22133,8 +22549,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 14172,
-      "end": 14173,
+      "start": 14209,
+      "end": 14210,
       "loc": {
         "start": {
           "line": 518,
@@ -22158,8 +22574,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 14173,
-      "end": 14174,
+      "start": 14210,
+      "end": 14211,
       "loc": {
         "start": {
           "line": 518,
@@ -22183,8 +22599,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 14174,
-      "end": 14175,
+      "start": 14211,
+      "end": 14212,
       "loc": {
         "start": {
           "line": 518,
@@ -22208,8 +22624,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 14176,
-      "end": 14177,
+      "start": 14213,
+      "end": 14214,
       "loc": {
         "start": {
           "line": 518,
@@ -22236,8 +22652,8 @@
         "updateContext": null
       },
       "value": "return",
-      "start": 14186,
-      "end": 14192,
+      "start": 14223,
+      "end": 14229,
       "loc": {
         "start": {
           "line": 519,
@@ -22264,8 +22680,8 @@
         "updateContext": null
       },
       "value": "this",
-      "start": 14193,
-      "end": 14197,
+      "start": 14230,
+      "end": 14234,
       "loc": {
         "start": {
           "line": 519,
@@ -22290,8 +22706,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 14197,
-      "end": 14198,
+      "start": 14234,
+      "end": 14235,
       "loc": {
         "start": {
           "line": 519,
@@ -22316,8 +22732,8 @@
         "binop": null
       },
       "value": "put",
-      "start": 14198,
-      "end": 14201,
+      "start": 14235,
+      "end": 14238,
       "loc": {
         "start": {
           "line": 519,
@@ -22341,8 +22757,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 14201,
-      "end": 14202,
+      "start": 14238,
+      "end": 14239,
       "loc": {
         "start": {
           "line": 519,
@@ -22366,8 +22782,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 14202,
-      "end": 14203,
+      "start": 14239,
+      "end": 14240,
       "loc": {
         "start": {
           "line": 519,
@@ -22393,8 +22809,8 @@
         "updateContext": null
       },
       "value": "/passkeys/",
-      "start": 14203,
-      "end": 14213,
+      "start": 14240,
+      "end": 14250,
       "loc": {
         "start": {
           "line": 519,
@@ -22418,8 +22834,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 14213,
-      "end": 14215,
+      "start": 14250,
+      "end": 14252,
       "loc": {
         "start": {
           "line": 519,
@@ -22444,8 +22860,8 @@
         "binop": null
       },
       "value": "id",
-      "start": 14215,
-      "end": 14217,
+      "start": 14252,
+      "end": 14254,
       "loc": {
         "start": {
           "line": 519,
@@ -22469,8 +22885,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 14217,
-      "end": 14218,
+      "start": 14254,
+      "end": 14255,
       "loc": {
         "start": {
           "line": 519,
@@ -22496,8 +22912,8 @@
         "updateContext": null
       },
       "value": "/items",
-      "start": 14218,
-      "end": 14224,
+      "start": 14255,
+      "end": 14261,
       "loc": {
         "start": {
           "line": 519,
@@ -22521,8 +22937,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 14224,
-      "end": 14225,
+      "start": 14261,
+      "end": 14262,
       "loc": {
         "start": {
           "line": 519,
@@ -22547,8 +22963,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 14225,
-      "end": 14226,
+      "start": 14262,
+      "end": 14263,
       "loc": {
         "start": {
           "line": 519,
@@ -22573,8 +22989,8 @@
         "binop": null
       },
       "value": "data",
-      "start": 14227,
-      "end": 14231,
+      "start": 14264,
+      "end": 14268,
       "loc": {
         "start": {
           "line": 519,
@@ -22599,8 +23015,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 14231,
-      "end": 14232,
+      "start": 14268,
+      "end": 14269,
       "loc": {
         "start": {
           "line": 519,
@@ -22625,8 +23041,8 @@
         "binop": null
       },
       "value": "query",
-      "start": 14233,
-      "end": 14238,
+      "start": 14270,
+      "end": 14275,
       "loc": {
         "start": {
           "line": 519,
@@ -22650,8 +23066,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 14238,
-      "end": 14239,
+      "start": 14275,
+      "end": 14276,
       "loc": {
         "start": {
           "line": 519,
@@ -22676,8 +23092,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 14239,
-      "end": 14240,
+      "start": 14276,
+      "end": 14277,
       "loc": {
         "start": {
           "line": 519,
@@ -22701,8 +23117,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 14245,
-      "end": 14246,
+      "start": 14282,
+      "end": 14283,
       "loc": {
         "start": {
           "line": 520,
@@ -22710,6 +23126,900 @@
         },
         "end": {
           "line": 520,
+          "column": 5
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n     * Create many passkeys and associate it for many tickets.\n     *\n     * @param {number}         eventId        - The event id.\n     * @param {object}         data           - Data with associate rules\n     * @param {array[string]}  data.codes     - Array with passkeys strings.\n     * @param {array[integer]} [data.itemIds] - Array with tickets id.\n     * @param {date}           [data.start]   - The date that this passkey will works (can not be lower than current day).\n     * @param {date}           [data.finish]  - The data that this passkey will stop works.\n     * @param {integer}        [data.limit]   - The usage limit.\n     * @param {Object}         [query]        - The request parameters.\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ticket.batchPasskeys(200, {\n     *    \"codes\"  : [\"passkey1\", \"passkey2\", \"passkey3\"],\n     *    \"itemIds\": [1,2,3],\n     *    \"limit\"  : 100,\n     *    \"start\"  : \"2018-10-31 12:00:00\",\n     *    \"finish\" : \"2019-11-10 20:20:00\"\n     * })\n     *.then(function (response) {\n     *    console.log(response);\n     *})\n     *.catch(function (error) {\n     *   console.log(error);\n     *});\n     ",
+      "start": 14289,
+      "end": 15476,
+      "loc": {
+        "start": {
+          "line": 522,
+          "column": 4
+        },
+        "end": {
+          "line": 551,
+          "column": 7
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "batchPasskeys",
+      "start": 15481,
+      "end": 15494,
+      "loc": {
+        "start": {
+          "line": 552,
+          "column": 4
+        },
+        "end": {
+          "line": 552,
+          "column": 17
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "(",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 15494,
+      "end": 15495,
+      "loc": {
+        "start": {
+          "line": 552,
+          "column": 17
+        },
+        "end": {
+          "line": 552,
+          "column": 18
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "eventId",
+      "start": 15495,
+      "end": 15502,
+      "loc": {
+        "start": {
+          "line": 552,
+          "column": 18
+        },
+        "end": {
+          "line": 552,
+          "column": 25
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 15502,
+      "end": 15503,
+      "loc": {
+        "start": {
+          "line": 552,
+          "column": 25
+        },
+        "end": {
+          "line": 552,
+          "column": 26
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "data",
+      "start": 15504,
+      "end": 15508,
+      "loc": {
+        "start": {
+          "line": 552,
+          "column": 27
+        },
+        "end": {
+          "line": 552,
+          "column": 31
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "=",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": true,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "=",
+      "start": 15509,
+      "end": 15510,
+      "loc": {
+        "start": {
+          "line": 552,
+          "column": 32
+        },
+        "end": {
+          "line": 552,
+          "column": 33
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "{",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 15511,
+      "end": 15512,
+      "loc": {
+        "start": {
+          "line": 552,
+          "column": 34
+        },
+        "end": {
+          "line": 552,
+          "column": 35
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "}",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 15512,
+      "end": 15513,
+      "loc": {
+        "start": {
+          "line": 552,
+          "column": 35
+        },
+        "end": {
+          "line": 552,
+          "column": 36
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 15513,
+      "end": 15514,
+      "loc": {
+        "start": {
+          "line": 552,
+          "column": 36
+        },
+        "end": {
+          "line": 552,
+          "column": 37
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "query",
+      "start": 15515,
+      "end": 15520,
+      "loc": {
+        "start": {
+          "line": 552,
+          "column": 38
+        },
+        "end": {
+          "line": 552,
+          "column": 43
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "=",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": true,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "=",
+      "start": 15521,
+      "end": 15522,
+      "loc": {
+        "start": {
+          "line": 552,
+          "column": 44
+        },
+        "end": {
+          "line": 552,
+          "column": 45
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "{",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 15523,
+      "end": 15524,
+      "loc": {
+        "start": {
+          "line": 552,
+          "column": 46
+        },
+        "end": {
+          "line": 552,
+          "column": 47
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "}",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 15524,
+      "end": 15525,
+      "loc": {
+        "start": {
+          "line": 552,
+          "column": 47
+        },
+        "end": {
+          "line": 552,
+          "column": 48
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ")",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 15525,
+      "end": 15526,
+      "loc": {
+        "start": {
+          "line": 552,
+          "column": 48
+        },
+        "end": {
+          "line": 552,
+          "column": 49
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "{",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 15527,
+      "end": 15528,
+      "loc": {
+        "start": {
+          "line": 552,
+          "column": 50
+        },
+        "end": {
+          "line": 552,
+          "column": 51
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "return",
+        "keyword": "return",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "return",
+      "start": 15537,
+      "end": 15543,
+      "loc": {
+        "start": {
+          "line": 553,
+          "column": 8
+        },
+        "end": {
+          "line": 553,
+          "column": 14
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "this",
+        "keyword": "this",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "this",
+      "start": 15544,
+      "end": 15548,
+      "loc": {
+        "start": {
+          "line": 553,
+          "column": 15
+        },
+        "end": {
+          "line": 553,
+          "column": 19
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ".",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 15548,
+      "end": 15549,
+      "loc": {
+        "start": {
+          "line": 553,
+          "column": 19
+        },
+        "end": {
+          "line": 553,
+          "column": 20
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "post",
+      "start": 15549,
+      "end": 15553,
+      "loc": {
+        "start": {
+          "line": 553,
+          "column": 20
+        },
+        "end": {
+          "line": 553,
+          "column": 24
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "(",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 15553,
+      "end": 15554,
+      "loc": {
+        "start": {
+          "line": 553,
+          "column": 24
+        },
+        "end": {
+          "line": 553,
+          "column": 25
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "`",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 15554,
+      "end": 15555,
+      "loc": {
+        "start": {
+          "line": 553,
+          "column": 25
+        },
+        "end": {
+          "line": 553,
+          "column": 26
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "template",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "/event/",
+      "start": 15555,
+      "end": 15562,
+      "loc": {
+        "start": {
+          "line": 553,
+          "column": 26
+        },
+        "end": {
+          "line": 553,
+          "column": 33
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "${",
+        "beforeExpr": true,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 15562,
+      "end": 15564,
+      "loc": {
+        "start": {
+          "line": 553,
+          "column": 33
+        },
+        "end": {
+          "line": 553,
+          "column": 35
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "eventId",
+      "start": 15564,
+      "end": 15571,
+      "loc": {
+        "start": {
+          "line": 553,
+          "column": 35
+        },
+        "end": {
+          "line": 553,
+          "column": 42
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "}",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 15571,
+      "end": 15572,
+      "loc": {
+        "start": {
+          "line": 553,
+          "column": 42
+        },
+        "end": {
+          "line": 553,
+          "column": 43
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "template",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "value": "/passkeys",
+      "start": 15572,
+      "end": 15581,
+      "loc": {
+        "start": {
+          "line": 553,
+          "column": 43
+        },
+        "end": {
+          "line": 553,
+          "column": 52
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "`",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 15581,
+      "end": 15582,
+      "loc": {
+        "start": {
+          "line": 553,
+          "column": 52
+        },
+        "end": {
+          "line": 553,
+          "column": 53
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 15582,
+      "end": 15583,
+      "loc": {
+        "start": {
+          "line": 553,
+          "column": 53
+        },
+        "end": {
+          "line": 553,
+          "column": 54
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "data",
+      "start": 15584,
+      "end": 15588,
+      "loc": {
+        "start": {
+          "line": 553,
+          "column": 55
+        },
+        "end": {
+          "line": 553,
+          "column": 59
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 15588,
+      "end": 15589,
+      "loc": {
+        "start": {
+          "line": 553,
+          "column": 59
+        },
+        "end": {
+          "line": 553,
+          "column": 60
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "query",
+      "start": 15590,
+      "end": 15595,
+      "loc": {
+        "start": {
+          "line": 553,
+          "column": 61
+        },
+        "end": {
+          "line": 553,
+          "column": 66
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ")",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 15595,
+      "end": 15596,
+      "loc": {
+        "start": {
+          "line": 553,
+          "column": 66
+        },
+        "end": {
+          "line": 553,
+          "column": 67
+        }
+      }
+    },
+    {
+      "type": {
+        "label": ";",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 15596,
+      "end": 15597,
+      "loc": {
+        "start": {
+          "line": 553,
+          "column": 67
+        },
+        "end": {
+          "line": 553,
+          "column": 68
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "}",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "start": 15602,
+      "end": 15603,
+      "loc": {
+        "start": {
+          "line": 554,
+          "column": 4
+        },
+        "end": {
+          "line": 554,
           "column": 5
         }
       }
@@ -22726,15 +24036,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 14247,
-      "end": 14248,
+      "start": 15604,
+      "end": 15605,
       "loc": {
         "start": {
-          "line": 521,
+          "line": 555,
           "column": 0
         },
         "end": {
-          "line": 521,
+          "line": 555,
           "column": 1
         }
       }
@@ -22752,15 +24062,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 14250,
-      "end": 14250,
+      "start": 15607,
+      "end": 15607,
       "loc": {
         "start": {
-          "line": 523,
+          "line": 557,
           "column": 0
         },
         "end": {
-          "line": 523,
+          "line": 557,
           "column": 0
         }
       }
