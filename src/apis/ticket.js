@@ -433,7 +433,7 @@ export class Ticket extends RequestHandler {
     }
 
     /**
-     * Create the new passkey
+     * Create a new passkey
      *
      * @param {object} data         - Data to create a new passkey.
      * @param {number} data.eventId - The event id.
@@ -470,7 +470,7 @@ export class Ticket extends RequestHandler {
      * @param {object} data         - Data to update a passkey.
      * @param {number} data.eventId - The event id.
      * @param {string} data.passkey - The passkey.
-     * @param {date}   [data.start] - The date that this passkey will works.
+     * @param {date}   [data.start] - The date that this passkey will works (can not be lower than current day).
      * @param {date}   [data.finish]- The data that this passkey will stop works.
      * @param {Object} [query]      - The request parameters.
      * @returns {Promise}
@@ -507,7 +507,7 @@ export class Ticket extends RequestHandler {
      * @example
      * ...
      *
-     * ingresse.ticket.updatePasskey(200, {itemIds: [1,2,3]})
+     * ingresse.ticket.associatePasskey(200, {itemIds: [1,2,3]})
      *.then(function (response) {
      *    console.log(response);
      *})
@@ -517,6 +517,40 @@ export class Ticket extends RequestHandler {
      */
     associatePasskey(id, data = {}, query = {}) {
         return this.put(`/passkeys/${id}/items`, data, query);
+    }
+
+    /**
+     * Create many passkeys and associate it for many tickets.
+     *
+     * @param {number}         eventId        - The event id.
+     * @param {object}         data           - Data with associate rules
+     * @param {array[string]}  data.codes     - Array with passkeys strings.
+     * @param {array[integer]} [data.itemIds] - Array with tickets id.
+     * @param {date}           [data.start]   - The date that this passkey will works (can not be lower than current day).
+     * @param {date}           [data.finish]  - The data that this passkey will stop works.
+     * @param {integer}        [data.limit]   - The usage limit.
+     * @param {Object}         [query]        - The request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.ticket.batchPasskeys(200, {
+     *    "codes"  : ["passkey1", "passkey2", "passkey3"],
+     *    "itemIds": [1,2,3],
+     *    "limit"  : 100,
+     *    "start"  : "2018-10-31 12:00:00",
+     *    "finish" : "2019-11-10 20:20:00"
+     * })
+     *.then(function (response) {
+     *    console.log(response);
+     *})
+     *.catch(function (error) {
+     *   console.log(error);
+     *});
+     */
+    batchPasskeys(eventId, data = {}, query = {}) {
+        return this.post(`/event/${eventId}/passkeys`, data, query);
     }
 }
 

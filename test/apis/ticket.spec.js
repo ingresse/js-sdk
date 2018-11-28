@@ -315,10 +315,34 @@ describe('Ticket API', () => {
             chai.spy.on(ticket, 'put');
         });
 
-        it('should updatePasskey call this.put', () => {
+        it('should associatePasskey call this.put', () => {
             ticket.associatePasskey(id, data);
 
             chai.expect(ticket.put).to.have.been.called.with.exactly(`/passkeys/${id}/items`, data, {});
+        });
+    });
+
+    describe('batchPasskeys', () => {
+        let ticket;
+        let data;
+        let eventId;
+
+        beforeEach(() => {
+            ticket = new Ticket();
+            eventId = 1,
+            data = {
+                codes  : ["passkey1", "passkey2", "passkey3"],
+                itemIds: [1,2,3],
+                start  : '2018-10-31 12:00:00',
+                finish : '2019-11-10 20:20:00'
+            }
+            chai.spy.on(ticket, 'post');
+        });
+
+        it('should call this.post', () => {
+            ticket.batchPasskeys(eventId, data);
+
+            chai.expect(ticket.post).to.have.been.called.with.exactly(`/event/${eventId}/passkeys`, data, {});
         });
     });
 });
