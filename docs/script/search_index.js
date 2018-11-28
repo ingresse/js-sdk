@@ -894,6 +894,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/apis/ticket.js~ticket#batchpasskeys",
+    "class/src/apis/ticket.js~Ticket.html#instance-method-batchPasskeys",
+    "src/apis/ticket.js~Ticket#batchPasskeys",
+    "method"
+  ],
+  [
     "src/apis/ticket.js~ticket#constructor",
     "class/src/apis/ticket.js~Ticket.html#instance-constructor-constructor",
     "src/apis/ticket.js~Ticket#constructor",
