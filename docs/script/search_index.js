@@ -912,6 +912,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/apis/ticket.js~ticket#deletepasskey",
+    "class/src/apis/ticket.js~Ticket.html#instance-method-deletePasskey",
+    "src/apis/ticket.js~Ticket#deletePasskey",
+    "method"
+  ],
+  [
     "src/apis/ticket.js~ticket#getitem",
     "class/src/apis/ticket.js~Ticket.html#instance-method-getItem",
     "src/apis/ticket.js~Ticket#getItem",
@@ -1027,13 +1033,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/auth/authentication.js~authentication#authdata",
-    "class/src/auth/authentication.js~Authentication.html#instance-set-authData",
+    "class/src/auth/authentication.js~Authentication.html#instance-get-authData",
     "src/auth/authentication.js~Authentication#authData",
     "member"
   ],
   [
     "src/auth/authentication.js~authentication#authdata",
-    "class/src/auth/authentication.js~Authentication.html#instance-get-authData",
+    "class/src/auth/authentication.js~Authentication.html#instance-set-authData",
     "src/auth/authentication.js~Authentication#authData",
     "member"
   ],
