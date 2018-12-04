@@ -523,6 +523,29 @@ export class Ticket extends RequestHandler {
     }
 
     /**
+     * Delete a passkey
+     *
+     * @param {number} id      - The passkey id.
+     * @param {object} [data]  - Data to delete passkey.
+     * @param {Object} [query] - The request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     *ingresse.ticket.deletePasskey(123)
+     *.then(function (response) {
+     *    console.log(response);
+     *})
+     *.catch(function (error) {
+     *    console.log(error);
+     *});
+     */
+    deletePasskey(id, data = {}, query = {}) {
+        return this.delete(`/passkeys/${id}`, query, data);
+    }
+
+    /**
      * Update a passkey
      *
      * @param {string|number} id    - The passkey id to update.

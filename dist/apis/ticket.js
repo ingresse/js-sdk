@@ -564,6 +564,35 @@ var Ticket = exports.Ticket = function (_RequestHandler) {
         }
 
         /**
+         * Delete a passkey
+         *
+         * @param {number} id      - The passkey id.
+         * @param {object} [data]  - Data to delete passkey.
+         * @param {Object} [query] - The request parameters.
+         * @returns {Promise}
+         *
+         * @example
+         * ...
+         *
+         *ingresse.ticket.deletePasskey(123)
+         *.then(function (response) {
+         *    console.log(response);
+         *})
+         *.catch(function (error) {
+         *    console.log(error);
+         *});
+         */
+
+    }, {
+        key: 'deletePasskey',
+        value: function deletePasskey(id) {
+            var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+            var query = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+
+            return this.delete('/passkeys/' + id, query, data);
+        }
+
+        /**
          * Update a passkey
          *
          * @param {string|number} id    - The passkey id to update.

@@ -277,6 +277,23 @@ describe('Ticket API', () => {
         });
     });
 
+    describe('deletePasskey', () => {
+        let ticket;
+        let id;
+
+        beforeEach(() => {
+            ticket = new Ticket();
+            id     = 123;
+            chai.spy.on(ticket, 'delete');
+        });
+
+        it('should deletePasskey call this.delete', () => {
+            ticket.deletePasskey(id);
+
+            chai.expect(ticket.delete).to.have.been.called.with.exactly(`/passkeys/${id}`, {}, {});
+        });
+    });
+
     describe('updatePasskey', () => {
         let ticket;
         let data;
