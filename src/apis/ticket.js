@@ -522,7 +522,7 @@ export class Ticket extends RequestHandler {
      * Associate a passkey to items
      *
      * @param {string|number} id    - The passkey id to update.
-     * @param {object} data         - Data to  a passkey.
+     * @param {object} data         - Data to be updated.
      * @param {array}  data.itemIds - An array with tickets id.
      * @param {Object} [query]      - The request parameters.
      * @returns {Promise}
@@ -530,7 +530,7 @@ export class Ticket extends RequestHandler {
      * @example
      * ...
      *
-     * ingresse.ticket.associatePasskey(200, {itemIds: [1,2,3]})
+     * ingresse.ticket.associatePasskey(820, { itemIds: [ 1, 2, 3] })
      *.then(function (response) {
      *    console.log(response);
      *})
@@ -546,7 +546,7 @@ export class Ticket extends RequestHandler {
      * Create many passkeys and associate it for many tickets.
      *
      * @param {number}         eventId        - The event id.
-     * @param {object}         data           - Data with associate rules
+     * @param {object}         data           - Data with passkeys details.
      * @param {array[string]}  data.codes     - Array with passkeys strings.
      * @param {array[integer]} [data.itemIds] - Array with tickets id.
      * @param {date}           [data.start]   - The date that this passkey will works (can not be lower than current day).
@@ -576,4 +576,3 @@ export class Ticket extends RequestHandler {
         return this.post(`/event/${eventId}/passkeys`, data, query);
     }
 }
-

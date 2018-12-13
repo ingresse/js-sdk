@@ -17,6 +17,35 @@ export class ApiTransactions extends RequestHandler {
     }
 
     /**
+     * Get Passkeys Report
+     *
+     * @param {number} eventId - Event ID.
+     * @param {object} [query] - Optional request parameters.
+     *
+     * @return {Promise}
+     *
+     * @example
+     * ...
+     * const ing = new Sdk();
+     *
+     * ing.api.getPasskeysReport(21232, { status: 'pending' })
+     * .then((response) => {
+     *     console.log(response);
+     * })
+     * .catch((error) => {
+     *     console.log(error);
+     * });
+     */
+    getPasskeysReport(eventId, query = {}) {
+        let _query = Object.assign({
+            event : eventId,
+            status: 'approved',
+        }, query);
+
+        return this.get('/transaction-report/passkey-ticket', _query);
+    }
+
+    /**
      * Get a list of transactions
      *
      * @param {object} [query] - Optional request parameters.
@@ -60,7 +89,6 @@ export class ApiTransactions extends RequestHandler {
      * @returns {Promise}
      */
     refund(id, data = null, query = {}) {
-
         return this.post(`/shop/${id}/refund`, data, query);
     }
 
@@ -73,7 +101,18 @@ export class ApiTransactions extends RequestHandler {
      * @returns {Promise}
      */
     capture(id, query = {}) {
-
         return this.post(`/shop/${id}/capture`, null, query);
+    }
+
+    /**
+     * Cancel a pending transaction
+     *
+     * @param {string} id      - Transaction ID.
+     * @param {object} [query] - Optional request parameters.
+     *
+     * @return {Promise}
+     */
+    cancel(id, query = {}) {
+        return this.post(`/shop/${id}/cancel`, null, query);
     }
 }

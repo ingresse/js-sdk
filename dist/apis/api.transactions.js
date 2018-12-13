@@ -1,7 +1,7 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 exports.ApiTransactions = undefined;
 
@@ -19,119 +19,168 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
  * Ingresse Transactions API
  */
 var ApiTransactions = exports.ApiTransactions = function (_RequestHandler) {
-  _inherits(ApiTransactions, _RequestHandler);
+    _inherits(ApiTransactions, _RequestHandler);
 
-  function ApiTransactions() {
-    _classCallCheck(this, ApiTransactions);
+    function ApiTransactions() {
+        _classCallCheck(this, ApiTransactions);
 
-    return _possibleConstructorReturn(this, (ApiTransactions.__proto__ || Object.getPrototypeOf(ApiTransactions)).apply(this, arguments));
-  }
-
-  _createClass(ApiTransactions, [{
-    key: 'getReport',
-
-    /**
-     * Get transactions report
-     *
-     * @param {string} [agregateBy] - Optional: 'status'.
-     * @param {object} [query]      - Optional request parameters.
-     *
-     * @returns {Promise}
-     */
-    value: function getReport() {
-      var agregateBy = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'date';
-      var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-
-      return this.get('/transaction-report/' + agregateBy, query);
+        return _possibleConstructorReturn(this, (ApiTransactions.__proto__ || Object.getPrototypeOf(ApiTransactions)).apply(this, arguments));
     }
 
-    /**
-     * Get a list of transactions
-     *
-     * @param {object} [query] - Optional request parameters.
-     *
-     * @returns {Promise}
-     */
+    _createClass(ApiTransactions, [{
+        key: 'getReport',
 
-  }, {
-    key: 'getList',
-    value: function getList() {
-      var query = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+        /**
+         * Get transactions report
+         *
+         * @param {string} [agregateBy] - Optional: 'status'.
+         * @param {object} [query]      - Optional request parameters.
+         *
+         * @returns {Promise}
+         */
+        value: function getReport() {
+            var agregateBy = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'date';
+            var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
-      return this.get('/transactions', query);
-    }
+            return this.get('/transaction-report/' + agregateBy, query);
+        }
 
-    /**
-     * Get a transaction by ID
-     *
-     * @param {string} id      - Transaction ID.
-     * @param {object} [query] - Optional request parameters.
-     *
-     * @returns {Promise}
-     */
+        /**
+         * Get Passkeys Report
+         *
+         * @param {number} eventId - Event ID.
+         * @param {object} [query] - Optional request parameters.
+         *
+         * @return {Promise}
+         *
+         * @example
+         * ...
+         * const ing = new Sdk();
+         *
+         * ing.api.getPasskeysReport(21232, { status: 'pending' })
+         * .then((response) => {
+         *     console.log(response);
+         * })
+         * .catch((error) => {
+         *     console.log(error);
+         * });
+         */
 
-  }, {
-    key: 'getById',
-    value: function getById(id) {
-      var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    }, {
+        key: 'getPasskeysReport',
+        value: function getPasskeysReport(eventId) {
+            var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
-      return this.get('/transaction/' + id, query);
-    }
+            var _query = Object.assign({
+                event: eventId,
+                status: 'approved'
+            }, query);
 
-    /**
-     * Get refund reasons
-     *
-     * @param {object} [query] - Optional request parameters.
-     *
-     * @returns {Promise}
-     */
+            return this.get('/transaction-report/passkey-ticket', _query);
+        }
 
-  }, {
-    key: 'getRefundReasons',
-    value: function getRefundReasons() {
-      var query = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+        /**
+         * Get a list of transactions
+         *
+         * @param {object} [query] - Optional request parameters.
+         *
+         * @returns {Promise}
+         */
 
-      return this.get('/refundReasons', query);
-    }
+    }, {
+        key: 'getList',
+        value: function getList() {
+            var query = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
-    /**
-     * Refund a transaction
-     *
-     * @param {string} id      - Transaction ID.
-     * @param {object} [data]  - Optional transaction data.
-     * @param {object} [query] - Optional request parameters.
-     *
-     * @returns {Promise}
-     */
+            return this.get('/transactions', query);
+        }
 
-  }, {
-    key: 'refund',
-    value: function refund(id) {
-      var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
-      var query = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+        /**
+         * Get a transaction by ID
+         *
+         * @param {string} id      - Transaction ID.
+         * @param {object} [query] - Optional request parameters.
+         *
+         * @returns {Promise}
+         */
 
+    }, {
+        key: 'getById',
+        value: function getById(id) {
+            var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
-      return this.post('/shop/' + id + '/refund', data, query);
-    }
+            return this.get('/transaction/' + id, query);
+        }
 
-    /**
-     * Capture an authorized transaction
-     *
-     * @param {string} id      - Transaction ID.
-     * @param {object} [query] - Optional request parameters.
-     *
-     * @returns {Promise}
-     */
+        /**
+         * Get refund reasons
+         *
+         * @param {object} [query] - Optional request parameters.
+         *
+         * @returns {Promise}
+         */
 
-  }, {
-    key: 'capture',
-    value: function capture(id) {
-      var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    }, {
+        key: 'getRefundReasons',
+        value: function getRefundReasons() {
+            var query = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
+            return this.get('/refundReasons', query);
+        }
 
-      return this.post('/shop/' + id + '/capture', null, query);
-    }
-  }]);
+        /**
+         * Refund a transaction
+         *
+         * @param {string} id      - Transaction ID.
+         * @param {object} [data]  - Optional transaction data.
+         * @param {object} [query] - Optional request parameters.
+         *
+         * @returns {Promise}
+         */
 
-  return ApiTransactions;
+    }, {
+        key: 'refund',
+        value: function refund(id) {
+            var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+            var query = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+
+            return this.post('/shop/' + id + '/refund', data, query);
+        }
+
+        /**
+         * Capture an authorized transaction
+         *
+         * @param {string} id      - Transaction ID.
+         * @param {object} [query] - Optional request parameters.
+         *
+         * @returns {Promise}
+         */
+
+    }, {
+        key: 'capture',
+        value: function capture(id) {
+            var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+            return this.post('/shop/' + id + '/capture', null, query);
+        }
+
+        /**
+         * Cancel a pending transaction
+         *
+         * @param {string} id      - Transaction ID.
+         * @param {object} [query] - Optional request parameters.
+         *
+         * @return {Promise}
+         */
+
+    }, {
+        key: 'cancel',
+        value: function cancel(id) {
+            var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+            return this.post('/shop/' + id + '/cancel', null, query);
+        }
+    }]);
+
+    return ApiTransactions;
 }(_handler.RequestHandler);

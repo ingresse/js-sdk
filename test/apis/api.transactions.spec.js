@@ -46,6 +46,26 @@ describe('API transactions', () => {
         });
     });
 
+    describe('getPasskeysReport', () => {
+        it('should call this.get', () => {
+            transactions.getPasskeysReport(21232);
+
+            chai.expect(transactions.get).to.have.been.called.with
+                .exactly('/transaction-report/passkey-ticket', { event: 21232, status: 'approved' });
+        });
+
+        it('should call this.get with params', () => {
+            let query = {
+                status: 'pending',
+            };
+
+            transactions.getPasskeysReport(21232, query);
+
+            chai.expect(transactions.get).to.have.been.called.with
+                .exactly('/transaction-report/passkey-ticket', { event: 21232, status: 'pending' });
+        });
+    });
+
     describe('getList', () => {
         it('should call this.get', () => {
             transactions.getList();
@@ -150,5 +170,27 @@ describe('API transactions', () => {
                 .exactly(`/shop/${id}/capture`, null, query);
         });
     });
-});
 
+    describe('cancel', () => {
+        it('should call this.cancel', () => {
+            let id = '1234-55555-6666';
+
+            transactions.cancel(id);
+
+            chai.expect(transactions.post).to.have.been.called.with
+                .exactly(`/shop/${id}/cancel`, null, {});
+        });
+
+        it('should call this.cancel with query params', () => {
+            let id    = '1234-55555-6666';
+            let query = {
+                property: 'test',
+            };
+
+            transactions.cancel(id, query);
+
+            chai.expect(transactions.post).to.have.been.called.with
+                .exactly(`/shop/${id}/cancel`, null, query);
+        });
+    });
+});

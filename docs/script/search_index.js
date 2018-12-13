@@ -540,6 +540,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/apis/api.event.js~apievents#requestpasskeysreport",
+    "class/src/apis/api.event.js~ApiEvents.html#instance-method-requestPasskeysReport",
+    "src/apis/api.event.js~ApiEvents#requestPasskeysReport",
+    "method"
+  ],
+  [
     "src/apis/api.js",
     "file/src/apis/api.js.html",
     "src/apis/api.js",
@@ -612,6 +618,12 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/apis/api.transactions.js~apitransactions#cancel",
+    "class/src/apis/api.transactions.js~ApiTransactions.html#instance-method-cancel",
+    "src/apis/api.transactions.js~ApiTransactions#cancel",
+    "method"
+  ],
+  [
     "src/apis/api.transactions.js~apitransactions#capture",
     "class/src/apis/api.transactions.js~ApiTransactions.html#instance-method-capture",
     "src/apis/api.transactions.js~ApiTransactions#capture",
@@ -627,6 +639,12 @@ window.esdocSearchIndex = [
     "src/apis/api.transactions.js~apitransactions#getlist",
     "class/src/apis/api.transactions.js~ApiTransactions.html#instance-method-getList",
     "src/apis/api.transactions.js~ApiTransactions#getList",
+    "method"
+  ],
+  [
+    "src/apis/api.transactions.js~apitransactions#getpasskeysreport",
+    "class/src/apis/api.transactions.js~ApiTransactions.html#instance-method-getPasskeysReport",
+    "src/apis/api.transactions.js~ApiTransactions#getPasskeysReport",
     "method"
   ],
   [
