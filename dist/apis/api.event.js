@@ -172,6 +172,55 @@ var ApiEvents = exports.ApiEvents = function (_RequestHandler) {
 
             return this.get('/' + category, query);
         }
+
+        /**
+         * Request the passkeys report processment.
+         *
+         * Will request to API generate the Passkeys Report
+         * and API will send an email to the user when the report
+         * is available, with the link to download file.
+         *
+         * @param {number} eventId - The event ID.
+         * @param {object} data    - Report requisition details.
+         * @param {object} [query] - Optional request parameters.
+         *
+         * @returns {Promise}
+         *
+         * @example
+         * ...
+         * const ing = new Sdk();
+         *
+         * ing.api.requestPasskeysReport(21232, {
+         *     "type":  "passkey",
+         *     "format": "xlsx",
+         *     "filters": [{
+         *         "status": "approved"
+         *     }]
+         * })
+         * .then((response) => {
+         *     console.log(response);
+         * })
+         * .catch((error) => {
+         *     console.log(error);
+         * });
+         */
+
+    }, {
+        key: 'requestPasskeysReport',
+        value: function requestPasskeysReport(eventId) {
+            var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+            var query = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+
+            var _data = Object.assign({
+                type: 'passkey',
+                format: 'csv',
+                filters: [{
+                    status: 'approved'
+                }]
+            }, data);
+
+            return this.post('/event/' + eventId + '/export', _data, query);
+        }
     }]);
 
     return ApiEvents;

@@ -215,6 +215,7 @@ describe('Ticket API', () => {
 
         beforeEach(() => {
             ticket = new Ticket();
+
             chai.spy.on(ticket, 'get');
         });
 
@@ -238,6 +239,7 @@ describe('Ticket API', () => {
         beforeEach(() => {
             ticket = new Ticket();
             id     = 10;
+
             chai.spy.on(ticket, 'get');
         });
 
@@ -261,12 +263,13 @@ describe('Ticket API', () => {
 
         beforeEach(() => {
             ticket = new Ticket();
-            data = {
+            data   = {
                 eventId: 26899,
                 passkey: 'testeGG',
                 start: '2018-10-31 12:00:00',
                 finish: '2019-11-10 20:20:00'
-            }
+            };
+
             chai.spy.on(ticket, 'post');
         });
 
@@ -284,6 +287,7 @@ describe('Ticket API', () => {
         beforeEach(() => {
             ticket = new Ticket();
             id     = 123;
+
             chai.spy.on(ticket, 'delete');
         });
 
@@ -301,13 +305,14 @@ describe('Ticket API', () => {
 
         beforeEach(() => {
             ticket = new Ticket();
-            id   = 1;
-            data = {
+            id     = 1;
+            data   = {
                 eventId: 26899,
                 passkey: 'testeGG',
                 start: '2018-10-31 12:00:00',
                 finish: '2019-11-10 20:20:00'
-            }
+            };
+
             chai.spy.on(ticket, 'put');
         });
 
@@ -325,10 +330,11 @@ describe('Ticket API', () => {
 
         beforeEach(() => {
             ticket = new Ticket();
-            id   = 1;
-            data = {
+            id     = 1;
+            data   = {
                 itemIds: [1,2,3]
-            }
+            };
+
             chai.spy.on(ticket, 'put');
         });
 
@@ -345,14 +351,15 @@ describe('Ticket API', () => {
         let eventId;
 
         beforeEach(() => {
-            ticket = new Ticket();
-            eventId = 1,
-            data = {
+            ticket  = new Ticket();
+            eventId = 1;
+            data    = {
                 codes  : ["passkey1", "passkey2", "passkey3"],
                 itemIds: [1,2,3],
                 start  : '2018-10-31 12:00:00',
                 finish : '2019-11-10 20:20:00'
-            }
+            };
+
             chai.spy.on(ticket, 'post');
         });
 
@@ -363,4 +370,3 @@ describe('Ticket API', () => {
         });
     });
 });
-

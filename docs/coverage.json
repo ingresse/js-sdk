@@ -1,7 +1,7 @@
 {
-  "coverage": "85.1%",
-  "expectCount": 141,
-  "actualCount": 120,
+  "coverage": "85.41%",
+  "expectCount": 144,
+  "actualCount": 123,
   "files": {
     "src/apis/api.js": {
       "expectCount": 3,
@@ -16,8 +16,8 @@
       "undocumentLines": []
     },
     "src/apis/api.event.js": {
-      "expectCount": 10,
-      "actualCount": 10,
+      "expectCount": 11,
+      "actualCount": 11,
       "undocumentLines": []
     },
     "src/apis/api.recover.js": {
@@ -31,8 +31,8 @@
       "undocumentLines": []
     },
     "src/apis/api.transactions.js": {
-      "expectCount": 7,
-      "actualCount": 7,
+      "expectCount": 9,
+      "actualCount": 9,
       "undocumentLines": []
     },
     "src/apis/api.user.js": {

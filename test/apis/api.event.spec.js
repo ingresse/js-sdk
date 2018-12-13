@@ -12,6 +12,7 @@ describe('API Events', () => {
     beforeEach(() => {
         event = new ApiEvents();
         chai.spy.on(event, 'get');
+        chai.spy.on(event, 'post');
     });
 
     it('should instantiate the class', () => {
@@ -123,5 +124,22 @@ describe('API Events', () => {
                 .exactly(`/${category}`, {});
         });
     });
-});
 
+    describe('requestPasskeysReport', () => {
+        it('should call this.post', () => {
+            let eventId = 21232;
+            event.requestPasskeysReport(eventId);
+
+            chai.expect(event.post).to.have.been.called.with
+                .exactly(`/event/${eventId}/export`, {
+                    type   : 'passkey',
+                    format : 'csv',
+                    filters: [
+                        {
+                            status: 'approved',
+                        },
+                    ],
+                }, {});
+        });
+    });
+});
