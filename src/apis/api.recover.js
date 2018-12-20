@@ -12,7 +12,7 @@ export class ApiRecover extends RequestHandler {
      * @returns {Promise}
      */
     recoverPassword(data, query = {}) {
-        return this.post('/recover/password', data, query);
+        return this.post('/recover-password', data, query);
     }
 
     /**
@@ -23,7 +23,7 @@ export class ApiRecover extends RequestHandler {
      * @returns {Promise}
      */
     validateHash(data, query = {}) {
-        return this.post('/recover/validate', data, query);
+        return this.post('/recover-validate', data, query);
     }
 
     /**
@@ -34,6 +34,6 @@ export class ApiRecover extends RequestHandler {
      * @returns {Promise}
      */
     updatePassword(data, query = {}) {
-        return this.post('/recover/update-password', data, query);
+        return this.post('/recover-update-password', data, query);
     }
 }
