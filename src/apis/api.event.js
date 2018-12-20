@@ -81,12 +81,23 @@ export class ApiEvents extends RequestHandler {
     /**
      * Featured events
      *
-     * @param {string|number} id - The event ID to get.
-     * @param {object} [query]   - Optional request parameters.
+     * @param {object} [query] - Optional request parameters.
+     *
      * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.ApiEvents.getFeatured({ method: 'banner', state: 'sp' })
+     * .then(function (response) {
+     *     console.log(response);
+     * })
+     * .catch(function (error) {
+     *     console.log(error);
+     * });
      */
-    getFeatured(id, query = {}) {
-        return this.get(`/featured/${id}`, query);
+    getFeatured(query = {}) {
+        return this.get('/featured', query);
     }
 
     /**

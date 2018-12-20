@@ -28,7 +28,7 @@ describe('API Recover Password', () => {
             recover.recoverPassword(data);
 
             chai.expect(recover.post).to.have.been.called.with
-                .exactly('/recover/password', data, {});
+                .exactly('/recover-password', data, {});
         });
     });
 
@@ -40,7 +40,7 @@ describe('API Recover Password', () => {
             recover.validateHash(data);
 
             chai.expect(recover.post).to.have.been.called.with
-                .exactly('/recover/validate', data, {});
+                .exactly('/recover-validate', data, {});
         });
     });
 
@@ -52,8 +52,7 @@ describe('API Recover Password', () => {
             recover.updatePassword(data);
 
             chai.expect(recover.post).to.have.been.called.with
-                .exactly('/recover/update-password', data, {});
+                .exactly('/recover-update-password', data, {});
         });
     });
 });
-

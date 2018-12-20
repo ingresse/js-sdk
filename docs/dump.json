@@ -228,7 +228,7 @@
     "__docId__": 6,
     "kind": "file",
     "name": "src/apis/api.event.js",
-    "content": "import {RequestHandler} from '../request/handler';\n\n/**\n * Ingresse Event API\n */\nexport class ApiEvents extends RequestHandler {\n    /**\n     * Identify event\n     *\n     * @param {string} link       - Link/Slug or id.\n     * @param {string} fields     - Event fields to get.\n     * @param {object} [queryOpt] - Optional request parameters.\n     * @returns {Promise}\n     */\n    identifyEvent(link, fields, queryOpt) {\n        let query = queryOpt || {\n            link  : link,\n            fields: fields,\n            method: 'identify',\n        };\n\n        return this.get('/event', query);\n    }\n\n    /**\n     * Get event\n     *\n     * @param {string|number} id - The event ID to get.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     */\n    getEvent(id, query = {}) {\n        return this.get(`/event/${id}`, query);\n    }\n\n    /**\n     * Get event tickets\n     *\n     * @param {string|number} id - The event ID to get.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     */\n    getEventTickets(id, query = {}) {\n        return this.get(`/event/${id}/tickets`, query);\n    }\n\n    /**\n     * Get event session tickets\n     *\n     * @param {string|number} id        - The event ID to get.\n     * @param {string|number} sessionId - The event session ID to get.\n     * @param {object} [query]          - Optional request parameters.\n     * @returns {Promise}\n     */\n    getEventSessionTickets(id, sessionId, query = {}) {\n        return this.get(`/event/${id}/session/${sessionId}/tickets`, query);\n    }\n\n    /**\n     * Get event crew\n     *\n     * @param {string|number} id - The event ID to get.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     */\n    getEventCrew(id, query = {}) {\n        return this.get(`/event/${id}/crew`, query);\n    }\n\n    /**\n     * Get event attributes\n     *\n     * @param {string|number} id - The event ID to get.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     */\n    getEventAttributes(id, query = {}) {\n        return this.get(`/event/${id}/attributes`, query);\n    }\n\n    /**\n     * Featured events\n     *\n     * @param {string|number} id - The event ID to get.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     */\n    getFeatured(id, query = {}) {\n        return this.get(`/featured/${id}`, query);\n    }\n\n    /**\n     * Get the events type\n     *\n     * @returns {Promise}\n     */\n    getEventTypes() {\n        return this.get('/home/sections');\n    }\n\n    /**\n     * Get the search event categorie.\n     *\n     * @param {string} category - The search category to get.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     */\n    getEventCategories(category, query = {}) {\n        return this.get(`/${category}`, query);\n    }\n\n    /**\n     * Request the passkeys report processment.\n     *\n     * Will request to API generate the Passkeys Report\n     * and API will send an email to the user when the report\n     * is available, with the link to download file.\n     *\n     * @param {number} eventId - The event ID.\n     * @param {object} data    - Report requisition details.\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     * const ing = new Sdk();\n     *\n     * ing.api.requestPasskeysReport(21232, {\n     *     \"type\":  \"passkey\",\n     *     \"format\": \"xlsx\",\n     *     \"filters\": [{\n     *         \"status\": \"approved\"\n     *     }]\n     * })\n     * .then((response) => {\n     *     console.log(response);\n     * })\n     * .catch((error) => {\n     *     console.log(error);\n     * });\n     */\n    requestPasskeysReport(eventId, data = {}, query = {}) {\n        let _data = Object.assign({\n            type   : 'passkey',\n            format : 'csv',\n            filters: [\n                {\n                    status: 'approved',\n                },\n            ],\n        }, data);\n\n        return this.post(`/event/${eventId}/export`, _data, query);\n    }\n}\n",
+    "content": "import {RequestHandler} from '../request/handler';\n\n/**\n * Ingresse Event API\n */\nexport class ApiEvents extends RequestHandler {\n    /**\n     * Identify event\n     *\n     * @param {string} link       - Link/Slug or id.\n     * @param {string} fields     - Event fields to get.\n     * @param {object} [queryOpt] - Optional request parameters.\n     * @returns {Promise}\n     */\n    identifyEvent(link, fields, queryOpt) {\n        let query = queryOpt || {\n            link  : link,\n            fields: fields,\n            method: 'identify',\n        };\n\n        return this.get('/event', query);\n    }\n\n    /**\n     * Get event\n     *\n     * @param {string|number} id - The event ID to get.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     */\n    getEvent(id, query = {}) {\n        return this.get(`/event/${id}`, query);\n    }\n\n    /**\n     * Get event tickets\n     *\n     * @param {string|number} id - The event ID to get.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     */\n    getEventTickets(id, query = {}) {\n        return this.get(`/event/${id}/tickets`, query);\n    }\n\n    /**\n     * Get event session tickets\n     *\n     * @param {string|number} id        - The event ID to get.\n     * @param {string|number} sessionId - The event session ID to get.\n     * @param {object} [query]          - Optional request parameters.\n     * @returns {Promise}\n     */\n    getEventSessionTickets(id, sessionId, query = {}) {\n        return this.get(`/event/${id}/session/${sessionId}/tickets`, query);\n    }\n\n    /**\n     * Get event crew\n     *\n     * @param {string|number} id - The event ID to get.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     */\n    getEventCrew(id, query = {}) {\n        return this.get(`/event/${id}/crew`, query);\n    }\n\n    /**\n     * Get event attributes\n     *\n     * @param {string|number} id - The event ID to get.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     */\n    getEventAttributes(id, query = {}) {\n        return this.get(`/event/${id}/attributes`, query);\n    }\n\n    /**\n     * Featured events\n     *\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     *\n     * ingresse.ApiEvents.getFeatured({ method: 'banner', state: 'sp' })\n     * .then(function (response) {\n     *     console.log(response);\n     * })\n     * .catch(function (error) {\n     *     console.log(error);\n     * });\n     */\n    getFeatured(query = {}) {\n        return this.get('/featured', query);\n    }\n\n    /**\n     * Get the events type\n     *\n     * @returns {Promise}\n     */\n    getEventTypes() {\n        return this.get('/home/sections');\n    }\n\n    /**\n     * Get the search event categorie.\n     *\n     * @param {string} category - The search category to get.\n     * @param {object} [query]   - Optional request parameters.\n     * @returns {Promise}\n     */\n    getEventCategories(category, query = {}) {\n        return this.get(`/${category}`, query);\n    }\n\n    /**\n     * Request the passkeys report processment.\n     *\n     * Will request to API generate the Passkeys Report\n     * and API will send an email to the user when the report\n     * is available, with the link to download file.\n     *\n     * @param {number} eventId - The event ID.\n     * @param {object} data    - Report requisition details.\n     * @param {object} [query] - Optional request parameters.\n     *\n     * @returns {Promise}\n     *\n     * @example\n     * ...\n     * const ing = new Sdk();\n     *\n     * ing.api.requestPasskeysReport(21232, {\n     *     \"type\":  \"passkey\",\n     *     \"format\": \"xlsx\",\n     *     \"filters\": [{\n     *         \"status\": \"approved\"\n     *     }]\n     * })\n     * .then((response) => {\n     *     console.log(response);\n     * })\n     * .catch((error) => {\n     *     console.log(error);\n     * });\n     */\n    requestPasskeysReport(eventId, data = {}, query = {}) {\n        let _data = Object.assign({\n            type   : 'passkey',\n            format : 'csv',\n            filters: [\n                {\n                    status: 'approved',\n                },\n            ],\n        }, data);\n\n        return this.post(`/event/${eventId}/export`, _data, query);\n    }\n}\n",
     "static": true,
     "longname": "src/apis/api.event.js",
     "access": null,
@@ -584,7 +584,10 @@
     "longname": "src/apis/api.event.js~ApiEvents#getFeatured",
     "access": null,
     "description": "Featured events",
-    "lineNumber": 88,
+    "examples": [
+      "...\n\ningresse.ApiEvents.getFeatured({ method: 'banner', state: 'sp' })\n.then(function (response) {\n    console.log(response);\n})\n.catch(function (error) {\n    console.log(error);\n});"
+    ],
+    "lineNumber": 99,
     "unknown": [
       {
         "tagName": "@returns",
@@ -592,17 +595,6 @@
       }
     ],
     "params": [
-      {
-        "nullable": null,
-        "types": [
-          "string",
-          "number"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "id",
-        "description": "The event ID to get."
-      },
       {
         "nullable": null,
         "types": [
@@ -634,7 +626,7 @@
     "longname": "src/apis/api.event.js~ApiEvents#getEventTypes",
     "access": null,
     "description": "Get the events type",
-    "lineNumber": 97,
+    "lineNumber": 108,
     "unknown": [
       {
         "tagName": "@returns",
@@ -662,7 +654,7 @@
     "longname": "src/apis/api.event.js~ApiEvents#getEventCategories",
     "access": null,
     "description": "Get the search event categorie.",
-    "lineNumber": 108,
+    "lineNumber": 119,
     "unknown": [
       {
         "tagName": "@returns",
@@ -714,7 +706,7 @@
     "examples": [
       "...\nconst ing = new Sdk();\n\ning.api.requestPasskeysReport(21232, {\n    \"type\":  \"passkey\",\n    \"format\": \"xlsx\",\n    \"filters\": [{\n        \"status\": \"approved\"\n    }]\n})\n.then((response) => {\n    console.log(response);\n})\n.catch((error) => {\n    console.log(error);\n});"
     ],
-    "lineNumber": 143,
+    "lineNumber": 154,
     "unknown": [
       {
         "tagName": "@returns",
@@ -846,7 +838,7 @@
     "__docId__": 22,
     "kind": "file",
     "name": "src/apis/api.recover.js",
-    "content": "import {RequestHandler} from '../request/handler';\n\n/**\n * Ingresse Recover Password API\n */\nexport class ApiRecover extends RequestHandler {\n    /**\n     * Recover the user password\n     *\n     * @param {object} data    - The user data to recover password.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     */\n    recoverPassword(data, query = {}) {\n        return this.post('/recover/password', data, query);\n    }\n\n    /**\n     * Validate the hash sent for user\n     *\n     * @param {object} data    - The user data to validate password.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     */\n    validateHash(data, query = {}) {\n        return this.post('/recover/validate', data, query);\n    }\n\n    /**\n     * Update the user password\n     *\n     * @param {object} data    - The user data to validate password.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     */\n    updatePassword(data, query = {}) {\n        return this.post('/recover/update-password', data, query);\n    }\n}\n",
+    "content": "import {RequestHandler} from '../request/handler';\n\n/**\n * Ingresse Recover Password API\n */\nexport class ApiRecover extends RequestHandler {\n    /**\n     * Recover the user password\n     *\n     * @param {object} data    - The user data to recover password.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     */\n    recoverPassword(data, query = {}) {\n        return this.post('/recover-password', data, query);\n    }\n\n    /**\n     * Validate the hash sent for user\n     *\n     * @param {object} data    - The user data to validate password.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     */\n    validateHash(data, query = {}) {\n        return this.post('/recover-validate', data, query);\n    }\n\n    /**\n     * Update the user password\n     *\n     * @param {object} data    - The user data to validate password.\n     * @param {object} [query] - Optional request parameters.\n     * @returns {Promise}\n     */\n    updatePassword(data, query = {}) {\n        return this.post('/recover-update-password', data, query);\n    }\n}\n",
     "static": true,
     "longname": "src/apis/api.recover.js",
     "access": null,
