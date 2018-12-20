@@ -98,11 +98,15 @@ describe('API Events', () => {
 
     describe('getFeatured', () => {
         it('should call this.get', () => {
-            let id = 123;
-            event.getFeatured(id);
+            let filters = {
+                method: 'test',
+                state : 'am',
+            };
+
+            event.getFeatured(filters);
 
             chai.expect(event.get).to.have.been.called.with
-                .exactly(`/featured/${id}`, {});
+                .exactly('/featured', filters);
         });
     });
 

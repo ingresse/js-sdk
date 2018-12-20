@@ -40,7 +40,7 @@ var ApiRecover = exports.ApiRecover = function (_RequestHandler) {
     value: function recoverPassword(data) {
       var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
-      return this.post('/recover/password', data, query);
+      return this.post('/recover-password', data, query);
     }
 
     /**
@@ -56,7 +56,7 @@ var ApiRecover = exports.ApiRecover = function (_RequestHandler) {
     value: function validateHash(data) {
       var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
-      return this.post('/recover/validate', data, query);
+      return this.post('/recover-validate', data, query);
     }
 
     /**
@@ -72,7 +72,7 @@ var ApiRecover = exports.ApiRecover = function (_RequestHandler) {
     value: function updatePassword(data) {
       var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
-      return this.post('/recover/update-password', data, query);
+      return this.post('/recover-update-password', data, query);
     }
   }]);
 

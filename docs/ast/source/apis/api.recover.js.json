@@ -425,10 +425,10 @@
                               }
                             },
                             "extra": {
-                              "rawValue": "/recover/password",
-                              "raw": "'/recover/password'"
+                              "rawValue": "/recover-password",
+                              "raw": "'/recover-password'"
                             },
-                            "value": "/recover/password"
+                            "value": "/recover-password"
                           },
                           {
                             "type": "Identifier",
@@ -721,10 +721,10 @@
                               }
                             },
                             "extra": {
-                              "rawValue": "/recover/validate",
-                              "raw": "'/recover/validate'"
+                              "rawValue": "/recover-validate",
+                              "raw": "'/recover-validate'"
                             },
-                            "value": "/recover/validate"
+                            "value": "/recover-validate"
                           },
                           {
                             "type": "Identifier",
@@ -1017,10 +1017,10 @@
                               }
                             },
                             "extra": {
-                              "rawValue": "/recover/update-password",
-                              "raw": "'/recover/update-password'"
+                              "rawValue": "/recover-update-password",
+                              "raw": "'/recover-update-password'"
                             },
-                            "value": "/recover/update-password"
+                            "value": "/recover-update-password"
                           },
                           {
                             "type": "Identifier",
@@ -1970,7 +1970,7 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "/recover/password",
+      "value": "/recover-password",
       "start": 419,
       "end": 438,
       "loc": {
@@ -2582,7 +2582,7 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "/recover/validate",
+      "value": "/recover-validate",
       "start": 742,
       "end": 761,
       "loc": {
@@ -3194,7 +3194,7 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "/recover/update-password",
+      "value": "/recover-update-password",
       "start": 1060,
       "end": 1086,
       "loc": {

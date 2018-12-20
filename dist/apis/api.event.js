@@ -132,17 +132,28 @@ var ApiEvents = exports.ApiEvents = function (_RequestHandler) {
         /**
          * Featured events
          *
-         * @param {string|number} id - The event ID to get.
-         * @param {object} [query]   - Optional request parameters.
+         * @param {object} [query] - Optional request parameters.
+         *
          * @returns {Promise}
+         *
+         * @example
+         * ...
+         *
+         * ingresse.ApiEvents.getFeatured({ method: 'banner', state: 'sp' })
+         * .then(function (response) {
+         *     console.log(response);
+         * })
+         * .catch(function (error) {
+         *     console.log(error);
+         * });
          */
 
     }, {
         key: 'getFeatured',
-        value: function getFeatured(id) {
-            var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+        value: function getFeatured() {
+            var query = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
-            return this.get('/featured/' + id, query);
+            return this.get('/featured', query);
         }
 
         /**
