@@ -634,6 +634,109 @@ export class Ticket extends RequestHandler {
     batchPasskeys(eventId, data = {}, query = {}) {
         return this.post(`/event/${eventId}/passkeys`, data, query);
     }
+
+    /**
+     * Upload External Codes via CSV file
+     *
+     * @param {number} eventId
+     * @param {object} formData
+     * @param {file}   formData.file
+     * @param {object} [query]
+     *
+     * @return {Promise}
+     *
+     * @example
+     * ....
+     *
+     * var uploadData = new FormData();
+     *
+     * uploadData.append(&apos;file&apos;, document.getElementById(&apos;input-file-id&apos;).value);
+     *
+     * ingresse.ticket.uploadExternals(21232, uploadData)
+     * .then(function (response) {
+     *     console.log(response);
+     * })
+     * .catch(function (error) {
+     *    console.log(error);
+     * });
+     *
+     */
+    uploadExternals(eventId, formData = {}, query = {}) {
+        return this.upload(`/events/${eventId}/codes`, formData, query);
+    }
+
+    /**
+     * Get External Item Codes
+     *
+     * @param {number} itemId
+     * @param {object} [query]
+     *
+     * @return {Promise}
+     *
+     * @example
+     * ....
+     *
+     * ingresse.ticket.getExternalCodes(456789)
+     * .then(function (response) {
+     *     console.log(response);
+     * })
+     * .catch(function (error) {
+     *    console.log(error);
+     * });
+     *
+     */
+    getExternalCodes(itemId, query = {}) {
+        return this.get(`/items/${itemId}/codes`, query);
+    }
+
+    /**
+     * Delete External Item
+     *
+     * @param {number} eventId
+     * @param {object} [query]
+     *
+     * @return {Promise}
+     *
+     * @example
+     * ....
+     *
+     * ingresse.ticket.deleteExternal(21232, { name: &apos;My Ticket Name&apos; })
+     * .then(function (response) {
+     *     console.log(response);
+     * })
+     * .catch(function (error) {
+     *    console.log(error);
+     * });
+     *
+     */
+    deleteExternal(eventId, query = {}) {
+        return this.delete(`/events/${eventId}/codes`, query);
+    }
+
+    /**
+     * Delete External Item Code
+     *
+     * @param {number} itemId
+     * @param {number|string} codeId
+     * @param {object} [query]
+     *
+     * @return {Promise}
+     *
+     * @example
+     * ....
+     *
+     * ingresse.ticket.deleteExternalCode(123456, 987654321)
+     * .then(function (response) {
+     *     console.log(response);
+     * })
+     * .catch(function (error) {
+     *    console.log(error);
+     * });
+     *
+     */
+    deleteExternalCode(itemId, codeId, query = {}) {
+        return this.delete(`/items/${itemId}/codes/${codeId}`, query);
+    }
 }
 </code></pre>
 

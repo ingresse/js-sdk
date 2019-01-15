@@ -189,6 +189,36 @@ var RequestHandler = exports.RequestHandler = function () {
 
             return this.request(request);
         }
+
+        /**
+         * Upload files
+         *
+         * @param {string} path     - Request post to endpoint e.g. /api-path
+         * @param {object} formData - Data to be posted.
+         * @param {object} [query]  - Optional request parameters.
+         *
+         * @returns {Promise}
+         */
+
+    }, {
+        key: 'upload',
+        value: function upload(path) {
+            var formData = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+            var query = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+
+            var request = {
+                method: 'POST',
+                url: path,
+                query: query,
+                body: formData,
+                headers: {
+                    'Accept': '*/*',
+                    'Content-Type': undefined
+                }
+            };
+
+            return this.request(request);
+        }
     }]);
 
     return RequestHandler;

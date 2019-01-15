@@ -369,4 +369,88 @@ describe('Ticket API', () => {
             chai.expect(ticket.post).to.have.been.called.with.exactly(`/event/${eventId}/passkeys`, data, {});
         });
     });
+
+    describe('uploadExternals', () => {
+        let ticket;
+        let data;
+        let eventId;
+
+        beforeEach(() => {
+            ticket  = new Ticket();
+            eventId = 1;
+            data    = {
+                file: {
+                    name: 'elvis-presley-in-concert--entry-tickets.csv',
+                },
+            };
+
+            chai.spy.on(ticket, 'upload');
+        });
+
+        it('should call this.upload', () => {
+            ticket.uploadExternals(eventId, data);
+
+            chai.expect(ticket.upload).to.have.been.called.with.exactly(`/events/${eventId}/codes`, data, {});
+        });
+    });
+
+    describe('getExternalCodes', () => {
+        let ticket;
+        let itemId;
+
+        beforeEach(() => {
+            ticket = new Ticket();
+            itemId = 1;
+
+            chai.spy.on(ticket, 'get');
+        });
+
+        it('should call this.get', () => {
+            ticket.getExternalCodes(itemId);
+
+            chai.expect(ticket.get).to.have.been.called.with.exactly(`/items/${itemId}/codes`, {});
+        });
+    });
+
+    describe('deleteExternal', () => {
+        let ticket;
+        let eventId;
+        let params;
+
+        beforeEach(() => {
+            ticket  = new Ticket();
+            eventId = 1;
+            params  = {
+                name: 'My Ticket Name',
+            };
+
+            chai.spy.on(ticket, 'delete');
+        });
+
+        it('should call this.delete', () => {
+            ticket.deleteExternal(eventId, params);
+
+            chai.expect(ticket.delete).to.have.been.called.with.exactly(`/events/${eventId}/codes`, params);
+        });
+    });
+
+    describe('deleteExternalCode', () => {
+        let ticket;
+        let itemId;
+        let codeId;
+
+        beforeEach(() => {
+            ticket = new Ticket();
+            itemId = 1;
+            codeId = 11;
+
+            chai.spy.on(ticket, 'delete');
+        });
+
+        it('should call this.delete', () => {
+            ticket.deleteExternalCode(itemId, codeId);
+
+            chai.expect(ticket.delete).to.have.been.called.with.exactly(`/items/${itemId}/codes/${codeId}`, {});
+        });
+    });
 });

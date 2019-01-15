@@ -148,4 +148,28 @@ export class RequestHandler {
 
         return this.request(request);
     }
+
+    /**
+     * Upload files
+     *
+     * @param {string} path     - Request post to endpoint e.g. /api-path
+     * @param {object} formData - Data to be posted.
+     * @param {object} [query]  - Optional request parameters.
+     *
+     * @returns {Promise}
+     */
+    upload(path, formData = {}, query = {}) {
+        let request = {
+            method : 'POST',
+            url    : path,
+            query  : query,
+            body   : formData,
+            headers: {
+                'Accept'      : '*/*',
+                'Content-Type': undefined,
+            },
+        };
+
+        return this.request(request);
+    }
 }
