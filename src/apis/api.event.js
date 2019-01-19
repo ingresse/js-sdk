@@ -213,4 +213,29 @@ export class ApiEvents extends RequestHandler {
         }, data);
 
         return this.post(`/event/${eventId}/export`, _data, query);
-    }}
+    }
+
+    /**
+     * Get Event Entry Report
+     *
+     * @param {number} eventId     - The event ID.
+     * @param {number} [sessionId] - The event session ID to get.
+     * @param {object} [query]     - Optional request parameters.
+     *
+     * @returns {Promise}
+     */
+    getEntryReport(eventId, sessionId, query = {}) {
+        const _query = Object.assign(
+            {},
+            query,
+            {
+                method: 'report'
+            },
+            (!sessionId ? {} : {
+                sessionId: sessionId
+            })
+        );
+
+        return this.get(`/event/${eventId}/guestlist`, _query);
+    }
+}
