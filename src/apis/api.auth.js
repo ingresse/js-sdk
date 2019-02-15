@@ -14,6 +14,7 @@ export class ApiAuth extends RequestHandler {
     login(data, query = {}) {
         return this.post('/login', data, query);
     }
+
     /**
      * Login User by Company
      *
@@ -46,5 +47,21 @@ export class ApiAuth extends RequestHandler {
      */
     register(data = {}, query = {}) {
         return this.post('/user', data, query);
+    }
+
+    /**
+     * Renew User JWT
+     *
+     * @param {object} userToken - Current user token.
+     * @param {object} [query]   - Optional request parameters.
+     *
+     * @returns {Promise}
+     */
+    renewJWT(userToken, query = {}) {
+        const _query = Object.assign({}, query, {
+            usertoken: userToken,
+        });
+
+        return this.get('/login/renew-token', _query);
     }
 }
