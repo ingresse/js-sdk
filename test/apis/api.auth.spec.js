@@ -14,6 +14,7 @@ describe('API Auth', () => {
 
     beforeEach(() => {
         auth = new ApiAuth();
+        chai.spy.on(auth, 'get');
         chai.spy.on(auth, 'post');
     });
 
@@ -62,14 +63,14 @@ describe('API Auth', () => {
     });
 
     describe('register', () => {
-        it('should call this.get', () => {
+        it('should call this.post', () => {
             auth.register();
 
             chai.expect(auth.post).to.have.been.called.with
                 .exactly(`/user`, {}, {});
         });
 
-        it('should call this.get', () => {
+        it('should call this.post', () => {
             let data = {
                 name: 'test',
                 email: 'test@test.com'
@@ -81,7 +82,7 @@ describe('API Auth', () => {
                 .exactly(`/user`, data, {});
         });
 
-        it('should call this.get with query params', () => {
+        it('should call this.post with query params', () => {
             let data = {
                 name: 'test',
                 email: 'test@test.com'
@@ -91,6 +92,15 @@ describe('API Auth', () => {
 
             chai.expect(auth.post).to.have.been.called.with
                 .exactly(`/user`, data, Object.assign(query, {}));
+        });
+    });
+
+    describe('renewJWT', () => {
+        it('should call this.get', () => {
+            auth.renewJWT('test');
+
+            chai.expect(auth.get).to.have.been.called.with
+                .exactly('/login/renew-token', { usertoken: 'test' });
         });
     });
 });
