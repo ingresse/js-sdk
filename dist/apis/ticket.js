@@ -699,6 +699,130 @@ var Ticket = exports.Ticket = function (_RequestHandler) {
 
             return this.post('/event/' + eventId + '/passkeys', data, query);
         }
+
+        /**
+         * Upload External Codes via CSV file
+         *
+         * @param {number} eventId
+         * @param {object} formData
+         * @param {file}   formData.file
+         * @param {object} [query]
+         *
+         * @return {Promise}
+         *
+         * @example
+         * ....
+         *
+         * var uploadData = new FormData();
+         *
+         * uploadData.append('file', document.getElementById('input-file-id').value);
+         *
+         * ingresse.ticket.uploadExternals(21232, uploadData)
+         * .then(function (response) {
+         *     console.log(response);
+         * })
+         * .catch(function (error) {
+         *    console.log(error);
+         * });
+         *
+         */
+
+    }, {
+        key: 'uploadExternals',
+        value: function uploadExternals(eventId) {
+            var formData = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+            var query = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+
+            return this.upload('/events/' + eventId + '/codes', formData, query);
+        }
+
+        /**
+         * Get External Item Codes
+         *
+         * @param {number} itemId
+         * @param {object} [query]
+         *
+         * @return {Promise}
+         *
+         * @example
+         * ....
+         *
+         * ingresse.ticket.getExternalCodes(456789)
+         * .then(function (response) {
+         *     console.log(response);
+         * })
+         * .catch(function (error) {
+         *    console.log(error);
+         * });
+         *
+         */
+
+    }, {
+        key: 'getExternalCodes',
+        value: function getExternalCodes(itemId) {
+            var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+            return this.get('/items/' + itemId + '/codes', query);
+        }
+
+        /**
+         * Delete External Item
+         *
+         * @param {number} eventId
+         * @param {object} [query]
+         *
+         * @return {Promise}
+         *
+         * @example
+         * ....
+         *
+         * ingresse.ticket.deleteExternal(21232, { name: 'My Ticket Name' })
+         * .then(function (response) {
+         *     console.log(response);
+         * })
+         * .catch(function (error) {
+         *    console.log(error);
+         * });
+         *
+         */
+
+    }, {
+        key: 'deleteExternal',
+        value: function deleteExternal(eventId) {
+            var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+            return this.delete('/events/' + eventId + '/codes', query);
+        }
+
+        /**
+         * Delete External Item Code
+         *
+         * @param {number} itemId
+         * @param {number|string} codeId
+         * @param {object} [query]
+         *
+         * @return {Promise}
+         *
+         * @example
+         * ....
+         *
+         * ingresse.ticket.deleteExternalCode(123456, 987654321)
+         * .then(function (response) {
+         *     console.log(response);
+         * })
+         * .catch(function (error) {
+         *    console.log(error);
+         * });
+         *
+         */
+
+    }, {
+        key: 'deleteExternalCode',
+        value: function deleteExternalCode(itemId, codeId) {
+            var query = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+
+            return this.delete('/items/' + itemId + '/codes/' + codeId, query);
+        }
     }]);
 
     return Ticket;

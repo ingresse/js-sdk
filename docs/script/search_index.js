@@ -930,9 +930,27 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/apis/ticket.js~ticket#deleteexternal",
+    "class/src/apis/ticket.js~Ticket.html#instance-method-deleteExternal",
+    "src/apis/ticket.js~Ticket#deleteExternal",
+    "method"
+  ],
+  [
+    "src/apis/ticket.js~ticket#deleteexternalcode",
+    "class/src/apis/ticket.js~Ticket.html#instance-method-deleteExternalCode",
+    "src/apis/ticket.js~Ticket#deleteExternalCode",
+    "method"
+  ],
+  [
     "src/apis/ticket.js~ticket#deletepasskey",
     "class/src/apis/ticket.js~Ticket.html#instance-method-deletePasskey",
     "src/apis/ticket.js~Ticket#deletePasskey",
+    "method"
+  ],
+  [
+    "src/apis/ticket.js~ticket#getexternalcodes",
+    "class/src/apis/ticket.js~Ticket.html#instance-method-getExternalCodes",
+    "src/apis/ticket.js~Ticket#getExternalCodes",
     "method"
   ],
   [
@@ -1041,6 +1059,12 @@ window.esdocSearchIndex = [
     "src/apis/ticket.js~ticket#updatevalues",
     "class/src/apis/ticket.js~Ticket.html#instance-method-updateValues",
     "src/apis/ticket.js~Ticket#updateValues",
+    "method"
+  ],
+  [
+    "src/apis/ticket.js~ticket#uploadexternals",
+    "class/src/apis/ticket.js~Ticket.html#instance-method-uploadExternals",
+    "src/apis/ticket.js~Ticket#uploadExternals",
     "method"
   ],
   [
@@ -1306,6 +1330,12 @@ window.esdocSearchIndex = [
     "class/src/request/handler.js~RequestHandler.html#instance-member-settings",
     "src/request/handler.js~RequestHandler#settings",
     "member"
+  ],
+  [
+    "src/request/handler.js~requesthandler#upload",
+    "class/src/request/handler.js~RequestHandler.html#instance-method-upload",
+    "src/request/handler.js~RequestHandler#upload",
+    "method"
   ],
   [
     "src/request/plugins.js",
