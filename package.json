@@ -16,7 +16,8 @@
     "posttest": "nyc report",
     "unit-test": "mocha --recursive --compilers js:babel-register",
     "tdd-test": "mocha -w --recursive --compilers js:babel-register",
-    "deploy": "npm run test && npm run build && npm run docs"
+    "predeploy": "npm run test && npm run build && npm run docs && gh-pages -d docs",
+    "deploy": "NODE_DEBUG=gh-pages npm run predeploy"
   },
   "devDependencies": {
     "babel-eslint": "^6.1.2",
@@ -27,6 +28,7 @@
     "chai-spies": "^0.7.1",
     "esdoc": "^0.5.2",
     "eslint": "^3.4.0",
+    "gh-pages": "^2.0.1",
     "mocha": "^3.2.0",
     "nyc": "^10.1.2",
     "uglify": "^0.1.5"
