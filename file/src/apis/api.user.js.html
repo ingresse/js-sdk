@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/apis/api.user.js | Ingresse JS SDK API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <a data-ice="repoURL" href="https://www.github.com/ingresse/js-sdk">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">apis</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.auth.js~ApiAuth.html">ApiAuth</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.event.js~ApiEvents.html">ApiEvents</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.js~Api.html">Api</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.recover.js~ApiRecover.html">ApiRecover</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.ticket.js~ApiTicketTransfer.html">ApiTicketTransfer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.transactions.js~ApiTransactions.html">ApiTransactions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.user.js~ApiUser.html">ApiUser</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/event.js~Event.html">Event</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html">Ticket</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-apis">apis</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">auth</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/auth/authentication.js~Authentication.html">Authentication</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/auth/ingresse.js~Ingresse.html">Ingresse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/auth/jwt.js~Jwt.html">Jwt</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-auth">auth</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">helper</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/helper/cookie.js~Cookie.html">Cookie</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/helper/mixin.js~Mixin.html">Mixin</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-deepMerge">deepMerge</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">request</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html">RequestHandler</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-basePrefix">basePrefix</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-transformResponse">transformResponse</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/apis/api.user.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {RequestHandler} from &apos;../request/handler&apos;;
+import {Cookie} from &apos;../helper/cookie&apos;;
+
+/**
+ * Ingresse User API
+ */
+export class ApiUser extends RequestHandler {
+    /**
+     * Initialize the Api User
+     */
+    constructor(settings) {
+        super();
+        this.credentials = {};
+        this.cookie = new Cookie(settings ? settings.companyId : null);
+    }
+
+    /**
+     * Get user
+     *
+     * @param {string|number} id - The user ID to get.
+     * @param {object} [query]   - Optional request parameters.
+     * @returns {Promise}
+     */
+    getUser(id, query = {}) {
+        return this.get(`/user/${id}`, query);
+    }
+
+    /**
+     * Get user picture
+     *
+     * @param {string|number} id - The user ID to get.
+     * @param {object} [query]   - Optional request parameters.
+     * @returns {Promise}
+     */
+    getUserPicture(id, query = {}) {
+        return this.get(`/user/${id}/picture`, query);
+    }
+
+    /**
+     * Get the user tickets.
+     *
+     * @param {string|number} id - The user ID to get.
+     * @param {object} [query]   - Optional request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * var userId = 123;
+     * var query = {
+     *    status: &apos;pending&apos;, //Can be [pending, accepted, refused, returned, cancelled].
+     *    pageSize: 10,
+     *    page: currentPage
+     * };
+     *
+     * ingresse.apiUser.getUserTicket(userId, query)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    getUserTickets(id, query = {}) {
+        return this.get(`/user/${id}/tickets`, query);
+    }
+
+    /**
+     * Create a new user.
+     *
+     * @param {object} [data]  - The form with user data for post.
+     * @param {object} [query] - Optional request parameters.
+     * @returns {Promise}
+     */
+    createUser(data = {}, query = {}) {
+        query.method = &apos;create&apos;;
+        return this.post(&apos;/user/&apos;, data, query);
+    }
+
+    /**
+     * Get the new user tickets.
+     *
+     * @param {string|number} id - The user ID to get.
+     * @param {object} [query] - Optional request parameters.
+     * @returns {Promise}
+     */
+    getUserNewTickets(id, query = {}) {
+        return this.get(`/user/${id}/transfers`, query);
+    }
+
+    /**
+     * Get the user events sessions.
+     *
+     * @param {string|number} id - The user ID to get.
+     * @param {object} [query] - Optional request parameters.
+     * @returns {Promise}
+     */
+    getAllUserSessions(id, query = {}) {
+        return this.get(`/user/${id}/sessions`, query);
+    }
+
+    /**
+     * Get the user permission.
+     *
+     * @param {number} id - The user id to get.
+     * @param {object} [query] - Optional request parameters.
+     * @param {object} [query.context] - The context that get user permission. Ex: &apos;event&apos;
+     * @param {object} [query.contextValue] - The contex value. Ex: &apos;123123&apos;
+     * @param {object} [query.resource] - The resource type. Ex: &apos;tickets&apos;.
+     * @param {object} [query.resourceValue] - For a specific type of permission. Ex: &apos;__ANY__&apos; or 123123.
+     * @param {object} [query.page] - The current page with user permission.
+     * @param {object} [query.pageSize] - Quantity of permission per page. Default: 25
+     */
+    getUserPermissions(id, query = {}) {
+        return this.get(`/user/${id}/permissions`, query);
+    }
+
+    /*
+     * Get the ticket session
+     *
+     * @param {number} id - The user ID to get.
+     * @param {number} sessionId - The session id.
+     * @param {object} [query] - Optional request parameters.
+     * @returns {Promise}
+     */
+    getUserSessionTickets(id, sessionId, query = {}) {
+        return this.get(`/user/${id}/sessions/${sessionId}/tickets`, query);
+    }
+
+    /**
+     * Search the users for transfer ticket.
+     *
+     * @param {string} term - The text to search.
+     * @param {object} [query] - Optional request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * var term = &apos;Jefferson Silva&apos;;
+     * var query = {
+     *    size: 12
+     * };
+     * ingresse.apiUser.getUserForTransfer(term, query)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    getUserForTransfer(term, query = {}) {
+        query.term = term;
+        return this.get(&apos;/search/transfer/user&apos;, query);
+    }
+
+    /**
+     * Get the recent transfers of a user.
+     *
+     * @param {number} id - The user ID to get.
+     * @param {object} [query] - Optional request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * var id = 123;
+     * var query = {
+     *    size: 12,
+     *    order: &apos;DESC&apos;
+     * };
+     *
+     * ingresse.apiUser.getRecentTransfers(id, query)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    getRecentTransfers(id, query = {}) {
+        return this.get(`/user/${id}/last-transfers`, query);
+    }
+
+    /**
+     * Saves the credentials in cookie.
+     *
+     * @param {number} userId - User Id.
+     * @param {string} token  - The user token.
+     * @param {string} jwt    - The user jwt token.
+     *
+     * @returns {Object}
+     */
+    saveCredentials(userId, token, jwt) {
+        this.credentials.userId = userId;
+        this.credentials.token  = token;
+        this.credentials.jwt    = jwt;
+
+        this.cookie.createCookie(&apos;userId&apos;, userId, 5);
+        this.cookie.createCookie(&apos;token&apos;, token, 5);
+        this.cookie.createCookie(&apos;jwt&apos;, jwt, 5);
+
+        return this.credentials;
+    }
+
+    /**
+     * Gets the user credentials
+     *
+     * @returns {Object}
+     */
+    getCredentials() {
+        for (let prop in this.credentials) {
+            if (this.credentials[prop]) {
+                return this.credentials;
+            }
+        }
+
+        this.credentials.userId = this.cookie.getCookie(&apos;userId&apos;);
+        this.credentials.token  = this.cookie.getCookie(&apos;token&apos;);
+        this.credentials.jwt    = this.cookie.getCookie(&apos;jwt&apos;);
+
+        if (this.credentials.userId ||
+            this.credentials.token ||
+            this.credentials.jwt) {
+            return this.credentials;
+        }
+
+        return null;
+    }
+
+    /**
+     * Delete the user credentials
+     */
+    clearCredentials() {
+        this.cookie.deleteCookie(&apos;userId&apos;);
+        this.cookie.deleteCookie(&apos;token&apos;);
+        this.cookie.deleteCookie(&apos;jwt&apos;);
+    }
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.5.2)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

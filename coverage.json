@@ -1,0 +1,134 @@
+{
+  "coverage": "85.9%",
+  "expectCount": 149,
+  "actualCount": 128,
+  "files": {
+    "src/apis/api.js": {
+      "expectCount": 3,
+      "actualCount": 2,
+      "undocumentLines": [
+        45
+      ]
+    },
+    "src/apis/api.auth.js": {
+      "expectCount": 5,
+      "actualCount": 5,
+      "undocumentLines": []
+    },
+    "src/apis/api.event.js": {
+      "expectCount": 11,
+      "actualCount": 11,
+      "undocumentLines": []
+    },
+    "src/apis/api.recover.js": {
+      "expectCount": 4,
+      "actualCount": 4,
+      "undocumentLines": []
+    },
+    "src/apis/api.ticket.js": {
+      "expectCount": 4,
+      "actualCount": 4,
+      "undocumentLines": []
+    },
+    "src/apis/api.transactions.js": {
+      "expectCount": 9,
+      "actualCount": 9,
+      "undocumentLines": []
+    },
+    "src/apis/api.user.js": {
+      "expectCount": 17,
+      "actualCount": 14,
+      "undocumentLines": [
+        14,
+        13,
+        126
+      ]
+    },
+    "src/auth/authentication.js": {
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
+    },
+    "src/helper/cookie.js": {
+      "expectCount": 6,
+      "actualCount": 4,
+      "undocumentLines": [
+        7,
+        6
+      ]
+    },
+    "src/apis/event.js": {
+      "expectCount": 21,
+      "actualCount": 20,
+      "undocumentLines": [
+        32
+      ]
+    },
+    "src/auth/ingresse.js": {
+      "expectCount": 12,
+      "actualCount": 9,
+      "undocumentLines": [
+        3,
+        6,
+        4
+      ]
+    },
+    "src/auth/jwt.js": {
+      "expectCount": 7,
+      "actualCount": 4,
+      "undocumentLines": [
+        4,
+        40,
+        5
+      ]
+    },
+    "src/helper/mixin.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        4,
+        35,
+        7
+      ]
+    },
+    "src/request/handler.js": {
+      "expectCount": 11,
+      "actualCount": 9,
+      "undocumentLines": [
+        23,
+        20
+      ]
+    },
+    "src/apis/ticket.js": {
+      "expectCount": 28,
+      "actualCount": 27,
+      "undocumentLines": [
+        32
+      ]
+    },
+    "src/apis/index.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        6
+      ]
+    },
+    "src/auth/index.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        5
+      ]
+    },
+    "src/request/plugins.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/helper/index.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    }
+  }
+}

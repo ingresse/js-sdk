@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/request/handler.js | Ingresse JS SDK API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <a data-ice="repoURL" href="https://www.github.com/ingresse/js-sdk">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">apis</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.auth.js~ApiAuth.html">ApiAuth</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.event.js~ApiEvents.html">ApiEvents</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.js~Api.html">Api</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.recover.js~ApiRecover.html">ApiRecover</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.ticket.js~ApiTicketTransfer.html">ApiTicketTransfer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.transactions.js~ApiTransactions.html">ApiTransactions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.user.js~ApiUser.html">ApiUser</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/event.js~Event.html">Event</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html">Ticket</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-apis">apis</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">auth</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/auth/authentication.js~Authentication.html">Authentication</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/auth/ingresse.js~Ingresse.html">Ingresse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/auth/jwt.js~Jwt.html">Jwt</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-auth">auth</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">helper</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/helper/cookie.js~Cookie.html">Cookie</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/helper/mixin.js~Mixin.html">Mixin</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-deepMerge">deepMerge</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">request</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html">RequestHandler</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-basePrefix">basePrefix</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-transformResponse">transformResponse</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/request/handler.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import popsicle from &apos;popsicle&apos;;
+import {plugins} from &apos;popsicle&apos;;
+import {basePrefix, transformResponse} from &apos;./plugins&apos;;
+import {auth} from &apos;../auth&apos;;
+import {deepMerge} from &apos;../helper&apos;;
+import status from &apos;popsicle-status&apos;;
+
+
+/**
+ * Base request handler for all the API&apos;s
+ * with `get`, `post`, `put` and `delete` methods
+ */
+export class RequestHandler {
+    /**
+     * Initialize request handler
+     *
+     * @param {object} settings - Settings
+     */
+    constructor(settings = {}) {
+        this.settings = settings;
+
+        if (auth[settings.auth]) {
+            this.auth = new auth[settings.auth]();
+        }
+    }
+
+    /**
+     * Set API url
+     *
+     * @param {string} url - Base URL, example: &apos;https://hml-api.ingresse.com&apos;
+     *
+     * @example
+     * var sdk = require(&apos;ingresse-sdk&apos;);
+     * var ingresse = new Sdk();
+     *
+     * // You will have access to this API
+     * // after instantiate the Sdk.
+     * var api = ingresse.api;
+     *
+     * // Can set an specific URL to this API
+     * api.setUrl(&apos;https://hml-api.ingresse.com&apos;);
+     *
+     */
+    setUrl(url) {
+        this.settings.url = url;
+    }
+
+    /**
+     * Create new request promise
+     *
+     * @param {object} options - request options.
+     *
+     * @returns {Promise}
+     */
+    request(options = {}) {
+        let request = {};
+
+        request = deepMerge(request, options);
+
+        if (this.auth) {
+            request = deepMerge(request, this.auth.getSettings());
+        }
+
+        if (!this.settings.url) {
+            this.setUrl(&apos;https://api.ingresse.com/&apos;);
+        }
+
+        return popsicle(request)
+            .use(transformResponse())
+            .use(basePrefix(this.settings.url))
+            .use(plugins.parse([&apos;json&apos;]));
+    }
+
+    /**
+     * Get resource
+     *
+     * @param {string} path    - Request get to endpoint e.g. /api-path/1
+     * @param {object} [query] - Optional request parameters.
+     *
+     * @returns {Promise}
+     */
+    get(path, query) {
+        let request = {
+            method: &apos;GET&apos;,
+            url   : path,
+            query : query,
+        };
+
+        return this.request(request);
+    }
+
+    /**
+     * Post resource
+     *
+     * @param {string} path    - Request post to endpoint e.g. /api-path
+     * @param {object} data    - Data to be posted.
+     * @param {object} [query] - Optional request parameters.
+     *
+     * @returns {Promise}
+     */
+    post(path, data, query) {
+        let request = {
+            method: &apos;POST&apos;,
+            url   : path,
+            body  : data,
+            query : query,
+        };
+
+        return this.request(request);
+    }
+
+    /**
+     * Put resource
+     *
+     * @param {string} path    - Request put to end endpoint e.g. /api-path/1
+     * @param {object} data    - Data to be updated.
+     * @param {object} [query] - Optional request parameters.
+     *
+     * @returns {Promise}
+     */
+    put(path, data, query) {
+        let request = {
+            method: &apos;PUT&apos;,
+            url   : path,
+            body  : data,
+            query : query,
+        };
+
+        return this.request(request);
+    }
+
+    /**
+     * Delete resource
+     *
+     * @param {string} path    - Request delete to endpoint e.g. /api-path/1
+     * @param {object} [query] - Optional request parameters.
+     * @param {object} [data]  - Data to be deleted.
+     *
+     * @returns {Promise}
+     */
+    delete(path, query, data) {
+        let request = {
+            method: &apos;DELETE&apos;,
+            url   : path,
+            body  : data,
+            query : query,
+        };
+
+        return this.request(request);
+    }
+
+    /**
+     * Upload files
+     *
+     * @param {string} path     - Request post to endpoint e.g. /api-path
+     * @param {object} formData - Data to be posted.
+     * @param {object} [query]  - Optional request parameters.
+     *
+     * @returns {Promise}
+     */
+    upload(path, formData = {}, query = {}) {
+        let request = {
+            method : &apos;POST&apos;,
+            url    : path,
+            query  : query,
+            body   : formData,
+            headers: {
+                &apos;Accept&apos;      : &apos;*/*&apos;,
+                &apos;Content-Type&apos;: undefined,
+            },
+        };
+
+        return this.request(request);
+    }
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.5.2)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/requestHandler.js | Ingresse JS SDK API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <a data-ice="repoURL" href="https://www.github.com/ingresse/js-sdk">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/requestHandler.js~RequestHandler.html">RequestHandler</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">apis</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html">Ticket</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-apis">apis</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">auth</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/auth/authentication.js~Authentication.html">Authentication</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/auth/jwt.js~Jwt.html">Jwt</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-auth">auth</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/requestHandler.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {auth} from &apos;./auth&apos;;
+import {create as axios} from &apos;axios&apos;;
+
+
+export class RequestHandler {
+    /**
+     * Initialize request handler
+     *
+     * @param {object} settings - Settings
+     */
+    constructor(settings = {}) {
+        this.baseURL = settings.url;
+        this.setAuth(settings.auth);
+    }
+
+    /**
+     * Initialize Authentication
+     * The default authentication method is JWT.
+     *
+     * @private
+     * @param {string} method - Authentication method.
+     */
+    setAuth(method) {
+        switch(method) {
+            default:
+                this.auth = new auth.Jwt();
+                break;
+        }
+    }
+
+    /**
+     * Get API request headers
+     *
+     * @returns {object}
+     */
+    getHeaders() {
+        let headers = {
+            &apos;User-Agent&apos;: &apos;Ingresse JS SDK&apos;,
+        };
+
+        return headers;
+    }
+
+    /**
+     * Create new request promise
+     *
+     * @private
+     * @param {object} options - request options.
+     *
+     * @return {Promise}
+     */
+    request(options = {}) {
+        let def = {
+            baseURL: this.baseURL,
+            headers: this.getHeaders(),
+        };
+
+        let request = Object.assign({}, def, this.auth.getSettings(), options);
+
+        return axios()(request);
+    }
+
+    /**
+     * Get resource
+     *
+     * @param {string} resource - Get endpoint e.g. /api-path/1
+     * @param {object} [params] - Optional request parameters.
+     *
+     * @return {Promise}
+     */
+    get(resource, params) {
+        let request = {
+            method: &apos;GET&apos;,
+            url   : resource,
+            params: params,
+        };
+
+        return this.request(request);
+    }
+
+    /**
+     * Post resource
+     *
+     * @param {string} resource - Resource endpoint e.g. /api-path
+     * @param {object} data     - Data to be posted.
+     * @param {object} [params] - Optional request parameters.
+     *
+     * @returns {Promise}
+     */
+    post(resource, data, params) {
+        let request = {
+            method: &apos;POST&apos;,
+            url   : resource,
+            data  : data,
+            params: params,
+        };
+
+        return this.request(request);
+    }
+
+    /**
+     * Put resource
+     *
+     * @param {string} resource - Resource endpoint
+     * @param {object} data - Data to be updated.
+     * @param {object} [params] - Optional request parameters.
+     *
+     * @returns {Promise}
+     */
+    put(resource, data, params) {
+        let request = {
+            method: &apos;PUT&apos;,
+            url   : resource,
+            data  : data,
+            params: params,
+        };
+
+        return this.request(request);
+    }
+
+    /**
+     * Delete resource
+     *
+     * @param {string} resource - Resource endpoint
+     * @param {object} [params] - Optional request parameters.
+     *
+     * @returns {Promise}
+     */
+    delete(resource, params) {
+        let request = {
+            method: &apos;DELETE&apos;,
+            url   : resource,
+            params: params,
+        };
+
+        return this.request(request);
+    }
+}
+
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.8)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/apis/event.js | Ingresse JS SDK API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <a data-ice="repoURL" href="https://www.github.com/ingresse/js-sdk">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">apis</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.auth.js~ApiAuth.html">ApiAuth</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.event.js~ApiEvents.html">ApiEvents</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.js~Api.html">Api</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.recover.js~ApiRecover.html">ApiRecover</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.ticket.js~ApiTicketTransfer.html">ApiTicketTransfer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.transactions.js~ApiTransactions.html">ApiTransactions</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.user.js~ApiUser.html">ApiUser</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/event.js~Event.html">Event</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html">Ticket</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-apis">apis</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">auth</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/auth/authentication.js~Authentication.html">Authentication</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/auth/ingresse.js~Ingresse.html">Ingresse</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/auth/jwt.js~Jwt.html">Jwt</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-auth">auth</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">helper</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/helper/cookie.js~Cookie.html">Cookie</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/helper/mixin.js~Mixin.html">Mixin</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-deepMerge">deepMerge</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">request</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html">RequestHandler</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-basePrefix">basePrefix</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-transformResponse">transformResponse</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/apis/event.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import {RequestHandler} from &apos;../request/handler&apos;;
+import {auth} from &apos;../auth&apos;;
+
+/**
+ * Ingresse Event&apos;s API
+ *
+ * API to get, create and update events.
+ *
+ * @example
+ * var sdk = require(&apos;ingresse-sdk&apos;);
+ * var ingresse = new Sdk();
+ *
+ * // You will have access to this API
+ * // after instantiate the Sdk.
+ * var event = ingresse.event;
+ */
+export class Event extends RequestHandler {
+    /**
+     * Event Api
+     *
+     * @param {object} [custom={}] - Initialize Event Api settings.
+     */
+    constructor(custom = {}) {
+        let settings = {
+            url : &apos;https://event.ingresse.com&apos;,
+            auth: auth.Jwt.type(),
+        };
+
+        Object.assign(settings, custom);
+        super(settings);
+
+        this.settings = settings;
+    }
+
+    /**
+     * Get event by ID
+     *
+     * @param {number} id      - The event ID to get.
+     * @param {object} [query] - Optional request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.getById(200)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    getById(id, query = {}) {
+        return this.get(`/${id}`, query);
+    }
+
+    /**
+     * Get event attributes
+     *
+     * @param {number} id      - The event ID to get.
+     * @param {object} [query] - Optional request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.getAttributes(20866)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    getAttributes(id, query = {}) {
+        return this.get(`/${id}/attributes`, query);
+    }
+
+    /**
+     * Create new Event
+     *
+     * @param {object} data    - Data to create a new event.
+     * @param {object} [query] - Optional request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.create({ name: &apos;My Event Name&apos; })
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    create(data = {}, query = {}) {
+        return this.post(&apos;/&apos;, data, query);
+    }
+
+    /**
+     * Update an Event
+     *
+     * @param {string|number} id - The Event ID to update.
+     * @param {object} data      - Data to update Event.
+     * @param {object} [query]   - Optional request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.update(200, { name: &apos;My Updated Event Name&apos; })
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    update(id, data = {}, query = {}) {
+        return this.put(`/${id}`, data, query);
+    }
+
+    /**
+     * Update an Event Poster
+     *
+     * @param {string|number} id - The Event ID to update.
+     * @param {object} data      - Data to update event poster.
+     * @param {object} [query]   - Optional request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.updatePoster(12, {
+     *          poster: {
+     *              format: &apos;base64&apos;,
+     *              image : &apos;data:image/jpeg;base64 8aAVdagg87h87t8q...&apos;,
+     *          }
+     *     })
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    updatePoster(id, data = {}, query = {}) {
+        return this.put(`/${id}/poster`, data, query);
+    }
+
+    /**
+     * Delete Event Poster
+     *
+     * @param {string|number} id - The Event ID to delete poster.
+     * @param {object} [query]   - Optional request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.deletePoster(12)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    deletePoster(id, query = {}) {
+        return this.delete(`/${id}/poster`, query);
+    }
+
+    /**
+     * Update Event Attributes
+     *
+     * @param {string|number} id - The Event ID to update.
+     * @param {object} data      - Data to update event attributes.
+     * @param {object} [query]   - Optional request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.updateAttributes(12, {
+     *          attributes: [
+     *              {
+     *                  name : &apos;video_url&apos;,
+     *                  value: &apos;https://www.youtube.com/watch?v=hRGnjgBOHIk&apos;,
+     *              }
+     *          ]
+     *     })
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    updateAttributes(id, data = {}, query = {}) {
+        return this.put(`/${id}/attributes`, data, query);
+    }
+
+    /**
+     * Validate if slug is available to use in an Event.
+     *
+     * This method will return a `Promise` so you can use
+     * `.then` and `.catch` methods.
+     *
+     * @param {string} term    - The slug term to check.
+     * @param {object} [query] - Optional request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.validateSlug(&apos;my-event-slug&apos;)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    validateSlug(term, query = {}) {
+        return this.get(`/slugs/${term}`, query);
+    }
+
+    /**
+     * Get all Events Categories
+     *
+     * This method will return a `Promise` so you can use
+     * `.then` and `.catch` methods.
+     *
+     * @param {object} [query] - Optional request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.getCategories()
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    getCategories(query = {}) {
+        return this.get(&apos;/categories&apos;, query);
+    }
+
+    /**
+     * Get all Private Events Categories
+     *
+     * This method will return a `Promise` so you can use
+     * `.then` and `.catch` methods.
+     *
+     * @param {object} [query] - Optional request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.getPrivateCategories()
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    getPrivateCategories(query = {}) {
+        return this.get(&apos;/categories/private&apos;, query);
+    }
+
+    /**
+     * Get Event Category by ID
+     *
+     * @param {string|number} id - The Category ID to get.
+     * @param {object} [query]   - Optional request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.getCategory(12)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    getCategory(id, query = {}) {
+        return this.get(`/categories/${id}`, query);
+    }
+
+    /**
+     * Remove Category from specific Event
+     *
+     * @param {string|number} eventId    - The Event ID to remove category.
+     * @param {string|number} categoryId - The Category ID to remove.
+     * @param {object} [query]           - Optional request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.deleteCategory(123, 321)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    deleteCategory(eventId, categoryId, query = {}) {
+        return this.delete(`/${eventId}/category/${categoryId}`, query);
+    }
+
+    /**
+     * Remove an Event Session
+     *
+     * @param {string|number} eventId   - The Event ID to remove session.
+     * @param {string|number} sessionId - The Session ID to remove.
+     * @param {object} [query]          - Optional request parameters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.deleteSession(123, 321)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    deleteSession(eventId, sessionId, query = {}) {
+        return this.delete(`/${eventId}/sessions/${sessionId}`, query);
+    }
+
+    /**
+     * Get events by producer, based on JWT
+     *
+     * @param {object} [query] - Request parameters/filters.
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.searchByProducer({ from: &apos;now-1d&apos; })
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    searchByProducer(query = {}) {
+        return this.get(&apos;/search/producer&apos;, query);
+    }
+
+    /**
+     * Update/Add users permission to the event
+     *
+     * @param {string|number} eventId - The Event ID.
+     * @param {object}        data    - Object with attribute `usersPermission` as Array with Users IDs to attribute Permission.
+     * @param {object}        [query] - Request parameters/filters.
+     *
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     * var data = { usersPermission: [ 321 ] };
+     *
+     * ingresse.event.updatePermission(21232, data)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    updatePermission(eventId, data = {}, query = {}) {
+        return this.put(`/${eventId}/permission`, data, query);
+    }
+
+    /**
+     * Remove permission on the event of only unique user
+     *
+     * @param {string|number} eventId - The Event ID.
+     * @param {object}        data    - Object with attribute `usersPermission` as Array with Users IDs to delete Permission.
+     * @param {object}        [query] - Request parameters/filters.
+     *
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     * var data = { usersPermission: [ 321 ] };
+     *
+     * ingresse.event.deletePermission(21232, data)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    deletePermission(eventId, data = {}, query = {}) {
+        return this.delete(`/${eventId}/permission`, query, data);
+    }
+
+    /**
+     * Add users as admins of the event
+     *
+     * @param {string|number} eventId - The Event ID.
+     * @param {object}        data    - Object with attribute `usersPermission` as Array with Users IDs to attribute Permission.
+     * @param {object}        [query] - Request parameters/filters.
+     *
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     * var data = { admins: [ 321, 123, 654 ] };
+     *
+     * ingresse.event.addAdmins(21232, data)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    addAdmins(eventId, data = {}, query = {}) {
+        return this.post(`/${eventId}/admin`, data, query);
+    }
+
+    /**
+     * Delete user as event&apos;s admin
+     * Only unique user
+     *
+     * @param {string|number} eventId - The Event ID.
+     * @param {string|number} userId  - The User ID.
+     * @param {object}        [query] - Request parameters/filters.
+     *
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.deleteAdmin(21232, 654)
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    deleteAdmin(eventId, userId, query = {}) {
+        return this.delete(`/${eventId}/admin/${userId}`, query);
+    }
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.5.2)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
