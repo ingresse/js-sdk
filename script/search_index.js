@@ -1134,6 +1134,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/auth/ingresse.js~ingresse#gettoken",
+    "class/src/auth/ingresse.js~Ingresse.html#instance-method-getToken",
+    "src/auth/ingresse.js~Ingresse#getToken",
+    "method"
+  ],
+  [
     "src/auth/ingresse.js~ingresse#setapikey",
     "class/src/auth/ingresse.js~Ingresse.html#instance-method-setApiKey",
     "src/auth/ingresse.js~Ingresse#setApiKey",
@@ -1155,6 +1161,12 @@ window.esdocSearchIndex = [
     "src/auth/ingresse.js~ingresse#setpublickey",
     "class/src/auth/ingresse.js~Ingresse.html#instance-method-setPublicKey",
     "src/auth/ingresse.js~Ingresse#setPublicKey",
+    "method"
+  ],
+  [
+    "src/auth/ingresse.js~ingresse#settoken",
+    "class/src/auth/ingresse.js~Ingresse.html#instance-method-setToken",
+    "src/auth/ingresse.js~Ingresse#setToken",
     "method"
   ],
   [

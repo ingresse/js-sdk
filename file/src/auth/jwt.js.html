@@ -63,6 +63,8 @@
 export class Jwt extends Authentication {
     constructor() {
         super();
+
+        this.authData = &apos;&apos;;
     }
 
     /**
@@ -108,10 +110,9 @@ export class Jwt extends Authentication {
      * ingresse.ticket.auth.getToken();
      */
     getToken() {
-        return this.authData;
+        return this.authData || &apos;&apos;;
     }
 }
-
 </code></pre>
 
 </div>
