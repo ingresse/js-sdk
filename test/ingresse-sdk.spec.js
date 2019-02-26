@@ -2,7 +2,6 @@ import chai from 'chai';
 import IngresseSdk from '../src/ingresse-sdk';
 import pack from '../package.json';
 
-
 describe('IngresseSdk', () => {
     it('should instantiate the class', () => {
         let sdk = new IngresseSdk();
@@ -58,5 +57,14 @@ describe('IngresseSdk', () => {
 
         chai.expect(sdk.api.settings.url).to.be.equal('test');
     });
-});
 
+    it('should set custom token', () => {
+        let sdk = new IngresseSdk();
+
+        chai.expect(sdk.ticket.auth.authData).to.be.equal('');
+
+        sdk.ticket.auth.setToken('test');
+
+        chai.expect(sdk.ticket.auth.authData).to.be.equal('test');
+    });
+});

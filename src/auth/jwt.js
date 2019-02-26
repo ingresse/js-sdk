@@ -4,6 +4,8 @@ import {Authentication} from './authentication';
 export class Jwt extends Authentication {
     constructor() {
         super();
+
+        this.authData = '';
     }
 
     /**
@@ -49,7 +51,6 @@ export class Jwt extends Authentication {
      * ingresse.ticket.auth.getToken();
      */
     getToken() {
-        return this.authData;
+        return this.authData || '';
     }
 }
-

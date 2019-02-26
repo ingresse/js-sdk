@@ -4,7 +4,10 @@ export class Ingresse extends Authentication {
     constructor() {
         super();
 
-        this.authData = {};
+        this.authData = {
+            apiKey   : '',
+            userToken: '',
+        };
     }
 
     /**
@@ -60,7 +63,7 @@ export class Ingresse extends Authentication {
      * ingresse.api.auth.getApiKey();
      */
     getApiKey() {
-        return this.authData.apiKey;
+        return this.authData.apiKey || '';
     }
 
     /**
@@ -97,7 +100,7 @@ export class Ingresse extends Authentication {
      * ingresse.api.auth.getPrivateKey();
      */
     getPrivateKey() {
-        return this.authData.privateKey;
+        return this.authData.privateKey || '';
     }
 
     /**
@@ -143,6 +146,6 @@ export class Ingresse extends Authentication {
      * const userToken = ingresse.api.auth.getToken();
      */
     getToken() {
-        return this.authData.userToken;
+        return this.authData.userToken || '';
     }
 }
