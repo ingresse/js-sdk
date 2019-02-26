@@ -3,7 +3,11 @@ import { Authentication } from './authentication';
 export class Ingresse extends Authentication {
     constructor() {
         super();
-        this.authData = {};
+
+        this.authData = {
+            apiKey   : '',
+            userToken: '',
+        };
     }
 
     /**
@@ -23,8 +27,9 @@ export class Ingresse extends Authentication {
     getSettings() {
         return {
             query: {
-                'apikey': encodeURI(this.getApiKey()),
-            }
+                'apikey'   : encodeURI(this.getApiKey()),
+                'usertoken': encodeURI(this.getToken()),
+            },
         };
     }
 
@@ -58,7 +63,7 @@ export class Ingresse extends Authentication {
      * ingresse.api.auth.getApiKey();
      */
     getApiKey() {
-        return this.authData.apiKey;
+        return this.authData.apiKey || '';
     }
 
     /**
@@ -95,7 +100,7 @@ export class Ingresse extends Authentication {
      * ingresse.api.auth.getPrivateKey();
      */
     getPrivateKey() {
-        return this.authData.privateKey;
+        return this.authData.privateKey || '';
     }
 
     /**
@@ -118,5 +123,29 @@ export class Ingresse extends Authentication {
         this.setApiKey(apiKey || this.getApiKey());
 
         return true;
+    }
+
+    /**
+     * Set authentication token value
+     *
+     * @param {string} token - Token value
+     *
+     * @example
+     * ingresse.api.auth.setToken('12345-31t4v1d431t4v1d4d3c40....');
+     */
+    setToken(token) {
+        this.authData.userToken = token;
+    }
+
+    /**
+     * Get authentication token value
+     *
+     * @returns {string}
+     *
+     * @example
+     * const userToken = ingresse.api.auth.getToken();
+     */
+    getToken() {
+        return this.authData.userToken || '';
     }
 }
