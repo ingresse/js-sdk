@@ -11,7 +11,7 @@
     "browser": "browserify -r ./dist/ingresse-sdk.js:ingresse-sdk -o ./dist/browser/ingresse-sdk.js",
     "postbrowser": "uglifyjs ./dist/browser/ingresse-sdk.js  -o ./dist/browser/ingresse-sdk.js",
     "lint": "eslint ./src/**/*.js",
-    "docs": "esdoc -c ./esdoc.json",
+    "docs": "esdoc -c ./esdoc.json && cp -rp .circleci/. ./docs/.circleci/",
     "test": "nyc --reporter=lcov --reporter=html npm run unit-test",
     "posttest": "nyc report",
     "unit-test": "mocha --recursive --compilers js:babel-register",
