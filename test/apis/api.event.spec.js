@@ -146,4 +146,18 @@ describe('API Events', () => {
                 }, {});
         });
     });
+
+    describe('requestExportList', () => {
+        it('should call this.post', () => {
+            let eventId = 21232;
+            event.requestExportList(eventId);
+
+            chai.expect(event.post).to.have.been.called.with
+                .exactly(`/event/${eventId}/export`, {
+                    type   : 'transactions',
+                    format : 'csv',
+                }, {}
+            );
+        });
+    });
 });

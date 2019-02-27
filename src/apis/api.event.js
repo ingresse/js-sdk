@@ -164,4 +164,53 @@ export class ApiEvents extends RequestHandler {
 
         return this.post(`/event/${eventId}/export`, _data, query);
     }
-}
+
+    /**
+     * Request export list processment.
+     *
+     * Will request to API generate an List
+     * and API will send an email to the user when the list
+     * is available, with the link to download file.
+     *
+     * @param {number} eventId - The event ID.
+     * @param {object} data    - Report requisition details.
+     * @param {object} [query] - Optional request parameters.
+     * @param {array}  [query.filters]
+     * @param {string} [query.format] - 'csv' or 'xlsx'. Default: 'csv'.
+     * @param {string} [query.type]   - 'guestlist', 'passkey' or 'transactions'. Default: 'transactions'
+     *
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     * const ing = new Sdk();
+     *
+     * ing.api.requestExportList(21232, {
+     *     "type":  "guestlist",
+     *     "format": "xlsx",
+     *     "filters": [
+     *          {
+     *              "name" : "channel",
+     *              "value": "offline",
+     *          },
+     *          {
+     *              "name" : "term",
+     *              "value": "udi",
+     *          }
+     *      ]
+     * })
+     * .then((response) => {
+     *     console.log(response);
+     * })
+     * .catch((error) => {
+     *     console.log(error);
+     * });
+     */
+    requestExportList(eventId, data = {}, query = {}) {
+        let _data = Object.assign({
+            type  : 'transactions',
+            format: 'csv',
+        }, data);
+
+        return this.post(`/event/${eventId}/export`, _data, query);
+    }}
