@@ -480,6 +480,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/apis/api.auth.js~apiauth#renewjwt",
+    "class/src/apis/api.auth.js~ApiAuth.html#instance-method-renewJWT",
+    "src/apis/api.auth.js~ApiAuth#renewJWT",
+    "method"
+  ],
+  [
     "src/apis/api.event.js",
     "file/src/apis/api.event.js.html",
     "src/apis/api.event.js",
@@ -537,6 +543,12 @@ window.esdocSearchIndex = [
     "src/apis/api.event.js~apievents#identifyevent",
     "class/src/apis/api.event.js~ApiEvents.html#instance-method-identifyEvent",
     "src/apis/api.event.js~ApiEvents#identifyEvent",
+    "method"
+  ],
+  [
+    "src/apis/api.event.js~apievents#requestexportlist",
+    "class/src/apis/api.event.js~ApiEvents.html#instance-method-requestExportList",
+    "src/apis/api.event.js~ApiEvents#requestExportList",
     "method"
   ],
   [
@@ -864,6 +876,18 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/apis/event.js~event#staffadd",
+    "class/src/apis/event.js~Event.html#instance-method-staffAdd",
+    "src/apis/event.js~Event#staffAdd",
+    "method"
+  ],
+  [
+    "src/apis/event.js~event#staffremove",
+    "class/src/apis/event.js~Event.html#instance-method-staffRemove",
+    "src/apis/event.js~Event#staffRemove",
+    "method"
+  ],
+  [
     "src/apis/event.js~event#update",
     "class/src/apis/event.js~Event.html#instance-method-update",
     "src/apis/event.js~Event#update",
@@ -1075,13 +1099,13 @@ window.esdocSearchIndex = [
   ],
   [
     "src/auth/authentication.js~authentication#authdata",
-    "class/src/auth/authentication.js~Authentication.html#instance-get-authData",
+    "class/src/auth/authentication.js~Authentication.html#instance-set-authData",
     "src/auth/authentication.js~Authentication#authData",
     "member"
   ],
   [
     "src/auth/authentication.js~authentication#authdata",
-    "class/src/auth/authentication.js~Authentication.html#instance-set-authData",
+    "class/src/auth/authentication.js~Authentication.html#instance-get-authData",
     "src/auth/authentication.js~Authentication#authData",
     "member"
   ],
