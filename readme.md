@@ -146,7 +146,10 @@ To generete the docs run the command:
 $ npm run docs
 ```
 
-To do both:
+# Documentation
+
+Will run `build` and `docs` commands and before will publish the [documentation](https://ingresse.github.io/js-sdk) to GitHub Pages.
+
 ```
 $ npm run deploy
 ```
