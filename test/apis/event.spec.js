@@ -586,4 +586,58 @@ describe('Event API', () => {
             chai.expect(event.delete).to.have.been.called.with.exactly(`/${eventId}/admin/${userId}`, query);
         });
     });
+
+    describe('staffAdd', () => {
+        let event;
+        let eventId = 1;
+        let userId  = 321;
+        let role    = 'producer';
+        let query   = { test: 'test' };
+
+        beforeEach(() => {
+            event = new Event();
+            chai.spy.on(event, 'post');
+        });
+
+        it('should staffAdd call this.post', () => {
+            event.staffAdd(eventId, userId, role);
+
+            chai.expect(event.post).to.have.been.called.with.exactly(`/${eventId}/staff/${role}/${userId}`, {}, {});
+        });
+
+        it('should staffAdd call this.post with different role', () => {
+            let otherRole = 'admin';
+
+            event.staffAdd(eventId, userId, otherRole);
+
+            chai.expect(event.post).to.have.been.called.with.exactly(`/${eventId}/staff/${otherRole}/${userId}`, {}, {});
+        });
+    });
+
+    describe('staffRemove', () => {
+        let event;
+        let eventId = 1;
+        let userId  = 321;
+        let role    = 'producer';
+        let query   = { test: 'test' };
+
+        beforeEach(() => {
+            event = new Event();
+            chai.spy.on(event, 'delete');
+        });
+
+        it('should staffRemove call this.delete', () => {
+            event.staffRemove(eventId, userId, role);
+
+            chai.expect(event.delete).to.have.been.called.with.exactly(`/${eventId}/staff/${role}/${userId}`, {});
+        });
+
+        it('should staffRemove call this.delete and accepting query argument', () => {
+            role = 'admin';
+
+            event.staffRemove(eventId, userId, role, query);
+
+            chai.expect(event.delete).to.have.been.called.with.exactly(`/${eventId}/staff/${role}/${userId}`, query);
+        });
+    });
 });

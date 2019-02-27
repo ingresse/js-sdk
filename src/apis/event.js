@@ -414,6 +414,8 @@ export class Event extends RequestHandler {
     }
 
     /**
+     * @DEPRECATED
+     *
      * Add users as admins of the event
      *
      * @param {string|number} eventId - The Event ID.
@@ -439,6 +441,8 @@ export class Event extends RequestHandler {
     }
 
     /**
+     * @DEPRECATED
+     *
      * Delete user as event's admin
      * Only unique user
      *
@@ -461,5 +465,56 @@ export class Event extends RequestHandler {
      */
     deleteAdmin(eventId, userId, query = {}) {
         return this.delete(`/${eventId}/admin/${userId}`, query);
+    }
+
+    /**
+     * Add user to the event staff
+     *
+     * @param {number} eventId - The Event ID.
+     * @param {number} userId  - User ID
+     * @param {string} role    - Role in Event: 'admin' or 'producer'...
+     * @param {object} [data]  - Request body.
+     * @param {object} [query] - Request parameters/filters.
+     *
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.staffAdd(21232, 123, 'producer')
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    staffAdd(eventId, userId, role = 'producer', data = {}, query = {}) {
+        return this.post(`/${eventId}/staff/${role}/${userId}`, data, query);
+    }
+
+    /**
+     * Remove user of event staff
+     *
+     * @param {number} eventId - The Event ID.
+     * @param {number} userId  - User ID
+     * @param {string} role    - Role in Event: 'admin' or 'producer'...
+     * @param {object} [query] - Request parameters/filters.
+     *
+     * @returns {Promise}
+     *
+     * @example
+     * ...
+     *
+     * ingresse.event.staffRemove(21232, 123, 'producer')
+     *     .then(function (response) {
+     *         console.log(response);
+     *     })
+     *     .catch(function (error) {
+     *         console.log(error);
+     *     });
+     */
+    staffRemove(eventId, userId, role = 'producer', query = {}) {
+        return this.delete(`/${eventId}/staff/${role}/${userId}`, query);
     }
 }
