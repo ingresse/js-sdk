@@ -36,7 +36,7 @@ To use in the `browser`:
 
 #### Browser Support
 
-![Chrome](https://raw.github.com/alrra/browser-logos/master/chrome/chrome_48x48.png) | ![Firefox](https://raw.github.com/alrra/browser-logos/master/firefox/firefox_48x48.png) | ![Safari](https://raw.github.com/alrra/browser-logos/master/safari/safari_48x48.png) | ![Opera](https://raw.github.com/alrra/browser-logos/master/opera/opera_48x48.png) | ![Edge](https://raw.github.com/alrra/browser-logos/master/edge/edge_48x48.png) | ![IE](https://raw.github.com/alrra/browser-logos/master/internet-explorer/internet-explorer_48x48.png) |
+![Chrome](https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png) | ![Firefox](https://raw.github.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png) | ![Safari](https://raw.github.com/alrra/browser-logos/master/src/safari/safari_48x48.png) | ![Opera](https://raw.github.com/alrra/browser-logos/master/src/opera/opera_48x48.png) | ![Edge](https://raw.github.com/alrra/browser-logos/master/src/edge/edge_48x48.png) | ![IE](https://raw.github.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_48x48.png) |
 --- | --- | --- | --- | --- | --- |
 Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | 8+ ✔ |
 
@@ -148,7 +148,7 @@ $ npm run docs
 
 # Documentation
 
-Will run `build` and `docs` commands and before will publish the [documentation](https://ingresse.github.io/js-sdk) to GitHub Pages.
+Will run `build` and `docs` commands and after will publish the [documentation](https://ingresse.github.io/js-sdk) at the GitHub Page.
 
 ```
 $ npm run deploy
