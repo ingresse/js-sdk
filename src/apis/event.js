@@ -490,7 +490,7 @@ export class Event extends RequestHandler {
      *     });
      */
     staffAdd(eventId, userId, role = 'producer', data = {}, query = {}) {
-        return this.post(`/${eventId}/staff/${role}/${userId}`, data, query);
+        return this.post(`/${eventId}/staff/${role}/user/${userId}`, data, query);
     }
 
     /**
@@ -515,6 +515,6 @@ export class Event extends RequestHandler {
      *     });
      */
     staffRemove(eventId, userId, role = 'producer', query = {}) {
-        return this.delete(`/${eventId}/staff/${role}/${userId}`, query);
+        return this.delete(`/${eventId}/staff/${role}/user/${userId}`, query);
     }
 }

@@ -602,7 +602,7 @@ describe('Event API', () => {
         it('should staffAdd call this.post', () => {
             event.staffAdd(eventId, userId, role);
 
-            chai.expect(event.post).to.have.been.called.with.exactly(`/${eventId}/staff/${role}/${userId}`, {}, {});
+            chai.expect(event.post).to.have.been.called.with.exactly(`/${eventId}/staff/${role}/user/${userId}`, {}, {});
         });
 
         it('should staffAdd call this.post with different role', () => {
@@ -610,7 +610,7 @@ describe('Event API', () => {
 
             event.staffAdd(eventId, userId, otherRole);
 
-            chai.expect(event.post).to.have.been.called.with.exactly(`/${eventId}/staff/${otherRole}/${userId}`, {}, {});
+            chai.expect(event.post).to.have.been.called.with.exactly(`/${eventId}/staff/${otherRole}/user/${userId}`, {}, {});
         });
     });
 
@@ -629,7 +629,7 @@ describe('Event API', () => {
         it('should staffRemove call this.delete', () => {
             event.staffRemove(eventId, userId, role);
 
-            chai.expect(event.delete).to.have.been.called.with.exactly(`/${eventId}/staff/${role}/${userId}`, {});
+            chai.expect(event.delete).to.have.been.called.with.exactly(`/${eventId}/staff/${role}/user/${userId}`, {});
         });
 
         it('should staffRemove call this.delete and accepting query argument', () => {
@@ -637,7 +637,7 @@ describe('Event API', () => {
 
             event.staffRemove(eventId, userId, role, query);
 
-            chai.expect(event.delete).to.have.been.called.with.exactly(`/${eventId}/staff/${role}/${userId}`, query);
+            chai.expect(event.delete).to.have.been.called.with.exactly(`/${eventId}/staff/${role}/user/${userId}`, query);
         });
     });
 });
