@@ -619,7 +619,7 @@ var Event = exports.Event = function (_RequestHandler) {
             var data = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
             var query = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : {};
 
-            return this.post('/' + eventId + '/staff/' + role + '/' + userId, data, query);
+            return this.post('/' + eventId + '/staff/' + role + '/user/' + userId, data, query);
         }
 
         /**
@@ -650,7 +650,7 @@ var Event = exports.Event = function (_RequestHandler) {
             var role = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'producer';
             var query = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
 
-            return this.delete('/' + eventId + '/staff/' + role + '/' + userId, query);
+            return this.delete('/' + eventId + '/staff/' + role + '/user/' + userId, query);
         }
     }]);
 
