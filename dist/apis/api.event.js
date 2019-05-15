@@ -288,6 +288,30 @@ var ApiEvents = exports.ApiEvents = function (_RequestHandler) {
 
             return this.post('/event/' + eventId + '/export', _data, query);
         }
+
+        /**
+         * Get Event Entry Report
+         *
+         * @param {number} eventId     - The event ID.
+         * @param {number} [sessionId] - The event session ID to get.
+         * @param {object} [query]     - Optional request parameters.
+         *
+         * @returns {Promise}
+         */
+
+    }, {
+        key: 'getEntryReport',
+        value: function getEntryReport(eventId, sessionId) {
+            var query = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+
+            var _query = Object.assign({}, query, {
+                method: 'report'
+            }, !sessionId ? {} : {
+                sessionId: sessionId
+            });
+
+            return this.get('/event/' + eventId + '/guestlist', _query);
+        }
     }]);
 
     return ApiEvents;

@@ -160,4 +160,25 @@ describe('API Events', () => {
             );
         });
     });
+
+    describe('getEntryReport', () => {
+        it('without sessionId', () => {
+            let eventId = 21232;
+
+            event.getEntryReport(eventId);
+
+            chai.expect(event.get).to.have.been.called.with
+                .exactly(`/event/${eventId}/guestlist`, { method: 'report' });
+        });
+
+        it('with sessionId', () => {
+            let eventId   = 21231;
+            let sessionId = 32428;
+
+            event.getEntryReport(eventId, sessionId);
+
+            chai.expect(event.get).to.have.been.called.with
+                .exactly(`/event/${eventId}/guestlist`, { method: 'report', sessionId: sessionId });
+        });
+    });
 });
