@@ -238,4 +238,16 @@ export class ApiEvents extends RequestHandler {
 
         return this.get(`/event/${eventId}/guestlist`, _query);
     }
+
+    /**
+     * Get Event Bordero Report
+     *
+     * @param {number} eventId - The event ID.
+     * @param {object} [query] - Optional request parameters.
+     *
+     * @returns {Promise}
+     */
+    getBorderoReport(eventId, query = {}) {
+        return this.get(`/bordero/${eventId}`, query);
+    }
 }
