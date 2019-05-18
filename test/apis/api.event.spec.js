@@ -181,4 +181,15 @@ describe('API Events', () => {
                 .exactly(`/event/${eventId}/guestlist`, { method: 'report', sessionId: sessionId });
         });
     });
+
+    describe('getBorderoReport', () => {
+        it('should call this.get', () => {
+            let eventId = 21232;
+
+            event.getBorderoReport(eventId);
+
+            chai.expect(event.get).to.have.been.called.with
+                .exactly(`/bordero/${eventId}`, {});
+        });
+    });
 });

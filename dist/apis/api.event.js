@@ -312,6 +312,23 @@ var ApiEvents = exports.ApiEvents = function (_RequestHandler) {
 
             return this.get('/event/' + eventId + '/guestlist', _query);
         }
+
+        /**
+         * Get Event Bordero Report
+         *
+         * @param {number} eventId - The event ID.
+         * @param {object} [query] - Optional request parameters.
+         *
+         * @returns {Promise}
+         */
+
+    }, {
+        key: 'getBorderoReport',
+        value: function getBorderoReport(eventId) {
+            var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+            return this.get('/bordero/' + eventId, query);
+        }
     }]);
 
     return ApiEvents;
