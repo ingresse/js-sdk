@@ -137,6 +137,9 @@ var ApiEvents = exports.ApiEvents = function (_RequestHandler) {
          * @returns {Promise}
          *
          * @example
+         *
+         * ENDPOINT: '/featured'
+         *
          * ...
          *
          * ingresse.ApiEvents.getFeatured({ method: 'banner', state: 'sp' })
@@ -157,15 +160,75 @@ var ApiEvents = exports.ApiEvents = function (_RequestHandler) {
         }
 
         /**
-         * Get the events type
+         * Get Home Sections
+         *
+         * @param {object} [query] - Optional request parameters.
          *
          * @returns {Promise}
+         *
+         * @example
+         *
+         * ENDPOINT: '/home/sections'
+         *
+         * ...
+         *
+         * ingresse.ApiEvents.getHomeSections()
+         * .then(function (response) {
+         *     console.log(response);
+         * })
+         * .catch(function (error) {
+         *     console.log(error);
+         * });
+         */
+
+    }, {
+        key: 'getHomeSections',
+        value: function getHomeSections() {
+            var query = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+            return this.get('/home/sections', query);
+        }
+
+        /**
+         * Deprecated
          */
 
     }, {
         key: 'getEventTypes',
         value: function getEventTypes() {
-            return this.get('/home/sections');
+            var query = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+            return this.get('/home/sections', query);
+        }
+
+        /**
+         * Home Cover
+         *
+         * @param {object} [query] - Optional request parameters.
+         *
+         * @returns {Promise}
+         *
+         * @example
+         *
+         * ENDPOINT: '/home/cover'
+         *
+         * ...
+         *
+         * ingresse.ApiEvents.getHomeCover()
+         * .then(function (response) {
+         *     console.log(response);
+         * })
+         * .catch(function (error) {
+         *     console.log(error);
+         * });
+         */
+
+    }, {
+        key: 'getHomeCover',
+        value: function getHomeCover() {
+            var query = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+            return this.get('/home/cover', query);
         }
 
         /**

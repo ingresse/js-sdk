@@ -103,8 +103,9 @@ var RequestHandler = exports.RequestHandler = function () {
         /**
          * Get resource
          *
-         * @param {string} path    - Request get to endpoint e.g. /api-path/1
-         * @param {object} [query] - Optional request parameters.
+         * @param {string} path      - Request get to endpoint e.g. /api-path/1
+         * @param {object} [query]   - Optional request parameters.
+         * @param {object} [headers] - Optional request headers.
          *
          * @returns {Promise}
          */
@@ -112,10 +113,13 @@ var RequestHandler = exports.RequestHandler = function () {
     }, {
         key: 'get',
         value: function get(path, query) {
+            var headers = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+
             var request = {
                 method: 'GET',
                 url: path,
-                query: query
+                query: query,
+                headers: headers
             };
 
             return this.request(request);
@@ -124,9 +128,10 @@ var RequestHandler = exports.RequestHandler = function () {
         /**
          * Post resource
          *
-         * @param {string} path    - Request post to endpoint e.g. /api-path
-         * @param {object} data    - Data to be posted.
-         * @param {object} [query] - Optional request parameters.
+         * @param {string} path      - Request post to endpoint e.g. /api-path
+         * @param {object} data      - Data to be posted.
+         * @param {object} [query]   - Optional request parameters.
+         * @param {object} [headers] - Optional request headers.
          *
          * @returns {Promise}
          */
@@ -134,11 +139,14 @@ var RequestHandler = exports.RequestHandler = function () {
     }, {
         key: 'post',
         value: function post(path, data, query) {
+            var headers = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
+
             var request = {
                 method: 'POST',
                 url: path,
                 body: data,
-                query: query
+                query: query,
+                headers: headers
             };
 
             return this.request(request);
@@ -147,9 +155,10 @@ var RequestHandler = exports.RequestHandler = function () {
         /**
          * Put resource
          *
-         * @param {string} path    - Request put to end endpoint e.g. /api-path/1
-         * @param {object} data    - Data to be updated.
-         * @param {object} [query] - Optional request parameters.
+         * @param {string} path      - Request put to end endpoint e.g. /api-path/1
+         * @param {object} data      - Data to be updated.
+         * @param {object} [query]   - Optional request parameters.
+         * @param {object} [headers] - Optional request headers.
          *
          * @returns {Promise}
          */
@@ -157,11 +166,14 @@ var RequestHandler = exports.RequestHandler = function () {
     }, {
         key: 'put',
         value: function put(path, data, query) {
+            var headers = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
+
             var request = {
                 method: 'PUT',
                 url: path,
                 body: data,
-                query: query
+                query: query,
+                headers: headers
             };
 
             return this.request(request);
@@ -170,9 +182,10 @@ var RequestHandler = exports.RequestHandler = function () {
         /**
          * Delete resource
          *
-         * @param {string} path    - Request delete to endpoint e.g. /api-path/1
-         * @param {object} [query] - Optional request parameters.
-         * @param {object} [data]  - Data to be deleted.
+         * @param {string} path      - Request delete to endpoint e.g. /api-path/1
+         * @param {object} [query]   - Optional request parameters.
+         * @param {object} [data]    - Data to be deleted.
+         * @param {object} [headers] - Optional request headers.
          *
          * @returns {Promise}
          */
@@ -180,11 +193,14 @@ var RequestHandler = exports.RequestHandler = function () {
     }, {
         key: 'delete',
         value: function _delete(path, query, data) {
+            var headers = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
+
             var request = {
                 method: 'DELETE',
                 url: path,
                 body: data,
-                query: query
+                query: query,
+                headers: headers
             };
 
             return this.request(request);
@@ -193,9 +209,10 @@ var RequestHandler = exports.RequestHandler = function () {
         /**
          * Upload files
          *
-         * @param {string} path     - Request post to endpoint e.g. /api-path
-         * @param {object} formData - Data to be posted.
-         * @param {object} [query]  - Optional request parameters.
+         * @param {string} path      - Request post to endpoint e.g. /api-path
+         * @param {object} formData  - Data to be posted.
+         * @param {object} [query]   - Optional request parameters.
+         * @param {object} [headers] - Optional request headers.
          *
          * @returns {Promise}
          */
@@ -205,16 +222,17 @@ var RequestHandler = exports.RequestHandler = function () {
         value: function upload(path) {
             var formData = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
             var query = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+            var headers = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
 
             var request = {
                 method: 'POST',
                 url: path,
                 query: query,
                 body: formData,
-                headers: {
+                headers: Object.assign({
                     'Accept': '*/*',
                     'Content-Type': undefined
-                }
+                }, headers)
             };
 
             return this.request(request);
