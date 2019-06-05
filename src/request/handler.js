@@ -74,16 +74,18 @@ export class RequestHandler {
     /**
      * Get resource
      *
-     * @param {string} path    - Request get to endpoint e.g. /api-path/1
-     * @param {object} [query] - Optional request parameters.
+     * @param {string} path      - Request get to endpoint e.g. /api-path/1
+     * @param {object} [query]   - Optional request parameters.
+     * @param {object} [headers] - Optional request headers.
      *
      * @returns {Promise}
      */
-    get(path, query) {
+    get(path, query, headers = {}) {
         let request = {
-            method: 'GET',
-            url   : path,
-            query : query,
+            method : 'GET',
+            url    : path,
+            query  : query,
+            headers: headers,
         };
 
         return this.request(request);
@@ -92,18 +94,20 @@ export class RequestHandler {
     /**
      * Post resource
      *
-     * @param {string} path    - Request post to endpoint e.g. /api-path
-     * @param {object} data    - Data to be posted.
-     * @param {object} [query] - Optional request parameters.
+     * @param {string} path      - Request post to endpoint e.g. /api-path
+     * @param {object} data      - Data to be posted.
+     * @param {object} [query]   - Optional request parameters.
+     * @param {object} [headers] - Optional request headers.
      *
      * @returns {Promise}
      */
-    post(path, data, query) {
+    post(path, data, query, headers = {}) {
         let request = {
-            method: 'POST',
-            url   : path,
-            body  : data,
-            query : query,
+            method : 'POST',
+            url    : path,
+            body   : data,
+            query  : query,
+            headers: headers,
         };
 
         return this.request(request);
@@ -112,18 +116,20 @@ export class RequestHandler {
     /**
      * Put resource
      *
-     * @param {string} path    - Request put to end endpoint e.g. /api-path/1
-     * @param {object} data    - Data to be updated.
-     * @param {object} [query] - Optional request parameters.
+     * @param {string} path      - Request put to end endpoint e.g. /api-path/1
+     * @param {object} data      - Data to be updated.
+     * @param {object} [query]   - Optional request parameters.
+     * @param {object} [headers] - Optional request headers.
      *
      * @returns {Promise}
      */
-    put(path, data, query) {
+    put(path, data, query, headers = {}) {
         let request = {
-            method: 'PUT',
-            url   : path,
-            body  : data,
-            query : query,
+            method : 'PUT',
+            url    : path,
+            body   : data,
+            query  : query,
+            headers: headers,
         };
 
         return this.request(request);
@@ -132,18 +138,20 @@ export class RequestHandler {
     /**
      * Delete resource
      *
-     * @param {string} path    - Request delete to endpoint e.g. /api-path/1
-     * @param {object} [query] - Optional request parameters.
-     * @param {object} [data]  - Data to be deleted.
+     * @param {string} path      - Request delete to endpoint e.g. /api-path/1
+     * @param {object} [query]   - Optional request parameters.
+     * @param {object} [data]    - Data to be deleted.
+     * @param {object} [headers] - Optional request headers.
      *
      * @returns {Promise}
      */
-    delete(path, query, data) {
+    delete(path, query, data, headers = {}) {
         let request = {
-            method: 'DELETE',
-            url   : path,
-            body  : data,
-            query : query,
+            method : 'DELETE',
+            url    : path,
+            body   : data,
+            query  : query,
+            headers: headers,
         };
 
         return this.request(request);
@@ -152,22 +160,23 @@ export class RequestHandler {
     /**
      * Upload files
      *
-     * @param {string} path     - Request post to endpoint e.g. /api-path
-     * @param {object} formData - Data to be posted.
-     * @param {object} [query]  - Optional request parameters.
+     * @param {string} path      - Request post to endpoint e.g. /api-path
+     * @param {object} formData  - Data to be posted.
+     * @param {object} [query]   - Optional request parameters.
+     * @param {object} [headers] - Optional request headers.
      *
      * @returns {Promise}
      */
-    upload(path, formData = {}, query = {}) {
+    upload(path, formData = {}, query = {}, headers = {}) {
         let request = {
             method : 'POST',
             url    : path,
             query  : query,
             body   : formData,
-            headers: {
+            headers: Object.assign({
                 'Accept'      : '*/*',
                 'Content-Type': undefined,
-            },
+            }, headers),
         };
 
         return this.request(request);
