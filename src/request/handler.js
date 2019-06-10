@@ -1,6 +1,5 @@
 /* Core Packages */
 import popsicle from 'popsicle';
-import status from 'popsicle-status';
 import { plugins } from 'popsicle';
 
 import { basePrefix, transformResponse } from './plugins';
