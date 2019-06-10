@@ -1,10 +1,12 @@
+/* Core Packages */
 import popsicle from 'popsicle';
-import {plugins} from 'popsicle';
-import {basePrefix, transformResponse} from './plugins';
-import {auth} from '../auth';
-import {deepMerge} from '../helper';
 import status from 'popsicle-status';
+import { plugins } from 'popsicle';
 
+import { basePrefix, transformResponse } from './plugins';
+import { auth } from '../auth';
+import { deepMerge } from '../helper';
+import { environments } from '../helper/environments';
 
 /**
  * Base request handler for all the API's
@@ -21,6 +23,10 @@ export class RequestHandler {
 
         if (auth[settings.auth]) {
             this.auth = new auth[settings.auth]();
+        }
+
+        if (!this.settings.url) {
+            this.setEnv(this.settings.env || this.settings.host);
         }
     }
 
@@ -46,6 +52,32 @@ export class RequestHandler {
     }
 
     /**
+     * Set Environment
+     *
+     * @param {string} env - Environment Type: 'stg', 'hmla', 'hmlb', 'sandbox', 'integration';
+     *
+     * @example
+     * var sdk = require('ingresse-sdk');
+     * var ingresse = new Sdk();
+     *
+     * // You will have access to this API
+     * // after instantiate the Sdk.
+     * var api = ingresse.api;
+     *
+     * // Can set an specific Environment to this API
+     * api.setEnv('integration');
+     *
+     */
+    setEnv(env) {
+        this.setUrl(
+            environments.getURL(
+                this.settings.resource,
+                env
+            )
+        );
+    }
+
+    /**
      * Create new request promise
      *
      * @param {object} options - request options.
@@ -62,7 +94,7 @@ export class RequestHandler {
         }
 
         if (!this.settings.url) {
-            this.setUrl('https://api.ingresse.com/');
+            this.setEnv(this.settings.env || this.settings.host);
         }
 
         return popsicle(request)

@@ -1,5 +1,5 @@
-import {RequestHandler} from '../request/handler';
-import {auth} from '../auth';
+import { RequestHandler } from '../request/handler';
+import { auth } from '../auth';
 
 /**
  * Ingresse Ticket's API
@@ -21,12 +21,11 @@ export class Ticket extends RequestHandler {
      * @param {object} [custom={}] - Initialize Ticket Api settings.
      */
     constructor(custom = {}) {
-        let settings = {
-            url : 'https://ticket.ingresse.com',
-            auth: auth.Jwt.type(),
-        };
+        let settings = Object.assign({
+            auth    : auth.Jwt.type(),
+            resource: 'ticket',
+        }, custom);
 
-        Object.assign(settings, custom);
         super(settings);
 
         this.settings = settings;

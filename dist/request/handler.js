@@ -5,11 +5,16 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.RequestHandler = undefined;
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /* Core Packages */
+
 
 var _popsicle = require('popsicle');
 
 var _popsicle2 = _interopRequireDefault(_popsicle);
+
+var _popsicleStatus = require('popsicle-status');
+
+var _popsicleStatus2 = _interopRequireDefault(_popsicleStatus);
 
 var _plugins = require('./plugins');
 
@@ -17,9 +22,7 @@ var _auth = require('../auth');
 
 var _helper = require('../helper');
 
-var _popsicleStatus = require('popsicle-status');
-
-var _popsicleStatus2 = _interopRequireDefault(_popsicleStatus);
+var _environments = require('../helper/environments');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -44,6 +47,10 @@ var RequestHandler = exports.RequestHandler = function () {
 
         if (_auth.auth[settings.auth]) {
             this.auth = new _auth.auth[settings.auth]();
+        }
+
+        if (!this.settings.url) {
+            this.setEnv(this.settings.env || this.settings.host);
         }
     }
 
@@ -73,6 +80,30 @@ var RequestHandler = exports.RequestHandler = function () {
         }
 
         /**
+         * Set Environment
+         *
+         * @param {string} env - Environment Type: 'stg', 'hmla', 'hmlb', 'sandbox', 'integration';
+         *
+         * @example
+         * var sdk = require('ingresse-sdk');
+         * var ingresse = new Sdk();
+         *
+         * // You will have access to this API
+         * // after instantiate the Sdk.
+         * var api = ingresse.api;
+         *
+         * // Can set an specific Environment to this API
+         * api.setEnv('integration');
+         *
+         */
+
+    }, {
+        key: 'setEnv',
+        value: function setEnv(env) {
+            this.setUrl(_environments.environments.getURL(this.settings.resource, env));
+        }
+
+        /**
          * Create new request promise
          *
          * @param {object} options - request options.
@@ -94,7 +125,7 @@ var RequestHandler = exports.RequestHandler = function () {
             }
 
             if (!this.settings.url) {
-                this.setUrl('https://api.ingresse.com/');
+                this.setEnv(this.settings.env || this.settings.host);
             }
 
             return (0, _popsicle2.default)(request).use((0, _plugins.transformResponse)()).use((0, _plugins.basePrefix)(this.settings.url)).use(_popsicle.plugins.parse(['json']));

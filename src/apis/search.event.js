@@ -21,14 +21,8 @@ export class EventSearch extends RequestHandler {
      * @param {object} [custom] - Initialize Event Search settings.
      */
     constructor(custom = {}) {
-        const isHML = ((custom.host && (custom.host.toUpperCase() === 'HML')) ? true : false);
-        const HOSTS = {
-            HML : 'https://hml-event.ingresse.com/search/company',
-            PROD: 'https://event-search.ingresse.com',
-        };
-
         let settings = Object.assign({
-            url: HOSTS[isHML ? 'HML' : 'PROD']
+            resource: 'event-search',
         }, custom);
 
         super(settings);
@@ -45,7 +39,6 @@ export class EventSearch extends RequestHandler {
      * @returns {Promise}
      *
      * @example
-     * ...
      *
      * ingresse.eventSearch.search({
      *     from    : 'now-6h',
@@ -61,6 +54,7 @@ export class EventSearch extends RequestHandler {
      * .catch(function (error) {
      *     console.log(error);
      * });
+     *
      */
     search(query = {}, companyId = 1) {
         let parameters = Object.assign({
@@ -80,9 +74,8 @@ export class EventSearch extends RequestHandler {
      * @returns {Promise}
      *
      * @example
-     * ...
      *
-     * ingresse.eventSearch.searchByTerm('Brasil Game Show', {
+     * ingresse.eventSearch.searchByTerm('Event Name', {
      *     size   : 20,
      *     from   : 'now-6h',
      *     orderBy: 'sessions.dateTime',
@@ -93,8 +86,9 @@ export class EventSearch extends RequestHandler {
      * .catch(function (error) {
      *     console.log(error);
      * });
+     *
      */
-    searchByTerm(term, query = {}, companyId = 1) {
+    searchByTerm(term = '', query = {}, companyId = 1) {
         let parameters = Object.assign({
             term: term,
         }, query);

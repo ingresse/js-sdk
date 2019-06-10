@@ -51,6 +51,7 @@ describe('EventSearch API', () => {
 
         beforeEach(() => {
             eventSearch = new EventSearch();
+
             chai.spy.on(eventSearch, 'get');
         });
 
@@ -72,6 +73,40 @@ describe('EventSearch API', () => {
                 defaultQuery,
                 query
             ));
+        });
+    });
+
+    describe('searchByTerm', () => {
+        let eventSearch;
+        let defaultQuery = {
+            size: 20,
+        };
+
+        beforeEach(() => {
+            eventSearch = new EventSearch();
+
+            chai.spy.on(eventSearch, 'search');
+        });
+
+        it('should "searchByTerm" call this.search', () => {
+            eventSearch.searchByTerm();
+
+            chai.expect(eventSearch.search).to.have.been.called.with.exactly(Object.assign({
+                term: '',
+            }), 1);
+        });
+
+        it('should "searchByTerm" call this.search and accept query argument', () => {
+            let query = {
+                from: 'now-6h',
+                size: 32,
+            };
+
+            eventSearch.searchByTerm('Event Name', query);
+
+            chai.expect(eventSearch.search).to.have.been.called.with.exactly(Object.assign({
+                term: 'Event Name',
+            }, query), 1);
         });
     });
 });

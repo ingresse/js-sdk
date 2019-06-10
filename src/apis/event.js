@@ -1,5 +1,5 @@
-import {RequestHandler} from '../request/handler';
-import {auth} from '../auth';
+import { RequestHandler } from '../request/handler';
+import { auth } from '../auth';
 
 /**
  * Ingresse Event's API
@@ -21,12 +21,11 @@ export class Event extends RequestHandler {
      * @param {object} [custom={}] - Initialize Event Api settings.
      */
     constructor(custom = {}) {
-        let settings = {
-            url : 'https://event.ingresse.com',
-            auth: auth.Jwt.type(),
-        };
+        let settings = Object.assign({
+            auth    : auth.Jwt.type(),
+            resource: 'event',
+        }, custom);
 
-        Object.assign(settings, custom);
         super(settings);
 
         this.settings = settings;

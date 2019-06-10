@@ -18,7 +18,7 @@ class IngresseSdk {
      * var ingresse = new Sdk({
      *   companyId: 4,
      *   ticket: {
-     *     url: 'http://hml.ticket.ingresse.com'
+     *     env: 'integration'
      *   }
      * });
      * ```

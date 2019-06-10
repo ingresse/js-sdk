@@ -43,12 +43,10 @@ var Event = exports.Event = function (_RequestHandler) {
 
         _classCallCheck(this, Event);
 
-        var settings = {
-            url: 'https://event.ingresse.com',
-            auth: _auth.auth.Jwt.type()
-        };
-
-        Object.assign(settings, custom);
+        var settings = Object.assign({
+            auth: _auth.auth.Jwt.type(),
+            resource: 'event'
+        }, custom);
 
         var _this = _possibleConstructorReturn(this, (Event.__proto__ || Object.getPrototypeOf(Event)).call(this, settings));
 

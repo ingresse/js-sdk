@@ -31,6 +31,30 @@ describe('Ticket API', () => {
         chai.expect(ticket.settings.url).to.equal('https://my.custom.ticket.url.com');
     });
 
+    it('should accept custom environment', () => {
+        let ticket = new Ticket({
+            env: 'sandbox',
+        });
+
+        chai.expect(ticket.settings.url).to.equal('https://sandbox-ticket.ingresse.com');
+    });
+
+    it('should accept custom environment, as \'host\' param', () => {
+        let ticket = new Ticket({
+            host: 'sandbox',
+        });
+
+        chai.expect(ticket.settings.url).to.equal('https://sandbox-ticket.ingresse.com');
+    });
+
+    it('should accept custom environment, as full URL', () => {
+        let ticket = new Ticket({
+            env: 'https://my.custom.ticket.url.com',
+        });
+
+        chai.expect(ticket.settings.url).to.equal('https://my.custom.ticket.url.com');
+    });
+
     it('should have default methods', () => {
         let ticket = new Ticket();
 

@@ -42,14 +42,8 @@ var EventSearch = exports.EventSearch = function (_RequestHandler) {
 
         _classCallCheck(this, EventSearch);
 
-        var isHML = custom.host && custom.host.toUpperCase() === 'HML' ? true : false;
-        var HOSTS = {
-            HML: 'https://hml-event.ingresse.com/search/company',
-            PROD: 'https://event-search.ingresse.com'
-        };
-
         var settings = Object.assign({
-            url: HOSTS[isHML ? 'HML' : 'PROD']
+            resource: 'event-search'
         }, custom);
 
         var _this = _possibleConstructorReturn(this, (EventSearch.__proto__ || Object.getPrototypeOf(EventSearch)).call(this, settings));
@@ -67,7 +61,6 @@ var EventSearch = exports.EventSearch = function (_RequestHandler) {
      * @returns {Promise}
      *
      * @example
-     * ...
      *
      * ingresse.eventSearch.search({
      *     from    : 'now-6h',
@@ -83,6 +76,7 @@ var EventSearch = exports.EventSearch = function (_RequestHandler) {
      * .catch(function (error) {
      *     console.log(error);
      * });
+     *
      */
 
 
@@ -109,9 +103,8 @@ var EventSearch = exports.EventSearch = function (_RequestHandler) {
          * @returns {Promise}
          *
          * @example
-         * ...
          *
-         * ingresse.eventSearch.searchByTerm('Brasil Game Show', {
+         * ingresse.eventSearch.searchByTerm('Event Name', {
          *     size   : 20,
          *     from   : 'now-6h',
          *     orderBy: 'sessions.dateTime',
@@ -122,11 +115,13 @@ var EventSearch = exports.EventSearch = function (_RequestHandler) {
          * .catch(function (error) {
          *     console.log(error);
          * });
+         *
          */
 
     }, {
         key: 'searchByTerm',
-        value: function searchByTerm(term) {
+        value: function searchByTerm() {
+            var term = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
             var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
             var companyId = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
 

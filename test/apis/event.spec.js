@@ -32,6 +32,32 @@ describe('Event API', () => {
         chai.expect(event.settings.url).to.equal('https://my.custom.event.url.com');
     });
 
+    it('should accept custom enviroment', () => {
+        let event = new Event({
+            env : 'hmlb',
+            host: 'test',
+        });
+
+        chai.expect(event.settings.url).to.equal('https://hmlb-event.ingresse.com');
+    });
+
+    it('should accept custom enviroment, as \'host\' param', () => {
+        let event = new Event({
+            host: 'integration',
+        });
+
+        chai.expect(event.settings.url).to.equal('https://integration-event.ingresse.com');
+    });
+
+    it('should accept custom enviroment, as full URL', () => {
+        let event = new Event({
+            env : 'https://my.custom.event.url.com',
+            host: 'testc',
+        });
+
+        chai.expect(event.settings.url).to.equal('https://my.custom.event.url.com');
+    });
+
     it('should have default methods', () => {
         let event = new Event();
 
