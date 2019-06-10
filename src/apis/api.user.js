@@ -191,7 +191,7 @@ export class ApiUser extends RequestHandler {
      *
      * @returns {Object}
      */
-    saveCredentials(userId, token, jwt) {
+    saveCredentials(userId, token, jwt, device) {
         this.credentials.userId = userId;
         this.credentials.token  = token;
         this.credentials.jwt    = jwt;
