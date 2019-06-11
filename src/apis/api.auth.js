@@ -80,14 +80,14 @@ export class ApiAuth extends RequestHandler {
     /**
      * Two Factor Authentication.
      *
-     * @param {object} otp     - Optional request parameters.
      * @param {object} device  - User device.
+     * @param {object} otp     - Optional request parameters.
      * @param {object} [query] - Optional request parameters.
      * @param {object} headers - Optional request parameters.
      *
      * @returns {Promise}
      */
-    twoFactor(device, otp, query, headers = {}) {
+    twoFactor(device, otp, query = {}, headers = {}) {
         return this.post('/two-step', query, Object.assign({}, headers, {
             'X-INGRESSE-DEVICE': device,
         }, !otp ? {} : {
