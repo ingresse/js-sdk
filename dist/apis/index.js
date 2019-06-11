@@ -5,14 +5,19 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.apis = undefined;
 
-var _ticket = require('./ticket');
+var _api = require('./api');
 
 var _event = require('./event');
 
-var _api = require('./api');
+var _search = require('./search.event');
 
+var _ticket = require('./ticket');
+
+/* Exporting APIs */
+/* Importing APIs */
 var apis = exports.apis = {
-    ticket: _ticket.Ticket,
+    api: _api.Api,
     event: _event.Event,
-    api: _api.Api
+    eventSearch: _search.EventSearch,
+    ticket: _ticket.Ticket
 };

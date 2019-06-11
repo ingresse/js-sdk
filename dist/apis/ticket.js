@@ -43,12 +43,10 @@ var Ticket = exports.Ticket = function (_RequestHandler) {
 
         _classCallCheck(this, Ticket);
 
-        var settings = {
-            url: 'https://ticket.ingresse.com',
-            auth: _auth.auth.Jwt.type()
-        };
-
-        Object.assign(settings, custom);
+        var settings = Object.assign({
+            auth: _auth.auth.Jwt.type(),
+            resource: 'ticket'
+        }, custom);
 
         var _this = _possibleConstructorReturn(this, (Ticket.__proto__ || Object.getPrototypeOf(Ticket)).call(this, settings));
 

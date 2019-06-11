@@ -5,11 +5,16 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.RequestHandler = undefined;
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /* Core Packages */
+
 
 var _popsicle = require('popsicle');
 
 var _popsicle2 = _interopRequireDefault(_popsicle);
+
+var _popsicleStatus = require('popsicle-status');
+
+var _popsicleStatus2 = _interopRequireDefault(_popsicleStatus);
 
 var _plugins = require('./plugins');
 
@@ -17,9 +22,7 @@ var _auth = require('../auth');
 
 var _helper = require('../helper');
 
-var _popsicleStatus = require('popsicle-status');
-
-var _popsicleStatus2 = _interopRequireDefault(_popsicleStatus);
+var _environments = require('../helper/environments');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -44,6 +47,10 @@ var RequestHandler = exports.RequestHandler = function () {
 
         if (_auth.auth[settings.auth]) {
             this.auth = new _auth.auth[settings.auth]();
+        }
+
+        if (!this.settings.url) {
+            this.setEnv(this.settings.env || this.settings.host);
         }
     }
 
@@ -73,6 +80,30 @@ var RequestHandler = exports.RequestHandler = function () {
         }
 
         /**
+         * Set Environment
+         *
+         * @param {string} env - Environment Type: 'stg', 'hmla', 'hmlb', 'sandbox', 'integration';
+         *
+         * @example
+         * var sdk = require('ingresse-sdk');
+         * var ingresse = new Sdk();
+         *
+         * // You will have access to this API
+         * // after instantiate the Sdk.
+         * var api = ingresse.api;
+         *
+         * // Can set an specific Environment to this API
+         * api.setEnv('integration');
+         *
+         */
+
+    }, {
+        key: 'setEnv',
+        value: function setEnv(env) {
+            this.setUrl(_environments.environments.getURL(this.settings.resource, env));
+        }
+
+        /**
          * Create new request promise
          *
          * @param {object} options - request options.
@@ -94,7 +125,7 @@ var RequestHandler = exports.RequestHandler = function () {
             }
 
             if (!this.settings.url) {
-                this.setUrl('https://api.ingresse.com/');
+                this.setEnv(this.settings.env || this.settings.host);
             }
 
             return (0, _popsicle2.default)(request).use((0, _plugins.transformResponse)()).use((0, _plugins.basePrefix)(this.settings.url)).use(_popsicle.plugins.parse(['json']));
@@ -103,8 +134,9 @@ var RequestHandler = exports.RequestHandler = function () {
         /**
          * Get resource
          *
-         * @param {string} path    - Request get to endpoint e.g. /api-path/1
-         * @param {object} [query] - Optional request parameters.
+         * @param {string} path      - Request get to endpoint e.g. /api-path/1
+         * @param {object} [query]   - Optional request parameters.
+         * @param {object} [headers] - Optional request headers.
          *
          * @returns {Promise}
          */
@@ -112,10 +144,13 @@ var RequestHandler = exports.RequestHandler = function () {
     }, {
         key: 'get',
         value: function get(path, query) {
+            var headers = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+
             var request = {
                 method: 'GET',
                 url: path,
-                query: query
+                query: query,
+                headers: headers
             };
 
             return this.request(request);
@@ -124,9 +159,10 @@ var RequestHandler = exports.RequestHandler = function () {
         /**
          * Post resource
          *
-         * @param {string} path    - Request post to endpoint e.g. /api-path
-         * @param {object} data    - Data to be posted.
-         * @param {object} [query] - Optional request parameters.
+         * @param {string} path      - Request post to endpoint e.g. /api-path
+         * @param {object} data      - Data to be posted.
+         * @param {object} [query]   - Optional request parameters.
+         * @param {object} [headers] - Optional request headers.
          *
          * @returns {Promise}
          */
@@ -134,11 +170,14 @@ var RequestHandler = exports.RequestHandler = function () {
     }, {
         key: 'post',
         value: function post(path, data, query) {
+            var headers = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
+
             var request = {
                 method: 'POST',
                 url: path,
                 body: data,
-                query: query
+                query: query,
+                headers: headers
             };
 
             return this.request(request);
@@ -147,9 +186,10 @@ var RequestHandler = exports.RequestHandler = function () {
         /**
          * Put resource
          *
-         * @param {string} path    - Request put to end endpoint e.g. /api-path/1
-         * @param {object} data    - Data to be updated.
-         * @param {object} [query] - Optional request parameters.
+         * @param {string} path      - Request put to end endpoint e.g. /api-path/1
+         * @param {object} data      - Data to be updated.
+         * @param {object} [query]   - Optional request parameters.
+         * @param {object} [headers] - Optional request headers.
          *
          * @returns {Promise}
          */
@@ -157,11 +197,14 @@ var RequestHandler = exports.RequestHandler = function () {
     }, {
         key: 'put',
         value: function put(path, data, query) {
+            var headers = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
+
             var request = {
                 method: 'PUT',
                 url: path,
                 body: data,
-                query: query
+                query: query,
+                headers: headers
             };
 
             return this.request(request);
@@ -170,9 +213,10 @@ var RequestHandler = exports.RequestHandler = function () {
         /**
          * Delete resource
          *
-         * @param {string} path    - Request delete to endpoint e.g. /api-path/1
-         * @param {object} [query] - Optional request parameters.
-         * @param {object} [data]  - Data to be deleted.
+         * @param {string} path      - Request delete to endpoint e.g. /api-path/1
+         * @param {object} [query]   - Optional request parameters.
+         * @param {object} [data]    - Data to be deleted.
+         * @param {object} [headers] - Optional request headers.
          *
          * @returns {Promise}
          */
@@ -180,11 +224,14 @@ var RequestHandler = exports.RequestHandler = function () {
     }, {
         key: 'delete',
         value: function _delete(path, query, data) {
+            var headers = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
+
             var request = {
                 method: 'DELETE',
                 url: path,
                 body: data,
-                query: query
+                query: query,
+                headers: headers
             };
 
             return this.request(request);
@@ -193,9 +240,10 @@ var RequestHandler = exports.RequestHandler = function () {
         /**
          * Upload files
          *
-         * @param {string} path     - Request post to endpoint e.g. /api-path
-         * @param {object} formData - Data to be posted.
-         * @param {object} [query]  - Optional request parameters.
+         * @param {string} path      - Request post to endpoint e.g. /api-path
+         * @param {object} formData  - Data to be posted.
+         * @param {object} [query]   - Optional request parameters.
+         * @param {object} [headers] - Optional request headers.
          *
          * @returns {Promise}
          */
@@ -205,16 +253,17 @@ var RequestHandler = exports.RequestHandler = function () {
         value: function upload(path) {
             var formData = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
             var query = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+            var headers = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
 
             var request = {
                 method: 'POST',
                 url: path,
                 query: query,
                 body: formData,
-                headers: {
+                headers: Object.assign({
                     'Accept': '*/*',
                     'Content-Type': undefined
-                }
+                }, headers)
             };
 
             return this.request(request);

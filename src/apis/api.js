@@ -1,12 +1,12 @@
-import {RequestHandler} from '../request/handler';
-import {ApiEvents} from './api.event.js';
-import {ApiUser} from './api.user.js';
-import {ApiTicketTransfer} from './api.ticket.js';
-import {ApiAuth} from './api.auth.js';
-import {ApiRecover} from './api.recover.js';
-import {ApiTransactions} from './api.transactions.js';
-import {auth} from '../auth';
-import {Mixin} from '../helper/mixin.js';
+import { RequestHandler } from '../request/handler';
+import { ApiEvents } from './api.event.js';
+import { ApiUser } from './api.user.js';
+import { ApiTicketTransfer } from './api.ticket.js';
+import { ApiAuth } from './api.auth.js';
+import { ApiRecover } from './api.recover.js';
+import { ApiTransactions } from './api.transactions.js';
+import { Mixin } from '../helper/mixin.js';
+import { auth } from '../auth';
 
 /**
  * Ingresse API
@@ -34,12 +34,11 @@ export class Api extends Mixin.inherit(
      * @param {object} [custom={}] - Initialize Api settings.
      */
     constructor(custom = {}) {
-        let settings = {
-            url : 'https://api.ingresse.com',
-            auth: auth.Ingresse.type(),
-        };
+        let settings = Object.assign({
+            auth    : auth.Ingresse.type(),
+            resource: 'api',
+        }, custom);
 
-        Object.assign(settings, custom);
         super(settings);
 
         this.settings = settings;

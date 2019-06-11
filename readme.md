@@ -8,11 +8,12 @@ This is the [Ingresse](https://www.ingresse.com) JavaScript SDK for **node** and
 
 Supported API's:
 
-API      | Authentication |
--------- | -------------- |
-Ingresse | Ingresse Auth  |
-Tickets  | JWT            |
-Events   | JWT            |
+| API          | Authentication |
+| ------------ | -------------- |
+| Ingresse     | Ingresse Auth  |
+| Tickets      | JWT            |
+| Events       | JWT            |
+| EventsSearch | Public         |
 
 
 ## Install
@@ -89,7 +90,7 @@ like the url of the API you want to use.
         // params for the Ticket API
         var ingresse = new Sdk({
             ticket: {
-                url: 'http://hml.ticket.ingresse.com'
+                env: 'hmla'
             }
         });
     </script>
@@ -115,7 +116,7 @@ var Sdk = require('ingresse-sdk');
 
 var ingresse = new Sdk({
     ticket: {
-        url: 'http://hml.ticket.ingresse.com'
+        env: 'hmla'
     }
 });
 

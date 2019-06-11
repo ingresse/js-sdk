@@ -86,6 +86,9 @@ export class ApiEvents extends RequestHandler {
      * @returns {Promise}
      *
      * @example
+     *
+     * ENDPOINT: '/featured'
+     *
      * ...
      *
      * ingresse.ApiEvents.getFeatured({ method: 'banner', state: 'sp' })
@@ -101,12 +104,60 @@ export class ApiEvents extends RequestHandler {
     }
 
     /**
-     * Get the events type
+     * Get Home Sections
+     *
+     * @param {object} [query] - Optional request parameters.
      *
      * @returns {Promise}
+     *
+     * @example
+     *
+     * ENDPOINT: '/home/sections'
+     *
+     * ...
+     *
+     * ingresse.ApiEvents.getHomeSections()
+     * .then(function (response) {
+     *     console.log(response);
+     * })
+     * .catch(function (error) {
+     *     console.log(error);
+     * });
      */
-    getEventTypes() {
-        return this.get('/home/sections');
+    getHomeSections(query = {}) {
+        return this.get('/home/sections', query);
+    }
+
+    /**
+     * Deprecated
+     */
+    getEventTypes(query = {}) {
+        return this.get('/home/sections', query);
+    }
+
+    /**
+     * Home Cover
+     *
+     * @param {object} [query] - Optional request parameters.
+     *
+     * @returns {Promise}
+     *
+     * @example
+     *
+     * ENDPOINT: '/home/cover'
+     *
+     * ...
+     *
+     * ingresse.ApiEvents.getHomeCover()
+     * .then(function (response) {
+     *     console.log(response);
+     * })
+     * .catch(function (error) {
+     *     console.log(error);
+     * });
+     */
+    getHomeCover(query = {}) {
+        return this.get('/home/cover', query);
     }
 
     /**

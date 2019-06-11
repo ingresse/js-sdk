@@ -1,11 +1,13 @@
-import {Ticket} from './ticket';
-import {Event} from './event';
-import {Api} from './api';
+/* Importing APIs */
+import { Api } from './api';
+import { Event } from './event';
+import { EventSearch } from './search.event';
+import { Ticket } from './ticket';
 
-
+/* Exporting APIs */
 export var apis = {
-    ticket: Ticket,
-    event : Event,
-    api   : Api,
+    api        : Api,
+    event      : Event,
+    eventSearch: EventSearch,
+    ticket     : Ticket,
 };
-

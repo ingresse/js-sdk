@@ -115,7 +115,25 @@ describe('API Events', () => {
             event.getEventTypes();
 
             chai.expect(event.get).to.have.been.called.with
-                .exactly(`/home/sections`);
+                .exactly(`/home/sections`, {});
+        });
+    });
+
+    describe('getHomeSections', () => {
+        it('should call this.get', () => {
+            event.getHomeSections();
+
+            chai.expect(event.get).to.have.been.called.with
+                .exactly(`/home/sections`, {});
+        });
+    });
+
+    describe('getHomeCover', () => {
+        it('should call this.get', () => {
+            event.getHomeCover();
+
+            chai.expect(event.get).to.have.been.called.with
+                .exactly(`/home/cover`, {});
         });
     });
 

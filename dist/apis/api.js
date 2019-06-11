@@ -19,9 +19,9 @@ var _apiRecover = require('./api.recover.js');
 
 var _apiTransactions = require('./api.transactions.js');
 
-var _auth = require('../auth');
-
 var _mixin = require('../helper/mixin.js');
+
+var _auth = require('../auth');
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -53,12 +53,10 @@ var Api = exports.Api = function (_Mixin$inherit) {
 
         _classCallCheck(this, Api);
 
-        var settings = {
-            url: 'https://api.ingresse.com',
-            auth: _auth.auth.Ingresse.type()
-        };
-
-        Object.assign(settings, custom);
+        var settings = Object.assign({
+            auth: _auth.auth.Ingresse.type(),
+            resource: 'api'
+        }, custom);
 
         var _this = _possibleConstructorReturn(this, (Api.__proto__ || Object.getPrototypeOf(Api)).call(this, settings));
 
