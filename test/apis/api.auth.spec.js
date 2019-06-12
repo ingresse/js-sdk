@@ -103,4 +103,13 @@ describe('API Auth', () => {
                 .exactly('/login/renew-token', { usertoken: 'test' });
         });
     });
+
+    describe('passwordStrength', () => {
+        it('should call this.post', () => {
+            auth.passwordStrength('password');
+
+            chai.expect(auth.post).to.have.been.called.with
+                .exactly(`/password`, { password: 'password' }, {});
+        });
+    });
 });

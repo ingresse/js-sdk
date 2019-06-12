@@ -113,6 +113,23 @@ var ApiAuth = exports.ApiAuth = function (_RequestHandler) {
 
             return this.get('/login/renew-token', _query);
         }
+
+        /**
+         * Password Strength
+         *
+         * @param {string} password - Required.
+         * @param {object} [query]  - Optional request parameters.
+         *
+         * @returns {Promise}
+         */
+
+    }, {
+        key: 'passwordStregth',
+        value: function passwordStregth(password) {
+            var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+            return this.post('/password', { password: password }, query);
+        }
     }]);
 
     return ApiAuth;
