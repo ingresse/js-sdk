@@ -64,4 +64,16 @@ export class ApiAuth extends RequestHandler {
 
         return this.get('/login/renew-token', _query);
     }
+
+    /**
+     * Password Strength
+     *
+     * @param {string} password - Required.
+     * @param {object} [query]  - Optional request parameters.
+     *
+     * @returns {Promise}
+     */
+    passwordStrength(password, query = {}) {
+        return this.post('/password', { password: password }, query);
+    }
 }
