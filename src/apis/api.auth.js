@@ -88,7 +88,7 @@ export class ApiAuth extends RequestHandler {
      * @returns {Promise}
      */
     twoFactor(device, otp, query = {}, headers = {}) {
-        return this.post('/two-factor', query, Object.assign({}, headers, {
+        return this.post('/two-factor', {}, query, Object.assign({}, headers, {
             'Content-Type': 'application/x-www-form-urlencoded',
             'X-INGRESSE-DEVICE': device,
         }, !otp ? {} : {

@@ -268,16 +268,14 @@ var ApiUser = exports.ApiUser = function (_RequestHandler) {
 
     }, {
         key: 'saveCredentials',
-        value: function saveCredentials(userId, token, jwt, device) {
+        value: function saveCredentials(userId, token, jwt) {
             this.credentials.userId = userId;
             this.credentials.token = token;
             this.credentials.jwt = jwt;
-            this.credentials.device = device;
 
             this.cookie.createCookie('userId', userId, 5);
             this.cookie.createCookie('token', token, 5);
             this.cookie.createCookie('jwt', jwt, 5);
-            this.cookie.createCookie('device', device, 5);
 
             return this.credentials;
         }

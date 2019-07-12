@@ -148,7 +148,7 @@ var ApiAuth = exports.ApiAuth = function (_RequestHandler) {
             var query = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
             var headers = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
 
-            return this.post('/two-factor', query, Object.assign({}, headers, {
+            return this.post('/two-factor', {}, query, Object.assign({}, headers, {
                 'Content-Type': 'application/x-www-form-urlencoded',
                 'X-INGRESSE-DEVICE': device
             }, !otp ? {} : {
