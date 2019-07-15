@@ -40,6 +40,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.transactions.js~ApiTransactions.html">ApiTransactions</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.user.js~ApiUser.html">ApiUser</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/event.js~Event.html">Event</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/search.event.js~EventSearch.html">EventSearch</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html">Ticket</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-apis">apis</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">auth</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/auth/authentication.js~Authentication.html">Authentication</a></span></span></li>
@@ -49,6 +50,7 @@
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">helper</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/helper/cookie.js~Cookie.html">Cookie</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/helper/mixin.js~Mixin.html">Mixin</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-deepMerge">deepMerge</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-environments">environments</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">request</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html">RequestHandler</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-basePrefix">basePrefix</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-transformResponse">transformResponse</a></span></span></li>
@@ -965,7 +967,7 @@ This method will return a <code>Promise</code> so you can use
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-delete">delete</a></span></span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-delete">delete</a></span></span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, headers: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
@@ -993,7 +995,7 @@ This method will return a <code>Promise</code> so you can use
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-get">get</a></span></span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-get">get</a></span></span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, headers: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
@@ -1021,7 +1023,7 @@ This method will return a <code>Promise</code> so you can use
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-post">post</a></span></span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-post">post</a></span></span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, headers: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
@@ -1049,7 +1051,7 @@ This method will return a <code>Promise</code> so you can use
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-put">put</a></span></span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-put">put</a></span></span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, headers: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
@@ -1105,6 +1107,34 @@ This method will return a <code>Promise</code> so you can use
         <p>
           
           
+          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-setEnv">setEnv</a></span></span><span data-ice="signature">(env: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Set Environment</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
           <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-setUrl">setUrl</a></span></span><span data-ice="signature">(url: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>)</span>
         </p>
       </div>
@@ -1133,7 +1163,7 @@ This method will return a <code>Promise</code> so you can use
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-upload">upload</a></span></span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, formData: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-upload">upload</a></span></span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, formData: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, headers: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
@@ -1233,7 +1263,7 @@ This method will return a <code>Promise</code> so you can use
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber32">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber31">source</a></span></span>
     </span>
   </h3>
 
@@ -1279,7 +1309,7 @@ This method will return a <code>Promise</code> so you can use
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber541">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber540">source</a></span></span>
     </span>
   </h3>
 
@@ -1388,7 +1418,7 @@ ingresse.ticket.associatePasskey(820, { itemIds: [ 1, 2, 3] })
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber575">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber574">source</a></span></span>
     </span>
   </h3>
 
@@ -1531,7 +1561,7 @@ ingresse.ticket.batchPasskeys(200, {
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber462">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber461">source</a></span></span>
     </span>
   </h3>
 
@@ -1659,7 +1689,7 @@ ingresse.ticket.createPasskey({
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber653">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber652">source</a></span></span>
     </span>
   </h3>
 
@@ -1752,7 +1782,7 @@ ingresse.ticket.deleteExternal(21232, { name: &apos;My Ticket Name&apos; })
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber678">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber677">source</a></span></span>
     </span>
   </h3>
 
@@ -1851,7 +1881,7 @@ ingresse.ticket.deleteExternalCode(123456, 987654321)
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber485">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber484">source</a></span></span>
     </span>
   </h3>
 
@@ -1953,7 +1983,7 @@ ingresse.ticket.deletePasskey(123)
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber629">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber628">source</a></span></span>
     </span>
   </h3>
 
@@ -2046,7 +2076,7 @@ ingresse.ticket.getExternalCodes(456789)
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber99">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber98">source</a></span></span>
     </span>
   </h3>
 
@@ -2141,7 +2171,7 @@ ingresse.ticket.getItem(200)
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber77">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber76">source</a></span></span>
     </span>
   </h3>
 
@@ -2231,7 +2261,7 @@ ingresse.ticket.getItems()
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber431">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber430">source</a></span></span>
     </span>
   </h3>
 
@@ -2326,7 +2356,7 @@ ingresse.ticket.getPasskeyById(id, query)
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber409">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber408">source</a></span></span>
     </span>
   </h3>
 
@@ -2425,7 +2455,7 @@ ingresse.ticket.getPasskeys(query)
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber383">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber382">source</a></span></span>
     </span>
   </h3>
 
@@ -2553,7 +2583,7 @@ ingresse.ticket.getTax(query)
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber352">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber351">source</a></span></span>
     </span>
   </h3>
 
@@ -2650,7 +2680,7 @@ ingresse.ticket.getTriggers(10000040)
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber54">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber53">source</a></span></span>
     </span>
   </h3>
 
@@ -2740,7 +2770,7 @@ ingresse.ticket.getTypes()
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber190">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber189">source</a></span></span>
     </span>
   </h3>
 
@@ -2843,7 +2873,7 @@ ingresse.ticket.newAttribute(200, { key: &apos;min&apos;, value: &apos;1&apos;, 
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber121">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber120">source</a></span></span>
     </span>
   </h3>
 
@@ -2938,7 +2968,7 @@ ingresse.ticket.newItem({ name: &apos;My Ticket Name&apos; })
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber243">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber242">source</a></span></span>
     </span>
   </h3>
 
@@ -3046,7 +3076,7 @@ ingresse.ticket.newSalePeriod({
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber300">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber299">source</a></span></span>
     </span>
   </h3>
 
@@ -3153,7 +3183,7 @@ ingresse.ticket.newValues({
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber166">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber165">source</a></span></span>
     </span>
   </h3>
 
@@ -3248,7 +3278,7 @@ ingresse.ticket.removeItem(200)
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber214">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber213">source</a></span></span>
     </span>
   </h3>
 
@@ -3351,7 +3381,7 @@ ingresse.ticket.updateAttribute(200, { key: &apos;minimum&apos;, value: 5, type:
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber144">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber143">source</a></span></span>
     </span>
   </h3>
 
@@ -3453,7 +3483,7 @@ ingresse.ticket.updateItem(200, { name: &apos;My Updated Ticket Name&apos; })
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber517">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber516">source</a></span></span>
     </span>
   </h3>
 
@@ -3588,7 +3618,7 @@ ingresse.ticket.updatePasskey(200, {
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber272">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber271">source</a></span></span>
     </span>
   </h3>
 
@@ -3696,7 +3726,7 @@ ingresse.ticket.updateSalePeriod(200, {
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber328">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber327">source</a></span></span>
     </span>
   </h3>
 
@@ -3803,7 +3833,7 @@ ingresse.ticket.updateValues(200, {
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber605">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/ticket.js.html#lineNumber604">source</a></span></span>
     </span>
   </h3>
 

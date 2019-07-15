@@ -1,23 +1,23 @@
 {
-  "coverage": "86.45%",
-  "expectCount": 155,
-  "actualCount": 134,
+  "coverage": "86.3%",
+  "expectCount": 168,
+  "actualCount": 145,
   "files": {
     "src/apis/api.js": {
       "expectCount": 3,
       "actualCount": 2,
       "undocumentLines": [
-        45
+        44
       ]
     },
     "src/apis/api.auth.js": {
-      "expectCount": 6,
-      "actualCount": 6,
+      "expectCount": 8,
+      "actualCount": 8,
       "undocumentLines": []
     },
     "src/apis/api.event.js": {
-      "expectCount": 12,
-      "actualCount": 12,
+      "expectCount": 16,
+      "actualCount": 16,
       "undocumentLines": []
     },
     "src/apis/api.recover.js": {
@@ -61,7 +61,14 @@
       "expectCount": 23,
       "actualCount": 22,
       "undocumentLines": [
-        32
+        31
+      ]
+    },
+    "src/apis/search.event.js": {
+      "expectCount": 5,
+      "actualCount": 4,
+      "undocumentLines": [
+        30
       ]
     },
     "src/auth/ingresse.js": {
@@ -92,25 +99,25 @@
       ]
     },
     "src/request/handler.js": {
-      "expectCount": 11,
-      "actualCount": 9,
+      "expectCount": 12,
+      "actualCount": 10,
       "undocumentLines": [
-        23,
-        20
+        24,
+        21
       ]
     },
     "src/apis/ticket.js": {
       "expectCount": 28,
       "actualCount": 27,
       "undocumentLines": [
-        32
+        31
       ]
     },
     "src/apis/index.js": {
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [
-        6
+        8
       ]
     },
     "src/auth/index.js": {
@@ -129,6 +136,13 @@
       "expectCount": 1,
       "actualCount": 1,
       "undocumentLines": []
+    },
+    "src/helper/environments.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        22
+      ]
     }
   }
 }

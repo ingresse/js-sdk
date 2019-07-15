@@ -40,6 +40,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.transactions.js~ApiTransactions.html">ApiTransactions</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.user.js~ApiUser.html">ApiUser</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/event.js~Event.html">Event</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/search.event.js~EventSearch.html">EventSearch</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html">Ticket</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-apis">apis</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">auth</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/auth/authentication.js~Authentication.html">Authentication</a></span></span></li>
@@ -49,6 +50,7 @@
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">helper</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/helper/cookie.js~Cookie.html">Cookie</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/helper/mixin.js~Mixin.html">Mixin</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-deepMerge">deepMerge</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-environments">environments</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">request</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html">RequestHandler</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-basePrefix">basePrefix</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-transformResponse">transformResponse</a></span></span></li>
@@ -57,13 +59,13 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {RequestHandler} from &apos;<span><a href="file/src/request/handler.js.html#lineNumber13">ingresse-sdk/src/request/handler.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {RequestHandler} from &apos;<span><a href="file/src/request/handler.js.html#lineNumber14">ingresse-sdk/src/request/handler.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/src/request/handler.js.html#lineNumber13">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/request/handler.js.html#lineNumber14">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
@@ -74,7 +76,7 @@
   
   
   
-  <div class="flat-list" data-ice="directSubclass"><h4>Direct Subclass:</h4><div><span><a href="class/src/apis/api.auth.js~ApiAuth.html">ApiAuth</a></span>, <span><a href="class/src/apis/api.event.js~ApiEvents.html">ApiEvents</a></span>, <span><a href="class/src/apis/api.recover.js~ApiRecover.html">ApiRecover</a></span>, <span><a href="class/src/apis/api.ticket.js~ApiTicketTransfer.html">ApiTicketTransfer</a></span>, <span><a href="class/src/apis/api.transactions.js~ApiTransactions.html">ApiTransactions</a></span>, <span><a href="class/src/apis/api.user.js~ApiUser.html">ApiUser</a></span>, <span><a href="class/src/apis/event.js~Event.html">Event</a></span>, <span><a href="class/src/apis/ticket.js~Ticket.html">Ticket</a></span></div></div>
+  <div class="flat-list" data-ice="directSubclass"><h4>Direct Subclass:</h4><div><span><a href="class/src/apis/api.auth.js~ApiAuth.html">ApiAuth</a></span>, <span><a href="class/src/apis/api.event.js~ApiEvents.html">ApiEvents</a></span>, <span><a href="class/src/apis/api.recover.js~ApiRecover.html">ApiRecover</a></span>, <span><a href="class/src/apis/api.ticket.js~ApiTicketTransfer.html">ApiTicketTransfer</a></span>, <span><a href="class/src/apis/api.transactions.js~ApiTransactions.html">ApiTransactions</a></span>, <span><a href="class/src/apis/api.user.js~ApiUser.html">ApiUser</a></span>, <span><a href="class/src/apis/event.js~Event.html">Event</a></span>, <span><a href="class/src/apis/search.event.js~EventSearch.html">EventSearch</a></span>, <span><a href="class/src/apis/ticket.js~Ticket.html">Ticket</a></span></div></div>
   
   
   
@@ -212,7 +214,7 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-delete">delete</a></span></span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-delete">delete</a></span></span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, headers: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
@@ -240,7 +242,7 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-get">get</a></span></span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-get">get</a></span></span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, headers: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
@@ -268,7 +270,7 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-post">post</a></span></span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-post">post</a></span></span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, headers: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
@@ -296,7 +298,7 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-put">put</a></span></span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-put">put</a></span></span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, headers: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
@@ -352,6 +354,34 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
         <p>
           
           
+          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-setEnv">setEnv</a></span></span><span data-ice="signature">(env: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Set Environment</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
           <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-setUrl">setUrl</a></span></span><span data-ice="signature">(url: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>)</span>
         </p>
       </div>
@@ -380,7 +410,7 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-upload">upload</a></span></span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, formData: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-upload">upload</a></span></span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, formData: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, headers: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
@@ -417,7 +447,7 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/request/handler.js.html#lineNumber19">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/request/handler.js.html#lineNumber20">source</a></span></span>
     </span>
   </h3>
 
@@ -481,7 +511,7 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/request/handler.js.html#lineNumber23">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/request/handler.js.html#lineNumber24">source</a></span></span>
     </span>
   </h3>
 
@@ -524,7 +554,7 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/request/handler.js.html#lineNumber20">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/request/handler.js.html#lineNumber21">source</a></span></span>
     </span>
   </h3>
 
@@ -566,11 +596,11 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
     
     
     
-    <span data-ice="name">delete</span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+    <span data-ice="name">delete</span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, headers: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/request/handler.js.html#lineNumber141">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/request/handler.js.html#lineNumber179">source</a></span></span>
     </span>
   </h3>
 
@@ -609,6 +639,13 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
       <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
       <td data-ice="description"><p>Data to be deleted.</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">headers</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
+      <td data-ice="appendix"><ul><li>optional</li></ul></td>
+      <td data-ice="description"><p>Optional request headers.</p>
 </td>
     </tr>
 </tbody>
@@ -653,11 +690,11 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
     
     
     
-    <span data-ice="name">get</span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+    <span data-ice="name">get</span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, headers: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/request/handler.js.html#lineNumber82">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/request/handler.js.html#lineNumber114">source</a></span></span>
     </span>
   </h3>
 
@@ -689,6 +726,13 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
       <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
       <td data-ice="description"><p>Optional request parameters.</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">headers</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
+      <td data-ice="appendix"><ul><li>optional</li></ul></td>
+      <td data-ice="description"><p>Optional request headers.</p>
 </td>
     </tr>
 </tbody>
@@ -733,11 +777,11 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
     
     
     
-    <span data-ice="name">post</span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+    <span data-ice="name">post</span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, headers: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/request/handler.js.html#lineNumber101">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/request/handler.js.html#lineNumber135">source</a></span></span>
     </span>
   </h3>
 
@@ -776,6 +820,13 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
       <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
       <td data-ice="description"><p>Optional request parameters.</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">headers</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
+      <td data-ice="appendix"><ul><li>optional</li></ul></td>
+      <td data-ice="description"><p>Optional request headers.</p>
 </td>
     </tr>
 </tbody>
@@ -820,11 +871,11 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
     
     
     
-    <span data-ice="name">put</span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+    <span data-ice="name">put</span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, headers: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/request/handler.js.html#lineNumber121">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/request/handler.js.html#lineNumber157">source</a></span></span>
     </span>
   </h3>
 
@@ -863,6 +914,13 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
       <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
       <td data-ice="description"><p>Optional request parameters.</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">headers</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
+      <td data-ice="appendix"><ul><li>optional</li></ul></td>
+      <td data-ice="description"><p>Optional request headers.</p>
 </td>
     </tr>
 </tbody>
@@ -911,7 +969,7 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/request/handler.js.html#lineNumber55">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/request/handler.js.html#lineNumber86">source</a></span></span>
     </span>
   </h3>
 
@@ -973,6 +1031,82 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
   
 </div>
 <div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-setEnv">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">setEnv</span><span data-ice="signature">(env: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>)</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/request/handler.js.html#lineNumber70">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p>Set Environment</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">env</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>Environment Type: &apos;stg&apos;, &apos;hmla&apos;, &apos;hmlb&apos;, &apos;sandbox&apos;, &apos;integration&apos;;</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">var sdk = require(&apos;ingresse-sdk&apos;);
+var ingresse = new Sdk();
+
+// You will have access to this API
+// after instantiate the Sdk.
+var api = ingresse.api;
+
+// Can set an specific Environment to this API
+api.setEnv(&apos;integration&apos;);</code></pre>
+    </div>
+</div>
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-method-setUrl">
     <span class="access" data-ice="access">public</span>
     
@@ -984,7 +1118,7 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/request/handler.js.html#lineNumber44">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/request/handler.js.html#lineNumber49">source</a></span></span>
     </span>
   </h3>
 
@@ -1056,11 +1190,11 @@ api.setUrl(&apos;https://hml-api.ingresse.com&apos;);</code></pre>
     
     
     
-    <span data-ice="name">upload</span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, formData: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+    <span data-ice="name">upload</span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, formData: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, headers: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/request/handler.js.html#lineNumber161">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/request/handler.js.html#lineNumber201">source</a></span></span>
     </span>
   </h3>
 
@@ -1099,6 +1233,13 @@ api.setUrl(&apos;https://hml-api.ingresse.com&apos;);</code></pre>
       <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
       <td data-ice="description"><p>Optional request parameters.</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" data-depth="0">headers</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
+      <td data-ice="appendix"><ul><li>optional</li></ul></td>
+      <td data-ice="description"><p>Optional request headers.</p>
 </td>
     </tr>
 </tbody>

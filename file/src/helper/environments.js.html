@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../">
-  <title data-ice="title">src/apis/index.js | Ingresse JS SDK API Document</title>
+  <title data-ice="title">src/helper/environments.js | Ingresse JS SDK API Document</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -58,19 +58,30 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/apis/index.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/* Importing APIs */
-import { Api } from &apos;./api&apos;;
-import { Event } from &apos;./event&apos;;
-import { EventSearch } from &apos;./search.event&apos;;
-import { Ticket } from &apos;./ticket&apos;;
+<div class="content" data-ice="content"><h1 data-ice="title">src/helper/environments.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * Environments Helper
+ */
 
-/* Exporting APIs */
-export var apis = {
-    api        : Api,
-    event      : Event,
-    eventSearch: EventSearch,
-    ticket     : Ticket,
+/**
+ * Get Environment URL
+ *
+ * @param {string} resource - Environment Resource: &apos;api&apos;, &apos;ticket&apos;, &apos;event&apos;, &apos;checkin&apos;;
+ * @param {string} env      - Environment Type    : &apos;stg&apos;, &apos;hmla&apos;, &apos;hmlb&apos;, &apos;sandbox&apos;, &apos;integration&apos;;
+ *
+ * @returns {string} environment URL
+ */
+const getURL = function (resource = &apos;api&apos;, env = &apos;&apos;) {
+    if (env &amp;&amp; env.includes(&apos;http&apos;)) {
+        return env;
+    }
+
+    return `https://${env ? env.concat(&apos;-&apos;) : &apos;&apos;}${resource}.ingresse.com`;
+};
+
+/* Exporting */
+export const environments = {
+    getURL: getURL,
 };
 </code></pre>
 

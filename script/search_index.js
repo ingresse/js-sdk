@@ -60,6 +60,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ingresse-sdk/src/apis/search.event.js~eventsearch",
+    "class/src/apis/search.event.js~EventSearch.html",
+    "<span>EventSearch</span> <span class=\"search-result-import-path\">ingresse-sdk/src/apis/search.event.js</span>",
+    "class"
+  ],
+  [
     "ingresse-sdk/src/auth/ingresse.js~ingresse",
     "class/src/auth/ingresse.js~Ingresse.html",
     "<span>Ingresse</span> <span class=\"search-result-import-path\">ingresse-sdk/src/auth/ingresse.js</span>",
@@ -112,6 +118,12 @@ window.esdocSearchIndex = [
     "function/index.html#static-function-deepMerge",
     "<span>deepMerge</span> <span class=\"search-result-import-path\">ingresse-sdk/src/helper/index.js</span>",
     "function"
+  ],
+  [
+    "ingresse-sdk/src/helper/environments.js~environments",
+    "variable/index.html#static-variable-environments",
+    "<span>environments</span> <span class=\"search-result-import-path\">ingresse-sdk/src/helper/environments.js</span>",
+    "variable"
   ],
   [
     "ingresse-sdk/src/request/plugins.js~transformresponse",
@@ -474,6 +486,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/apis/api.auth.js~apiauth#passwordstrength",
+    "class/src/apis/api.auth.js~ApiAuth.html#instance-method-passwordStrength",
+    "src/apis/api.auth.js~ApiAuth#passwordStrength",
+    "method"
+  ],
+  [
     "src/apis/api.auth.js~apiauth#register",
     "class/src/apis/api.auth.js~ApiAuth.html#instance-method-register",
     "src/apis/api.auth.js~ApiAuth#register",
@@ -486,10 +504,28 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/apis/api.auth.js~apiauth#twofactor",
+    "class/src/apis/api.auth.js~ApiAuth.html#instance-method-twoFactor",
+    "src/apis/api.auth.js~ApiAuth#twoFactor",
+    "method"
+  ],
+  [
     "src/apis/api.event.js",
     "file/src/apis/api.event.js.html",
     "src/apis/api.event.js",
     "file"
+  ],
+  [
+    "src/apis/api.event.js~apievents#getborderoreport",
+    "class/src/apis/api.event.js~ApiEvents.html#instance-method-getBorderoReport",
+    "src/apis/api.event.js~ApiEvents#getBorderoReport",
+    "method"
+  ],
+  [
+    "src/apis/api.event.js~apievents#getentryreport",
+    "class/src/apis/api.event.js~ApiEvents.html#instance-method-getEntryReport",
+    "src/apis/api.event.js~ApiEvents#getEntryReport",
+    "method"
   ],
   [
     "src/apis/api.event.js~apievents#getevent",
@@ -537,6 +573,18 @@ window.esdocSearchIndex = [
     "src/apis/api.event.js~apievents#getfeatured",
     "class/src/apis/api.event.js~ApiEvents.html#instance-method-getFeatured",
     "src/apis/api.event.js~ApiEvents#getFeatured",
+    "method"
+  ],
+  [
+    "src/apis/api.event.js~apievents#gethomecover",
+    "class/src/apis/api.event.js~ApiEvents.html#instance-method-getHomeCover",
+    "src/apis/api.event.js~ApiEvents#getHomeCover",
+    "method"
+  ],
+  [
+    "src/apis/api.event.js~apievents#gethomesections",
+    "class/src/apis/api.event.js~ApiEvents.html#instance-method-getHomeSections",
+    "src/apis/api.event.js~ApiEvents#getHomeSections",
     "method"
   ],
   [
@@ -924,6 +972,36 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/apis/search.event.js",
+    "file/src/apis/search.event.js.html",
+    "src/apis/search.event.js",
+    "file"
+  ],
+  [
+    "src/apis/search.event.js~eventsearch#constructor",
+    "class/src/apis/search.event.js~EventSearch.html#instance-constructor-constructor",
+    "src/apis/search.event.js~EventSearch#constructor",
+    "method"
+  ],
+  [
+    "src/apis/search.event.js~eventsearch#search",
+    "class/src/apis/search.event.js~EventSearch.html#instance-method-search",
+    "src/apis/search.event.js~EventSearch#search",
+    "method"
+  ],
+  [
+    "src/apis/search.event.js~eventsearch#searchbyterm",
+    "class/src/apis/search.event.js~EventSearch.html#instance-method-searchByTerm",
+    "src/apis/search.event.js~EventSearch#searchByTerm",
+    "method"
+  ],
+  [
+    "src/apis/search.event.js~eventsearch#settings",
+    "class/src/apis/search.event.js~EventSearch.html#instance-member-settings",
+    "src/apis/search.event.js~EventSearch#settings",
+    "member"
+  ],
+  [
     "src/apis/ticket.js",
     "file/src/apis/ticket.js.html",
     "src/apis/ticket.js",
@@ -1278,6 +1356,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/helper/environments.js",
+    "file/src/helper/environments.js.html",
+    "src/helper/environments.js",
+    "file"
+  ],
+  [
     "src/helper/index.js",
     "file/src/helper/index.js.html",
     "src/helper/index.js",
@@ -1353,6 +1437,12 @@ window.esdocSearchIndex = [
     "src/request/handler.js~requesthandler#request",
     "class/src/request/handler.js~RequestHandler.html#instance-method-request",
     "src/request/handler.js~RequestHandler#request",
+    "method"
+  ],
+  [
+    "src/request/handler.js~requesthandler#setenv",
+    "class/src/request/handler.js~RequestHandler.html#instance-method-setEnv",
+    "src/request/handler.js~RequestHandler#setEnv",
     "method"
   ],
   [

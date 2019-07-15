@@ -40,6 +40,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.transactions.js~ApiTransactions.html">ApiTransactions</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.user.js~ApiUser.html">ApiUser</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/event.js~Event.html">Event</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/search.event.js~EventSearch.html">EventSearch</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html">Ticket</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-apis">apis</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">auth</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/auth/authentication.js~Authentication.html">Authentication</a></span></span></li>
@@ -49,6 +50,7 @@
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">helper</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/helper/cookie.js~Cookie.html">Cookie</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/helper/mixin.js~Mixin.html">Mixin</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-deepMerge">deepMerge</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-environments">environments</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">request</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html">RequestHandler</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-basePrefix">basePrefix</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-transformResponse">transformResponse</a></span></span></li>
@@ -145,6 +147,9 @@ export class ApiEvents extends RequestHandler {
      * @returns {Promise}
      *
      * @example
+     *
+     * ENDPOINT: &apos;/featured&apos;
+     *
      * ...
      *
      * ingresse.ApiEvents.getFeatured({ method: &apos;banner&apos;, state: &apos;sp&apos; })
@@ -160,12 +165,60 @@ export class ApiEvents extends RequestHandler {
     }
 
     /**
-     * Get the events type
+     * Get Home Sections
+     *
+     * @param {object} [query] - Optional request parameters.
      *
      * @returns {Promise}
+     *
+     * @example
+     *
+     * ENDPOINT: &apos;/home/sections&apos;
+     *
+     * ...
+     *
+     * ingresse.ApiEvents.getHomeSections()
+     * .then(function (response) {
+     *     console.log(response);
+     * })
+     * .catch(function (error) {
+     *     console.log(error);
+     * });
      */
-    getEventTypes() {
-        return this.get(&apos;/home/sections&apos;);
+    getHomeSections(query = {}) {
+        return this.get(&apos;/home/sections&apos;, query);
+    }
+
+    /**
+     * Deprecated
+     */
+    getEventTypes(query = {}) {
+        return this.get(&apos;/home/sections&apos;, query);
+    }
+
+    /**
+     * Home Cover
+     *
+     * @param {object} [query] - Optional request parameters.
+     *
+     * @returns {Promise}
+     *
+     * @example
+     *
+     * ENDPOINT: &apos;/home/cover&apos;
+     *
+     * ...
+     *
+     * ingresse.ApiEvents.getHomeCover()
+     * .then(function (response) {
+     *     console.log(response);
+     * })
+     * .catch(function (error) {
+     *     console.log(error);
+     * });
+     */
+    getHomeCover(query = {}) {
+        return this.get(&apos;/home/cover&apos;, query);
     }
 
     /**
@@ -272,7 +325,44 @@ export class ApiEvents extends RequestHandler {
         }, data);
 
         return this.post(`/event/${eventId}/export`, _data, query);
-    }}
+    }
+
+    /**
+     * Get Event Entry Report
+     *
+     * @param {number} eventId     - The event ID.
+     * @param {number} [sessionId] - The event session ID to get.
+     * @param {object} [query]     - Optional request parameters.
+     *
+     * @returns {Promise}
+     */
+    getEntryReport(eventId, sessionId, query = {}) {
+        const _query = Object.assign(
+            {},
+            query,
+            {
+                method: &apos;report&apos;
+            },
+            (!sessionId ? {} : {
+                sessionId: sessionId
+            })
+        );
+
+        return this.get(`/event/${eventId}/guestlist`, _query);
+    }
+
+    /**
+     * Get Event Bordero Report
+     *
+     * @param {number} eventId - The event ID.
+     * @param {object} [query] - Optional request parameters.
+     *
+     * @returns {Promise}
+     */
+    getBorderoReport(eventId, query = {}) {
+        return this.get(`/event/${eventId}/bordero`, query);
+    }
+}
 </code></pre>
 
 </div>

@@ -40,6 +40,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.transactions.js~ApiTransactions.html">ApiTransactions</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.user.js~ApiUser.html">ApiUser</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/event.js~Event.html">Event</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/search.event.js~EventSearch.html">EventSearch</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html">Ticket</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-apis">apis</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">auth</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/auth/authentication.js~Authentication.html">Authentication</a></span></span></li>
@@ -49,6 +50,7 @@
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">helper</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/helper/cookie.js~Cookie.html">Cookie</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/helper/mixin.js~Mixin.html">Mixin</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-deepMerge">deepMerge</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-environments">environments</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">request</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html">RequestHandler</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-basePrefix">basePrefix</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-transformResponse">transformResponse</a></span></span></li>
@@ -817,7 +819,7 @@ var event = ingresse.event;</code></pre>
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-delete">delete</a></span></span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-delete">delete</a></span></span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, headers: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
@@ -845,7 +847,7 @@ var event = ingresse.event;</code></pre>
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-get">get</a></span></span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-get">get</a></span></span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, headers: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
@@ -873,7 +875,7 @@ var event = ingresse.event;</code></pre>
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-post">post</a></span></span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-post">post</a></span></span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, headers: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
@@ -901,7 +903,7 @@ var event = ingresse.event;</code></pre>
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-put">put</a></span></span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-put">put</a></span></span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, headers: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
@@ -957,6 +959,34 @@ var event = ingresse.event;</code></pre>
         <p>
           
           
+          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-setEnv">setEnv</a></span></span><span data-ice="signature">(env: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Set Environment</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
           <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-setUrl">setUrl</a></span></span><span data-ice="signature">(url: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>)</span>
         </p>
       </div>
@@ -985,7 +1015,7 @@ var event = ingresse.event;</code></pre>
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-upload">upload</a></span></span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, formData: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-method-upload">upload</a></span></span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, formData: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, headers: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
@@ -1085,7 +1115,7 @@ var event = ingresse.event;</code></pre>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber32">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber31">source</a></span></span>
     </span>
   </h3>
 
@@ -1131,7 +1161,7 @@ var event = ingresse.event;</code></pre>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber439">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber438">source</a></span></span>
     </span>
   </h3>
 
@@ -1233,7 +1263,7 @@ ingresse.event.addAdmins(21232, data)
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber97">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber96">source</a></span></span>
     </span>
   </h3>
 
@@ -1328,7 +1358,7 @@ ingresse.event.create({ name: &apos;My Event Name&apos; })
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber466">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber465">source</a></span></span>
     </span>
   </h3>
 
@@ -1429,7 +1459,7 @@ ingresse.event.deleteAdmin(21232, 654)
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber318">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber317">source</a></span></span>
     </span>
   </h3>
 
@@ -1531,7 +1561,7 @@ ingresse.event.deleteCategory(123, 321)
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber412">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber411">source</a></span></span>
     </span>
   </h3>
 
@@ -1634,7 +1664,7 @@ ingresse.event.deletePermission(21232, data)
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber170">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber169">source</a></span></span>
     </span>
   </h3>
 
@@ -1729,7 +1759,7 @@ ingresse.event.deletePoster(12)
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber341">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber340">source</a></span></span>
     </span>
   </h3>
 
@@ -1831,7 +1861,7 @@ ingresse.event.deleteSession(123, 321)
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber75">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber74">source</a></span></span>
     </span>
   </h3>
 
@@ -1926,7 +1956,7 @@ ingresse.event.getAttributes(20866)
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber53">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber52">source</a></span></span>
     </span>
   </h3>
 
@@ -2021,7 +2051,7 @@ ingresse.event.getById(200)
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber249">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber248">source</a></span></span>
     </span>
   </h3>
 
@@ -2111,7 +2141,7 @@ ingresse.event.getCategories()
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber295">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber294">source</a></span></span>
     </span>
   </h3>
 
@@ -2206,7 +2236,7 @@ ingresse.event.getCategory(12)
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber273">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber272">source</a></span></span>
     </span>
   </h3>
 
@@ -2296,7 +2326,7 @@ ingresse.event.getPrivateCategories()
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber362">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber361">source</a></span></span>
     </span>
   </h3>
 
@@ -2384,7 +2414,7 @@ ingresse.event.searchByProducer({ from: &apos;now-1d&apos; })
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber492">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber491">source</a></span></span>
     </span>
   </h3>
 
@@ -2500,7 +2530,7 @@ ingresse.event.staffAdd(21232, 123, &apos;producer&apos;)
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber517">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber516">source</a></span></span>
     </span>
   </h3>
 
@@ -2609,7 +2639,7 @@ ingresse.event.staffRemove(21232, 123, &apos;producer&apos;)
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber120">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber119">source</a></span></span>
     </span>
   </h3>
 
@@ -2711,7 +2741,7 @@ ingresse.event.update(200, { name: &apos;My Updated Event Name&apos; })
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber200">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber199">source</a></span></span>
     </span>
   </h3>
 
@@ -2820,7 +2850,7 @@ ingresse.event.updateAttributes(12, {
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber387">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber386">source</a></span></span>
     </span>
   </h3>
 
@@ -2923,7 +2953,7 @@ ingresse.event.updatePermission(21232, data)
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber148">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber147">source</a></span></span>
     </span>
   </h3>
 
@@ -3030,7 +3060,7 @@ ingresse.event.updatePoster(12, {
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber225">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/event.js.html#lineNumber224">source</a></span></span>
     </span>
   </h3>
 

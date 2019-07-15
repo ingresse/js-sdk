@@ -40,6 +40,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.transactions.js~ApiTransactions.html">ApiTransactions</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/api.user.js~ApiUser.html">ApiUser</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/event.js~Event.html">Event</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/search.event.js~EventSearch.html">EventSearch</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/apis/ticket.js~Ticket.html">Ticket</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-apis">apis</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">auth</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/auth/authentication.js~Authentication.html">Authentication</a></span></span></li>
@@ -49,6 +50,7 @@
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">helper</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/helper/cookie.js~Cookie.html">Cookie</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/helper/mixin.js~Mixin.html">Mixin</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-deepMerge">deepMerge</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-environments">environments</a></span></span></li>
 <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">request</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html">RequestHandler</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-basePrefix">basePrefix</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-transformResponse">transformResponse</a></span></span></li>
@@ -74,7 +76,7 @@
         <p>
           
           
-          <span data-ice="name"><span><a href="variable/index.html#static-variable-apis">apis</a></span></span><span data-ice="signature">: {&quot;ticket&quot;: <span>*</span>, &quot;event&quot;: <span>*</span>, &quot;api&quot;: <span>*</span>}</span>
+          <span data-ice="name"><span><a href="variable/index.html#static-variable-apis">apis</a></span></span><span data-ice="signature">: {&quot;api&quot;: <span>*</span>, &quot;event&quot;: <span>*</span>, &quot;eventSearch&quot;: <span>*</span>, &quot;ticket&quot;: <span>*</span>}</span>
         </p>
       </div>
       <div>
@@ -115,6 +117,33 @@
       
     </td>
   </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="variable/index.html#static-variable-environments">environments</a></span></span><span data-ice="signature">: {&quot;getURL&quot;: <span>*</span>}</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
 </tbody>
 </table>
 </div>
@@ -128,15 +157,15 @@
     
     
     
-    <span data-ice="name">apis</span><span data-ice="signature">: {&quot;ticket&quot;: <span>*</span>, &quot;event&quot;: <span>*</span>, &quot;api&quot;: <span>*</span>}</span>
+    <span data-ice="name">apis</span><span data-ice="signature">: {&quot;api&quot;: <span>*</span>, &quot;event&quot;: <span>*</span>, &quot;eventSearch&quot;: <span>*</span>, &quot;ticket&quot;: <span>*</span>}</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/apis/index.js.html#lineNumber6">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/index.js.html#lineNumber8">source</a></span></span>
     </span>
   </h3>
 
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {apis} from &apos;<span><a href="file/src/apis/index.js.html#lineNumber6">ingresse-sdk/src/apis/index.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {apis} from &apos;<span><a href="file/src/apis/index.js.html#lineNumber8">ingresse-sdk/src/apis/index.js</a></span>&apos;</code></pre></div>
   
   
   
@@ -180,6 +209,49 @@
   </h3>
 
   <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {auth} from &apos;<span><a href="file/src/auth/index.js.html#lineNumber5">ingresse-sdk/src/auth/index.js</a></span>&apos;</code></pre></div>
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-variable-environments">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span data-ice="name">environments</span><span data-ice="signature">: {&quot;getURL&quot;: <span>*</span>}</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/helper/environments.js.html#lineNumber22">source</a></span></span>
+    </span>
+  </h3>
+
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {environments} from &apos;<span><a href="file/src/helper/environments.js.html#lineNumber22">ingresse-sdk/src/helper/environments.js</a></span>&apos;</code></pre></div>
   
   
   
