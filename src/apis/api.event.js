@@ -299,6 +299,6 @@ export class ApiEvents extends RequestHandler {
      * @returns {Promise}
      */
     getBorderoReport(eventId, query = {}) {
-        return this.get(`/bordero/${eventId}`, query);
+        return this.get(`/event/${eventId}/bordero`, query);
     }
 }

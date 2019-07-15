@@ -207,7 +207,7 @@ describe('API Events', () => {
             event.getBorderoReport(eventId);
 
             chai.expect(event.get).to.have.been.called.with
-                .exactly(`/bordero/${eventId}`, {});
+                .exactly(`/event/${eventId}/bordero`, {});
         });
     });
 });

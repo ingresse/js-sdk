@@ -390,7 +390,7 @@ var ApiEvents = exports.ApiEvents = function (_RequestHandler) {
         value: function getBorderoReport(eventId) {
             var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
-            return this.get('/bordero/' + eventId, query);
+            return this.get('/event/' + eventId + '/bordero', query);
         }
     }]);
 
