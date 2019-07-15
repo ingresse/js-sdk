@@ -12,10 +12,6 @@ var _popsicle = require('popsicle');
 
 var _popsicle2 = _interopRequireDefault(_popsicle);
 
-var _popsicleStatus = require('popsicle-status');
-
-var _popsicleStatus2 = _interopRequireDefault(_popsicleStatus);
-
 var _plugins = require('./plugins');
 
 var _auth = require('../auth');

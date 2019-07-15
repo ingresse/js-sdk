@@ -76,4 +76,23 @@ export class ApiAuth extends RequestHandler {
     passwordStrength(password, query = {}) {
         return this.post('/password', { password: password }, query);
     }
+
+    /**
+     * Two Factor Authentication.
+     *
+     * @param {object} device  - User device.
+     * @param {object} otp     - Optional request parameters.
+     * @param {object} [query] - Optional request parameters.
+     * @param {object} headers - Optional request parameters.
+     *
+     * @returns {Promise}
+     */
+    twoFactor(device, otp, query = {}, headers = {}) {
+        return this.post('/two-factor', {}, query, Object.assign({}, headers, {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'X-INGRESSE-DEVICE': device,
+        }, !otp ? {} : {
+            'X-INGRESSE-OTP': otp,
+        }));
+    }
 }

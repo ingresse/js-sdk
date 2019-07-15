@@ -112,4 +112,27 @@ describe('API Auth', () => {
                 .exactly(`/password`, { password: 'password' }, {});
         });
     });
+
+    describe('twoFactor', () => {
+        it('should call this.post', () => {
+            auth.twoFactor('device-test');
+
+            chai.expect(auth.post).to.have.been.called.with
+                .exactly(`/two-factor`, {}, {}, {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'X-INGRESSE-DEVICE': 'device-test',
+            });
+        });
+
+        it('should call this.post', () => {
+            auth.twoFactor('device-test', 123);
+
+            chai.expect(auth.post).to.have.been.called.with
+                .exactly(`/two-factor`, {}, {}, {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'X-INGRESSE-DEVICE': 'device-test',
+                    'X-INGRESSE-OTP'   : 123,
+            });
+        });
+    });
 });
