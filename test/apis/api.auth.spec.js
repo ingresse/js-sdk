@@ -118,7 +118,7 @@ describe('API Auth', () => {
             auth.twoFactor('device-test');
 
             chai.expect(auth.post).to.have.been.called.with
-                .exactly(`/two-factor`, {}, {
+                .exactly(`/two-factor`, {}, {}, {
                     'Content-Type': 'application/x-www-form-urlencoded',
                     'X-INGRESSE-DEVICE': 'device-test',
             });
@@ -128,7 +128,7 @@ describe('API Auth', () => {
             auth.twoFactor('device-test', 123);
 
             chai.expect(auth.post).to.have.been.called.with
-                .exactly(`/two-factor`, {}, {
+                .exactly(`/two-factor`, {}, {}, {
                     'Content-Type': 'application/x-www-form-urlencoded',
                     'X-INGRESSE-DEVICE': 'device-test',
                     'X-INGRESSE-OTP'   : 123,

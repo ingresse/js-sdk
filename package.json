@@ -1,6 +1,6 @@
 {
   "name": "ingresse-sdk",
-  "version": "1.13.2",
+  "version": "1.13.3",
   "description": "Ingresse JS SDK for NodeJs and Browsers",
   "main": "index.js",
   "scripts": {
