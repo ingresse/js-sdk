@@ -124,8 +124,8 @@ var ApiAuth = exports.ApiAuth = function (_RequestHandler) {
          */
 
     }, {
-        key: 'passwordStregth',
-        value: function passwordStregth(password) {
+        key: 'passwordStrength',
+        value: function passwordStrength(password) {
             var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
             return this.post('/password', { password: password }, query);
