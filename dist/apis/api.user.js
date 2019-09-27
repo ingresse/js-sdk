@@ -317,6 +317,26 @@ var ApiUser = exports.ApiUser = function (_RequestHandler) {
             this.cookie.deleteCookie('token');
             this.cookie.deleteCookie('jwt');
         }
+
+        /**
+         * Search users by term
+         *
+         * @param {string} term
+         * @param {object} query
+         *
+         * @return {Promise}
+         */
+
+    }, {
+        key: 'search',
+        value: function search() {
+            var term = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+            var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+            return this.get('/users', Object.assign({
+                term: term
+            }, query));
+        }
     }]);
 
     return ApiUser;
