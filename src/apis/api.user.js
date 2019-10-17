@@ -236,4 +236,18 @@ export class ApiUser extends RequestHandler {
         this.cookie.deleteCookie('token');
         this.cookie.deleteCookie('jwt');
     }
+
+    /**
+     * Search users by term
+     *
+     * @param {string} term
+     * @param {object} query
+     *
+     * @return {Promise}
+     */
+    search(term = '', query = {}) {
+        return this.get('/users', Object.assign({
+            term,
+        }, query));
+    }
 }

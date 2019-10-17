@@ -332,5 +332,27 @@ describe('API User', () => {
             chai.expect(user.cookie.deleteCookie).to.have.been.called.exactly(3);
         });
     });
+
+    describe('search', () => {
+        it('should call this.get', () => {
+            let term = '';
+            user.search(term);
+
+            chai.expect(user.get).to.have.been.called.with
+                .exactly('/users', {
+                    term
+                });
+        });
+
+        it('should call this.get with query params', () => {
+            let term = 123;
+            user.search(term, query);
+
+            chai.expect(user.get).to.have.been.called.with
+                .exactly('/users', Object.assign({
+                    term: term,
+                }, query));
+        });
+    });
 });
 
