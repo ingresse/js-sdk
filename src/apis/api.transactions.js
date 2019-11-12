@@ -80,6 +80,17 @@ export class ApiTransactions extends RequestHandler {
     }
 
     /**
+     * Get review reasons
+     *
+     * @param {object} [query] - Require parameters.
+     *
+     * @returns {Promise}
+     */
+    getReviewReasons(query = {}) {
+        return this.get('/reviewReasons', query);
+    }
+
+    /**
      * Refund a transaction
      *
      * @param {string} id      - Transaction ID.

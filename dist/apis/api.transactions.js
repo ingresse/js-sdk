@@ -129,6 +129,22 @@ var ApiTransactions = exports.ApiTransactions = function (_RequestHandler) {
         }
 
         /**
+         * Get review reasons
+         *
+         * @param {object} [query] - Require parameters.
+         *
+         * @returns {Promise}
+         */
+
+    }, {
+        key: 'getReviewReasons',
+        value: function getReviewReasons() {
+            var query = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+            return this.get('/reviewReasons', query);
+        }
+
+        /**
          * Refund a transaction
          *
          * @param {string} id      - Transaction ID.
