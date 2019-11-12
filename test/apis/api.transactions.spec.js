@@ -125,20 +125,20 @@ describe('API transactions', () => {
         });
     });
 
-    describe('getReviewReasons', () => {
-        it('should call this.getReviewReasons', () => {
-            transactions.getReviewReasons();
+    describe('getDecisionReason', () => {
+        it('should call this.getDecisionReason', () => {
+            transactions.getDecisionReason();
 
             chai.expect(transactions.get).to.have.been.called.with
-                .exactly('/reviewReasons', {});
+                .exactly('/decisionReason', {});
         });
 
-        it('should call this.getReviewReasons with query params', () => {
+        it('should call this.getDecisionReason with query params', () => {
 
-            transactions.getReviewReasons(query);
+            transactions.getDecisionReason(query);
 
             chai.expect(transactions.get).to.have.been.called.with
-                .exactly('/reviewReasons', query);
+                .exactly('/decisionReason', query);
         });
     });
 

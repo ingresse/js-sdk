@@ -129,7 +129,7 @@ var ApiTransactions = exports.ApiTransactions = function (_RequestHandler) {
         }
 
         /**
-         * Get review reasons
+         * Get decision reason
          *
          * @param {object} [query] - Require parameters.
          *
@@ -137,11 +137,11 @@ var ApiTransactions = exports.ApiTransactions = function (_RequestHandler) {
          */
 
     }, {
-        key: 'getReviewReasons',
-        value: function getReviewReasons() {
+        key: 'getDecisionReason',
+        value: function getDecisionReason() {
             var query = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
-            return this.get('/reviewReasons', query);
+            return this.get('/decisionReason', query);
         }
 
         /**
