@@ -86,8 +86,8 @@ export class ApiTransactions extends RequestHandler {
      *
      * @returns {Promise}
      */
-    getDecisionReason(query = {}) {
-        return this.get('/decisionReason', query);
+    getDecisionReasons(query = {}) {
+        return this.get('/decisionReasons', query);
     }
 
     /**

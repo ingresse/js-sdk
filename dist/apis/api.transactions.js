@@ -137,11 +137,11 @@ var ApiTransactions = exports.ApiTransactions = function (_RequestHandler) {
          */
 
     }, {
-        key: 'getDecisionReason',
-        value: function getDecisionReason() {
+        key: 'getDecisionReasons',
+        value: function getDecisionReasons() {
             var query = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
-            return this.get('/decisionReason', query);
+            return this.get('/decisionReasons', query);
         }
 
         /**
