@@ -1,4 +1,5 @@
 import { RequestHandler } from '../request/handler';
+import { ApiCompany } from './api.company.js';
 import { ApiEvents } from './api.event.js';
 import { ApiUser } from './api.user.js';
 import { ApiTicketTransfer } from './api.ticket.js';
@@ -21,6 +22,7 @@ import { auth } from '../auth';
  */
 export class Api extends Mixin.inherit(
     ApiAuth,
+    ApiCompany,
     ApiEvents,
     ApiRecover,
     ApiTicketTransfer,
@@ -44,4 +46,3 @@ export class Api extends Mixin.inherit(
         this.settings = settings;
     }
 }
-
