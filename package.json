@@ -4,7 +4,6 @@
   "description": "Ingresse JS SDK for NodeJs and Browsers",
   "main": "index.js",
   "scripts": {
-    "prebuild": "npm run lint",
     "build": "babel ./src -d ./dist",
     "postbuild": "npm run browser",
     "prebrowser": "mkdir -p ./dist/browser",

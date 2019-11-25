@@ -7,6 +7,8 @@ exports.Api = undefined;
 
 var _handler = require('../request/handler');
 
+var _apiCompany = require('./api.company.js');
+
 var _apiEvent = require('./api.event.js');
 
 var _apiUser = require('./api.user.js');
@@ -65,4 +67,4 @@ var Api = exports.Api = function (_Mixin$inherit) {
     }
 
     return Api;
-}(_mixin.Mixin.inherit(_apiAuth.ApiAuth, _apiEvent.ApiEvents, _apiRecover.ApiRecover, _apiTicket.ApiTicketTransfer, _apiUser.ApiUser, _apiTransactions.ApiTransactions, _handler.RequestHandler));
+}(_mixin.Mixin.inherit(_apiAuth.ApiAuth, _apiCompany.ApiCompany, _apiEvent.ApiEvents, _apiRecover.ApiRecover, _apiTicket.ApiTicketTransfer, _apiUser.ApiUser, _apiTransactions.ApiTransactions, _handler.RequestHandler));
