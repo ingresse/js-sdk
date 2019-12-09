@@ -126,4 +126,22 @@ export class ApiTransactions extends RequestHandler {
     cancel(id, query = {}) {
         return this.post(`/shop/${id}/cancel`, null, query);
     }
+
+    /**
+     * Include chargeback transaction
+     *
+     * @param {string} id      - Transaction ID.
+     * @param {string} type    - Required.
+     * @param {string} reason  - Optional.
+     * @param {object} [query] - Optional request parameters.
+     *
+     * @return {Promise}
+     */
+    chargeback(id,  type = 'pre-chargeback', body = {}, query = {}) {
+        const _body = Object.assign({
+            type: type,
+        }, body);
+
+        return this.post(`/shop/${id}/chargeback`, _body, query);
+    }
 }
