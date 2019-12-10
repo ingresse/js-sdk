@@ -196,6 +196,31 @@ var ApiTransactions = exports.ApiTransactions = function (_RequestHandler) {
 
             return this.post('/shop/' + id + '/cancel', null, query);
         }
+
+        /**
+         * Include chargeback transaction
+         *
+         * @param {string} id      - Transaction ID.
+         * @param {string} type    - Required.
+         * @param {string} reason  - Optional.
+         * @param {object} [query] - Optional request parameters.
+         *
+         * @return {Promise}
+         */
+
+    }, {
+        key: 'chargeback',
+        value: function chargeback(id) {
+            var type = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'pre-chargeback';
+            var body = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+            var query = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
+
+            var _body = Object.assign({
+                type: type
+            }, body);
+
+            return this.post('/shop/' + id + '/chargeback', _body, query);
+        }
     }]);
 
     return ApiTransactions;

@@ -20,7 +20,7 @@
     "deploy": "NODE_DEBUG=gh-pages npm run predeploy"
   },
   "devDependencies": {
-    "babel-eslint": "^6.1.2",
+    "babel-eslint": "^7.2.3",
     "babel-preset-env": "^1.6.1",
     "babel-register": "^6.23.0",
     "browserify": "^14.1.0",
