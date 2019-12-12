@@ -125,6 +125,23 @@ describe('API transactions', () => {
         });
     });
 
+    describe('getDecisionReasons', () => {
+        it('should call this.getDecisionReasons', () => {
+            transactions.getDecisionReasons();
+
+            chai.expect(transactions.get).to.have.been.called.with
+                .exactly('/decisionReasons', {});
+        });
+
+        it('should call this.getDecisionReasons with query params', () => {
+
+            transactions.getDecisionReasons(query);
+
+            chai.expect(transactions.get).to.have.been.called.with
+                .exactly('/decisionReasons', query);
+        });
+    });
+
     describe('refund', () => {
         it('should call this.refund', () => {
             let id = '1234-55555-6666';

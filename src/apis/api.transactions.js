@@ -80,6 +80,17 @@ export class ApiTransactions extends RequestHandler {
     }
 
     /**
+     * Get decision reason
+     *
+     * @param {object} [query] - Require parameters.
+     *
+     * @returns {Promise}
+     */
+    getDecisionReasons(query = {}) {
+        return this.get('/decisionReasons', query);
+    }
+
+    /**
      * Refund a transaction
      *
      * @param {string} id      - Transaction ID.
