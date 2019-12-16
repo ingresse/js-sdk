@@ -39,6 +39,8 @@ var ApiUser = exports.ApiUser = function (_RequestHandler) {
     /**
      * Get user
      *
+     * @DEPRECATED: Use `getUserById` instead
+     *
      * @param {string|number} id - The user ID to get.
      * @param {object} [query]   - Optional request parameters.
      * @returns {Promise}
@@ -336,6 +338,23 @@ var ApiUser = exports.ApiUser = function (_RequestHandler) {
             return this.get('/users', Object.assign({
                 term: term
             }, query));
+        }
+
+        /**
+         * Get user by ID from
+         *
+         * @param {string} id
+         * @param {object} query
+         *
+         * @return {Promise}
+         */
+
+    }, {
+        key: 'getUserById',
+        value: function getUserById(id) {
+            var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+            return this.get('/users/' + id, query);
         }
     }]);
 

@@ -354,5 +354,28 @@ describe('API User', () => {
                 }, query));
         });
     });
+
+    describe('getUserById', () => {
+        it('should call this.get', () => {
+            let _id = '';
+
+            user.getUserById(_id);
+
+            chai.expect(user.get).to.have.been.called.with
+                .exactly(`/users/${_id}`, {});
+        });
+
+        it('should call this.get with query params', () => {
+            let _id    = '123';
+            let _query = {
+                test: 'request-param-test',
+            };
+
+            user.getUserById(_id, _query);
+
+            chai.expect(user.get).to.have.been.called.with
+                .exactly(`/users/${_id}`, _query);
+        });
+    });
 });
 

@@ -17,6 +17,8 @@ export class ApiUser extends RequestHandler {
     /**
      * Get user
      *
+     * @DEPRECATED: Use `getUserById` instead
+     *
      * @param {string|number} id - The user ID to get.
      * @param {object} [query]   - Optional request parameters.
      * @returns {Promise}
@@ -249,5 +251,17 @@ export class ApiUser extends RequestHandler {
         return this.get('/users', Object.assign({
             term,
         }, query));
+    }
+
+    /**
+     * Get user by ID from
+     *
+     * @param {string} id
+     * @param {object} query
+     *
+     * @return {Promise}
+     */
+    getUserById(id, query = {}) {
+        return this.get(`/users/${id}`, query);
     }
 }
