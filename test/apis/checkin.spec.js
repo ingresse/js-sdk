@@ -67,6 +67,7 @@ describe('Checkin API', () => {
 
     describe('getReport', () => {
         let checkin;
+        let eventId   = 21232;
         let sessionId = 1;
 
         beforeEach(() => {
@@ -75,17 +76,17 @@ describe('Checkin API', () => {
         });
 
         it('should getReport call this.get', () => {
-            checkin.getReport(sessionId);
+            checkin.getReport(eventId, sessionId);
 
-            chai.expect(checkin.get).to.have.been.called.with.exactly('/report/entrance', {
+            chai.expect(checkin.get).to.have.been.called.with.exactly(`/report/${eventId}/entrance`, {
                 session_id: sessionId,
             });
         });
 
         it('should getReport call this.get and accept query argument', () => {
-            checkin.getReport(sessionId, {limit: 10});
+            checkin.getReport(eventId, sessionId, {limit: 10});
 
-            chai.expect(checkin.get).to.have.been.called.with.exactly('/report/entrance', {
+            chai.expect(checkin.get).to.have.been.called.with.exactly(`/report/${eventId}/entrance`, {
                 session_id: sessionId,
                 limit: 10
             });

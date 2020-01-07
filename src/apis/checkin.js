@@ -40,8 +40,8 @@ export class Checkin extends RequestHandler {
      *
      * @return {Promise}
      */
-    getReport(sessionId, query = {}) {
-        return this.get('/report/entrance', Object.assign({
+    getReport(eventId, sessionId, query = {}) {
+        return this.get(`/report/${eventId}/entrance`, Object.assign({
             'session_id': sessionId,
         }, query));
     }
