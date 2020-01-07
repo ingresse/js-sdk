@@ -67,10 +67,10 @@ var Checkin = exports.Checkin = function (_RequestHandler) {
 
     _createClass(Checkin, [{
         key: 'getReport',
-        value: function getReport(sessionId) {
-            var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+        value: function getReport(eventId, sessionId) {
+            var query = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
 
-            return this.get('/report/entrance', Object.assign({
+            return this.get('/report/' + eventId + '/entrance', Object.assign({
                 'session_id': sessionId
             }, query));
         }
