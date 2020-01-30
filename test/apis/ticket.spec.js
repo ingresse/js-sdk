@@ -20,7 +20,7 @@ describe('Ticket API', () => {
 
         chai.expect(ticket.settings).to.be.an('object');
         chai.expect(ticket.settings.url).to.equal('https://ticket.ingresse.com');
-        chai.expect(ticket.settings.auth).to.equal(auth.Jwt.type());
+        chai.expect(ticket.settings.auth).to.equal(auth.Ingresse.type());
     });
 
     it('should accept custom settings', () => {

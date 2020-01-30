@@ -202,6 +202,13 @@ export class ApiUser extends RequestHandler {
         this.cookie.createCookie('token', token, 5);
         this.cookie.createCookie('jwt', jwt, 5);
 
+        if (this.auth) {
+            this.auth.authData = Object.assign({}, this.auth.authData, {
+                jwt      : jwt,
+                userToken: token,
+            });
+        }
+
         return this.credentials;
     }
 
@@ -237,6 +244,13 @@ export class ApiUser extends RequestHandler {
         this.cookie.deleteCookie('userId');
         this.cookie.deleteCookie('token');
         this.cookie.deleteCookie('jwt');
+
+        if (this.auth) {
+            this.auth.authData = Object.assign({}, this.auth.authData, {
+                jwt      : '',
+                userToken: '',
+            });
+        }
     }
 
     /**

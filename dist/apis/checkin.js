@@ -45,7 +45,7 @@ var Checkin = exports.Checkin = function (_RequestHandler) {
         _classCallCheck(this, Checkin);
 
         var settings = Object.assign({
-            auth: _auth.auth.Jwt.type(),
+            auth: _auth.auth.Ingresse.type(),
             resource: 'checkin'
         }, custom);
 

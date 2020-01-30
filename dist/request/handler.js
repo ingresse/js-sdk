@@ -40,10 +40,7 @@ var RequestHandler = exports.RequestHandler = function () {
         _classCallCheck(this, RequestHandler);
 
         this.settings = settings;
-
-        if (_auth.auth[settings.auth]) {
-            this.auth = new _auth.auth[settings.auth]();
-        }
+        this.auth = new _auth.auth.Ingresse();
 
         if (!this.settings.url) {
             this.setEnv(this.settings.env || this.settings.host);

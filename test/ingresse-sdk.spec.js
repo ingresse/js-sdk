@@ -22,7 +22,7 @@ describe('IngresseSdk', () => {
         });
 
         chai.expect(sdk.ticket.settings.url).to.equal('https://my.custom.ticket.url.com');
-        chai.expect(sdk.ticket.settings.auth).to.equal('Jwt');
+        chai.expect(sdk.ticket.settings.auth).to.equal('Ingresse');
     });
 
     it('should initializ only api that are defined in the api modules', () => {
@@ -61,10 +61,18 @@ describe('IngresseSdk', () => {
     it('should set custom token', () => {
         let sdk = new IngresseSdk();
 
-        chai.expect(sdk.ticket.auth.authData).to.be.equal('');
+        chai.expect(sdk.ticket.auth.authData).to.be.equal({
+            apiKey   : '',
+            jwt      : '',
+            userToken: '',
+        });
 
         sdk.ticket.auth.setToken('test');
 
-        chai.expect(sdk.ticket.auth.authData).to.be.equal('test');
+        chai.expect(sdk.ticket.auth.authData).to.be.equal({
+            apiKey   : '',
+            jwt      : '',
+            userToken: 'test',
+        });
     });
 });

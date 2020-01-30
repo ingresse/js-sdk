@@ -23,7 +23,7 @@ export class Checkin extends RequestHandler {
      */
     constructor(custom = {}) {
         let settings = Object.assign({
-            auth    : auth.Jwt.type(),
+            auth    : auth.Ingresse.type(),
             resource: 'checkin',
         }, custom);
 

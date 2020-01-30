@@ -21,7 +21,7 @@ describe('Event API', () => {
 
         chai.expect(event.settings).to.be.an('object');
         chai.expect(event.settings.url).to.equal('https://event.ingresse.com');
-        chai.expect(event.settings.auth).to.equal(auth.Jwt.type());
+        chai.expect(event.settings.auth).to.equal(auth.Ingresse.type());
     });
 
     it('should accept custom settings', () => {

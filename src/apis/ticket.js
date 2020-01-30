@@ -1,3 +1,4 @@
+/* Core Packages */
 import { RequestHandler } from '../request/handler';
 import { auth } from '../auth';
 
@@ -22,7 +23,7 @@ export class Ticket extends RequestHandler {
      */
     constructor(custom = {}) {
         let settings = Object.assign({
-            auth    : auth.Jwt.type(),
+            auth    : auth.Ingresse.type(),
             resource: 'ticket',
         }, custom);
 

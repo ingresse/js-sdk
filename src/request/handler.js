@@ -19,10 +19,7 @@ export class RequestHandler {
      */
     constructor(settings = {}) {
         this.settings = settings;
-
-        if (auth[settings.auth]) {
-            this.auth = new auth[settings.auth]();
-        }
+        this.auth     = new auth.Ingresse();
 
         if (!this.settings.url) {
             this.setEnv(this.settings.env || this.settings.host);

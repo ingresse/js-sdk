@@ -1,5 +1,6 @@
 /* Core Packages */
 import { RequestHandler } from '../request/handler';
+import { auth } from '../auth';
 
 /**
  * Ingresse Event's Search API
@@ -22,6 +23,7 @@ export class EventSearch extends RequestHandler {
      */
     constructor(custom = {}) {
         let settings = Object.assign({
+            auth    : auth.Ingresse.type(),
             resource: 'event-search',
         }, custom);
 

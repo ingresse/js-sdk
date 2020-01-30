@@ -25,6 +25,7 @@ var Ingresse = exports.Ingresse = function (_Authentication) {
 
         _this.authData = {
             apiKey: '',
+            jwt: '',
             userToken: ''
         };
         return _this;
@@ -47,11 +48,20 @@ var Ingresse = exports.Ingresse = function (_Authentication) {
          * @returns {object}
          */
         value: function getSettings() {
+            var apikey = encodeURI(this.getApiKey());
+            var jwt = encodeURI(this.getJWT());
+            var usertoken = encodeURI(this.getToken());
+            var headers = !jwt ? {} : {
+                'Authorization': 'Bearer ' + jwt
+            };
+            var query = {
+                apikey: apikey,
+                usertoken: usertoken
+            };
+
             return {
-                query: {
-                    'apikey': encodeURI(this.getApiKey()),
-                    'usertoken': encodeURI(this.getToken())
-                }
+                headers: headers,
+                query: query
             };
         }
 
@@ -66,20 +76,10 @@ var Ingresse = exports.Ingresse = function (_Authentication) {
 
     }, {
         key: 'setApiKey',
-        value: function setApiKey(apiKey) {
+        value: function setApiKey() {
+            var apiKey = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+
             this.authData.apiKey = apiKey;
-        }
-
-        /**
-         * @DEPRECATED
-         *
-         * Only compatibility purposes
-         */
-
-    }, {
-        key: 'setPublicKey',
-        value: function setPublicKey(apiKey) {
-            this.setApiKey(apiKey);
         }
 
         /**
@@ -98,77 +98,6 @@ var Ingresse = exports.Ingresse = function (_Authentication) {
         }
 
         /**
-         * @DEPRECATED
-         *
-         * Only compatibility purposes
-         */
-
-    }, {
-        key: 'getPublicKey',
-        value: function getPublicKey() {
-            return this.getApiKey();
-        }
-
-        /**
-         * @DEPRECATED
-         *
-         * Set Ingresse PrivateKey
-         *
-         * @param {string} privateKey - Ingresse PrivateKey
-         *
-         * @example
-         * ingresse.api.auth.setPrivateKey('12345678901234');
-         */
-
-    }, {
-        key: 'setPrivateKey',
-        value: function setPrivateKey(privateKey) {
-            this.authData.privateKey = privateKey;
-        }
-
-        /**
-         * @DEPRECATED
-         *
-         * Get Ingresse PrivateKey
-         *
-         * @returns {string}
-         *
-         * @example
-         * ingresse.api.auth.getPrivateKey();
-         */
-
-    }, {
-        key: 'getPrivateKey',
-        value: function getPrivateKey() {
-            return this.authData.privateKey || '';
-        }
-
-        /**
-         * Set Auth settings to 'Others Companies' validations
-         *
-         * @param {string} timestamp
-         * @param {string} signature
-         * @param {string} apiKey (optional)
-         *
-         * @example
-         * ingresse.api.auth.setAuth('2018-03-14T16:10:13Z', 'signature-generated-before', 'your-app-api-key--optional');
-         */
-
-    }, {
-        key: 'setAuth',
-        value: function setAuth(timestamp, signature, apiKey) {
-            if (!timestamp || !signature) {
-                return false;
-            }
-
-            this.authData.timestamp = timestamp;
-            this.authData.signature = signature;
-            this.setApiKey(apiKey || this.getApiKey());
-
-            return true;
-        }
-
-        /**
          * Set authentication token value
          *
          * @param {string} token - Token value
@@ -179,7 +108,9 @@ var Ingresse = exports.Ingresse = function (_Authentication) {
 
     }, {
         key: 'setToken',
-        value: function setToken(token) {
+        value: function setToken() {
+            var token = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+
             this.authData.userToken = token;
         }
 
@@ -196,6 +127,38 @@ var Ingresse = exports.Ingresse = function (_Authentication) {
         key: 'getToken',
         value: function getToken() {
             return this.authData.userToken || '';
+        }
+
+        /**
+         * Set authentication JWT value
+         *
+         * @param {string} jwt - JWT value
+         *
+         * @example
+         * ingresse.api.auth.setJWT('...');
+         */
+
+    }, {
+        key: 'setJWT',
+        value: function setJWT() {
+            var jwt = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+
+            this.authData.jwt = jwt;
+        }
+
+        /**
+         * Get authentication JWT value
+         *
+         * @returns {string}
+         *
+         * @example
+         * const jwt = ingresse.api.auth.getJWT();
+         */
+
+    }, {
+        key: 'getJWT',
+        value: function getJWT() {
+            return this.authData.jwt || '';
         }
     }], [{
         key: 'type',

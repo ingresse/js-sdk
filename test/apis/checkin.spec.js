@@ -21,7 +21,7 @@ describe('Checkin API', () => {
 
         chai.expect(checkin.settings).to.be.an('object');
         chai.expect(checkin.settings.url).to.equal('https://checkin.ingresse.com');
-        chai.expect(checkin.settings.auth).to.equal(auth.Jwt.type());
+        chai.expect(checkin.settings.auth).to.equal(auth.Ingresse.type());
     });
 
     it('should accept custom settings', () => {
@@ -72,6 +72,7 @@ describe('Checkin API', () => {
 
         beforeEach(() => {
             checkin = new Checkin();
+
             chai.spy.on(checkin, 'get');
         });
 

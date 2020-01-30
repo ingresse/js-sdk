@@ -6,6 +6,7 @@ export class Ingresse extends Authentication {
 
         this.authData = {
             apiKey   : '',
+            jwt      : '',
             userToken: '',
         };
     }
@@ -25,11 +26,20 @@ export class Ingresse extends Authentication {
      * @returns {object}
      */
     getSettings() {
+        const apikey    = encodeURI(this.getApiKey());
+        const jwt       = encodeURI(this.getJWT());
+        const usertoken = encodeURI(this.getToken());
+        const headers   = (!jwt ? {} : {
+            'Authorization': `Bearer ${jwt}`,
+        });
+        const query     = {
+            apikey,
+            usertoken,
+        };
+
         return {
-            query: {
-                'apikey'   : encodeURI(this.getApiKey()),
-                'usertoken': encodeURI(this.getToken()),
-            },
+            headers: headers,
+            query  : query,
         };
     }
 
@@ -41,17 +51,8 @@ export class Ingresse extends Authentication {
      * @example
      * ingresse.api.auth.setApiKey('12345678901234');
      */
-    setApiKey(apiKey) {
+    setApiKey(apiKey = '') {
         this.authData.apiKey = apiKey;
-    }
-
-    /**
-     * @DEPRECATED
-     *
-     * Only compatibility purposes
-     */
-    setPublicKey(apiKey) {
-        this.setApiKey(apiKey);
     }
 
     /**
@@ -67,65 +68,6 @@ export class Ingresse extends Authentication {
     }
 
     /**
-     * @DEPRECATED
-     *
-     * Only compatibility purposes
-     */
-    getPublicKey() {
-        return this.getApiKey();
-    }
-
-    /**
-     * @DEPRECATED
-     *
-     * Set Ingresse PrivateKey
-     *
-     * @param {string} privateKey - Ingresse PrivateKey
-     *
-     * @example
-     * ingresse.api.auth.setPrivateKey('12345678901234');
-     */
-    setPrivateKey(privateKey) {
-        this.authData.privateKey = privateKey;
-    }
-
-    /**
-     * @DEPRECATED
-     *
-     * Get Ingresse PrivateKey
-     *
-     * @returns {string}
-     *
-     * @example
-     * ingresse.api.auth.getPrivateKey();
-     */
-    getPrivateKey() {
-        return this.authData.privateKey || '';
-    }
-
-    /**
-     * Set Auth settings to 'Others Companies' validations
-     *
-     * @param {string} timestamp
-     * @param {string} signature
-     * @param {string} apiKey (optional)
-     *
-     * @example
-     * ingresse.api.auth.setAuth('2018-03-14T16:10:13Z', 'signature-generated-before', 'your-app-api-key--optional');
-     */
-    setAuth(timestamp, signature, apiKey) {
-        if (!timestamp || !signature) {
-            return false;
-        }
-
-        this.authData.timestamp = timestamp;
-        this.authData.signature = signature;
-        this.setApiKey(apiKey || this.getApiKey());
-
-        return true;
-    }
-
-    /**
      * Set authentication token value
      *
      * @param {string} token - Token value
@@ -133,7 +75,7 @@ export class Ingresse extends Authentication {
      * @example
      * ingresse.api.auth.setToken('12345-31t4v1d431t4v1d4d3c40....');
      */
-    setToken(token) {
+    setToken(token = '') {
         this.authData.userToken = token;
     }
 
@@ -147,5 +89,29 @@ export class Ingresse extends Authentication {
      */
     getToken() {
         return this.authData.userToken || '';
+    }
+
+    /**
+     * Set authentication JWT value
+     *
+     * @param {string} jwt - JWT value
+     *
+     * @example
+     * ingresse.api.auth.setJWT('...');
+     */
+    setJWT(jwt = '') {
+        this.authData.jwt = jwt;
+    }
+
+    /**
+     * Get authentication JWT value
+     *
+     * @returns {string}
+     *
+     * @example
+     * const jwt = ingresse.api.auth.getJWT();
+     */
+    getJWT() {
+        return (this.authData.jwt || '');
     }
 }
