@@ -1,6 +1,5 @@
 /* Core Packages */
 import { RequestHandler } from '../request/handler';
-import { auth } from '../auth';
 
 /**
  * Ingresse Checkin API
@@ -23,7 +22,6 @@ export class Checkin extends RequestHandler {
      */
     constructor(custom = {}) {
         let settings = Object.assign({
-            auth    : auth.Ingresse.type(),
             resource: 'checkin',
         }, custom);
 

@@ -1,6 +1,5 @@
 /* Core Packages */
 import { RequestHandler } from '../request/handler';
-import { auth } from '../auth';
 
 /**
  * Ingresse Event's API
@@ -23,7 +22,6 @@ export class Event extends RequestHandler {
      */
     constructor(custom = {}) {
         let settings = Object.assign({
-            auth    : auth.Ingresse.type(),
             resource: 'event',
         }, custom);
 

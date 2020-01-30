@@ -1,6 +1,5 @@
 /* Core Packages */
 import { RequestHandler } from '../request/handler';
-import { auth } from '../auth';
 
 /**
  * Ingresse Ticket's API
@@ -23,7 +22,6 @@ export class Ticket extends RequestHandler {
      */
     constructor(custom = {}) {
         let settings = Object.assign({
-            auth    : auth.Ingresse.type(),
             resource: 'ticket',
         }, custom);
 

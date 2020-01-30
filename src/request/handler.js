@@ -3,7 +3,7 @@ import popsicle from 'popsicle';
 import { plugins } from 'popsicle';
 
 import { basePrefix, transformResponse } from './plugins';
-import { auth } from '../auth';
+import { Ingresse } from '../auth/ingresse';
 import { deepMerge } from '../helper';
 import { environments } from '../helper/environments';
 
@@ -11,15 +11,16 @@ import { environments } from '../helper/environments';
  * Base request handler for all the API's
  * with `get`, `post`, `put` and `delete` methods
  */
-export class RequestHandler {
+export class RequestHandler extends Ingresse {
     /**
      * Initialize request handler
      *
      * @param {object} settings - Settings
      */
     constructor(settings = {}) {
+        super(settings);
+
         this.settings = settings;
-        this.auth     = new auth.Ingresse();
 
         if (!this.settings.url) {
             this.setEnv(this.settings.env || this.settings.host);
