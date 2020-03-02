@@ -1,17 +1,17 @@
 
 import chai from 'chai';
-import {ApiCoupon} from '../../src/apis/api.coupon';
-import {RequestHandler} from '../../src/request/handler';
+import { Coupon } from '../../src/apis/coupon';
+import { RequestHandler } from '../../src/request/handler';
 import spies from 'chai-spies';
 
 chai.use(spies);
 
 
-describe('API Coupon', () => {
+describe('Coupon MS', () => {
     let coupon, query, body;
 
     beforeEach(() => {
-        coupon = new ApiCoupon();
+        coupon = new Coupon();
         chai.spy.on(coupon, 'get');
         chai.spy.on(coupon, 'post');
         chai.spy.on(coupon, 'put');
@@ -19,7 +19,7 @@ describe('API Coupon', () => {
     });
 
     it('should instantiate the class', () => {
-        chai.expect(coupon).to.be.an.instanceof(ApiCoupon);
+        chai.expect(coupon).to.be.an.instanceof(Coupon);
         chai.expect(coupon).to.be.an.instanceof(RequestHandler);
     });
 

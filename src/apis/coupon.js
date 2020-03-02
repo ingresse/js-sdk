@@ -1,9 +1,25 @@
-import {RequestHandler} from '../request/handler';
+import { RequestHandler } from '../request/handler';
+import { auth } from '../auth';
 
 /**
  * Ingresse Coupon API
  */
-export class ApiCoupon extends RequestHandler {
+export class Coupon extends RequestHandler {
+    /**
+     * Coupon
+     *
+     * @param {object} [custom] - Initialize Coupon settings.
+     */
+    constructor(custom = {}) {
+        let settings = Object.assign({
+            auth    : auth.Jwt.type(),
+            resource: 'coupon',
+        }, custom);
+
+        super(settings);
+
+        this.settings = settings;
+    }
 
     /**
      * Get a list of coupon
