@@ -71,7 +71,8 @@ export class RequestHandler {
         this.setUrl(
             environments.getURL(
                 this.settings.resource,
-                env
+                env,
+                this.settings.protocol,
             )
         );
     }

@@ -96,7 +96,7 @@ var RequestHandler = exports.RequestHandler = function () {
     }, {
         key: 'setEnv',
         value: function setEnv(env) {
-            this.setUrl(_environments.environments.getURL(this.settings.resource, env));
+            this.setUrl(_environments.environments.getURL(this.settings.resource, env, this.settings.protocol));
         }
 
         /**
