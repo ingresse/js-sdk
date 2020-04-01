@@ -4,12 +4,6 @@ about: Solicitar a atualização/modificação de uma funcionalidade existente
 
 ---
 
-<!--
-PLEASE HELP US PROCESS GITHUB ISSUES FASTER BY PROVIDING THE FOLLOWING INFORMATION.
-
-ISSUES MISSING IMPORTANT INFORMATION MAY BE CLOSED WITHOUT INVESTIGATION.
--->
-
 # Descrição
 Curta descrição sobre a funcionalidade à ser modificada.
 Inserir os links para mocks, se existentes:
@@ -21,7 +15,7 @@ Inserir os links para mocks, se existentes:
 (Se existentes)
 
 ## Motivação
-Resumidamente, explicar o motivo da solicitação. 
+Resumidamente, explicar o motivo da solicitação.
 (Se necessário)
 
 ## Comportamento Atual

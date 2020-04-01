@@ -1,6 +1,6 @@
 # Ingresse JavaScript SDK
 
-[![CircleCI](https://circleci.com/gh/ingresse/js-sdk/tree/master.svg?style=svg&circle-token=b929d3fd883cf90293e1e83f891d1b278112c331)](https://circleci.com/gh/ingresse/js-sdk/tree/master)
+![SDK CI](https://github.com/ingresse/js-sdk/workflows/SDK/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/github/ingresse/ingresse-js-sdk/badge.svg?t=BDk7sD)](https://coveralls.io/github/ingresse/ingresse-js-sdk)
 
 

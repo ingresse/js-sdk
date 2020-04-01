@@ -4,12 +4,6 @@ about: Solicitar a inclusão de uma nova funcionalidade
 
 ---
 
-<!--
-PLEASE HELP US PROCESS GITHUB ISSUES FASTER BY PROVIDING THE FOLLOWING INFORMATION.
-
-ISSUES MISSING IMPORTANT INFORMATION MAY BE CLOSED WITHOUT INVESTIGATION.
--->
-
 # Descrição
 Curta descrição sobre a funcionalidade à ser requisitada.
 Inserir os links para mocks, se existentes:

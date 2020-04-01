@@ -4,12 +4,6 @@ about: Relatar um problema para nos ajudar a melhorar o projeto
 
 ---
 
-<!--
-PLEASE HELP US PROCESS GITHUB ISSUES FASTER BY PROVIDING THE FOLLOWING INFORMATION.
-
-ISSUES MISSING IMPORTANT INFORMATION MAY BE CLOSED WITHOUT INVESTIGATION.
--->
-
 # Relato do Bug
 Curta descrição sobre o problema que está acontecendo.
 
