@@ -63,6 +63,7 @@ var Coupon = exports.Coupon = function (_RequestHandler) {
         /**
          * Get a coupon
          *
+         * @param {string} id      - Coupon ID.
          * @param {object} [query] - Optional request parameters.
          * @returns {Promise}
          */
@@ -78,6 +79,7 @@ var Coupon = exports.Coupon = function (_RequestHandler) {
         /**
          * Create the coupon
          *
+         * @param {object} body    - Coupon data.
          * @param {object} [query] - Optional request parameters.
          * @returns {Promise}
          */
@@ -93,7 +95,8 @@ var Coupon = exports.Coupon = function (_RequestHandler) {
         /**
          * Update the coupon
          *
-         * @param {string} id - Transaction ID.
+         * @param {string} id      - Transaction ID.
+         * @param {object} body    - Coupon data.
          * @param {object} [query] - Optional request parameters.
          * @returns {Promise}
          */
@@ -109,7 +112,7 @@ var Coupon = exports.Coupon = function (_RequestHandler) {
         /**
          * Delete the coupon
          *
-         * @param {string} id - Transaction ID.
+         * @param {string} id      - Transaction ID.
          * @param {object} [query] - Optional request parameters.
          * @returns {Promise}
          */

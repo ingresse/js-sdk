@@ -202,7 +202,7 @@ var ApiTransactions = exports.ApiTransactions = function (_RequestHandler) {
          *
          * @param {string} id      - Transaction ID.
          * @param {string} type    - Required.
-         * @param {string} reason  - Optional.
+         * @param {string} [body]  - Optional.
          * @param {object} [query] - Optional request parameters.
          *
          * @return {Promise}

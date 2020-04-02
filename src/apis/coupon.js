@@ -34,6 +34,7 @@ export class Coupon extends RequestHandler {
     /**
      * Get a coupon
      *
+     * @param {string} id      - Coupon ID.
      * @param {object} [query] - Optional request parameters.
      * @returns {Promise}
      */
@@ -44,6 +45,7 @@ export class Coupon extends RequestHandler {
     /**
      * Create the coupon
      *
+     * @param {object} body    - Coupon data.
      * @param {object} [query] - Optional request parameters.
      * @returns {Promise}
      */
@@ -54,7 +56,8 @@ export class Coupon extends RequestHandler {
     /**
      * Update the coupon
      *
-     * @param {string} id - Transaction ID.
+     * @param {string} id      - Transaction ID.
+     * @param {object} body    - Coupon data.
      * @param {object} [query] - Optional request parameters.
      * @returns {Promise}
      */
@@ -65,7 +68,7 @@ export class Coupon extends RequestHandler {
     /**
      * Delete the coupon
      *
-     * @param {string} id - Transaction ID.
+     * @param {string} id      - Transaction ID.
      * @param {object} [query] - Optional request parameters.
      * @returns {Promise}
      */
