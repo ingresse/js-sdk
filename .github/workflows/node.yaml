@@ -1,0 +1,46 @@
+name: SDK
+
+on: ["push", "pull_request"]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [13.x]
+
+    steps:
+        - uses: actions/checkout@v1
+
+        - name: Environment | NodeJS ${{ matrix.node-version }}
+          uses: actions/setup-node@v1
+          with:
+            node-version: ${{ matrix.node-version }}
+
+        - name: Project | Dependencies
+          run: |
+            npm install
+
+        - name: Project | Tests
+          run: |
+            npm test
+
+        - name: Project | Tests | Archive code coverage results
+          uses: actions/upload-artifact@v1
+          with:
+            name: ingresse-sdk-coverage
+            path: ./coverage
+
+        - name: Project | Tests | Coveralls Report Parallel
+          uses: coverallsapp/github-action@master
+          with:
+            github-token: ${{ secrets.GITHUB_TOKEN }}
+            parallel: true
+            path-to-lcov: ./coverage/lcov.info
+
+        - name: Project | Tests | Coveralls Report Finished
+          uses: coverallsapp/github-action@master
+          with:
+            github-token: ${{ secrets.GITHUB_TOKEN }}
+            parallel-finished: true
