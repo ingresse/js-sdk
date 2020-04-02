@@ -1,7 +1,7 @@
 {
-  "coverage": "86.3%",
-  "expectCount": 168,
-  "actualCount": 145,
+  "coverage": "86.41%",
+  "expectCount": 184,
+  "actualCount": 159,
   "files": {
     "src/apis/api.js": {
       "expectCount": 3,
@@ -31,17 +31,17 @@
       "undocumentLines": []
     },
     "src/apis/api.transactions.js": {
-      "expectCount": 9,
-      "actualCount": 9,
+      "expectCount": 11,
+      "actualCount": 11,
       "undocumentLines": []
     },
     "src/apis/api.user.js": {
-      "expectCount": 17,
-      "actualCount": 14,
+      "expectCount": 19,
+      "actualCount": 16,
       "undocumentLines": [
         14,
         13,
-        126
+        128
       ]
     },
     "src/auth/authentication.js": {
@@ -49,12 +49,26 @@
       "actualCount": 3,
       "undocumentLines": []
     },
+    "src/apis/checkin.js": {
+      "expectCount": 4,
+      "actualCount": 3,
+      "undocumentLines": [
+        32
+      ]
+    },
     "src/helper/cookie.js": {
       "expectCount": 6,
       "actualCount": 4,
       "undocumentLines": [
         7,
         6
+      ]
+    },
+    "src/apis/coupon.js": {
+      "expectCount": 8,
+      "actualCount": 7,
+      "undocumentLines": [
+        21
       ]
     },
     "src/apis/event.js": {
@@ -117,7 +131,7 @@
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [
-        8
+        10
       ]
     },
     "src/auth/index.js": {

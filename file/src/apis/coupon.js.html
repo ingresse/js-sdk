@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../">
-  <title data-ice="title">src/request/plugins.js | Ingresse JS SDK API Document</title>
+  <title data-ice="title">src/apis/coupon.js | Ingresse JS SDK API Document</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -60,50 +60,85 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/request/plugins.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
-* Rquest middleware to format url with a base URL
-*
-* @params {string} base - Base URL for all requests.
-* @returns {function}
-*/
-export var basePrefix = (base = &apos;&apos;) =&gt; {
-    return (request, next) =&gt; {
-        let path = request.url.replace(/^\//, &apos;&apos;);
-        base = base.replace(/\/$/, &apos;&apos;);
-
-        request.url = `${base}/${path}`;
-
-        return next();
-    };
-};
+<div class="content" data-ice="content"><h1 data-ice="title">src/apis/coupon.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { RequestHandler } from &apos;../request/handler&apos;;
+import { auth } from &apos;../auth&apos;;
 
 /**
- * Request middleware to handle response from api
- * and decide based on the status code if the
- * request was a success or an error
- *
- * @params {number} [lower=200]  - Lower status code number.
- * @params {number} [higher=299] - Higher status code number.
- * @returns {function}
+ * Ingresse Coupon API
  */
-export var transformResponse = (lower = 200, higher = 299) =&gt; {
-    return (request, next) =&gt; {
-        return next().then((response) =&gt; {
-            if (response.status &gt;= lower &amp;&amp;
-                response.status &lt;= higher) {
+export class Coupon extends RequestHandler {
+    /**
+     * Coupon
+     *
+     * @param {object} [custom] - Initialize Coupon settings.
+     */
+    constructor(custom = {}) {
+        let settings = Object.assign({
+            auth    : auth.Jwt.type(),
+            resource: &apos;coupon&apos;,
+        }, custom);
 
-                return response.body;
-            }
+        super(settings);
 
-            var error = request.error(&apos;&apos;, &apos;EINVALIDSTATUS&apos;);
-            error.body = response.body;
+        this.settings = settings;
+    }
 
-            throw error.body;
-        });
-    };
-};
+    /**
+     * Get a list of coupon
+     *
+     * @param {object} [query] - Optional request parameters.
+     * @returns {Promise}
+     */
+    getCoupons(query = {}) {
+        return this.get(&apos;/coupons&apos;, query);
+    }
 
+    /**
+     * Get a coupon
+     *
+     * @param {string} id      - Coupon ID.
+     * @param {object} [query] - Optional request parameters.
+     * @returns {Promise}
+     */
+    getCoupon(id, query = {}) {
+        return this.get(`/coupons/${id}`, query);
+    }
+
+    /**
+     * Create the coupon
+     *
+     * @param {object} body    - Coupon data.
+     * @param {object} [query] - Optional request parameters.
+     * @returns {Promise}
+     */
+    createCoupon(body, query = {}) {
+        return this.post(&apos;/coupons&apos;, body, query);
+    }
+
+    /**
+     * Update the coupon
+     *
+     * @param {string} id      - Transaction ID.
+     * @param {object} body    - Coupon data.
+     * @param {object} [query] - Optional request parameters.
+     * @returns {Promise}
+     */
+    updateCoupon(id, body, query = {}) {
+        return this.put(`/coupons/${id}`, body, query);
+    }
+
+    /**
+     * Delete the coupon
+     *
+     * @param {string} id      - Transaction ID.
+     * @param {object} [query] - Optional request parameters.
+     * @returns {Promise}
+     */
+    deleteCoupon(id, query = {}) {
+        return this.delete(`/coupons/${id}`, query);
+    }
+}
 </code></pre>
 
 </div>

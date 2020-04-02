@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../">
-  <title data-ice="title">RequestHandler | Ingresse JS SDK API Document</title>
+  <title data-ice="title">Coupon | Ingresse JS SDK API Document</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -61,24 +61,24 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {RequestHandler} from &apos;<span><a href="file/src/request/handler.js.html#lineNumber14">ingresse-sdk/src/request/handler.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import {Coupon} from &apos;<span><a href="file/src/apis/coupon.js.html#lineNumber7">ingresse-sdk/src/apis/coupon.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/src/request/handler.js.html#lineNumber14">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/apis/coupon.js.html#lineNumber7">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
-  <h1 data-ice="name">RequestHandler</h1>
+  <h1 data-ice="name">Coupon</h1>
 
   
 
   
   
+  <div class="flat-list" data-ice="extendsChain"><h4>Extends:</h4><div><span><a href="class/src/request/handler.js~RequestHandler.html">RequestHandler</a></span> &#x2192; Coupon</div></div>
   
-  <div class="flat-list" data-ice="directSubclass"><h4>Direct Subclass:</h4><div><span><a href="class/src/apis/api.auth.js~ApiAuth.html">ApiAuth</a></span>, <span><a href="class/src/apis/api.event.js~ApiEvents.html">ApiEvents</a></span>, <span><a href="class/src/apis/api.recover.js~ApiRecover.html">ApiRecover</a></span>, <span><a href="class/src/apis/api.ticket.js~ApiTicketTransfer.html">ApiTicketTransfer</a></span>, <span><a href="class/src/apis/api.transactions.js~ApiTransactions.html">ApiTransactions</a></span>, <span><a href="class/src/apis/api.user.js~ApiUser.html">ApiUser</a></span>, <span><a href="class/src/apis/checkin.js~Checkin.html">Checkin</a></span>, <span><a href="class/src/apis/coupon.js~Coupon.html">Coupon</a></span>, <span><a href="class/src/apis/event.js~Event.html">Event</a></span>, <span><a href="class/src/apis/search.event.js~EventSearch.html">EventSearch</a></span>, <span><a href="class/src/apis/ticket.js~Ticket.html">Ticket</a></span></div></div>
   
   
   
@@ -87,8 +87,7 @@
 
   
   
-  <div class="description" data-ice="description"><p>Base request handler for all the API&apos;s
-with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</code> methods</p>
+  <div class="description" data-ice="description"><p>Ingresse Coupon API</p>
 </div>
   
 
@@ -120,13 +119,13 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
         <p>
           
           
-          <span data-ice="name"><span><a href="class/src/request/handler.js~RequestHandler.html#instance-constructor-constructor">constructor</a></span></span><span data-ice="signature">(settings: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>)</span>
+          <span data-ice="name"><span><a href="class/src/apis/coupon.js~Coupon.html#instance-constructor-constructor">constructor</a></span></span><span data-ice="signature">(custom: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>)</span>
         </p>
       </div>
       <div>
         
         
-        <div data-ice="description"><p>Initialize request handler</p>
+        <div data-ice="description"><p>Coupon</p>
 </div>
       </div>
     </td>
@@ -140,6 +139,188 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
 </div>
 <div data-ice="memberSummary"><h2>Member Summary</h2><table class="summary" data-ice="summary">
   <thead><tr><td data-ice="title" colspan="3">Public Members</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/apis/coupon.js~Coupon.html#instance-member-settings">settings</a></span></span><span data-ice="signature">: <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+<div data-ice="methodSummary"><h2>Method Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Public Methods</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/apis/coupon.js~Coupon.html#instance-method-createCoupon">createCoupon</a></span></span><span data-ice="signature">(body: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Create the coupon</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/apis/coupon.js~Coupon.html#instance-method-deleteCoupon">deleteCoupon</a></span></span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Delete the coupon</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/apis/coupon.js~Coupon.html#instance-method-getCoupon">getCoupon</a></span></span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Get a coupon</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/apis/coupon.js~Coupon.html#instance-method-getCoupons">getCoupons</a></span></span><span data-ice="signature">(query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Get a list of coupon</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          <span data-ice="name"><span><a href="class/src/apis/coupon.js~Coupon.html#instance-method-updateCoupon">updateCoupon</a></span></span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, body: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>Update the coupon</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+<div class="inherited-summary" data-ice="inheritedSummary"><h2>Inherited Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3"><span class="toggle closed"></span> From class <span><a href="class/src/request/handler.js~RequestHandler.html">RequestHandler</a></span></td></tr></thead>
   <tbody>
   
   <tr data-ice="target">
@@ -196,14 +377,7 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
       
     </td>
   </tr>
-</tbody>
-</table>
-</div>
-<div data-ice="methodSummary"><h2>Method Summary</h2><table class="summary" data-ice="summary">
-  <thead><tr><td data-ice="title" colspan="3">Public Methods</td></tr></thead>
-  <tbody>
-  
-  <tr data-ice="target">
+<tr data-ice="target">
     <td>
       <span class="access" data-ice="access">public</span>
       
@@ -433,8 +607,6 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
 
 
 
-
-
 <div data-ice="constructorDetails"><h2 data-ice="title">Public Constructors</h2>
 
 <div class="detail" data-ice="detail">
@@ -445,21 +617,21 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
     
     
     
-    <span data-ice="name">constructor</span><span data-ice="signature">(settings: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>)</span>
+    <span data-ice="name">constructor</span><span data-ice="signature">(custom: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>)</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/request/handler.js.html#lineNumber20">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/coupon.js.html#lineNumber13">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Initialize request handler</p>
+  <div data-ice="description"><p>Coupon</p>
 </div>
 
-  
+  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/request/handler.js~RequestHandler.html#instance-constructor-constructor">RequestHandler#constructor</a></span></div>
 
   <div data-ice="properties"><div data-ice="properties">
   <h4 data-ice="title">Params:</h4>
@@ -470,10 +642,10 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">settings</td>
+      <td data-ice="name" data-depth="0">custom</td>
       <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"><p>Settings</p>
+      <td data-ice="appendix"><ul><li>optional</li></ul></td>
+      <td data-ice="description"><p>Initialize Coupon settings.</p>
 </td>
     </tr>
 </tbody>
@@ -502,49 +674,6 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
 <div data-ice="memberDetails"><h2 data-ice="title">Public Members</h2>
 
 <div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-member-auth">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    
-    <span data-ice="name">auth</span><span data-ice="signature">: <span>*</span></span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/request/handler.js.html#lineNumber24">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  
-
-  
-
-  <div data-ice="properties">
-</div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
   <h3 data-ice="anchor" id="instance-member-settings">
     <span class="access" data-ice="access">public</span>
     
@@ -556,7 +685,7 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/request/handler.js.html#lineNumber21">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/coupon.js.html#lineNumber21">source</a></span></span>
     </span>
   </h3>
 
@@ -565,7 +694,7 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
   
   
 
-  
+  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/request/handler.js~RequestHandler.html#instance-member-settings">RequestHandler#settings</a></span></div>
 
   <div data-ice="properties">
 </div>
@@ -591,25 +720,25 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
 <div data-ice="methodDetails"><h2 data-ice="title">Public Methods</h2>
 
 <div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-method-delete">
+  <h3 data-ice="anchor" id="instance-method-createCoupon">
     <span class="access" data-ice="access">public</span>
     
     
     
     
     
-    <span data-ice="name">delete</span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, headers: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+    <span data-ice="name">createCoupon</span><span data-ice="signature">(body: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/request/handler.js.html#lineNumber179">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/coupon.js.html#lineNumber52">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Delete resource</p>
+  <div data-ice="description"><p>Create the coupon</p>
 </div>
 
   
@@ -623,10 +752,10 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">path</td>
-      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="name" data-depth="0">body</td>
+      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>Request delete to endpoint e.g. /api-path/1</p>
+      <td data-ice="description"><p>Coupon data.</p>
 </td>
     </tr>
 <tr data-ice="property" data-depth="0">
@@ -634,20 +763,6 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
       <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
       <td data-ice="description"><p>Optional request parameters.</p>
-</td>
-    </tr>
-<tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">data</td>
-      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
-      <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"><p>Data to be deleted.</p>
-</td>
-    </tr>
-<tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">headers</td>
-      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
-      <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"><p>Optional request headers.</p>
 </td>
     </tr>
 </tbody>
@@ -685,25 +800,25 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
   
 </div>
 <div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-method-get">
+  <h3 data-ice="anchor" id="instance-method-deleteCoupon">
     <span class="access" data-ice="access">public</span>
     
     
     
     
     
-    <span data-ice="name">get</span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, headers: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+    <span data-ice="name">deleteCoupon</span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/request/handler.js.html#lineNumber114">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/coupon.js.html#lineNumber75">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Get resource</p>
+  <div data-ice="description"><p>Delete the coupon</p>
 </div>
 
   
@@ -717,10 +832,10 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">path</td>
+      <td data-ice="name" data-depth="0">id</td>
       <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>Request get to endpoint e.g. /api-path/1</p>
+      <td data-ice="description"><p>Transaction ID.</p>
 </td>
     </tr>
 <tr data-ice="property" data-depth="0">
@@ -728,13 +843,6 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
       <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
       <td data-ice="description"><p>Optional request parameters.</p>
-</td>
-    </tr>
-<tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">headers</td>
-      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
-      <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"><p>Optional request headers.</p>
 </td>
     </tr>
 </tbody>
@@ -772,25 +880,25 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
   
 </div>
 <div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-method-post">
+  <h3 data-ice="anchor" id="instance-method-getCoupon">
     <span class="access" data-ice="access">public</span>
     
     
     
     
     
-    <span data-ice="name">post</span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, headers: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+    <span data-ice="name">getCoupon</span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/request/handler.js.html#lineNumber135">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/coupon.js.html#lineNumber41">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Post resource</p>
+  <div data-ice="description"><p>Get a coupon</p>
 </div>
 
   
@@ -804,17 +912,10 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">path</td>
+      <td data-ice="name" data-depth="0">id</td>
       <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>Request post to endpoint e.g. /api-path</p>
-</td>
-    </tr>
-<tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">data</td>
-      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"><p>Data to be posted.</p>
+      <td data-ice="description"><p>Coupon ID.</p>
 </td>
     </tr>
 <tr data-ice="property" data-depth="0">
@@ -822,13 +923,6 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
       <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
       <td data-ice="description"><p>Optional request parameters.</p>
-</td>
-    </tr>
-<tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">headers</td>
-      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
-      <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"><p>Optional request headers.</p>
 </td>
     </tr>
 </tbody>
@@ -866,25 +960,25 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
   
 </div>
 <div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-method-put">
+  <h3 data-ice="anchor" id="instance-method-getCoupons">
     <span class="access" data-ice="access">public</span>
     
     
     
     
     
-    <span data-ice="name">put</span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, headers: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+    <span data-ice="name">getCoupons</span><span data-ice="signature">(query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/request/handler.js.html#lineNumber157">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/coupon.js.html#lineNumber30">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Put resource</p>
+  <div data-ice="description"><p>Get a list of coupon</p>
 </div>
 
   
@@ -898,31 +992,10 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">path</td>
-      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"><p>Request put to end endpoint e.g. /api-path/1</p>
-</td>
-    </tr>
-<tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">data</td>
-      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"><p>Data to be updated.</p>
-</td>
-    </tr>
-<tr data-ice="property" data-depth="0">
       <td data-ice="name" data-depth="0">query</td>
       <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
       <td data-ice="description"><p>Optional request parameters.</p>
-</td>
-    </tr>
-<tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">headers</td>
-      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
-      <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"><p>Optional request headers.</p>
 </td>
     </tr>
 </tbody>
@@ -960,25 +1033,25 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
   
 </div>
 <div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-method-request">
+  <h3 data-ice="anchor" id="instance-method-updateCoupon">
     <span class="access" data-ice="access">public</span>
     
     
     
     
     
-    <span data-ice="name">request</span><span data-ice="signature">(options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+    <span data-ice="name">updateCoupon</span><span data-ice="signature">(id: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, body: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/request/handler.js.html#lineNumber86">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/apis/coupon.js.html#lineNumber64">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Create new request promise</p>
+  <div data-ice="description"><p>Update the coupon</p>
 </div>
 
   
@@ -992,242 +1065,17 @@ with <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</cod
     <tbody>
     
     <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">options</td>
-      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"><p>request options.</p>
-</td>
-    </tr>
-</tbody>
-  </table>
-</div>
-</div>
-
-  <div class="return-params" data-ice="returnParams">
-    <h4>Return:</h4>
-    <table>
-      <tbody>
-        <tr>
-          <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></td>
-          
-        </tr>
-      </tbody>
-    </table>
-    <div data-ice="returnProperties">
-</div>
-  </div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-method-setEnv">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    
-    <span data-ice="name">setEnv</span><span data-ice="signature">(env: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>)</span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/request/handler.js.html#lineNumber70">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  <div data-ice="description"><p>Set Environment</p>
-</div>
-
-  
-
-  <div data-ice="properties"><div data-ice="properties">
-  <h4 data-ice="title">Params:</h4>
-  <table class="params">
-    <thead>
-    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-    
-    <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">env</td>
+      <td data-ice="name" data-depth="0">id</td>
       <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>Environment Type: &apos;stg&apos;, &apos;hmla&apos;, &apos;hmlb&apos;, &apos;sandbox&apos;, &apos;integration&apos;;</p>
-</td>
-    </tr>
-</tbody>
-  </table>
-</div>
-</div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  <div data-ice="example">
-    <h4>Example:</h4>
-    
-  <div class="example-doc" data-ice="exampleDoc">
-      
-      <pre class="prettyprint source-code"><code data-ice="exampleCode">var sdk = require(&apos;ingresse-sdk&apos;);
-var ingresse = new Sdk();
-
-// You will have access to this API
-// after instantiate the Sdk.
-var api = ingresse.api;
-
-// Can set an specific Environment to this API
-api.setEnv(&apos;integration&apos;);</code></pre>
-    </div>
-</div>
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-method-setUrl">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    
-    <span data-ice="name">setUrl</span><span data-ice="signature">(url: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>)</span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/request/handler.js.html#lineNumber49">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  <div data-ice="description"><p>Set API url</p>
-</div>
-
-  
-
-  <div data-ice="properties"><div data-ice="properties">
-  <h4 data-ice="title">Params:</h4>
-  <table class="params">
-    <thead>
-    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-    
-    <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">url</td>
-      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"><p>Base URL, example: &apos;<a href="https://hml-api.ingresse.com">https://hml-api.ingresse.com</a>&apos;</p>
-</td>
-    </tr>
-</tbody>
-  </table>
-</div>
-</div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  <div data-ice="example">
-    <h4>Example:</h4>
-    
-  <div class="example-doc" data-ice="exampleDoc">
-      
-      <pre class="prettyprint source-code"><code data-ice="exampleCode">var sdk = require(&apos;ingresse-sdk&apos;);
-var ingresse = new Sdk();
-
-// You will have access to this API
-// after instantiate the Sdk.
-var api = ingresse.api;
-
-// Can set an specific URL to this API
-api.setUrl(&apos;https://hml-api.ingresse.com&apos;);</code></pre>
-    </div>
-</div>
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-method-upload">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    
-    <span data-ice="name">upload</span><span data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, formData: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, query: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>, headers: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/src/request/handler.js.html#lineNumber201">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  <div data-ice="description"><p>Upload files</p>
-</div>
-
-  
-
-  <div data-ice="properties"><div data-ice="properties">
-  <h4 data-ice="title">Params:</h4>
-  <table class="params">
-    <thead>
-    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-    
-    <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">path</td>
-      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"><p>Request post to endpoint e.g. /api-path</p>
+      <td data-ice="description"><p>Transaction ID.</p>
 </td>
     </tr>
 <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">formData</td>
+      <td data-ice="name" data-depth="0">body</td>
       <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>Data to be posted.</p>
+      <td data-ice="description"><p>Coupon data.</p>
 </td>
     </tr>
 <tr data-ice="property" data-depth="0">
@@ -1235,13 +1083,6 @@ api.setUrl(&apos;https://hml-api.ingresse.com&apos;);</code></pre>
       <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
       <td data-ice="appendix"><ul><li>optional</li></ul></td>
       <td data-ice="description"><p>Optional request parameters.</p>
-</td>
-    </tr>
-<tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">headers</td>
-      <td data-ice="type"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></span></td>
-      <td data-ice="appendix"><ul><li>optional</li></ul></td>
-      <td data-ice="description"><p>Optional request headers.</p>
 </td>
     </tr>
 </tbody>

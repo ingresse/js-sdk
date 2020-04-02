@@ -48,9 +48,21 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "ingresse-sdk/src/apis/checkin.js~checkin",
+    "class/src/apis/checkin.js~Checkin.html",
+    "<span>Checkin</span> <span class=\"search-result-import-path\">ingresse-sdk/src/apis/checkin.js</span>",
+    "class"
+  ],
+  [
     "ingresse-sdk/src/helper/cookie.js~cookie",
     "class/src/helper/cookie.js~Cookie.html",
     "<span>Cookie</span> <span class=\"search-result-import-path\">ingresse-sdk/src/helper/cookie.js</span>",
+    "class"
+  ],
+  [
+    "ingresse-sdk/src/apis/coupon.js~coupon",
+    "class/src/apis/coupon.js~Coupon.html",
+    "<span>Coupon</span> <span class=\"search-result-import-path\">ingresse-sdk/src/apis/coupon.js</span>",
     "class"
   ],
   [
@@ -690,9 +702,21 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/apis/api.transactions.js~apitransactions#chargeback",
+    "class/src/apis/api.transactions.js~ApiTransactions.html#instance-method-chargeback",
+    "src/apis/api.transactions.js~ApiTransactions#chargeback",
+    "method"
+  ],
+  [
     "src/apis/api.transactions.js~apitransactions#getbyid",
     "class/src/apis/api.transactions.js~ApiTransactions.html#instance-method-getById",
     "src/apis/api.transactions.js~ApiTransactions#getById",
+    "method"
+  ],
+  [
+    "src/apis/api.transactions.js~apitransactions#getdecisionreasons",
+    "class/src/apis/api.transactions.js~ApiTransactions.html#instance-method-getDecisionReasons",
+    "src/apis/api.transactions.js~ApiTransactions#getDecisionReasons",
     "method"
   ],
   [
@@ -786,6 +810,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/apis/api.user.js~apiuser#getuserbyid",
+    "class/src/apis/api.user.js~ApiUser.html#instance-method-getUserById",
+    "src/apis/api.user.js~ApiUser#getUserById",
+    "method"
+  ],
+  [
     "src/apis/api.user.js~apiuser#getuserfortransfer",
     "class/src/apis/api.user.js~ApiUser.html#instance-method-getUserForTransfer",
     "src/apis/api.user.js~ApiUser#getUserForTransfer",
@@ -825,6 +855,84 @@ window.esdocSearchIndex = [
     "src/apis/api.user.js~apiuser#savecredentials",
     "class/src/apis/api.user.js~ApiUser.html#instance-method-saveCredentials",
     "src/apis/api.user.js~ApiUser#saveCredentials",
+    "method"
+  ],
+  [
+    "src/apis/api.user.js~apiuser#search",
+    "class/src/apis/api.user.js~ApiUser.html#instance-method-search",
+    "src/apis/api.user.js~ApiUser#search",
+    "method"
+  ],
+  [
+    "src/apis/checkin.js",
+    "file/src/apis/checkin.js.html",
+    "src/apis/checkin.js",
+    "file"
+  ],
+  [
+    "src/apis/checkin.js~checkin#constructor",
+    "class/src/apis/checkin.js~Checkin.html#instance-constructor-constructor",
+    "src/apis/checkin.js~Checkin#constructor",
+    "method"
+  ],
+  [
+    "src/apis/checkin.js~checkin#getreport",
+    "class/src/apis/checkin.js~Checkin.html#instance-method-getReport",
+    "src/apis/checkin.js~Checkin#getReport",
+    "method"
+  ],
+  [
+    "src/apis/checkin.js~checkin#settings",
+    "class/src/apis/checkin.js~Checkin.html#instance-member-settings",
+    "src/apis/checkin.js~Checkin#settings",
+    "member"
+  ],
+  [
+    "src/apis/coupon.js",
+    "file/src/apis/coupon.js.html",
+    "src/apis/coupon.js",
+    "file"
+  ],
+  [
+    "src/apis/coupon.js~coupon#constructor",
+    "class/src/apis/coupon.js~Coupon.html#instance-constructor-constructor",
+    "src/apis/coupon.js~Coupon#constructor",
+    "method"
+  ],
+  [
+    "src/apis/coupon.js~coupon#createcoupon",
+    "class/src/apis/coupon.js~Coupon.html#instance-method-createCoupon",
+    "src/apis/coupon.js~Coupon#createCoupon",
+    "method"
+  ],
+  [
+    "src/apis/coupon.js~coupon#deletecoupon",
+    "class/src/apis/coupon.js~Coupon.html#instance-method-deleteCoupon",
+    "src/apis/coupon.js~Coupon#deleteCoupon",
+    "method"
+  ],
+  [
+    "src/apis/coupon.js~coupon#getcoupon",
+    "class/src/apis/coupon.js~Coupon.html#instance-method-getCoupon",
+    "src/apis/coupon.js~Coupon#getCoupon",
+    "method"
+  ],
+  [
+    "src/apis/coupon.js~coupon#getcoupons",
+    "class/src/apis/coupon.js~Coupon.html#instance-method-getCoupons",
+    "src/apis/coupon.js~Coupon#getCoupons",
+    "method"
+  ],
+  [
+    "src/apis/coupon.js~coupon#settings",
+    "class/src/apis/coupon.js~Coupon.html#instance-member-settings",
+    "src/apis/coupon.js~Coupon#settings",
+    "member"
+  ],
+  [
+    "src/apis/coupon.js~coupon#updatecoupon",
+    "class/src/apis/coupon.js~Coupon.html#instance-method-updateCoupon",
+    "src/apis/coupon.js~Coupon#updateCoupon",
     "method"
   ],
   [
