@@ -74,6 +74,15 @@ var Checkin = exports.Checkin = function (_RequestHandler) {
                 'session_id': sessionId
             }, query));
         }
+    }, {
+        key: 'getEntranceReport',
+        value: function getEntranceReport(eventId, sessionId) {
+            var query = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+
+            return this.get('/api/event/' + eventId + '/session/' + sessionId + '/report/entrance', Object.assign({
+                'session_id': sessionId
+            }, query));
+        }
     }]);
 
     return Checkin;

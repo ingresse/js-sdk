@@ -1,5 +1,5 @@
 /* Core Packages */
-import { RequestHandler } from '../request/handler';
+import { RequestHandler } from '../request/handler'; 
 import { auth } from '../auth';
 
 /**
@@ -42,6 +42,12 @@ export class Checkin extends RequestHandler {
      */
     getReport(eventId, sessionId, query = {}) {
         return this.get(`/report/${eventId}/entrance`, Object.assign({
+            'session_id': sessionId,
+        }, query));
+    }
+
+    getEntranceReport(eventId, sessionId, query = {}) {
+        return this.get(`/api/event/${eventId}/session/${sessionId}/report/entrance`, Object.assign({
             'session_id': sessionId,
         }, query));
     }
