@@ -103,13 +103,13 @@ export class Checkin extends RequestHandler {
      *
      * @return {Promise}
      */
-    // getReport(eventId, sessionId, query = {}) {
-    //     return this.get(`/report/${eventId}/entrance`, Object.assign({
-    //         &apos;session_id&apos;: sessionId,
-    //     }, query));
-    // }
-
     getReport(eventId, sessionId, query = {}) {
+        return this.get(`/report/${eventId}/entrance`, Object.assign({
+            &apos;session_id&apos;: sessionId,
+        }, query));
+    }
+
+    getEntranceReport(eventId, sessionId, query = {}) {
         return this.get(`/api/event/${eventId}/session/${sessionId}/report/entrance`, Object.assign({
             &apos;session_id&apos;: sessionId,
         }, query));

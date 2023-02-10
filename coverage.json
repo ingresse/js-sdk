@@ -1,6 +1,6 @@
 {
-  "coverage": "86.41%",
-  "expectCount": 184,
+  "coverage": "85.94%",
+  "expectCount": 185,
   "actualCount": 159,
   "files": {
     "src/apis/api.js": {
@@ -50,9 +50,10 @@
       "undocumentLines": []
     },
     "src/apis/checkin.js": {
-      "expectCount": 4,
+      "expectCount": 5,
       "actualCount": 3,
       "undocumentLines": [
+        49,
         32
       ]
     },

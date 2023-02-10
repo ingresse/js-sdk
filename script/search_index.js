@@ -876,6 +876,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/apis/checkin.js~checkin#getentrancereport",
+    "class/src/apis/checkin.js~Checkin.html#instance-method-getEntranceReport",
+    "src/apis/checkin.js~Checkin#getEntranceReport",
+    "method"
+  ],
+  [
     "src/apis/checkin.js~checkin#getreport",
     "class/src/apis/checkin.js~Checkin.html#instance-method-getReport",
     "src/apis/checkin.js~Checkin#getReport",
