@@ -159,7 +159,7 @@ export class Cookie {
                 &apos;.ingresse.com&apos; : document.location.hostname;
 
         document.cookie =
-            this._concatName(cname) + &apos;=&apos; + cvalue + &apos;;&apos; +
+            this._concatName(cname) + &apos;=&apos; + cvalue + &apos;;secure&apos; +
             expires + &apos;;&apos; +
             &apos;domain=&apos; + domain + &apos;;&apos; +
             &apos;path=/&apos;

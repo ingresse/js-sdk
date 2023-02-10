@@ -62,7 +62,7 @@
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/apis/checkin.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/* Core Packages */
-import { RequestHandler } from &apos;../request/handler&apos;;
+import { RequestHandler } from &apos;../request/handler&apos;; 
 import { auth } from &apos;../auth&apos;;
 
 /**
@@ -103,13 +103,18 @@ export class Checkin extends RequestHandler {
      *
      * @return {Promise}
      */
+    // getReport(eventId, sessionId, query = {}) {
+    //     return this.get(`/report/${eventId}/entrance`, Object.assign({
+    //         &apos;session_id&apos;: sessionId,
+    //     }, query));
+    // }
+
     getReport(eventId, sessionId, query = {}) {
-        return this.get(`/report/${eventId}/entrance`, Object.assign({
+        return this.get(`/api/event/${eventId}/session/${sessionId}/report/entrance`, Object.assign({
             &apos;session_id&apos;: sessionId,
         }, query));
     }
-}
-</code></pre>
+}</code></pre>
 
 </div>
 
