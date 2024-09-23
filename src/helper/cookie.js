@@ -99,7 +99,9 @@ export class Cookie {
             this._concatName(cname) + '=' + cvalue + ';secure' +
             expires + ';' +
             'domain=' + domain + ';' +
-            'path=/'
+            'path=/;' +
+            'secure;' +
+            'samesite=Strict' // Prevent cross-site access
         ;
     }
 
