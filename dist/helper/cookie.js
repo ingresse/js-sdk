@@ -114,7 +114,7 @@ var Cookie = exports.Cookie = function () {
             var expires = 'expires=' + date.toUTCString();
             var domain = document.location.hostname.includes('.ingresse.com') ? '.ingresse.com' : document.location.hostname;
 
-            document.cookie = this._concatName(cname) + '=' + cvalue + ';' + expires + ';' + 'domain=' + domain + ';' + 'path=/';
+            document.cookie = this._concatName(cname) + '=' + cvalue + '; ' + expires + '; ' + 'domain=' + domain + '; ' + 'path=/; ' + 'secure; ' + 'samesite=strict';
         }
 
         /**
