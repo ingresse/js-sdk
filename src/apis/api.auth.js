@@ -1,9 +1,21 @@
-import {RequestHandler} from '../request/handler';
+import { RequestHandler } from '../request/handler';
 
 /**
  * Ingresse Auth API
  */
 export class ApiAuth extends RequestHandler {
+    /**
+     * Utility to get a cookie by name.
+     *
+     * @param {string} name - The name of the cookie.
+     * @returns {string|null} The cookie value or null if not found.
+     */
+    getCookie(name) {
+        const cookies = document.cookie.split('; ');
+        const cookie = cookies.find((c) => c.startsWith(`${name}=`));
+        return cookie ? cookie.split('=')[1] : null;
+    }
+
     /**
      * Login User
      *
@@ -54,15 +66,17 @@ export class ApiAuth extends RequestHandler {
      *
      * @param {object} userToken - Current user token.
      * @param {object} [query]   - Optional request parameters.
+     * @param {object} [headers] - Optional additional headers.
      *
      * @returns {Promise}
      */
-    renewJWT(userToken, query = {}) {
+    renewJWT(userToken, query = {}, headers = {}) {
         const _query = Object.assign({}, query, {
             usertoken: userToken,
         });
 
-        return this.get('/login/renew-token', _query);
+        // Use provided headers directly
+        return this.get('/login/renew-token', _query, headers);
     }
 
     /**
