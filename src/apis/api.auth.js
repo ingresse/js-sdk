@@ -71,7 +71,9 @@ export class ApiAuth extends RequestHandler {
      * @returns {Promise}
      */
     renewJWT(userToken, query = {}, headers = {}) {
-        const _query = { ...query, usertoken: userToken };
+        const _query = Object.assign({}, query, {
+            usertoken: userToken,
+        });
 
         // Use provided headers directly
         return this.get('/login/renew-token', _query, headers);

@@ -28,7 +28,21 @@ var ApiAuth = exports.ApiAuth = function (_RequestHandler) {
     }
 
     _createClass(ApiAuth, [{
-        key: 'login',
+        key: 'getCookie',
+
+        /**
+         * Utility to get a cookie by name.
+         *
+         * @param {string} name - The name of the cookie.
+         * @returns {string|null} The cookie value or null if not found.
+         */
+        value: function getCookie(name) {
+            var cookies = document.cookie.split('; ');
+            var cookie = cookies.find(function (c) {
+                return c.startsWith(name + '=');
+            });
+            return cookie ? cookie.split('=')[1] : null;
+        }
 
         /**
          * Login User
@@ -37,6 +51,9 @@ var ApiAuth = exports.ApiAuth = function (_RequestHandler) {
          * @param {object} [query] - Optional request parameters.
          * @returns {Promise}
          */
+
+    }, {
+        key: 'login',
         value: function login(data) {
             var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
@@ -98,6 +115,7 @@ var ApiAuth = exports.ApiAuth = function (_RequestHandler) {
          *
          * @param {object} userToken - Current user token.
          * @param {object} [query]   - Optional request parameters.
+         * @param {object} [headers] - Optional additional headers.
          *
          * @returns {Promise}
          */
@@ -106,12 +124,14 @@ var ApiAuth = exports.ApiAuth = function (_RequestHandler) {
         key: 'renewJWT',
         value: function renewJWT(userToken) {
             var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+            var headers = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
 
             var _query = Object.assign({}, query, {
                 usertoken: userToken
             });
 
-            return this.get('/login/renew-token', _query);
+            // Use provided headers directly
+            return this.get('/login/renew-token', _query, headers);
         }
 
         /**
