@@ -224,6 +224,14 @@ var ApiUser = exports.ApiUser = function (_RequestHandler) {
             query.term = term;
             return this.get('/search/transfer/user', query);
         }
+    }, {
+        key: 'getUsersList',
+        value: function getUsersList(term) {
+            var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+            query.term = term;
+            return this.get('/users/search', query);
+        }
 
         /**
          * Get the recent transfers of a user.

@@ -156,6 +156,11 @@ export class ApiUser extends RequestHandler {
         return this.get('/search/transfer/user', query);
     }
 
+    getUsersList(term, query = {}) {
+        query.term = term;
+        return this.get('/users/search', query);
+    }
+
     /**
      * Get the recent transfers of a user.
      *
