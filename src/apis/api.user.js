@@ -153,7 +153,7 @@ export class ApiUser extends RequestHandler {
      */
     getUserForTransfer(term, query = {}) {
         query.term = term;
-        return this.get('/search/transfer/user', query);
+        return this.get('/users/search', query);
     }
 
     /**

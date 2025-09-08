@@ -222,7 +222,7 @@ var ApiUser = exports.ApiUser = function (_RequestHandler) {
             var query = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
             query.term = term;
-            return this.get('/search/transfer/user', query);
+            return this.get('/users/search', query);
         }
 
         /**
